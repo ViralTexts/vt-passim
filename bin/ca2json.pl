@@ -8,7 +8,6 @@ my %opts = ();
 getopts('t:d:', \%opts);
 
 my $curid = '';
-my $hypflag = 0;
 my($sn, $year, $month, $day, $ed, $seq);
 while (<>) {
     chomp;
@@ -50,25 +49,20 @@ while (<>) {
 	    my($w) = ( $t =~ / WIDTH=[\'\"]([0-9]+)/ );
 	    my($x) = ( $t =~ / HPOS=[\'\"]([0-9]+)/ );
 	    my($y) = ( $t =~ / VPOS=[\'\"]([0-9]+)/ );
-	    print "<w coords=\\\"$x,$y,$w,$h\\\"/>" unless $hypflag;
+	    print "<w coords=\\\"$x,$y,$w,$h\\\"/>";
 	    if ( $t =~ / CONTENT=\"([^\"]+)\"/ ) {
 		print jsesc($1);
 	    } elsif ( $t =~ / CONTENT=\'([^\']+)\'/ ) {
 		print jsesc($1);
 	    }
-	    if ( $hypflag ) {
-		print "\n";
-		$hypflag = 0;
-	    }
 	} elsif ( $t =~ /^<SP / ) {
 	    print " ";
 	} elsif ( $t =~ /^<\/TextLine>/ ) {
-	    print "\n" unless $hypflag;
+	    print "\n";
 	} elsif ( $t =~ /^<HYP /) {
-	    $hypflag = 1;
+	    print "\xc2\xad";
 	} elsif ( $t =~ /^<\/TextBlock>/ ) {
 	    print "\n";
-	    $hypflag = 0;
 	}
     }
     
