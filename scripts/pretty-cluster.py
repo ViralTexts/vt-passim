@@ -23,7 +23,7 @@ def formatURL(url, corpus, id, pages, regions):
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: pretty-cluster.py <input> <output>", file=sys.stderr)
+        print("Usage: pretty-cluster.py <metadata> <input> <output>", file=sys.stderr)
         exit(-1)
     sc = SparkContext(appName="Parquet Load")
     sqlContext = SQLContext(sc)
