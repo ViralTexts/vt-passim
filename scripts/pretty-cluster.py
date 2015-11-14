@@ -17,7 +17,7 @@ def formatURL(url, corpus, id, pages, regions):
     elif corpus == 'onb':
         return "%s&seite=%s" % (sub("&amp;", "&", url), pages[0])
     elif corpus == 'trove':
-        return "http://trove.nla.gov.au/ndp/del/article/%s" % id
+        return "http://trove.nla.gov.au/ndp/del/article/%s" % sub("^trove/", "", id)
     else:
         return url
 
@@ -43,9 +43,10 @@ if __name__ == "__main__":
     removeTags = udf(lambda s: h.unescape(sub("</?[A-Za-z][^>]*>", "", s)), StringType())
     constructURL = udf(lambda url, corpus, id, pages, regions: formatURL(url, corpus, id, pages, regions),
                        StringType())
-    getTitle = udf(lambda title, series: title if title else (stitle[series] if series in stitle else None), StringType())
+    getTitle = udf(lambda series: stitle[series] if series in stitle else series, StringType())
     out = raw\
-          .withColumn("title", getTitle(raw.title, raw.series))\
+          .withColumnRenamed("title", "heading")\
+          .withColumn("title", getTitle(raw.series))\
           .withColumn("text", removeTags(raw.text))\
           .withColumn("url", constructURL(raw.url, raw.corpus, raw.id, raw.pages, raw.regions))\
           .drop("locs").drop("pages").drop("regions")
