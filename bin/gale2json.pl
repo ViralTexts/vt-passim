@@ -56,10 +56,10 @@ while (<>) {
 	$date = "$1-$2-$3";
     } elsif ( /^<titleAbbreviation>([^<]+)<\/titleAbbreviation>/ ) {
 	$series = $1;
-    # } elsif ( /^<lccn>([^<]+)<\/lccn>/ ) {
+    } elsif ( /^<lccn>([^<]+)<\/lccn>/ ) {
+    	$series = "sn$1";
+    # } elsif ( /^<ba>([^<]+)<\/ba>/ ) {
     # 	$series = $1;
-    } elsif ( /^<ba>([^<]+)<\/ba>/ ) {
-	$series = $1;
     } elsif ( /^<id>([^<]+)<\/id>/ ) {
 	if ( $inArticle ) {
 	    print sfield("id", $1), ",\n";
