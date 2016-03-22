@@ -4,6 +4,8 @@ use strict;
 use File::Basename;
 use Getopt::Std;
 
+## Construct URL from <?article processing instruction?
+
 my %opts = ();
 getopts('t:d:', \%opts);
 
