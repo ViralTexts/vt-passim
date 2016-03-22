@@ -32,42 +32,49 @@ object MetsAlto {
     sc.binaryFiles(args(0))
       .filter(_._1.endsWith(".zip"))
       .flatMap( x => {
-        val fname = new java.io.File(new java.net.URL(x._1).toURI)
-        val issue = fname.getName.replaceAll(".zip$", "")
+        try {
+          val fname = new java.io.File(new java.net.URL(x._1).toURI)
+          val issue = fname.getName.replaceAll(".zip$", "")
 
-        val zfile = new java.util.zip.ZipFile(fname)
-        import scala.collection.JavaConversions._
-        val (series, date, title, lang) =
-          try {
-            val mfile = zfile.entries.filter(_.getName.endsWith("mets.xml")).toSeq.head
-            val t = scala.xml.XML.load(zfile.getInputStream(mfile))
-            ((t \\ "identifier").head.text,
-              (t \\ "dateIssued").head.text
-                .replaceAll("""^(\d\d)\.(\d\d)\.(\d\d\d\d)$""", """$3-$2-$1"""),
-              (t \\ "title").head.text,
-              (t \\ "languageTerm").head.text)
-          } catch {
-            case e: Exception => ("", "", "", "")
-          }
-
-        zfile.entries.filter(f => f.getName.endsWith(".xml") && !f.getName.endsWith("mets.xml"))
-          .map(f => {
-            val t = scala.xml.XML.load(zfile.getInputStream(f))
-            val res = (t \\ "TextLine").map { line =>
-              (line \ "_").map({ e =>
-                if ( e.label == "String" ) {
-                  (e \ "@CONTENT").text
-                } else if ( e.label == "SP" ) {
-                  " "
-                } else if ( e.label == "HYP" ) {
-                  "\u00ad"
-                }
-              })
-                .mkString("")
+          val zfile = new java.util.zip.ZipFile(fname)
+          import scala.collection.JavaConversions._
+          val (series, date, title, lang) =
+            try {
+              val mfile = zfile.entries.filter(_.getName.endsWith("mets.xml")).toSeq.head
+              val t = scala.xml.XML.load(zfile.getInputStream(mfile))
+              ((t \\ "identifier").head.text,
+                (t \\ "dateIssued").head.text
+                  .replaceAll("""^(\d\d)\.(\d\d)\.(\d\d\d\d)$""", """$3-$2-$1"""),
+                (t \\ "title").head.text,
+                (t \\ "languageTerm").head.text)
+            } catch {
+              case e: Exception => ("", "", "", "")
             }
-            (f.getName.replaceAll(".xml$", ""), issue, series, date,
-              title, lang, res.mkString("\n"))
-          })
+
+          zfile.entries.filter(f => f.getName.endsWith(".xml") && !f.getName.endsWith("mets.xml"))
+            .map(f => {
+              val t = scala.xml.XML.load(zfile.getInputStream(f))
+              val res = (t \\ "TextLine").map { line =>
+                (line \ "_").map({ e =>
+                  if ( e.label == "String" ) {
+                    (e \ "@CONTENT").text.replaceAll("<", "&lt;")
+                  } else if ( e.label == "SP" ) {
+                    " "
+                  } else if ( e.label == "HYP" ) {
+                    "\u00ad"
+                  }
+                })
+                  .mkString("")
+            }
+              (f.getName.replaceAll(".xml$", ""), issue, series, date,
+                title, lang, res.mkString("\n"))
+            })
+        } catch {
+          case e: Exception => {
+            println(x._1 + e.toString)
+            None
+          }
+        }
       }
     )
       .toDF("id", "issue", "series", "date", "title", "lang", "text")
