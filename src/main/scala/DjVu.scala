@@ -22,6 +22,13 @@ import collection.JavaConversions._
 import scala.collection.mutable.StringBuilder
 import scala.collection.mutable.ArrayBuffer
 
+case class Coords(x: Int, y: Int, w: Int, h: Int, b: Int)
+
+case class Region(start: Int, end: Int, coords: Coords)
+
+case class Page(id: String, series: String, seq: Int, dpi: Int, text: String,
+  regions: Array[Region])
+
 object DjVu {
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("DjVu Application")
@@ -39,27 +46,55 @@ object DjVu {
       classOf[XmlInputFormat],
       classOf[LongWritable],
       classOf[Text])
-      .map( x => {
-        val res = new StringBuilder
-        val t = scala.xml.XML.loadString(x._2.toString)
-          (t \\ "LINE").foreach { line => {
-            var first = true
-              (line \ "WORD").foreach({ word => {
-                if ( first ) {
-                  first = false
-                } else {
-                  res.append(" ")
+      .flatMap( x => {
+        try {
+          val res = new StringBuilder
+          val regions = new ArrayBuffer[Region]
+
+          val t = scala.xml.XML.loadString(x._2.toString)
+          val bookFile = (t \ "@data").text
+          val bookParts = bookFile.split("/+")
+          val bookId = bookParts(bookParts.size - 2)
+
+          val pageFile = (t \ "PARAM").filter(x => (x \ "@name").text == "PAGE").map(x => (x \ "@value").text).head
+          val pageId = (pageFile.replaceAll("\\.djvu$", "").split("_", 2))(1)
+          val seq = pageId.toInt
+
+          val dpi = (t \ "PARAM").filter(x => (x \ "@name").text == "DPI").map(x => (x \ "@value").text).head.toInt
+
+          (t \\ "PARAGRAPH").foreach { para => {
+            (para \\ "LINE").foreach { line => {
+              var first = true
+                (line \ "WORD").foreach({ word => {
+                  if ( first ) {
+                    first = false
+                  } else {
+                    res.append(" ")
+                  }
+                  val start = res.size
+                  res.append(word.text.replaceAll("<", "&lt;"))
+                  val c = (word \ "@coords").text.split(",").map(_.toInt)
+                  regions += Region(start, res.size - start,
+                    Coords(c(0), c(3), c(2) - c(0), c(1) - c(3),
+                      if ( c.size == 5 ) c(4) - c(3) else c(1) - c(3)))
                 }
-                res.append(word.text.replaceAll("<", "&lt;"))
-              }
-              })
+                })
+              res.append("\n")
+            }
+            }
             res.append("\n")
           }
           }
-        ((t \ "@data").text, res.toString)
+          Some(Page(bookId + "_" + pageId, bookId, seq, dpi, res.toString, regions.toArray))
+        } catch {
+          case e: Exception => {
+            println(x._1 + e.toString)
+            None
+          }
+        }
       })
-      .toDF("id", "text")
-      .write.json(args(1))
+      .toDF
+      .write.save(args(1))
   }
 }
 
