@@ -28,30 +28,36 @@ if __name__ == "__main__":
     sc = SparkContext(appName="Parquet Load")
     sqlContext = SQLContext(sc)
 
-    outputFormat = "com.databricks.spark.csv"
-    outputOptions = {'header': 'true'}
-
+    # outputFormat = "com.databricks.spark.csv"
+    # outputOptions = {'header': 'true'}
+    outputFormat = "json"
+    outputOptions = {}
+    
     meta = sqlContext.read.json(sys.argv[1])
 
     raw = sqlContext.read.load(sys.argv[2])
 
     ## There aren't many series.  It'll be cleaner to use a closure instead of a join
     stitle = dict(meta.select(explode(meta.publication_names.sn).alias("series"),
-                             meta.master_name).distinct().collect())
+                             meta.master_name)\
+                  .unionAll(meta.select(meta.id.alias("series"), meta.master_name))\
+                  .distinct().collect())
 
     h = HTMLParser.HTMLParser()
     removeTags = udf(lambda s: h.unescape(sub("</?[A-Za-z][^>]*>", "", s)), StringType())
     constructURL = udf(lambda url, corpus, id, pages, regions: formatURL(url, corpus, id, pages, regions),
                        StringType())
     getTitle = udf(lambda series: stitle[series] if series in stitle else series, StringType())
-    out = raw\
-          .withColumnRenamed("title", "heading")\
-          .withColumn("title", getTitle(raw.series))\
-          .withColumn("text", removeTags(raw.text))\
-          .withColumn("url", constructURL(raw.url, raw.corpus, raw.id, raw.pages, raw.regions))\
-          .drop("locs").drop("pages").drop("regions")
-
-    out.orderBy(desc("size"), "cluster", "date", "id", "begin").write.format(outputFormat).options(header='true').save(sys.argv[3])
+    raw\
+        .withColumnRenamed("title", "heading")\
+        .withColumn("title", getTitle(raw.series))\
+        .withColumn("text", removeTags(raw.text))\
+        .withColumn("url", constructURL(raw.url, raw.corpus, raw.id, raw.pages, raw.regions))\
+        .drop("locs")\
+        .drop("pages")\
+        .drop("regions")\
+        .orderBy(desc("size"), "cluster", "date", "id", "begin")\
+        .write.format(outputFormat).options(**outputOptions).save(sys.argv[3])
 
     sc.stop()
     
