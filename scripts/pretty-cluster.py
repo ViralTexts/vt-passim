@@ -41,11 +41,19 @@ if __name__ == "__main__":
     outpath = sys.argv[3]
     (outputFormat, outputOptions) = guessFormat(outpath, "json")
 
+    ## Should do more field renaming in meta to avoid clashing with fields in raw.
     meta = sqlContext.read.json(sys.argv[1])\
            .withColumnRenamed('lang', 'series_lang')\
            .withColumnRenamed('id', 'series').dropDuplicates(['series'])
     
-    raw = sqlContext.read.load(sys.argv[2])
+    df = sqlContext.read.load(sys.argv[2])
+    
+    if len(sys.argv) >= 5:
+        df.registerTempTable("clusters")
+        print(sys.argv[4])
+        raw = df.join(sqlContext.sql(sys.argv[4]).select("cluster").distinct(), 'cluster')
+    else:
+        raw = df
 
     h = HTMLParser.HTMLParser()
     removeTags = udf(lambda s: h.unescape(sub("</?[A-Za-z][^>]*>", "", s)), StringType())

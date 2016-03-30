@@ -6,4 +6,4 @@ SPARK_SUBMIT_ARGS="$SPARK_SUBMIT_ARGS"
 
 spark-submit --packages 'com.databricks:spark-csv_2.10:1.2.0' \
 	     $SPARK_SUBMIT_ARGS \
-	     "$PASSIM_HOME"/scripts/pretty-cluster.py $@
+	     "$PASSIM_HOME"/scripts/pretty-cluster.py "$@"
