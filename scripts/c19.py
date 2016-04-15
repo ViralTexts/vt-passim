@@ -11,8 +11,8 @@ if __name__ == "__main__":
         exit(-1)
     sc = SparkContext(appName="SelectC19")
     sqlContext = SQLContext(sc)
-    raw = sqlContext.read.load(sys.argv[1])
+    raw = sqlContext.read.option("mergeSchema", "true").load(sys.argv[1])
 
-    raw.filter(raw.date < '1900').repartition(500).write.save(sys.argv[2])
+    raw.filter(raw.date < '1900').dropDuplicates(['id']).write.save(sys.argv[2])
 
     sc.stop()
