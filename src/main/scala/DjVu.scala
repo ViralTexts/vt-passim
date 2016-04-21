@@ -94,6 +94,7 @@ object DjVu {
         }
       })
       .toDF
+      .coalesce(sc.getConf.getInt("spark.sql.shuffle.partitions", 200))
       .write.save(args(1))
   }
 }
