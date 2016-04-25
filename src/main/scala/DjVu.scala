@@ -57,7 +57,7 @@ object DjVu {
           val bookId = bookParts(bookParts.size - 2)
 
           val pageFile = (t \ "PARAM").filter(x => (x \ "@name").text == "PAGE").map(x => (x \ "@value").text).head
-          val pageId = (pageFile.replaceAll("\\.djvu$", "").split("_", 2))(1)
+          val pageId = pageFile.replaceAll("\\.djvu$", "").split("_").last
           val seq = pageId.toInt
 
           val dpi = (t \ "PARAM").filter(x => (x \ "@name").text == "DPI").map(x => (x \ "@value").text).head.toInt
