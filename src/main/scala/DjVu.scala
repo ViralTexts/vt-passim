@@ -46,7 +46,7 @@ object DjVu {
       classOf[XmlInputFormat],
       classOf[LongWritable],
       classOf[Text])
-      .flatMap( x => {
+      .flatMap { x => {
         try {
           val res = new StringBuilder
           val regions = new ArrayBuffer[Region]
@@ -62,10 +62,10 @@ object DjVu {
 
           val dpi = (t \ "PARAM").filter(x => (x \ "@name").text == "DPI").map(x => (x \ "@value").text).head.toInt
 
-          (t \\ "PARAGRAPH").foreach { para => {
-            (para \\ "LINE").foreach { line => {
+          (t \\ "PARAGRAPH").foreach { para =>
+            (para \\ "LINE").foreach { line =>
               var first = true
-                (line \ "WORD").foreach({ word => {
+                (line \ "WORD").foreach { word =>
                   if ( first ) {
                     first = false
                   } else {
@@ -78,12 +78,9 @@ object DjVu {
                     Coords(c(0), c(3), c(2) - c(0), c(1) - c(3),
                       if ( c.size == 5 ) c(4) - c(3) else c(1) - c(3)))
                 }
-                })
               res.append("\n")
             }
-            }
             res.append("\n")
-          }
           }
           Some(Page(bookId + "_" + pageId, bookId, seq, dpi, res.toString, regions.toArray))
         } catch {
@@ -92,7 +89,7 @@ object DjVu {
             None
           }
         }
-      })
+      }}
       .toDF
       .coalesce(sc.getConf.getInt("spark.sql.shuffle.partitions", 200))
       .write.save(args(1))
