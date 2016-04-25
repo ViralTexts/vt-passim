@@ -85,7 +85,7 @@ object DjVu {
           Some(Page(bookId + "_" + pageId, bookId, seq, dpi, res.toString, regions.toArray))
         } catch {
           case e: Exception => {
-            println(x._1 + e.toString)
+            Console.err.println(x._1 + ": " + e.toString)
             None
           }
         }
