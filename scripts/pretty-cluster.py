@@ -51,7 +51,7 @@ if __name__ == "__main__":
     if len(sys.argv) >= 5:
         df.registerTempTable("clusters")
         print(sys.argv[4])
-        raw = df.join(sqlContext.sql(sys.argv[4]).select("cluster").distinct(), 'cluster')
+        raw = df.join(df.filter(sys.argv[4]).select("cluster").distinct(), 'cluster')
     else:
         raw = df
 
