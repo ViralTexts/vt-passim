@@ -8,6 +8,7 @@ from pyspark import SparkContext
 from pyspark.sql import SQLContext
 from pyspark.sql.functions import abs, col, datediff, lit, udf, when, explode, desc
 from pyspark.sql.types import StringType, ArrayType
+from pyspark.ml.feature import CountVectorizer
 
 def maxGap(pair):
     (cluster, days) = pair
@@ -17,7 +18,8 @@ def maxGap(pair):
     else:
         return (cluster, int(np.max(np.ediff1d(udays))))
 
-def pairFeatures(parent, child):
+def pairFeatures(parent, child, pday, cday):
+    lag = abs(cday - pday)      # throw away the sign to encourage learning
     return ["parent:" + parent, "child:" + child,
             "pair:" + parent + ":" + child]
 
@@ -40,16 +42,15 @@ if __name__ == "__main__":
     pairs = df.join(df2, (df.cluster == df2.cluster2) & (df.day != df2.day2) & (abs(df.day - df2.day2) < gap))\
               .select('cluster', 'series', 'date', 'day', 'series2', 'date2', 'day2')
 
-    getPairFeatures = udf(lambda series, series2: pairFeatures(series, series2), ArrayType(StringType()))
+    getPairFeatures = udf(lambda series, series2, day, day2: pairFeatures(series, series2, day, day2), ArrayType(StringType()))
 
     res = pairs.withColumn('label', when(pairs.day2 > pairs.day, 1).otherwise(0))\
-               .withColumn('raw', getPairFeatures(pairs.series, pairs.series2))
+               .withColumn('raw', getPairFeatures(pairs.series, pairs.series2, pairs.day, pairs.day2))
+    res.cache()
 
-    # maxGap = df.select('cluster', 'day').map(lambda x: (x['cluster'], x['day']))\
-    #                                     .groupByKey().map(maxGap).toDF(['cluster', 'gap'])
+    cv = CountVectorizer(inputCol='raw', outputCol='features', minDF=2.0)
+    interner = cv.fit(res)
 
-    # maxGap.write.json(sys.argv[2])
-
-    res.write.json(sys.argv[2])
-
+    interner.transform(res).write.json(sys.argv[2])
+    
     sc.stop()
