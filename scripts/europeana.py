@@ -19,9 +19,10 @@ def getSeries(fname):
             series = m['identifier'][0]
         for f in filter(lambda x: x.endswith('.fulltext.json'), names):
             r = json.loads(zf.read(f))
-            text = "\n".join(r['contentAsText']).replace('<', '&lt;')
-            yield Row(id=r['identifier'][0], series=series,
-                      date=r['date'][0], lang=r['language'][0], text=text)
+            if r.has_key('contentAsText') and r.has_key('identifier'):
+                text = "\n".join(r['contentAsText']).replace('<', '&lt;')
+                yield Row(id=r['identifier'][0], series=series,
+                          date=r['date'][0], lang=r['language'][0], text=text)
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
@@ -31,6 +32,6 @@ if __name__ == "__main__":
     sqlContext = SQLContext(sc)
 
     x = [os.path.join(d[0], f) for d in os.walk(sys.argv[1]) for f in d[2] if f.endswith('zip')]
-    sc.parallelize(x).flatMap(getSeries).toDF().write.save(sys.argv[2])
+    sc.parallelize(x, 200).flatMap(getSeries).toDF().write.save(sys.argv[2])
 
     sc.stop()

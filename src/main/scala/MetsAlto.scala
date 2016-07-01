@@ -29,7 +29,7 @@ object MetsAlto {
 
     sc.hadoopConfiguration.set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
-    sc.binaryFiles(args(0))
+    sc.binaryFiles(args(0), sc.defaultParallelism)
       .filter(_._1.endsWith(".zip"))
       .flatMap( x => {
         try {
@@ -38,17 +38,16 @@ object MetsAlto {
 
           val zfile = new java.util.zip.ZipFile(fname)
           import scala.collection.JavaConversions._
-          val (series, date, title, lang) =
+          val (series, date, lang) =
             try {
               val mfile = zfile.entries.filter(_.getName.endsWith("mets.xml")).toSeq.head
               val t = scala.xml.XML.load(zfile.getInputStream(mfile))
               ((t \\ "identifier").head.text,
                 (t \\ "dateIssued").head.text
                   .replaceAll("""^(\d\d)\.(\d\d)\.(\d\d\d\d)$""", """$3-$2-$1"""),
-                (t \\ "title").head.text,
                 (t \\ "languageTerm").head.text)
             } catch {
-              case e: Exception => ("", "", "", "")
+              case e: Exception => ("", "", "")
             }
 
           zfile.entries.filter(f => f.getName.endsWith(".xml") && !f.getName.endsWith("mets.xml"))
@@ -66,8 +65,7 @@ object MetsAlto {
                 })
                   .mkString("")
             }
-              (f.getName.replaceAll(".xml$", ""), issue, series, date,
-                title, lang, res.mkString("\n"))
+              (f.getName.replaceAll(".xml$", ""), issue, series, date, lang, res.mkString("\n"))
             })
         } catch {
           case e: Exception => {
@@ -77,7 +75,7 @@ object MetsAlto {
         }
       }
     )
-      .toDF("id", "issue", "series", "date", "title", "lang", "text")
+      .toDF("id", "issue", "series", "date", "lang", "text")
       .write.save(args(1))
   }
 }
