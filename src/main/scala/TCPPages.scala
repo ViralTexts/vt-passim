@@ -17,7 +17,9 @@ object TCPPages {
 
     sc.hadoopConfiguration.set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
-    sc.binaryFiles(args(0))
+    val bookPrefix = "http://name.umdl.umich.edu/"
+
+    sc.binaryFiles(args(0), sc.defaultParallelism)
       .filter(_._1.endsWith(".xml"))
       .flatMap( in => {
         var id = ""
@@ -34,7 +36,7 @@ object TCPPages {
           event match {
             case EvElemStart(_, "pb", attr, _) => {
               val rec = if ( inPage ) {
-                Some((id + "_" + seq, id, seq, title, creator, date, img, buf.toString.trim))
+                Some((id + "_" + seq, id, seq, title, creator, date, bookPrefix+id, img, buf.toString.trim))
               } else {
                 None
               }
@@ -49,7 +51,7 @@ object TCPPages {
                 seq += 1
                 val text = buf.toString.trim
                 buf.clear
-                Some((id + "_" + seq, id, seq, title, creator, date, img, text))
+                Some((id + "_" + seq, id, seq, title, creator, date, bookPrefix+id, img, text))
               } else {
                 None
               }
@@ -92,7 +94,7 @@ object TCPPages {
           }
         }
       })
-      .toDF("id", "series", "seq", "title", "creator", "date", "imgid", "text")
+      .toDF("id", "series", "seq", "title", "creator", "date", "series_access", "imgid", "text")
       .write.save(args(1))
   }
 }
