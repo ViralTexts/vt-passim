@@ -8,7 +8,6 @@ class=$1
 shift
 
 spark-submit --class vtpassim.$class \
-	     --packages 'com.github.scopt:scopt_2.10:3.3.0' \
-	     --packages 'com.databricks:spark-xml_2.10:0.3.2' \
+	     --packages 'com.github.scopt:scopt_2.10:3.3.0,com.databricks:spark-xml_2.10:0.3.2,edu.stanford.nlp:stanford-corenlp:3.6.0,edu.stanford.nlp:stanford-corenlp:3.6.0-models,com.google.protobuf:protobuf-java:2.6.1' \
 	     $SPARK_SUBMIT_ARGS \
 	     "$VTPASSIM_HOME"/target/scala-2.10/vtpassim_2.10-0.1.0.jar $@

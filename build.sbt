@@ -14,6 +14,10 @@ libraryDependencies += "com.databricks" %% "spark-xml" % "0.3.3"
 
 libraryDependencies += "com.github.scopt" %% "scopt" % "3.3.0"
 
+libraryDependencies += "com.google.protobuf" % "protobuf-java" % "2.6.1"
+libraryDependencies += "edu.stanford.nlp" % "stanford-corenlp" % "3.6.0"
+libraryDependencies += "edu.stanford.nlp" % "stanford-corenlp" % "3.6.0" classifier "models"
+
 resolvers += Resolver.sonatypeRepo("public")
 
 lazy val root = (project in file(".")).
