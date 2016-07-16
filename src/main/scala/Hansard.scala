@@ -1,21 +1,15 @@
 package vtpassim
 
-import org.apache.spark.SparkContext
-import org.apache.spark.SparkConf
-import org.apache.spark.rdd.RDD
+import org.apache.spark.{SparkContext, SparkConf}
 import org.apache.spark.sql.SQLContext
-import org.apache.spark.sql.DataFrame
 
 import collection.JavaConversions._
-import scala.collection.mutable.StringBuilder
-import scala.collection.mutable.ArrayBuffer
+import scala.collection.mutable.{ArrayBuffer, StringBuilder}
 
 import edu.stanford.nlp.simple.{Document, Sentence}
 
-import vtpassim.pageinfo._
-
 case class ParsedSentence(id: String, seq: Int, house: String, date: String, text: String,
-  words: Seq[String], tags: Seq[String], tree: String)
+  words: Seq[String], tags: Seq[String], tree: String, heads: Seq[Int], labels: Seq[String])
 
 object HansardSentences {
   def main(args: Array[String]) {
@@ -39,9 +33,17 @@ object HansardSentences {
               val doc = new Document(p.text)
               doc.sentences.zipWithIndex.map { case (s, seq) =>
                 val words: Seq[String] = s.words
-                val stree = if ( words.size <= 10 ) s.parse.toString else "" // Do this first to force parser-derived tags
-                ParsedSentence(id, seq, house, date, s.toString,
-                  words, Seq(""), stree)
+                if ( words.size <= 50 ) {
+                  val t = s.parse
+                  ParsedSentence(id, seq, house, date, s.toString, words,
+                    t.taggedLabeledYield.map(_.toString.replaceFirst("-[0-9]+$", "")),
+                    t.toString,
+                    s.governors.map(_.get.toInt),
+                    s.incomingDependencyLabels.map(_.get))
+                } else {
+                  ParsedSentence(id, seq, house, date, s.toString, words,
+                    Seq[String](), "", Seq[Int](), Seq[String]())
+                }
               }
             })
           })
