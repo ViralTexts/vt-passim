@@ -1,33 +1,15 @@
 package vtpassim
 
-import org.apache.spark.SparkContext
-import org.apache.spark.SparkContext._
-import org.apache.spark.SparkConf
-import org.apache.spark.rdd.RDD
+import org.apache.spark.{SparkContext, SparkConf}
 import org.apache.spark.sql.SQLContext
-import org.apache.spark.sql.DataFrame
-import org.apache.spark.sql.Row
-import org.apache.spark.sql.functions._
-import org.apache.spark.storage.StorageLevel
 
 import com.databricks.spark.xml.XmlInputFormat
-
-import org.apache.hadoop.io.{LongWritable,Text}
-import org.apache.hadoop.fs.{FileSystem,Path}
-
-import org.apache.spark.sql.catalyst.util.DateTimeUtils
-import java.sql.Date
+import org.apache.hadoop.io.{LongWritable, Text}
 
 import collection.JavaConversions._
-import scala.collection.mutable.StringBuilder
-import scala.collection.mutable.ArrayBuffer
+import scala.collection.mutable.{ArrayBuffer, StringBuilder}
 
-case class Coords(x: Int, y: Int, w: Int, h: Int, b: Int)
-
-case class Region(start: Int, end: Int, coords: Coords)
-
-case class Page(id: String, series: String, seq: Int, dpi: Int, text: String,
-  regions: Array[Region])
+import vtpassim.pageinfo._
 
 object DjVu {
   def main(args: Array[String]) {
