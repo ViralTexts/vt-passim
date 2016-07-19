@@ -8,9 +8,6 @@ import scala.collection.mutable.{ArrayBuffer, StringBuilder}
 
 import edu.stanford.nlp.simple.{Document, Sentence}
 
-case class ParsedSentence(id: String, seq: Int, house: String, date: String, text: String,
-  words: Seq[String], tags: Seq[String], tree: String, heads: Seq[Int], labels: Seq[String])
-
 object HansardSentences {
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("Hansard parsing")
@@ -32,23 +29,12 @@ object HansardSentences {
               val id = (p \ "@id").text
               val doc = new Document(p.text)
               doc.sentences.zipWithIndex.map { case (s, seq) =>
-                val words: Seq[String] = s.words
-                if ( words.size <= 50 ) {
-                  val t = s.parse
-                  ParsedSentence(id, seq, house, date, s.toString, words,
-                    t.taggedLabeledYield.map(_.toString.replaceFirst("-[0-9]+$", "")),
-                    t.toString,
-                    s.governors.map(_.get.toInt),
-                    s.incomingDependencyLabels.map(_.get))
-                } else {
-                  ParsedSentence(id, seq, house, date, s.toString, words,
-                    Seq[String](), "", Seq[Int](), Seq[String]())
-                }
+                (id, seq, house, date, s.text)
               }
             })
           })
       })
-      .toDF
+      .toDF("id", "seq", "house", "date", "text")
       .write.save(args(1))
   }
 }
