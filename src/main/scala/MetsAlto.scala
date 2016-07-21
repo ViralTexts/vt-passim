@@ -28,7 +28,6 @@ object MetsAlto {
           val issue = fname.getName.replaceAll(".zip$", "")
 
           val zfile = new java.util.zip.ZipFile(fname)
-          import scala.collection.JavaConversions._
           val (series, date, lang, dpi) =
             try {
               val mfile = zfile.entries.filter(_.getName.endsWith("mets.xml")).toSeq.head
