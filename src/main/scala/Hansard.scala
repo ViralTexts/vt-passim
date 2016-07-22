@@ -21,24 +21,27 @@ object HansardPages {
     sc.wholeTextFiles(args(0), sc.defaultParallelism)
       .filter(_._1.contains(".xml"))
       .flatMap( f => {
+        val book = (new java.io.File(f._1)).getName.replaceFirst("""\.xml.*$""", "")
         val buf = new StringBuilder
+        var seq = -1
         var pid = ""
         var date = ""
 
         (new XMLEventReader(scala.io.Source.fromString(f._2))).flatMap {
           case EvElemStart(_, "image", attr, _) =>
             val page = if ( pid != "" ) {
-              Some((pid, pid.replaceFirst("_.+$", ""), pid.replaceFirst("^.+_", ""),
+              Some((pid, book, seq,
                 "Hansard's Parliamentary Debates", date, buf.toString.trim))
             } else {
               None
             }
-            pid = attr.get("src").map(_.text).headOption.getOrElse("").replaceFirst("I0*", "_")
+            seq += 1
+            pid = attr.get("src").map(_.text).headOption.getOrElse("")
             buf.clear
             page
           case EvElemEnd(_, "hansard") =>
             if ( pid != "" ) {
-              Some((pid, pid.replaceFirst("_.+$", ""), pid.replaceFirst("^.+_", ""),
+              Some((pid, book, seq,
                 "Hansard's Parliamentary Debates", date, buf.toString.trim))
             } else {
               None
