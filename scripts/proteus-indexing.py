@@ -1,8 +1,6 @@
 from __future__ import print_function
 
 import sys
-from re import sub
-import HTMLParser
 
 from pyspark import SparkContext
 from pyspark.sql import SQLContext, Row
