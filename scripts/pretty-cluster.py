@@ -19,6 +19,7 @@ def guessFormat(path, default="json"):
     else:
         return (default, {})
 
+## This should be made obsolete by including links in document records.
 def formatURL(url, corpus, id, pages, regions):
     if corpus == 'ca':
         r = regions[0]
@@ -44,7 +45,7 @@ if __name__ == "__main__":
     ## Should do more field renaming in meta to avoid clashing with fields in raw.
     meta = sqlContext.read.json(sys.argv[1])\
            .withColumnRenamed('lang', 'series_lang')\
-           .withColumnRenamed('id', 'series').dropDuplicates(['series'])
+           .dropDuplicates(['series'])
     
     df = sqlContext.read.load(sys.argv[2])
     
