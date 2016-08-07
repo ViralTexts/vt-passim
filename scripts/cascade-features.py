@@ -23,7 +23,8 @@ def clusterFeatures(c, gap):
     res = []
     for d in range(n):
         dst = wits[d]
-        # Add root attachment here.
+        res.append(Row(cluster=long(c[0]), src=0, dst=d+1, label=1,
+                       raw=["root", "root:" + dst.series]))
         for s in range(n):
             src = wits[s]
             if (s != d) and (abs(dst.day - src.day) < gap):
@@ -42,15 +43,10 @@ def featureGradients(c, w):
     n = max(map(lambda r: r.dst, c[1])) + 1
 
     numL = np.zeros((n, n))
-    numL[0] = -1                # Should do root-attachment features here.
     denL = np.zeros((n, n))
-    denL[0] = -1                # Should do root-attachment features here.
     for r in c[1]:
         score = -np.exp(w[np.array(r.features.indices)].dot(r.features.values))
-        if r.label == 1:
-            numL[r.src, r.dst] = score
-        else:
-            numL[r.src, r.dst] = 0
+        numL[r.src, r.dst] = score if r.label == 1 else 0
         denL[r.src, r.dst] = score
     numL += np.diag(-numL.sum(axis=0))
     denL += np.diag(-denL.sum(axis=0))
