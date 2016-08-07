@@ -8,31 +8,29 @@ from math import log
 
 from pyspark import SparkContext
 from pyspark.sql import SQLContext, Row
-from pyspark.sql.functions import abs as colabs, col, datediff, lit, udf, when, explode, desc, sum as gsum
-from pyspark.sql.types import StringType, ArrayType
+from pyspark.sql.functions import col, datediff, lit, udf, when, desc, sum as gsum
 from pyspark.ml.feature import CountVectorizer
 
-def maxGap(pair):
-    (cluster, days) = pair
-    udays = sorted(set(days))
-    if len(udays) < 2:
-        return (cluster, 0)
-    else:
-        return (cluster, int(np.max(np.ediff1d(udays))))
-
-def pairFeatures(parent, child, pday, cday):
-    if cday == pday:
-        lag = 0.1
-    else:
-        lag = abs(cday - pday)      # throw away the sign to allow learning
-    lagBin = str(int(log(lag)))
-    return ["parent:" + parent, "child:" + child, "pair:" + parent + ":" + child,
+def pairFeatures(sseries, dseries, sday, dday):
+    lag = abs(dday - sday)      # throw away the sign to allow learning
+    lagBin = str(int(log(lag))) if lag > 0 else '-inf'
+    return ["src:" + sseries, "dst:" + dseries, "pair:" + sseries + ":" + dseries,
             "lag:" + lagBin]
 
-def numberWitnesses(c):
-    wits = c[1]
-    return [Row(wid=idx+1, **(r.asDict())) for r, idx
-            in zip(sorted(wits, key=lambda w: w.date + ':' + w.series), range(len(wits)))]
+def clusterFeatures(c, gap):
+    wits = sorted(c[1], key=lambda w: w.date + ':' + w.series)
+    n = len(wits)
+    res = []
+    for d in range(n):
+        dst = wits[d]
+        # Add root attachment here.
+        for s in range(n):
+            src = wits[s]
+            if (s != d) and (abs(dst.day - src.day) < gap):
+                res.append(Row(cluster=long(c[0]), src=s+1, dst=d+1,
+                               label=(1 if dst.day > src.day else 0),
+                               raw=pairFeatures(src.series, dst.series, src.day, dst.day)))
+    return res
 
 def padUpleft(m):
     size = m.shape[0]
@@ -41,33 +39,31 @@ def padUpleft(m):
                           axis=1)
 
 def featureGradients(c, w):
-    n = max(map(lambda r: r.wid2, c[1])) + 1
+    n = max(map(lambda r: r.dst, c[1])) + 1
 
-    Lnum = np.zeros((n, n))
-    Lnum[0] = -1                # Should do root-attachment features here.
-    Lden = np.zeros((n, n))
-    Lden[0] = -1                # Should do root-attachment features here.
+    numL = np.zeros((n, n))
+    numL[0] = -1                # Should do root-attachment features here.
+    denL = np.zeros((n, n))
+    denL[0] = -1                # Should do root-attachment features here.
     for r in c[1]:
         score = -np.exp(w[np.array(r.features.indices)].dot(r.features.values))
         if r.label == 1:
-            Lnum[r.wid, r.wid2] = score
+            numL[r.src, r.dst] = score
         else:
-            Lnum[r.wid, r.wid2] = 0
-        Lden[r.wid, r.wid2] = score
-    Lnum += np.diag(-Lnum.sum(axis=0))
-    Lden += np.diag(-Lden.sum(axis=0))
+            numL[r.src, r.dst] = 0
+        denL[r.src, r.dst] = score
+    numL += np.diag(-numL.sum(axis=0))
+    denL += np.diag(-denL.sum(axis=0))
 
-    invLnum = padUpleft(inv(Lnum[1:,1:]))
-    invLden = padUpleft(inv(Lden[1:,1:]))
+    numLinv = padUpleft(inv(numL[1:,1:]))
+    denLinv = padUpleft(inv(denL[1:,1:]))
 
     fgrad = []
     for r in c[1]:
-        mom = r.wid
-        kid = r.wid2
-        if mom == kid:
-            mom = 0
-        grad = -Lnum[mom, kid] * (invLnum[kid, mom] - invLnum[kid, kid]) + \
-               Lden[mom, kid] * (invLden[kid, mom] - invLden[kid, kid])
+        mom = r.src
+        kid = r.dst
+        grad = -numL[mom, kid] * (numLinv[kid, mom] - numLinv[kid, kid]) + \
+               denL[mom, kid] * (denLinv[kid, mom] - denLinv[kid, kid])
         fgrad += [(long(f), float(grad * v)) for f, v in zip(r.features.indices, r.features.values)]
 
     return fgrad
@@ -79,31 +75,17 @@ if __name__ == "__main__":
     sc = SparkContext(appName='Cascade Features')
     sqlContext = SQLContext(sc)
     
-    raw = sqlContext.read.load(sys.argv[1])
-    df = raw.dropDuplicates(['cluster', 'series', 'date'])\
-            .withColumn('day', datediff(col('date'), lit('1970-01-01')))\
-            .na.drop(subset=['day'])\
-            .select('cluster', 'series', 'date', 'day')\
-            .rdd.groupBy(lambda r: r.cluster)\
-            .flatMap(lambda c: numberWitnesses(c))\
-            .toDF()
-
-    df2 = df.select([col(x).alias(x + '2') for x in df.columns])
-
     gap = 730
 
-    # We should use self-matches for root attachment
-    pairs = df.join(df2, (df.cluster == df2.cluster2) \
-                    & (df.wid != df2.wid2) & (colabs(df.day - df2.day2) < gap))
+    raw = sqlContext.read.load(sys.argv[1])
+    feats = raw.dropDuplicates(['cluster', 'series', 'date'])\
+            .withColumn('day', datediff(col('date'), lit('1970-01-01')))\
+            .na.drop(subset=['day'])\
+            .rdd.groupBy(lambda r: r.cluster)\
+            .flatMap(lambda c: clusterFeatures(c, gap))\
+            .toDF()
 
-    getPairFeatures = udf(lambda series, series2, day, day2: pairFeatures(series, series2, day, day2),
-                          ArrayType(StringType()))
-
-    feats = pairs.withColumn('label', when(pairs.day2 > pairs.day, 1).otherwise(0))\
-                 .withColumn('raw',
-                             getPairFeatures(pairs.series, pairs.series2, pairs.day, pairs.day2))
     feats.cache()
-
     cv = CountVectorizer(inputCol='raw', outputCol='features', minDF=4.0)
     interner = cv.fit(feats)      # alternate possibility: grab features only from label==1 edges
 
@@ -115,7 +97,7 @@ if __name__ == "__main__":
     full = interner.transform(feats)
     full.write.json(sys.argv[3])
     
-    fdata = full.select('cluster', 'wid', 'wid2', 'label', 'features')\
+    fdata = full.select('cluster', 'src', 'dst', 'label', 'features')\
                 .rdd.groupBy(lambda r: r.cluster)
     fdata.cache()
 
