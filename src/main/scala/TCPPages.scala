@@ -1,8 +1,7 @@
 package vtpassim
 
-import org.apache.spark.SparkContext
+import org.apache.spark.{SparkContext, SparkConf}
 import org.apache.spark.SparkContext._
-import org.apache.spark.SparkConf
 import org.apache.spark.sql.SQLContext
 
 import scala.collection.mutable.StringBuilder
@@ -121,7 +120,7 @@ object TCPPages {
           }
         }
       })
-      .toDF("id", "series", "seq", "title", "creator", "date",
+      .toDF("id", "book", "seq", "title", "creator", "date",
         "book_access", "pagecount", "page_access", "page_image", "page_thumb", "text")
       .write.save(args(1))
   }
