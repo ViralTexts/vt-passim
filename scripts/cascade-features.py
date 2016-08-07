@@ -8,7 +8,7 @@ from math import log
 
 from pyspark import SparkContext
 from pyspark.sql import SQLContext, Row
-from pyspark.sql.functions import col, datediff, lit, udf, when, desc, sum as gsum
+from pyspark.sql.functions import col, datediff, lit, sum as gsum
 from pyspark.ml.feature import CountVectorizer
 
 def pairFeatures(sseries, dseries, sday, dday):
