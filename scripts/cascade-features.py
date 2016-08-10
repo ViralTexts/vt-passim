@@ -42,25 +42,20 @@ def padUpleft(m):
 def clusterPosteriors(c, w):
     n = max(map(lambda r: r.dst, c[1])) + 1
 
-    numL = np.zeros((n, n))
-    denL = np.zeros((n, n))
+    L = np.zeros((n, n))
     for r in c[1]:
         score = -np.exp(w[np.array(r.features.indices)].dot(r.features.values))
-        numL[r.src, r.dst] = score if r.label == 1 else 0
-        denL[r.src, r.dst] = score
-    numL += np.diag(-numL.sum(axis=0))
-    denL += np.diag(-denL.sum(axis=0))
+        L[r.src, r.dst] = score if r.label == 1 else 0
+    L += np.diag(-L.sum(axis=0))
 
-    numLinv = padUpleft(inv(numL[1:,1:]))
-    denLinv = padUpleft(inv(denL[1:,1:]))
+    Linv = padUpleft(inv(L[1:,1:]))
 
     posts = []
     for r in c[1]:
         mom = r.src
         kid = r.dst
-        post = -numL[mom, kid] * (numLinv[kid, mom] - numLinv[kid, kid]) + \
-               denL[mom, kid] * (denLinv[kid, mom] - denLinv[kid, kid])
-        posts.append(Row(lpost=float(post), **(r.asDict())))
+        post = L[mom, kid] * (Linv[kid, mom] - Linv[kid, kid])
+        posts.append(Row(post=float(post), **(r.asDict())))
     return posts
 
 
