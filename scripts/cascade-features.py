@@ -106,15 +106,18 @@ def featurizeData(raw, gap, vocabFile, featFile):
 
 if __name__ == "__main__":
     argparser = argparse.ArgumentParser(description='Cascade features')
-    argparser.add_argument('-i', '--input', nargs=1)
-    argparser.add_argument('-p', '--posteriors', nargs='?', metavar='params')
+    argparser.add_argument('-f', '--input', help='Input data')
+    argparser.add_argument('-g', '--gap', default=730)
+    argparser.add_argument('-i', '--iterations', default=20)
+    argparser.add_argument('-r', '--rate', default=1.0)
+    argparser.add_argument('-v', '--variance', default=1.0)
+    argparser.add_argument('-p', '--posteriors', metavar='params')
     argparser.add_argument('outdir', help='Output directory')
     args = argparser.parse_args()
 
     sc = SparkContext(appName='Cascade Features')
     sqlContext = SQLContext(sc)
     
-    gap = 730
     vocabFile = args.outdir + "/vocab.gz"
     featFile = args.outdir + "/feats.parquet"
 
@@ -122,7 +125,7 @@ if __name__ == "__main__":
         full = sqlContext.read.load(featFile)
         vocab = np.loadtxt(vocabFile, 'string')
     except:
-        featurizeData(sqlContext.read.load(args.input[0]), gap, vocabFile, featFile)
+        featurizeData(sqlContext.read.load(args.input), args.gap, vocabFile, featFile)
         full = sqlContext.read.load(featFile)
         vocab = np.loadtxt(vocabFile, 'string')
 
@@ -139,19 +142,17 @@ if __name__ == "__main__":
                 .rdd.groupBy(lambda r: r.cluster)
     fdata.cache()
 
-    iter = 20
-    rate = 1e-06                # scale with training size?
-    var = 0.1
+    rate = args.rate            # scale with training size?
 
-    for i in range(iter):
+    for i in range(args.iterations):
         grad = fdata.flatMap(lambda c: clusterGradients(c, w)).toDF(['feat', 'grad'])\
                     .groupBy('feat').agg(gsum('grad').alias('grad'))\
                     .collect()
         update = np.zeros(fcount)
         for g in grad:
             update[g.feat] = g.grad
-        if var > 0:
-            update += w / var
+        if args.variance > 0:
+            update += w / args.variance
         w -= rate * update
         print(update)
         np.savetxt("%s/iter%03d.gz" % (args.outdir, i), w)
