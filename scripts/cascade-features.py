@@ -32,11 +32,15 @@ def clusterFeatures(c, gap):
                                raw=pairFeatures(src.series, dst.series, src.day, dst.day)))
     return res
 
-def padUpleft(m):
-    size = m.shape[0]
-    return np.concatenate((np.zeros((size+1, 1)),
-                           np.concatenate((np.zeros((1, size)), m), axis=0)),
+def laplaceGradient(L):
+    size = L.shape[0]
+    Linv = np.concatenate((np.zeros((size, 1)),
+                           np.concatenate((np.zeros((1, size-1)),
+                                           inv(L[1:,1:]).transpose()), axis=0)),
                           axis=1)
+    diag = Linv.diagonal()
+    return np.apply_along_axis(lambda v: v - diag, 0, Linv)
+    
 
 ## Should figure out how to reuse this in clusterGradients
 def clusterPosteriors(c, w):
@@ -48,13 +52,13 @@ def clusterPosteriors(c, w):
         L[r.src, r.dst] = score if r.label == 1 else 0
     L += np.diag(-L.sum(axis=0))
 
-    Linv = padUpleft(inv(L[1:,1:]))
+    Lgrad = laplaceGradient(L)
 
     posts = []
     for r in c[1]:
         mom = r.src
         kid = r.dst
-        post = L[mom, kid] * (Linv[kid, mom] - Linv[kid, kid])
+        post = L[mom, kid] * Lgrad[mom, kid]
         posts.append(Row(post=float(post), **(r.asDict())))
     return posts
 
@@ -71,15 +75,14 @@ def clusterGradients(c, w):
     numL += np.diag(-numL.sum(axis=0))
     denL += np.diag(-denL.sum(axis=0))
 
-    numLinv = padUpleft(inv(numL[1:,1:]))
-    denLinv = padUpleft(inv(denL[1:,1:]))
+    numLgrad = laplaceGradient(numL)
+    denLgrad = laplaceGradient(denL)
 
     fgrad = []
     for r in c[1]:
         mom = r.src
         kid = r.dst
-        grad = -numL[mom, kid] * (numLinv[kid, mom] - numLinv[kid, kid]) + \
-               denL[mom, kid] * (denLinv[kid, mom] - denLinv[kid, kid])
+        grad = -numL[mom, kid] * numLgrad[mom, kid] + denL[mom, kid] * denLgrad[mom, kid]
         fgrad += [(long(f), float(grad * v)) for f, v in zip(r.features.indices, r.features.values)]
 
     return fgrad
