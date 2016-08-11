@@ -20,9 +20,15 @@ def clusterFeatures(c, gap):
     wits = sorted(c[1], key=lambda w: w.date + ':' + w.series)
     n = len(wits)
     res = []
+    curday = wits[0].day - gap
+    prevday = curday
     for d in range(n):
         dst = wits[d]
-        res.append(Row(cluster=long(c[0]), src=0, dst=d+1, label=1,
+        if dst.day > curday:
+            prevday = curday
+            curday = dst.day
+        allowRoot = 1 if ( curday - prevday >= gap ) else 0
+        res.append(Row(cluster=long(c[0]), src=0, dst=d+1, label=allowRoot,
                        raw=["root:" + dst.series]))
         for s in range(n):
             src = wits[s]
