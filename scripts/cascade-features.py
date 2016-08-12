@@ -1,20 +1,22 @@
 from __future__ import print_function
 
-import argparse
+import argparse, re
 import numpy as np
 from numpy.linalg import inv
-from math import log
 
 from pyspark import SparkContext
 from pyspark.sql import SQLContext, Row
 from pyspark.sql.functions import col, datediff, lit, sum as gsum
-from pyspark.ml.feature import CountVectorizer
+from pyspark.ml.feature import CountVectorizer, VectorAssembler
 
 def pairFeatures(sseries, dseries, sday, dday):
     lag = abs(dday - sday)      # throw away the sign to allow learning
-    lagBin = str(int(log(lag))) if lag > 0 else '-inf'
+    lagBin = str(int(np.log(lag))) if lag > 0 else '-inf'
     return ["src:" + sseries, "dst:" + dseries, "pair:" + sseries + ":" + dseries,
             "lag:" + lagBin]
+
+def normalizeText(s):
+    return re.sub("[^\w\s]", "", re.sub("\s+", " ", s.strip().lower()))
 
 def clusterFeatures(c, gap):
     wits = sorted(c[1], key=lambda w: w.date + ':' + w.series)
@@ -24,17 +26,23 @@ def clusterFeatures(c, gap):
     prevday = curday
     for d in range(n):
         dst = wits[d]
+        dstClean = normalizeText(dst.text)
         if dst.day > curday:
             prevday = curday
             curday = dst.day
         allowRoot = 1 if ( curday - prevday >= gap ) else 0
         res.append(Row(cluster=long(c[0]), src=0, dst=d+1, label=allowRoot,
+                       longer=0.0, shorter=0.0,
                        raw=["root:" + dst.series]))
         for s in range(n):
             src = wits[s]
             if (s != d) and (abs(dst.day - src.day) < gap):
+                srcClean = normalizeText(src.text)
+                growth = (len(dstClean) - len(srcClean))/float(len(srcClean))
                 res.append(Row(cluster=long(c[0]), src=s+1, dst=d+1,
                                label=(1 if dst.day > src.day else 0),
+                               longer=growth if growth > 0 else 0.0,
+                               shorter=abs(growth) if growth < 0 else 0.0,
                                raw=pairFeatures(src.series, dst.series, src.day, dst.day)))
     return res
 
@@ -50,7 +58,7 @@ def clusterPosteriors(c, w):
 
     L = np.zeros((n, n))
     for r in c[1]:
-        score = -np.exp(w[np.array(r.features.indices)].dot(r.features.values))
+        score = -np.exp(r.features.dot(w))
         L[r.src, r.dst] = score if r.label == 1 else 0
     L += np.diag(-L.sum(axis=0))
 
@@ -70,7 +78,7 @@ def clusterGradients(c, w):
     numL = np.zeros((n, n))
     denL = np.zeros((n, n))
     for r in c[1]:
-        score = -np.exp(w[np.array(r.features.indices)].dot(r.features.values))
+        score = -np.exp(r.features.dot(w))
         numL[r.src, r.dst] = score if r.label == 1 else 0
         denL[r.src, r.dst] = score
     numL += np.diag(-numL.sum(axis=0))
@@ -97,13 +105,17 @@ def featurizeData(raw, gap, vocabFile, featFile):
             .flatMap(lambda c: clusterFeatures(c, gap))\
             .toDF()
 
+    realCols = ['longer', 'shorter']
+
     feats.cache()
-    cv = CountVectorizer(inputCol='raw', outputCol='features', minDF=4.0)
+    cv = CountVectorizer(inputCol='raw', outputCol='categorial', minDF=4.0)
     interner = cv.fit(feats)      # alternate possibility: grab features only from label==1 edges
-    full = interner.transform(feats)
+    combiner = VectorAssembler(inputCols=realCols + ['categorial'], outputCol='features')
+    # I don't think a Pipeline will work here since we need to get the interner.vocabulary
+    full = combiner.transform(interner.transform(feats)).drop('categorial')
 
     full.write.parquet(featFile)
-    np.savetxt(vocabFile, np.array(interner.vocabulary), fmt='%s')
+    np.savetxt(vocabFile, np.array(realCols + interner.vocabulary), fmt='%s')
     feats.unpersist()
 
 if __name__ == "__main__":
@@ -156,7 +168,6 @@ if __name__ == "__main__":
         if args.variance > 0:
             update += w / args.variance
         w -= rate * update
-        # print(update)
         np.savetxt("%s/iter%03d.gz" % (args.outdir, i), w)
     
     sc.stop()
