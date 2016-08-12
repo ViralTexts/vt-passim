@@ -53,7 +53,8 @@ def padUpLeft(m):
                           axis=1)
 
 def laplaceGradient(L):
-    return padUpLeft(np.transpose(np.linalg.inv(L[1:, 1:])))
+    tinv = padUpLeft(np.transpose(np.linalg.inv(L[1:, 1:])))
+    return tinv - tinv.diagonal()
 
 ## Should figure out how to reuse this in clusterGradients
 def clusterPosteriors(c, w):
@@ -71,7 +72,7 @@ def clusterPosteriors(c, w):
     for r in c[1]:
         mom = r.src
         kid = r.dst
-        post = L[mom, kid] * (Lgrad[mom, kid] - Lgrad[kid, kid])
+        post = L[mom, kid] * Lgrad[mom, kid]
         posts.append(Row(post=float(post), **(r.asDict())))
     return posts
 
@@ -94,8 +95,7 @@ def clusterGradients(c, w):
     for r in c[1]:
         mom = r.src
         kid = r.dst
-        grad = -numL[mom, kid] * (numLgrad[mom, kid] - numLgrad[kid, kid]) + \
-               denL[mom, kid] * (denLgrad[mom, kid] - denLgrad[kid, kid])
+        grad = -numL[mom, kid] * numLgrad[mom, kid] + denL[mom, kid] * denLgrad[mom, kid]
         fgrad += [(long(f), float(grad * v)) for f, v in zip(r.features.indices, r.features.values)]
 
     return fgrad
