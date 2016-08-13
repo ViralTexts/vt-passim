@@ -26,13 +26,15 @@ object ONB {
       (t \ "newspaper" \ "issue").flatMap { issue =>
         val book_access = (issue \ "path").text
         val date = book_access match { case datePat(y,m,d) => s"$y-$m-$d" case _ => "" }
-        (issue \ "pages" \ "page").map { page =>
-          val seqstr = (page \ "number").text
-          ONBRecord(s"$series/$date/$seqstr", s"$series/$date",
-            series, seqstr.toInt, title, date,
-            (page \ "text").text.replaceAll("&", "&amp;").replaceAll("<", "&lt;"),
-            (page \ "pagePath").text, book_access)
-        }
+        if ( date == "" ) Nil
+        else
+          (issue \ "pages" \ "page").map { page =>
+            val seqstr = (page \ "number").text match { case "" => "0" case x => x }
+            ONBRecord(s"$series/$date/$seqstr", s"$series/$date",
+              series, seqstr.toInt, title, date,
+              (page \ "text").text.replaceAll("&", "&amp;").replaceAll("<", "&lt;"),
+              (page \ "pagePath").text, book_access)
+          }
       }
     }
       .toDF
