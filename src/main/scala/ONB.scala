@@ -21,7 +21,7 @@ object ONB {
       .flatMap { f =>
       val t = scala.xml.XML.loadString(f._2)
       val name = t \ "newspaper" \ "name"
-      val series = (name \ "@anno_id").text + (name \ "@anno.id").text
+      val series = (name \ "@anno_id").text + (name \ "@anno-id").text
       val title = name.text
       (t \ "newspaper" \ "issue").flatMap { issue =>
         val book_access = (issue \ "path").text
