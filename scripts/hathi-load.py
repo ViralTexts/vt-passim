@@ -3,7 +3,7 @@ from __future__ import print_function
 import sys
 from pyspark import SparkContext
 from pyspark.sql import SQLContext
-from pyspark.sql.functions import col
+from pyspark.sql.functions import col, regexp_replace
 
 def hathiRecord(r):
     return dict([(f["@name"], f["#VALUE"]) for f in r.field])
@@ -24,6 +24,8 @@ if __name__ == "__main__":
         .withColumnRenamed('htid', 'book') \
         .withColumnRenamed('content', 'text') \
         .withColumnRenamed('year', 'date') \
+        .withColumn('text',
+                    regexp_replace(regexp_replace(col('text'), '&', '&amp;'), '<', '&lt;')) \
         .repartition(200) \
         .write.save(sys.argv[2])
     
