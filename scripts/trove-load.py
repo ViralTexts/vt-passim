@@ -18,8 +18,10 @@ if __name__ == "__main__":
     df.select(concat(lit('trove/'), df.id).alias('id'),
               concat_ws('/', lit('trove'), df.titleId, df.date).alias('issue'),
               concat(lit('trove/'), df.titleId).alias('series'),
-              df.date, df.firstPageId, df.firstPageSeq.alias('seq'),
+              df.date, df.firstPageId, df.firstPageSeq.cast('int').alias('seq'),
               df.heading.alias('title'), df.category,
-              regexp_replace(df.fulltext, '<', '&lt;').alias('text')).write.save(sys.argv[2])
+              regexp_replace(regexp_replace(df.fulltext, '&', '&amp;'),
+                             '<', '&lt;').alias('text'))\
+      .write.save(sys.argv[2])
 
     sc.stop()
