@@ -6,9 +6,9 @@ from datetime import *
 
 from pyspark import SparkContext
 from pyspark.sql import SQLContext
-from pyspark.sql.functions import col, lit, concat, concat_ws, regexp_replace, split, udf
+from pyspark.sql.functions import col, regexp_replace, split, udf
 
-def redate(s):
+def normdate(s):
     try:
         return parser.parse(s, default=datetime(1800,1,1), fuzzy=True).date().isoformat()
     except ValueError:
@@ -25,8 +25,8 @@ if __name__ == "__main__":
 
     series = sqlContext.read.json(sys.argv[2])
 
-    convdate = udf(lambda s: redate(s))
-    mkurl = udf(lambda series, id: 'http://ebooks.library.cornell.edu/cgi/t/text/text-idx?c=%s;idno=%s' % (series, id))
+    convdate = udf(lambda s: normdate(s))
+    mkurl = udf(lambda ser, id: 'http://ebooks.library.cornell.edu/cgi/t/text/text-idx?c=%s;idno=%s' % (ser, id))
 
     df = raw.select((split(col('docno'), '_')[0]).alias('moaseries'),
                     (split(col('docno'), '_')[1]).alias('id'),
