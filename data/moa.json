@@ -11,6 +11,15 @@
 {"moaseries": "cont", "series": "/lccn/05014045", "title": "The Continental monthly", "startdate": "1862-01-01", "enddate": "1864-12-01"}
 {"moaseries": "gala", "series": "/lccn/05014047", "title": "The galaxy", "startdate": "1866-05-01", "enddate": "1878-01-01"}
 {"moaseries": "harp", "series": "/lccn/85642823", "title": "Harper's new monthly magazine", "startdate": "1850-06-01", "enddate": "1899-05-01"}
+{"moaseries": "intr", "series": "/lccn/sf89099281", "title": "International weekly miscellany of literature, art, and science", "startdate": "1850-07-01", "enddate": "1850-08-26"}
+{"moaseries": "intr", "series": "/lccn/sf89099280", "title": "The International miscellany of literature, art, and science", "startdate": "1850-10-01", "enddate": "1850-11-01"}
+{"moaseries": "intr", "series": "/lccn/03012437", "title": "The International magazine of literature, art, and science", "startdate": "1850-12-01", "enddate": "1852-04-01"}
+{"moaseries": "livn", "series": "/lccn/2001210206", "title": "The Living age", "startdate": "1844-05-11", "enddate": "1844-08-10"}
+{"moaseries": "livn", "series": "/lccn/2001210207", "title": "Littell's living age", "startdate": "1844-08-17", "enddate": "1896-12-26"}
+{"moaseries": "livn", "series": "/lccn/04012671", "title": "The Living age", "startdate": "1897-01-02", "enddate": "1941"}
+{"moaseries": "nora", "series": "/lccn/86655211", "title": "The North-American review and miscellaneous journal", "startdate": "1815-01-01", "enddate": "1821-04-01"}
+{"moaseries": "nora", "series": "/lccn/04012673", "title": "The North American review", "startdate": "1821-07-01", "enddate": "2010"}
+{"moaseries": "nwen", "series": "/lccn/05014338", "title": "The New-England magazine", "startdate": "1831-07-01", "enddate": "1835-12-01"}
 {"moaseries": "oldg", "series": "/lccn/61058056", "title": "Old guard", "startdate": "1863-01-01", "enddate": "1867-12-01"}
 {"moaseries": "punc", "series": "/lccn/10005788", "title": "Punchinello", "startdate": "1870-04-02", "enddate": "1870-12-24"}
 {"moaseries": "putn", "series": "/lccn/2001210210", "title": "Putnam's monthly", "startdate": "1853-01-01", "enddate": "1857-09-01"}
