@@ -2,7 +2,6 @@
 {"moaseries": "amwh", "series": "/lccn/sn77021749", "title": "The American review : a Whig journal of politics, literature, art, and science", "startdate": "1845-01-01", "enddate": "1849-12-01"}
 {"moaseries": "amwh", "series": "/lccn/02004276", "title": "The American Whig review", "startdate": "1850-01-01", "enddate": "1852-11-01"}
 {"moaseries": "atla", "series": "/lccn/04012666", "title": "Atlantic Monthly", "startdate": "1857-11-01", "enddate": "1901-12-01"}
-{"moaseries": "scia", "series": "/lccn/04017574", "title": "Scientific American", "startdate": "1846-09-26", "enddate": "1869-12-25"}
 {"moaseries": "bays", "series": "/lccn/05014049", "title": "Bay State Monthly", "startdate": "1884-01-01", "enddate": "1885-11-01"}
 {"moaseries": "bays", "series": "/lccn/2001210211", "title": "The New England magazine and Bay State monthly", "startdate": "1886-01-01", "enddate": "1886-06-01"}
 {"moaseries": "newe", "series": "/lccn/2001210211", "title": "The New England magazine and Bay State monthly", "startdate": "1886-11-01", "enddate": "1887-04-01"}
@@ -12,3 +11,14 @@
 {"moaseries": "cont", "series": "/lccn/05014045", "title": "The Continental monthly", "startdate": "1862-01-01", "enddate": "1864-12-01"}
 {"moaseries": "gala", "series": "/lccn/05014047", "title": "The galaxy", "startdate": "1866-05-01", "enddate": "1878-01-01"}
 {"moaseries": "harp", "series": "/lccn/85642823", "title": "Harper's new monthly magazine", "startdate": "1850-06-01", "enddate": "1899-05-01"}
+{"moaseries": "oldg", "series": "/lccn/61058056", "title": "Old guard", "startdate": "1863-01-01", "enddate": "1867-12-01"}
+{"moaseries": "punc", "series": "/lccn/10005788", "title": "Punchinello", "startdate": "1870-04-02", "enddate": "1870-12-24"}
+{"moaseries": "putn", "series": "/lccn/2001210210", "title": "Putnam's monthly", "startdate": "1853-01-01", "enddate": "1857-09-01"}
+{"moaseries": "putn", "series": "/lccn/02016165", "title": "Putnam's magazine of literature, science, art, and national interests", "startdate": "1868-01-01", "enddate": "1870-07-01"}
+{"moaseries": "scia", "series": "/lccn/04017574", "title": "Scientific American", "startdate": "1846-09-26", "enddate": "1869-12-25"}
+{"moaseries": "scmo", "series": "/lccn/02025593", "title": "Scribners monthly", "startdate": "1870-11-01", "enddate": "1881-10-01"}
+{"moaseries": "scri", "series": "/lccn/04012676", "title": "Scribner's magazine", "startdate": "1887-01-01", "enddate": "1896-06-01"}
+{"moaseries": "usde", "series": "/lccn/sn99047371", "title": "The United States magazine and Democratic review", "startdate": "1837-10-01", "enddate": "1851-12-01"}
+{"moaseries": "usde", "series": "/lccn/2001210208", "title": "Democratic review", "startdate": "1852-01-01", "enddate": "1852-11-01"}
+{"moaseries": "usde", "series": "/lccn/2001210209", "title": "The United States review", "startdate": "1853-01-01", "enddate": "1855-12-01"}
+{"moaseries": "usde", "series": "/lccn/05003430", "title": "The United States democratic review", "startdate": "1856-01-01", "enddate": "1859-10-01"}
