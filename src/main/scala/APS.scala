@@ -30,18 +30,26 @@ object APS {
 
           zfile.entries
             .filter { _.getName.endsWith(".xml") }
-            .map { f =>
+            .flatMap { f =>
             val t = scala.xml.XML.load(zfile.getInputStream(f))
             val series = (t \ "Publication" \ "PublicationID").text
             val sdate = (t \ "NumericPubDate").text
-            val date = Seq(sdate.substring(0, 4), sdate.substring(4, 6), sdate.substring(6, 8))
-              .mkString("-")
-            ("aps/" + (t \ "RecordID").text,
-              "aps/" + series + "/" + date,
-              series,
-              date,
-              (t \ "FullText").text.replaceAll("&", "&amp;").replaceAll("<", "&lt;")
-                .replaceAll("([ ]{4,})", "\n$1"))
+            val text = (t \ "FullText").text.replaceAll("&", "&amp;").replaceAll("<", "&lt;")
+              .replaceAll("([ ]{4,})", "\n$1")
+
+            if ( text != "" && series != "" && sdate != "" ) {
+              val date = Seq(sdate.substring(0, 4), sdate.substring(4, 6), sdate.substring(6, 8))
+                .mkString("-")
+              Some(("aps/" + (t \ "RecordID").text,
+                "aps/" + series + "/" + date,
+                series, date, text,
+                (t \ "RecordTitle").text,
+                (t \ "ObjectType").text,
+                (t \ "URLFullText").text,
+                (t \ "LanguageCode").text.toLowerCase,
+                (t \ "Contributor" \ "OriginalForm").text))
+            } else
+              None
           }
         } catch {
           case e: Exception =>
@@ -49,9 +57,12 @@ object APS {
             None
         }
       }
-      .toDF("id", "issue", "apsseries", "date", "text")
+      .toDF("id", "issue", "apsseries", "date", "text",
+        "heading", "category", "url", "lang", "contributor")
       .join(series, Seq("apsseries"), "left_outer")
+      .filter { ('startdate.isNull || 'startdate <= 'date) && ('enddate.isNull || 'enddate >= 'date) }
       .withColumn("series", coalesce('series, concat(lit("aps/"), 'apsseries)))
+      .drop("apsseries", "startdate", "enddate", "title")
       .write.save(args(2))
   }
 }
