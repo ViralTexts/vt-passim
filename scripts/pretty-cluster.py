@@ -15,7 +15,7 @@ def guessFormat(path, default="json"):
     elif path.endswith(".parquet"):
         return ("parquet", {})
     elif path.endswith(".csv"):
-        return ("com.databricks.spark.csv", {'header': 'true'})
+        return ("csv", {'header': 'true'})
     else:
         return (default, {})
 
@@ -44,33 +44,29 @@ if __name__ == "__main__":
 
     ## Should do more field renaming in meta to avoid clashing with fields in raw.
     meta = sqlContext.read.json(sys.argv[1])\
-           .withColumnRenamed('lang', 'series_lang')\
            .dropDuplicates(['series'])
     
-    df = sqlContext.read.load(sys.argv[2])
-    
-    if len(sys.argv) >= 5:
-        df.registerTempTable("clusters")
-        print(sys.argv[4])
-        raw = df.join(df.filter(sys.argv[4]).select("cluster").distinct(), 'cluster')
-    else:
-        raw = df
-
     h = HTMLParser.HTMLParser()
     removeTags = udf(lambda s: h.unescape(sub("</?[A-Za-z][^>]*>", "", s)), StringType())
     constructURL = udf(lambda url, corpus, id, pages, regions: formatURL(url, corpus, id, pages, regions),
                        StringType())
 
-    raw\
-        .withColumnRenamed("title", "heading")\
-        .withColumn("url", constructURL(raw.url, raw.corpus, raw.id, raw.pages, raw.regions))\
-        .drop("locs")\
-        .drop("pages")\
-        .drop("regions")\
-        .withColumn("text", removeTags(raw.text))\
-        .join(meta, 'series', 'left_outer')\
-        .orderBy(desc("size"), "cluster", "date", "id", "begin")\
-        .write.format(outputFormat).options(**outputOptions).save(outpath)
+    df = sqlContext.read.load(sys.argv[2]) \
+        .withColumnRenamed('title', 'doc_title')\
+        .withColumnRenamed('lang', 'doc_lang')\
+        .withColumn('url', constructURL(col('url'), col('corpus'), col('id'), col('pages'), col('regions')))\
+        .drop('locs', 'pages', 'regions')\
+        .withColumn('text', removeTags(col('text')))\
+        .join(meta, 'series', 'left_outer')
+
+    if len(sys.argv) >= 5:
+        print(sys.argv[4])
+        res = df.join(df.filter(sys.argv[4]).select('cluster').distinct(), 'cluster')
+    else:
+        res = df
+
+    res.orderBy(desc('size'), 'cluster', 'date', 'id', 'begin')\
+       .write.format(outputFormat).options(**outputOptions).save(outpath)
 
     sc.stop()
     
