@@ -2,7 +2,6 @@ from __future__ import print_function
 
 import sys
 from re import sub
-import HTMLParser
 
 from pyspark import SparkContext
 from pyspark.sql import SQLContext
@@ -11,22 +10,20 @@ from pyspark.sql.types import StringType
 
 def guessFormat(path, default="json"):
     if path.endswith(".json"):
-        return ("json", {})
+        return ("json", {'compression': 'gzip'})
     elif path.endswith(".parquet"):
         return ("parquet", {})
     elif path.endswith(".csv"):
-        return ("csv", {'header': 'true'})
+        return ("csv", {'header': 'true', 'compression': 'gzip'})
     else:
         return (default, {})
 
 ## This should be made obsolete by including links in document records.
-def formatURL(url, corpus, id, pages, regions):
-    if corpus == 'ca':
+def formatURL(url, corpus, id, regions):
+    if corpus == 'ca' and regions != None and len(regions) > 0:
         r = regions[0]
         return "%s/print/image_600x600_from_%d%%2C%d_to_%d%%2C%d/" \
             % (url, r.x/3, r.y/3, (r.x + r.w)/3, (r.y + r.h)/3)
-    elif corpus == 'onb':
-        return "%s&seite=%s" % (sub("&amp;", "&", url), pages[0])
     elif corpus == 'trove':
         return "http://trove.nla.gov.au/ndp/del/article/%s" % sub("^trove/", "", id)
     else:
@@ -46,17 +43,14 @@ if __name__ == "__main__":
     meta = sqlContext.read.json(sys.argv[1])\
            .dropDuplicates(['series'])
     
-    h = HTMLParser.HTMLParser()
-    removeTags = udf(lambda s: h.unescape(sub("</?[A-Za-z][^>]*>", "", s)), StringType())
-    constructURL = udf(lambda url, corpus, id, pages, regions: formatURL(url, corpus, id, pages, regions),
+    constructURL = udf(lambda url, corpus, id, regions: formatURL(url, corpus, id, regions),
                        StringType())
 
     df = sqlContext.read.load(sys.argv[2]) \
         .withColumnRenamed('title', 'doc_title')\
         .withColumnRenamed('lang', 'doc_lang')\
-        .withColumn('url', constructURL(col('url'), col('corpus'), col('id'), col('pages'), col('regions')))\
-        .drop('locs', 'pages', 'regions')\
-        .withColumn('text', removeTags(col('text')))\
+        .withColumn('url', constructURL(col('page_access'), col('corpus'), col('id'), col('regions')))\
+        .drop('locs').drop('pages').drop('regions')\
         .join(meta, 'series', 'left_outer')
 
     if len(sys.argv) >= 5:
