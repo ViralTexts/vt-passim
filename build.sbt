@@ -10,7 +10,7 @@ libraryDependencies += "org.apache.spark" %% "spark-core" % "2.0.0"
 libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.0.0"
 libraryDependencies += "org.apache.spark" %% "spark-graphx" % "2.0.0"
 
-libraryDependencies += "com.databricks" %% "spark-xml" % "0.3.3"
+libraryDependencies += "com.databricks" %% "spark-xml" % "0.4.0"
 
 libraryDependencies += "com.github.scopt" %% "scopt" % "3.5.0"
 
