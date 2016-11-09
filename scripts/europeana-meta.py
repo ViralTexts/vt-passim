@@ -13,11 +13,11 @@ def getSeries(fname):
     with zipfile.ZipFile(fname, 'r') as zf:
         names = zf.namelist()
         mfile = [f for f in names if f.endswith('.metadata.json')]
-        series = fname
+        series = 'europeana/' + sub('^.*newspapers-by-country/', '',
+                                    sub('[\x80-\xff]', '', fname).replace('.zip', ''))
         if len(mfile) > 0:
             m = json.loads(zf.read(mfile[0]))
-            series = m['identifier'][0]
-            return m
+            return {'series': series, 'title': m['title'][0], 'lang': m['language']}
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
