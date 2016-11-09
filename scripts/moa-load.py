@@ -7,11 +7,12 @@ from datetime import *
 from pyspark import SparkContext
 from pyspark.sql import SQLContext
 from pyspark.sql.functions import col, regexp_replace, split, udf
+from pyspark.sql.types import StringType
 
 def normdate(s):
     try:
         return parser.parse(s, default=datetime(1800,1,1), fuzzy=True).date().isoformat()
-    except ValueError:
+    except Exception:
         return None
 
 if __name__ == "__main__":
@@ -25,7 +26,7 @@ if __name__ == "__main__":
 
     series = sqlContext.read.json(sys.argv[2])
 
-    convdate = udf(lambda s: normdate(s))
+    convdate = udf(lambda s: normdate(s), StringType())
     mkurl = udf(lambda ser, id: 'http://ebooks.library.cornell.edu/cgi/t/text/text-idx?c=%s;idno=%s' % (ser, id))
 
     df = raw.select((split(col('docno'), '_')[0]).alias('moaseries'),
@@ -37,8 +38,8 @@ if __name__ == "__main__":
             .withColumn('url', mkurl(col('moaseries'), col('id')))
 
     df.join(series, (df.moaseries == series.moaseries) \
-            & (df.date >= series.startdate) & (df.date <= series.enddate))\
+            & (df.date >= series.startdate) & (df.date <= series.enddate), 'left_outer')\
         .drop('moaseries').drop('startdate').drop('enddate')\
         .write.save(sys.argv[3])
-    
+
     sc.stop()
