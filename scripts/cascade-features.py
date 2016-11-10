@@ -62,7 +62,7 @@ def clusterPosteriors(c, w):
 
     L = np.zeros((n, n))
     for r in c[1]:
-        score = -np.exp(r.features.dot(w))
+        score = -np.exp(w[np.array(r.features.indices)].dot(r.features.values))
         L[r.src, r.dst] = score if r.label == 1 else 0
     L += np.diag(-L.sum(axis=0))
 
@@ -82,7 +82,7 @@ def clusterGradients(c, w):
     numL = np.zeros((n, n))
     denL = np.zeros((n, n))
     for r in c[1]:
-        score = -np.exp(r.features.dot(w))
+        score = -np.exp(w[np.array(r.features.indices)].dot(r.features.values))
         numL[r.src, r.dst] = score if r.label == 1 else 0
         denL[r.src, r.dst] = score
     numL += np.diag(-numL.sum(axis=0))
@@ -108,17 +108,16 @@ def featurizeData(raw, gap, vocabFile, featFile):
             .flatMap(lambda c: clusterFeatures(c, gap))\
             .toDF()
 
-    realCols = ['longer', 'shorter']
-
     feats.cache()
-    cv = CountVectorizer(inputCol='raw', outputCol='categorial', minDF=4.0)
+    cv = CountVectorizer(inputCol='raw', outputCol='features', minDF=4.0)
     interner = cv.fit(feats)      # alternate possibility: grab features only from label==1 edges
-    combiner = VectorAssembler(inputCols=realCols + ['categorial'], outputCol='features')
-    # I don't think a Pipeline will work here since we need to get the interner.vocabulary
-    full = combiner.transform(interner.transform(feats)).drop('categorial')
+    full = interner.transform(feats)
+    # combiner = VectorAssembler(inputCols=realCols + ['categorial'], outputCol='features')
+    # # I don't think a Pipeline will work here since we need to get the interner.vocabulary
+    # full = combiner.transform(interner.transform(feats)).drop('categorial')
 
     full.write.parquet(featFile)
-    np.savetxt(vocabFile, np.array(realCols + interner.vocabulary), fmt='%s')
+    np.savetxt(vocabFile, np.array(interner.vocabulary), fmt='%s')
     feats.unpersist()
 
 if __name__ == "__main__":
