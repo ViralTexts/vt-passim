@@ -158,7 +158,7 @@ if __name__ == "__main__":
                 .rdd.groupBy(lambda r: r.cluster)
     fdata.cache()
 
-    rate = args.rate            # scale with training size?
+    rate = args.rate / fdata.count()            # scale with training size
 
     for i in range(args.iterations):
         grad = fdata.flatMap(lambda c: clusterGradients(c, w)).toDF(['feat', 'grad'])\
