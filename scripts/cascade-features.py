@@ -18,7 +18,8 @@ def normalizeText(s):
     return re.sub("[^\w\s]", "", re.sub("\s+", " ", s.strip().lower()))
 
 def clusterFeatures(c, gap):
-    wits = sorted(c[1], key=lambda w: w.date + ':' + w.series)
+    ## Sorting by string date needs to be consistent with numerical date
+    wits = sorted(c[1], key=lambda w: w.date + ' ' + w.series)
     n = len(wits)
     res = []
     curday = wits[0].day - gap
