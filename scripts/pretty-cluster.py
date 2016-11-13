@@ -5,8 +5,7 @@ from re import sub
 
 from pyspark import SparkContext
 from pyspark.sql import SQLContext
-from pyspark.sql.functions import col, udf, array_contains, explode, desc
-from pyspark.sql.types import StringType
+from pyspark.sql.functions import col, udf, array_contains, explode, desc, concat_ws
 
 def guessFormat(path, default="json"):
     if path.endswith(".json"):
@@ -14,7 +13,7 @@ def guessFormat(path, default="json"):
     elif path.endswith(".parquet"):
         return ("parquet", {})
     elif path.endswith(".csv"):
-        return ("csv", {'header': 'true', 'compression': 'gzip'})
+        return ("csv", {'header': 'true', 'compression': 'gzip', 'escape': '"'})
     else:
         return (default, {})
 
@@ -43,8 +42,7 @@ if __name__ == "__main__":
     meta = sqlContext.read.json(sys.argv[1])\
            .dropDuplicates(['series'])
     
-    constructURL = udf(lambda url, corpus, id, regions: formatURL(url, corpus, id, regions),
-                       StringType())
+    constructURL = udf(lambda url, corpus, id, regions: formatURL(url, corpus, id, regions))
 
     df = sqlContext.read.load(sys.argv[2]) \
         .withColumnRenamed('title', 'doc_title')\
@@ -53,14 +51,12 @@ if __name__ == "__main__":
         .drop('locs').drop('pages').drop('regions')\
         .join(meta, 'series', 'left_outer')
 
-    if len(sys.argv) >= 5:
-        print(sys.argv[4])
-        res = df.join(df.filter(sys.argv[4]).select('cluster').distinct(), 'cluster')
-    else:
-        res = df
+    filtered = df.join(df.filter(sys.argv[4]).select('cluster').distinct(), 'cluster') \
+               if len(sys.argv) >= 5 else df
 
-    res.orderBy(desc('size'), 'cluster', 'date', 'id', 'begin')\
-       .write.format(outputFormat).options(**outputOptions).save(outpath)
+    filtered.withColumn('lang', concat_ws(',', col('lang'))) \
+            .orderBy(desc('size'), 'cluster', 'date', 'id', 'begin')\
+            .write.format(outputFormat).options(**outputOptions).save(outpath)
 
     sc.stop()
     
