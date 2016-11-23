@@ -1,7 +1,6 @@
 package vtpassim
 
-import org.apache.spark.{SparkContext, SparkConf}
-import org.apache.spark.sql.SQLContext
+import org.apache.spark.sql.SparkSession
 import org.apache.hadoop.io.Text
 
 import collection.JavaConversions._
@@ -16,14 +15,14 @@ case class CARecord(id: String, issue: String, series: String, ed: String, seq: 
 object ChronAm {
   def cleanInt(s: String): Int = s.replaceFirst("\\.0*$", "").toInt
   def main(args: Array[String]) {
-    val conf = new SparkConf().setAppName("ChronAm Import")
-    val sc = new SparkContext(conf)
-    val sqlContext = new SQLContext(sc)
-    import sqlContext.implicits._
-    sc.hadoopConfiguration.set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
+    val spark = SparkSession.builder().appName("ChronAm Import").getOrCreate()
+    import spark.implicits._
+
+    spark.sparkContext.hadoopConfiguration
+      .set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
     val upref = "http://chroniclingamerica.loc.gov"
 
-    sc.newAPIHadoopFile(args(0), classOf[TarballInputFormat],
+    spark.sparkContext.newAPIHadoopFile(args(0), classOf[TarballInputFormat],
       classOf[TarballEntry], classOf[Text])
       .filter { _._1.getEntry.endsWith(".xml") }
       // .repartition(sc.getConf.getInt("spark.sql.shuffle.partitions", 200))
@@ -78,6 +77,7 @@ object ChronAm {
     }
       .toDF
       .write.save(args(1))
+    spark.stop()
   }
 }
 

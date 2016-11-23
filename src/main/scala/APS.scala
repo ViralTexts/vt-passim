@@ -1,25 +1,20 @@
 package vtpassim
 
-import org.apache.spark.{SparkContext, SparkConf}
-import org.apache.spark.sql.SQLContext
+import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions.{coalesce, concat, lit}
-
 import collection.JavaConversions._
-import scala.collection.mutable.{ArrayBuffer, StringBuilder}
-import scala.util.Try
 
 object APS {
   def main(args: Array[String]) {
-    val conf = new SparkConf().setAppName("APS Application")
-    val sc = new SparkContext(conf)
-    val sqlContext = new SQLContext(sc)
-    import sqlContext.implicits._
+    val spark = SparkSession.builder().appName("APS Application").getOrCreate()
+    import spark.implicits._
 
-    sc.hadoopConfiguration.set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
+    spark.sparkContext.hadoopConfiguration
+      .set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
-    val series = sqlContext.read.json(args(1))
+    val seriesMap = spark.read.json(args(1))
 
-    sc.binaryFiles(args(0), sc.defaultParallelism)
+    spark.sparkContext.binaryFiles(args(0), spark.sparkContext.defaultParallelism)
       .filter(_._1.endsWith(".zip"))
       .flatMap { x =>
         try {
@@ -59,10 +54,12 @@ object APS {
       }
       .toDF("id", "issue", "apsseries", "date", "text",
         "heading", "category", "url", "lang", "contributor")
-      .join(series, Seq("apsseries"), "left_outer")
+      .join(seriesMap, Seq("apsseries"), "left_outer")
       .filter { ('startdate.isNull || 'startdate <= 'date) && ('enddate.isNull || 'enddate >= 'date) }
       .withColumn("series", coalesce('series, concat(lit("aps/"), 'apsseries)))
       .drop("apsseries", "startdate", "enddate", "title")
       .write.save(args(2))
+
+    spark.stop()
   }
 }
