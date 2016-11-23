@@ -35,8 +35,9 @@ object MetsAlto {
           val lang = (t \\ "languageTerm").head.text
           val dpi = Try((t \\ "XphysScanResolution").head.text.toInt).getOrElse(0)
 
-          val date = (t \\ "dateIssued").text
+          val date = (t \\ "dateIssued").take(1).text
             .replaceAll("""^(\d\d)\.(\d\d)\.(\d\d\d\d)$""", """$3-$2-$1""")
+            .replaceAll("""^(\d\d)\.(\d\d\d\d)$""", """$2-$1""")
 
           zfile.entries
             .filter(f => f.getName.endsWith(".xml") && !f.getName.endsWith("mets.xml"))
