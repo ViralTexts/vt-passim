@@ -1,63 +1,71 @@
 VT=/home/dasmith/src/vt-passim
 SERIAL=hdfs://discovery3:9000/user/dasmith/corpora/serial
+CORP=/proj/cssh/nulab/corpora
 
-out=$SERIAL/open=true/corpus=onb/batch=dea-kro
+out=$SERIAL/open=true/corpus=onb
 if ! hadoop fs -test -f $out/_SUCCESS; then
     SPARK_SUBMIT_ARGS="$SPARK_SUBMIT_ARGS --conf spark.default.parallelism=20" \
-		     vtrun ONB '/proj/cssh/nulab/corpora/onb/xml/{dea,kro}' $out >& onb.err
+		     vtrun ONB $CORP/'onb/xml/{dea,kro}' $out >& onb.err
 fi
 
-out=$SERIAL/open=true/corpus=europeana/batch=wget-20160303
+out=$SERIAL/open=true/corpus=europeana
 if ! hadoop fs -test -f $out/_SUCCESS; then
     spark-submit $SPARK_SUBMIT_ARGS $VT/scripts/europeana.py \
-		 /proj/cssh/nulab/corpora/europeana/newspapers-by-country $out >& europeana.err
+		 $CORP/europeana/newspapers-by-country $out >& europeana.err
 fi
 
-out=$SERIAL/open=true/corpus=finnish/batch=Digilib-pub_1771_1874_every
+out=$SERIAL/open=true/corpus=finnish
 if ! hadoop fs -test -f $out/_SUCCESS; then
     SPARK_SUBMIT_ARGS="$SPARK_SUBMIT_ARGS --conf spark.default.parallelism=50" \
-		     vtrun MetsAlto /proj/cssh/nulab/corpora/finnish/every $out >& finnish.err
+		     vtrun MetsAlto $CORP/finnish/every $out >& finnish.err
 fi
 
 # SPARK_SUBMIT_ARGS="$SPARK_SUBMIT_ARGS --conf spark.default.parallelism=50" \
 # vtrun MetsAlto /proj/cssh/nulab/corpora/HSB $SERIAL/serial/open=true/corpus=hsb >& hsb.err
 
-out=$SERIAL/open=true/corpus=sbb/batch=SBB-1-8
+out=$SERIAL/open=true/corpus=sbb
 if ! hadoop fs -test -f $out/_SUCCESS; then
     SPARK_SUBMIT_ARGS="$SPARK_SUBMIT_ARGS --conf spark.default.parallelism=50" \
-		     vtrun MetsAlto /proj/cssh/nulab/corpora/SBB $out  >& sbb.err
+		     vtrun MetsAlto $CORP/SBB $out  >& sbb.err
 fi
 
-out=$SERIAL/open=true/corpus=moa/batch=cornell
+out=$SERIAL/open=true/corpus=moa
 if ! hadoop fs -test -f $out/_SUCCESS; then
     spark-submit $SPARK_SUBMIT_ARGS --conf spark.default.parallelism=50 \
 		 --packages com.databricks:spark-xml_2.11:0.4.0 \
-		 $VT/scripts/moa-load.py \
-		 /proj/cssh/nulab/corpora/moa/magazines $VT/data/moa.json $out >& moa.err
+		 $VT/scripts/moa-load.py $CORP/moa/magazines $VT/data/moa.json $out >& moa.err
 fi
 
-out=$SERIAL/open=true/corpus=trove/batch=issue-458484
-# spark-submit $SPARK_SUBMIT_ARGS $VT/scripts/trove-load.py \
-#     /proj/cssh/nulab/corpora/trove/issue-458484.json.bz2 \
-#     $out >& trove.err
-
-out=$SERIAL/open=false/corpus=aps/batch=APSTextOnly_20150507
+out=$SERIAL/open=false/corpus=aps
 if ! hadoop fs -test -f $out/_SUCCESS; then
     SPARK_SUBMIT_ARGS="$SPARK_SUBMIT_ARGS --conf spark.default.parallelism=200" \
-		     vtrun APS '/proj/cssh/nulab/corpora/APS' $VT/data/aps.json $out >& aps.err
+		     vtrun APS $CORP/APS $VT/data/aps.json $out >& aps.err
 fi
 
-out=$SERIAL/open=false/corpus=gale-uk/batch=BLC-14-16
+out=$SERIAL/open=false/corpus=gale-uk
 if ! hadoop fs -test -f $out/_SUCCESS; then
     SPARK_SUBMIT_ARGS="$SPARK_SUBMIT_ARGS --conf spark.default.parallelism=200" \
-		     vtrun NCNP '/proj/cssh/nulab/corpora/Gale - 19c British Newspapers/XML' \
-		     $out >& gale-uk.err
+		     vtrun NCNP "$CORP/Gale - 19c British Newspapers/XML" $out >& gale-uk.err
 fi
 
-out=$SERIAL/open=false/corpus=gale-us/batch=NCNP-1-25
+out=$SERIAL/open=false/corpus=gale-us
 if ! hadoop fs -test -f $out/_SUCCESS; then
     SPARK_SUBMIT_ARGS="$SPARK_SUBMIT_ARGS --conf spark.default.parallelism=200" \
-		     vtrun NCNP '/proj/cssh/nulab/corpora/Gale - 19c US Newspapers/XML/' \
-		     $out >& gale-us.err
+		     vtrun NCNP "$CORP/Gale - 19c US Newspapers/XML/" $out >& gale-us.err
+fi
+
+## While using hadoop 2.4.x, non-thread-safe bzip2 requires a single core per executor
+
+out=$SERIAL/open=true/corpus=trove
+if ! hadoop fs -test -f $out/_SUCCESS; then
+    spark-submit $SPARK_SUBMIT_ARGS --executor-cores 1 $VT/scripts/trove-load.py \
+		 $CORP/trove/issue-458484.json.bz2 $out >& trove.err
+fi
+
+out=$SERIAL/open=true/corpus=ca
+if ! hadoop fs -test -f $out/_SUCCESS; then
+    SPARK_SUBMIT_ARGS="$SPARK_SUBMIT_ARGS --conf spark.default.parallelism=1500 --executor-cores 1" \
+		     vtrun ChronAm $CORP/chroniclingamerica/raw \
+		     $out >& trove.err
 fi
 
