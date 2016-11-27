@@ -10,6 +10,7 @@ import scala.util.Try
 import vtpassim.pageinfo._
 
 case class CARecord(id: String, issue: String, series: String, ed: String, seq: Int,
+  batch: String,
   date: String, dpi: Int, page_access: String, text: String, regions: Array[Region])
 
 object ChronAm {
@@ -25,21 +26,22 @@ object ChronAm {
     spark.sparkContext.newAPIHadoopFile(args(0), classOf[TarballInputFormat],
       classOf[TarballEntry], classOf[Text])
       .filter { _._1.getEntry.endsWith(".xml") }
-      // .repartition(sc.getConf.getInt("spark.sql.shuffle.partitions", 200))
+    // .repartition(sc.getConf.getInt("spark.sql.shuffle.partitions", 200))
       .flatMap { raw =>
       val fname = raw._1.getEntry
       try {
-          val contents = raw._2.toString
-          val clean = if ( contents.startsWith("\ufeff") ) contents.substring(1) else contents
-          val t = scala.xml.XML.loadString(clean)
-          val Array(sn, year, month, day, ed, seq, _*) = fname.split("/")
-          val series = s"/lccn/$sn"
-          val date = s"$year-$month-$day"
-          val issue = Seq(series, date, ed) mkString "/"
-          val id = s"$issue/$seq"
+        val contents = raw._2.toString
+        val clean = if ( contents.startsWith("\ufeff") ) contents.substring(1) else contents
+        val t = scala.xml.XML.loadString(clean)
+        val Array(sn, year, month, day, ed, seq, _*) = fname.split("/")
+        val series = s"/lccn/$sn"
+        val date = s"$year-$month-$day"
+        val issue = Seq(series, date, ed) mkString "/"
+        val id = s"$issue/$seq"
+        val batch = raw._1.getTarball.replaceAll("\\.tar\\.bz2$", "").replaceAll("^.*batch_", "")
 
-          val sb = new StringBuilder
-          val regions = new ArrayBuffer[Region]
+        val sb = new StringBuilder
+        val regions = new ArrayBuffer[Region]
 
           (t \\ "TextBlock") foreach { block =>
             (block \ "TextLine" ) foreach { line =>
@@ -68,7 +70,7 @@ object ChronAm {
 
           Some(CARecord(id, issue, series, ed.replace("ed-", ""),
             Try(seq.replace("seq-", "").toInt).getOrElse(0),
-            date, 0, upref + id, sb.toString, regions.toArray))
+            batch, date, 0, upref + id, sb.toString, regions.toArray))
         } catch {
           case ex: Exception =>
             Console.err.println("## " + fname + ": " + ex.toString)
