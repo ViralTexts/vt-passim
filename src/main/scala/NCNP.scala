@@ -29,7 +29,13 @@ object NCNP {
         val issue = (t \ "id").text
         val series =
           if ( (t \ "lccn").size > 0 ) {
-            "sn" + (t \ "lccn").text
+            val raw = (t \ "lccn").text
+            if ( raw.startsWith("NOLC") )
+              raw
+            else if ( raw.size == 8 )
+              "/lccn/sn" + raw
+            else
+              "/lccn/" + raw
           } else {
             (t \ "titleAbbreviation").text
           }
