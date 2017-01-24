@@ -4,10 +4,12 @@ from pyspark.sql import SparkSession
 
 def flattenRow(r):
     res = dict()
-    for elem in r['str']:
-        res[elem['_name']] = elem['_VALUE']
-    for elem in r['arr']:
-        res[elem['_name']] = '; '.join(elem['str'])
+    if r['str'] != None:
+        for elem in r['str']:
+            res[elem['_name']] = elem['_VALUE']
+    if r['arr'] != None:
+        for elem in r['arr']:
+            res[elem['_name']] = '; '.join(elem['str'])
     return res
 
 if __name__ == "__main__":
