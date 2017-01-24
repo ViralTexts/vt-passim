@@ -1,10 +1,7 @@
 package vtpassim
 
-import org.apache.spark.{SparkContext, SparkConf}
-import org.apache.spark.sql.SQLContext
-
-import com.databricks.spark.xml.XmlInputFormat
-import org.apache.hadoop.io.{LongWritable, Text}
+import org.apache.spark.sql.SparkSession
+import org.apache.hadoop.io.Text
 
 import collection.JavaConversions._
 import scala.collection.mutable.{ArrayBuffer, StringBuilder}
@@ -13,20 +10,15 @@ import vtpassim.pageinfo._
 
 object DjVu {
   def main(args: Array[String]) {
-    val conf = new SparkConf().setAppName("DjVu Application")
-    val sc = new SparkContext(conf)
-    val sqlContext = new SQLContext(sc)
-    import sqlContext.implicits._
+    val spark = SparkSession.builder().appName("DjVu Import").getOrCreate()
+    import spark.implicits._
 
-    sc.hadoopConfiguration.set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
+    spark.sparkContext.hadoopConfiguration
+      .set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
-    sc.hadoopConfiguration.set(XmlInputFormat.START_TAG_KEY, "<OBJECT>")
-    sc.hadoopConfiguration.set(XmlInputFormat.END_TAG_KEY, "</OBJECT>")
-    sc.hadoopConfiguration.set(XmlInputFormat.ENCODING_KEY, "utf-8")
-
-    val pages = sc.newAPIHadoopFile(args(0),
-      classOf[XmlInputFormat],
-      classOf[LongWritable],
+    val pages = spark.sparkContext.newAPIHadoopFile(args(0),
+      classOf[DjVuInputFormat],
+      classOf[DjVuEntry],
       classOf[Text])
       .flatMap { x => {
         try {
@@ -35,12 +27,11 @@ object DjVu {
 
           val t = scala.xml.XML.loadString(x._2.toString)
           val bookFile = (t \ "@data").text
-          val bookParts = bookFile.split("/+")
-          val bookId = bookParts(bookParts.size - 2)
+          val bookId = x._1.getID
 
           val pageFile = (t \ "PARAM").filter(x => (x \ "@name").text == "PAGE").map(x => (x \ "@value").text).head
-          val pageId = pageFile.replaceAll("\\.djvu$", "").split("_").last
-          val seq = pageId.toInt
+          val pageId = x._1.toString
+          val seq = x._1.getSeq
 
           val dpi = (t \ "PARAM").filter(x => (x \ "@name").text == "DPI").map(x => (x \ "@value").text).head.toInt
 
@@ -64,7 +55,7 @@ object DjVu {
             }
             res.append("\n")
           }
-          Some(Page(bookId + "_" + pageId, bookId, seq, dpi, res.toString, regions.toArray))
+          Some(Page(pageId, bookId, seq, dpi, res.toString, regions.toArray))
         } catch {
           case e: Exception => {
             Console.err.println(x._1 + ": " + e.toString)
@@ -73,8 +64,9 @@ object DjVu {
         }
       }}
       .toDF
-      .coalesce(sc.getConf.getInt("spark.sql.shuffle.partitions", 200))
+      .coalesce(spark.sparkContext.getConf.getInt("spark.sql.shuffle.partitions", 200))
       .write.save(args(1))
+    spark.stop()
   }
 }
 
