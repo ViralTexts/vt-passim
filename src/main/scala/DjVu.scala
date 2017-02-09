@@ -29,6 +29,9 @@ object DjVu {
           val bookFile = (t \ "@data").text
           val bookId = x._1.getID
 
+          val width = (t \ "@width").text.toInt
+          val height = (t \ "@height").text.toInt
+
           val pageFile = (t \ "PARAM").filter(x => (x \ "@name").text == "PAGE").map(x => (x \ "@value").text).head
           val pageId = x._1.toString
           val seq = x._1.getSeq
@@ -55,7 +58,7 @@ object DjVu {
             }
             res.append("\n")
           }
-          Some(Page(pageId, bookId, seq, dpi, res.toString, regions.toArray))
+          Some(Page(pageId, bookId, seq, dpi, res.toString, width, height, regions.toArray))
         } catch {
           case e: Exception => {
             Console.err.println(x._1 + ": " + e.toString)

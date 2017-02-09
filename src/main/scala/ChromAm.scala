@@ -11,7 +11,8 @@ import vtpassim.pageinfo._
 
 case class CARecord(id: String, issue: String, series: String, ed: String, seq: Int,
   batch: String,
-  date: String, dpi: Int, page_access: String, text: String, regions: Array[Region])
+  date: String, dpi: Int, page_access: String, text: String,
+  regions: Array[Region])
 
 object ChronAm {
   def cleanInt(s: String): Int = s.replaceFirst("\\.0*$", "").toInt
