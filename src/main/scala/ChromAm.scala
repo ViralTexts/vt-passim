@@ -41,8 +41,8 @@ object ChronAm {
         val sb = new StringBuilder
         val regions = new ArrayBuffer[Region]
 
-        val width = Try((t \\ "Page" \ "@WIDTH").text.toInt).getOrElse(0)
-        val height = Try((t \\ "Page" \ "@HEIGHT").text.toInt).getOrElse(0)
+        val width = Try((t \ "Layout" \ "Page" \ "@WIDTH").text.toInt).getOrElse(0)
+        val height = Try((t \ "Layout" \ "Page" \ "@HEIGHT").text.toInt).getOrElse(0)
 
           (t \\ "TextBlock") foreach { block =>
             (block \ "TextLine" ) foreach { line =>
