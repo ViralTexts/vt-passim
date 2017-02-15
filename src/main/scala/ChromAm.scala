@@ -10,9 +10,7 @@ import scala.util.Try
 import vtpassim.pageinfo._
 
 case class CARecord(id: String, issue: String, series: String, ed: String, seq: Int,
-  batch: String,
-  date: String, dpi: Int, page_access: String, text: String,
-  regions: Array[Region])
+  batch: String, date: String, text: String, pages: Array[Page])
 
 object ChronAm {
   def cleanInt(s: String): Int = s.replaceFirst("\\.0*$", "").toInt
@@ -22,7 +20,6 @@ object ChronAm {
 
     spark.sparkContext.hadoopConfiguration
       .set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
-    val upref = "http://chroniclingamerica.loc.gov"
 
     spark.sparkContext.newAPIHadoopFile(args(0), classOf[TarballInputFormat],
       classOf[TarballEntry], classOf[Text])
@@ -43,6 +40,9 @@ object ChronAm {
 
         val sb = new StringBuilder
         val regions = new ArrayBuffer[Region]
+
+        val width = (t \ "Page" \ "@WIDTH").text.toInt
+        val height = (t \ "Page" \ "@HEIGHT").text.toInt
 
           (t \\ "TextBlock") foreach { block =>
             (block \ "TextLine" ) foreach { line =>
@@ -69,14 +69,15 @@ object ChronAm {
             sb ++= "\n"
           }
 
-          Some(CARecord(id, issue, series, ed.replace("ed-", ""),
-            Try(seq.replace("seq-", "").toInt).getOrElse(0),
-            batch, date, 0, upref + id, sb.toString, regions.toArray))
-        } catch {
-          case ex: Exception =>
-            Console.err.println("## " + fname + ": " + ex.toString)
-            None
-        }
+        val nseq = Try(seq.replace("seq-", "").toInt).getOrElse(0)
+
+        Some(CARecord(id, issue, series, ed.replace("ed-", ""), nseq,
+          batch, date, sb.toString, Array(Page(id, nseq, width, height, 0, regions.toArray))))
+      } catch {
+        case ex: Exception =>
+          Console.err.println("## " + fname + ": " + ex.toString)
+          None
+      }
     }
       .toDF
       .write.save(args(1))

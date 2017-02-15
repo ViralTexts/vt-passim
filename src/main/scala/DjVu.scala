@@ -8,6 +8,8 @@ import scala.collection.mutable.{ArrayBuffer, StringBuilder}
 
 import vtpassim.pageinfo._
 
+case class DjVuPage(id: String, book: String, seq: Int, text: String, pages: Array[Page])
+
 object DjVu {
   def main(args: Array[String]) {
     val spark = SparkSession.builder().appName("DjVu Import").getOrCreate()
@@ -58,7 +60,8 @@ object DjVu {
             }
             res.append("\n")
           }
-          Some(Page(pageId, bookId, seq, dpi, res.toString, width, height, regions.toArray))
+          Some(DjVuPage(pageId, bookId, seq, res.toString,
+            Array(Page(pageId, seq, width, height, dpi, regions.toArray))))
         } catch {
           case e: Exception => {
             Console.err.println(x._1 + ": " + e.toString)
