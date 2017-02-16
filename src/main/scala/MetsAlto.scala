@@ -1,7 +1,6 @@
 package vtpassim
 
-import org.apache.spark.{SparkContext, SparkConf}
-import org.apache.spark.sql.SQLContext
+import org.apache.spark.sql.SparkSession
 
 import collection.JavaConversions._
 import scala.collection.mutable.{ArrayBuffer, StringBuilder}
@@ -14,14 +13,13 @@ case class Record(id: String, issue: String, series: String, seq: Int,
 
 object MetsAlto {
   def main(args: Array[String]) {
-    val conf = new SparkConf().setAppName("MetsAlto Application")
-    val sc = new SparkContext(conf)
-    val sqlContext = new SQLContext(sc)
-    import sqlContext.implicits._
+    val spark = SparkSession.builder().appName("MetsAlto import").getOrCreate()
+    import spark.implicits._
 
-    sc.hadoopConfiguration.set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
+    spark.sparkContext.hadoopConfiguration
+      .set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
-    sc.binaryFiles(args(0), sc.defaultParallelism)
+    spark.sparkContext.binaryFiles(args(0), spark.sparkContext.defaultParallelism)
       .filter(_._1.endsWith(".zip"))
       .flatMap( x => {
         try {
@@ -79,5 +77,6 @@ object MetsAlto {
     )
       .toDF
       .write.save(args(1))
+    spark.stop()
   }
 }
