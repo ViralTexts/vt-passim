@@ -9,7 +9,7 @@ import scala.util.Try
 import vtpassim.pageinfo._
 
 case class Record(id: String, issue: String, series: String, seq: Int,
-  date: String, lang: String, dpi: Int, text: String, regions: Array[Region])
+  date: String, lang: String, text: String, pages: Array[Page])
 
 object MetsAlto {
   def main(args: Array[String]) {
@@ -43,7 +43,10 @@ object MetsAlto {
             val t = scala.xml.XML.load(zfile.getInputStream(f))
             val buf = new StringBuilder
             val regions = new ArrayBuffer[Region]
-            val seq = Try((t \\ "Page" \ "@PHYSICAL_IMG_NR").text.toInt).getOrElse(0)
+            val page = (t \ "Layout" \ "Page")
+            val seq = Try((page \ "@PHYSICAL_IMG_NR").text.toInt).getOrElse(0)
+            val width = Try((page \ "@WIDTH").text.toInt).getOrElse(0)
+            val height = Try((page \ "@HEIGHT").text.toInt).getOrElse(0)
               (t \\ "TextLine").foreach { line =>
                 (line \ "_").foreach { e =>
                   if ( e.label == "String" ) {
@@ -65,7 +68,8 @@ object MetsAlto {
                 buf.append("\n")
               }
             Record(issue + "/" + f.getName.replaceAll(".xml$", ""), issue, series, seq,
-              date, lang, dpi, buf.toString, regions.toArray)
+              date, lang, buf.toString,
+              Array(Page((page \ "@ID").text, seq, width, height, dpi, regions.toArray)))
           }
         } catch {
           case e: Exception => {
