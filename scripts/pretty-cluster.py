@@ -3,8 +3,7 @@ from __future__ import print_function
 import sys
 from re import sub
 
-from pyspark import SparkContext
-from pyspark.sql import SQLContext
+from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, udf, array_contains, explode, desc, concat_ws
 
 def guessFormat(path, default="json"):
@@ -17,37 +16,48 @@ def guessFormat(path, default="json"):
     else:
         return (default, {})
 
-## This should be made obsolete by including links in document records.
-def formatURL(url, corpus, id, regions):
-    if corpus == 'ca' and regions != None and len(regions) > 0:
-        r = regions[0]
-        return "%s/print/image_600x600_from_%d%%2C%d_to_%d%%2C%d/" \
-            % (url, r.x/3, r.y/3, (r.x + r.w)/3, (r.y + r.h)/3)
+## Map article/page records and coordinate information to links
+def formatURL(baseurl, corpus, id, pages):
+    if corpus == 'ca' and pages != None and len(pages) > 0:
+        c = pages[0]['regions'][0]['coords']
+        pid = pages[0]['id']
+        # Use page dpi here
+        return "http://chroniclingamerica.loc.gov%s/print/image_600x600_from_%d%%2C%d_to_%d%%2C%d/" \
+            % (pid, c.x/3, c.y/3, (c.x + c.w)/3, (c.y + c.h)/3)
     elif corpus == 'trove':
         return "http://trove.nla.gov.au/ndp/del/article/%s" % sub("^trove/", "", id)
+    elif corpus == 'europeana':
+        return 'http://data.theeuropeanlibrary.org/BibliographicResource/%s' % sub('^europeana/([^/]+).*$', '\\1', id)
     else:
-        return url
+        return baseurl
 
 if __name__ == "__main__":
     if len(sys.argv) < 4:
         print("Usage: pretty-cluster.py <metadata> <input> <output> [<query>]", file=sys.stderr)
         exit(-1)
-    sc = SparkContext(appName="Prettyprint Clusters")
-    sqlContext = SQLContext(sc)
+    spark = SparkSession.builder.appName('Prettyprint Clusters').getOrCreate()
 
     outpath = sys.argv[3]
     (outputFormat, outputOptions) = guessFormat(outpath, "json")
 
     ## Should do more field renaming in meta to avoid clashing with fields in raw.
-    meta = sqlContext.read.json(sys.argv[1])\
+    meta = spark.read.json(sys.argv[1])\
            .dropDuplicates(['series'])
     
     constructURL = udf(lambda url, corpus, id, regions: formatURL(url, corpus, id, regions))
 
-    df = sqlContext.read.load(sys.argv[2]) \
+    df = spark.read.load(sys.argv[2]) \
         .withColumnRenamed('title', 'doc_title')\
         .withColumnRenamed('lang', 'doc_lang')\
-        .withColumn('url', constructURL(col('page_access'), col('corpus'), col('id'), col('regions')))\
+        .withColumn('url', constructURL(col('page_access'), col('corpus'), col('id'), col('pages'))) \
+        .withColumn('p1x', col('pages')[0]['regions'][0]['coords']['x']) \
+        .withColumn('p1y', col('pages')[0]['regions'][0]['coords']['y']) \
+        .withColumn('p1w', col('pages')[0]['regions'][0]['coords']['w']) \
+        .withColumn('p1h', col('pages')[0]['regions'][0]['coords']['h']) \
+        .withColumn('p1seq', col('pages')[0]['seq']) \
+        .withColumn('p1width', col('pages')[0]['width']) \
+        .withColumn('p1height', col('pages')[0]['height']) \
+        .withColumn('p1dpi', col('pages')[0]['dpi']) \
         .drop('locs').drop('pages').drop('regions')\
         .join(meta, 'series', 'left_outer')
 
@@ -58,5 +68,5 @@ if __name__ == "__main__":
             .orderBy(desc('size'), 'cluster', 'date', 'id', 'begin')\
             .write.format(outputFormat).options(**outputOptions).save(outpath)
 
-    sc.stop()
+    spark.stop()
     
