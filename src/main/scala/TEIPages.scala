@@ -17,30 +17,15 @@ object TEIPages {
     spark.sparkContext.binaryFiles(args(0), spark.sparkContext.defaultParallelism)
       .filter(_._1.endsWith(".xml"))
       .flatMap( in => {
+        val fname = new java.io.File(new java.net.URL(in._1).toURI)
+        val id = fname.getName.replaceAll(".xml$", "")
         val buf = new StringBuilder
         var buffering = false
         var seq = -1
-        var id = ""
 
         val pass = new XMLEventReader(scala.io.Source.fromURL(in._1))
         pass.flatMap { event =>
           event match {
-            case EvElemStart(_, "idno", attr, _) => {
-              if ( id == "" ) {
-                buffering = true
-                buf.clear
-              }
-              None
-            }
-            case EvElemEnd(_, "idno") => {
-              if ( id == "" ) {
-                val rawid = buf.toString.trim
-                id = (if ( rawid != "" ) rawid else in._1)
-                buffering = false
-                buf.clear
-              }
-              None
-            }
             case EvElemStart(_, "pb", attr, _) => {
               val rec = if ( buffering ) {
                 Some((f"$id%s_$seq%04d", id, seq, buf.toString.trim))
