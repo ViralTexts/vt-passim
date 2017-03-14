@@ -1,113 +1,61 @@
 package vtpassim
 
-import org.apache.spark.{SparkContext, SparkConf}
-import org.apache.spark.SparkContext._
-import org.apache.spark.sql.SQLContext
+import org.apache.spark.sql.SparkSession
 
 import scala.collection.mutable.StringBuilder
+import scala.util.Try
 import scala.xml.pull._
 
 object TCPPages {
-  def pageAccess(id: String): String = {
-    val p = id.split(":")
-    if ( p.size == 3 && p(0) == "tcp" )
-      s"http://eebo.chadwyck.com.ezproxy.neu.edu/search/full_rec?SOURCE=pgimages.cfg&ACTION=ByID&ID=V${p(1)}&PAGENO=${p(2)}"
-    else
-      ""
-  }
-  def pageImage(id: String): String = {
-    val p = id.split(":")
-    if ( p.size == 3 && p(0) == "tcp" )
-      s"http://eebo.chadwyck.com.ezproxy.neu.edu/fetchimage?vid=${p(1)}&page=${p(2)}"
-    else
-      ""
-  }
-  def pageThumb(id: String): String = {
-    val p = id.split(":")
-    if ( p.size == 3 && p(0) == "tcp" )
-      s"http://eebo.chadwyck.com.ezproxy.neu.edu/fetchimage?vid=${p(1)}&page=${p(2)}&width=80"
-    else
-      ""
-  }
   def main(args: Array[String]) {
-    val conf = new SparkConf().setAppName("TCPPages Application")
-    val sc = new SparkContext(conf)
-    val sqlContext = new SQLContext(sc)
-    import sqlContext.implicits._
+    val spark = SparkSession.builder().appName("TEIPages Import").getOrCreate()
+    import spark.implicits._
 
-    sc.hadoopConfiguration.set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
+    spark.sparkContext.hadoopConfiguration
+      .set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
-    val bookPrefix = "http://name.umdl.umich.edu/"
-
-    sc.binaryFiles(args(0), sc.defaultParallelism)
+    spark.sparkContext.binaryFiles(args(0), spark.sparkContext.defaultParallelism)
       .filter(_._1.endsWith(".xml"))
       .flatMap( in => {
+        val fname = new java.io.File(new java.net.URL(in._1).toURI)
+        val id = fname.getName.replaceAll(".xml$", "")
         val buf = new StringBuilder
         var buffering = false
-        var seq = 0
+        var seq = -1
+        var pageid = ""
 
-        val pass1 = new XMLEventReader(scala.io.Source.fromURL(in._1))
-        pass1.foreach { event =>
-          event match {
-            case EvElemStart(_, "pb", attr, _) => seq += 1
-            case EvElemStart(_, "teiHeader", attr, _) => {
-              buffering = true
-              buf ++= "<teiHeader" + attr + ">"
-            }
-            case EvElemEnd(_, "teiHeader") => {
-              buffering = false
-              buf ++= "</teiHeader>"
-            }
-            case EvElemStart(_, tag, attr, _) => if ( buffering ) buf ++= "<" + tag + attr + ">"
-            case EvElemEnd(_, tag) => if ( buffering ) buf ++= "</" + tag + ">"
-            case EvText(t) => if ( buffering ) buf ++= t
-            case EvEntityRef(n) => if ( buffering ) buf ++= "&" + n + ";"
-            case _ => None
-          }
-        }
-        val t = scala.xml.XML.loadString(buf.toString)
-        val rawid = (t \\ "idno").filter(x => (x \ "@type").text == "DLPS")
-          .map(_.text).mkString("; ")
-        val id = (if ( rawid == "" ) in._1 else rawid)
-        val title = (t \\ "fileDesc" \ "titleStmt" \ "title").map(_.text).mkString("; ")
-        val creator = (t \\ "fileDesc" \ "titleStmt" \ "author").map(_.text).mkString("; ")
-        val date = (t \\ "editionStmt" \ "edition" \ "date").map(_.text).mkString("; ")
-        val pagecount = seq
-
-        buf.clear
-        buffering = false
-        seq = -1
-        var img = ""
-
-        val pass2 = new XMLEventReader(scala.io.Source.fromURL(in._1))
-        pass2.flatMap { event =>
+        val pass = new XMLEventReader(scala.io.Source.fromURL(in._1))
+        pass.flatMap { event =>
           event match {
             case EvElemStart(_, "pb", attr, _) => {
               val rec = if ( buffering ) {
-                Some((id + "_" + seq, id, seq, title, creator, date,
-                  bookPrefix+id, pagecount, pageAccess(img), pageImage(img), pageThumb(img),
-                  buf.toString.trim))
+                Some((f"$id%s_$seq%04d", id, pageid, seq, buf.toString.trim))
               } else {
                 None
               }
               buffering = true
               seq += 1
+              pageid = attr.get("facs").map(_.text).headOption.getOrElse("")
               buf.clear
-              img = attr.get("facs").map(_.text).headOption.getOrElse("")
               rec
             }
             case EvElemEnd(_, "text") => {
               if ( buffering ) {
                 seq += 1
                 val text = buf.toString.trim
+                buffering = false
                 buf.clear
-                Some((id + "_" + seq, id, seq, title, creator, date,
-                  bookPrefix+id, pagecount, pageAccess(img), pageImage(img), pageThumb(img),
-                  text))
+                Some((f"$id%s_$seq%04d", id, pageid, seq, text))
               } else {
                 None
               }
             }
+            // HACK: we assume <gap> is after the first pb and isn't recursive
+            // Ought to use a stack, of course.
+            case EvElemStart(_, "gap", attr, _) => { buffering = false; None }
+            case EvElemStart(_, "desc", attr, _) => { buffering = true; None }
+            case EvElemEnd(_, "desc") => { buffering = false; None }
+            case EvElemEnd(_, "gap") => { buffering = true; None }
             case EvText(t) => {
               if ( buffering ) buf ++= t
               None
@@ -120,8 +68,32 @@ object TCPPages {
           }
         }
       })
-      .toDF("id", "book", "seq", "title", "creator", "date",
-        "book_access", "pagecount", "page_access", "page_image", "page_thumb", "text")
+      .toDF("id", "book", "pageid", "seq", "text")
       .write.save(args(1))
+    spark.stop()
   }
 }
+
+// Saved URL construction code
+  // def pageAccess(id: String): String = {
+  //   val p = id.split(":")
+  //   if ( p.size == 3 && p(0) == "tcp" )
+  //     s"http://eebo.chadwyck.com.ezproxy.neu.edu/search/full_rec?SOURCE=pgimages.cfg&ACTION=ByID&ID=V${p(1)}&PAGENO=${p(2)}"
+  //   else
+  //     ""
+  // }
+  // def pageImage(id: String): String = {
+  //   val p = id.split(":")
+  //   if ( p.size == 3 && p(0) == "tcp" )
+  //     s"http://eebo.chadwyck.com.ezproxy.neu.edu/fetchimage?vid=${p(1)}&page=${p(2)}"
+  //   else
+  //     ""
+  // }
+  // def pageThumb(id: String): String = {
+  //   val p = id.split(":")
+  //   if ( p.size == 3 && p(0) == "tcp" )
+  //     s"http://eebo.chadwyck.com.ezproxy.neu.edu/fetchimage?vid=${p(1)}&page=${p(2)}&width=80"
+  //   else
+  //     ""
+  // }
+  // val bookPrefix = "http://name.umdl.umich.edu/"
