@@ -41,7 +41,7 @@ def threshold_sparse(x, t):
 
 if __name__ == "__main__":
     argparser = argparse.ArgumentParser(description='Cluster features')
-    argparser.add_argument('-c', '--minCount', type=int, default=1.0)
+    argparser.add_argument('-c', '--minCount', type=float, default=1.0)
     argparser.add_argument('-s', '--clusterSize', type=int, default=1)
     argparser.add_argument('indir', help='Input directory')
     argparser.add_argument('outdir', help='Output directory')
@@ -57,20 +57,22 @@ if __name__ == "__main__":
 
     tok = RegexTokenizer(inputCol='text', outputCol='terms', gaps=False, pattern='\w+') \
           .transform(raw)
-    counts = CountVectorizer(inputCol='terms', outputCol='counts', minDF=2.0) \
-             .fit(tok).transform(tok)
+    vocabFeaturizer = CountVectorizer(inputCol='terms', outputCol='counts', minDF=2.0).fit(tok)
+    counts = vocabFeaturizer.transform(tok)
     
     mergeCounts = udf(lambda va, size: threshold_sparse(scale_sparse(reduce(add_sparse, va), 1.0/size), args.minCount),
                       VectorUDT())
 
-    res = counts.groupBy('cluster', 'size') \
-                .agg(mergeCounts(collect_list('counts'), 'size').alias('counts'))
+    counts.groupBy('cluster', 'size') \
+          .agg(mergeCounts(collect_list('counts'), 'size').alias('counts')) \
+          .write.parquet(args.outdir)
+
+    vocab = vocabFeaturizer.vocabulary
+    spark.createDataFrame(zip(range(len(vocab)), vocab), ['id', 'word']) \
+         .write.json(args.outdir + "-vocab")
 
     # lda = LDA(k=2, featuresCol='counts', seed=1, optimizer='em')
     # model = lda.fit(res)
-
     # model.describeTopics().write.json(args.outdir)
-
-    res.write.json(args.outdir)
 
     spark.stop()
