@@ -8,10 +8,8 @@ def lineRecord(r):
     off1 = r.b1
     off2 = r.b2
     for line in r.pairs:
-        res.append(Row(id=r.id2, begin=off2, text="",
-                       wit=Row(id=r.id1, begin=off1, text="")))
-        # res.append(Row(id=r.id2, begin=off2, text=line['_2'],
-        #                wit=Row(id=r.id1, begin=off1, text=line['_1'])))
+        res.append(Row(id=r.id2, begin=off2, text=line['_2'],
+                       wit=Row(id=r.id1, begin=off1, text=line['_1'])))
         off1 = off1 + len(line['_1'])
         off2 = off2 + len(line['_2'])
     return res
@@ -20,8 +18,7 @@ def corpusLines(r):
     res = []
     off = 0
     for line in r.text.splitlines(True):
-        res.append(Row(id=r.id, begin=off, text=""))
-        # res.append(Row(id=r.id, begin=off, text=line))
+        res.append(Row(id=r.id, begin=off, text=line))
         off = off + len(line)
     return res
 
