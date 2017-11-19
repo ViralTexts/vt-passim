@@ -57,6 +57,12 @@ if ! $TEST -f $out/_SUCCESS; then
 		     vtrun NCNP "$CORP/Gale - 19c US Newspapers/XML/" $out >& gale-us.err
 fi
 
+out=$SERIAL/open=false/corpus=tda
+if ! $TEST -f $out/_SUCCESS; then
+    SPARK_SUBMIT_ARGS="$SPARK_SUBMIT_ARGS --conf spark.default.parallelism=800" \
+		     vtrun NCCOIssue "$CORP/bl/TimesDigitalArchive_XMLS/TDAO0001/TDAO0001-C00000/Newspapers/0FFO" $out >& tda.err
+fi
+
 ## While using hadoop 2.4.x, non-thread-safe bzip2 requires a single core per executor
 
 out=$SERIAL/open=true/corpus=trove
@@ -67,7 +73,7 @@ fi
 
 out=$SERIAL/open=true/corpus=ca
 if ! $TEST -f $out/_SUCCESS; then
-    SPARK_SUBMIT_ARGS="$SPARK_SUBMIT_ARGS --conf spark.default.parallelism=1500" \
+    SPARK_SUBMIT_ARGS="$SPARK_SUBMIT_ARGS --conf spark.default.parallelism=2000" \
 		     vtrun ChronAm $CORP/chroniclingamerica/raw \
 		     $out >& ca.err
 fi
