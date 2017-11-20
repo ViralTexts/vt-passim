@@ -50,6 +50,13 @@ object TCPPages {
                 None
               }
             }
+            case EvElemStart(_, "g", attr, _) => {
+              if ( buffering
+                && (attr.get("ref").map(_.text).headOption.getOrElse("") == "char:EOLhyphen") ) {
+                buf ++= "\u00ad\n"
+              }
+              None
+            }
             // HACK: we assume <gap> is after the first pb and isn't recursive
             // Ought to use a stack, of course.
             case EvElemStart(_, "gap", attr, _) => { buffering = false; None }
