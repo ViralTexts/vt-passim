@@ -1,9 +1,6 @@
 from __future__ import print_function
-
 import sys
-
-from pyspark import SparkContext
-from pyspark.sql import SQLContext, Row
+from pyspark.sql import SparkSession, Row
 from pyspark.sql.functions import coalesce, col, udf, concat_ws, count, regexp_replace
 
 def pageCat(grp):
@@ -18,10 +15,9 @@ if __name__ == "__main__":
     if len(sys.argv) < 3:
         print("Usage: pretty-cluster.py <input> <page-out> <book-out>", file=sys.stderr)
         exit(-1)
-    sc = SparkContext(appName="Proteus Pages")
-    sqlContext = SQLContext(sc)
+    spark = SparkSession.builder.appName('Proteus Pages').getOrCreate()
 
-    raw = sqlContext.read.load(sys.argv[1])
+    raw = spark.read.load(sys.argv[1])
     cols = set(raw.columns)
     idcols = [col(x) for x in ['identifier', 'issue', 'book'] if x in cols]
 
@@ -38,9 +34,9 @@ if __name__ == "__main__":
                 .withColumn('text', regexp_replace(col('text'), '\\n', '<br>\\\n'))
 
     renamed.withColumn('text', appendID(col('identifier'), col('text')))\
-           .write.format('json').save(sys.argv[2])
+           .write.option('compression', 'gzip').json(sys.argv[2])
 
     renamed.rdd.groupBy(lambda r: r.identifier).map(pageCat).toDF()\
-        .write.format('json').save(sys.argv[3])
+        .write.option('compression', 'gzip').json(sys.argv[3])
 
-    sc.stop()
+    spark.stop()
