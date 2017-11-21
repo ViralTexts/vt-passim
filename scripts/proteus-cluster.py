@@ -18,7 +18,8 @@ def formatPassage(r):
     text += "<h4>%s</h4>" % dateline
     text += sub('(?<!\\\\)\\n', '<br/>\\n', r.text)
     text += " <archiveid tokenizetagcontent=\"false\">%s</archiveid>" % str(r.cluster)
-    return Row(archiveid=str(r.cluster), imagecount=r.size, title=r.title, date=r.date, placeOfPublication=r.placeOfPublication, text=text)
+    return Row(archiveid=str(r.cluster), imagecount=r.size, title=r.title, date=r.date, placeOfPublication=r.placeOfPublication,
+               text=text, page_access=r.page_access)
     
 
 def formatPassages(x):
@@ -30,6 +31,9 @@ def formatPassages(x):
         r = rows[i].asDict()
         id = "%s_%d" % (cluster, i)
         r['name'] = id
+        r['id'] = id
+        r['seq'] = i
+        r['identifier'] = cluster
         r['pageNumber'] = i
         res.append(Row(**r))
     return res
@@ -41,7 +45,8 @@ def formatCluster(x):
     text = ""
     for i in range(len(rows)):
         text += "<div class=\"page-break\" page=\"%d\">%s</div>\n" % (i, rows[i].text)
-    return Row(name=cluster, imagecount=rows[0].imagecount, date=rows[0].date, title=("Cluster %s (%d)" % (cluster, len(rows))), text=text)
+    return Row(name=cluster, identifier=cluster, imagecount=rows[0].imagecount, date=rows[0].date,
+               title=("Cluster %s (%d)" % (cluster, len(rows))), text=text, pageNumber=0, seq=0, id=cluster+'_0')
 
 
 if __name__ == "__main__":
