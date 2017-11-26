@@ -12,13 +12,14 @@ def formatPassage(r):
         text += "<h2><a href=\"%s\">%s</a></h2>" % (r.url, r.title)
     else:
         text += "<h2>%s</h2>" % r.title
+    cluster = "cl" + str(r.cluster)
     dateline = r.date
     if r.placeOfPublication:
         dateline += " &middot; %s" % r.placeOfPublication
     text += "<h4>%s</h4>" % dateline
     text += sub('(?<!\\\\)\\n', '<br/>\\n', r.text)
-    text += " <archiveid tokenizetagcontent=\"false\">%s</archiveid>" % str(r.cluster)
-    return Row(archiveid=str(r.cluster), imagecount=r.size, title=r.title, date=r.date, placeOfPublication=r.placeOfPublication,
+    text += " <archiveid tokenizetagcontent=\"false\">%s</archiveid>" % cluster
+    return Row(archiveid=cluster, imagecount=r.size, title=r.title, date=r.date, placeOfPublication=r.placeOfPublication,
                text=text, page_access=r.page_access)
     
 
@@ -46,7 +47,7 @@ def formatCluster(x):
     for i in range(len(rows)):
         text += "<div class=\"page-break\" page=\"%d\">%s</div>\n" % (i, rows[i].text)
     return Row(name=cluster, identifier=cluster, imagecount=rows[0].imagecount, date=rows[0].date,
-               title=("Cluster %s (%d)" % (cluster, len(rows))), text=text, pageNumber=0, seq=0, id=cluster+'_0')
+               title=("%d reprints from %s to %s [%s]" % (len(rows), rows[0].date, rows[len(rows)-1].date, cluster)), text=text, pageNumber=0, seq=0, id=cluster+'_0')
 
 
 if __name__ == "__main__":
