@@ -13,13 +13,15 @@ def formatPassage(r):
     else:
         text += "<h2>%s</h2>" % r.title
     cluster = "cl" + str(r.cluster)
-    dateline = r.date
+    dateline = '<date tokenizetagcontent="false">%s</date>' % r.date
     if r.placeOfPublication:
-        dateline += " &middot; %s" % r.placeOfPublication
+        dateline += ' &middot; <place>%s</place>' % r.placeOfPublication
     text += "<h4>%s</h4>" % dateline
     text += sub('(?<!\\\\)\\n', '<br/>\\n', r.text)
-    text += " <archiveid tokenizetagcontent=\"false\">%s</archiveid>" % cluster
-    return Row(archiveid=cluster, imagecount=r.size, title=r.title, date=r.date, placeOfPublication=r.placeOfPublication,
+    text += ' <archiveid tokenizetagcontent="false">%s</archiveid>' % cluster
+    text += ' <series tokenizetagcontent="false">%s</series>' % r.series
+    text += ' <id tokenizetagcontent="false">%s</id>' % r.id
+    return Row(archiveid=cluster, id=r.id, imagecount=r.size, title=r.title, date=r.date, placeOfPublication=r.placeOfPublication,
                text=text, page_access=r.page_access)
     
 
@@ -30,9 +32,8 @@ def formatPassages(x):
     res = list()
     for i in range(len(rows)):
         r = rows[i].asDict()
-        id = "%s_%d" % (cluster, i)
-        r['name'] = id
-        r['id'] = id
+        name = "%s_%d" % (cluster, i)
+        r['name'] = name
         r['seq'] = i
         r['identifier'] = cluster
         r['pageNumber'] = i
