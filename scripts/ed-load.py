@@ -12,7 +12,7 @@ def parseEd(f):
         if line == '---':
             if inMeta:
                 inMeta = False
-            else:
+            elif len(res) == 0: # Only if we don't have metadata yet.
                 inMeta = True
         elif inMeta:
             (k, s, v) = line.partition(':')
