@@ -44,6 +44,8 @@ object ChronAm {
         val width = Try((t \ "Layout" \ "Page" \ "@WIDTH").text.toInt).getOrElse(0)
         val height = Try((t \ "Layout" \ "Page" \ "@HEIGHT").text.toInt).getOrElse(0)
 
+        val dpi = Try(1200 / "xdpi:([0-9]+)".r.findFirstMatchIn((t \ "Description" \\ "processingStepSettings").text).get.group(1).toInt).getOrElse(0)
+
           (t \\ "TextBlock") foreach { block =>
             (block \ "TextLine" ) foreach { line =>
               (line \ "_") foreach { e =>
@@ -72,7 +74,7 @@ object ChronAm {
         val nseq = Try(seq.replace("seq-", "").toInt).getOrElse(0)
 
         Some(CARecord(id, issue, series, ed.replace("ed-", ""), nseq,
-          batch, date, sb.toString, Array(Page(id, nseq, width, height, 0, regions.toArray))))
+          batch, date, sb.toString, Array(Page(id, nseq, width, height, dpi, regions.toArray))))
       } catch {
         case ex: Exception =>
           Console.err.println("## " + fname + ": " + ex.toString)
