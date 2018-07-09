@@ -21,9 +21,9 @@ def formatURL(baseurl, corpus, id, pages):
     if corpus == 'ca' and pages != None and len(pages) > 0:
         c = pages[0]['regions'][0]['coords']
         pid = pages[0]['id']
-        # Use page dpi here
+        scale = pages[0]['dpi'] or 3
         return "http://chroniclingamerica.loc.gov%s/print/image_600x600_from_%d%%2C%d_to_%d%%2C%d/" \
-            % (pid, c.x/3, c.y/3, (c.x + c.w)/3, (c.y + c.h)/3)
+            % (pid, c.x/scale, c.y/scale, (c.x + c.w)/scale, (c.y + c.h)/scale)
     elif corpus == 'trove':
         return "http://trove.nla.gov.au/ndp/del/article/%s" % sub("^trove/", "", id)
     elif corpus == 'europeana':
@@ -64,9 +64,12 @@ if __name__ == "__main__":
     filtered = df.join(df.filter(sys.argv[4]).select('cluster').distinct(), 'cluster') \
                if len(sys.argv) >= 5 else df
 
-    filtered.withColumn('lang', concat_ws(',', col('lang'))) \
-            .orderBy(desc('size'), 'cluster', 'date', 'id', 'begin')\
-            .write.format(outputFormat).options(**outputOptions).save(outpath)
+    res = filtered.withColumn('lang', concat_ws(',', col('lang')))
+
+    out = res.orderBy(desc('size'), 'cluster', 'date', 'id', 'begin') \
+          if outputFormat != 'parquet' else res
+
+    out.write.format(outputFormat).options(**outputOptions).save(outpath)
 
     spark.stop()
     
