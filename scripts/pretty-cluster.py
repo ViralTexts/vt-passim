@@ -17,13 +17,11 @@ def guessFormat(path, default="json"):
         return (default, {})
 
 ## Map article/page records and coordinate information to links
-def formatURL(baseurl, corpus, id, pages):
-    if corpus == 'ca' and pages != None and len(pages) > 0:
-        c = pages[0]['regions'][0]['coords']
-        pid = pages[0]['id']
-        scale = pages[0]['dpi'] or 3
-        return "http://chroniclingamerica.loc.gov%s/print/image_600x600_from_%d%%2C%d_to_%d%%2C%d/" \
-            % (pid, c.x/scale, c.y/scale, (c.x + c.w)/scale, (c.y + c.h)/scale)
+def formatURL(baseurl, corpus, id, p1x, p1y, p1w, p1h, p1dpi, p1id, dpi):
+    if corpus == 'ca' and p1id != None:
+        scale = p1dpi or dpi or 3
+        return "https://chroniclingamerica.loc.gov%s/print/image_600x600_from_%d%%2C%d_to_%d%%2C%d/" \
+            % (p1id, p1x/scale, p1y/scale, (p1x + p1w)/scale, (p1y + p1h)/scale)
     elif corpus == 'trove':
         return "http://trove.nla.gov.au/ndp/del/article/%s" % sub("^trove/", "", id)
     elif corpus == 'europeana':
@@ -44,12 +42,11 @@ if __name__ == "__main__":
     meta = spark.read.json(sys.argv[1])\
            .dropDuplicates(['series'])
     
-    constructURL = udf(lambda url, corpus, id, regions: formatURL(url, corpus, id, regions))
+    constructURL = udf(lambda url, corpus, id, p1x, p1y, p1w, p1h, p1dpi, p1id, dpi: formatURL(url, corpus, id, p1x, p1y, p1w, p1h, p1dpi, p1id, dpi))
 
     df = spark.read.load(sys.argv[2]) \
         .withColumnRenamed('title', 'doc_title')\
         .withColumnRenamed('lang', 'doc_lang')\
-        .withColumn('url', constructURL(col('page_access'), col('corpus'), col('id'), col('pages'))) \
         .withColumn('p1x', col('pages')[0]['regions'][0]['coords']['x']) \
         .withColumn('p1y', col('pages')[0]['regions'][0]['coords']['y']) \
         .withColumn('p1w', col('pages')[0]['regions'][0]['coords']['w']) \
@@ -58,8 +55,10 @@ if __name__ == "__main__":
         .withColumn('p1width', col('pages')[0]['width']) \
         .withColumn('p1height', col('pages')[0]['height']) \
         .withColumn('p1dpi', col('pages')[0]['dpi']) \
+        .withColumn('p1id', col('pages')[0]['id']) \
         .drop('locs').drop('pages').drop('regions')\
-        .join(meta, 'series', 'left_outer')
+        .join(meta, 'series', 'left_outer') \
+        .withColumn('url', constructURL('page_access', 'corpus', 'id', 'p1x', 'p1y', 'p1w', 'p1h', 'p1dpi', 'p1id', 'dpi'))
 
     filtered = df.join(df.filter(sys.argv[4]).select('cluster').distinct(), 'cluster') \
                if len(sys.argv) >= 5 else df
