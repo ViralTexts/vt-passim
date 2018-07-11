@@ -9,9 +9,9 @@ from pyspark.sql.functions import col, udf, regexp_replace
 def formatPassage(r):
     text = ""
     if r.url:
-        text += "<h2><a href=\"%s\">%s</a></h2>" % (r.url, r.title)
+        text += "<h2><a href=\"%s\">%s</a></h2>" % (r.url, (r.title or r.id))
     else:
-        text += "<h2>%s</h2>" % r.title
+        text += "<h2>%s</h2>" % (r.title or r.id)
     cluster = "cl" + str(r.cluster)
     dateline = '<date tokenizetagcontent="false">%s</date>' % r.date
     if r.placeOfPublication:
@@ -21,6 +21,8 @@ def formatPassage(r):
     text += ' <archiveid tokenizetagcontent="false">%s</archiveid>' % cluster
     text += ' <series tokenizetagcontent="false">%s</series>' % r.series
     text += ' <id tokenizetagcontent="false">%s</id>' % r.id
+    if r.subject:
+        text += ' <subject>%s</subject>' % r.subject
     return Row(archiveid=cluster, id=r.id, imagecount=r.size, title=r.title, date=r.date, placeOfPublication=r.placeOfPublication,
                text=text, page_access=r.page_access)
     
