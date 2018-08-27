@@ -12,10 +12,15 @@ from pyspark.sql.types import StringType
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("Usage: gephi-cluster.py <metadata> <input>", file=sys.stderr)
+        print("Usage: gephi-cluster.py <metadata> <input> [dynamic?]", file=sys.stderr)
         exit(-1)
     sc = SparkContext(appName="Gephi Cluster")
     sqlContext = SQLContext(sc)
+
+    if len(sys.argv) >= 4 and sys.argv[3] == 'dynamic':
+        dynamic = True
+    else:
+        dynamic = False
 
     meta = sqlContext.read.json(sys.argv[1])
 
@@ -39,8 +44,10 @@ if __name__ == "__main__":
     nodes = df.select(df.series).distinct().collect()
 
     print('<gexf>')
-    # print('  <graph defaultedgetype="undirected" mode="dynamic" timeformat="date">')
-    print('  <graph defaultedgetype="undirected">')
+    if dynamic:
+        print('  <graph defaultedgetype="undirected" mode="dynamic" timeformat="date">')
+    else:
+        print('  <graph defaultedgetype="undirected">')
     print('    <nodes>')
     for x in nodes:
         m = x.asDict()
@@ -56,34 +63,30 @@ if __name__ == "__main__":
     joint = df.join(df2,
                     (df.cluster == df2.cluster2) & (df.series < df2.series2),
                     'inner')
-    links = joint.select(joint.series, joint.series2)\
-                 .groupBy('series', 'series2')\
-                 .count().orderBy('series', 'series2').collect()
 
-    for x in links:
-        m = x.asDict(True)
-        id = m['series'] + '--' + m['series2']
-        print('      <edge id="%s" source="%s" target="%s" weight="%d" />' % (id, m['series'], m['series2'], m['count']) )
+    if not dynamic:
+        links = joint.select(joint.series, joint.series2)\
+                     .groupBy('series', 'series2')\
+                     .count().orderBy('series', 'series2').collect()
+
+        for x in links:
+            m = x.asDict(True)
+            id = m['series'] + '--' + m['series2']
+            print('      <edge id="%s" source="%s" target="%s" weight="%d" />' % (id, m['series'], m['series2'], m['count']) )
 
     ## Aggregate per pair per year
 
-    # links = joint.select(joint.series, joint.series2,
-    #                      smax(joint.year, joint.year2).alias('year'))\
-    #              .groupBy('series', 'series2', 'year')\
-    #              .count().orderBy('series', 'series2', 'year').collect()
+    else:
+        links = joint.select(joint.series, joint.series2,
+                             smax(joint.year, joint.year2).alias('year'))\
+                     .groupBy('series', 'series2', 'year')\
+                     .count().orderBy('series', 'series2', 'year').collect()
 
-    # curid = ''
-    # for x in links:
-    #     m = x.asDict(True)
-    #     id = m['series'] + '--' + m['series2']
-    #     if id != curid:
-    #         if curid != '':
-    #             print('    </attvalues>\n    </edge>')
-    #         curid = id
-    #         print('    <edge id="%s" source="%s" target="%s">\n    <attvalues>' % (id, m['series'], m['series2']))
-    #     print('      <attvalue for="reprint_count" start="%s" end="%s" value="%d" />' % (m['year'], m['year'], m['count']))
-    # if curid != '':
-    #     print('    </attvalues>\n    </edge>')
+        for x in links:
+            m = x.asDict(True)
+            id = m['series'] + '--' + m['series2'] + '--' + m['year']
+            print('      <edge id="%s" source="%s" target="%s" weight="%d" start="%s-01-01" end="%s-12-31" label="%s" />' %
+                  (id, m['series'], m['series2'], m['count'], m['year'], m['year'], m['year']))
         
     print('  </edges>\n</graph>\n</gexf>')
 
