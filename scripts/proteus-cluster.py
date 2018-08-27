@@ -23,8 +23,14 @@ def formatPassage(r):
     text += ' <id tokenizetagcontent="false">%s</id>' % r.id
     if r.subject:
         text += ' <subject>%s</subject>' % r.subject
+    image = None
+    thumb = None
+    if r.corpus == 'ca' and r.page_access != None:
+        image = r.page_access.replace('/print/', '/').rstrip('/') + '.jpg'
+        thumb = image.replace('_600x600_', '_80x100_')
+    
     return Row(archiveid=cluster, id=r.id, imagecount=r.size, title=r.title, date=r.date, placeOfPublication=r.placeOfPublication,
-               text=text, page_access=r.page_access)
+               text=text, page_access=r.page_access, page_image=image, page_thumb=thumb)
     
 
 def formatPassages(x):
