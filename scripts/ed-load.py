@@ -1,8 +1,10 @@
 from __future__ import print_function
 from re import sub
+from dateutil import parser
+from datetime import *
 import sys
 from os.path import basename, splitext
-from pyspark.sql import SparkSession
+from pyspark.sql import SparkSession, Row
 
 def parseEd(f):
     res = dict()
@@ -17,13 +19,14 @@ def parseEd(f):
         elif inMeta:
             (k, s, v) = line.partition(':')
             if k != '':
-                res[k] = v.strip()
+                res[k.lower()] = v.strip()
         else:
             text += sub('</?[A-Za-z][^>]*>', '', sub('^\-*\s*(\{[^\}]*\})?\s*', '', line))
             text += '\n'
     res['text'] = sub('\n{3,}', '\n\n', sub('\s*<br>\s*$', '', text)).strip() + '\n'
     res['id'] = (splitext(basename(f[0])))[0]
-    return res
+    date = parser.parse(res['date'], default=datetime(1800,1,1), fuzzy=True).date().isoformat()
+    return Row(id=res['id'], series=res['id'], text=res['text'], date=date)
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
