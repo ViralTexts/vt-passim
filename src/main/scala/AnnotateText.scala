@@ -1,7 +1,6 @@
 package vtpassim
 
-import org.apache.spark.{SparkContext, SparkConf}
-import org.apache.spark.sql.{SQLContext, Row}
+import org.apache.spark.sql.{Row, SparkSession}
 import org.apache.spark.sql.functions._
 
 import collection.JavaConversions._
@@ -14,41 +13,58 @@ case class ParsedSentence(words: Seq[String], tags: Seq[String], lemmata: Seq[St
 
 object ParseSentences {
   def main(args: Array[String]) {
-    val conf = new SparkConf().setAppName("Sentence parsing")
-    val sc = new SparkContext(conf)
-    val sqlContext = new SQLContext(sc)
-    import sqlContext.implicits._
+    val spark = SparkSession.builder().appName("Sentence parsing").getOrCreate()
+    import spark.implicits._
 
-    val textCol = "text"
+    val textCol = "speechtext"
 
-    sqlContext.read.load(args(0))
-      .repartition(sc.defaultParallelism)
-      .explode(col(textCol)) { case Row(text: String) =>
-        try {
-          val s = new Sentence(text)
-          val words = s.words.toSeq
-          if ( words.size <= 50 ) {
-            val t = s.parse
-            val tags = t.taggedLabeledYield.map(_.toString.replaceFirst("-[0-9]+$", "")).toSeq
-            val morph = new edu.stanford.nlp.process.Morphology
-            Some(ParsedSentence(words, tags,
-              (words.zip(tags).map { case (word, tag) => morph.lemma(word, tag, true) }),
-              t.toString,
-              s.governors.map(_.orElse(-2).toInt),
-              s.incomingDependencyLabels.map(_.orElse(""))))
-          } else {
-            Some(ParsedSentence(words, Seq[String](), Seq[String](),
-              "", Seq[Int](), Seq[String]()))
-          }
-        } catch {
-          case e: Exception =>
-            Some(ParsedSentence(Seq[String](), Seq[String](), Seq[String](),
-              "", Seq[Int](), Seq[String]()))
-          case e: java.lang.Error =>
-            Some(ParsedSentence(Seq[String](), Seq[String](), Seq[String](),
-              "", Seq[Int](), Seq[String]()))
-        }
+    spark.sparkContext.hadoopConfiguration
+      .set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
+
+    val splitSentences = udf { (text: String) =>
+      if ( text == null ) {
+        Seq()
+      } else {
+        val doc = new Document(text)
+        doc.sentences.map { _.text }
+      }
     }
-    .write.save(args(1))
+
+    val parseText = udf { (text: String) =>
+      try {
+        val s = new Sentence(text)
+        val words = s.words.toSeq
+        if ( words.size <= 50 ) {
+          val t = s.parse
+          val tags = t.taggedLabeledYield.map(_.toString.replaceFirst("-[0-9]+$", "")).toSeq
+          val morph = new edu.stanford.nlp.process.Morphology
+          ParsedSentence(words, tags,
+            (words.zip(tags).map { case (word, tag) => morph.lemma(word, tag, true) }),
+            t.toString,
+            s.governors.map(_.orElse(-2).toInt),
+            s.incomingDependencyLabels.map(_.orElse("")))
+        } else {
+          ParsedSentence(words, Seq[String](), Seq[String](),
+            "", Seq[Int](), Seq[String]())
+        }
+      } catch {
+        case e: Exception =>
+          ParsedSentence(Seq[String](), Seq[String](), Seq[String](),
+            "", Seq[Int](), Seq[String]())
+        case e: java.lang.Error =>
+          ParsedSentence(Seq[String](), Seq[String](), Seq[String](),
+            "", Seq[Int](), Seq[String]())
+      }
+    }
+
+    spark.read.load(args(0))
+      .repartition(4000)
+      .select(expr("*"), posexplode(splitSentences(col(textCol))) as Seq("seq", "text"))
+      .drop(textCol)
+      .withColumn("parsed", parseText(col("text")))
+      .select(expr("*"), $"parsed.*") // flatten parse fields
+      .drop("parsed")
+      .write.json(args(1))
+    spark.stop()
   }
 }
