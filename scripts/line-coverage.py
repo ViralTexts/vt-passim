@@ -48,4 +48,10 @@ if __name__ == "__main__":
          .write.option('compression', 'gzip').json(sys.argv[3])
 
     spark.stop()
-    
+
+# Implement later:
+# val w = df.withColumn("sregions", when('stext.isNull, null).otherwise('sregions)).select('id, 'begin, 'text, 'regions, struct('sid as "id", 'sbegin as "begin", 'stext as "text", 'sregions as "regions") as "wit").groupBy("id", "begin", "text", "regions").agg(sort_array(collect_list("wit")) as "witnesses").withColumn("witnesses", when($"witnesses.id"(0).isNull, null).otherwise('witnesses))
+# w: org.apache.spark.sql.DataFrame = [id: string, begin: bigint ... 3 more fields]
+
+# scala> w.withColumn("haswit", 'witnesses.isNotNull.cast("int")).groupBy("id").agg(sort_array(collect_list(struct("begin", "text", "regions", "witnesses"))) as "lines", sum("haswit") as "witlines").filter('witlines > 0).sort('id).write.option("compression", "gzip").json("quixote-self/regwit-pages.json")
+                                                                                
