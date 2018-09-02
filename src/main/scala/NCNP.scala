@@ -1,7 +1,7 @@
 package vtpassim
 
 import org.apache.spark.sql.SparkSession
-
+import org.apache.spark.sql.functions.{coalesce, broadcast, concat_ws, sort_array, collect_set, posexplode, size}
 import collection.JavaConversions._
 import scala.collection.mutable.{ArrayBuffer, StringBuilder}
 
@@ -19,7 +19,9 @@ object NCNP {
     spark.sparkContext.hadoopConfiguration
       .set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
-    spark.sparkContext.wholeTextFiles(args(0), spark.sparkContext.defaultParallelism)
+    val seriesMap = spark.read.json(args(1))
+
+    val raw = spark.sparkContext.wholeTextFiles(args(0), spark.sparkContext.defaultParallelism)
       .filter(_._1.contains(".xml"))
       .flatMap { f =>
       try {
@@ -96,7 +98,26 @@ object NCNP {
       }
     }
       .toDF
-      .write.save(args(1))
+      .join(seriesMap, Seq("series"), "left_outer")
+      .withColumn("series", coalesce('correct_series, 'series))
+      .drop("correct_series")
+      .withColumn("issue", concat_ws("/", 'series, 'issue))
+      .withColumn("id", concat_ws("/", 'series, 'id))
+      .dropDuplicates("id")
+
+    val dupIssues = raw.groupBy("series", "date")
+      .agg(sort_array(collect_set("issue")) as "issues")
+      .filter(size('issues) > 1)
+      .select(posexplode('issues))
+      .filter('pos > 0)
+      .select('col as "issue")
+
+    dupIssues.cache()
+
+    println("# duplicate issues: " + dupIssues.count)
+
+    raw.join(broadcast(dupIssues), Seq("issue"), "left_anti")
+      .write.save(args(2))
     spark.stop()
   }
 }
