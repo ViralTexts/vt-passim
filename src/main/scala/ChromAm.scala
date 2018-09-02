@@ -24,7 +24,6 @@ object ChronAm {
     spark.sparkContext.newAPIHadoopFile(args(0), classOf[TarballInputFormat],
       classOf[TarballEntry], classOf[Text])
       .filter { _._1.getEntry.endsWith(".xml") }
-    // .repartition(sc.getConf.getInt("spark.sql.shuffle.partitions", 200))
       .flatMap { raw =>
       val fname = raw._1.getEntry
       try {
@@ -82,6 +81,7 @@ object ChronAm {
       }
     }
       .toDF
+      .dropDuplicates("id") // wouldn't be necessary if we untarred to disk and overwrote
       .write.save(args(1))
     spark.stop()
   }
