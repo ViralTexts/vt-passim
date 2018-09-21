@@ -6,6 +6,12 @@ import sys
 from os.path import basename, splitext
 from pyspark.sql import SparkSession, Row
 
+def normNA(s):
+    if s == None or s == 'na' or s == 'NA':
+        return None
+    else:
+        return s
+
 def parseEd(f):
     res = dict()
     inMeta = False
@@ -26,7 +32,9 @@ def parseEd(f):
     res['text'] = sub('\n{3,}', '\n\n', sub('\s*<br>\s*$', '', text)).strip() + '\n'
     res['id'] = (splitext(basename(f[0])))[0]
     date = parser.parse(res['date'], default=datetime(1800,1,1), fuzzy=True).date().isoformat()
-    return Row(id=res['id'], series=res['id'], text=res['text'], date=date)
+    return Row(id=res['id'], series=res['id'], text=res['text'], date=date,
+               title=normNA(res['title']), creator=normNA(res['author']),
+               source=normNA(res.get('newspaper')), page_access=(res.get('page url')))
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
