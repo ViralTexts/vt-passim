@@ -44,6 +44,9 @@ if __name__ == "__main__":
     
     constructURL = udf(lambda url, corpus, id, p1x, p1y, p1w, p1h, p1dpi, p1id, dpi: formatURL(url, corpus, id, p1x, p1y, p1w, p1h, p1dpi, p1id, dpi))
 
+    imageLink = udf(lambda url, corpus: (url.replace('/print/', '/').rstrip('/') + '.jpg') if (url != None and corpus == 'ca') else None)
+    thumbLink = udf(lambda image: image.replace('_600x600_', '_80x100_') if image != None else None)
+
     df = spark.read.load(sys.argv[2]) \
         .withColumnRenamed('title', 'doc_title')\
         .withColumnRenamed('lang', 'doc_lang')\
@@ -58,7 +61,9 @@ if __name__ == "__main__":
         .withColumn('p1id', col('pages')[0]['id']) \
         .drop('locs').drop('pages').drop('regions')\
         .join(meta, 'series', 'left_outer') \
-        .withColumn('url', constructURL('page_access', 'corpus', 'id', 'p1x', 'p1y', 'p1w', 'p1h', 'p1dpi', 'p1id', 'dpi'))
+        .withColumn('url', constructURL('page_access', 'corpus', 'id', 'p1x', 'p1y', 'p1w', 'p1h', 'p1dpi', 'p1id', 'dpi')) \
+        .withColumn('page_image', imageLink('url', 'corpus')) \
+        .withColumn('page_thumb', thumbLink('page_image'))
 
     filtered = df.join(df.filter(sys.argv[4]).select('cluster').distinct(), 'cluster') \
                if len(sys.argv) >= 5 else df
