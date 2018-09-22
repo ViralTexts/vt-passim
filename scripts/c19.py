@@ -3,7 +3,7 @@ from __future__ import print_function
 import sys
 
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import lit, col, coalesce
+from pyspark.sql.functions import col, struct, max
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
@@ -13,13 +13,12 @@ if __name__ == "__main__":
     raw = spark.read.option('mergeSchema','true').load(sys.argv[1])
     df = raw.filter(col('date') < '1900')
 
-    opens = df.filter(col('open') == 'true')\
-              .select('series', 'date', lit(1).alias('inopen')).distinct()
+    spark.conf.set('spark.sql.shuffle.partitions', df.rdd.getNumPartitions() * 2)
 
-    df.join(opens, ['series', 'date'], 'left_outer')\
-      .filter((col('open') == 'true') | col('inopen').isNull())\
-      .drop('inopen')\
-      .dropDuplicates(['id'])\
+    issues = df.groupBy('series', 'date')\
+               .agg(max(struct('open', 'corpus'))['corpus'].alias('corpus'))
+    
+    df.join(issues, ['series', 'date', 'corpus'], 'inner')\
       .write.save(sys.argv[2])
 
     spark.stop()
