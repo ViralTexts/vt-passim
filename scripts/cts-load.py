@@ -3,6 +3,7 @@ from re import sub
 import sys
 from os.path import basename, splitext
 from pyspark.sql import SparkSession, Row
+from pyspark.sql.functions import col
 
 def parseCTS(f):
     res = dict()
@@ -20,9 +21,7 @@ def parseCTS(f):
             locs.append(Row(start=start, length=(len(text) - start),
                             loc=sub('([^\.]+\.[^\.]+)\.[^\.]+(:[^:]+)$', '\\1\\2', loc)))
 
-    return Row(id=id, locs=locs,
-               series=sub('([^\.]+\.[^\.]+)\.[^\.]+$', '\\1', id),
-               text=text)
+    return Row(id=id, series=sub('([^\.]+\.[^\.]+)\.[^\.]+$', '\\1', id), text=text, locs=locs)
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
@@ -31,11 +30,12 @@ if __name__ == "__main__":
     spark = SparkSession.builder.appName('Load CTS TSV').getOrCreate()
     spark.sparkContext.setLogLevel('WARN')
 
-    # fields get !@#$% alphabetized!
-    spark.createDataFrame(spark.sparkContext.wholeTextFiles(sys.argv[1]) \
-                          .filter(lambda f: f[0].endswith('.cts')) \
-                          .map(lambda f: parseCTS(f)),
-                          'id: string, locs: array<struct<length: int, loc: string, start: int>>, series: string, text: string') \
+    spark.sparkContext.wholeTextFiles(sys.argv[1]) \
+         .filter(lambda f: f[0].endswith('.cts')) \
+         .map(lambda f: parseCTS(f)) \
+         .toDF() \
+         .withColumn('locs',
+                     col('locs').cast('array<struct<length: int, loc: string, start: int>>')) \
          .write.save(sys.argv[2])
     spark.stop()
     
