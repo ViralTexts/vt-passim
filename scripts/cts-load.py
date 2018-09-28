@@ -6,22 +6,38 @@ from pyspark.sql import SparkSession, Row
 from pyspark.sql.functions import col
 
 def parseCTS(f):
-    res = dict()
+    res = list()
     text = ''
     locs = []
-    id = (splitext(basename(f[0])))[0]
+    curid = ''
+    id = ''
+    seq = 0
     for line in f[1].split('\n'):
         if line != '':
             (loc, raw) = line.split('\t', 2)
-            parts = loc.split(':')
-            if len(parts) >= 4: id = ':'.join(parts[0:4])
+            id = sub('^(.+[^\.:]+)\.[^\.:]*$', '\\1', loc)
+            if curid != id:
+                if curid != '':
+                    res.append(Row(id=curid,
+                                   seq=seq,
+                                   series=sub('([^\.]+\.[^\.]+)\.[^\.]+(:[^:]+)$', '\\1', curid),
+                                   text=text, locs=locs))
+                    text = ''
+                    locs = []
+                    seq += 1
+                curid = id
             start = len(text)
             text += sub('\s+', ' ', raw)
             text += '\n'
             locs.append(Row(start=start, length=(len(text) - start),
                             loc=sub('([^\.]+\.[^\.]+)\.[^\.]+(:[^:]+)$', '\\1\\2', loc)))
 
-    return Row(id=id, series=sub('([^\.]+\.[^\.]+)\.[^\.]+$', '\\1', id), text=text, locs=locs)
+    if curid != '':
+        res.append(Row(id=curid,
+                       seq=seq,
+                       series=sub('([^\.]+\.[^\.]+)\.[^\.]+(:[^:]+)$', '\\1', curid),
+                       text=text, locs=locs))
+    return res
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
@@ -32,7 +48,7 @@ if __name__ == "__main__":
 
     spark.sparkContext.wholeTextFiles(sys.argv[1]) \
          .filter(lambda f: f[0].endswith('.cts')) \
-         .map(lambda f: parseCTS(f)) \
+         .flatMap(lambda f: parseCTS(f)) \
          .toDF() \
          .withColumn('locs',
                      col('locs').cast('array<struct<length: int, loc: string, start: int>>')) \
