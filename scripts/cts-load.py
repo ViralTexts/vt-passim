@@ -52,6 +52,7 @@ if __name__ == "__main__":
          .toDF() \
          .withColumn('locs',
                      col('locs').cast('array<struct<length: int, loc: string, start: int>>')) \
+         .withColumn('seq', col('seq').cast('int')) \
          .write.save(sys.argv[2])
     spark.stop()
     
