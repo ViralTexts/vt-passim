@@ -4,7 +4,7 @@ import sys
 from re import sub
 
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, udf, array_contains, explode, desc, concat_ws
+from pyspark.sql.functions import col, udf, array_contains, explode, desc, concat_ws, coalesce
 
 def guessFormat(path, default="json"):
     if path.endswith(".json"):
@@ -40,7 +40,9 @@ if __name__ == "__main__":
 
     ## Should do more field renaming in meta to avoid clashing with fields in raw.
     meta = spark.read.json(sys.argv[1])\
-           .dropDuplicates(['series'])
+            .dropDuplicates(['series'])\
+            .withColumnRenamed('title', 'series_title')
+
     
     constructURL = udf(lambda url, corpus, id, p1x, p1y, p1w, p1h, p1dpi, p1id, dpi: formatURL(url, corpus, id, p1x, p1y, p1w, p1h, p1dpi, p1id, dpi))
 
@@ -48,22 +50,24 @@ if __name__ == "__main__":
     thumbLink = udf(lambda image: image.replace('_600x600_', '_80x100_') if image != None else None)
 
     df = spark.read.load(sys.argv[2]) \
-        .withColumnRenamed('title', 'doc_title')\
-        .withColumnRenamed('lang', 'doc_lang')\
-        .withColumn('p1x', col('pages')[0]['regions'][0]['coords']['x']) \
-        .withColumn('p1y', col('pages')[0]['regions'][0]['coords']['y']) \
-        .withColumn('p1w', col('pages')[0]['regions'][0]['coords']['w']) \
-        .withColumn('p1h', col('pages')[0]['regions'][0]['coords']['h']) \
-        .withColumn('p1seq', col('pages')[0]['seq']) \
-        .withColumn('p1width', col('pages')[0]['width']) \
-        .withColumn('p1height', col('pages')[0]['height']) \
-        .withColumn('p1dpi', col('pages')[0]['dpi']) \
-        .withColumn('p1id', col('pages')[0]['id']) \
-        .drop('locs').drop('pages').drop('regions')\
-        .join(meta, 'series', 'left_outer') \
-        .withColumn('url', constructURL('page_access', 'corpus', 'id', 'p1x', 'p1y', 'p1w', 'p1h', 'p1dpi', 'p1id', 'dpi')) \
-        .withColumn('page_image', imageLink('url', 'corpus')) \
-        .withColumn('page_thumb', thumbLink('page_image'))
+            .withColumn('title', coalesce('heading', 'title')) \
+            .withColumnRenamed('lang', 'doc_lang')\
+            .withColumn('p1x', col('pages')[0]['regions'][0]['coords']['x']) \
+            .withColumn('p1y', col('pages')[0]['regions'][0]['coords']['y']) \
+            .withColumn('p1w', col('pages')[0]['regions'][0]['coords']['w']) \
+            .withColumn('p1h', col('pages')[0]['regions'][0]['coords']['h']) \
+            .withColumn('p1seq', col('pages')[0]['seq']) \
+            .withColumn('p1width', col('pages')[0]['width']) \
+            .withColumn('p1height', col('pages')[0]['height']) \
+            .withColumn('p1dpi', col('pages')[0]['dpi']) \
+            .withColumn('p1id', col('pages')[0]['id']) \
+            .drop('locs').drop('pages').drop('regions')\
+            .join(meta, 'series', 'left_outer') \
+            .withColumn('source', coalesce('source', 'series_title')) \
+            .drop('series_title') \
+            .withColumn('url', constructURL('page_access', 'corpus', 'id', 'p1x', 'p1y', 'p1w', 'p1h', 'p1dpi', 'p1id', 'dpi')) \
+            .withColumn('page_image', imageLink('url', 'corpus')) \
+            .withColumn('page_thumb', thumbLink('page_image'))
 
     filtered = df.join(df.filter(sys.argv[4]).select('cluster').distinct(), 'cluster') \
                if len(sys.argv) >= 5 else df
