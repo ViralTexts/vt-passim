@@ -80,6 +80,7 @@ object MetsAlto {
       }
     )
       .toDF
+      .dropDuplicates("id")
       .write.save(args(1))
     spark.stop()
   }
