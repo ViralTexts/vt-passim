@@ -3,7 +3,7 @@ package vtpassim
 import org.apache.spark.sql.SparkSession
 
 case class ONBRecord(id: String, issue: String, series: String, seq: Int,
-  title: String, date: String, text: String, page_access: String, book_access: String)
+  date: String, text: String, page_access: String, book_access: String)
 
 object ONB {
   def main(args: Array[String]) {
@@ -19,8 +19,8 @@ object ONB {
       .flatMap { f =>
       val t = scala.xml.XML.loadString(f._2)
       val name = t \ "newspaper" \ "name"
-      val series = (name \ "@anno_id").text + (name \ "@anno-id").text
-      val title = name.text
+      val rawSeries = (name \ "@anno_id").text + (name \ "@anno-id").text
+      val series = (if (rawSeries == "aid") "dea" else rawSeries)
       (t \ "newspaper" \ "issue").flatMap { issue =>
         val book_access = (issue \ "path").text
         val date = book_access match { case datePat(y,m,d) => s"$y-$m-$d" case _ => "" }
@@ -29,13 +29,14 @@ object ONB {
           (issue \ "pages" \ "page").map { page =>
             val seqstr = (page \ "number").text match { case "" => "0" case x => x }
             ONBRecord(s"$series/$date/$seqstr", s"$series/$date",
-              series, seqstr.toInt, title, date,
+              series, seqstr.toInt, date,
               (page \ "text").text.replaceAll("&", "&amp;").replaceAll("<", "&lt;"),
               (page \ "pagePath").text, book_access)
           }
       }
     }
       .toDF
+      .dropDuplicates("id")
       .write.save(args(1))
     spark.stop()
   }
