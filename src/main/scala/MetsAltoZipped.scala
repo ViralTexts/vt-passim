@@ -11,7 +11,7 @@ import vtpassim.pageinfo._
 case class Record(id: String, issue: String, series: String, seq: Int,
   date: String, lang: String, text: String, pages: Array[Page])
 
-object MetsAlto {
+object MetsAltoZipped {
   def main(args: Array[String]) {
     val spark = SparkSession.builder().appName("MetsAlto import").getOrCreate()
     import spark.implicits._
