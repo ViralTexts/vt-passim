@@ -9,7 +9,7 @@ import vtpassim.pageinfo._
 
 case class NCNPRecord(id: String, issue: String, series: String, seq: Int,
   title: String, date: String,
-  heading: String, altSource: String, category: String, text: String, pages: Array[Page])
+  altSource: String, category: String, text: String, pages: Array[Page])
 
 object NCNP {
   def main(args: Array[String]) {
@@ -39,7 +39,6 @@ object NCNP {
           } else {
             (t \ "titleAbbreviation").text
           }
-        val title = (t \ "jn").text
         val date = (t \ "pf").text.replaceAll("""^(\d\d\d\d)(\d\d)(\d\d).*$""", "$1-$2-$3")
 
         // First pass to determine page sizes
@@ -87,8 +86,8 @@ object NCNP {
             }
           if ( cur != -1 )
             pages += Page(pid(cur), cur, pdim(cur)._1, pdim(cur)._2, 0, regions.toArray)
-          NCNPRecord((article \ "id").text, issue, series, seq, title, date,
-            (article \ "ti").text, (article \ "altSource").text, (article \ "ct").text,
+          NCNPRecord((article \ "id").text, issue, series, seq, (article \ "ti").text, date,
+            (article \ "altSource").text, (article \ "ct").text,
             buf.toString, pages.toArray)
         }
       } catch {
