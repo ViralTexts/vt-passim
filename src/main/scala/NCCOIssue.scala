@@ -8,7 +8,7 @@ import scala.collection.mutable.{ArrayBuffer, StringBuilder}
 import vtpassim.pageinfo._
 
 case class NCCOIssueRecord(id: String, issue: String, series: String, seq: Int, date: String,
-  heading: String, altSource: String, category: String, text: String, pages: Array[Page])
+  title: String, altSource: String, category: String, text: String, pages: Array[Page])
 
 object NCCOIssue {
   def main(args: Array[String]) {
