@@ -1,3 +1,5 @@
+#!/bin/sh
+
 VT=/home/dasmith/src/vt-passim
 # SERIAL=hdfs://discovery3:9000/user/dasmith/corpora/serial
 SERIAL=/home/dasmith/work/corpora/vt/serial
@@ -54,7 +56,7 @@ fi
 out=$SERIAL/open=false/corpus=gale-us
 if ! $TEST -f $out/_SUCCESS; then
     SPARK_SUBMIT_ARGS="$SPARK_SUBMIT_ARGS --conf spark.default.parallelism=200" \
-		     vtrun NCNP "$CORP/Gale - 19c US Newspapers/XML/" $out >& gale-us.err
+		     vtrun NCNP "$CORP/Gale - 19c US Newspapers/XML/" $VT/data/gale.json $out >& gale-us.err
 fi
 
 out=$SERIAL/open=false/corpus=tda
