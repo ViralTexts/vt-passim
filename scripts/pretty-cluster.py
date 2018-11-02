@@ -41,6 +41,7 @@ if __name__ == "__main__":
     ## Should do more field renaming in meta to avoid clashing with fields in raw.
     meta = spark.read.json(sys.argv[1])\
             .dropDuplicates(['series'])\
+            .withColumnRenamed('publisher', 'series_publisher') \
             .withColumnRenamed('title', 'series_title')
 
     
@@ -64,7 +65,8 @@ if __name__ == "__main__":
             .drop('locs').drop('pages').drop('regions')\
             .join(meta, 'series', 'left_outer') \
             .withColumn('source', coalesce('source', 'series_title')) \
-            .drop('series_title') \
+            .withColumn('publisher', coalesce('publisher', 'series_publisher')) \
+            .drop('series_title', 'series_publisher') \
             .withColumn('url', constructURL('page_access', 'corpus', 'id', 'p1x', 'p1y', 'p1w', 'p1h', 'p1dpi', 'p1id', 'dpi')) \
             .withColumn('page_image', imageLink('url', 'corpus')) \
             .withColumn('page_thumb', thumbLink('page_image'))
