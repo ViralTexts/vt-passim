@@ -8,10 +8,14 @@ from pyspark.sql.functions import col, udf, regexp_replace
 
 def formatPassage(r):
     text = ""
+    source = 'From ' + (('<cite>%s</cite>' % r.source) or 'unknown source')
+    title = r.title or source
     if r.url:
-        text += "<h2><a href=\"%s\">%s</a></h2>" % (r.url, (r.title or r.id))
+        text += "<h2><a href=\"%s\">%s</a></h2>" % (r.url, title)
     else:
-        text += "<h2>%s</h2>" % (r.title or r.id)
+        text += "<h2>%s</h2>" % title
+    if r.creator: text += '<h4>by %s</h4>' % r.creator
+    if title != source: text += '<h4>%s</h4>' % source
     cluster = "cl" + str(r.cluster)
     dateline = '<date tokenizetagcontent="false">%s</date>' % r.date
     if r.placeOfPublication:
@@ -23,20 +27,15 @@ def formatPassage(r):
     text += ' <id tokenizetagcontent="false">%s</id>' % r.id
     if r.subject:
         text += ' <subject>%s</subject>' % r.subject
-    image = None
-    thumb = None
-    if r.corpus == 'ca' and r.page_access != None:
-        image = r.page_access.replace('/print/', '/').rstrip('/') + '.jpg'
-        thumb = image.replace('_600x600_', '_80x100_')
     
-    return Row(archiveid=cluster, id=r.id, imagecount=r.size, title=r.title, date=r.date, placeOfPublication=r.placeOfPublication,
-               text=text, page_access=r.page_access, page_image=image, page_thumb=thumb)
+    return Row(archiveid=cluster, id=r.id, imagecount=r.size, title=r.title, date=r.date, placeOfPublication=r.placeOfPublication, ref=r.ref,
+               text=text, page_access=r.page_access, page_image=r.page_image, page_thumb=r.page_thumb)
     
 
 def formatPassages(x):
     (cluster, riter) = x
     rows = list(riter)
-    rows.sort(key=lambda z: z.date)
+    rows.sort(key=lambda z: (-z.ref, z.date, z.id))
     res = list()
     for i in range(len(rows)):
         r = rows[i].asDict()
@@ -51,7 +50,7 @@ def formatPassages(x):
 def formatCluster(x):
     (cluster, riter) = x
     rows = list(riter)
-    rows.sort(key=lambda z: z.date)
+    rows.sort(key=lambda z: (-z.ref, z.date, z.id))
     text = ""
     for i in range(len(rows)):
         text += "<div class=\"page-break\" page=\"%d\">%s</div>\n" % (i, rows[i].text)
