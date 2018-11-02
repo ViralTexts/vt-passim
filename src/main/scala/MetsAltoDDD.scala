@@ -10,7 +10,7 @@ case class AltoInfo(text: String, pages: Array[Page])
 
 case class MetaInfo(issue: String, series: String, date: String)
 
-object MetsAltoJoined {
+object MetsAltoDDD {
   val parsePage = udf { (s: String, id: String) =>
     try {
       val t = scala.xml.XML.loadString(s)
@@ -51,7 +51,8 @@ object MetsAltoJoined {
     val meta = spark.read.json(args(0))
       .withColumn("meta_info", parseMeta('xml))
       .select($"meta_info.*")
-      .filter('issue.isNotNull)
+      .filter('issue.isNotNull && 'series.isNotNull)
+      .dropDuplicates("issue")
 
     val raw = spark.read.json(args(1))
 
@@ -62,8 +63,8 @@ object MetsAltoJoined {
       .select('id, 'identifier as "issue", 'url as "page_access", $"page_info.*")
       .withColumn("seq", $"pages.seq"(0))
       .join(meta, "issue")
+      .dropDuplicates("id")
       .write.save(args(2))
-      // .write.option("compression", "gzip").json(args(2))
     spark.stop()
   }
 }
