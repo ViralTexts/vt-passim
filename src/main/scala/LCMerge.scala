@@ -1,7 +1,6 @@
 package vtpassim
 
-import org.apache.spark.{SparkConf, SparkContext}
-import org.apache.spark.sql.SQLContext
+import org.apache.spark.sql.SparkSession
 
 import com.databricks.spark.xml.XmlInputFormat
 
@@ -13,15 +12,14 @@ import scala.xml.XML
 
 object LCMerge {
   def main(args: Array[String]) {
-    val conf = new SparkConf().setAppName("LCMerge Application")
-    val sc = new SparkContext(conf)
-    val sqlContext = new SQLContext(sc)
-    import sqlContext.implicits._
+    val spark = SparkSession.builder().appName("Merge LC metadata").getOrCreate()
+    import spark.implicits._
 
-    sc.hadoopConfiguration.set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
+    spark.sparkContext
+      .hadoopConfiguration.set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
-    val meta = sc.wholeTextFiles(args(0))
-    val df = meta.map(_._2).map(x => {
+    val meta = spark.sparkContext.wholeTextFiles(args(0))
+    meta.map(_._2).map(x => {
       def bareName(s: String): String = { s.replaceFirst("#title$", "") }
       def nameId(s: String): Long = { s.replaceFirst("^[a-z/]+", "").toLong }
       val t = XML.loadString(x)
@@ -46,7 +44,7 @@ object LCMerge {
         links
           .map { z => nameId(bareName(z)) })
     }).toDF("sid", "series", "title", "lang", "placeOfPublication", "publisher", "links")
-
-    df.write.json(args(1))
+      .write.json(args(1))
+    spark.stop()
   }
 }
