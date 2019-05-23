@@ -8,6 +8,7 @@ import org.apache.hadoop.io.{LongWritable,Text}
 
 import collection.JavaConversions._
 import scala.collection.mutable.ArrayBuffer
+import scala.util.Try
 import scala.xml.XML
 
 object LCMerge {
@@ -19,6 +20,7 @@ object LCMerge {
       .hadoopConfiguration.set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
     val meta = spark.sparkContext.wholeTextFiles(args(0))
+    val dpiInfo = spark.read.json(args(1))
     meta.map(_._2).map(x => {
       def bareName(s: String): String = { s.replaceFirst("#title$", "") }
       def nameId(s: String): Long = { s.replaceFirst("^[a-z/]+", "").toLong }
@@ -40,11 +42,16 @@ object LCMerge {
         (t \ "Description" \ "language")
           .map { x => (x \ s"@{$ns}resource").text.replaceFirst("http://www.lingvoj.org/lang/", "") },
         (t \ "Description" \ "placeOfPublication").text,
+        Try((t \ "Description" \ "coverage")
+          .map { n => (n \ s"@{$ns}resource").text }
+          .filter { _.startsWith("http://dbpedia.org") }.head).getOrElse(null),
         (t \ "Description" \ "publisher").text,
         links
           .map { z => nameId(bareName(z)) })
-    }).toDF("sid", "series", "title", "lang", "placeOfPublication", "publisher", "links")
-      .write.json(args(1))
+    }).toDF("sid", "series", "title", "lang", "placeOfPublication", "coverage", "publisher", "links")
+      .drop("links")
+      .join(dpiInfo, Seq("series"), "left_outer")
+      .write.json(args(2))
     spark.stop()
   }
 }
