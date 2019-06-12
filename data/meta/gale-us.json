@@ -1,9 +1,9 @@
-{"series":"NOLCN001","title":"Scioto Gazette","placeOfPublication":"Chillicothe, Ohio"}
-{"series":"NOLCN002","title":"Cleveland Daily Herald","placeOfPublication":"Cleveland, Ohio"}
-{"series":"NOLCN008","title":"Mountaineer","placeOfPublication":"Greenville, S.C."}
-{"series":"NOLCN011","title":"Chattanooga Daily Gazette","placeOfPublication":"Chattanooga, Tenn."}
-{"series":"NOLCN025","title":"Natchez Courier","placeOfPublication":"Natchez, Miss."}
-{"series":"NOLCN037","title":"Wisconsin Temperance Journal","placeOfPublication":"Milwaukee, Wis."}
-{"series":"NOLCN041","title":"Mississippian","placeOfPublication":"Jackson, Miss."}
-{"series":"NOLCN043","title":"Mississippi Free Trader","placeOfPublication":"Natchez, Miss."}
-{"series":"NOLCN044","title":"Natchez Daily Democrat","placeOfPublication":"Natchez, Miss."}
+{"series":"NOLCN001","title":"Scioto Gazette","placeOfPublication":"Chillicothe, Ohio","coverage":"http://dbpedia.org/resource/Chillicothe,_Ohio"}
+{"series":"NOLCN002","title":"Cleveland Daily Herald","placeOfPublication":"Cleveland, Ohio","coverage":"http://dbpedia.org/resource/Cleveland"}
+{"series":"NOLCN008","title":"Mountaineer","placeOfPublication":"Greenville, S.C.","coverage":"http://dbpedia.org/resource/Greenville,_South_Carolina"}
+{"series":"NOLCN011","title":"Chattanooga Daily Gazette","placeOfPublication":"Chattanooga, Tenn.","coverage":"http://dbpedia.org/resource/Chattanooga,_Tennessee"}
+{"series":"NOLCN025","title":"Natchez Courier","placeOfPublication":"Natchez, Miss.","coverage":"http://dbpedia.org/resource/Natchez,_Mississippi"}
+{"series":"NOLCN037","title":"Wisconsin Temperance Journal","placeOfPublication":"Milwaukee, Wis.","coverage":"http://dbpedia.org/resource/Milwaukee"}
+{"series":"NOLCN041","title":"Mississippian","placeOfPublication":"Jackson, Miss.","coverage":"http://dbpedia.org/resource/Jackson,_Mississippi"}
+{"series":"NOLCN043","title":"Mississippi Free Trader","placeOfPublication":"Natchez, Miss.","coverage":"http://dbpedia.org/resource/Natchez,_Mississippi"}
+{"series":"NOLCN044","title":"Natchez Daily Democrat","placeOfPublication":"Natchez, Miss.","coverage":"http://dbpedia.org/resource/Natchez,_Mississippi"}
