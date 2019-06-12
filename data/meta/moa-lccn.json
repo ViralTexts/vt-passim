@@ -1,32 +1,32 @@
-{"series":"/lccn/02004276","title":"The American Whig review","placeOfPublication":"New York"}
-{"series":"/lccn/02016165","title":"Putnam's magazine of literature, science, art, and national interests","placeOfPublication":"New York"}
-{"series":"/lccn/02025593","title":"Scribners monthly","placeOfPublication":"New York"}
-{"series":"/lccn/03012437","title":"The International magazine of literature, art, and science","placeOfPublication":"New York"}
-{"series":"/lccn/04012666","title":"Atlantic Monthly","placeOfPublication":"Boston"}
-{"series":"/lccn/04012667","title":"The century illustrated monthly magazine","placeOfPublication":"New York"}
-{"series":"/lccn/04012671","title":"The Living age","placeOfPublication":"Boston"}
-{"series":"/lccn/04012673","title":"The North American review","placeOfPublication":"Boston"}
-{"series":"/lccn/04012676","title":"Scribner's magazine","placeOfPublication":"New York"}
-{"series":"/lccn/04017574","title":"Scientific American","placeOfPublication":"New York"}
-{"series":"/lccn/05003430","title":"The United States democratic review","placeOfPublication":"New York"}
-{"series":"/lccn/05014045","title":"The Continental monthly","placeOfPublication":"New York"}
-{"series":"/lccn/05014047","title":"The galaxy","placeOfPublication":"New York"}
-{"series":"/lccn/05014049","title":"Bay State Monthly","placeOfPublication":"Boston"}
-{"series":"/lccn/05014338","title":"The New-England magazine","placeOfPublication":"Boston"}
-{"series":"/lccn/05031874","title":"New England magazine","placeOfPublication":"Boston"}
-{"series":"/lccn/10005788","title":"Punchinello","placeOfPublication":"New York"}
-{"series":"/lccn/2001210206","title":"The Living age","placeOfPublication":"Boston"}
-{"series":"/lccn/2001210207","title":"Littell's living age","placeOfPublication":"Boston"}
-{"series":"/lccn/2001210208","title":"Democratic review","placeOfPublication":"New York"}
-{"series":"/lccn/2001210209","title":"The United States review","placeOfPublication":"New York"}
-{"series":"/lccn/2001210210","title":"Putnam's monthly","placeOfPublication":"New York"}
-{"series":"/lccn/2001210211","title":"The New England magazine and Bay State monthly","placeOfPublication":"Boston"}
-{"series":"/lccn/46041037","title":"The American Missionary","placeOfPublication":"New York"}
-{"series":"/lccn/61058056","title":"Old guard","placeOfPublication":"New York"}
-{"series":"/lccn/85642823","title":"Harper's new monthly magazine","placeOfPublication":"New York"}
-{"series":"/lccn/86655211","title":"The North-American review and miscellaneous journal","placeOfPublication":"Boston"}
-{"series":"/lccn/sf89099280","title":"The International miscellany of literature, art, and science","placeOfPublication":"New York"}
-{"series":"/lccn/sf89099281","title":"International weekly miscellany of literature, art, and science","placeOfPublication":"New York"}
-{"series":"/lccn/sn77021749","title":"The American review : a Whig journal of politics, literature, art, and science","placeOfPublication":"New York"}
-{"series":"/lccn/sn88027165","title":"The Century magazine Scribner's monthly","placeOfPublication":"New York"}
-{"series":"/lccn/sn99047371","title":"The United States magazine and Democratic review","placeOfPublication":"Washington"}
+{"series":"/lccn/02004276","title":"The American Whig review","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/02016165","title":"Putnam's magazine of literature, science, art, and national interests","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/02025593","title":"Scribners monthly","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/03012437","title":"The International magazine of literature, art, and science","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/04012666","title":"Atlantic Monthly","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"/lccn/04012667","title":"The century illustrated monthly magazine","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/04012671","title":"The Living age","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"/lccn/04012673","title":"The North American review","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"/lccn/04012676","title":"Scribner's magazine","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/04017574","title":"Scientific American","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/05003430","title":"The United States democratic review","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/05014045","title":"The Continental monthly","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/05014047","title":"The galaxy","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/05014049","title":"Bay State Monthly","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"/lccn/05014338","title":"The New-England magazine","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"/lccn/05031874","title":"New England magazine","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"/lccn/10005788","title":"Punchinello","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/2001210206","title":"The Living age","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"/lccn/2001210207","title":"Littell's living age","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"/lccn/2001210208","title":"Democratic review","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/2001210209","title":"The United States review","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/2001210210","title":"Putnam's monthly","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/2001210211","title":"The New England magazine and Bay State monthly","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"/lccn/46041037","title":"The American Missionary","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/61058056","title":"Old guard","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/85642823","title":"Harper's new monthly magazine","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/86655211","title":"The North-American review and miscellaneous journal","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"/lccn/sf89099280","title":"The International miscellany of literature, art, and science","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/sf89099281","title":"International weekly miscellany of literature, art, and science","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/sn77021749","title":"The American review : a Whig journal of politics, literature, art, and science","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/sn88027165","title":"The Century magazine Scribner's monthly","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"/lccn/sn99047371","title":"The United States magazine and Democratic review","placeOfPublication":"Washington","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
