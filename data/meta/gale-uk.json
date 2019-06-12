@@ -1,46 +1,46 @@
-{"series":"ANJO","title":"Aberdeen Journal"}
-{"series":"BDPO","title":"Birmingham Daily Post"}
-{"series":"BLMY","title":"Bristol Mercury"}
-{"series":"BNER","title":"Baner Cymru"}
-{"series":"BNWL","title":"Belfast News-Letter"}
-{"series":"BRPT","title":"Brighton Patriot"}
-{"series":"CHPN","title":"Champion"}
-{"series":"CHTR","title":"Charter"}
-{"series":"CHTT","title":"Chartist"}
-{"series":"CNMR","title":"Caledonian Mercury"}
-{"series":"CTCR","title":"Chartist Circular"}
-{"series":"CWPR","title":"Cobbett's Weekly Political Register"}
-{"series":"DNLN","title":"Daily News"}
-{"series":"DYMR","title":"Derby Mercury"}
-{"series":"ERLN","title":"The Era"}
-{"series":"EXLN","title":"Examiner"}
-{"series":"FRJO","title":"Freeman's Journal"}
-{"series":"GCLN","title":"Graphic"}
-{"series":"GLAD","title":"Goleuad"}
-{"series":"GNDL","title":"Genedl"}
-{"series":"GWHD","title":"Glasgow Herald"}
-{"series":"HLPA","title":"Hull Packet"}
-{"series":"HPTE","title":"Hampshire/Portsmouth Telegraph"}
-{"series":"IPJO","title":"Ipswich Journal"}
-{"series":"IPNW","title":"Illustrated Police News"}
-{"series":"JOJL","title":"Jackson's Oxford Journal"}
-{"series":"LEMR","title":"Leeds Mercury"}
-{"series":"LINP","title":"Lloyd's Illustrated Newspaper"}
-{"series":"LNDH","title":"London Dispatch"}
-{"series":"LVMR","title":"Liverpool Mercury"}
-{"series":"MCLN","title":"Morning Chronicle"}
-{"series":"MRTM","title":"Manchester Times"}
-{"series":"NECT","title":"Newcastle Courant"}
-{"series":"NREC","title":"Northern Echo"}
-{"series":"NRLR","title":"Northern Liberator"}
-{"series":"NRSR","title":"Northern Star"}
-{"series":"NRWC","title":"North Wales Chronicle"}
-{"series":"ODFW","title":"Odd Fellow"}
-{"series":"PMGU","title":"Poor Man's Guardian"}
-{"series":"PMGZ","title":"Pall Mall Gazette"}
-{"series":"PNCH","title":"Preston Chronicle"}
-{"series":"RDNP","title":"Reynolds's Newspaper"}
-{"series":"SNSR","title":"Southern Star"}
-{"series":"TEFP","title":"Trewman's Exeter Flying Post"}
-{"series":"TDAO0001","title":"The Times"}
-{"series":"WMCF","title":"Western Mail"}
+{"series":"ANJO","title":"Aberdeen Journal","placeOfPublication":"Aberdeen, Scotland","coverage":"http://dbpedia.org/resource/Aberdeen"}
+{"series":"BDPO","title":"Birmingham Daily Post","placeOfPublication":"Birmingham, England","coverage":"http://dbpedia.org/resource/Birmingham"}
+{"series":"BLMY","title":"Bristol Mercury","placeOfPublication":"Bristol, England","coverage":"http://dbpedia.org/resource/Bristol"}
+{"series":"BNER","title":"Baner Cymru","placeOfPublication":"Denbigh, Wales","coverage":"http://dbpedia.org/resource/Denbigh"}
+{"series":"BNWL","title":"Belfast News-Letter","placeOfPublication":"Belfast, Ireland","coverage":"http://dbpedia.org/resource/Belfast"}
+{"series":"BRPT","title":"Brighton Patriot","placeOfPublication":"Brighton, England","coverage":"http://dbpedia.org/resource/Brighton"}
+{"series":"CHPN","title":"Champion","placeOfPublication":"London","coverage":"http://dbpedia.org/resource/London"}
+{"series":"CHTR","title":"Charter","placeOfPublication":"London","coverage":"http://dbpedia.org/resource/London"}
+{"series":"CHTT","title":"Chartist","placeOfPublication":"London","coverage":"http://dbpedia.org/resource/London"}
+{"series":"CNMR","title":"Caledonian Mercury","placeOfPublication":"Edinburgh, Scotland","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"CTCR","title":"Chartist Circular","placeOfPublication":"Glasgow","coverage":"http://dbpedia.org/resource/Glasgow"}
+{"series":"CWPR","title":"Cobbett's Weekly Political Register","placeOfPublication":"London","coverage":"http://dbpedia.org/resource/London"}
+{"series":"DNLN","title":"Daily News","placeOfPublication":"London","coverage":"http://dbpedia.org/resource/London"}
+{"series":"DYMR","title":"Derby Mercury","placeOfPublication":"Derby, England","coverage":"http://dbpedia.org/resource/Derby"}
+{"series":"ERLN","title":"The Era","placeOfPublication":"London","coverage":"http://dbpedia.org/resource/London"}
+{"series":"EXLN","title":"Examiner","placeOfPublication":"London","coverage":"http://dbpedia.org/resource/London"}
+{"series":"FRJO","title":"Freeman's Journal","placeOfPublication":"Dublin, Ireland","coverage":"http://dbpedia.org/resource/Dublin"}
+{"series":"GCLN","title":"Graphic","placeOfPublication":"London","coverage":"http://dbpedia.org/resource/London"}
+{"series":"GLAD","title":"Goleuad","placeOfPublication":"Caernarvon, Wales","coverage":"http://dbpedia.org/resource/Caernarfon"}
+{"series":"GNDL","title":"Genedl","placeOfPublication":"Caernarvon, Wales","coverage":"http://dbpedia.org/resource/Caernarfon"}
+{"series":"GWHD","title":"Glasgow Herald","placeOfPublication":"Glasgow, Scotland","coverage":"http://dbpedia.org/resource/Glasgow"}
+{"series":"HLPA","title":"Hull Packet","placeOfPublication":"Hull, England","coverage":"http://dbpedia.org/resource/Kingston_upon_Hull"}
+{"series":"HPTE","title":"Hampshire/Portsmouth Telegraph","placeOfPublication":"Portsmouth, England","coverage":"http://dbpedia.org/resource/Portsmouth"}
+{"series":"IPJO","title":"Ipswich Journal","placeOfPublication":"Ipswich, England","coverage":"http://dbpedia.org/resource/Ipswich"}
+{"series":"IPNW","title":"Illustrated Police News","placeOfPublication":"London","coverage":""}
+{"series":"JOJL","title":"Jackson's Oxford Journal","placeOfPublication":"Oxford","coverage":""}
+{"series":"LEMR","title":"Leeds Mercury","placeOfPublication":"Leeds","coverage":""}
+{"series":"LINP","title":"Lloyd's Illustrated Newspaper","placeOfPublication":"London","coverage":""}
+{"series":"LNDH","title":"London Dispatch","placeOfPublication":"London","coverage":""}
+{"series":"LVMR","title":"Liverpool Mercury","placeOfPublication":"Liverpool","coverage":""}
+{"series":"MCLN","title":"Morning Chronicle","placeOfPublication":"London","coverage":""}
+{"series":"MRTM","title":"Manchester Times","placeOfPublication":"Manchester","coverage":""}
+{"series":"NECT","title":"Newcastle Courant","placeOfPublication":"","coverage":""}
+{"series":"NREC","title":"Northern Echo","placeOfPublication":"","coverage":""}
+{"series":"NRLR","title":"Northern Liberator","placeOfPublication":"","coverage":""}
+{"series":"NRSR","title":"Northern Star","placeOfPublication":"","coverage":""}
+{"series":"NRWC","title":"North Wales Chronicle","placeOfPublication":"","coverage":""}
+{"series":"ODFW","title":"Odd Fellow","placeOfPublication":"","coverage":""}
+{"series":"PMGU","title":"Poor Man's Guardian","placeOfPublication":"","coverage":""}
+{"series":"PMGZ","title":"Pall Mall Gazette","placeOfPublication":"","coverage":""}
+{"series":"PNCH","title":"Preston Chronicle","placeOfPublication":"","coverage":""}
+{"series":"RDNP","title":"Reynolds's Newspaper","placeOfPublication":"","coverage":""}
+{"series":"SNSR","title":"Southern Star","placeOfPublication":"","coverage":""}
+{"series":"TEFP","title":"Trewman's Exeter Flying Post","placeOfPublication":"Exeter, England","coverage":"http://dbpedia.org/resource/Exeter"}
+{"series":"TDAO0001","title":"The Times","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
+{"series":"WMCF","title":"Western Mail","placeOfPublication":"Cardiff, Wales","coverage":"http://dbpedia.org/resource/Cardiff"}
