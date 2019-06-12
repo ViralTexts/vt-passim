@@ -1,46 +1,49 @@
-{"series":"ANJO","title":"Aberdeen Journal","placeOfPublication":"Aberdeen, Scotland","coverage":"http://dbpedia.org/resource/Aberdeen"}
-{"series":"BDPO","title":"Birmingham Daily Post","placeOfPublication":"Birmingham, England","coverage":"http://dbpedia.org/resource/Birmingham"}
-{"series":"BLMY","title":"Bristol Mercury","placeOfPublication":"Bristol, England","coverage":"http://dbpedia.org/resource/Bristol"}
-{"series":"BNER","title":"Baner Cymru","placeOfPublication":"Denbigh, Wales","coverage":"http://dbpedia.org/resource/Denbigh"}
-{"series":"BNWL","title":"Belfast News-Letter","placeOfPublication":"Belfast, Ireland","coverage":"http://dbpedia.org/resource/Belfast"}
-{"series":"BRPT","title":"Brighton Patriot","placeOfPublication":"Brighton, England","coverage":"http://dbpedia.org/resource/Brighton"}
-{"series":"CHPN","title":"Champion","placeOfPublication":"London","coverage":"http://dbpedia.org/resource/London"}
-{"series":"CHTR","title":"Charter","placeOfPublication":"London","coverage":"http://dbpedia.org/resource/London"}
-{"series":"CHTT","title":"Chartist","placeOfPublication":"London","coverage":"http://dbpedia.org/resource/London"}
-{"series":"CNMR","title":"Caledonian Mercury","placeOfPublication":"Edinburgh, Scotland","coverage":"http://dbpedia.org/resource/Edinburgh"}
-{"series":"CTCR","title":"Chartist Circular","placeOfPublication":"Glasgow","coverage":"http://dbpedia.org/resource/Glasgow"}
-{"series":"CWPR","title":"Cobbett's Weekly Political Register","placeOfPublication":"London","coverage":"http://dbpedia.org/resource/London"}
-{"series":"DNLN","title":"Daily News","placeOfPublication":"London","coverage":"http://dbpedia.org/resource/London"}
-{"series":"DYMR","title":"Derby Mercury","placeOfPublication":"Derby, England","coverage":"http://dbpedia.org/resource/Derby"}
-{"series":"ERLN","title":"The Era","placeOfPublication":"London","coverage":"http://dbpedia.org/resource/London"}
-{"series":"EXLN","title":"Examiner","placeOfPublication":"London","coverage":"http://dbpedia.org/resource/London"}
-{"series":"FRJO","title":"Freeman's Journal","placeOfPublication":"Dublin, Ireland","coverage":"http://dbpedia.org/resource/Dublin"}
-{"series":"GCLN","title":"Graphic","placeOfPublication":"London","coverage":"http://dbpedia.org/resource/London"}
-{"series":"GLAD","title":"Goleuad","placeOfPublication":"Caernarvon, Wales","coverage":"http://dbpedia.org/resource/Caernarfon"}
-{"series":"GNDL","title":"Genedl","placeOfPublication":"Caernarvon, Wales","coverage":"http://dbpedia.org/resource/Caernarfon"}
-{"series":"GWHD","title":"Glasgow Herald","placeOfPublication":"Glasgow, Scotland","coverage":"http://dbpedia.org/resource/Glasgow"}
-{"series":"HLPA","title":"Hull Packet","placeOfPublication":"Hull, England","coverage":"http://dbpedia.org/resource/Kingston_upon_Hull"}
-{"series":"HPTE","title":"Hampshire/Portsmouth Telegraph","placeOfPublication":"Portsmouth, England","coverage":"http://dbpedia.org/resource/Portsmouth"}
-{"series":"IPJO","title":"Ipswich Journal","placeOfPublication":"Ipswich, England","coverage":"http://dbpedia.org/resource/Ipswich"}
-{"series":"IPNW","title":"Illustrated Police News","placeOfPublication":"London","coverage":""}
-{"series":"JOJL","title":"Jackson's Oxford Journal","placeOfPublication":"Oxford","coverage":""}
-{"series":"LEMR","title":"Leeds Mercury","placeOfPublication":"Leeds","coverage":""}
-{"series":"LINP","title":"Lloyd's Illustrated Newspaper","placeOfPublication":"London","coverage":""}
-{"series":"LNDH","title":"London Dispatch","placeOfPublication":"London","coverage":""}
-{"series":"LVMR","title":"Liverpool Mercury","placeOfPublication":"Liverpool","coverage":""}
-{"series":"MCLN","title":"Morning Chronicle","placeOfPublication":"London","coverage":""}
-{"series":"MRTM","title":"Manchester Times","placeOfPublication":"Manchester","coverage":""}
-{"series":"NECT","title":"Newcastle Courant","placeOfPublication":"","coverage":""}
-{"series":"NREC","title":"Northern Echo","placeOfPublication":"","coverage":""}
-{"series":"NRLR","title":"Northern Liberator","placeOfPublication":"","coverage":""}
-{"series":"NRSR","title":"Northern Star","placeOfPublication":"","coverage":""}
-{"series":"NRWC","title":"North Wales Chronicle","placeOfPublication":"","coverage":""}
-{"series":"ODFW","title":"Odd Fellow","placeOfPublication":"","coverage":""}
-{"series":"PMGU","title":"Poor Man's Guardian","placeOfPublication":"","coverage":""}
-{"series":"PMGZ","title":"Pall Mall Gazette","placeOfPublication":"","coverage":""}
-{"series":"PNCH","title":"Preston Chronicle","placeOfPublication":"","coverage":""}
-{"series":"RDNP","title":"Reynolds's Newspaper","placeOfPublication":"","coverage":""}
-{"series":"SNSR","title":"Southern Star","placeOfPublication":"","coverage":""}
-{"series":"TEFP","title":"Trewman's Exeter Flying Post","placeOfPublication":"Exeter, England","coverage":"http://dbpedia.org/resource/Exeter"}
+{"series":"ANJO","title":"Aberdeen Journal","subcollection":"Regional Daily","placeOfPublication":"Aberdeen, Scotland","coverage":"http://dbpedia.org/resource/Aberdeen"}
+{"series":"BDPO","title":"Birmingham Daily Post","subcollection":"Regional Daily","placeOfPublication":"Birmingham, England","coverage":"http://dbpedia.org/resource/Birmingham"}
+{"series":"BLMY","title":"Bristol Mercury","subcollection":"Regional Daily","placeOfPublication":"Bristol, England","coverage":"http://dbpedia.org/resource/Bristol"}
+{"series":"BNER","title":"Baner","subcollection":"Regional Weekly","placeOfPublication":"Denbigh, Wales","coverage":"http://dbpedia.org/resource/Denbigh"}
+{"series":"BNWL","title":"Belfast News-Letter","subcollection":"Regional Daily","placeOfPublication":"Belfast, Ireland","coverage":"http://dbpedia.org/resource/Belfast"}
+{"series":"BRPT","title":"Brighton Patriot","subcollection":"Regional Weekly","placeOfPublication":"Brighton, England","coverage":"http://dbpedia.org/resource/Brighton"}
+{"series":"CHPN","title":"Champion","subcollection":"London Weekly","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
+{"series":"CHTR","title":"Charter","subcollection":"London Weekly","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
+{"series":"CHTT","title":"Chartist","subcollection":"London Weekly","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
+{"series":"CNMR","title":"Caledonian Mercury","subcollection":"Regional Daily","placeOfPublication":"Edinburgh, Scotland","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"CTCR","title":"Chartist Circular","subcollection":"Regional Weekly","placeOfPublication":"Glasgow, Scotland","coverage":"http://dbpedia.org/resource/Glasgow"}
+{"series":"CWPR","title":"Cobbets Weekly Political Register","subcollection":"London Weekly","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
+{"series":"DNLN","title":"Daily News","subcollection":"London Daily","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
+{"series":"DYMR","title":"Derby Mercury","subcollection":"Regional Weekly","placeOfPublication":"Derby, England","coverage":"http://dbpedia.org/resource/Derby"}
+{"series":"ERLN","title":"The Era","subcollection":"London Weekly","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
+{"series":"EXLN","title":"Examiner","subcollection":"London Weekly","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
+{"series":"FRJO","title":"Freeman's Journal","subcollection":"Regional Daily","placeOfPublication":"Dublin, Ireland","coverage":"http://dbpedia.org/resource/Dublin"}
+{"series":"GCLN","title":"Graphic","subcollection":"London Weekly","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
+{"series":"GLAD","title":"Goleuad","subcollection":"Regional Weekly","placeOfPublication":"Caernarvon, Wales","coverage":"http://dbpedia.org/resource/Caernarfon"}
+{"series":"GNDL","title":"Genedl","subcollection":"Regional Weekly","placeOfPublication":"Caernarvon, Wales","coverage":"http://dbpedia.org/resource/Caernarfon"}
+{"series":"GWHD","title":"Glasgow Herald","subcollection":"Regional Daily","placeOfPublication":"Glasgow, Scotland","coverage":"http://dbpedia.org/resource/Glasgow"}
+{"series":"HLPA","title":"Hull Packet","subcollection":"Regional Weekly","placeOfPublication":"Hull, England","coverage":"http://dbpedia.org/resource/Kingston_upon_Hull"}
+{"series":"HPTE","title":"Hampshire/Portsmouth Telegraph","subcollection":"Regional Weekly","placeOfPublication":"Portsmouth, England","coverage":"http://dbpedia.org/resource/Portsmouth"}
+{"series":"IPJO","title":"Ipswich Journal","subcollection":"Regional Daily","placeOfPublication":"Ipswich, England","coverage":"http://dbpedia.org/resource/Ipswich"}
+{"series":"IPNW","title":"Illustrated Police News","subcollection":"London Weekly","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
+{"series":"JOJL","title":"Jackson's Oxford Journal","subcollection":"Regional Weekly","placeOfPublication":"Oxford, England","coverage":"http://dbpedia.org/resource/Oxford"}
+{"series":"LEMR","title":"Leeds Mercury","subcollection":"Regional Daily","placeOfPublication":"Leeds, England","coverage":"http://dbpedia.org/resource/Leeds"}
+{"series":"LINP","title":"Lloyd's Illustrated Newspaper","subcollection":"London Weekly","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
+{"series":"LNDH","title":"London Dispatch","subcollection":"London Weekly","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
+{"series":"LVMR","title":"Liverpool Mercury","subcollection":"Regional Daily","placeOfPublication":"Liverpool, England","coverage":"http://dbpedia.org/resource/Liverpool"}
+{"series":"MCLN","title":"Morning Chronicle","subcollection":"London Daily","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
+{"series":"MRET","title":"Manchester Examiner and Times","subcollection":"Regional","placeOfPublication":"Manchester, England","coverage":"http://dbpedia.org/resource/Manchester"}
+{"series":"MREX","title":"Manchester Examiner","subcollection":"Regional Daily","placeOfPublication":"Manchester, England","coverage":"http://dbpedia.org/resource/Manchester"}
+{"series":"MRTM","title":"Manchester Times","subcollection":"Regional Daily","placeOfPublication":"Manchester, England","coverage":"http://dbpedia.org/resource/Manchester"}
+{"series":"NECT","title":"Newcastle Courant","subcollection":"Regional Weekly","placeOfPublication":"Newcastle-upon-Tyne, England","coverage":"http://dbpedia.org/resource/Newcastle_upon_Tyne"}
+{"series":"NREC","title":"Northern Echo","subcollection":"Regional Daily","placeOfPublication":"Darlington, England","coverage":"http://dbpedia.org/resource/Darlington"}
+{"series":"NRLR","title":"Northern Liberator","subcollection":"Regional Weekly","placeOfPublication":"Newcastle-upon-Tyne, England","coverage":"http://dbpedia.org/resource/Newcastle_upon_Tyne"}
+{"series":"NRSR","title":"Northern Star","subcollection":"Regional Weekly","placeOfPublication":"Leeds, England","coverage":"http://dbpedia.org/resource/Leeds"}
+{"series":"NRWC","title":"North Wales Chronicle","subcollection":"Regional Weekly","placeOfPublication":"Bangor, Wales","coverage":"http://dbpedia.org/resource/Bangor,_Gwynedd"}
+{"series":"ODFW","title":"Odd Fellow","subcollection":"London Weekly","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
+{"series":"OPTE","title":"Operative","subcollection":"London Weekly","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
+{"series":"PMGU","title":"Poor Man's Guardian","subcollection":"London Weekly","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
+{"series":"PMGZ","title":"Pall Mall Gazette","subcollection":"London Daily","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
+{"series":"PNCH","title":"Preston Chronicle","subcollection":"Regional Weekly","placeOfPublication":"Preston, England","coverage":"http://dbpedia.org/resource/Preston,_Lancashire"}
+{"series":"RDNP","title":"Reynolds's  Newspaper","subcollection":"London Weekly","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
+{"series":"SNSR","title":"Southern Star","subcollection":"Regional Weekly","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
+{"series":"TEFP","title":"Trewman's Exeter Flying Post","subcollection":"Regional Daily","placeOfPublication":"Exeter, England","coverage":"http://dbpedia.org/resource/Exeter"}
+{"series":"WMCF","title":"Western Mail","subcollection":"Regional Daily","placeOfPublication":"Cardiff, Wales","coverage":"http://dbpedia.org/resource/Cardiff"}
 {"series":"TDAO0001","title":"The Times","placeOfPublication":"London, England","coverage":"http://dbpedia.org/resource/London"}
-{"series":"WMCF","title":"Western Mail","placeOfPublication":"Cardiff, Wales","coverage":"http://dbpedia.org/resource/Cardiff"}
