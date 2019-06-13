@@ -665,7 +665,7 @@
 {"placeOfPublication":"New Orleans","series":"aps/35568","title":"DeBow's Review. Agricultural, Commercial, Industrial Progress & Resources (1868-1880)","coverage":"http://dbpedia.org/resource/New_Orleans"}
 {"placeOfPublication":"New Orleans","series":"aps/35597","title":"The Southern Quarterly Review (1842-1857)","coverage":"http://dbpedia.org/resource/New_Orleans"}
 {"placeOfPublication":"New Orleans","series":"aps/35615","title":"New Orleans Miscellany; a Monthly Periodical, Devoted to the Interests of Popular Science, and to the Advancement of Southern Literature (1847-1848)","coverage":"http://dbpedia.org/resource/New_Orleans"}
-{"placeOfPublication":"New Richmond","series":"aps/41878","title":"Columbian Historian (1824-1825)","coverage":""}
+{"placeOfPublication":"New Richmond","series":"aps/41878","title":"Columbian Historian (1824-1825)","coverage":"http://dbpedia.org/resource/New_Richmond%2C_Ohio"}
 {"placeOfPublication":"New York","series":"/lccn/02004276","title":"The American Whig Review (1850-1852)","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"New York","series":"/lccn/02016165","title":"Putnam's Magazine.  Original Papers on Literature, Science, Art and National Interests (1868-1870)","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"New York","series":"/lccn/02025593","title":"Scribner's Monthly (1870-1881)","coverage":"http://dbpedia.org/resource/New_York_City"}
@@ -1071,28 +1071,28 @@
 {"placeOfPublication":"New York","series":"aps/42286","title":"The American Monthly Magazine and Critical Review (1817-1819)","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"New York","series":"aps/42377","title":"The American Review, and Literary Journal (1801-1802)","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"New York","series":"aps/46423","title":"The New York Genealogical and Biographical Record. Devoted to the Interests of American Genealogy and Biography (1870-1910)","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"placeOfPublication":"Newark","series":"aps/35698","title":"The New Jersey Monthly Magazine (1825-1825)","coverage":""}
-{"placeOfPublication":"Newark","series":"aps/40746","title":"The Lancet (1803-1803)","coverage":""}
-{"placeOfPublication":"Newark","series":"aps/41149","title":"United States Magazine; or, General Repository of Useful Instruction and Rational Amusement (1794-1794)","coverage":""}
-{"placeOfPublication":"Newark","series":"aps/41787","title":"The Rural Magazine ... (1798-1799)","coverage":""}
-{"placeOfPublication":"Newbern","series":"aps/41020","title":"The North - Carolina Magazine; or, Universal Intelligencer (1764-1765)","coverage":""}
-{"placeOfPublication":"Newburgh","series":"aps/35069","title":"The Evangelical Witness (1822-1826)","coverage":""}
+{"placeOfPublication":"Newark","series":"aps/35698","title":"The New Jersey Monthly Magazine (1825-1825)","coverage":"http://dbpedia.org/resource/Newark%2C_New_Jersey"}
+{"placeOfPublication":"Newark","series":"aps/40746","title":"The Lancet (1803-1803)","coverage":"http://dbpedia.org/resource/Newark%2C_New_Jersey"}
+{"placeOfPublication":"Newark","series":"aps/41149","title":"United States Magazine; or, General Repository of Useful Instruction and Rational Amusement (1794-1794)","coverage":"http://dbpedia.org/resource/Newark%2C_New_Jersey"}
+{"placeOfPublication":"Newark","series":"aps/41787","title":"The Rural Magazine ... (1798-1799)","coverage":"http://dbpedia.org/resource/Newark%2C_New_Jersey"}
+{"placeOfPublication":"Newbern","series":"aps/41020","title":"The North - Carolina Magazine; or, Universal Intelligencer (1764-1765)","coverage":"http://dbpedia.org/resource/New_Bern%2C_North_Carolina"}
+{"placeOfPublication":"Newburgh","series":"aps/35069","title":"The Evangelical Witness (1822-1826)","coverage":"http://dbpedia.org/resource/Newburgh_(city)%2C_New_York"}
 {"placeOfPublication":"Newburyport","series":"aps/25102","title":"The Churchman's Repository for the Eastern Diocese (1820-1820)","coverage":"http://dbpedia.org/resource/Newburyport%2C_Massachusetts"}
 {"placeOfPublication":"Newburyport","series":"aps/40623","title":"The Independent Republican; and Miscellaneous Magazine (1805-1805)","coverage":"http://dbpedia.org/resource/Newburyport%2C_Massachusetts"}
 {"placeOfPublication":"Newburyport","series":"aps/40754","title":"Merrimack Magazine and Ladies' Literary Cabinet (1805-1806)","coverage":"http://dbpedia.org/resource/Newburyport%2C_Massachusetts"}
 {"placeOfPublication":"Newburyport","series":"aps/40755","title":"Merrimack Miscellany (1805-1805)","coverage":"http://dbpedia.org/resource/Newburyport%2C_Massachusetts"}
-{"placeOfPublication":"Newfield","series":"aps/42013","title":"The Humming Bird; or, Herald of Taste (1798-1798)","coverage":""}
-{"placeOfPublication":"North Wrentham","series":"aps/35760","title":"The New - England Telegraph, and Eclectic Review (1835-1836)","coverage":""}
+{"placeOfPublication":"Newfield","series":"aps/42013","title":"The Humming Bird; or, Herald of Taste (1798-1798)","coverage":"http://dbpedia.org/resource/Bridgeport%2C_Connecticut"}
+{"placeOfPublication":"North Wrentham","series":"aps/35760","title":"The New - England Telegraph, and Eclectic Review (1835-1836)","coverage":"http://dbpedia.org/resource/Norfolk%2C_Massachusetts"}
 {"placeOfPublication":"Northampton","series":"aps/25252","title":"The American Musical Magazine (1800-1801)","coverage":"http://dbpedia.org/resource/Northampton%2C_Massachusetts"}
-{"placeOfPublication":"Northumberland","series":"aps/24549","title":"The Religious Museum (1818-1819)","coverage":""}
-{"placeOfPublication":"Oneida","series":"aps/25179","title":"The American Socialist. Devoted to the Enlargement and Perfection of Home (1876-1879)","coverage":""}
-{"placeOfPublication":"Oswego","series":"aps/35764","title":"Oasis; a Monthly Magazine Devoted to Literature, Science and the Arts (1837-1838)","coverage":""}
-{"placeOfPublication":"Oxford","series":"aps/35549","title":"Literary Register; a Weekly Paper (1828-1829)","coverage":""}
-{"placeOfPublication":"Oxford","series":"aps/42262","title":"Literary Focus (1827-1828)","coverage":""}
-{"placeOfPublication":"Palmer","series":"aps/35442","title":"The Massachusetts Watchman, and Periodical Journal (1809-1810)","coverage":""}
-{"placeOfPublication":"Paris","series":"aps/24870","title":"The Literary Pamphleteer, Containing Some Observations on the Best Mode of Promoting the Cause of Literature in the State of Kentucky; and a Review of the Late Administration of the Transylvania University (1823-1823)","coverage":""}
-{"placeOfPublication":"Penfield","series":"aps/34478","title":"The Orion, a Monthly Magazine of Literature and Art (1842-1844)","coverage":""}
-{"placeOfPublication":"Perth Amboy","series":"aps/24753","title":"The Scientific Journal (1818-1820)","coverage":""}
+{"placeOfPublication":"Northumberland","series":"aps/24549","title":"The Religious Museum (1818-1819)","coverage":"http://dbpedia.org/resource/Northumberland%2C_Pennsylvania"}
+{"placeOfPublication":"Oneida","series":"aps/25179","title":"The American Socialist. Devoted to the Enlargement and Perfection of Home (1876-1879)","coverage":"http://dbpedia.org/resource/Oneida%2C_New_York"}
+{"placeOfPublication":"Oswego","series":"aps/35764","title":"Oasis; a Monthly Magazine Devoted to Literature, Science and the Arts (1837-1838)","coverage":"http://dbpedia.org/resource/Oswego%2C_New_York"}
+{"placeOfPublication":"Oxford","series":"aps/35549","title":"Literary Register; a Weekly Paper (1828-1829)","coverage":"http://dbpedia.org/resource/Oxford%2C_Ohio"}
+{"placeOfPublication":"Oxford","series":"aps/42262","title":"Literary Focus (1827-1828)","coverage":"http://dbpedia.org/resource/Oxford%2C_Ohio"}
+{"placeOfPublication":"Palmer","series":"aps/35442","title":"The Massachusetts Watchman, and Periodical Journal (1809-1810)","coverage":"http://dbpedia.org/resource/Palmer%2C_Massachusetts"}
+{"placeOfPublication":"Paris","series":"aps/24870","title":"The Literary Pamphleteer, Containing Some Observations on the Best Mode of Promoting the Cause of Literature in the State of Kentucky; and a Review of the Late Administration of the Transylvania University (1823-1823)","coverage":"http://dbpedia.org/resource/Paris%2C_Kentucky"}
+{"placeOfPublication":"Penfield","series":"aps/34478","title":"The Orion, a Monthly Magazine of Literature and Art (1842-1844)","coverage":"http://dbpedia.org/resource/Penfield%2C_Georgia"}
+{"placeOfPublication":"Perth Amboy","series":"aps/24753","title":"The Scientific Journal (1818-1820)","coverage":"http://dbpedia.org/resource/Perth_Amboy%2C_New_Jersey"}
 {"placeOfPublication":"Philadelphia","series":"aps/1149","title":"The Columbian Museum; or, Universal Asylum (1793-1793)","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"placeOfPublication":"Philadelphia","series":"aps/1151","title":"The Dessert to the True American (1798-1799)","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"placeOfPublication":"Philadelphia","series":"aps/1160","title":"The Lady's Magazine, and Repository of Entertaining Knowledge (1792-1793)","coverage":"http://dbpedia.org/resource/Philadelphia"}
@@ -1338,7 +1338,7 @@
 {"placeOfPublication":"Philadelphia","series":"aps/46153","title":"Franklin Journal, and American Mechanics' Magazine (1826-1827)","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"placeOfPublication":"Philadelphia","series":"aps/46154","title":"Journal of the Franklin Institute, of the State of Pennsylvania, for the Promotion of the Mechanic Arts; Devoted to Mechanical and Physical Science, Civil Engineering, the Arts and Manufactures, and the Recording of American and Other Patent Inventions (1828-1851)","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"placeOfPublication":"Philadelphia","series":"aps/7066","title":"The American Universal Magazine (1797-1798)","coverage":"http://dbpedia.org/resource/Philadelphia"}
-{"placeOfPublication":"Philadelphie","series":"aps/34546","title":"L'Hemisphere, Journal Francais; Contenant des Varietes Litteraires et Politiques, Dedie aux Americains Amateurs de la Langue Francaise (1809-1811)","coverage":""}
+{"placeOfPublication":"Philadelphie","series":"aps/34546","title":"L'Hemisphere, Journal Francais; Contenant des Varietes Litteraires et Politiques, Dedie aux Americains Amateurs de la Langue Francaise (1809-1811)","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"placeOfPublication":"Pittsburgh","series":"aps/24183","title":"The Western Gleaner; or, Repository for Arts, Sciences, and Literature (1813-1814)","coverage":"http://dbpedia.org/resource/Pittsburgh"}
 {"placeOfPublication":"Pittsburgh","series":"aps/24545","title":"The Pittsburgh Recorder, Containing Religious Literary and Political Information (1822-1827)","coverage":"http://dbpedia.org/resource/Pittsburgh"}
 {"placeOfPublication":"Pittsburgh","series":"aps/24828","title":"Historical Researches in Western Pennsylvania, Principally Catholic (1884-1885)","coverage":"http://dbpedia.org/resource/Pittsburgh"}
@@ -1351,27 +1351,27 @@
 {"placeOfPublication":"Pittsburgh","series":"aps/35436","title":"The Pioneer, Consisting of Essays, Literary, Moral and Theological (1812-1812)","coverage":"http://dbpedia.org/resource/Pittsburgh"}
 {"placeOfPublication":"Pittsburgh","series":"aps/35573","title":"Literary Examiner and Western Monthly Review (1839-1839)","coverage":"http://dbpedia.org/resource/Pittsburgh"}
 {"placeOfPublication":"Pittsburgh","series":"aps/35574","title":"Examiner and Hesperian (1840-1840)","coverage":"http://dbpedia.org/resource/Pittsburgh"}
-{"placeOfPublication":"Pittsford","series":"aps/41383","title":"The Christian Messenger. Being a Miscellaneous Work; Directed to the Improvement of the Human Mind; in Prose and Verse (1815-1816)","coverage":""}
-{"placeOfPublication":"Portland","series":"aps/1148","title":"The Christian's Monitor, &c. (1799-1799)","coverage":""}
-{"placeOfPublication":"Portland","series":"aps/24589","title":"The Bibelot, a Reprint of Poetry and Prose for Book Lovers, Chosen in Part From Scarce Editions and Sources Not Generally Known (1895-1925)","coverage":""}
-{"placeOfPublication":"Portland","series":"aps/24858","title":"Christian Intelligencer (1821-1827)","coverage":""}
-{"placeOfPublication":"Portland","series":"aps/24859","title":"The Christian Intelligencer and Eastern Chronicle (1827-1836)","coverage":""}
-{"placeOfPublication":"Portland","series":"aps/35014","title":"The Yankee and Boston Literary Gazette (1828-1829)","coverage":""}
-{"placeOfPublication":"Portland","series":"aps/35209","title":"Teacher's Guide and Parent's Assistant (1826-1827)","coverage":""}
-{"placeOfPublication":"Portland","series":"aps/35439","title":"The Maine Monthly Magazine (1836-1837)","coverage":""}
-{"placeOfPublication":"Portland","series":"aps/35666","title":"The Portland Magazine; Devoted to Literature (1834-1836)","coverage":""}
-{"placeOfPublication":"Portland","series":"aps/41416","title":"Portland Magazine (1805-1805)","coverage":""}
-{"placeOfPublication":"Portsmouth","series":"aps/24299","title":"The Literary Mirror (1808-1809)","coverage":""}
-{"placeOfPublication":"Portsmouth","series":"aps/24341","title":"Herald of Gospel Liberty (1808-1930)","coverage":""}
-{"placeOfPublication":"Portsmouth","series":"aps/24667","title":"The Portsmouth Weekly Magazine; a Repository of Miscellaneous Literary Matters in Prose and Verse (1824-1825)","coverage":""}
-{"placeOfPublication":"Portsmouth","series":"aps/24854","title":"The Christian Herald (1818-1825)","coverage":""}
-{"placeOfPublication":"Portsmouth","series":"aps/40490","title":"The Christian's Magazine, Reviewer, and Religious Intelligencer (1805-1808)","coverage":""}
-{"placeOfPublication":"Portsmouth","series":"aps/40899","title":"The New Hampshire New Jerusalem Magazine and Primitive Religious Intelligencer (1805-1805)","coverage":""}
-{"placeOfPublication":"Poughkeepsie","series":"aps/35665","title":"The Poughkeepsie Casket: a Semi - Monthly Literary Journal, Devoted Exclusively to the Different Branches of Polite Literature (1836-1841)","coverage":""}
-{"placeOfPublication":"Poughkeepsie","series":"aps/41786","title":"The Rural Casket (1798-1798)","coverage":""}
-{"placeOfPublication":"Princeton","series":"aps/24450","title":"The Nassau Literary Magazine (1848-1908)","coverage":""}
-{"placeOfPublication":"Princeton","series":"aps/26950","title":"The Nassau Monthly (1842-1847)","coverage":""}
-{"placeOfPublication":"Princeton","series":"aps/35585","title":"The Princeton Magazine (1850-1851)","coverage":""}
+{"placeOfPublication":"Pittsford","series":"aps/41383","title":"The Christian Messenger. Being a Miscellaneous Work; Directed to the Improvement of the Human Mind; in Prose and Verse (1815-1816)","coverage":"http://dbpedia.org/resource/Pittsford_(town)%2C_New_York"}
+{"placeOfPublication":"Portland","series":"aps/1148","title":"The Christian's Monitor, &c. (1799-1799)","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
+{"placeOfPublication":"Portland","series":"aps/24589","title":"The Bibelot, a Reprint of Poetry and Prose for Book Lovers, Chosen in Part From Scarce Editions and Sources Not Generally Known (1895-1925)","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
+{"placeOfPublication":"Portland","series":"aps/24858","title":"Christian Intelligencer (1821-1827)","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
+{"placeOfPublication":"Portland","series":"aps/24859","title":"The Christian Intelligencer and Eastern Chronicle (1827-1836)","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
+{"placeOfPublication":"Portland","series":"aps/35014","title":"The Yankee and Boston Literary Gazette (1828-1829)","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
+{"placeOfPublication":"Portland","series":"aps/35209","title":"Teacher's Guide and Parent's Assistant (1826-1827)","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
+{"placeOfPublication":"Portland","series":"aps/35439","title":"The Maine Monthly Magazine (1836-1837)","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
+{"placeOfPublication":"Portland","series":"aps/35666","title":"The Portland Magazine; Devoted to Literature (1834-1836)","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
+{"placeOfPublication":"Portland","series":"aps/41416","title":"Portland Magazine (1805-1805)","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
+{"placeOfPublication":"Portsmouth","series":"aps/24299","title":"The Literary Mirror (1808-1809)","coverage":"http://dbpedia.org/resource/Portsmouth%2C_New_Hampshire"}
+{"placeOfPublication":"Portsmouth","series":"aps/24341","title":"Herald of Gospel Liberty (1808-1930)","coverage":"http://dbpedia.org/resource/Portsmouth%2C_New_Hampshire"}
+{"placeOfPublication":"Portsmouth","series":"aps/24667","title":"The Portsmouth Weekly Magazine; a Repository of Miscellaneous Literary Matters in Prose and Verse (1824-1825)","coverage":"http://dbpedia.org/resource/Portsmouth%2C_New_Hampshire"}
+{"placeOfPublication":"Portsmouth","series":"aps/24854","title":"The Christian Herald (1818-1825)","coverage":"http://dbpedia.org/resource/Portsmouth%2C_New_Hampshire"}
+{"placeOfPublication":"Portsmouth","series":"aps/40490","title":"The Christian's Magazine, Reviewer, and Religious Intelligencer (1805-1808)","coverage":"http://dbpedia.org/resource/Portsmouth%2C_New_Hampshire"}
+{"placeOfPublication":"Portsmouth","series":"aps/40899","title":"The New Hampshire New Jerusalem Magazine and Primitive Religious Intelligencer (1805-1805)","coverage":"http://dbpedia.org/resource/Portsmouth%2C_New_Hampshire"}
+{"placeOfPublication":"Poughkeepsie","series":"aps/35665","title":"The Poughkeepsie Casket: a Semi - Monthly Literary Journal, Devoted Exclusively to the Different Branches of Polite Literature (1836-1841)","coverage":"http://dbpedia.org/resource/Poughkeepsie%2C_New_York"}
+{"placeOfPublication":"Poughkeepsie","series":"aps/41786","title":"The Rural Casket (1798-1798)","coverage":"http://dbpedia.org/resource/Poughkeepsie%2C_New_York"}
+{"placeOfPublication":"Princeton","series":"aps/24450","title":"The Nassau Literary Magazine (1848-1908)","coverage":"http://dbpedia.org/resource/Princeton%2C_New_Jersey"}
+{"placeOfPublication":"Princeton","series":"aps/26950","title":"The Nassau Monthly (1842-1847)","coverage":"http://dbpedia.org/resource/Princeton%2C_New_Jersey"}
+{"placeOfPublication":"Princeton","series":"aps/35585","title":"The Princeton Magazine (1850-1851)","coverage":"http://dbpedia.org/resource/Princeton%2C_New_Jersey"}
 {"placeOfPublication":"Providence","series":"aps/24550","title":"The Rhode Island Baptist (1823-1824)","coverage":"http://dbpedia.org/resource/Providence%2C_Rhode_Island"}
 {"placeOfPublication":"Providence","series":"aps/24551","title":"Rhode Island Institute of Instruction. Journal (1845-1848)","coverage":"http://dbpedia.org/resource/Providence%2C_Rhode_Island"}
 {"placeOfPublication":"Providence","series":"aps/24552","title":"The Rhode Island Literary Repository, a Monthly Magazine. Containing Biographical Sketches, Reviews, Dissertations, Literary Researches, Poetry, Anecdotes, &c. (1814-1815)","coverage":"http://dbpedia.org/resource/Providence%2C_Rhode_Island"}
@@ -1386,8 +1386,8 @@
 {"placeOfPublication":"Providence","series":"aps/35063","title":"The Christian Magazine, Conducted by Members of Mendon Association (1824-1827)","coverage":"http://dbpedia.org/resource/Providence%2C_Rhode_Island"}
 {"placeOfPublication":"Providence","series":"aps/35505","title":"The Literary Journal, and Weekly Register of Science and the Arts (1833-1834)","coverage":"http://dbpedia.org/resource/Providence%2C_Rhode_Island"}
 {"placeOfPublication":"Providence","series":"aps/35578","title":"The United States Intelligencer and Review (1829-1831)","coverage":"http://dbpedia.org/resource/Providence%2C_Rhode_Island"}
-{"placeOfPublication":"Raleigh","series":"aps/41378","title":"The Carolina Law Repository (1813-1816)","coverage":""}
-{"placeOfPublication":"Reading","series":"aps/24913","title":"Readinger Magazin fur Freunde der Deutschen Literatur in Amerika (1824-1824)","coverage":""}
+{"placeOfPublication":"Raleigh","series":"aps/41378","title":"The Carolina Law Repository (1813-1816)","coverage":"http://dbpedia.org/resource/Raleigh%2C_North_Carolina"}
+{"placeOfPublication":"Reading","series":"aps/24913","title":"Readinger Magazin fur Freunde der Deutschen Literatur in Amerika (1824-1824)","coverage":"http://dbpedia.org/resource/Reading%2C_Pennsylvania"}
 {"placeOfPublication":"Richmond","series":"aps/24222","title":"The Virginia Historical Register, and Literary Companion (1852-1853)","coverage":"http://dbpedia.org/resource/Richmond%2C_Virginia"}
 {"placeOfPublication":"Richmond","series":"aps/24463","title":"National Magazine; or, A Political, Historical, Biographical, and Literary Repository (1799-1800)","coverage":"http://dbpedia.org/resource/Richmond%2C_Virginia"}
 {"placeOfPublication":"Richmond","series":"aps/24495","title":"The Crisis. Devoted to the Support of the Democratic Principles (1840-1840)","coverage":"http://dbpedia.org/resource/Richmond%2C_Virginia"}
@@ -1408,40 +1408,40 @@
 {"placeOfPublication":"Richmond","series":"aps/35172","title":"Evangelical and Literary Magazine (1822-1823)","coverage":"http://dbpedia.org/resource/Richmond%2C_Virginia"}
 {"placeOfPublication":"Richmond","series":"aps/35173","title":"Literary and Evangelical Magazine (1824-1828)","coverage":"http://dbpedia.org/resource/Richmond%2C_Virginia"}
 {"placeOfPublication":"Richmond","series":"aps/42153","title":"The American Gleaner and Virginia Magazine (1807-1807)","coverage":"http://dbpedia.org/resource/Richmond%2C_Virginia"}
-{"placeOfPublication":"Rochester","series":"aps/24757","title":"The Rochester Magazine, and Theological Review, Consisting of Essays, Extracts, Reviews, and Biblical Criticisms (1824-1824)","coverage":""}
-{"placeOfPublication":"Rochester","series":"aps/35499","title":"New Genesee Farmer and Gardeners' Journal (1840-1844)","coverage":""}
-{"placeOfPublication":"Rochester","series":"aps/35500","title":"The Genesee Farmer (1845-1865)","coverage":""}
-{"placeOfPublication":"Rochester","series":"aps/35779","title":"The Genesee Farmer and Gardener's Journal (1831-1839)","coverage":""}
-{"placeOfPublication":"Rutland","series":"aps/24759","title":"The Rural Magazine and Literary Evening Fire - Side (1820-1820)","coverage":""}
-{"placeOfPublication":"Rutland","series":"aps/25270","title":"The Vermont Baptist Missionary Magazine (1811-1812)","coverage":""}
-{"placeOfPublication":"Rutland","series":"aps/41789","title":"The Rural Magazine; or, Vermont Repository. Devoted to Literary, Moral, Historical, and Political Improvement (1795-1796)","coverage":""}
-{"placeOfPublication":"Salem","series":"aps/40482","title":"The Barber's Shop (1807-1808)","coverage":""}
-{"placeOfPublication":"Salem","series":"aps/40619","title":"The Fool (1807-1807)","coverage":""}
-{"placeOfPublication":"Salem","series":"aps/41252","title":"The Weekly Visitant; Moral, Poetical, Humorous, &c. (1806-1806)","coverage":""}
-{"placeOfPublication":"Salisbury","series":"aps/24486","title":"North-Carolina Magazine, Political, Historical, and Miscellaneous (1813-1813)","coverage":""}
-{"placeOfPublication":"Salt Lake City","series":"aps/34589","title":"Utahnian (1896-1897)","coverage":""}
+{"placeOfPublication":"Rochester","series":"aps/24757","title":"The Rochester Magazine, and Theological Review, Consisting of Essays, Extracts, Reviews, and Biblical Criticisms (1824-1824)","coverage":"http://dbpedia.org/resource/Rochester%2C_New_York"}
+{"placeOfPublication":"Rochester","series":"aps/35499","title":"New Genesee Farmer and Gardeners' Journal (1840-1844)","coverage":"http://dbpedia.org/resource/Rochester%2C_New_York"}
+{"placeOfPublication":"Rochester","series":"aps/35500","title":"The Genesee Farmer (1845-1865)","coverage":"http://dbpedia.org/resource/Rochester%2C_New_York"}
+{"placeOfPublication":"Rochester","series":"aps/35779","title":"The Genesee Farmer and Gardener's Journal (1831-1839)","coverage":"http://dbpedia.org/resource/Rochester%2C_New_York"}
+{"placeOfPublication":"Rutland","series":"aps/24759","title":"The Rural Magazine and Literary Evening Fire - Side (1820-1820)","coverage":"http://dbpedia.org/resource/Rutland_(city)%2C_Vermont"}
+{"placeOfPublication":"Rutland","series":"aps/25270","title":"The Vermont Baptist Missionary Magazine (1811-1812)","coverage":"http://dbpedia.org/page/Rutland_(city)%2C_Vermont"}
+{"placeOfPublication":"Rutland","series":"aps/41789","title":"The Rural Magazine; or, Vermont Repository. Devoted to Literary, Moral, Historical, and Political Improvement (1795-1796)","coverage":"http://dbpedia.org/page/Rutland_(city)%2C_Vermont"}
+{"placeOfPublication":"Salem","series":"aps/40482","title":"The Barber's Shop (1807-1808)","coverage":"http://dbpedia.org/resource/Salem%2C_Massachusetts"}
+{"placeOfPublication":"Salem","series":"aps/40619","title":"The Fool (1807-1807)","coverage":"http://dbpedia.org/resource/Salem%2C_Massachusetts"}
+{"placeOfPublication":"Salem","series":"aps/41252","title":"The Weekly Visitant; Moral, Poetical, Humorous, &c. (1806-1806)","coverage":"http://dbpedia.org/resource/Salem%2C_Massachusetts"}
+{"placeOfPublication":"Salisbury","series":"aps/24486","title":"North-Carolina Magazine, Political, Historical, and Miscellaneous (1813-1813)","coverage":"http://dbpedia.org/resource/Salisbury%2C_North_Carolina"}
+{"placeOfPublication":"Salt Lake City","series":"aps/34589","title":"Utahnian (1896-1897)","coverage":"http://dbpedia.org/resource/Salt_Lake_City"}
 {"placeOfPublication":"San Francisco","series":"aps/24426","title":"The Pioneer; or, California Monthly Magazine (1854-1855)","coverage":"http://dbpedia.org/resource/San_Francisco"}
 {"placeOfPublication":"San Francisco","series":"aps/24705","title":"Overland Monthly and Out West Magazine (1868-1935)","coverage":"http://dbpedia.org/resource/San_Francisco"}
 {"placeOfPublication":"San Francisco","series":"aps/24802","title":"Californian and Overland Monthly (1882-1882)","coverage":"http://dbpedia.org/resource/San_Francisco"}
 {"placeOfPublication":"San Francisco","series":"aps/24803","title":"Californian Illustrated Magazine (1891-1894)","coverage":"http://dbpedia.org/resource/San_Francisco"}
 {"placeOfPublication":"San Francisco","series":"aps/27478","title":"Californian (1880-1882)","coverage":"http://dbpedia.org/resource/San_Francisco"}
-{"placeOfPublication":"Sangerfield","series":"aps/25098","title":"The Christian's Weekly Monitor; or, Sabbath Morning Repast (1814-1818)","coverage":""}
-{"placeOfPublication":"Savannah","series":"aps/40620","title":"The Georgia Analytical Repository (1802-1803)","coverage":""}
+{"placeOfPublication":"Sangerfield","series":"aps/25098","title":"The Christian's Weekly Monitor; or, Sabbath Morning Repast (1814-1818)","coverage":"http://dbpedia.org/resource/Sangerfield%2C_New_York"}
+{"placeOfPublication":"Savannah","series":"aps/40620","title":"The Georgia Analytical Repository (1802-1803)","coverage":"http://dbpedia.org/resource/Savannah%2C_Georgia"}
 {"placeOfPublication":"Schenectady","series":"aps/24166","title":"Wreath; Devoted to Polite Literature (1834-1835)","coverage":"http://dbpedia.org/resource/Schenectady%2C_New_York"}
 {"placeOfPublication":"Schenectady","series":"aps/24167","title":"Literary Journal; a Repository of Polite Literature and Fine Arts (1835-1835)","coverage":"http://dbpedia.org/resource/Schenectady%2C_New_York"}
 {"placeOfPublication":"Schenectady","series":"aps/34438","title":"The Floriad (1811-1811)","coverage":"http://dbpedia.org/resource/Schenectady%2C_New_York"}
 {"placeOfPublication":"Schenectady","series":"aps/35691","title":"Miscellaneous Cabinet (1823-1824)","coverage":"http://dbpedia.org/resource/Schenectady%2C_New_York"}
 {"placeOfPublication":"Schenectady","series":"aps/41031","title":"The Pastime; a Literary Paper (1807-1808)","coverage":"http://dbpedia.org/resource/Schenectady%2C_New_York"}
-{"placeOfPublication":"Schoharie","series":"aps/42022","title":"Evangelical Luminary (1824-1824)","coverage":""}
-{"placeOfPublication":"Shakers","series":"aps/24472","title":"Shaker (1871-1875)","coverage":""}
-{"placeOfPublication":"Shakers","series":"aps/24473","title":"Shaker and Shakeress Monthly (1873-1875)","coverage":""}
-{"placeOfPublication":"Shakers","series":"aps/24474","title":"Shaker (1876-1877)","coverage":""}
-{"placeOfPublication":"Shakers","series":"aps/24475","title":"Shaker Manifesto (1878-1883)","coverage":""}
-{"placeOfPublication":"Shakers","series":"aps/24476","title":"Manifesto (1884-1899)","coverage":""}
-{"placeOfPublication":"Shelbyville","series":"aps/24231","title":"Abolition Intelligencer and Missionary Magazine (1822-1823)","coverage":""}
-{"placeOfPublication":"Shellbanks","series":"aps/35071","title":"Farmer's Register; A Monthly Publication (1833-1843)","coverage":""}
-{"placeOfPublication":"Springfield","series":"aps/25186","title":"New England Journal of Dentistry and Allied Sciences (1882-1884)","coverage":""}
-{"placeOfPublication":"St. Clairsville","series":"aps/24657","title":"The Literary Cabinet and Western Olive Branch (1833-1844)","coverage":""}
+{"placeOfPublication":"Schoharie","series":"aps/42022","title":"Evangelical Luminary (1824-1824)","coverage":"http://dbpedia.org/resource/Schoharie%2C_New_York"}
+{"placeOfPublication":"Shakers","series":"aps/24472","title":"Shaker (1871-1875)","coverage":"http://dbpedia.org/resource/New_Lebanon%2C_New_York"}
+{"placeOfPublication":"Shakers","series":"aps/24473","title":"Shaker and Shakeress Monthly (1873-1875)","coverage":"http://dbpedia.org/resource/New_Lebanon%2C_New_York"}
+{"placeOfPublication":"Shakers","series":"aps/24474","title":"Shaker (1876-1877)","coverage":"http://dbpedia.org/resource/New_Lebanon%2C_New_York"}
+{"placeOfPublication":"Shakers","series":"aps/24475","title":"Shaker Manifesto (1878-1883)","coverage":"http://dbpedia.org/resource/New_Lebanon%2C_New_York"}
+{"placeOfPublication":"Shakers","series":"aps/24476","title":"Manifesto (1884-1899)","coverage":"http://dbpedia.org/resource/New_Lebanon%2C_New_York"}
+{"placeOfPublication":"Shelbyville","series":"aps/24231","title":"Abolition Intelligencer and Missionary Magazine (1822-1823)","coverage":"http://dbpedia.org/resource/Shelbyville%2C_Kentucky"}
+{"placeOfPublication":"Shellbanks","series":"aps/35071","title":"Farmer's Register; A Monthly Publication (1833-1843)","coverage":"http://dbpedia.org/resource/Petersburg%2C_Virginia"}
+{"placeOfPublication":"Springfield","series":"aps/25186","title":"New England Journal of Dentistry and Allied Sciences (1882-1884)","coverage":"http://dbpedia.org/resource/Springfield%2C_Massachusetts"}
+{"placeOfPublication":"St. Clairsville","series":"aps/24657","title":"The Literary Cabinet and Western Olive Branch (1833-1844)","coverage":"http://dbpedia.org/resource/St._Clairsville%2C_Ohio"}
 {"placeOfPublication":"St. Louis","series":"aps/24080","title":"Valley Farmer (1849-1864)","coverage":"http://dbpedia.org/resource/St._Louis%2C_Missouri"}
 {"placeOfPublication":"St. Louis","series":"aps/24082","title":"Colman's Rural World (1865-1916)","coverage":"http://dbpedia.org/resource/St._Louis%2C_Missouri"}
 {"placeOfPublication":"St. Louis","series":"aps/24182","title":"The Western Examiner, a Journal Embodying a Full and Impartial Enquiry into the Truth or Falsity of the Christian Religion; Whether Philosophically or Historically Viewed (1833-1835)","coverage":"http://dbpedia.org/resource/St._Louis%2C_Missouri"}
@@ -1452,9 +1452,9 @@
 {"placeOfPublication":"St. Louis","series":"aps/35448","title":"The American Law Review (1866-1906)","coverage":"http://dbpedia.org/resource/St._Louis%2C_Missouri"}
 {"placeOfPublication":"St. Louis","series":"aps/35877","title":"The Western Journal of Agriculture, Manufactures, Mechanic Arts, Internal Improvement, Commerce, and General Literature (1848-1851)","coverage":"http://dbpedia.org/resource/St._Louis%2C_Missouri"}
 {"placeOfPublication":"St. Louis","series":"aps/35878","title":"The Western Journal and Civilian; Devoted to Agriculture, Manufactures, Mechanic Arts, Internal Improvement, Commerce, Public Policy, and Polite Literature (1851-1856)","coverage":"http://dbpedia.org/resource/St._Louis%2C_Missouri"}
-{"placeOfPublication":"Stoningtonport","series":"aps/41032","title":"The Patriot, or, Scourge of Aristocracy (1801-1802)","coverage":""}
-{"placeOfPublication":"Suffield","series":"aps/40494","title":"Connecticut Republican Magazine (1802-[1803])","coverage":""}
-{"placeOfPublication":"Syracuse","series":"aps/35582","title":"The Literary Union; a Journal of Progress, in Literature and Education, Religion and Politics, Science and Agriculture (1849-1850)","coverage":""}
+{"placeOfPublication":"Stoningtonport","series":"aps/41032","title":"The Patriot, or, Scourge of Aristocracy (1801-1802)","coverage":"http://dbpedia.org/resource/Stonington%2C_Connecticut"}
+{"placeOfPublication":"Suffield","series":"aps/40494","title":"Connecticut Republican Magazine (1802-[1803])","coverage":"http://dbpedia.org/resource/Suffield%2C_Connecticut"}
+{"placeOfPublication":"Syracuse","series":"aps/35582","title":"The Literary Union; a Journal of Progress, in Literature and Education, Religion and Politics, Science and Agriculture (1849-1850)","coverage":"http://dbpedia.org/resource/Syracuse%2C_New_York"}
 {"placeOfPublication":"Trenton","series":"aps/24458","title":"The Miscellany (1805-1805)","coverage":""}
 {"placeOfPublication":"Trenton","series":"aps/24863","title":"The Miscellaneous Magazine (1824-1824)","coverage":""}
 {"placeOfPublication":"Troy","series":"aps/25076","title":"Investigator and Expositor (1839-1840)","coverage":""}
