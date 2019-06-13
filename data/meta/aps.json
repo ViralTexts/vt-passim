@@ -365,19 +365,19 @@
 {"placeOfPublication":"Boston","series":"aps/42392","title":"The Boston Pearl, and Literary Gazette (1834-1835)","coverage":"http://dbpedia.org/resource/Boston"}
 {"placeOfPublication":"Boston","series":"aps/42393","title":"The Boston Pearl, a Gazette of Polite Literature. Devoted to Original Tales, Legends, Essays, Translations, Travelling, Literary and Historical Sketches, Biography, Poetry, Criticisms, Music, Etc. (1835-1836)","coverage":"http://dbpedia.org/resource/Boston"}
 {"placeOfPublication":"Boston","series":"aps/42394","title":"The Boston Weekly Magazine. Devoted to Moral and Entertaining Literature, Science, and the Fine Arts: Containing Original and Selected Tales, Moral and Humorous Essays, Sketches of Society, Elegant Extracts, Poetry, Criticism, and Selections from Works of History and Adventure: Embellished with Music (1838-1841)","coverage":"http://dbpedia.org/resource/Boston"}
-{"placeOfPublication":"Bradford","series":"aps/24269","title":"The Green Mountain Gem; a Monthly Journal of Literature, Science, and the Arts (1843-1849)","coverage":""}
-{"placeOfPublication":"Bridgeport","series":"aps/40493","title":"The Connecticut Magazine; or, Gentleman's and Lady's Monthly Museum of Knowledge & Rational Entertainment (1801-1801)","coverage":""}
-{"placeOfPublication":"Brooklyn","series":"aps/34958","title":"The Liberal Christian (1823-1824)","coverage":""}
-{"placeOfPublication":"Brooklyn","series":"aps/35908","title":"Circular (1851-1870)","coverage":""}
-{"placeOfPublication":"Brooklyn","series":"aps/35909","title":"Oneida Circular (1871-1876)","coverage":""}
-{"placeOfPublication":"Buffalo","series":"aps/24287","title":"The Physicians' and Surgeons' Investigator; a Monthly Journal Devoted to the Best Interests of the Profession (1880-1889)","coverage":""}
-{"placeOfPublication":"Buffalo","series":"aps/35504","title":"Literary Inquirer (1833-1834)","coverage":""}
-{"placeOfPublication":"Burlington","series":"aps/24630","title":"Annual Law Register of the United States (1821-1822)","coverage":""}
-{"placeOfPublication":"Burlington","series":"aps/24884","title":"New Jersey Medical Reporter and Transactions of the New Jersey Medical Society (1847-1854)","coverage":""}
-{"placeOfPublication":"Burlington","series":"aps/24885","title":"New Jersey Medical Reporter (1855-1855)","coverage":""}
-{"placeOfPublication":"Burlington","series":"aps/24886","title":"Medical and Surgical Reporter (1856-1858)","coverage":""}
-{"placeOfPublication":"Burlington","series":"aps/35345","title":"The Green Mountain Repository; for the Year 1832 (1832-1832)","coverage":""}
-{"placeOfPublication":"Cadiz","series":"aps/24631","title":"The Historical Family Library, Devoted to the Republication of Standard History (1835-1841)","coverage":""}
+{"placeOfPublication":"Bradford","series":"aps/24269","title":"The Green Mountain Gem; a Monthly Journal of Literature, Science, and the Arts (1843-1849)","coverage":"http://dbpedia.org/resource/Bradford%2C_Vermont"}
+{"placeOfPublication":"Bridgeport","series":"aps/40493","title":"The Connecticut Magazine; or, Gentleman's and Lady's Monthly Museum of Knowledge & Rational Entertainment (1801-1801)","coverage":"http://dbpedia.org/resource/Bridgeport%2C_Connecticut"}
+{"placeOfPublication":"Brooklyn","series":"aps/34958","title":"The Liberal Christian (1823-1824)","coverage":"http://dbpedia.org/resource/Brooklyn%2C_Connecticut"}
+{"placeOfPublication":"Brooklyn","series":"aps/35908","title":"Circular (1851-1870)","coverage":"http://dbpedia.org/resource/Brooklyn"}
+{"placeOfPublication":"Brooklyn","series":"aps/35909","title":"Oneida Circular (1871-1876)","coverage":"http://dbpedia.org/resource/Brooklyn"}
+{"placeOfPublication":"Buffalo","series":"aps/24287","title":"The Physicians' and Surgeons' Investigator; a Monthly Journal Devoted to the Best Interests of the Profession (1880-1889)","coverage":"http://dbpedia.org/resource/Buffalo%2C_New_York"}
+{"placeOfPublication":"Buffalo","series":"aps/35504","title":"Literary Inquirer (1833-1834)","coverage":"http://dbpedia.org/resource/Buffalo%2C_New_York"}
+{"placeOfPublication":"Burlington","series":"aps/24630","title":"Annual Law Register of the United States (1821-1822)","coverage":"http://dbpedia.org/resource/Burlington%2C_New_Jersey"}
+{"placeOfPublication":"Burlington","series":"aps/24884","title":"New Jersey Medical Reporter and Transactions of the New Jersey Medical Society (1847-1854)","coverage":"http://dbpedia.org/resource/Burlington%2C_New_Jersey"}
+{"placeOfPublication":"Burlington","series":"aps/24885","title":"New Jersey Medical Reporter (1855-1855)","coverage":"http://dbpedia.org/resource/Burlington%2C_New_Jersey"}
+{"placeOfPublication":"Burlington","series":"aps/24886","title":"Medical and Surgical Reporter (1856-1858)","coverage":"http://dbpedia.org/resource/Burlington%2C_New_Jersey"}
+{"placeOfPublication":"Burlington","series":"aps/35345","title":"The Green Mountain Repository; for the Year 1832 (1832-1832)","coverage":"http://dbpedia.org/resource/Burlington%2C_Vermont"}
+{"placeOfPublication":"Cadiz","series":"aps/24631","title":"The Historical Family Library, Devoted to the Republication of Standard History (1835-1841)","coverage":"http://dbpedia.org/resource/Cadiz%2C_Ohio"}
 {"placeOfPublication":"Cambridge","series":"aps/24235","title":"The Harvard Register; an Illustrated Monthly (1880-1881)","coverage":"http://dbpedia.org/resource/Cambridge%2C_Massachusetts"}
 {"placeOfPublication":"Cambridge","series":"aps/24331","title":"The Friend of Peace (1815-1827)","coverage":"http://dbpedia.org/resource/Cambridge%2C_Massachusetts"}
 {"placeOfPublication":"Cambridge","series":"aps/34537","title":"The General Repository and Review (1812-1813)","coverage":"http://dbpedia.org/resource/Cambridge%2C_Massachusetts"}
@@ -388,13 +388,13 @@
 {"placeOfPublication":"Cambridge","series":"aps/41500","title":"Bankers' Magazine (1896-1943)","coverage":"http://dbpedia.org/resource/Cambridge%2C_Massachusetts"}
 {"placeOfPublication":"Cambridge","series":"aps/41654","title":"The American Monthly Review (1832-1833)","coverage":"http://dbpedia.org/resource/Cambridge%2C_Massachusetts"}
 {"placeOfPublication":"Cambridge","series":"aps/42135","title":"The Harvard Register (1827-1828)","coverage":"http://dbpedia.org/resource/Cambridge%2C_Massachusetts"}
-{"placeOfPublication":"Camden","series":"aps/24530","title":"The New Jersey and Pennsylvania Agricultural Monthly Intelligencer and Farmer's Magazine (1825-1826)","coverage":""}
-{"placeOfPublication":"Carlisle","series":"aps/24547","title":"The Religious Miscellany, Containing Information Relative to the Church of Christ; Together with Interesting Literary, Scientific and Political Intelligence (1823-1824)","coverage":""}
-{"placeOfPublication":"Carlisle","series":"aps/27492","title":"The Wonderful Magazine, and Extraordinary Museum: Being a Complete Repository of the Wonders, Curiosities, and Varieties of Nature and Art ... (1808-1808)","coverage":""}
-{"placeOfPublication":"Carlisle","series":"aps/35167","title":"The Religious Instructor; Designed to Promote Useful Knowledge, Sound Morality and Vital Piety (1810-1811)","coverage":""}
-{"placeOfPublication":"Catskill","series":"aps/40617","title":"The Evidence; or, Religious and Moral Gazette (1807-1808)","coverage":""}
-{"placeOfPublication":"Chambersburg","series":"aps/27504","title":"Weekly Messenger (1841-1844)","coverage":""}
-{"placeOfPublication":"Chambersburg","series":"aps/35344","title":"The Franklin Minerva (1799-1800)","coverage":""}
+{"placeOfPublication":"Camden","series":"aps/24530","title":"The New Jersey and Pennsylvania Agricultural Monthly Intelligencer and Farmer's Magazine (1825-1826)","coverage":"http://dbpedia.org/resource/Camden%2C_New_Jersey"}
+{"placeOfPublication":"Carlisle","series":"aps/24547","title":"The Religious Miscellany, Containing Information Relative to the Church of Christ; Together with Interesting Literary, Scientific and Political Intelligence (1823-1824)","coverage":"http://dbpedia.org/resource/Carlisle%2C_Pennsylvania"}
+{"placeOfPublication":"Carlisle","series":"aps/27492","title":"The Wonderful Magazine, and Extraordinary Museum: Being a Complete Repository of the Wonders, Curiosities, and Varieties of Nature and Art ... (1808-1808)","coverage":"http://dbpedia.org/resource/Carlisle%2C_Pennsylvania"}
+{"placeOfPublication":"Carlisle","series":"aps/35167","title":"The Religious Instructor; Designed to Promote Useful Knowledge, Sound Morality and Vital Piety (1810-1811)","coverage":"http://dbpedia.org/resource/Carlisle%2C_Pennsylvania"}
+{"placeOfPublication":"Catskill","series":"aps/40617","title":"The Evidence; or, Religious and Moral Gazette (1807-1808)","coverage":"http://dbpedia.org/resource/Catskill_(town)%2C_New_York"}
+{"placeOfPublication":"Chambersburg","series":"aps/27504","title":"Weekly Messenger (1841-1844)","coverage":"http://dbpedia.org/resource/Chambersburg%2C_Pennsylvania"}
+{"placeOfPublication":"Chambersburg","series":"aps/35344","title":"The Franklin Minerva (1799-1800)","coverage":"http://dbpedia.org/resource/Chambersburg%2C_Pennsylvania"}
 {"placeOfPublication":"Charleston","series":"aps/24265","title":"Gospel Messenger and Southern Christian Register (1824-1825)","coverage":"http://dbpedia.org/resource/Charleston%2C_South_Carolina"}
 {"placeOfPublication":"Charleston","series":"aps/24266","title":"Gospel Messenger and Southern Episcopal Register (1826-1834)","coverage":"http://dbpedia.org/resource/Charleston%2C_South_Carolina"}
 {"placeOfPublication":"Charleston","series":"aps/24267","title":"Gospel Messenger and Protestant Episcopal Register (1835-1842)","coverage":"http://dbpedia.org/resource/Charleston%2C_South_Carolina"}
@@ -423,9 +423,9 @@
 {"placeOfPublication":"Charleston","series":"aps/40883","title":"Monthly Review and Literary Miscellany of the United States (1805-1806)","coverage":"http://dbpedia.org/resource/Charleston%2C_South_Carolina"}
 {"placeOfPublication":"Charleston","series":"aps/41248","title":"The Vigil (1798-1798)","coverage":"http://dbpedia.org/resource/Charleston%2C_South_Carolina"}
 {"placeOfPublication":"Charleston","series":"aps/41385","title":"The Christian Mirror (1814-1814)","coverage":"http://dbpedia.org/resource/Charleston%2C_South_Carolina"}
-{"placeOfPublication":"Charlestown","series":"aps/41146","title":"The Toilet; a Weekly Collection of Literary Pieces, Principally Designed for the Amusement of Ladies (1801-1801)","coverage":""}
-{"placeOfPublication":"Charlottesville","series":"aps/34694","title":"The Virginia Literary Museum and Journal of Belles Lettres, Arts, Sciences &c. (1829-1830)","coverage":""}
-{"placeOfPublication":"Cheshire","series":"aps/24462","title":"The Musical Magazine; Containing a Variety of Favorite Pieces (1792-1801)","coverage":""}
+{"placeOfPublication":"Charlestown","series":"aps/41146","title":"The Toilet; a Weekly Collection of Literary Pieces, Principally Designed for the Amusement of Ladies (1801-1801)","coverage":"http://dbpedia.org/resource/Charleston%2C_South_Carolina"}
+{"placeOfPublication":"Charlottesville","series":"aps/34694","title":"The Virginia Literary Museum and Journal of Belles Lettres, Arts, Sciences &c. (1829-1830)","coverage":"http://dbpedia.org/resource/Charlottesville%2C_Virginia"}
+{"placeOfPublication":"Cheshire","series":"aps/24462","title":"The Musical Magazine; Containing a Variety of Favorite Pieces (1792-1801)","coverage":"http://dbpedia.org/resource/Cheshire%2C_Connecticut"}
 {"placeOfPublication":"Chicago","series":"aps/24471","title":"The Chap - Book; Semi - Monthly. A Miscellany & Review of Belles Lettres (1894-1898)","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"Chicago","series":"aps/24481","title":"The American Antiquarian: A Quarterly Journal Devoted to Early American History, Ethnology and Archaeology (1878-1880)","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"Chicago","series":"aps/24482","title":"The American Antiquarian and Oriental Journal (1880-1914)","coverage":"http://dbpedia.org/resource/Chicago"}
@@ -448,8 +448,8 @@
 {"placeOfPublication":"Chicago","series":"aps/35910","title":"The Open Court, a Quarterly Magazine [Devoted to the Science of Religion, the Religion of Science, and the Extension of the Religious Parliament Idea (1887-1905)","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"Chicago","series":"aps/40968","title":"Prairie Farmer (1843-1877)","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"Chicago","series":"aps/7756","title":"Chicago Medical Examiner (1860-1871)","coverage":"http://dbpedia.org/resource/Chicago"}
-{"placeOfPublication":"Chillicothe","series":"aps/24181","title":"The Western Christian Monitor (1816-1816)","coverage":""}
-{"placeOfPublication":"Chillicothe","series":"aps/25000","title":"The Weekly Recorder; a Newspaper Conveying Important Intelligence and Other Useful Matter Under the Three General Heads of Theology, Literature, and National Affairs (1814-1821)","coverage":""}
+{"placeOfPublication":"Chillicothe","series":"aps/24181","title":"The Western Christian Monitor (1816-1816)","coverage":"http://dbpedia.org/resource/Chillicothe%2C_Ohio"}
+{"placeOfPublication":"Chillicothe","series":"aps/25000","title":"The Weekly Recorder; a Newspaper Conveying Important Intelligence and Other Useful Matter Under the Three General Heads of Theology, Literature, and National Affairs (1814-1821)","coverage":"http://dbpedia.org/resource/Chillicothe%2C_Ohio"}
 {"placeOfPublication":"Cincinnati","series":"aps/24180","title":"The Western Academician and Journal of Education and Science (1837-1838)","coverage":"http://dbpedia.org/resource/Cincinnati"}
 {"placeOfPublication":"Cincinnati","series":"aps/24184","title":"The Western Law Journal (1843-1853)","coverage":"http://dbpedia.org/resource/Cincinnati"}
 {"placeOfPublication":"Cincinnati","series":"aps/24185","title":"Western Literary Journal and Monthly Review (1844-1845)","coverage":"http://dbpedia.org/resource/Cincinnati"}
@@ -486,31 +486,31 @@
 {"placeOfPublication":"Cincinnati","series":"aps/35860","title":"The Herald of Truth, a Monthly Periodical, Devoted to the Interests of Religion, Philosophy, Literature, Science and Art (1847-1848)","coverage":"http://dbpedia.org/resource/Cincinnati"}
 {"placeOfPublication":"Cincinnati","series":"aps/35904","title":"Ohio Medical Repository of Original and Selected Intelligence (1826-1827)","coverage":"http://dbpedia.org/resource/Cincinnati"}
 {"placeOfPublication":"Cincinnati","series":"aps/40475","title":"Cincinnati Mirror, and Western Gazette of Literature, Science, and the Arts (1831-1836)","coverage":"http://dbpedia.org/resource/Cincinnati"}
-{"placeOfPublication":"Cleveland","series":"aps/35902","title":"Ohio Farmer (1856-1906)","coverage":""}
-{"placeOfPublication":"Columbia","series":"aps/24876","title":"The Carolina Law Journal (1830-1831)","coverage":""}
+{"placeOfPublication":"Cleveland","series":"aps/35902","title":"Ohio Farmer (1856-1906)","coverage":"http://dbpedia.org/resource/Cleveland"}
+{"placeOfPublication":"Columbia","series":"aps/24876","title":"The Carolina Law Journal (1830-1831)","coverage":"http://dbpedia.org/resource/Columbia%2C_South_Carolina"}
 {"placeOfPublication":"Columbus","series":"aps/24247","title":"The Western Review (1846-1846)","coverage":"http://dbpedia.org/resource/Columbus%2C_Ohio"}
 {"placeOfPublication":"Columbus","series":"aps/35801","title":"Ohio Cultivator (1845-1866)","coverage":"http://dbpedia.org/resource/Columbus%2C_Ohio"}
 {"placeOfPublication":"Columbus","series":"aps/35861","title":"The Hesperian; a Monthly Miscellany of General Literature, Original and Select (1838-1839)","coverage":"http://dbpedia.org/resource/Columbus%2C_Ohio"}
 {"placeOfPublication":"Columbus","series":"aps/35903","title":"The Ohio Medical and Surgical Journal (1848-1878)","coverage":"http://dbpedia.org/resource/Columbus%2C_Ohio"}
-{"placeOfPublication":"Concord","series":"aps/24528","title":"The New England Missionary Intelligencer, and General Repository for the Promotion of Useful Knowledge and Evangelical Doctrine (1819-1819)","coverage":""}
-{"placeOfPublication":"Concord","series":"aps/24604","title":"The New Star; a Republican Miscellaneous, Literary Paper (1797-1797)","coverage":""}
-{"placeOfPublication":"Concord","series":"aps/35259","title":"The Literary Gazette (1834-1835)","coverage":""}
-{"placeOfPublication":"Concord","series":"aps/35607","title":"The Rough and Ready (1846-1847)","coverage":""}
-{"placeOfPublication":"Concord","series":"aps/35697","title":"The New - England Missionary Magazine, for Promoting Useful Knowledge and Evangelical Doctrine (1815-1816)","coverage":""}
-{"placeOfPublication":"Concord","series":"aps/40898","title":"The NewHampshire Magazine; The Monthly Repository of Useful Information (1793-1793)","coverage":""}
-{"placeOfPublication":"Concord","series":"aps/41763","title":"Collections, Topographical, Historical & Biological, Relating Principally to New Hampshire (1822-1822)","coverage":""}
-{"placeOfPublication":"Concord","series":"aps/41764","title":"Collections, Historical and Miscellaneous, and Monthly Literary Journal (1823-1824)","coverage":""}
-{"placeOfPublication":"Concord","series":"aps/41778","title":"The Religious Repository (1807-1809)","coverage":""}
-{"placeOfPublication":"Connersville","series":"aps/25001","title":"The Western Ladies' Casket (1824-1824)","coverage":""}
-{"placeOfPublication":"Cooperstown","series":"aps/35166","title":"The Religious Enquirer (1811-1811)","coverage":""}
-{"placeOfPublication":"Danbury","series":"aps/26235","title":"The Columbian Magazine; Comprehending Ecclesiastical History, Morality, Religion, and Other Useful and Interesting Matter (1806-1806)","coverage":""}
-{"placeOfPublication":"Danbury","series":"aps/40879","title":"Monthly Magazine; Comprehending Ecclesiastical History, Morality, Religion, and Other Useful and Interesting Matter (1806-1806)","coverage":""}
-{"placeOfPublication":"Danbury","series":"aps/41777","title":"The Religious Monitor; or Theological Scales (1798-1798)","coverage":""}
-{"placeOfPublication":"Danville","series":"aps/24553","title":"The Roanoke Religious Correspondent; or, Monthly Evangelical Visitant (1821-1823)","coverage":""}
-{"placeOfPublication":"Danville","series":"aps/25152","title":"The Danville Quarterly Review (1861-1864)","coverage":""}
-{"placeOfPublication":"Dayton","series":"aps/24873","title":"Gospel Trumpet (1823-1823)","coverage":""}
-{"placeOfPublication":"Dayton","series":"aps/34542","title":"The Gridiron (1822-1823)","coverage":""}
-{"placeOfPublication":"Dayton","series":"aps/35117","title":"The Western Miscellany (1848-1849)","coverage":""}
+{"placeOfPublication":"Concord","series":"aps/24528","title":"The New England Missionary Intelligencer, and General Repository for the Promotion of Useful Knowledge and Evangelical Doctrine (1819-1819)","coverage":"http://dbpedia.org/resource/Concord%2C_New_Hampshire"}
+{"placeOfPublication":"Concord","series":"aps/24604","title":"The New Star; a Republican Miscellaneous, Literary Paper (1797-1797)","coverage":"http://dbpedia.org/resource/Concord%2C_New_Hampshire"}
+{"placeOfPublication":"Concord","series":"aps/35259","title":"The Literary Gazette (1834-1835)","coverage":"http://dbpedia.org/resource/Concord%2C_New_Hampshire"}
+{"placeOfPublication":"Concord","series":"aps/35607","title":"The Rough and Ready (1846-1847)","coverage":"http://dbpedia.org/resource/Concord%2C_New_Hampshire"}
+{"placeOfPublication":"Concord","series":"aps/35697","title":"The New - England Missionary Magazine, for Promoting Useful Knowledge and Evangelical Doctrine (1815-1816)","coverage":"http://dbpedia.org/resource/Concord%2C_New_Hampshire"}
+{"placeOfPublication":"Concord","series":"aps/40898","title":"The NewHampshire Magazine; The Monthly Repository of Useful Information (1793-1793)","coverage":"http://dbpedia.org/resource/Concord%2C_New_Hampshire"}
+{"placeOfPublication":"Concord","series":"aps/41763","title":"Collections, Topographical, Historical & Biological, Relating Principally to New Hampshire (1822-1822)","coverage":"http://dbpedia.org/resource/Concord%2C_New_Hampshire"}
+{"placeOfPublication":"Concord","series":"aps/41764","title":"Collections, Historical and Miscellaneous, and Monthly Literary Journal (1823-1824)","coverage":"http://dbpedia.org/resource/Concord%2C_New_Hampshire"}
+{"placeOfPublication":"Concord","series":"aps/41778","title":"The Religious Repository (1807-1809)","coverage":"http://dbpedia.org/resource/Concord%2C_New_Hampshire"}
+{"placeOfPublication":"Connersville","series":"aps/25001","title":"The Western Ladies' Casket (1824-1824)","coverage":"http://dbpedia.org/resource/Connersville%2C_Indiana"}
+{"placeOfPublication":"Cooperstown","series":"aps/35166","title":"The Religious Enquirer (1811-1811)","coverage":"http://dbpedia.org/resource/Cooperstown%2C_New_York"}
+{"placeOfPublication":"Danbury","series":"aps/26235","title":"The Columbian Magazine; Comprehending Ecclesiastical History, Morality, Religion, and Other Useful and Interesting Matter (1806-1806)","coverage":"http://dbpedia.org/resource/Danbury%2C_Connecticut"}
+{"placeOfPublication":"Danbury","series":"aps/40879","title":"Monthly Magazine; Comprehending Ecclesiastical History, Morality, Religion, and Other Useful and Interesting Matter (1806-1806)","coverage":"http://dbpedia.org/resource/Danbury%2C_Connecticut"}
+{"placeOfPublication":"Danbury","series":"aps/41777","title":"The Religious Monitor; or Theological Scales (1798-1798)","coverage":"http://dbpedia.org/resource/Danbury%2C_Connecticut"}
+{"placeOfPublication":"Danville","series":"aps/24553","title":"The Roanoke Religious Correspondent; or, Monthly Evangelical Visitant (1821-1823)","coverage":"http://dbpedia.org/resource/Danville%2C_Virginia"}
+{"placeOfPublication":"Danville","series":"aps/25152","title":"The Danville Quarterly Review (1861-1864)","coverage":"http://dbpedia.org/resource/Danville%2C_Kentucky"}
+{"placeOfPublication":"Dayton","series":"aps/24873","title":"Gospel Trumpet (1823-1823)","coverage":"http://dbpedia.org/resource/Dayton%2C_Ohio"}
+{"placeOfPublication":"Dayton","series":"aps/34542","title":"The Gridiron (1822-1823)","coverage":"http://dbpedia.org/resource/Dayton%2C_Ohio"}
+{"placeOfPublication":"Dayton","series":"aps/35117","title":"The Western Miscellany (1848-1849)","coverage":"http://dbpedia.org/resource/Dayton%2C_Ohio"}
 {"placeOfPublication":"Detroit","series":"aps/25238","title":"Journal of Education (1838-1840)","coverage":"http://dbpedia.org/resource/Detroit"}
 {"placeOfPublication":"Detroit","series":"aps/25277","title":"Wellman's Literary Miscellany (1849-1851)","coverage":"http://dbpedia.org/resource/Detroit"}
 {"placeOfPublication":"Detroit","series":"aps/25278","title":"Monthly Literary Miscellany (1851-1853)","coverage":"http://dbpedia.org/resource/Detroit"}
