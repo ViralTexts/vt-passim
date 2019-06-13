@@ -1455,9 +1455,9 @@
 {"placeOfPublication":"Stoningtonport","series":"aps/41032","title":"The Patriot, or, Scourge of Aristocracy (1801-1802)","coverage":"http://dbpedia.org/resource/Stonington%2C_Connecticut"}
 {"placeOfPublication":"Suffield","series":"aps/40494","title":"Connecticut Republican Magazine (1802-[1803])","coverage":"http://dbpedia.org/resource/Suffield%2C_Connecticut"}
 {"placeOfPublication":"Syracuse","series":"aps/35582","title":"The Literary Union; a Journal of Progress, in Literature and Education, Religion and Politics, Science and Agriculture (1849-1850)","coverage":"http://dbpedia.org/resource/Syracuse%2C_New_York"}
-{"placeOfPublication":"Trenton","series":"aps/24458","title":"The Miscellany (1805-1805)","coverage":""}
-{"placeOfPublication":"Trenton","series":"aps/24863","title":"The Miscellaneous Magazine (1824-1824)","coverage":""}
-{"placeOfPublication":"Troy","series":"aps/25076","title":"Investigator and Expositor (1839-1840)","coverage":""}
+{"placeOfPublication":"Trenton","series":"aps/24458","title":"The Miscellany (1805-1805)","coverage":"http://dbpedia.org/resource/Trenton%2C_New_Jersey"}
+{"placeOfPublication":"Trenton","series":"aps/24863","title":"The Miscellaneous Magazine (1824-1824)","coverage":"http://dbpedia.org/resource/Trenton%2C_New_Jersey"}
+{"placeOfPublication":"Troy","series":"aps/25076","title":"Investigator and Expositor (1839-1840)","coverage":"http://dbpedia.org/resource/Troy%2C_Ohio"}
 {"placeOfPublication":"Utica","series":"aps/24862","title":"Evangelical Magazine and Gospel Advocate (1830-1848)","coverage":"http://dbpedia.org/resource/Utica%2C_New_York"}
 {"placeOfPublication":"Utica","series":"aps/24997","title":"The Utica Christian Repository, Containing Various Pieces on Doctrinal & Practical Subjects of Religion, Mostly Original. Also, a Summary of Religious Intelligence (1822-1826)","coverage":"http://dbpedia.org/resource/Utica%2C_New_York"}
 {"placeOfPublication":"Utica","series":"aps/25024","title":"The Utica Christian Magazine, Designed to Prompt the Spirit of Research, and Diffuse Religious Information (1813-1816)","coverage":"http://dbpedia.org/resource/Utica%2C_New_York"}
@@ -1468,7 +1468,7 @@
 {"placeOfPublication":"Utica","series":"aps/35010","title":"Western Recorder (1824-1833)","coverage":"http://dbpedia.org/resource/Utica%2C_New_York"}
 {"placeOfPublication":"Utica","series":"aps/35297","title":"Sabbath School Visitant (1824-1826)","coverage":"http://dbpedia.org/resource/Utica%2C_New_York"}
 {"placeOfPublication":"Utica","series":"aps/35556","title":"The Universalist, Consisting of Essays, Lectures, Extracts and Miscellaneous Pieces; Tending to Explain and Defend the Doctrine of Modern Universalism (1825-1826)","coverage":"http://dbpedia.org/resource/Utica%2C_New_York"}
-{"placeOfPublication":"Warren","series":"aps/34540","title":"Gospel Palladium (1823-1824)","coverage":""}
+{"placeOfPublication":"Warren","series":"aps/34540","title":"Gospel Palladium (1823-1824)","coverage":"http://dbpedia.org/resource/Warren%2C_Rhode_Island"}
 {"placeOfPublication":"Washington","series":"aps/24083","title":"The Columbian Star (1822-1829)","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Washington","series":"aps/24164","title":"The ____________. By Nonius Nondescript (1826-1826)","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Washington","series":"aps/24272","title":"The Military and Naval Magazine of the United States (1833-1836)","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
@@ -1497,17 +1497,17 @@
 {"placeOfPublication":"Washington","series":"aps/41150","title":"United States Military Philosophical Society. Extracts from the Minutes of the United States Military Philosophical Society at a Meeting[s] Held October 6, 1806, January 30, 1808 [and] December 28, 1809 (1806-1809)","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Washington","series":"aps/41511","title":"National Era (1847-1860)","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Washington","series":"aps/42150","title":"The African Intelligencer (1820-1820)","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
-{"placeOfPublication":"Watertown","series":"aps/34839","title":"Herald of Salvation (1822-1825)","coverage":""}
-{"placeOfPublication":"West-Chester","series":"aps/24302","title":"The Literary Museum, or, Monthly Magazine (1797-1797)","coverage":""}
-{"placeOfPublication":"Wilmington","series":"aps/25104","title":"Christian Repository (1821-1824)","coverage":""}
-{"placeOfPublication":"Wilmington","series":"aps/25105","title":"Circular (1824-1825)","coverage":""}
-{"placeOfPublication":"Wilmington","series":"aps/34835","title":"The Berean. A Religious Publication (1824-1828)","coverage":""}
-{"placeOfPublication":"Wilmington","series":"aps/42015","title":"The Dawn, a Semi - Monthly Magazine: Containing Original and Selected Essays, Anecdotes, & c. in Prose and Poetry. Devoted to the Instruction and Amusement of the Rising Generation (1822-1822)","coverage":""}
-{"placeOfPublication":"Winchester","series":"aps/35154","title":"The Monthly Magazine and Literary Journal (1812-1813)","coverage":""}
-{"placeOfPublication":"Woodbridge","series":"aps/40887","title":"The New American Magazine (1758-1760)","coverage":""}
-{"placeOfPublication":"Woodstock","series":"aps/35557","title":"Christian Repository (1820-1825)","coverage":""}
-{"placeOfPublication":"Woodstock","series":"aps/35558","title":"Universalist Watchman, Repository and Chronicle (1831-1847)","coverage":""}
-{"placeOfPublication":"Woodstock","series":"aps/35572","title":"Evangelical Monitor (1821-1824)","coverage":""}
+{"placeOfPublication":"Watertown","series":"aps/34839","title":"Herald of Salvation (1822-1825)","coverage":"http://dbpedia.org/resource/Watertown_(city)%2C_New_York"}
+{"placeOfPublication":"West-Chester","series":"aps/24302","title":"The Literary Museum, or, Monthly Magazine (1797-1797)","coverage":"http://dbpedia.org/resource/West_Chester%2C_Pennsylvania"}
+{"placeOfPublication":"Wilmington","series":"aps/25104","title":"Christian Repository (1821-1824)","coverage":"http://dbpedia.org/resource/Wilmington%2C_Delaware"}
+{"placeOfPublication":"Wilmington","series":"aps/25105","title":"Circular (1824-1825)","coverage":"http://dbpedia.org/resource/Wilmington%2C_Delaware"}
+{"placeOfPublication":"Wilmington","series":"aps/34835","title":"The Berean. A Religious Publication (1824-1828)","coverage":"http://dbpedia.org/resource/Wilmington%2C_Delaware"}
+{"placeOfPublication":"Wilmington","series":"aps/42015","title":"The Dawn, a Semi - Monthly Magazine: Containing Original and Selected Essays, Anecdotes, & c. in Prose and Poetry. Devoted to the Instruction and Amusement of the Rising Generation (1822-1822)","coverage":"http://dbpedia.org/resource/Wilmington%2C_Delaware"}
+{"placeOfPublication":"Winchester","series":"aps/35154","title":"The Monthly Magazine and Literary Journal (1812-1813)","coverage":"http://dbpedia.org/resource/Winchester%2C_Virginia"}
+{"placeOfPublication":"Woodbridge","series":"aps/40887","title":"The New American Magazine (1758-1760)","coverage":"http://dbpedia.org/resource/Woodbridge_Township%2C_New_Jersey"}
+{"placeOfPublication":"Woodstock","series":"aps/35557","title":"Christian Repository (1820-1825)","coverage":"http://dbpedia.org/resource/Woodstock%2C_Vermont"}
+{"placeOfPublication":"Woodstock","series":"aps/35558","title":"Universalist Watchman, Repository and Chronicle (1831-1847)","coverage":"http://dbpedia.org/resource/Woodstock%2C_Vermont"}
+{"placeOfPublication":"Woodstock","series":"aps/35572","title":"Evangelical Monitor (1821-1824)","coverage":"http://dbpedia.org/resource/Woodstock%2C_Vermont"}
 {"placeOfPublication":"Worcester","series":"aps/24165","title":"The Literary Geminae, a Monthly Magazine in English and French (1839-1840)","coverage":"http://dbpedia.org/resource/Worcester%2C_Massachusetts"}
 {"placeOfPublication":"Worcester","series":"aps/24634","title":"The Worcester Magazine and Historical Journal (1825-1826)","coverage":"http://dbpedia.org/resource/Worcester%2C_Massachusetts"}
 {"placeOfPublication":"Worcester","series":"aps/41254","title":"Worcester Magazine ... Containing Politicks, Miscellanies, Poetry, and News (1786-1788)","coverage":"http://dbpedia.org/resource/Worcester%2C_Massachusetts"}
