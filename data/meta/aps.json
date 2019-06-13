@@ -424,6 +424,7 @@
 {"placeOfPublication":"Charleston","series":"aps/41248","title":"The Vigil (1798-1798)","coverage":"http://dbpedia.org/resource/Charleston%2C_South_Carolina"}
 {"placeOfPublication":"Charleston","series":"aps/41385","title":"The Christian Mirror (1814-1814)","coverage":"http://dbpedia.org/resource/Charleston%2C_South_Carolina"}
 {"placeOfPublication":"Charlestown","series":"aps/41146","title":"The Toilet; a Weekly Collection of Literary Pieces, Principally Designed for the Amusement of Ladies (1801-1801)","coverage":"http://dbpedia.org/resource/Charleston%2C_South_Carolina"}
+{"placeOfPublication":"Charlestown","series":"aps/34541","title":"The Gospel Visitant, Being Principally Original Tracts on Moral and Religious Subjects (1811-1818)","coverage":"http://dbpedia.org/resource/Charlestown%2C_Boston"}
 {"placeOfPublication":"Charlottesville","series":"aps/34694","title":"The Virginia Literary Museum and Journal of Belles Lettres, Arts, Sciences &c. (1829-1830)","coverage":"http://dbpedia.org/resource/Charlottesville%2C_Virginia"}
 {"placeOfPublication":"Cheshire","series":"aps/24462","title":"The Musical Magazine; Containing a Variety of Favorite Pieces (1792-1801)","coverage":"http://dbpedia.org/resource/Cheshire%2C_Connecticut"}
 {"placeOfPublication":"Chicago","series":"aps/24471","title":"The Chap - Book; Semi - Monthly. A Miscellany & Review of Belles Lettres (1894-1898)","coverage":"http://dbpedia.org/resource/Chicago"}
@@ -517,27 +518,27 @@
 {"placeOfPublication":"Detroit","series":"aps/25279","title":"Western Literary Miscellany (1853-1853)","coverage":"http://dbpedia.org/resource/Detroit"}
 {"placeOfPublication":"Detroit","series":"aps/25280","title":"Western Literary Cabinet (1853-1854)","coverage":"http://dbpedia.org/resource/Detroit"}
 {"placeOfPublication":"Detroit","series":"aps/25281","title":"Wellman's Miscellany (1870-1873)","coverage":"http://dbpedia.org/resource/Detroit"}
-{"placeOfPublication":"East Aurora","series":"aps/35296","title":"The Roycroft Quarterly (1896)","coverage":""}
-{"placeOfPublication":"East Aurora","series":"aps/35623","title":"The Philistine; a Periodical of Protest (1895-1906)","coverage":""}
-{"placeOfPublication":"Elizabeth-town","series":"aps/16496","title":"The Christian's, Scholar's, and Farmer's Magazine : Calculated in an Eminent Degree, to Promote Religion; to Disseminate Useful Knowledge; to Afford Literary Pleasures and Amusement, and to Advance the Interest of Agriculture (1789-1791)","coverage":""}
-{"placeOfPublication":"Enfield","series":"aps/24369","title":"The Masonic Casket, Designed for the Benefit of Free and Accepted Masons, and for the Information of Such as Wish to Know the Order and Proceedings of the Fraternity (1824-1825)","coverage":""}
-{"placeOfPublication":"Enfield","series":"aps/24690","title":"The Religious Informer (1819-1821)","coverage":""}
-{"placeOfPublication":"Enfield","series":"aps/24737","title":"Religious Informer, and Free - Will Baptist Register (1822-1822)","coverage":""}
-{"placeOfPublication":"Enfield","series":"aps/24738","title":"The Religious Informer (1823-1825)","coverage":""}
-{"placeOfPublication":"Exeter","series":"aps/24747","title":"The Remembrancer, for Lord's Day Evenings (1797-1797)","coverage":""}
-{"placeOfPublication":"Fairhaven","series":"aps/41783","title":"A Republican Magazine; or, Repository of Political Truths (1798-1798)","coverage":""}
-{"placeOfPublication":"Frankfort","series":"aps/24809","title":"The Harbinger of the Mississippi Valley (1832-1832)","coverage":""}
-{"placeOfPublication":"Frederick Town","series":"aps/1159","title":"The Key (1798-1798)","coverage":""}
-{"placeOfPublication":"Freetown","series":"aps/25015","title":"The Spiritual Magazine; or, Gospel Treasury (1813-1814)","coverage":""}
-{"placeOfPublication":"Georgetown","series":"aps/25253","title":"The American Museum, and Repository of Arts, and Sciences, as Connected with Domestic Manufactures and National Industry. Also, a List of All the Patents Granted by the United States Up to the End of the Year 1821. With a List of All the Books That Have Been Deposited in the Department of State, for Securing Their Copy Right According to Law (1822-1822)","coverage":""}
-{"placeOfPublication":"Georgetown","series":"aps/42151","title":"The Agricultural Museum: Designed to be a Repository of Valuable Information to the Farmer and Manufacturer, and to the Mean of a Free Communication of Sentiment, and General Interchange of Ideas, on the Important Subjects of Their Occupations (1810-1812)","coverage":""}
-{"placeOfPublication":"Germantown","series":"aps/24333","title":"Geistliches Magazien (1770-1772)","coverage":""}
-{"placeOfPublication":"Gilmanton","series":"aps/35428","title":"The New Hampshire Repository; Devoted to Education, Literature and Religion (1845-1847)","coverage":""}
-{"placeOfPublication":"Greenwich Village","series":"aps/25272","title":"The Villager, a Literary Paper (1819-1819)","coverage":""}
-{"placeOfPublication":"Hallowell","series":"aps/41389","title":"The Christian Monitor (1814-1818)","coverage":""}
-{"placeOfPublication":"Hanover","series":"aps/40749","title":"The Literary Tablet; or, a General Repository of Useful Entertainment; Consisting of Essays Original and Selected, in Poetry and Prose (1803-1807)","coverage":""}
-{"placeOfPublication":"Harpers Ferry","series":"aps/24808","title":"The Ladies Garland (1824-1828)","coverage":""}
-{"placeOfPublication":"Harrisburg","series":"aps/24880","title":"Christian Reformer; or Evangelical Miscellany (1828-1829)","coverage":""}
+{"placeOfPublication":"East Aurora","series":"aps/35296","title":"The Roycroft Quarterly (1896)","coverage":"http://dbpedia.org/resource/East_Aurora%2C_New_York"}
+{"placeOfPublication":"East Aurora","series":"aps/35623","title":"The Philistine; a Periodical of Protest (1895-1906)","coverage":"http://dbpedia.org/resource/East_Aurora%2C_New_York"}
+{"placeOfPublication":"Elizabeth-town","series":"aps/16496","title":"The Christian's, Scholar's, and Farmer's Magazine : Calculated in an Eminent Degree, to Promote Religion; to Disseminate Useful Knowledge; to Afford Literary Pleasures and Amusement, and to Advance the Interest of Agriculture (1789-1791)","coverage":"http://dbpedia.org/resource/Elizabeth%2C_New_Jersey"}
+{"placeOfPublication":"Enfield","series":"aps/24369","title":"The Masonic Casket, Designed for the Benefit of Free and Accepted Masons, and for the Information of Such as Wish to Know the Order and Proceedings of the Fraternity (1824-1825)","coverage":"http://dbpedia.org/resource/Enfield%2C_New_Hampshire"}
+{"placeOfPublication":"Enfield","series":"aps/24690","title":"The Religious Informer (1819-1821)","coverage":"http://dbpedia.org/resource/Enfield%2C_New_Hampshire"}
+{"placeOfPublication":"Enfield","series":"aps/24737","title":"Religious Informer, and Free - Will Baptist Register (1822-1822)","coverage":"http://dbpedia.org/resource/Enfield%2C_New_Hampshire"}
+{"placeOfPublication":"Enfield","series":"aps/24738","title":"The Religious Informer (1823-1825)","coverage":"http://dbpedia.org/resource/Enfield%2C_New_Hampshire"}
+{"placeOfPublication":"Exeter","series":"aps/24747","title":"The Remembrancer, for Lord's Day Evenings (1797-1797)","coverage":"http://dbpedia.org/resource/Exeter%2C_New_Hampshire"}
+{"placeOfPublication":"Fairhaven","series":"aps/41783","title":"A Republican Magazine; or, Repository of Political Truths (1798-1798)","coverage":"http://dbpedia.org/resource/Fair_Haven%2C_Vermont"}
+{"placeOfPublication":"Frankfort","series":"aps/24809","title":"The Harbinger of the Mississippi Valley (1832-1832)","coverage":"http://dbpedia.org/resource/Frankfort%2C_Kentucky"}
+{"placeOfPublication":"Frederick Town","series":"aps/1159","title":"The Key (1798-1798)","coverage":"http://dbpedia.org/resource/Frederick%2C_Maryland"}
+{"placeOfPublication":"Freetown","series":"aps/25015","title":"The Spiritual Magazine; or, Gospel Treasury (1813-1814)","coverage":"http://dbpedia.org/resource/Freetown%2C_Massachusetts"}
+{"placeOfPublication":"Georgetown","series":"aps/25253","title":"The American Museum, and Repository of Arts, and Sciences, as Connected with Domestic Manufactures and National Industry. Also, a List of All the Patents Granted by the United States Up to the End of the Year 1821. With a List of All the Books That Have Been Deposited in the Department of State, for Securing Their Copy Right According to Law (1822-1822)","coverage":"http://dbpedia.org/resource/Georgetown_(Washington%2C_D.C.)"}
+{"placeOfPublication":"Georgetown","series":"aps/42151","title":"The Agricultural Museum: Designed to be a Repository of Valuable Information to the Farmer and Manufacturer, and to the Mean of a Free Communication of Sentiment, and General Interchange of Ideas, on the Important Subjects of Their Occupations (1810-1812)","coverage":"http://dbpedia.org/resource/Georgetown_(Washington%2C_D.C.)"}
+{"placeOfPublication":"Germantown","series":"aps/24333","title":"Geistliches Magazien (1770-1772)","coverage":"http://dbpedia.org/page/Germantown%2C_Philadelphia"}
+{"placeOfPublication":"Gilmanton","series":"aps/35428","title":"The New Hampshire Repository; Devoted to Education, Literature and Religion (1845-1847)","coverage":"http://dbpedia.org/resource/Gilmanton%2C_New_Hampshire"}
+{"placeOfPublication":"Greenwich Village","series":"aps/25272","title":"The Villager, a Literary Paper (1819-1819)","coverage":"http://dbpedia.org/resource/Greenwich_Village"}
+{"placeOfPublication":"Hallowell","series":"aps/41389","title":"The Christian Monitor (1814-1818)","coverage":"http://dbpedia.org/resource/Hallowell%2C_Maine"}
+{"placeOfPublication":"Hanover","series":"aps/40749","title":"The Literary Tablet; or, a General Repository of Useful Entertainment; Consisting of Essays Original and Selected, in Poetry and Prose (1803-1807)","coverage":"http://dbpedia.org/resource/Hanover%2C_New_Hampshire"}
+{"placeOfPublication":"Harpers Ferry","series":"aps/24808","title":"The Ladies Garland (1824-1828)","coverage":"http://dbpedia.org/resource/Harpers_Ferry%2C_West_Virginia"}
+{"placeOfPublication":"Harrisburg","series":"aps/24880","title":"Christian Reformer; or Evangelical Miscellany (1828-1829)","coverage":"http://dbpedia.org/resource/Harrisburg%2C_Pennsylvania"}
 {"placeOfPublication":"Hartford","series":"aps/2166","title":"The Children's Magazine : Calculated for the Use of Families and Schools (1789-1789)","coverage":"http://dbpedia.org/resource/Hartford%2C_Connecticut"}
 {"placeOfPublication":"Hartford","series":"aps/24150","title":"Stand; by a Society of Young Men (1819-1820)","coverage":"http://dbpedia.org/resource/Hartford%2C_Connecticut"}
 {"placeOfPublication":"Hartford","series":"aps/24204","title":"Evangelist (1824-1825)","coverage":"http://dbpedia.org/resource/Hartford%2C_Connecticut"}
@@ -554,35 +555,34 @@
 {"placeOfPublication":"Hartford","series":"aps/41509","title":"The Episcopal Watchman (1827-1833)","coverage":"http://dbpedia.org/resource/Hartford%2C_Connecticut"}
 {"placeOfPublication":"Hartford","series":"aps/42261","title":"The Literary Casket; Devoted to Literature, the Arts, and Sciences (1826-1827)","coverage":"http://dbpedia.org/resource/Hartford%2C_Connecticut"}
 {"placeOfPublication":"Hartford","series":"aps/42388","title":"The American Literary Magazine (1847-1849)","coverage":"http://dbpedia.org/resource/Hartford%2C_Connecticut"}
-{"placeOfPublication":"Haverhill","series":"aps/34541","title":"The Gospel Visitant, Being Principally Original Tracts on Moral and Religious Subjects (1811-1818)","coverage":""}
-{"placeOfPublication":"Haverhill","series":"aps/35515","title":"The Merrimack Magazine, and Monthly Register, of Politics, Agriculture, Literature, and Religion (1825-1825)","coverage":""}
-{"placeOfPublication":"Haverhill","series":"aps/40897","title":"The New Hampshire & Vermont Magazine, and General Repository (1797-1797)","coverage":""}
-{"placeOfPublication":"Hudson","series":"aps/25014","title":"Spirit of the Forum, and Hudson Remarker (1817-1817)","coverage":""}
-{"placeOfPublication":"Hudson","series":"aps/35596","title":"The Rural Repository Devoted to Polite Literature, Such as Moral and Sentimental Tales, Original Communications, Biography, Traveling Sketches, Poetry, Amusing Miscellany, Humorous and Historical Anecdotes (1824-1851)","coverage":""}
-{"placeOfPublication":"Hudson","series":"aps/35688","title":"The Messenger of Peace, Devoted to Doctrine, Religion, and Morality (1824-1825)","coverage":""}
-{"placeOfPublication":"Hudson","series":"aps/41250","title":"The Wasp (1802-1803)","coverage":""}
-{"placeOfPublication":"Hudson","series":"aps/41379","title":"The Casket (1811-1812)","coverage":""}
-{"placeOfPublication":"Hudson","series":"aps/41766","title":"The Columbia Magazine. Designed to Promote Evangelical Knowledge and Morality. To Oppose the Prevailing Licentiousness of Manners, Particularly the Violation of the Sabbath, Intemperance, and Profanity; and Also to Diffuse Missionary and Religious Intelligence. Conducted by Several Friends of Religion (1814-1815)","coverage":""}
-{"placeOfPublication":"Hudson","series":"aps/42263","title":"Magnolia; or, Literary Tablet (1833-1834)","coverage":""}
-{"placeOfPublication":"Huntingdon","series":"aps/34548","title":"The Huntingdon Literary Museum, and Monthly Miscellany (1810-1810)","coverage":""}
-{"placeOfPublication":"Huntington","series":"aps/26546","title":"Indiana Farmer (1852-1859)","coverage":""}
-{"placeOfPublication":"Huntington","series":"aps/34905","title":"Indiana Farmer's Guide (1918-1922)","coverage":""}
-{"placeOfPublication":"Indianapolis","series":"aps/34898","title":"The Indiana Farmer and Gardener (1845-1845)","coverage":""}
-{"placeOfPublication":"Indianapolis","series":"aps/35008","title":"Western Farmer and Gardener (1846-1848)","coverage":""}
-{"placeOfPublication":"Jonesborough","series":"aps/35214","title":"Tennessee Farmer (1834-1839)","coverage":""}
-{"placeOfPublication":"Kennebunk","series":"aps/24546","title":"A Religious Magazine; Containing an Account of the United Churches of Christ, Commonly Called Free - Will Baptist (1811-1822)","coverage":""}
-{"placeOfPublication":"Knoxville","series":"aps/27348","title":"The Holston Conference Messenger (1826-1827)","coverage":""}
-{"placeOfPublication":"Knoxville","series":"aps/27349","title":"The Messenger for the Holston Conference (1827-1827)","coverage":""}
-{"placeOfPublication":"Lancaster","series":"aps/24342","title":"Hive (1810-1810)","coverage":""}
-{"placeOfPublication":"Lancaster","series":"aps/24776","title":"The Lancaster Hive; Devoted to Morality, Literature, Biography, History, Poetry, Agriculture, &c. &c. (1803-1805)","coverage":""}
-{"placeOfPublication":"Lancaster","series":"aps/25254","title":"Mercersburg Review (1849-1852)","coverage":""}
-{"placeOfPublication":"Lancaster","series":"aps/25255","title":"Mercersburg Quarterly Review (1853-1856)","coverage":""}
-{"placeOfPublication":"Lancaster","series":"aps/25256","title":"Mercersburg Review (1857-1878)","coverage":""}
-{"placeOfPublication":"Lancaster","series":"aps/25257","title":"Reformed Quarterly Review (1879-1896)","coverage":""}
-{"placeOfPublication":"Lancaster","series":"aps/25258","title":"Reformed Church Review (1897-1926)","coverage":""}
-{"placeOfPublication":"Lancaster","series":"aps/40876","title":"The Gleaner; or, Monthly Magazine (1808-1809)","coverage":""}
-{"placeOfPublication":"Lancaster","series":"aps/40877","title":"Monthly Magazine (1809-1809)","coverage":""}
-{"placeOfPublication":"Lansing","series":"aps/24371","title":"Michigan Farmer (1843-1908)","coverage":""}
+{"placeOfPublication":"Haverhill","series":"aps/35515","title":"The Merrimack Magazine, and Monthly Register, of Politics, Agriculture, Literature, and Religion (1825-1825)","coverage":"http://dbpedia.org/resource/Haverhill%2C_Massachusetts"}
+{"placeOfPublication":"Haverhill","series":"aps/40897","title":"The New Hampshire & Vermont Magazine, and General Repository (1797-1797)","coverage":"http://dbpedia.org/resource/Haverhill%2C_New_Hampshire"}
+{"placeOfPublication":"Hudson","series":"aps/25014","title":"Spirit of the Forum, and Hudson Remarker (1817-1817)","coverage":"http://dbpedia.org/resource/Hudson%2C_New_York"}
+{"placeOfPublication":"Hudson","series":"aps/35596","title":"The Rural Repository Devoted to Polite Literature, Such as Moral and Sentimental Tales, Original Communications, Biography, Traveling Sketches, Poetry, Amusing Miscellany, Humorous and Historical Anecdotes (1824-1851)","coverage":"http://dbpedia.org/resource/Hudson%2C_New_York"}
+{"placeOfPublication":"Hudson","series":"aps/35688","title":"The Messenger of Peace, Devoted to Doctrine, Religion, and Morality (1824-1825)","coverage":"http://dbpedia.org/resource/Hudson%2C_New_York"}
+{"placeOfPublication":"Hudson","series":"aps/41250","title":"The Wasp (1802-1803)","coverage":"http://dbpedia.org/resource/Hudson%2C_New_York"}
+{"placeOfPublication":"Hudson","series":"aps/41379","title":"The Casket (1811-1812)","coverage":"http://dbpedia.org/resource/Hudson%2C_New_York"}
+{"placeOfPublication":"Hudson","series":"aps/41766","title":"The Columbia Magazine. Designed to Promote Evangelical Knowledge and Morality. To Oppose the Prevailing Licentiousness of Manners, Particularly the Violation of the Sabbath, Intemperance, and Profanity; and Also to Diffuse Missionary and Religious Intelligence. Conducted by Several Friends of Religion (1814-1815)","coverage":"http://dbpedia.org/resource/Hudson%2C_New_York"}
+{"placeOfPublication":"Hudson","series":"aps/42263","title":"Magnolia; or, Literary Tablet (1833-1834)","coverage":"http://dbpedia.org/resource/Hudson%2C_New_York"}
+{"placeOfPublication":"Huntingdon","series":"aps/34548","title":"The Huntingdon Literary Museum, and Monthly Miscellany (1810-1810)","coverage":"http://dbpedia.org/resource/Huntingdon%2C_Pennsylvania"}
+{"placeOfPublication":"Huntington","series":"aps/26546","title":"Indiana Farmer (1852-1859)","coverage":"http://dbpedia.org/resource/Huntington%2C_Indiana"}
+{"placeOfPublication":"Huntington","series":"aps/34905","title":"Indiana Farmer's Guide (1918-1922)","coverage":"http://dbpedia.org/resource/Huntington%2C_Indiana"}
+{"placeOfPublication":"Indianapolis","series":"aps/34898","title":"The Indiana Farmer and Gardener (1845-1845)","coverage":"http://dbpedia.org/resource/Indianapolis"}
+{"placeOfPublication":"Indianapolis","series":"aps/35008","title":"Western Farmer and Gardener (1846-1848)","coverage":"http://dbpedia.org/resource/Indianapolis"}
+{"placeOfPublication":"Jonesborough","series":"aps/35214","title":"Tennessee Farmer (1834-1839)","coverage":"http://dbpedia.org/resource/Jonesborough%2C_Tennessee"}
+{"placeOfPublication":"Kennebunk","series":"aps/24546","title":"A Religious Magazine; Containing an Account of the United Churches of Christ, Commonly Called Free - Will Baptist (1811-1822)","coverage":"http://dbpedia.org/page/Kennebunk%2C_Maine"}
+{"placeOfPublication":"Knoxville","series":"aps/27348","title":"The Holston Conference Messenger (1826-1827)","coverage":"http://dbpedia.org/resource/Knoxville%2C_Tennessee"}
+{"placeOfPublication":"Knoxville","series":"aps/27349","title":"The Messenger for the Holston Conference (1827-1827)","coverage":"http://dbpedia.org/resource/Knoxville%2C_Tennessee"}
+{"placeOfPublication":"Lancaster","series":"aps/24342","title":"Hive (1810-1810)","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
+{"placeOfPublication":"Lancaster","series":"aps/24776","title":"The Lancaster Hive; Devoted to Morality, Literature, Biography, History, Poetry, Agriculture, &c. &c. (1803-1805)","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
+{"placeOfPublication":"Lancaster","series":"aps/25254","title":"Mercersburg Review (1849-1852)","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
+{"placeOfPublication":"Lancaster","series":"aps/25255","title":"Mercersburg Quarterly Review (1853-1856)","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
+{"placeOfPublication":"Lancaster","series":"aps/25256","title":"Mercersburg Review (1857-1878)","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
+{"placeOfPublication":"Lancaster","series":"aps/25257","title":"Reformed Quarterly Review (1879-1896)","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
+{"placeOfPublication":"Lancaster","series":"aps/25258","title":"Reformed Church Review (1897-1926)","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
+{"placeOfPublication":"Lancaster","series":"aps/40876","title":"The Gleaner; or, Monthly Magazine (1808-1809)","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
+{"placeOfPublication":"Lancaster","series":"aps/40877","title":"Monthly Magazine (1809-1809)","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
+{"placeOfPublication":"Lansing","series":"aps/24371","title":"Michigan Farmer (1843-1908)","coverage":"http://dbpedia.org/resource/Lansing%2C_Michigan"}
 {"placeOfPublication":"Lebanon","series":"aps/24454","title":"The Cumberland Presbyterian Quarterly (1880-1880)","coverage":""}
 {"placeOfPublication":"Lebanon","series":"aps/24542","title":"The Ohio Miscellaneous Museum (1822-1822)","coverage":""}
 {"placeOfPublication":"Lexington","series":"aps/24188","title":"Western Minerva or, American Annals of Knowledge and Literature (1820-1820)","coverage":""}
