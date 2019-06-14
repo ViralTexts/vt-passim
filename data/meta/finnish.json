@@ -11,11 +11,11 @@
 {"series":"1457-425X","title":"Annons-Blad","lang":["sv"],"placeOfPublication":"Kuopio"}
 {"series":"1457-4349","title":"Helsingfors Annonsblad","lang":["sv"],"placeOfPublication":"Helsingfors"}
 {"series":"1458-6525","title":"Tieto-Sanomia Suomen Kansalle","lang":["fi"],"placeOfPublication":"Helsinki"}
-{"series":"fk01442","title":"Mehiläinen","lang":["fi"],"placeOfPublication":""}
+{"series":"fk01442","title":"Mehiläinen","lang":["fi"],"placeOfPublication":"Oulu"}
 {"series":"1457-4306","title":"Borgå Tidning","lang":["sv"],"placeOfPublication":"Borgå"}
 {"series":"fk01737","title":"Tidning för landtbrukare och näringsidkare","lang":["sv"],"placeOfPublication":"Åbo"}
 {"series":"1457-4500","title":"Maamiehen Ystävä","lang":["fi"],"placeOfPublication":"Kuopio"}
-{"series":"1458-2406","title":"Maiden ja merien takaa","lang":["fi"],"placeOfPublication":""}
+{"series":"1458-2406","title":"Maiden ja merien takaa","lang":["fi"],"placeOfPublication":"Helsinki"}
 {"series":"1457-4756","title":"Tidningar Utgifne af et Sällskap i Åbo","lang":["sv"],"placeOfPublication":"Åbo"}
 {"series":"1458-0799","title":"Helsingfors Börsförenings Tidning","lang":["sv"],"placeOfPublication":"Helsingfors"}
 {"series":"1457-4802","title":"Åbo Tidningar","lang":["sv"],"placeOfPublication":"Åbo"}
@@ -27,7 +27,7 @@
 {"series":"1457-4837","title":"Wiborg","lang":["sv"],"placeOfPublication":"Wiborg"}
 {"series":"1458-0888","title":"Ilmarinen","lang":["fi"],"placeOfPublication":"Viipuri"}
 {"series":"1458-669X","title":"Suomen kuvalehti","lang":["fi"],"placeOfPublication":"Helsinki"}
-{"series":"fk01322","title":"Luonnotar","lang":["fi"],"placeOfPublication":""}
+{"series":"fk01322","title":"Luonnotar","lang":["fi"],"placeOfPublication":"Helsinki"}
 {"series":"fk20050749","title":"Wanadis","lang":["sv"],"placeOfPublication":"Helsingfors"}
 {"series":"1458-8641","title":"Tähti","lang":["fi"],"placeOfPublication":"Turku"}
 {"series":"1457-4721","title":"Uusi Suometar","lang":["fi"],"placeOfPublication":"Helsinki"}
@@ -52,7 +52,7 @@
 {"series":"1458-8609","title":"Tapio","lang":["fi"],"placeOfPublication":"Kuopio"}
 {"series":"1457-4845","title":"Wiborgs Annonce Blad","lang":["sv"],"placeOfPublication":"Wiborg"}
 {"series":"1457-4616","title":"Sanomia Turusta","lang":["fi"],"placeOfPublication":"Turku"}
-{"series":"fk00377","title":"Från Nära och Fjärran","lang":["sv"],"placeOfPublication":""}
+{"series":"fk00377","title":"Från Nära och Fjärran","lang":["sv"]}
 {"series":"1458-6541","title":"Vikingen","lang":["sv"],"placeOfPublication":"Helsingfors"}
 {"series":"1458-2694","title":"Tampereen Sanomat","lang":["fi"],"placeOfPublication":"Tampere"}
 {"series":"1457-4861","title":"Wiburgs Mancherley","lang":["de"],"placeOfPublication":"Wiburg"}
@@ -86,7 +86,7 @@
 {"series":"1457-4411","title":"Ilmarinen","lang":["sv"],"placeOfPublication":"Vasa"}
 {"series":"0356-0724","title":"Hufvudstadsbladet","lang":["sv"],"placeOfPublication":"Helsingfors"}
 {"series":"0783-1560","title":"Tidskrift utgifven af Pedagogiska föreningen i Finland","lang":["sv"],"placeOfPublication":"Helsingfors"}
-{"series":"fk01918","title":"Tähdenvälejä","lang":["fi"],"placeOfPublication":""}
+{"series":"fk01918","title":"Tähdenvälejä","lang":["fi"]}
 {"series":"1457-4829","title":"Åbo Morgonblad","lang":["sv"],"placeOfPublication":"Åbo"}
 {"series":"fk09512","title":"Rauhan sanan-saattaja","lang":["fi"],"placeOfPublication":"Rauma"}
 {"series":"1457-4284","title":"Björneborg","lang":["sv"],"placeOfPublication":"Björneborg"}
@@ -97,7 +97,7 @@
 {"series":"1457-4314","title":"Finlands Allmänna Tidning","lang":["sv"],"placeOfPublication":"Helsingfors"}
 {"series":"1458-6533","title":"Työmiehen Ystävä","lang":["fi"],"placeOfPublication":"Helsinki"}
 {"series":"1458-6746","title":"Suomenlehti","lang":["fi"],"placeOfPublication":"Viipuri"}
-{"series":"fk01284","title":"Litteraturblad för allmän medborgerlig bildning","lang":["sv"],"placeOfPublication":""}
+{"series":"fk01284","title":"Litteraturblad för allmän medborgerlig bildning","lang":["sv"],"placeOfPublication":"Helsingfors"}
 {"series":"1457-4527","title":"Oulun Wiikko-Sanomia","lang":["fi"],"placeOfPublication":"Oulu"}
 {"series":"1457-4446","title":"Kanawa","lang":["fi"],"placeOfPublication":"Viipuri"}
 {"series":"1457-4535","title":"Papperslyktan","lang":["sv"],"placeOfPublication":"Helsingfors"}
@@ -112,10 +112,10 @@
 {"series":"1458-2449","title":"Mikkelin Wiikko-Sanomia","lang":["fi"],"placeOfPublication":"Mikkeli"}
 {"series":"fk00935","title":"Koti ja Koulu","lang":["fi"],"placeOfPublication":"Jyväskylä"}
 {"series":"1457-4454","title":"Kuopio Tidning","lang":["sv"],"placeOfPublication":"Kuopio"}
-{"series":"fk01285","title":"Litterär Tidskrift","lang":["sv"],"placeOfPublication":""}
+{"series":"fk01285","title":"Litterär Tidskrift","lang":["sv"],"placeOfPublication":"Helsingfors"}
 {"series":"1457-4578","title":"Wiburgs Wochenblatt","lang":["de"],"placeOfPublication":"Wiburg"}
 {"series":"1458-0551","title":"Barometern","lang":["sv"],"placeOfPublication":"Helsingfors"}
 {"series":"1458-0802","title":"Helsingfors Dagblad","lang":["sv"],"placeOfPublication":"Helsingfors"}
 {"series":"1458-2589","title":"Pohjan-Tähti","lang":["fi"],"placeOfPublication":"Oulu"}
-{"series":"fk01494","title":"Mnemosyne","lang":["sv"],"placeOfPublication":""}
+{"series":"fk01494","title":"Mnemosyne","lang":["sv"],"placeOfPublication":"Turku"}
 {"series":"fk02754","title":"Weckoblad för uppfostran och underwisning","lang":["sv"],"placeOfPublication":"Helsingfors"}
