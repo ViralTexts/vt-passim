@@ -37,8 +37,8 @@
 {"series":"europeana/ITA/beilage_zum_pustertaler_boten","title":"Beilage zum Pustertaler Boten","lang":["German"],"placeOfPublication":"Bruneck","coverage":"http://dbpedia.org/resource/Bruneck"}
 {"series":"europeana/ITA/alpenzeitung","title":"Alpenzeitung","lang":["German"],"placeOfPublication":"Bozen","coverage":"http://dbpedia.org/resource/Bolzano"}
 {"series":"europeana/ITA/anzeiger_zum_pustertaler_boten","title":"Anzeiger zum Pustertaler Boten","lang":["German"],"placeOfPublication":"Bruneck","coverage":"http://dbpedia.org/resource/Bruneck"}
-{"series":"europeana/ITA/lienzer_zeitung","title":"Lienzer Zeitung","lang":["German"],"placeOfPublication":"Lienz"}
-{"series":"europeana/ITA/ueberetscher_gemeindeblatt","title":"Ueberetscher Gemeindeblatt","lang":["German"],"placeOfPublication":"Kaltern"}
+{"series":"europeana/ITA/lienzer_zeitung","title":"Lienzer Zeitung","lang":["German"],"placeOfPublication":"Lienz","coverage":"http://dbpedia.org/resource/Lienz"}
+{"series":"europeana/ITA/ueberetscher_gemeindeblatt","title":"Ueberetscher Gemeindeblatt","lang":["German"],"placeOfPublication":"Kaltern","coverage":"http://dbpedia.org/resource/Kaltern_an_der_Weinstra%C3%9Fe"}
 {"series":"europeana/ITA/der_nornenbrunnen","title":"Der Nornenbrunnen","lang":["German"],"placeOfPublication":"Innsbruck","coverage":"http://dbpedia.org/resource/Innsbruck"}
 {"series":"europeana/ITA/bollettino_ufficiale_prefettura_di_trento","title":"Bollettino Ufficiale Prefettura di Trento","lang":["German"],"placeOfPublication":"Trento","coverage":"http://dbpedia.org/resource/Trento"}
 {"series":"europeana/ITA/l_amik_di_ladins","title":"L'Amik di Ladins","lang":["German"],"placeOfPublication":"Innsbruck","coverage":"http://dbpedia.org/resource/Innsbruck"}
@@ -49,8 +49,8 @@
 {"series":"europeana/ITA/maiser_wochenblatt","title":"Maiser Wochenblatt","lang":["German"],"placeOfPublication":"Meran","coverage":"http://dbpedia.org/resource/Merano"}
 {"series":"europeana/ITA/bozner_zeitung","title":"Bozner Zeitung","lang":["German"],"placeOfPublication":"Bozen","coverage":"http://dbpedia.org/resource/Bolzano"}
 {"series":"europeana/ITA/suedtiroler_heimat","title":"Suedtiroler Heimat","lang":["German"],"placeOfPublication":"Innsbruck","coverage":"http://dbpedia.org/resource/Innsbruck"}
-{"series":"europeana/ITA/fogli_annunzi_legali_prefettura_bolzano","title":"Fogli Annunzi Legali Prefettura Bolzano","lang":["German"],"placeOfPublication":"Bolzano"}
-{"series":"europeana/ITA/sterzinger_bezirksanzeiger","title":"Sterzinger Bezirksanzeiger","lang":["German"],"placeOfPublication":"Sterzing"}
+{"series":"europeana/ITA/fogli_annunzi_legali_prefettura_bolzano","title":"Fogli Annunzi Legali Prefettura Bolzano","lang":["German"],"placeOfPublication":"Bolzano","coverage":"http://dbpedia.org/resource/Bolzano"}
+{"series":"europeana/ITA/sterzinger_bezirksanzeiger","title":"Sterzinger Bezirksanzeiger","lang":["German"],"placeOfPublication":"Sterzing","coverage":"http://dbpedia.org/resource/Sterzing"}
 {"series":"europeana/ITA/dolomiten_landausgabe","title":"Dolomiten Landausgabe","lang":["German"],"placeOfPublication":"Bozen","coverage":"http://dbpedia.org/resource/Bolzano"}
 {"series":"europeana/ITA/andreas_hofer_wochenblatt","title":"Andreas-Hofer-Wochenblatt","lang":["German"],"placeOfPublication":"Innsbruck","coverage":"http://dbpedia.org/resource/Innsbruck"}
 {"series":"europeana/ITA/weitere_beilagen","title":"Weitere Beilagen","lang":["German"],"placeOfPublication":"Bruneck","coverage":"http://dbpedia.org/resource/Bruneck"}
@@ -58,7 +58,7 @@
 {"series":"europeana/ITA/tiroler_volksbote","title":"Tiroler Volksbote","lang":["German"],"placeOfPublication":"Brixen","coverage":"http://dbpedia.org/resource/Brixen"}
 {"series":"europeana/ITA/bozner_kriegsblaettchen","title":"Bozner Kriegsblaettchen","lang":["German"],"placeOfPublication":"Bozen","coverage":"http://dbpedia.org/resource/Bolzano"}
 {"series":"europeana/ITA/meraner_zeitung","title":"Meraner Zeitung","lang":["German"],"placeOfPublication":"Meran","coverage":"http://dbpedia.org/resource/Merano"}
-{"series":"europeana/ITA/calender_de_gherdeina","title":"Calender de Gherdeina","lang":["German"],"placeOfPublication":"Porsenù"}
+{"series":"europeana/ITA/calender_de_gherdeina","title":"Calender de Gherdeina","lang":["German"],"placeOfPublication":"Porsenù","coverage":"http://dbpedia.org/resource/Brixen"}
 {"series":"europeana/ITA/tiroler_zeitung_wochenblatt_fur_katholiken","title":"Tiroler Zeitung - Wochenblatt für Katholiken","lang":["German"],"placeOfPublication":"Innsbruck","coverage":"http://dbpedia.org/resource/Innsbruck"}
 {"series":"europeana/ITA/bote_fur_tirol","title":"Bote für Tirol","lang":["German"],"placeOfPublication":"Innsbruck","coverage":"http://dbpedia.org/resource/Innsbruck"}
 {"series":"europeana/ITA/der_burggraefler","title":"Der Burggraefler","lang":["German"],"placeOfPublication":"Meran","coverage":"http://dbpedia.org/resource/Merano"}
@@ -229,24 +229,24 @@
 {"series":"europeana/AUT/die_presse","title":"Die Presse","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/eideseis_dia_ta_anatolika_mere","title":"Eideseis dia ta anatolika mere","lang":["Greek, Modern"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/fremden_blatt","title":"Fremden-Blatt","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
-{"series":"europeana/AUT/klagenfurter_zeitung","title":"Klagenfurter Zeitung","lang":["German"],"placeOfPublication":"Klagenfurt"}
+{"series":"europeana/AUT/klagenfurter_zeitung","title":"Klagenfurter Zeitung","lang":["German"],"placeOfPublication":"Klagenfurt","coverage":"http://dbpedia.org/resource/Klagenfurt"}
 {"series":"europeana/AUT/die_bombe","title":"Die Bombe","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
-{"series":"europeana/AUT/nordbohmisches_volksblatt","title":"Nordböhmisches Volksblatt","lang":["German"],"placeOfPublication":"Warnsdorf (Varnsdorf)"}
+{"series":"europeana/AUT/nordbohmisches_volksblatt","title":"Nordböhmisches Volksblatt","lang":["German"],"placeOfPublication":"Warnsdorf (Varnsdorf)","coverage":"http://dbpedia.org/resource/Varnsdorf"}
 {"series":"europeana/AUT/militar_zeitung","title":"Militär-Zeitung","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/sonntagsblatter","title":"Sonntagsblätter","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/salzburger_chronik","title":"Salzburger Chronik","lang":["German"],"placeOfPublication":"Salzburg","coverage":"http://dbpedia.org/resource/Salzburg"}
 {"series":"europeana/AUT/illustrirtes_wiener_extrablatt","title":"Illustrirtes Wiener Extrablatt","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/neuigkeits_welt_blatt","title":"Neuigkeits-Welt-Blatt","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
-{"series":"europeana/AUT/znaimer_wochenblatt","title":"Znaimer Wochenblatt","lang":["German"],"placeOfPublication":"Znojmo (Znaim)"}
+{"series":"europeana/AUT/znaimer_wochenblatt","title":"Znaimer Wochenblatt","lang":["German"],"placeOfPublication":"Znojmo (Znaim)","coverage":"http://dbpedia.org/resource/Znojmo"}
 {"series":"europeana/AUT/osterreichische_buchdrucker_zeitung","title":"Österreichische Buchdrucker-Zeitung","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/vorarlberger_zeitung","title":"Vorarlberger Zeitung","lang":["German"],"placeOfPublication":"Feldkirch","coverage":"http://dbpedia.org/resource/Feldkirch%2C_Vorarlberg"}
-{"series":"europeana/AUT/marburger_zeitung","title":"Marburger Zeitung","lang":["German"],"placeOfPublication":"Maribor (Marburg)"}
+{"series":"europeana/AUT/marburger_zeitung","title":"Marburger Zeitung","lang":["German"],"placeOfPublication":"Maribor (Marburg)","coverage":"http://dbpedia.org/resource/Maribor"}
 {"series":"europeana/AUT/die_debatte","title":"Die Debatte","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/internationale_ausstellungs_zeitung","title":"Internationale Ausstellungs-Zeitung","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/feldkircher_anzeiger","title":"Feldkircher Anzeiger","lang":["German"],"placeOfPublication":"Feldkirch","coverage":"http://dbpedia.org/resource/Feldkirch%2C_Vorarlberg"}
 {"series":"europeana/AUT/wiener_landwirtschaftliche_zeitung","title":"Wiener Landwirtschaftliche Zeitung","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/wiener_sonntags_zeitung","title":"Wiener Sonntags-Zeitung","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
-{"series":"europeana/AUT/agramer_zeitung","title":"Agramer Zeitung","lang":["German"],"placeOfPublication":"Agram"}
+{"series":"europeana/AUT/agramer_zeitung","title":"Agramer Zeitung","lang":["German"],"placeOfPublication":"Agram","coverage":"http://dbpedia.org/resource/Zagreb"}
 {"series":"europeana/AUT/wiener_moden_zeitung","title":"Wiener Moden-Zeitung","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/salzburger_volksblatt_die_unabhangige_tageszeitung","title":"Salzburger Volksblatt: die unabhängige Tageszeitung für Stadt und Land Salzburg","lang":["German"],"placeOfPublication":"Salzburg","coverage":"http://dbpedia.org/resource/Salzburg"}
 {"series":"europeana/AUT/frauenblatter","title":"Frauenblätter","lang":["German"],"placeOfPublication":"Graz","coverage":"http://dbpedia.org/resource/Graz"}
@@ -263,7 +263,7 @@
 {"series":"europeana/AUT/wiener_salonblatt","title":"Wiener Salonblatt","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/bregenzer_wochenblatt","title":"Bregenzer Wochenblatt","lang":["German"],"placeOfPublication":"Bregenz","coverage":"http://dbpedia.org/resource/Bregenz"}
 {"series":"europeana/AUT/die_neuzeit","title":"Die Neuzeit","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
-{"series":"europeana/AUT/nasa_sloga","title":"Nasa Sloga","lang":["Croatian"],"placeOfPublication":"Trieste (Triest)"}
+{"series":"europeana/AUT/nasa_sloga","title":"Nasa Sloga","lang":["Croatian"],"placeOfPublication":"Trieste (Triest)","coverage":"http://dbpedia.org/resource/Trieste"}
 {"series":"europeana/AUT/allgemeine_land_und_forstwirthschaftliche_zeitung","title":"Allgemeine land- und forstwirthschaftliche Zeitung","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/vaterlandische_blatter_fur_den_osterreichischen_ka","title":"Vaterländische Blätter für den österreichischen Kaiserstaat","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/wiener_theater_zeitung","title":"Wiener Theater-Zeitung","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
@@ -280,7 +280,7 @@
 {"series":"europeana/AUT/volksblatt_fur_stadt_und_land","title":"Volksblatt für Stadt und Land","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/neue_wiener_musik_zeitung","title":"Neue Wiener Musik-Zeitung","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/deutsche_zeitung","title":"Deutsche Zeitung","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
-{"series":"europeana/AUT/prager_abendblatt","title":"Prager Abendblatt","lang":["German"],"placeOfPublication":"Praha (Prag)"}
+{"series":"europeana/AUT/prager_abendblatt","title":"Prager Abendblatt","lang":["German"],"placeOfPublication":"Praha (Prag)","coverage":"http://dbpedia.org/resource/http://dbpedia.org/resource/Prague"}
 {"series":"europeana/AUT/das_vaterland","title":"Das Vaterland","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/die_gartenlaube_fur_osterreich","title":"Die Gartenlaube für Österreich","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/zeitschrift_fur_notariat_und_freiwillige_gerichtsb","title":"Zeitschrift für Notariat und freiwillige Gerichtsbarkeit in Österreich","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
@@ -293,25 +293,25 @@
 {"series":"europeana/AUT/die_vedette_militar_zeitschrift","title":"Die Vedette. Militär-Zeitschrift","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/union","title":"Union","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/hermes_ho_logios","title":"Hermes ho logios","lang":["Greek, Modern"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
-{"series":"europeana/AUT/cur_liste_bad_ischl","title":"Cur-Liste Bad Ischl","lang":["German"],"placeOfPublication":"Bad Ischl"}
+{"series":"europeana/AUT/cur_liste_bad_ischl","title":"Cur-Liste Bad Ischl","lang":["German"],"placeOfPublication":"Bad Ischl","coverage":"http://dbpedia.org/resource/Bad_Ischl"}
 {"series":"europeana/AUT/wiener_abendzeitung","title":"Wiener Abendzeitung","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/der_humorist","title":"Der Humorist","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/grazer_volksblatt","title":"Grazer Volksblatt","lang":["German"],"placeOfPublication":"Graz","coverage":"http://dbpedia.org/resource/Graz"}
-{"series":"europeana/AUT/teplitz_schonauer_anzeiger","title":"Teplitz-Schönauer Anzeiger","lang":["German"],"placeOfPublication":"Teplice-Sanov (Teplitz-Schönau, Töplitz, Teplice)"}
+{"series":"europeana/AUT/teplitz_schonauer_anzeiger","title":"Teplitz-Schönauer Anzeiger","lang":["German"],"placeOfPublication":"Teplice-Sanov (Teplitz-Schönau, Töplitz, Teplice)","coverage":"http://dbpedia.org/resource/Teplice"}
 {"series":"europeana/AUT/janus","title":"Janus","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/gerichtshalle","title":"Gerichtshalle","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
-{"series":"europeana/AUT/leitmeritzer_zeitung","title":"Leitmeritzer Zeitung","lang":["German"],"placeOfPublication":"Litoměřice (Leitmeritz)"}
+{"series":"europeana/AUT/leitmeritzer_zeitung","title":"Leitmeritzer Zeitung","lang":["German"],"placeOfPublication":"Litoměřice (Leitmeritz)","coverage":"http://dbpedia.org/resource/Litom%C4%9B%C5%99ice"}
 {"series":"europeana/AUT/der_floh","title":"Der Floh","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/osterreichische_buchhandler_correspondenz","title":"Österreichische Buchhändler-Correspondenz","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/figaro","title":"Figaro","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
-{"series":"europeana/AUT/siebenburgisch_deutsches_wochenblatt","title":"Siebenbürgisch-deutsches Wochenblatt","lang":["German"],"placeOfPublication":"Sibiu (Hermannstadt)"}
+{"series":"europeana/AUT/siebenburgisch_deutsches_wochenblatt","title":"Siebenbürgisch-deutsches Wochenblatt","lang":["German"],"placeOfPublication":"Sibiu (Hermannstadt)","coverage":"http://dbpedia.org/resource/Sibiu"}
 {"series":"europeana/AUT/kikeriki","title":"Kikeriki","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/morgen_post","title":"Morgen-Post","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/allgemeine_osterreichische_gerichtszeitung","title":"Allgemeine Österreichische Gerichtszeitung","lang":["German"],"placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
 {"series":"europeana/AUT/vorarlberger_volks_blatt","title":"Vorarlberger Volks-Blatt","lang":["German"],"placeOfPublication":"Bregenz","coverage":"http://dbpedia.org/resource/Bregenz"}
 {"series":"europeana/LUX/journal_historique_et_litteraire","title":"Journal historique et littéraire","lang":["French"],"placeOfPublication":"Luxembourg","coverage":"http://dbpedia.org/resource/Luxembourg_City"}
 {"series":"europeana/LUX/la_clef_du_cabinet_des_princes_de_l_europe","title":"La clef du cabinet des princes de l'Europe","lang":["French"],"placeOfPublication":"Luxembourg","coverage":"http://dbpedia.org/resource/Luxembourg_City"}
-{"series":"europeana/FIN/lahden_lehti","title":"Lahden Lehti","lang":["Finnish"],"placeOfPublication":"Lahti"}
+{"series":"europeana/FIN/lahden_lehti","title":"Lahden Lehti","lang":["Finnish"],"placeOfPublication":"Lahti","coverage":"http://dbpedia.org/resource/Lahti"}
 {"series":"europeana/FIN/kaiku","title":"Kaiku","lang":["Finnish"],"placeOfPublication":"Oulu","coverage":"http://dbpedia.org/resource/Oulu"}
 {"series":"europeana/FIN/borga_nya_tidning","title":"Borgå Nya Tidning","lang":["Swedish"],"placeOfPublication":"Borgå","coverage":"http://dbpedia.org/resource/Porvoo"}
 {"series":"europeana/FIN/karjalatar","title":"Karjalatar","lang":["Finnish"],"placeOfPublication":"Joensuu","coverage":"http://dbpedia.org/resource/Joensuu"}
