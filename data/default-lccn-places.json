@@ -1,8 +1,8 @@
-{"placeOfPublication":"Algiers, La.","coverage":""}
-{"placeOfPublication":"Anacostia [i.e. Washington] D.C.","coverage":""}
-{"placeOfPublication":"Anadarko, Caddo County, Okla.","coverage":""}
-{"placeOfPublication":"Arkalon, Kan.","coverage":""}
-{"placeOfPublication":"Arkansas Post, Ark. Ter.","coverage":""}
+{"placeOfPublication":"Algiers, La.","coverage":"https://en.wikipedia.org/wiki/Algiers%2C_New_Orleans"}
+{"placeOfPublication":"Anacostia [i.e. Washington] D.C.","coverage":"http://dbpedia.org/resource/Anacostia"}
+{"placeOfPublication":"Anadarko, Caddo County, Okla.","coverage":"http://dbpedia.org/resource/Anadarko%2C_Oklahoma"}
+{"placeOfPublication":"Arkalon, Kan.","coverage":"http://dbpedia.org/resource/Arkalon%2C_Kansas"}
+{"placeOfPublication":"Arkansas Post, Ark. Ter.","coverage":"http://dbpedia.org/resource/Arkansas_Post"}
 {"placeOfPublication":"Batesburg, S.C.","coverage":""}
 {"placeOfPublication":"Baton Rouge, La.","coverage":""}
 {"placeOfPublication":"Battleboro, Vt.","coverage":""}
@@ -17,12 +17,12 @@
 {"placeOfPublication":"Cañon City, Colo.","coverage":""}
 {"placeOfPublication":"Centreville, Columbiana Co., Ohio","coverage":""}
 {"placeOfPublication":"Cerrillos, N.M.","coverage":""}
-{"placeOfPublication":"Chicago [Ill.","coverage":""}
-{"placeOfPublication":"Chicago [Ill.]","coverage":""}
-{"placeOfPublication":"Chicago","coverage":""}
-{"placeOfPublication":"Chicago, Ill.","coverage":""}
-{"placeOfPublication":"Chicago, Illinois.","coverage":""}
-{"placeOfPublication":"City of Washington [D.C.]","coverage":""}
+{"placeOfPublication":"Chicago [Ill.","coverage":"http://dbpedia.org/resource/Chicago"}
+{"placeOfPublication":"Chicago [Ill.]","coverage":"http://dbpedia.org/resource/Chicago"}
+{"placeOfPublication":"Chicago","coverage":"http://dbpedia.org/resource/Chicago"}
+{"placeOfPublication":"Chicago, Ill.","coverage":"http://dbpedia.org/resource/Chicago"}
+{"placeOfPublication":"Chicago, Illinois.","coverage":"http://dbpedia.org/resource/Chicago"}
+{"placeOfPublication":"City of Washington [D.C.]","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Concord, N.H.","coverage":""}
 {"placeOfPublication":"Conroy [Lakemp], Beaver County, Okla.","coverage":""}
 {"placeOfPublication":"Crandall, Fla.","coverage":""}
@@ -95,17 +95,17 @@
 {"placeOfPublication":"New Echota [Ga.]","coverage":""}
 {"placeOfPublication":"New Oregon, Howard County, Iowa","coverage":""}
 {"placeOfPublication":"New Oregon, Iowa","coverage":""}
-{"placeOfPublication":"New York (N.Y.)","coverage":""}
-{"placeOfPublication":"New York N.Y.","coverage":""}
-{"placeOfPublication":"New York [N.Y.","coverage":""}
-{"placeOfPublication":"New York [N.Y.]","coverage":""}
-{"placeOfPublication":"New York [New York]","coverage":""}
-{"placeOfPublication":"New York","coverage":""}
-{"placeOfPublication":"New York, N.Y.","coverage":""}
-{"placeOfPublication":"New York, [N.Y.","coverage":""}
-{"placeOfPublication":"New York, [N.Y.]","coverage":""}
-{"placeOfPublication":"New-York [N.Y.","coverage":""}
-{"placeOfPublication":"New-York [N.Y.]","coverage":""}
+{"placeOfPublication":"New York (N.Y.)","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"placeOfPublication":"New York N.Y.","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"placeOfPublication":"New York [N.Y.","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"placeOfPublication":"New York [N.Y.]","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"placeOfPublication":"New York [New York]","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"placeOfPublication":"New York, N.Y.","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"placeOfPublication":"New York, [N.Y.","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"placeOfPublication":"New York, [N.Y.]","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"placeOfPublication":"New-York [N.Y.","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"placeOfPublication":"New-York [N.Y.]","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"Ocala, Fla.","coverage":""}
 {"placeOfPublication":"Oregon.","coverage":""}
 {"placeOfPublication":"Ormond-on-the-Halifax, Fla.","coverage":""}
@@ -119,10 +119,10 @@
 {"placeOfPublication":"Panola, Mi. [i.e. Miss.]","coverage":""}
 {"placeOfPublication":"Panola, Miss.","coverage":""}
 {"placeOfPublication":"Petroleum Center, Pa.","coverage":""}
-{"placeOfPublication":"Philadelphia [Pa.","coverage":""}
-{"placeOfPublication":"Philadelphia [Pa.]","coverage":""}
-{"placeOfPublication":"Philadelphia","coverage":""}
-{"placeOfPublication":"Philadelphia, Pa.","coverage":""}
+{"placeOfPublication":"Philadelphia [Pa.","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"placeOfPublication":"Philadelphia [Pa.]","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"placeOfPublication":"Philadelphia, Pa.","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"placeOfPublication":"Pine Ridge, S.D.","coverage":""}
 {"placeOfPublication":"Pinetop, Ariz.","coverage":""}
 {"placeOfPublication":"Pithole City, Pa.","coverage":""}
@@ -191,28 +191,28 @@
 {"placeOfPublication":"Utah.","coverage":""}
 {"placeOfPublication":"Volcano, W. Va.","coverage":""}
 {"placeOfPublication":"Voltaire, Kan.","coverage":""}
-{"placeOfPublication":"Washington City (D.C.)","coverage":""}
-{"placeOfPublication":"Washington City [D.C.","coverage":""}
-{"placeOfPublication":"Washington City [D.C.]","coverage":""}
-{"placeOfPublication":"Washington City [i.e. Washington, D.C.","coverage":""}
-{"placeOfPublication":"Washington City [i.e. Washington, D.C.]","coverage":""}
-{"placeOfPublication":"Washington City [i.e., Washington, D.C.]","coverage":""}
-{"placeOfPublication":"Washington City, D.C.","coverage":""}
-{"placeOfPublication":"Washington D.C.","coverage":""}
-{"placeOfPublication":"Washington [D.C.","coverage":""}
-{"placeOfPublication":"Washington [D.C.]","coverage":""}
-{"placeOfPublication":"Washington [i.e Washington, D.C.]","coverage":""}
-{"placeOfPublication":"Washington, D.C.","coverage":""}
+{"placeOfPublication":"Washington City (D.C.)","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"placeOfPublication":"Washington City [D.C.","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"placeOfPublication":"Washington City [D.C.]","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"placeOfPublication":"Washington City [i.e. Washington, D.C.","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"placeOfPublication":"Washington City [i.e. Washington, D.C.]","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"placeOfPublication":"Washington City [i.e., Washington, D.C.]","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"placeOfPublication":"Washington City, D.C.","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"placeOfPublication":"Washington D.C.","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"placeOfPublication":"Washington [D.C.","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"placeOfPublication":"Washington [D.C.]","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"placeOfPublication":"Washington [i.e Washington, D.C.]","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"placeOfPublication":"Washington, D.C.","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Wyandotte, Kan.","coverage":""}
-{"placeOfPublication":"Yazoo, Miss.","coverage":""}
-{"placeOfPublication":"[Chicago, Ill.]","coverage":""}
+{"placeOfPublication":"Yazoo, Miss.","coverage":"http://dbpedia.org/resource/Yazoo_City%2C_Mississippi"}
+{"placeOfPublication":"[Chicago, Ill.]","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"[Fremont, Ohio]","coverage":""}
-{"placeOfPublication":"[New York","coverage":""}
-{"placeOfPublication":"[New York, N.Y.","coverage":""}
-{"placeOfPublication":"[New York, N.Y.]","coverage":""}
-{"placeOfPublication":"[New York]","coverage":""}
+{"placeOfPublication":"[New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"placeOfPublication":"[New York, N.Y.","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"placeOfPublication":"[New York, N.Y.]","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"placeOfPublication":"[New York]","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"[Panola] Panola County, Miss.","coverage":""}
-{"placeOfPublication":"[Philadelphia, Pa.]","coverage":""}
+{"placeOfPublication":"[Philadelphia, Pa.]","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"placeOfPublication":"[Sacred Heart, Okla.]","coverage":""}
 {"placeOfPublication":"[St. Albans, Vt.","coverage":""}
-{"placeOfPublication":"[Washington, D.C.]","coverage":""}
+{"placeOfPublication":"[Washington, D.C.]","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
