@@ -1,0 +1,11 @@
+{"series":"aid","title":"Deutsche Allgemeine Zeitung"}
+{"series":"apr","title":"Die Presse","placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
+{"series":"apz","title":"Agramer Zeitung","placeOfPublication":"Agram","coverage":"http://dbpedia.org/resource/Zagreb"}
+{"series":"bwb","title":"Bregenzer Wochenblatt","placeOfPublication":"Bregenz","coverage":"http://dbpedia.org/resource/Bregenz"}
+{"series":"dea","title":"Deutsche Allgemeine Zeitung","placeOfPublication":"Leipzig","coverage":"http://dbpedia.org/resource/Leipzig"}
+{"series":"ibn","title":"Innsbrucker Nachrichten","placeOfPublication":"Innsbruck","coverage":"http://dbpedia.org/resource/Innsbruck"}
+{"series":"kfz","title":"Klagenfurter Zeitung","placeOfPublication":"Klagenfurt","coverage":"http://dbpedia.org/resource/Klagenfurt"}
+{"series":"kro","title":"Kronstädter Zeitung","placeOfPublication":"Kronstadt","coverage":"http://dbpedia.org/resource/Bra%C8%99ov"}
+{"series":"mop","title":"Morgen-Post","placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
+{"series":"wrz","title":"Wiener Zeitung","placeOfPublication":"Wien","coverage":"http://dbpedia.org/resource/Vienna"}
+{"series":"zwb","title":"Znaimer Wochenblatt","placeOfPublication":"Znaim","coverage":"http://dbpedia.org/resource/Znojmo"}
