@@ -1,3 +1,3 @@
-{"series": "SBB_00001", "title": "Berliner Tageblatt"}
-{"series": "SBB_00006", "title": "Berliner Volkszeitung"}
-{"series": "SBB_00007", "title": "Norddeutsche Allgemeine Zeitung"}
+{"series": "SBB_00001", "title": "Berliner Tageblatt","placeOfPublication":"Berlin","coverage":"http://dbpedia.org/resource/Berlin"}
+{"series": "SBB_00006", "title": "Berliner Volkszeitung","placeOfPublication":"Berlin","coverage":"http://dbpedia.org/resource/Berlin"}
+{"series": "SBB_00007", "title": "Norddeutsche Allgemeine Zeitung","placeOfPublication":"Berlin","coverage":"http://dbpedia.org/resource/Berlin"}
