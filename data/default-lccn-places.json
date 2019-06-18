@@ -43,56 +43,56 @@
 {"placeOfPublication":"Ecter, Beaver County, Okla.","coverage":""}
 {"placeOfPublication":"Fairmont, W. Va.","coverage":""}
 {"placeOfPublication":"Fargo Springs, Kan.","coverage":""}
-{"placeOfPublication":"Faulkland, Del.","coverage":""}
-{"placeOfPublication":"Fernandina, Fla.","coverage":""}
-{"placeOfPublication":"Flat River, Mo.","coverage":""}
-{"placeOfPublication":"Flat River, St. Francois County, Mo.","coverage":""}
+{"placeOfPublication":"Faulkland, Del.","coverage":"http://dbpedia.org/resource/Faulkland%2C_Delaware"}
+{"placeOfPublication":"Fernandina, Fla.","coverage":"http://dbpedia.org/resource/Fernandina_Beach%2C_Florida"}
+{"placeOfPublication":"Flat River, Mo.","coverage":"http://dbpedia.org/resource/Park_Hills%2C_Missouri"}
+{"placeOfPublication":"Flat River, St. Francois County, Mo.","coverage":"http://dbpedia.org/resource/Park_Hills%2C_Missouri"}
 {"placeOfPublication":"Forest City, Potter County, D.T. [S.D.]","coverage":""}
-{"placeOfPublication":"Fort Hawkins, Ga.","coverage":""}
-{"placeOfPublication":"Fort Larned, Kan.","coverage":""}
-{"placeOfPublication":"Fort Pierce, St. Lucie County, Fla.","coverage":""}
+{"placeOfPublication":"Fort Hawkins, Ga.","coverage":"http://dbpedia.org/resource/Fort_Benjamin_Hawkins"}
+{"placeOfPublication":"Fort Larned, Kan.","coverage":"http://dbpedia.org/resource/Fort_Larned_National_Historic_Site"}
+{"placeOfPublication":"Fort Pierce, St. Lucie County, Fla.","coverage":"http://dbpedia.org/resource/Fort_Pierce%2C_Florida"}
 {"placeOfPublication":"Gayoso, Mo.","coverage":""}
-{"placeOfPublication":"Glentana, Mont.","coverage":""}
-{"placeOfPublication":"Gloucester, Va.","coverage":""}
-{"placeOfPublication":"Grand Gulf, Miss.","coverage":""}
-{"placeOfPublication":"Greencastle, Sullivan County, Mo.","coverage":""}
+{"placeOfPublication":"Glentana, Mont.","coverage":"http://dbpedia.org/resource/Glentana%2C_Montana"}
+{"placeOfPublication":"Gloucester, Va.","coverage":"http://dbpedia.org/resource/Gloucester_Courthouse%2C_Virginia"}
+{"placeOfPublication":"Grand Gulf, Miss.","coverage":"http://dbpedia.org/resource/Grand_Gulf_Military_State_Park_(Mississippi)"}
+{"placeOfPublication":"Greencastle, Sullivan County, Mo.","coverage":"http://dbpedia.org/resource/Greencastle%2C_Missouri"}
 {"placeOfPublication":"Greensboro, Choctaw, Miss.","coverage":""}
-{"placeOfPublication":"Guthrie, Okla.","coverage":""}
+{"placeOfPublication":"Guthrie, Okla.","coverage":"http://dbpedia.org/resource/Guthrie%2C_Oklahoma"}
 {"placeOfPublication":"Hastings, Kan.","coverage":""}
 {"placeOfPublication":"Hinsdale, Mont.","coverage":""}
-{"placeOfPublication":"Holly Oak, Del.","coverage":""}
+{"placeOfPublication":"Holly Oak, Del.","coverage":"http://dbpedia.org/resource/Holly_Oak%2C_Delaware"}
 {"placeOfPublication":"Hood River, Wasco County, Oregon","coverage":""}
 {"placeOfPublication":"Hutchinson, Kan.","coverage":""}
 {"placeOfPublication":"Ivanhoe, Beaver Co., Okla.","coverage":""}
 {"placeOfPublication":"Ivanhoe, Beaver County, Okla.","coverage":""}
-{"placeOfPublication":"Jacksonville, Fla.","coverage":""}
-{"placeOfPublication":"Juliet [i.e., Joliet], Ill.","coverage":""}
-{"placeOfPublication":"Juliet [i.e., Joliet], Will Co., Ill.","coverage":""}
-{"placeOfPublication":"Keokuk, Iowa","coverage":""}
+{"placeOfPublication":"Jacksonville, Fla.","coverage":"http://dbpedia.org/resource/Jacksonville%2C_Florida"}
+{"placeOfPublication":"Juliet [i.e., Joliet], Ill.","coverage":"http://dbpedia.org/resource/Joliet%2C_Illinois"}
+{"placeOfPublication":"Juliet [i.e., Joliet], Will Co., Ill.","coverage":"http://dbpedia.org/resource/Joliet%2C_Illinois"}
+{"placeOfPublication":"Keokuk, Iowa","coverage":"http://dbpedia.org/resource/Keokuk%2C_Iowa"}
 {"placeOfPublication":"Kickapoo City, Kan. Territory","coverage":""}
-{"placeOfPublication":"La Porte [Ind.]","coverage":""}
-{"placeOfPublication":"La Porte, Ind.","coverage":""}
+{"placeOfPublication":"La Porte [Ind.]","coverage":"http://dbpedia.org/resource/La_Porte%2C_Indiana"}
+{"placeOfPublication":"La Porte, Ind.","coverage":"http://dbpedia.org/resource/La_Porte%2C_Indiana"}
 {"placeOfPublication":"Lakemp, Beaver County, Okla.","coverage":""}
-{"placeOfPublication":"Lancaster, Pennsylvania","coverage":""}
-{"placeOfPublication":"Laporte, Ia. [i.e. Ind.]","coverage":""}
-{"placeOfPublication":"Laporte, Ind.","coverage":""}
-{"placeOfPublication":"Little Rock, Ark.","coverage":""}
-{"placeOfPublication":"Logan, Utah","coverage":""}
-{"placeOfPublication":"Lower Sandusky [i.e. Fremont, Ohio]","coverage":""}
-{"placeOfPublication":"Lynchburg, Va.","coverage":""}
+{"placeOfPublication":"Lancaster, Pennsylvania","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
+{"placeOfPublication":"Laporte, Ia. [i.e. Ind.]","coverage":"http://dbpedia.org/resource/La_Porte%2C_Indiana"}
+{"placeOfPublication":"Laporte, Ind.","coverage":"http://dbpedia.org/resource/La_Porte%2C_Indiana"}
+{"placeOfPublication":"Little Rock, Ark.","coverage":"http://dbpedia.org/resource/Little_Rock%2C_Arkansas"}
+{"placeOfPublication":"Logan, Utah","coverage":"http://dbpedia.org/resource/Logan%2C_Utah"}
+{"placeOfPublication":"Lower Sandusky [i.e. Fremont, Ohio]","coverage":"http://dbpedia.org/resource/Fremont%2C_Ohio"}
+{"placeOfPublication":"Lynchburg, Va.","coverage":"http://dbpedia.org/resource/Lynchburg%2C_Virginia"}
 {"placeOfPublication":"Maiden, Mont.","coverage":""}
-{"placeOfPublication":"Manhattan City, Kan.","coverage":""}
-{"placeOfPublication":"Marietta, Ohio","coverage":""}
-{"placeOfPublication":"McLean, VA","coverage":""}
-{"placeOfPublication":"Milwaukee, Wis.","coverage":""}
-{"placeOfPublication":"Mineral Park, A.T. [Ariz.]","coverage":""}
-{"placeOfPublication":"Moline, Ill.","coverage":""}
-{"placeOfPublication":"Murray, Idaho","coverage":""}
+{"placeOfPublication":"Manhattan City, Kan.","coverage":"http://dbpedia.org/resource/Manhattan%2C_Kansas"}
+{"placeOfPublication":"Marietta, Ohio","coverage":"http://dbpedia.org/resource/Marietta%2C_Ohio"}
+{"placeOfPublication":"McLean, VA","coverage":"http://dbpedia.org/resource/McLean%2C_Virginia"}
+{"placeOfPublication":"Milwaukee, Wis.","coverage":"http://dbpedia.org/resource/Milwaukee"}
+{"placeOfPublication":"Mineral Park, A.T. [Ariz.]","coverage":"http://dbpedia.org/resource/Mineral_Park%2C_Arizona"}
+{"placeOfPublication":"Moline, Ill.","coverage":"http://dbpedia.org/resource/Moline%2C_Illinois"}
+{"placeOfPublication":"Murray, Idaho","coverage":"http://dbpedia.org/resource/Murray%2C_Idaho"}
 {"placeOfPublication":"Nebraska City, Neb.","coverage":""}
-{"placeOfPublication":"New Bloomfield, Pa.","coverage":""}
-{"placeOfPublication":"New Bloomfield, Perry County, Pa.","coverage":""}
+{"placeOfPublication":"New Bloomfield, Pa.","coverage":"http://dbpedia.org/resource/New_Bloomfield%2C_Pennsylvania"}
+{"placeOfPublication":"New Bloomfield, Perry County, Pa.","coverage":"http://dbpedia.org/resource/New_Bloomfield%2C_Pennsylvania"}
 {"placeOfPublication":"New Chicago, Kan.","coverage":""}
-{"placeOfPublication":"New Echota [Ga.]","coverage":""}
+{"placeOfPublication":"New Echota [Ga.]","coverage":"http://dbpedia.org/resource/New_Echota"}
 {"placeOfPublication":"New Oregon, Howard County, Iowa","coverage":""}
 {"placeOfPublication":"New Oregon, Iowa","coverage":""}
 {"placeOfPublication":"New York (N.Y.)","coverage":"http://dbpedia.org/resource/New_York_City"}
@@ -106,90 +106,90 @@
 {"placeOfPublication":"New York, [N.Y.]","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"New-York [N.Y.","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"New-York [N.Y.]","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"placeOfPublication":"Ocala, Fla.","coverage":""}
+{"placeOfPublication":"Ocala, Fla.","coverage":"http://dbpedia.org/resource/Ocala%2C_Florida"}
 {"placeOfPublication":"Oregon.","coverage":""}
 {"placeOfPublication":"Ormond-on-the-Halifax, Fla.","coverage":""}
-{"placeOfPublication":"Osage Mission, Kan.","coverage":""}
-{"placeOfPublication":"Ottawa, Ill.","coverage":""}
-{"placeOfPublication":"Ottawa, La Salle Co., Ill.","coverage":""}
-{"placeOfPublication":"Ottawa, La Salle County, Ill.","coverage":""}
-{"placeOfPublication":"Ottawa, LaSalle County, Ill.","coverage":""}
-{"placeOfPublication":"Ottumwa, Iowa","coverage":""}
-{"placeOfPublication":"Palatka, Fla.","coverage":""}
+{"placeOfPublication":"Osage Mission, Kan.","coverage":"http://dbpedia.org/resource/St._Paul%2C_Kansas"}
+{"placeOfPublication":"Ottawa, Ill.","coverage":"http://dbpedia.org/resource/Ottawa%2C_Illinois"}
+{"placeOfPublication":"Ottawa, La Salle Co., Ill.","coverage":"http://dbpedia.org/resource/Ottawa%2C_Illinois"}
+{"placeOfPublication":"Ottawa, La Salle County, Ill.","coverage":"http://dbpedia.org/resource/Ottawa%2C_Illinois"}
+{"placeOfPublication":"Ottawa, LaSalle County, Ill.","coverage":"http://dbpedia.org/resource/Ottawa%2C_Illinois"}
+{"placeOfPublication":"Ottumwa, Iowa","coverage":"http://dbpedia.org/resource/Ottumwa%2C_Iowa"}
+{"placeOfPublication":"Palatka, Fla.","coverage":"http://dbpedia.org/resource/Palatka%2C_Florida"}
 {"placeOfPublication":"Panola, Mi. [i.e. Miss.]","coverage":""}
 {"placeOfPublication":"Panola, Miss.","coverage":""}
-{"placeOfPublication":"Petroleum Center, Pa.","coverage":"http://dbpedia.org/page/Petroleum_Center,_Pennsylvania"}
+{"placeOfPublication":"Petroleum Center, Pa.","coverage":"http://dbpedia.org/resource/Petroleum_Center%2C_Pennsylvania"}
 {"placeOfPublication":"Philadelphia [Pa.","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"placeOfPublication":"Philadelphia [Pa.]","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"placeOfPublication":"Philadelphia, Pa.","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"placeOfPublication":"Pine Ridge, S.D.","coverage":""}
 {"placeOfPublication":"Pinetop, Ariz.","coverage":""}
-{"placeOfPublication":"Pithole City, Pa.","coverage":""}
-{"placeOfPublication":"Pointe-a-la-Hache, La.","coverage":""}
+{"placeOfPublication":"Pithole City, Pa.","coverage":"http://dbpedia.org/resource/Pithole%2C_Pennsylvania"}
+{"placeOfPublication":"Pointe-a-la-Hache, La.","coverage":"http://dbpedia.org/resource/Pointe_%C3%A0_la_Hache%2C_Louisiana"}
 {"placeOfPublication":"Ponola [sic] Panola, Miss.","coverage":""}
 {"placeOfPublication":"Ponola [sic], Miss.","coverage":""}
-{"placeOfPublication":"Port Tobacco, Md.","coverage":""}
+{"placeOfPublication":"Port Tobacco, Md.","coverage":"http://dbpedia.org/resource/Port_Tobacco_Village%2C_Maryland"}
 {"placeOfPublication":"Prairie City, Kanzas","coverage":""}
-{"placeOfPublication":"Provo, Utah","coverage":""}
-{"placeOfPublication":"Quindaro, Kan.","coverage":""}
+{"placeOfPublication":"Provo, Utah","coverage":"http://dbpedia.org/resource/Provo%2C_Utah"}
+{"placeOfPublication":"Quindaro, Kan.","coverage":"http://dbpedia.org/resource/Quindaro_Townsite"}
 {"placeOfPublication":"Robinson, Socorro County, N.M.","coverage":""}
-{"placeOfPublication":"Rock Island City [Rock Island], Ill.","coverage":""}
-{"placeOfPublication":"Rock Island [Ill.]","coverage":""}
-{"placeOfPublication":"Rock Island, Ill.","coverage":""}
-{"placeOfPublication":"Saint Cloud, Minn.","coverage":""}
-{"placeOfPublication":"Saint Cloud, Stearns County, Minn.","coverage":""}
-{"placeOfPublication":"Saint Joseph [La.]","coverage":""}
+{"placeOfPublication":"Rock Island City [Rock Island], Ill.","coverage":"http://dbpedia.org/resource/Rock_Island%2C_Illinois"}
+{"placeOfPublication":"Rock Island [Ill.]","coverage":"http://dbpedia.org/resource/Rock_Island%2C_Illinois"}
+{"placeOfPublication":"Rock Island, Ill.","coverage":"http://dbpedia.org/resource/Rock_Island%2C_Illinois"}
+{"placeOfPublication":"Saint Cloud, Minn.","coverage":"http://dbpedia.org/resource/St._Cloud%2C_Minnesota"}
+{"placeOfPublication":"Saint Cloud, Stearns County, Minn.","coverage":"http://dbpedia.org/resource/St._Cloud%2C_Minnesota"}
+{"placeOfPublication":"Saint Joseph [La.]","coverage":"http://dbpedia.org/resource/St._Joseph%2C_Louisiana"}
 {"placeOfPublication":"Saint Louis [Mo.]","coverage":"http://dbpedia.org/resource/St._Louis%2C_Missouri"}
 {"placeOfPublication":"Saint Louis, Mo.","coverage":"http://dbpedia.org/resource/St._Louis%2C_Missouri"}
-{"placeOfPublication":"Salt Lake City, Utah","coverage":""}
-{"placeOfPublication":"Savannah, Ga.","coverage":""}
-{"placeOfPublication":"Savannah, Tenn.","coverage":""}
-{"placeOfPublication":"Sequachee [Sequatchie], Tenn.","coverage":""}
+{"placeOfPublication":"Salt Lake City, Utah","coverage":"http://dbpedia.org/resource/Salt_Lake_City"}
+{"placeOfPublication":"Savannah, Ga.","coverage":"http://dbpedia.org/resource/Savannah%2C_Georgia"}
+{"placeOfPublication":"Savannah, Tenn.","coverage":"http://dbpedia.org/resource/Savannah%2C_Tennessee"}
+{"placeOfPublication":"Sequachee [Sequatchie], Tenn.","coverage":"http://dbpedia.org/resource/Sequatchie%2C_Tennessee"}
 {"placeOfPublication":"Severance, Kan.","coverage":""}
-{"placeOfPublication":"Shawnee-town [i.e. Old Shawneetown], Ill.","coverage":""}
-{"placeOfPublication":"Shawnee-town [i.e., Old Shawneetown], Ill.","coverage":""}
+{"placeOfPublication":"Shawnee-town [i.e. Old Shawneetown], Ill.","coverage":"http://dbpedia.org/resource/Old_Shawneetown%2C_Illinois"}
+{"placeOfPublication":"Shawnee-town [i.e., Old Shawneetown], Ill.","coverage":"http://dbpedia.org/resource/Old_Shawneetown%2C_Illinois"}
 {"placeOfPublication":"Sherodsville, Ohio","coverage":""}
 {"placeOfPublication":"Solomonville, Graham County, Ariz.","coverage":""}
-{"placeOfPublication":"South Londonderry, Vt.","coverage":""}
-{"placeOfPublication":"South Royalton, Vt.","coverage":""}
+{"placeOfPublication":"South Londonderry, Vt.","coverage":"http://dbpedia.org/resource/South_Londonderry_Village_Historic_District"}
+{"placeOfPublication":"South Royalton, Vt.","coverage":"http://dbpedia.org/resource/South_Royalton%2C_Vermont"}
 {"placeOfPublication":"Spout Spring[s], Ky.","coverage":""}
 {"placeOfPublication":"St. Albans [Vt.]","coverage":"http://dbpedia.org/resource/St._Albans%2C_Vermont"}
 {"placeOfPublication":"St. Albans, Vt.","coverage":"http://dbpedia.org/resource/St._Albans%2C_Vermont"}
-{"placeOfPublication":"St. Anthony, Idaho","coverage":""}
-{"placeOfPublication":"St. Augustine, E.F. [i.e. Fla.]","coverage":""}
-{"placeOfPublication":"St. Clairsville, Ohio","coverage":""}
-{"placeOfPublication":"St. Cloud, Minn.","coverage":""}
-{"placeOfPublication":"St. Cloud, Stearns County, Minn.","coverage":""}
-{"placeOfPublication":"St. Francisville, La.","coverage":""}
-{"placeOfPublication":"St. Francisville, West Feliciana Parish, La.","coverage":""}
-{"placeOfPublication":"St. George, Utah","coverage":""}
-{"placeOfPublication":"St. Helens, Columbia County, Or.","coverage":""}
-{"placeOfPublication":"St. Helens, Or.","coverage":""}
-{"placeOfPublication":"St. Johns, Apache Co., Ariz.","coverage":""}
-{"placeOfPublication":"St. Johns, Apache County [Ariz. Territory","coverage":""}
-{"placeOfPublication":"St. Johns, Apache County, Ariz.","coverage":""}
-{"placeOfPublication":"St. Johns, Apache County, Arizona Territory [Ariz.]","coverage":""}
-{"placeOfPublication":"St. Johns, Ariz.","coverage":""}
-{"placeOfPublication":"St. Johnsbury [Vt.]","coverage":""}
-{"placeOfPublication":"St. Johnsbury, Vt.","coverage":""}
-{"placeOfPublication":"St. Joseph, La.","coverage":""}
+{"placeOfPublication":"St. Anthony, Idaho","coverage":"http://dbpedia.org/resource/St._Anthony%2C_Idaho"}
+{"placeOfPublication":"St. Augustine, E.F. [i.e. Fla.]","coverage":"http://dbpedia.org/resource/St._Augustine%2C_Florida"}
+{"placeOfPublication":"St. Clairsville, Ohio","coverage":"http://dbpedia.org/resource/St._Clairsville%2C_Ohio"}
+{"placeOfPublication":"St. Cloud, Minn.","coverage":"http://dbpedia.org/resource/St._Cloud%2C_Minnesota"}
+{"placeOfPublication":"St. Cloud, Stearns County, Minn.","coverage":"http://dbpedia.org/resource/St._Cloud%2C_Minnesota"}
+{"placeOfPublication":"St. Francisville, La.","coverage":"http://dbpedia.org/resource/St._Francisville%2C_Louisiana"}
+{"placeOfPublication":"St. Francisville, West Feliciana Parish, La.","coverage":"http://dbpedia.org/resource/St._Francisville%2C_Louisiana"}
+{"placeOfPublication":"St. George, Utah","coverage":"http://dbpedia.org/resource/St._George%2C_Utah"}
+{"placeOfPublication":"St. Helens, Columbia County, Or.","coverage":"http://dbpedia.org/resource/St._Helens%2C_Oregon"}
+{"placeOfPublication":"St. Helens, Or.","coverage":"http://dbpedia.org/resource/St._Helens%2C_Oregon"}
+{"placeOfPublication":"St. Johns, Apache Co., Ariz.","coverage":"http://dbpedia.org/resource/St._Johns%2C_Arizona"}
+{"placeOfPublication":"St. Johns, Apache County [Ariz. Territory","coverage":"http://dbpedia.org/resource/St._Johns%2C_Arizona"}
+{"placeOfPublication":"St. Johns, Apache County, Ariz.","coverage":"http://dbpedia.org/resource/St._Johns%2C_Arizona"}
+{"placeOfPublication":"St. Johns, Apache County, Arizona Territory [Ariz.]","coverage":"http://dbpedia.org/resource/St._Johns%2C_Arizona"}
+{"placeOfPublication":"St. Johns, Ariz.","coverage":"http://dbpedia.org/resource/St._Johns%2C_Arizona"}
+{"placeOfPublication":"St. Johnsbury [Vt.]","coverage":"http://dbpedia.org/resource/St._Johnsbury%2C_Vermont"}
+{"placeOfPublication":"St. Johnsbury, Vt.","coverage":"http://dbpedia.org/resource/St._Johnsbury%2C_Vermont"}
+{"placeOfPublication":"St. Joseph, La.","coverage":"http://dbpedia.org/resource/St._Joseph%2C_Louisiana"}
 {"placeOfPublication":"St. Louis [Mo.","coverage":"http://dbpedia.org/resource/St._Louis%2C_Missouri"}
 {"placeOfPublication":"St. Louis [Mo.]","coverage":"http://dbpedia.org/resource/St._Louis%2C_Missouri"}
 {"placeOfPublication":"St. Louis, Mo.","coverage":"http://dbpedia.org/resource/St._Louis%2C_Missouri"}
-{"placeOfPublication":"St. Martinsville [i.e. Martinville] La.","coverage":""}
-{"placeOfPublication":"St. Marys, Mo.","coverage":""}
-{"placeOfPublication":"Stafford Springs, Conn.","coverage":""}
-{"placeOfPublication":"Ste. Genevieve [Mo.]","coverage":""}
-{"placeOfPublication":"Ste. Genevieve, Mo.","coverage":""}
-{"placeOfPublication":"Stephens City, Va.","coverage":""}
-{"placeOfPublication":"Swanton, Vt.","coverage":""}
+{"placeOfPublication":"St. Martinsville [i.e. Martinville] La.","coverage":"http://dbpedia.org/resource/St._Martinville%2C_Louisiana"}
+{"placeOfPublication":"St. Marys, Mo.","coverage":"http://dbpedia.org/resource/St._Mary%2C_Missouri"}
+{"placeOfPublication":"Stafford Springs, Conn.","coverage":"http://dbpedia.org/resource/Stafford%2C_Connecticut"}
+{"placeOfPublication":"Ste. Genevieve [Mo.]","coverage":"http://dbpedia.org/resource/Ste._Genevieve%2C_Missouri"}
+{"placeOfPublication":"Ste. Genevieve, Mo.","coverage":"http://dbpedia.org/resource/Ste._Genevieve%2C_Missouri"}
+{"placeOfPublication":"Stephens City, Va.","coverage":"http://dbpedia.org/resource/Stephens_City%2C_Virginia"}
+{"placeOfPublication":"Swanton, Vt.","coverage":"http://dbpedia.org/resource/Swanton%2C_Vermont"}
 {"placeOfPublication":"The Dalles, OR","coverage":"http://dbpedia.org/resource/The_Dalles%2C_Oregon"}
 {"placeOfPublication":"The Dalles, Or.","coverage":"http://dbpedia.org/resource/The_Dalles%2C_Oregon"}
-{"placeOfPublication":"The Plains, Va.","coverage":""}
-{"placeOfPublication":"Tiffin, Ohio","coverage":""}
+{"placeOfPublication":"The Plains, Va.","coverage":"http://dbpedia.org/resource/The_Plains%2C_Virginia"}
+{"placeOfPublication":"Tiffin, Ohio","coverage":"http://dbpedia.org/resource/Tiffin%2C_Ohio"}
 {"placeOfPublication":"Utah.","coverage":""}
-{"placeOfPublication":"Volcano, W. Va.","coverage":""}
+{"placeOfPublication":"Volcano, W. Va.","coverage":"http://dbpedia.org/resource/Volcano%2C_West_Virginia"}
 {"placeOfPublication":"Voltaire, Kan.","coverage":""}
 {"placeOfPublication":"Washington City (D.C.)","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Washington City [D.C.","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
@@ -206,7 +206,7 @@
 {"placeOfPublication":"Wyandotte, Kan.","coverage":""}
 {"placeOfPublication":"Yazoo, Miss.","coverage":"http://dbpedia.org/resource/Yazoo_City%2C_Mississippi"}
 {"placeOfPublication":"[Chicago, Ill.]","coverage":"http://dbpedia.org/resource/Chicago"}
-{"placeOfPublication":"[Fremont, Ohio]","coverage":""}
+{"placeOfPublication":"[Fremont, Ohio]","coverage":"http://dbpedia.org/resource/Fremont%2C_Ohio"}
 {"placeOfPublication":"[New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"[New York, N.Y.","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"[New York, N.Y.]","coverage":"http://dbpedia.org/resource/New_York_City"}
