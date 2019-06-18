@@ -549,12 +549,12 @@
 {"series":"trove/851","title":"Humpybong Weekly and Advertiser (Redcliffe, Qld. : 1927 - 1932)","placeOfPublication":"Redcliffe, Queensland","coverage":"http://dbpedia.org/resource/Redcliffe%2C_Queensland"}
 {"series":"trove/789","title":"Sea Lake Times and Berriwillock Advertiser (Vic. : 1914 - 1918)","placeOfPublication":"Sea Lake, Victoria","coverage":"http://dbpedia.org/resource/Sea_Lake"}
 {"series":"trove/707","title":"Weekly Times Annual (Vic. : 1914 - 1918)","placeOfPublication":"Melbourne, Victoria","coverage":"http://dbpedia.org/resource/Melbourne"}
-{"series":"trove/405","title":"Wallaroo Times (Port Wallaroo, SA : 1882 - 1888)","placeOfPublication":"Port Wallaroo, South Australia","coverage":""}
+{"series":"trove/405","title":"Wallaroo Times (Port Wallaroo, SA : 1882 - 1888)","placeOfPublication":"Port Wallaroo, South Australia","coverage":"http://dbpedia.org/resource/Wallaroo%2C_South_Australia"}
 {"series":"trove/199","title":"The Elsternwick Leader (Brighton, Vic. : 1888)","placeOfPublication":"Elsternwick, Victoria","coverage":"http://dbpedia.org/resource/Elsternwick%2C_Victoria"}
 {"series":"trove/356","title":"Newcastle Morning Herald and Miners' Advocate (NSW : 1876 - 1954) ","placeOfPublication":"Newcastle, New South Wales","coverage":"http://dbpedia.org/resource/Newcastle%2C_New_South_Wales"}
 {"series":"trove/635","title":"Barrier Daily Truth (Broken Hill, NSW : 1908; 1941 - 1954)","placeOfPublication":"Broken Hill, New South Wales","coverage":"http://dbpedia.org/resource/Broken_Hill"}
 {"series":"trove/441","title":"The Mirror (Sydney, NSW : 1917 - 1919)","placeOfPublication":"Sydney, New South Wales","coverage":"http://dbpedia.org/resource/Sydney"}
-{"series":"trove/838","title":"Nashville Times, Gympie and Mary River Mining Gazette (Qld. : 1868)","placeOfPublication":"Nashville, Queensland","coverage":""}
+{"series":"trove/838","title":"Nashville Times, Gympie and Mary River Mining Gazette (Qld. : 1868)","placeOfPublication":"Nashville, Queensland","coverage":"http://dbpedia.org/resource/Brighton%2C_Queensland"}
 {"series":"trove/661","title":"Western Age (Dubbo, NSW : 1914 - 1932)","placeOfPublication":"Dubbo, New South Wales","coverage":"http://dbpedia.org/resource/Dubbo"}
 {"series":"trove/699","title":"Truth (Sydney, NSW : 1894 - 1954)","placeOfPublication":"Sydney, New South Wales","coverage":"http://dbpedia.org/resource/Sydney"}
 {"series":"trove/45","title":"Advertiser and Register (Adelaide, SA : 1931)","placeOfPublication":"Adelaide, South Australia","coverage":"http://dbpedia.org/resource/Adelaide"}
@@ -573,7 +573,7 @@
 {"series":"trove/333","title":"Moorabbin News (Vic. : 1914 - 1918)","placeOfPublication":"Moorabbin, Victoria","coverage":"http://dbpedia.org/resource/Moorabbin%2C_Victoria"}
 {"series":"trove/286","title":"Chronicle and North Coast Advertiser (Qld. : 1903 - 1922)","placeOfPublication":"Nambour, Queensland","coverage":"http://dbpedia.org/resource/Nambour%2C_Queensland"}
 {"series":"trove/902","title":"Glen Innes Examiner and General Advertiser (NSW : 1907 - 1908)","placeOfPublication":"Glen Innes, New South Wales","coverage":"http://dbpedia.org/resource/Glen_Innes%2C_New_South_Wales"}
-{"series":"trove/156","title":"Alexandra and Yea Standard and Yarck, Gobur, Thornton and Acheron Express (Vic. : 1908 - 1949)","placeOfPublication":"Alexandria, Victoria","coverage":""}
+{"series":"trove/156","title":"Alexandra and Yea Standard and Yarck, Gobur, Thornton and Acheron Express (Vic. : 1908 - 1949)","placeOfPublication":"Alexandria, Victoria","coverage":"http://dbpedia.org/resource/Yea%2C_Victoria"}
 {"series":"trove/200","title":"The Elsternwick Leader and Caulfield and Balaclava Guardian (Brighton, Vic. : 1887)","placeOfPublication":"Elsternwick, Victoria","coverage":"http://dbpedia.org/resource/Elsternwick%2C_Victoria"}
 {"series":"trove/884","title":"The Uralla Times (NSW : 1923 - 1954)","placeOfPublication":"Uralla, New South Wales","coverage":"http://dbpedia.org/resource/Uralla%2C_New_South_Wales"}
 {"series":"trove/338","title":"Queensland Figaro (Brisbane, Qld. : 1883 - 1885)","placeOfPublication":"Brisbane, Queensland","coverage":"http://dbpedia.org/resource/Brisbane"}
@@ -607,7 +607,7 @@
 {"series":"trove/872","title":"Woman Voter (Melbourne, Vic. : 1911 - 1919)","placeOfPublication":"Melbourne, Victoria","coverage":"http://dbpedia.org/resource/Melbourne"}
 {"series":"trove/223","title":"The Benalla Ensign and Farmer's and Squatter's Journal (Vic. : 1869 - 1872)","placeOfPublication":"Benalla, Victoria","coverage":"http://dbpedia.org/resource/Benalla"}
 {"series":"trove/59","title":"Burra Record (SA : 1878 - 1954)","placeOfPublication":"Burra, South Australia","coverage":"http://dbpedia.org/resource/Burra%2C_South_Australia"}
-{"series":"trove/299","title":"St Arnaud Mercury (Vic. : 1914 - 1918)","placeOfPublication":"St. Arnaud, Victoria","coverage":""}
+{"series":"trove/299","title":"St Arnaud Mercury (Vic. : 1914 - 1918)","placeOfPublication":"St. Arnaud, Victoria","coverage":"http://dbpedia.org/resource/St_Arnaud%2C_Victoria"}
 {"series":"trove/125","title":"Kilmore Free Press and Bourke and Dalhousie Advertiser (Kilmore, Vic. : 1865)","placeOfPublication":"Kilmore, Victoria","coverage":"http://dbpedia.org/resource/Kilmore%2C_Victoria"}
 {"series":"trove/626","title":"Clear Hills Standard and Daysdale and Saverneke Times (NSW : 1914)","placeOfPublication":"Daysdale, New South Wales","coverage":"http://dbpedia.org/resource/Daysdale"}
 {"series":"trove/771","title":"Numurkah Standard and Wunghnu, Cobram, Yarroweyah and Strathmerton Advocate (Vic. : 1914 - 1918)","placeOfPublication":"Numurkah, Victoria","coverage":"http://dbpedia.org/resource/Numurkah"}
@@ -633,7 +633,7 @@
 {"series":"trove/608","title":"Talbot Leader (Vic. : 1914 - 1918)","placeOfPublication":"Talbot, Victoria","coverage":"http://dbpedia.org/resource/Talbot%2C_Victoria"}
 {"series":"trove/240","title":"Bairnsdale Advertiser and Tambo and Omeo Chronicle (Vic. : 1882 - 1918)","placeOfPublication":"Berwick, Victoria","coverage":"http://dbpedia.org/resource/Berwick%2C_Victoria"}
 {"series":"trove/317","title":"Maryborough and Dunolly Advertiser (Vic. : 1914 - 1918)","placeOfPublication":"Maryborough, Victoria","coverage":"http://dbpedia.org/resource/Maryborough%2C_Victoria"}
-{"series":"trove/208","title":"South Bourke and Mornington Journal (Richmond, Vic. : 1872 - 1920)","placeOfPublication":"South Bourke, Victoria","coverage":""}
+{"series":"trove/208","title":"South Bourke and Mornington Journal (Richmond, Vic. : 1872 - 1920)","placeOfPublication":"South Bourke, Victoria","coverage":"http://dbpedia.org/resource/Richmond%2C_Victoria"}
 {"series":"trove/15","title":"The Courier (Brisbane, Qld. : 1861 - 1864)","placeOfPublication":"Brisbane, Queensland","coverage":"http://dbpedia.org/resource/Brisbane"}
 {"series":"trove/785","title":"Beulah Record and Mallee Advocate (Vic. : 1914)","placeOfPublication":"Beulah, Victoria","coverage":"http://dbpedia.org/resource/Beulah%2C_Victoria"}
 {"series":"trove/300","title":"Swan Hill Guardian and Lake Boga Advocate (Vic. : 1914 - 1918)","placeOfPublication":"Lake Boga, Victoria","coverage":"http://dbpedia.org/resource/Lake_Boga%2C_Victoria"}
@@ -668,7 +668,7 @@
 {"series":"trove/109","title":"Portland Guardian (Vic. : 1876 - 1953)","placeOfPublication":"Portland, Victoria","coverage":"http://dbpedia.org/resource/Portland%2C_Victoria"}
 {"series":"trove/378","title":"Queensland Times (Ipswich) (Qld. : 1909 - 1954)","placeOfPublication":"Ipswich, Queensland","coverage":"http://dbpedia.org/resource/Ipswich%2C_Queensland"}
 {"series":"trove/335","title":"Standard (Port Melbourne, Vic. : 1884 - 1914)","placeOfPublication":"Port Melbourne, Victoria","coverage":"http://dbpedia.org/resource/Port_Melbourne%2C_Victoria"}
-{"series":"trove/406","title":"The Wallaroo Times and Mining Journal (Port Wallaroo, SA : 1865 - 1881)","placeOfPublication":"Port Wallaroo, South Australia","coverage":""}
+{"series":"trove/406","title":"The Wallaroo Times and Mining Journal (Port Wallaroo, SA : 1865 - 1881)","placeOfPublication":"Port Wallaroo, South Australia","coverage":"http://dbpedia.org/resource/Wallaroo%2C_South_Australia"}
 {"series":"trove/118","title":"Moonta Herald and Northern Territory Gazette (NT : 1869)","placeOfPublication":"Darwin, Northern Territory","coverage":"http://dbpedia.org/resource/Darwin%2C_Northern_Territory"}
 {"series":"trove/346","title":"Bendigo Advertiser (Vic. : 1855 - 1918)","placeOfPublication":"Bendigo, Victoria","coverage":"http://dbpedia.org/resource/Bendigo"}
 {"series":"trove/26","title":"The Perth Gazette and Independent Journal of Politics and News (WA : 1848 - 1864)","placeOfPublication":"Perth, Western Australia","coverage":"http://dbpedia.org/resource/Perth"}
@@ -714,7 +714,7 @@
 {"series":"trove/439","title":"Arrow (Sydney, NSW : 1916 - 1933)","placeOfPublication":"Sydney, New South Wales","coverage":"http://dbpedia.org/resource/Sydney"}
 {"series":"trove/793","title":"Tribune  (Melbourne, Vic. : 1914 - 1918)","placeOfPublication":"Melbourne, Victoria","coverage":"http://dbpedia.org/resource/Melbourne"}
 {"series":"trove/106","title":"Nambour Chronicle and North Coast Advertiser (Qld. : 1922 - 1954)","placeOfPublication":"Nambour, Queensland","coverage":"http://dbpedia.org/resource/Nambour%2C_Queensland"}
-{"series":"trove/595","title":"Powlett Express and Victorian State Coalfields Advertiser (Vic. : 1914 - 1918)","placeOfPublication":"Powlett, Victoria","coverage":""}
+{"series":"trove/595","title":"Powlett Express and Victorian State Coalfields Advertiser (Vic. : 1914 - 1918)","placeOfPublication":"Powlett, Victoria","coverage":"http://dbpedia.org/resource/Dalyston"}
 {"series":"trove/353","title":"The Newcastle Chronicle and Hunter River District News (NSW : 1859 - 1866)","placeOfPublication":"Newcastle, New South Wales","coverage":"http://dbpedia.org/resource/Newcastle%2C_New_South_Wales"}
 {"series":"trove/131","title":"The Broadford Courier (Broadford, Vic. : 1916 - 1920)","placeOfPublication":"Broadford, Victoria","coverage":"http://dbpedia.org/resource/Broadford%2C_Victoria"}
 {"series":"trove/133","title":"Morwell Advertiser (Morwell, Vic. : 1888 - 1954) ","placeOfPublication":"Morwell, Victoria","coverage":"http://dbpedia.org/resource/Morwell%2C_Victoria"}
@@ -749,7 +749,7 @@
 {"series":"trove/393","title":"The Cobargo Chronicle (NSW : 1898 - 1919)","placeOfPublication":"Cobargo, New South Wales","coverage":"http://dbpedia.org/resource/Cobargo%2C_New_South_Wales"}
 {"series":"trove/351","title":"The Cumberland Argus and Fruitgrowers Advocate (Parramatta, NSW : 1888 - 1950)","placeOfPublication":"Parramatta, New South Wales","coverage":"http://dbpedia.org/resource/Parramatta"}
 {"series":"trove/43","title":"Camperdown Chronicle (Vic. : 1877 - 1954)","placeOfPublication":"Camperdown, Victoria","coverage":"http://dbpedia.org/resource/Camperdown%2C_Victoria"}
-{"series":"trove/782","title":"South Gippsland Shire Echo (Vic. : 1914 - 1918)","placeOfPublication":"South Gippsland, Victoria","coverage":""}
+{"series":"trove/782","title":"South Gippsland Shire Echo (Vic. : 1914 - 1918)","placeOfPublication":"South Gippsland, Victoria","coverage":"http://dbpedia.org/resource/Foster%2C_Victoria"}
 {"series":"trove/56","title":"Bathurst Free Press and Mining Journal (NSW : 1851 - 1904)","placeOfPublication":"Bathurst, New South Wales","coverage":"http://dbpedia.org/resource/Bathurst%2C_New_South_Wales"}
 {"series":"trove/432","title":"Daily Observer (Tamworth, NSW : 1917 - 1920)","placeOfPublication":"Tamworth, New South Wales","coverage":"http://dbpedia.org/resource/Tamworth%2C_New_South_Wales"}
 {"series":"trove/624","title":"Intelligence (Bowral, NSW : 1884)","placeOfPublication":"Bowral, New South Wales","coverage":"http://dbpedia.org/resource/Bowral"}
@@ -758,7 +758,7 @@
 {"series":"trove/546","title":"Cohuna Farmer's Weekly (Vic. : 1914 - 1918)","placeOfPublication":"Cohuna, Victoria","coverage":"http://dbpedia.org/resource/Cohuna%2C_Victoria"}
 {"series":"trove/84","title":"Queanbeyan Age (NSW : 1867 - 1904)","placeOfPublication":"Queanbeyan, New South Wales","coverage":"http://dbpedia.org/resource/Queanbeyan"}
 {"series":"trove/267","title":"The Western Champion (Barcaldine, Qld. : 1922 - 1937)","placeOfPublication":"Barcaldine, Queensland","coverage":"http://dbpedia.org/resource/Barcaldine%2C_Queensland"}
-{"series":"trove/816","title":"The Midlands Advertiser (Moora, WA : 1907 - 1930)","placeOfPublication":"Midlands, Western Australia","coverage":""}
+{"series":"trove/816","title":"The Midlands Advertiser (Moora, WA : 1907 - 1930)","placeOfPublication":"Midlands, Western Australia","coverage":"http://dbpedia.org/resource/Moora%2C_Western_Australia"}
 {"series":"trove/761","title":"Camperdown Herald (Vic. : 1914 - 1918)","placeOfPublication":"Camperdown, Victoria","coverage":"http://dbpedia.org/resource/Camperdown%2C_Victoria"}
 {"series":"trove/147","title":"Eltham and Whittlesea Shires Advertiser and Diamond Creek Valley Advocate (Vic. : 1917 - 1922)","placeOfPublication":"Eltham, Victoria","coverage":"http://dbpedia.org/resource/Eltham%2C_Victoria"}
 {"series":"trove/706","title":"The Chinese Advertiser (Ballarat, Vic. : 1856)","placeOfPublication":"Ballarat, Victoria","coverage":"http://dbpedia.org/resource/Ballarat"}
@@ -768,7 +768,7 @@
 {"series":"trove/823","title":"Observer (Adelaide, SA : 1905 - 1931)","placeOfPublication":"Adelaide, South Australia","coverage":"http://dbpedia.org/resource/Adelaide"}
 {"series":"trove/190","title":"Windsor Express and Richmond Advertiser (NSW : 1843 - 1844)","placeOfPublication":"Windsor, New South Wales","coverage":"http://dbpedia.org/resource/Windsor%2C_New_South_Wales"}
 {"series":"trove/710","title":"Catholic Freeman's Journal (Sydney, NSW : 1933 - 1942)","placeOfPublication":"Sydney, New South Wales","coverage":"http://dbpedia.org/resource/Sydney"}
-{"series":"trove/265","title":"The Western Champion (Blackall/Barcaldine, Qld. : 1879 - 1891)","placeOfPublication":"Blackhall, Queensland","coverage":""}
+{"series":"trove/265","title":"The Western Champion (Blackall/Barcaldine, Qld. : 1879 - 1891)","placeOfPublication":"Blackhall, Queensland","coverage":"http://dbpedia.org/resource/Barcaldine%2C_Queensland"}
 {"series":"trove/769","title":"Woodend Star (Vic. : 1915 - 1918)","placeOfPublication":"Woodend, Victoria","coverage":"http://dbpedia.org/resource/Woodend%2C_Victoria"}
 {"series":"trove/806","title":"The Bendigo Independent (Vic. : 1891 - 1901)","placeOfPublication":"Bendigo, Victoria","coverage":"http://dbpedia.org/resource/Bendigo"}
 {"series":"trove/424","title":"Molong Argus (NSW : 1896 - 1921)","placeOfPublication":"Molong, New South Wales","coverage":"http://dbpedia.org/resource/Molong"}
