@@ -118,7 +118,7 @@
 {"placeOfPublication":"Palatka, Fla.","coverage":""}
 {"placeOfPublication":"Panola, Mi. [i.e. Miss.]","coverage":""}
 {"placeOfPublication":"Panola, Miss.","coverage":""}
-{"placeOfPublication":"Petroleum Center, Pa.","coverage":""}
+{"placeOfPublication":"Petroleum Center, Pa.","coverage":"http://dbpedia.org/page/Petroleum_Center,_Pennsylvania"}
 {"placeOfPublication":"Philadelphia [Pa.","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"placeOfPublication":"Philadelphia [Pa.]","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
@@ -140,8 +140,8 @@
 {"placeOfPublication":"Saint Cloud, Minn.","coverage":""}
 {"placeOfPublication":"Saint Cloud, Stearns County, Minn.","coverage":""}
 {"placeOfPublication":"Saint Joseph [La.]","coverage":""}
-{"placeOfPublication":"Saint Louis [Mo.]","coverage":""}
-{"placeOfPublication":"Saint Louis, Mo.","coverage":""}
+{"placeOfPublication":"Saint Louis [Mo.]","coverage":"http://dbpedia.org/resource/St._Louis%2C_Missouri"}
+{"placeOfPublication":"Saint Louis, Mo.","coverage":"http://dbpedia.org/resource/St._Louis%2C_Missouri"}
 {"placeOfPublication":"Salt Lake City, Utah","coverage":""}
 {"placeOfPublication":"Savannah, Ga.","coverage":""}
 {"placeOfPublication":"Savannah, Tenn.","coverage":""}
