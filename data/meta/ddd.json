@@ -2,7 +2,7 @@
 {"series":"DDD:PPN:036346594","title":"Moed en vertrouwen","lang":["nl"],"publisher":"H. Schouten en M. Lensen m.m.v. A. Jacobs","placeOfPublication":"Maasbree","coverage":"http://dbpedia.org/resource/Maasbree"}
 {"series":"DDD:PPN:036446939","title":"Het vrĳe geluid : -al is de leugen nog zo snel, de waarheid achterhaalt haar wel...-","lang":["nl","de"],"publisher":"[s.n.]","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
 {"series":"DDD:PPN:036517461","title":"Haerlemse courante","lang":["nl"],"publisher":"Abraham Casteleyn","placeOfPublication":"Haerlem","coverage":"http://dbpedia.org/resource/Haarlem"}
-{"series":"DDD:PPN:037009184","title":"Ons Volk : den vaderlant ghetrouwe","lang":["nl","en","fr"],"publisher":"[s.n.]","placeOfPublication":"Utrecht ; Amsterdam ; 's-Gravenhage","coverage":""}
+{"series":"DDD:PPN:037009184","title":"Ons Volk : den vaderlant ghetrouwe","lang":["nl","en","fr"],"publisher":"[s.n.]","placeOfPublication":"Utrecht ; Amsterdam ; 's-Gravenhage"}
 {"series":"DDD:PPN:037054112","title":"Dagblad van Rotterdam","lang":["nl"],"publisher":"Dagblad van Rotterdam Drukkers & Uitgevers Mĳ N.V.","placeOfPublication":"Rotterdam","coverage":"http://dbpedia.org/resource/Rotterdam"}
 {"series":"DDD:PPN:03707556X","title":"Zuid-Hollandsch dagblad : waarin opgenomen De Leidsche courant, Nieuwe Delftsche courant en De Westerbode","lang":["nl"],"publisher":"s.n.","placeOfPublication":"Delft","coverage":"http://dbpedia.org/resource/Delft"}
 {"series":"DDD:PPN:037182145","title":"Avec privilège de nos-seigneurs les Etats de Hollande et de West-Frise","lang":["fr"],"publisher":"J.T. du Breuil","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
@@ -73,7 +73,7 @@
 {"series":"DDD:PPN:045313075","title":"Vrĳe stemmen : voor koningin en vaderland","lang":["en","nl"],"publisher":"J.C. en H. Kok","placeOfPublication":"Schiedam","coverage":"http://dbpedia.org/resource/Schiedam"}
 {"series":"DDD:PPN:045313326","title":"Vrĳ Nederland : streekuitgave voor Alblasserwaard en Vĳfheerenlanden","lang":["nl"],"publisher":"J. Noorduĳn en Zoon NV","placeOfPublication":"Gorinchem","coverage":"http://dbpedia.org/resource/Gorinchem"}
 {"series":"DDD:PPN:045315701","title":"Hilversum III","lang":["de"],"publisher":"[s.n.]","placeOfPublication":"Noordwĳk","coverage":"http://dbpedia.org/resource/Noordwijk"}
-{"series":"DDD:PPN:045318050","title":"Trouw : speciale uitgave Rechter Maasoever","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Rotterdam-Noord (Vlaardingen)","coverage":""}
+{"series":"DDD:PPN:045318050","title":"Trouw : speciale uitgave Rechter Maasoever","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Rotterdam-Noord (Vlaardingen)","coverage":"http://dbpedia.org/resource/Vlaardingen"}
 {"series":"DDD:PPN:045437491","title":"Strĳdend Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Elburg","coverage":"http://dbpedia.org/resource/Elburg"}
 {"series":"DDD:PPN:046093095","title":"De Dordtsche koerier","lang":["de"],"publisher":"[s.n.]","placeOfPublication":"Dordrecht","coverage":"http://dbpedia.org/resource/Dordrecht"}
 {"series":"DDD:PPN:046096868","title":"Het parool : vrĳ onverveerd","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Dordrecht","coverage":"http://dbpedia.org/resource/Dordrecht"}
@@ -144,7 +144,7 @@
 {"series":"DDD:PPN:116372214","title":"Spartacus : orgaan van het derde front / [Marx-Lenin-Luxemburg-Front]","lang":["en","nl","de"],"publisher":"MLL-Front]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:116452056","title":"Nieuwe Surinaamsche courant","lang":["nl"],"publisher":"Boon & Co","placeOfPublication":"Paramaribo","coverage":"http://dbpedia.org/resource/Paramaribo"}
 {"series":"DDD:PPN:116512830","title":"Het signaal / orgaan voor personeel in overheidsdienst","lang":["en","nl","de"],"publisher":"Spoorwegverzetsgroep van de Communistische Partĳ Nederland","placeOfPublication":"[S.l.]"}
-{"series":"DDD:PPN:116560738","title":"De verrekijker : onafhankelĳk periodiek voor Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Dordrecht ; Haarlem","coverage":""}
+{"series":"DDD:PPN:116560738","title":"De verrekijker : onafhankelĳk periodiek voor Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Dordrecht ; Haarlem"}
 {"series":"DDD:PPN:116562927","title":"De Zuiderzeebode","lang":["nl","en"],"publisher":"J. Romeyn jr. en A. Heinstman","placeOfPublication":"Hoorn","coverage":"http://dbpedia.org/resource/Hoorn"}
 {"series":"DDD:PPN:116562951","title":"De Vrĳe Amersfoorter","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Amersfoort","coverage":"http://dbpedia.org/resource/Amersfoort"}
 {"series":"DDD:PPN:116631244","title":"De landwachter","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Deventer","coverage":"http://dbpedia.org/resource/Deventer"}
@@ -166,16 +166,16 @@
 {"series":"DDD:PPN:23036571X","title":"Parool-post : voorlichting en documentatie","lang":["en","nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:237818450","title":"Europische : ... courant","lang":["nl"],"publisher":"Matthĳs van Meininga","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:238224538","title":"Spartacus : maandschrift voor de revolutionnair socialistische arbeidersbeweging / Communistenbond \"Spartacus\"","lang":["nl"],"publisher":"Communistenbond \"Spartacus\"","placeOfPublication":"[S.l.]"}
-{"series":"DDD:PPN:244816182","title":"Katholiek Kompas","lang":["nl"],"publisher":"L. Fréquin, W. Lagé en Chr. Deuss","placeOfPublication":"Arnhem ; Nĳmegen","coverage":""}
+{"series":"DDD:PPN:244816182","title":"Katholiek Kompas","lang":["nl"],"publisher":"L. Fréquin, W. Lagé en Chr. Deuss","placeOfPublication":"Arnhem ; Nĳmegen"}
 {"series":"DDD:PPN:251815102","title":"Panorama : geïllustreerd weekblad in koperdiepdruk","lang":["nl"],"publisher":"A.W. Sĳthoff","placeOfPublication":"Leiden","coverage":"http://dbpedia.org/resource/Leiden"}
 {"series":"DDD:PPN:26161570X","title":"Onder de loupe","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
-{"series":"DDD:PPN:266269532","title":"B.B.C.-nieuws / uitgave van het bĳkantoor der British Broadcasting Corporation","lang":["fy","nl"],"publisher":"Sneek; Workum; Verzetsgroep Lever","placeOfPublication":"[Sneek ; Workum","coverage":""}
+{"series":"DDD:PPN:266269532","title":"B.B.C.-nieuws / uitgave van het bĳkantoor der British Broadcasting Corporation","lang":["fy","nl"],"publisher":"Sneek; Workum; Verzetsgroep Lever","placeOfPublication":"[Sneek ; Workum"}
 {"series":"DDD:PPN:266281095","title":"De toekomst","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"['s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
 {"series":"DDD:PPN:26628129X","title":"De ploeg : orgaan van Democratisch Socialistische Jongeren","lang":["nl","de","en"],"publisher":"[s.n.]","placeOfPublication":"Zaandam","coverage":"http://dbpedia.org/resource/Zaandam"}
-{"series":"DDD:PPN:266281605","title":"The Times : nieuwsuitgave van \"Vrĳ Nederland\"","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Ergens in Nederland [Heemstede ; Aerdenhout]","coverage":""}
+{"series":"DDD:PPN:266281605","title":"The Times : nieuwsuitgave van \"Vrĳ Nederland\"","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Ergens in Nederland [Heemstede ; Aerdenhout]"}
 {"series":"DDD:PPN:266283128","title":"Radio Londen meldt","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
-{"series":"DDD:PPN:266283519","title":"Oranjekoerier","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Lisse ; Oegstgeest]","coverage":""}
-{"series":"DDD:PPN:266287190","title":"Prinses Irene : nieuwsbulletin / de Vereenigde Biltsche illegale pers ; met medew. van \"Het Parool\"","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"De Bilt ; Bilthoven","coverage":""}
+{"series":"DDD:PPN:266283519","title":"Oranjekoerier","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Lisse ; Oegstgeest]"}
+{"series":"DDD:PPN:266287190","title":"Prinses Irene : nieuwsbulletin / de Vereenigde Biltsche illegale pers ; met medew. van \"Het Parool\"","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"De Bilt ; Bilthoven"}
 {"series":"DDD:PPN:266288715","title":"De vrĳe pers : algemene documentatie","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Haarlem","coverage":"http://dbpedia.org/resource/Haarlem"}
 {"series":"DDD:PPN:266289118","title":"De Oranje gids : voor: vrĳheid, waarheid en recht","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Boskoop","coverage":"http://dbpedia.org/resource/Boskoop"}
 {"series":"DDD:PPN:266290183","title":"De Oprechte-Delftenaar : periodiek onder Delftsche studenten","lang":["nl","en","fr"],"publisher":"[s.n.]","placeOfPublication":"[Delft]","coverage":"http://dbpedia.org/resource/Delft"}
@@ -185,7 +185,7 @@
 {"series":"DDD:PPN:268462542","title":"Actualiteiten","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Utrecht","coverage":"http://dbpedia.org/resource/Utrecht"}
 {"series":"DDD:PPN:268462992","title":"De aetherbode","lang":["nl"],"publisher":"L.M. Smit, A. Statema en A.J.M. Zwaard","placeOfPublication":"Den Burg","coverage":"http://dbpedia.org/resource/Den_Burg"}
 {"series":"DDD:PPN:268463425","title":"Aether nieuws","lang":["nl"],"publisher":"M.J. Bouwer","placeOfPublication":"Haarlem","coverage":"http://dbpedia.org/resource/Haarlem"}
-{"series":"DDD:PPN:268596204","title":"De aetherpost : dagblad voor strĳdend Nederland ; voor koningin en vaderland ; uitgegeven door Neerlands vrĳe pers","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Utrecht-Zuilen (?)","coverage":""}
+{"series":"DDD:PPN:268596204","title":"De aetherpost : dagblad voor strĳdend Nederland ; voor koningin en vaderland ; uitgegeven door Neerlands vrĳe pers","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Utrecht-Zuilen (?)"}
 {"series":"DDD:PPN:268596352","title":"Afgeluisterd","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Putte","coverage":"http://dbpedia.org/resource/Putte"}
 {"series":"DDD:PPN:268596484","title":"A.G.D.","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:268596875","title":"Alles sal reg kom!","lang":["nl","en"],"publisher":"W.L. Riedĳk","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
@@ -204,8 +204,8 @@
 {"series":"DDD:PPN:26860178X","title":"De baanbreker : sociaal-democratisch orgaan","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:268602255","title":"De baanbreker : sociaal-democratisch orgaan","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:268796416","title":"Het baken","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Katwĳk","coverage":"http://dbpedia.org/resource/Katwijk"}
-{"series":"DDD:PPN:268796580","title":"Het baken","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Leeuwarden-St. Anna Parochie","coverage":""}
-{"series":"DDD:PPN:26879667X","title":"De bazuinstoot","lang":["nl"],"publisher":"J.G. Smits","placeOfPublication":"Nieuwheten, gemeente Raalte","coverage":""}
+{"series":"DDD:PPN:268796580","title":"Het baken","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Leeuwarden-St. Anna Parochie"}
+{"series":"DDD:PPN:26879667X","title":"De bazuinstoot","lang":["nl"],"publisher":"J.G. Smits","placeOfPublication":"Nieuwheten, gemeente Raalte"}
 {"series":"DDD:PPN:268797013","title":"B.B.C.","lang":["nl"],"publisher":"J. Savenĳe","placeOfPublication":"Bussum","coverage":"http://dbpedia.org/resource/Bussum"}
 {"series":"DDD:PPN:268797099","title":"B.B.C.-bulletin","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:26879717X","title":"B.B.C.-nieuws","lang":["nl"],"publisher":"Z. Nieuwboer","placeOfPublication":"Kootwĳk","coverage":"http://dbpedia.org/resource/Kootwijk"}
@@ -240,7 +240,7 @@
 {"series":"DDD:PPN:268964912","title":"De Brandarisbrief","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:269050361","title":"Brabantsche studentenbrieven","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Tilburg","coverage":"http://dbpedia.org/resource/Tilburg"}
 {"series":"DDD:PPN:26905054X","title":"De brandaris","lang":["nl"],"publisher":"C. Erends, D. ter Veen en J.C. de Buisonjé","placeOfPublication":"Amsterdam [s.n.]","coverage":"http://dbpedia.org/resource/Amsterdam"}
-{"series":"DDD:PPN:269050892","title":"Brief uit de woestĳn","lang":["de"],"publisher":"[s.n.]","placeOfPublication":"Leeuwarden-St. Anna Parochie","coverage":""}
+{"series":"DDD:PPN:269050892","title":"Brief uit de woestĳn","lang":["de"],"publisher":"[s.n.]","placeOfPublication":"Leeuwarden-St. Anna Parochie"}
 {"series":"DDD:PPN:269051570","title":"Brieven aan een jeugdvriend","lang":["de"],"publisher":"M.L.L.-Front (Marx-Lenin-Luxemburg-Front)","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:269051961","title":"Brieven aan sociaal-democraten","lang":["de"],"publisher":"M.L.L.-Front (Marx-Lenin-Luxemburg-Front)","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
 {"series":"DDD:PPN:269052690","title":"Brieven ter bevordering van de internationale klasse-eenheid / uitgave van het Marx-Lenin-Luxemburg-Front","lang":["de"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
@@ -255,7 +255,7 @@
 {"series":"DDD:PPN:269055800","title":"Bulletin","lang":["nl","de"],"publisher":"[s.n.]","placeOfPublication":"Schiedam","coverage":"http://dbpedia.org/resource/Schiedam"}
 {"series":"DDD:PPN:269056025","title":"Bulletin","lang":["nl","de"],"publisher":"[s.n.]","placeOfPublication":"Utrecht","coverage":"http://dbpedia.org/resource/Utrecht"}
 {"series":"DDD:PPN:269057323","title":"Bulletin no. 1","lang":["de"],"publisher":"C.L. van Dam","placeOfPublication":"Leiden","coverage":"http://dbpedia.org/resource/Leiden"}
-{"series":"DDD:PPN:269057668","title":"Bulletin van de Raad van Verzet in het Koninkrĳk der Nederlanden","lang":["nl","de"],"publisher":"J.H. Doorn","placeOfPublication":"Amsterdam ; Baarn ; Amersfoort","coverage":""}
+{"series":"DDD:PPN:269057668","title":"Bulletin van de Raad van Verzet in het Koninkrĳk der Nederlanden","lang":["nl","de"],"publisher":"J.H. Doorn","placeOfPublication":"Amsterdam ; Baarn ; Amersfoort"}
 {"series":"DDD:PPN:269060421","title":"Cereales vadenses","lang":["nl","de"],"publisher":"J.V. Lagerwerff, J. Seinstra, J.V. Steketee en S. Maso","placeOfPublication":"Wageningen","coverage":"http://dbpedia.org/resource/Wageningen"}
 {"series":"DDD:PPN:269060693","title":"Circulaire van het Comité 'In Verdrukking Één'","lang":["nl"],"publisher":"W.P. Speelman en A.H. Kooistra","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:269060995","title":"Cocktail","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
@@ -263,7 +263,7 @@
 {"series":"DDD:PPN:269061371","title":"Communiqué","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amersfoort","coverage":"http://dbpedia.org/resource/Amersfoort"}
 {"series":"DDD:PPN:269061401","title":"Communiqué van de dag","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Harderwĳk","coverage":"http://dbpedia.org/resource/Harderwijk"}
 {"series":"DDD:PPN:269061746","title":"Het Compas","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
-{"series":"DDD:PPN:269068163","title":"Contact","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Leeuwarden - St. Anna Parochie","coverage":""}
+{"series":"DDD:PPN:269068163","title":"Contact","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Leeuwarden - St. Anna Parochie"}
 {"series":"DDD:PPN:269068465","title":"Contact","lang":["nl"],"publisher":"W. Blokdĳk en L. Odĳk, met medewerking van H. Voorbrood en D. de Haan","placeOfPublication":"Schermerhorn","coverage":"http://dbpedia.org/resource/Schermerhorn"}
 {"series":"DDD:PPN:269069879","title":"Het Contra signaal : sol iustitiae, illustra nos!","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
 {"series":"DDD:PPN:26907001X","title":"Courage","lang":["nl"],"publisher":"Rie van Schaik, Paul Halberstadt en Maria de Gier","placeOfPublication":"Loosdrecht","coverage":"http://dbpedia.org/resource/Loosdrecht"}
@@ -271,8 +271,8 @@
 {"series":"DDD:PPN:269072349","title":"Christofoor : voor God en Vaderland ; uitgave voor Amsterdam, Haarlem en omgeving","lang":["nl","de"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:269072470","title":"Christofoor : voor God en Vaderland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Deventer","coverage":"http://dbpedia.org/resource/Deventer"}
 {"series":"DDD:PPN:269072691","title":"Christofoor : voor God en Vaderland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
-{"series":"DDD:PPN:269126287","title":"The Dutch Times : nieuwsuitgave van \"Vrĳ Nederland\"","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Ergens in Nederland [Heemstede ; Aerdenhout]","coverage":""}
-{"series":"DDD:PPN:269126511","title":"De Duikhoek : blad voor de Noord-Oostpolder","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Lemmer-Vollenhove","coverage":""}
+{"series":"DDD:PPN:269126287","title":"The Dutch Times : nieuwsuitgave van \"Vrĳ Nederland\"","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Ergens in Nederland [Heemstede ; Aerdenhout]"}
+{"series":"DDD:PPN:269126511","title":"De Duikhoek : blad voor de Noord-Oostpolder","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Lemmer-Vollenhove"}
 {"series":"DDD:PPN:269126562","title":"De Duinstreek","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Bergen (NH)","coverage":"http://dbpedia.org/resource/Bergen%2C_North_Holland"}
 {"series":"DDD:PPN:269126783","title":"Dagelĳks nieuwsbulletin de Notedop","lang":["de"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:269126929","title":"Dagelĳks verschĳnend berichtenblad","lang":["de"],"publisher":"NOMEDOS: Niet Ondergaan Met En Door Onze Schuld","placeOfPublication":"Rotterdam","coverage":"http://dbpedia.org/resource/Rotterdam"}
@@ -289,10 +289,10 @@
 {"series":"DDD:PPN:269244263","title":"Doorgeven","lang":["de"],"publisher":"J. Bruggema, H. en B. Antonides","placeOfPublication":"Zuidbroek","coverage":"http://dbpedia.org/resource/Zuidbroek"}
 {"series":"DDD:PPN:269244573","title":"\"De Duikbode\" : vrĳe wereld nieuws","lang":["en"],"publisher":"A.J. Sarluy, H. Drukker en J. Zillisen","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:269244980","title":"De Duikelaar : weekblad voor onderduikers","lang":["en"],"publisher":"I.J. Davids en L. Gans","placeOfPublication":"Nieuwlande","coverage":"http://dbpedia.org/resource/Nieuwlande"}
-{"series":"DDD:PPN:269245790","title":"Duikelaartje","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Zwolle-Heerde","coverage":""}
+{"series":"DDD:PPN:269245790","title":"Duikelaartje","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Zwolle-Heerde"}
 {"series":"DDD:PPN:269247882","title":"Één uur bulletin : dagelĳksche nieuwseditie van het Zondagsblad","lang":["en"],"publisher":"J. Scheffer en P. Snep","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
-{"series":"DDD:PPN:269248420","title":"De eendracht : concordia res parvae crescunt","lang":["en"],"publisher":"Verzetsgroep \"De Vries\"","placeOfPublication":"Ede-Lunteren-Scherpenzeel","coverage":""}
-{"series":"DDD:PPN:269248544","title":"Eendracht maakt macht","lang":["en"],"publisher":"J. Bol en J.P. Weel","placeOfPublication":"St. Pancras","coverage":""}
+{"series":"DDD:PPN:269248420","title":"De eendracht : concordia res parvae crescunt","lang":["en"],"publisher":"Verzetsgroep \"De Vries\"","placeOfPublication":"Ede-Lunteren-Scherpenzeel"}
+{"series":"DDD:PPN:269248544","title":"Eendracht maakt macht","lang":["en"],"publisher":"J. Bol en J.P. Weel","placeOfPublication":"St. Pancras"}
 {"series":"DDD:PPN:269248625","title":"Eendracht maakt macht","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:269248803","title":"Eendracht maeckt maght","lang":["en"],"publisher":"A.J. Wonder, Jb. Eltingh, N. Zwaan, T. Wolters en H. Boerée","placeOfPublication":"Enkhuizen","coverage":"http://dbpedia.org/resource/Enkhuizen"}
 {"series":"DDD:PPN:269249036","title":"De eenpitter","lang":["en"],"publisher":"P. Reedĳk, A. Sintnicolaas en C. Smaal","placeOfPublication":"'s-Gravendeel","coverage":"http://dbpedia.org/resource/'s-Gravendeel"}
@@ -317,25 +317,25 @@
 {"series":"DDD:PPN:269298509","title":"Front-flitsen","lang":["de","fy"],"publisher":"[s.n.]","placeOfPublication":"De Steeg (?)","coverage":"http://dbpedia.org/resource/De_Steeg"}
 {"series":"DDD:PPN:269298592","title":"De Frontloupe","lang":["de","fy"],"publisher":"J.H. van Langen, W. Verhoef en H. Hoberg","placeOfPublication":"Zutphen","coverage":"http://dbpedia.org/resource/Zutphen"}
 {"series":"DDD:PPN:269298665","title":"Frontnieuws","lang":["de","fy"],"publisher":"J. ter Wal","placeOfPublication":"Scherpenzeel","coverage":"http://dbpedia.org/resource/Scherpenzeel"}
-{"series":"DDD:PPN:269298932","title":"Frontnieuws","lang":["de","fy"],"publisher":"J. de Wilde","placeOfPublication":"Sneek ; Balk","coverage":""}
-{"series":"DDD:PPN:269299033","title":"Frontnieuws","lang":["de","fy"],"publisher":"[s.n.]","placeOfPublication":"Veenendaal; Scherpenzeel","coverage":""}
-{"series":"DDD:PPN:269425195","title":"Het Gastmaal : orgaan voor ondergedoken en gedeporteerde studenten","lang":["de","fy"],"publisher":"[s.n.]","placeOfPublication":"Tilburg ; Utrecht","coverage":""}
+{"series":"DDD:PPN:269298932","title":"Frontnieuws","lang":["de","fy"],"publisher":"J. de Wilde","placeOfPublication":"Sneek ; Balk"}
+{"series":"DDD:PPN:269299033","title":"Frontnieuws","lang":["de","fy"],"publisher":"[s.n.]","placeOfPublication":"Veenendaal; Scherpenzeel"}
+{"series":"DDD:PPN:269425195","title":"Het Gastmaal : orgaan voor ondergedoken en gedeporteerde studenten","lang":["de","fy"],"publisher":"[s.n.]","placeOfPublication":"Tilburg ; Utrecht"}
 {"series":"DDD:PPN:269425411","title":"De Gazette","lang":["de","fy"],"publisher":"[s.n.]","placeOfPublication":"Hoorn?","coverage":"http://dbpedia.org/resource/Hoorn"}
 {"series":"DDD:PPN:269426043","title":"\"Geallieerd nieuws\"","lang":["de","fy"],"publisher":"C. Smit","placeOfPublication":"Amersfoort","coverage":"http://dbpedia.org/resource/Amersfoort"}
 {"series":"DDD:PPN:269426213","title":"Geallieerde Persdienst","lang":["de","fy"],"publisher":"K.E.C. Want en Zn","placeOfPublication":"Tilburg","coverage":"http://dbpedia.org/resource/Tilburg"}
 {"series":"DDD:PPN:269427104","title":"Geestelĳke vruchten eener satanische overweldiging","lang":["de","fy"],"publisher":"M.H. de Vriendt","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
-{"series":"DDD:PPN:269427368","title":"Geïllustreerd Vrĳ Nederland","lang":["de","fy"],"publisher":"[s.n.]","placeOfPublication":"Ĳsselmonde ; Utrecht","coverage":""}
+{"series":"DDD:PPN:269427368","title":"Geïllustreerd Vrĳ Nederland","lang":["de","fy"],"publisher":"[s.n.]","placeOfPublication":"Ĳsselmonde ; Utrecht"}
 {"series":"DDD:PPN:269427481","title":"Het gele blaadje","lang":["de","fy"],"publisher":"L. Weening en J. Kuyper","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:269427546","title":"Het Getĳ : veertiendaags orgaan der socialistische jeugdbeweging","lang":["de","fy"],"publisher":"[s.n.]","placeOfPublication":"Rotterdam","coverage":"http://dbpedia.org/resource/Rotterdam"}
 {"series":"DDD:PPN:269427678","title":"De Geus","lang":["nl"],"publisher":"B. Witte en Van Loon","placeOfPublication":"Harlingen","coverage":"http://dbpedia.org/resource/Harlingen"}
-{"series":"DDD:PPN:269427775","title":"De Geus van 1940","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Haarlem ; Vlaardingen","coverage":""}
+{"series":"DDD:PPN:269427775","title":"De Geus van 1940","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Haarlem ; Vlaardingen"}
 {"series":"DDD:PPN:269428119","title":"De Geuzenpost : nieuwsblad voor Haarlem en omstreken ; onder auspiciën der V.I.V.","lang":["nl"],"publisher":"V.I.V.: Verenigde Indië-Vrĳwilligers","placeOfPublication":"Haarlem","coverage":"http://dbpedia.org/resource/Haarlem"}
 {"series":"DDD:PPN:269428224","title":"De Gids","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Delft","coverage":"http://dbpedia.org/resource/Delft"}
 {"series":"DDD:PPN:269428275","title":"De Gids : orgaan der metaalindustrie","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Leiden","coverage":"http://dbpedia.org/resource/Leiden"}
 {"series":"DDD:PPN:26942850X","title":"De Glimworm","lang":["nl"],"publisher":"A. Leeuw Jr. en J.H. Limonard","placeOfPublication":"Zwaag","coverage":"http://dbpedia.org/resource/Zwaag"}
 {"series":"DDD:PPN:269429069","title":"Glueck auf! : orgaan voor vrĳheidsstrĳders in Zuid-Limburg","lang":["nl"],"publisher":"s.n.","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:269429255","title":"God-Nederland-Oranje","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
-{"series":"DDD:PPN:269475311","title":"De Goede bron : nieuwsblad voor Amstelland en de Vechtstreek","lang":["nl"],"publisher":"A. Heynis en A.J.C. Loggen","placeOfPublication":"Muiden ; Weesp","coverage":""}
+{"series":"DDD:PPN:269475311","title":"De Goede bron : nieuwsblad voor Amstelland en de Vechtstreek","lang":["nl"],"publisher":"A. Heynis en A.J.C. Loggen","placeOfPublication":"Muiden ; Weesp"}
 {"series":"DDD:PPN:269475419","title":"De Goede Goy : daagelĳkse thĳdinghe met berigten van alle krĳgsbedrĳfhen","lang":["nl"],"publisher":"K. van Vliet","placeOfPublication":"Hilversum","coverage":"http://dbpedia.org/resource/Hilversum"}
 {"series":"DDD:PPN:269475583","title":"\"Goeden morgen hier is Londen\"","lang":["nl"],"publisher":"A.O.W. Assmann en S. Supheert","placeOfPublication":"Amersfoort","coverage":"http://dbpedia.org/resource/Amersfoort"}
 {"series":"DDD:PPN:269475699","title":"\"Goeden morgen hier is de Zender Herrĳzend Nederland\"","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amersfoort","coverage":"http://dbpedia.org/resource/Amersfoort"}
@@ -346,7 +346,7 @@
 {"series":"DDD:PPN:26948700X","title":"Het Heeuwpie","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:269487778","title":"Hallo! hallo! hier is de flitspuit","lang":["nl"],"publisher":"W. Knecht","placeOfPublication":"Gouda","coverage":"http://dbpedia.org/resource/Gouda%2C_South_Holland"}
 {"series":"DDD:PPN:269500367","title":"Headlines of the B.B.C. news","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
-{"series":"DDD:PPN:269502025","title":"Herrĳzend Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Leiden ; Leiderdorp ; Zoeterwoude","coverage":""}
+{"series":"DDD:PPN:269502025","title":"Herrĳzend Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Leiden ; Leiderdorp ; Zoeterwoude"}
 {"series":"DDD:PPN:269503021","title":"Het gaat goed, landgenooten ; alles sal reg kom!","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:269503099","title":"Hier is de B.B.C.","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Bloemendaal","coverage":"http://dbpedia.org/resource/Bloemendaal"}
 {"series":"DDD:PPN:269503412","title":"Hier is Londen","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
@@ -370,7 +370,7 @@
 {"series":"DDD:PPN:26952780X","title":"Je maintiendrai","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Haarlem","coverage":"http://dbpedia.org/resource/Haarlem"}
 {"series":"DDD:PPN:269528229","title":"Je maintiendrai","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Hilversum","coverage":"http://dbpedia.org/resource/Hilversum"}
 {"series":"DDD:PPN:269528318","title":"Je maintiendrai : berichtenblad","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Hilversum","coverage":"http://dbpedia.org/resource/Hilversum"}
-{"series":"DDD:PPN:269528644","title":"Je maintiendrai","lang":["nl"],"publisher":"Pater Huissen en F.J. Wessels","placeOfPublication":"N. en O. Niedorp","coverage":""}
+{"series":"DDD:PPN:269528644","title":"Je maintiendrai","lang":["nl"],"publisher":"Pater Huissen en F.J. Wessels","placeOfPublication":"N. en O. Niedorp"}
 {"series":"DDD:PPN:269529179","title":"Je maintiendrai : berichtenblad","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Utrecht","coverage":"http://dbpedia.org/resource/Utrecht"}
 {"series":"DDD:PPN:269529241","title":"Je maintiendrai","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Utrecht","coverage":"http://dbpedia.org/resource/Utrecht"}
 {"series":"DDD:PPN:269529292","title":"Je maintiendrai","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Zeist (?)","coverage":"http://dbpedia.org/resource/Zeist"}
@@ -393,11 +393,11 @@
 {"series":"DDD:PPN:269716068","title":"De Kleine kroniek","lang":["nl"],"publisher":"A. Rodrigues Brent","placeOfPublication":"Gorssel","coverage":"http://dbpedia.org/resource/Gorssel"}
 {"series":"DDD:PPN:26971619X","title":"Het Kleine ochtendblad","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:269716335","title":"De Kleine patriot : dagblad voor de omstreken van Haarlem","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Zandvoort","coverage":"http://dbpedia.org/resource/Zandvoort"}
-{"series":"DDD:PPN:269716742","title":"De Kleine stem","lang":["nl"],"publisher":"B.N. Jongh en J. Zetteler","placeOfPublication":"Hoogland-Amersfoort","coverage":""}
+{"series":"DDD:PPN:269716742","title":"De Kleine stem","lang":["nl"],"publisher":"B.N. Jongh en J. Zetteler","placeOfPublication":"Hoogland-Amersfoort"}
 {"series":"DDD:PPN:269717005","title":"De Koevoet","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:269717536","title":"Het kompas","lang":["en"],"publisher":"M.L.L.-Front","placeOfPublication":"Rotterdam","coverage":"http://dbpedia.org/resource/Rotterdam"}
 {"series":"DDD:PPN:26971782X","title":"Kort nieuws","lang":["en"],"publisher":"A. Top","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
-{"series":"DDD:PPN:269718648","title":"\"De\" Krant : het opregte huysorgaan","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Utrecht-Tuindorp","coverage":""}
+{"series":"DDD:PPN:269718648","title":"\"De\" Krant : het opregte huysorgaan","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Utrecht-Tuindorp"}
 {"series":"DDD:PPN:269718834","title":"Kristal-bulletin","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Ouderkerk aan den Amstel","coverage":"http://dbpedia.org/resource/Ouderkerk_aan_de_Amstel"}
 {"series":"DDD:PPN:269718982","title":"'t Kristalletje : dagbladje ; redactie H & H ; het laatste nieuws het eerst","lang":["en"],"publisher":"H. Wisman en H. Loontjes","placeOfPublication":"'s-Graveland","coverage":"http://dbpedia.org/resource/'s-Graveland"}
 {"series":"DDD:PPN:269719652","title":"De koerier : berichtenblad van \"Je maintiendrai\"","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Heerenveen","coverage":"http://dbpedia.org/resource/Heerenveen"}
@@ -410,7 +410,7 @@
 {"series":"DDD:PPN:269907394","title":"Kroniek van de week ; vriheyt en is om gheen gelt te coop","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Middelburg","coverage":"http://dbpedia.org/resource/Middelburg"}
 {"series":"DDD:PPN:269907475","title":"Kroniek van de week ; vriheyt en is om gheen gelt te coop","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Nĳmegen","coverage":"http://dbpedia.org/resource/Nijmegen"}
 {"series":"DDD:PPN:269907610","title":"Kroniek van de week ; vriheyt en is om gheen gelt te coop","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Rĳnsburg","coverage":"http://dbpedia.org/resource/Rijnsburg"}
-{"series":"DDD:PPN:269907734","title":"Kroniek van de week ; vriheyt en is om gheen gelt te coop","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Voorschoten-Zoeterwoude","coverage":""}
+{"series":"DDD:PPN:269907734","title":"Kroniek van de week ; vriheyt en is om gheen gelt te coop","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Voorschoten-Zoeterwoude"}
 {"series":"DDD:PPN:269908021","title":"Kroniek van de week ; vriheyt en is om gheen gelt te coop","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Wassenaar","coverage":"http://dbpedia.org/resource/Wassenaar"}
 {"series":"DDD:PPN:269908838","title":"Kroniek van de week : Trouw-bulletin","lang":["nl"],"publisher":"J. Bruggema, H. en B. Antonides","placeOfPublication":"Zuidbroek","coverage":"http://dbpedia.org/resource/Zuidbroek"}
 {"series":"DDD:PPN:269909346","title":"De Kurk","lang":["nl"],"publisher":"Leger des Heils","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
@@ -456,26 +456,26 @@
 {"series":"DDD:PPN:270102922","title":"Luctor et emergo : \"ik duik onder en kom weer boven\"","lang":["nl"],"publisher":"H.C.J.A. baron van Lamsweerde","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:270103295","title":"Luctor et emergo","lang":["nl"],"publisher":"[ s.n.]","placeOfPublication":"Ankeveen","coverage":"http://dbpedia.org/resource/Ankeveen"}
 {"series":"DDD:PPN:270103384","title":"Luctor et emergo : voor vrĳheid, waarheid en recht","lang":["nl"],"publisher":"F. en F.J. Wĳkhuizen","placeOfPublication":"Heemstede","coverage":"http://dbpedia.org/resource/Heemstede"}
-{"series":"DDD:PPN:270103600","title":"Luctor et emergo","lang":["nl"],"publisher":"H. Oldenbeuving e.a.","placeOfPublication":"Nieuw-Leusen","coverage":""}
-{"series":"DDD:PPN:270103635","title":"Luctor et emergo","lang":["nl"],"publisher":"D. van Ekelenburg, B.C, van Wieren en H. van Wieren","placeOfPublication":"Nieuw-Amsterdam","coverage":""}
+{"series":"DDD:PPN:270103600","title":"Luctor et emergo","lang":["nl"],"publisher":"H. Oldenbeuving e.a.","placeOfPublication":"Nieuw-Leusen"}
+{"series":"DDD:PPN:270103635","title":"Luctor et emergo","lang":["nl"],"publisher":"D. van Ekelenburg, B.C, van Wieren en H. van Wieren","placeOfPublication":"Nieuw-Amsterdam"}
 {"series":"DDD:PPN:270103961","title":"De Luisterpost : alle publicatie en andere rechten vrĳ","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:27010402X","title":"De Luisterpost : ergens in Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:270104577","title":"De Luistervink : Oranje Boven!! : dagelĳksche mededelingen voor Haarlem en omstreken","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Haarlem","coverage":"http://dbpedia.org/resource/Haarlem"}
 {"series":"DDD:PPN:270104666","title":"De Luistervink","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Heerhugowaard","coverage":"http://dbpedia.org/resource/Heerhugowaard"}
-{"series":"DDD:PPN:27010478X","title":"De Luistevink","lang":["nl"],"publisher":"A. van Hilten en H. Zuidervaart","placeOfPublication":"Uithoorn ; Baambrugge; Vinkeveen en omgeving","coverage":""}
+{"series":"DDD:PPN:27010478X","title":"De Luistevink","lang":["nl"],"publisher":"A. van Hilten en H. Zuidervaart","placeOfPublication":"Uithoorn ; Baambrugge; Vinkeveen en omgeving"}
 {"series":"DDD:PPN:270104801","title":"De Luistervink","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
-{"series":"DDD:PPN:270116613","title":"De Maasbode : God en mĳn recht","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Arnhem ; Nĳmegen","coverage":""}
+{"series":"DDD:PPN:270116613","title":"De Maasbode : God en mĳn recht","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Arnhem ; Nĳmegen"}
 {"series":"DDD:PPN:270117199","title":"Het Mangaannieuws","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:270117474","title":"De Mare","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Enschede","coverage":"http://dbpedia.org/resource/Enschede"}
 {"series":"DDD:PPN:270118411","title":"De Margriet : Gooisch dagblad","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"'s-Graveland","coverage":"http://dbpedia.org/resource/'s-Graveland"}
 {"series":"DDD:PPN:270119868","title":"Mededeelingen","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
-{"series":"DDD:PPN:270120475","title":"Mededeelingen van het Comité voor Vrĳ Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam ; Rotterdam ; 's-Gravenhage ; Groningen","coverage":""}
+{"series":"DDD:PPN:270120475","title":"Mededeelingen van het Comité voor Vrĳ Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam ; Rotterdam ; 's-Gravenhage ; Groningen"}
 {"series":"DDD:PPN:270120920","title":"Mededeelingen van het Nederlandsch Correspondentiebureau","lang":["nl"],"publisher":"Louis Scharis en F.J.M. Wirtz","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
 {"series":"DDD:PPN:27012294X","title":"Mededelingen en nieuwsberichten","lang":["nl"],"publisher":"H. Vĳver","placeOfPublication":"Oude Wetering","coverage":"http://dbpedia.org/resource/Oude_Wetering"}
 {"series":"DDD:PPN:270123105","title":"Mededelingen van \"De Patriot\"","lang":["nl"],"publisher":"A.A.M. van der Heĳden en C.A.M. Warmerdam","placeOfPublication":"Aerdenhout","coverage":"http://dbpedia.org/resource/Aerdenhout"}
 {"series":"DDD:PPN:270123288","title":"Mededelingen van 'De vaderlander'","lang":["nl"],"publisher":"A.A.M. van der Heĳden en C.A.M. Warmerdam","placeOfPublication":"Aerdenhout","coverage":"http://dbpedia.org/resource/Aerdenhout"}
 {"series":"DDD:PPN:270123377","title":"De Meerbode","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Haarlemmermeer","coverage":"http://dbpedia.org/resource/Haarlemmermeer"}
-{"series":"DDD:PPN:270123571","title":"Men fluistert","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Heemstede-Aerdenhout","coverage":""}
+{"series":"DDD:PPN:270123571","title":"Men fluistert","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Heemstede-Aerdenhout"}
 {"series":"DDD:PPN:270123792","title":"\"Merck toch hoe sterck\"","lang":["nl"],"publisher":"P.W.A. de Wit en S.P. de Wit","placeOfPublication":"Bilthoven","coverage":"http://dbpedia.org/resource/Bilthoven"}
 {"series":"DDD:PPN:270123970","title":"Middageditie","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:27012411X","title":"Middagpost","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Heemstede","coverage":"http://dbpedia.org/resource/Heemstede"}
@@ -488,7 +488,7 @@
 {"series":"DDD:PPN:270126015","title":"De Mol : Schipluids ondergronds dagblad","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Schipluiden","coverage":"http://dbpedia.org/resource/Schipluiden"}
 {"series":"DDD:PPN:270126082","title":"\"Morgen gaat het beter\"","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:270126414","title":"Morgen-bulletin","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Alkmaar","coverage":"http://dbpedia.org/resource/Alkmaar"}
-{"series":"DDD:PPN:270126643","title":"Het morgennieuws","lang":["nl"],"publisher":"C. de Graaff en T. Verheyen","placeOfPublication":"Laren ; Blaricum ; Eemnes","coverage":""}
+{"series":"DDD:PPN:270126643","title":"Het morgennieuws","lang":["nl"],"publisher":"C. de Graaff en T. Verheyen","placeOfPublication":"Laren ; Blaricum ; Eemnes"}
 {"series":"DDD:PPN:270126759","title":"De Morgenpost","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Sassenheim","coverage":"http://dbpedia.org/resource/Sassenheim"}
 {"series":"DDD:PPN:270126805","title":"De Morgenpost","lang":["nl"],"publisher":"R. Kuiper","placeOfPublication":"Voorburg","coverage":"http://dbpedia.org/resource/Voorburg"}
 {"series":"DDD:PPN:270127054","title":"\"Mĳn schild ende betrouwen\": Oranje-nieuws vóór en dóór blind Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Utrecht","coverage":"http://dbpedia.org/resource/Utrecht"}
@@ -500,7 +500,7 @@
 {"series":"DDD:PPN:27042699X","title":"Nederland herrĳst : fighting-spirit","lang":["de"],"publisher":"[s.n.]","placeOfPublication":"Leeuwarden","coverage":"http://dbpedia.org/resource/Leeuwarden"}
 {"series":"DDD:PPN:270427171","title":"Nederland herrĳst : 't laatste nieuws","lang":["de"],"publisher":"G. Meĳer","placeOfPublication":"Zaandam","coverage":"http://dbpedia.org/resource/Zaandam"}
 {"series":"DDD:PPN:270427473","title":"Nederland ontwaakt : leven is strĳden","lang":["de"],"publisher":"J. Verhagen e.a.","placeOfPublication":"Haarlem","coverage":"http://dbpedia.org/resource/Haarlem"}
-{"series":"DDD:PPN:270428070","title":"Nederland en Oranje","lang":["de"],"publisher":"Jan van Ieperen, H. Sattler e.a.","placeOfPublication":"Benschop-Polsbroek","coverage":""}
+{"series":"DDD:PPN:270428070","title":"Nederland en Oranje","lang":["de"],"publisher":"Jan van Ieperen, H. Sattler e.a.","placeOfPublication":"Benschop-Polsbroek"}
 {"series":"DDD:PPN:270428135","title":"Nederland en Oranje","lang":["de"],"publisher":"C.A. van Drimmelen","placeOfPublication":"Klundert","coverage":"http://dbpedia.org/resource/Klundert"}
 {"series":"DDD:PPN:270428690","title":"Nederland strĳdt door!","lang":["de"],"publisher":"C. Miermans, H. Koolhaas en H.M. de Jong","placeOfPublication":"Ouderker aan den Amstel","coverage":"http://dbpedia.org/resource/Ouderkerk_aan_de_Amstel"}
 {"series":"DDD:PPN:270428925","title":"Nederland vrĳ!","lang":["de"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
@@ -524,7 +524,7 @@
 {"series":"DDD:PPN:270433651","title":"Het Nieuws : uitgegeven door de Kroniek van de week: 'vriheyt en is om gheen gelt te coop' en De Schakel: 'den vaderlant ghetrouwe blĳf ick tot in den doot'","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Alphen a/d Rĳn","coverage":"http://dbpedia.org/resource/Alphen_aan_den_Rijn"}
 {"series":"DDD:PPN:270434089","title":"Het Nieuws","lang":["nl"],"publisher":"G.A. Dagnelie, J. Schilthuis en A. Vooren","placeOfPublication":"Amerongen","coverage":"http://dbpedia.org/resource/Amerongen"}
 {"series":"DDD:PPN:270507418","title":"Nieuwsbulletin","lang":["en","nl"],"publisher":"[s.n.]","placeOfPublication":"Bilthoven","coverage":"http://dbpedia.org/resource/Bilthoven"}
-{"series":"DDD:PPN:270508635","title":"Het Nieuws","lang":["nl"],"publisher":"J.G. de Ridder en M. van Velden","placeOfPublication":"Honselerdĳk","coverage":""}
+{"series":"DDD:PPN:270508635","title":"Het Nieuws","lang":["nl"],"publisher":"J.G. de Ridder en M. van Velden","placeOfPublication":"Honselerdĳk"}
 {"series":"DDD:PPN:270508759","title":"Het Nieuws","lang":["nl"],"publisher":"L. de Boer, G.C. Anneveldt, W. Biersteker en J.E.L. van Ketel","placeOfPublication":"Schagen","coverage":"http://dbpedia.org/resource/Schagen"}
 {"series":"DDD:PPN:270508945","title":"Het Nieuws : \"er is slechts één nieuwe orde, de orde van het verzet\"","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Zwolle","coverage":"http://dbpedia.org/resource/Zwolle"}
 {"series":"DDD:PPN:270509003","title":"Het Nieuws","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
@@ -542,8 +542,8 @@
 {"series":"DDD:PPN:270512284","title":"Nieuws van de fronten","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:270512837","title":"Het Nieuws van de maand in vogelvlucht","lang":["nl"],"publisher":"W. Glastra","placeOfPublication":"Haarlem","coverage":"http://dbpedia.org/resource/Haarlem"}
 {"series":"DDD:PPN:270512993","title":"Nieuws van het Oostfront","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
-{"series":"DDD:PPN:270513914","title":"Nieuwsberichten","lang":["nl"],"publisher":"B.J. Kam en N.J. van de Sande Bakhuyzen","placeOfPublication":"Helmond ; Eindhoven","coverage":""}
-{"series":"DDD:PPN:270514066","title":"Het Nieuws van de week","lang":["nl"],"publisher":"N.J. van de Sande Bakhuyzen","placeOfPublication":"Helmond ; Eindhoven","coverage":""}
+{"series":"DDD:PPN:270513914","title":"Nieuwsberichten","lang":["nl"],"publisher":"B.J. Kam en N.J. van de Sande Bakhuyzen","placeOfPublication":"Helmond ; Eindhoven"}
+{"series":"DDD:PPN:270514066","title":"Het Nieuws van de week","lang":["nl"],"publisher":"N.J. van de Sande Bakhuyzen","placeOfPublication":"Helmond ; Eindhoven"}
 {"series":"DDD:PPN:270514325","title":"Nieuwsberichten","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:270514937","title":"Nieuwsberichten van de B.B.C.","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:270515127","title":"Nieuwsblad","lang":["nl"],"publisher":"R.W. Hollenkamp en J.G. Spangenburg","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
@@ -568,7 +568,7 @@
 {"series":"DDD:PPN:271348356","title":"De Nieuwskroniek : voor het Eemland ; uitgave Kroniek van de week en Het Parool","lang":["en","nl"],"publisher":"[s.n.]","placeOfPublication":"Baarn","coverage":"http://dbpedia.org/resource/Baarn"}
 {"series":"DDD:PPN:271348739","title":"De Nieuwspomp","lang":["en","nl"],"publisher":"J.K. Haarsma en J. Hoogenbos","placeOfPublication":"Wervershoof","coverage":"http://dbpedia.org/resource/Wervershoof"}
 {"series":"DDD:PPN:271348887","title":"Nieuwstĳding","lang":["en","nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
-{"series":"DDD:PPN:271349182","title":"Noorderlicht","lang":["en","nl"],"publisher":"[s.n.]","placeOfPublication":"Groningen ; Leeuwarden","coverage":""}
+{"series":"DDD:PPN:271349182","title":"Noorderlicht","lang":["en","nl"],"publisher":"[s.n.]","placeOfPublication":"Groningen ; Leeuwarden"}
 {"series":"DDD:PPN:271349263","title":"De Noordfries","lang":["en","nl"],"publisher":"D. Humalda","placeOfPublication":"Ferweradeel","coverage":"http://dbpedia.org/resource/Ferwerderadiel"}
 {"series":"DDD:PPN:271349425","title":"De Notedop","lang":["en","nl"],"publisher":"F. Fennis","placeOfPublication":"Ankeveen","coverage":"http://dbpedia.org/resource/Ankeveen"}
 {"series":"DDD:PPN:271349859","title":"Novum : voorlichtingsdienst","lang":["en","nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
@@ -586,7 +586,7 @@
 {"series":"DDD:PPN:271352655","title":"Ons oorlogskamp","lang":["nl","en","fr"],"publisher":"L. van Essen en familie","placeOfPublication":"Arnhem","coverage":"http://dbpedia.org/resource/Arnhem"}
 {"series":"DDD:PPN:271352744","title":"Ons rĳk","lang":["nl","en","fr"],"publisher":"F.E. Hollander en Leonhard Huizinga","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:271352779","title":"Ons twaalfuurtje","lang":["nl","en","fr"],"publisher":"[s.n.]","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
-{"series":"DDD:PPN:271352868","title":"Ons vaderland : het blad van en voor vrĳe Nederlanders","lang":["nl","en","fr"],"publisher":"[s.n.]","placeOfPublication":"Laren ; Blaricum","coverage":""}
+{"series":"DDD:PPN:271352868","title":"Ons vaderland : het blad van en voor vrĳe Nederlanders","lang":["nl","en","fr"],"publisher":"[s.n.]","placeOfPublication":"Laren ; Blaricum"}
 {"series":"DDD:PPN:271448962","title":"Ons vrĳe Nederland","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Groningen","coverage":"http://dbpedia.org/resource/Groningen"}
 {"series":"DDD:PPN:271449039","title":"Ons vrĳe Nederland : voortzetting van Geïllustreerd Vrĳ Nederland","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Rotterdam","coverage":"http://dbpedia.org/resource/Rotterdam"}
 {"series":"DDD:PPN:271451696","title":"\"Onze standaard\" : Oranje-Trouw","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
@@ -622,7 +622,7 @@
 {"series":"DDD:PPN:27146500X","title":"Pamplet","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Voorburg","coverage":"http://dbpedia.org/resource/Voorburg"}
 {"series":"DDD:PPN:271465158","title":"Paraat","lang":["nl"],"publisher":"De Illegale Beweging der Nederlanden","placeOfPublication":"Gouda","coverage":"http://dbpedia.org/resource/Gouda%2C_South_Holland"}
 {"series":"DDD:PPN:271465964","title":"Het Piegertje","lang":["nl","de","en"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
-{"series":"DDD:PPN:271466073","title":"De Partisaan : het nieuws uit de aether, vrĳ van geleuter","lang":["en","nl"],"publisher":"[s.n.]","placeOfPublication":"Utrecht-Tuindorp","coverage":""}
+{"series":"DDD:PPN:271466073","title":"De Partisaan : het nieuws uit de aether, vrĳ van geleuter","lang":["en","nl"],"publisher":"[s.n.]","placeOfPublication":"Utrecht-Tuindorp"}
 {"series":"DDD:PPN:271466146","title":"Het Partizaantje","lang":["en","nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:271475994","title":"De Patriot : orgaan voor strĳdend Nederland","lang":["en","nl"],"publisher":"[s.n.]","placeOfPublication":"Dinxperlo","coverage":"http://dbpedia.org/resource/Dinxperlo"}
 {"series":"DDD:PPN:271476052","title":"De Patriot","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Heemstede","coverage":"http://dbpedia.org/resource/Heemstede"}
@@ -638,7 +638,7 @@
 {"series":"DDD:PPN:271482478","title":"Het Parool : speciaal nieuwsbulletin voor 's-Gravenhage en omstreken","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
 {"series":"DDD:PPN:271482664","title":"Het Parool : speciaal bulletin voor Groningen, Friesland en Drente","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Groningen","coverage":"http://dbpedia.org/resource/Groningen"}
 {"series":"DDD:PPN:271482737","title":"Het Parool : speciaal bulletin voor Leidens omgeving over gebeurtenissen in Nederland","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Oegstgeest","coverage":"http://dbpedia.org/resource/Oegstgeest"}
-{"series":"DDD:PPN:27148280X","title":"Het Parool : speciaal bulletin","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Naarden ; Bussum","coverage":""}
+{"series":"DDD:PPN:27148280X","title":"Het Parool : speciaal bulletin","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Naarden ; Bussum"}
 {"series":"DDD:PPN:271483164","title":"Het Parool : nieuwsbulletin","lang":["en","nl"],"publisher":"[s.n.]","placeOfPublication":"Zeist","coverage":"http://dbpedia.org/resource/Zeist"}
 {"series":"DDD:PPN:271483229","title":"Parool-nieuws","lang":["en","nl"],"publisher":"[s.n.]","placeOfPublication":"Leiden","coverage":"http://dbpedia.org/resource/Leiden"}
 {"series":"DDD:PPN:271483261","title":"Parool-post","lang":["en","nl"],"publisher":"[s.n.]","placeOfPublication":"Rotterdam","coverage":"http://dbpedia.org/resource/Rotterdam"}
@@ -679,7 +679,7 @@
 {"series":"DDD:PPN:271567538","title":"De Schĳnwerper","lang":["en","nl","de"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:271567619","title":"The Secret messenger","lang":["en","nl","de"],"publisher":"J. Philips en L.J. Meĳer m.m.v. J. Waanders","placeOfPublication":"Heerde","coverage":"http://dbpedia.org/resource/Heerde"}
 {"series":"DDD:PPN:271567775","title":"Signalen der vrĳheid","lang":["en","nl","de"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
-{"series":"DDD:PPN:271568038","title":"De Sneeuwbalbrief","lang":["en","nl","de"],"publisher":"Slechthorende Jeugd","placeOfPublication":"Rotterdam ; Deventer ; Arnhem","coverage":""}
+{"series":"DDD:PPN:271568038","title":"De Sneeuwbalbrief","lang":["en","nl","de"],"publisher":"Slechthorende Jeugd","placeOfPublication":"Rotterdam ; Deventer ; Arnhem"}
 {"series":"DDD:PPN:271568208","title":"\"De Snorder\"","lang":["en","nl","de"],"publisher":"[s.n.]","placeOfPublication":"Haarlem","coverage":"http://dbpedia.org/resource/Haarlem"}
 {"series":"DDD:PPN:27156833X","title":"Sociaal-democratische-uitgave","lang":["en","nl","de"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:271568437","title":"Sol justitiae : het Utrechts studentenblad","lang":["en","nl","de"],"publisher":"[s.n.]","placeOfPublication":"Utrecht","coverage":"http://dbpedia.org/resource/Utrecht"}
@@ -693,7 +693,7 @@
 {"series":"DDD:PPN:271568917","title":"De Steekvlam","lang":["nl"],"publisher":"A. de Mug, A. Knoers en J. van Kaam","placeOfPublication":"'s-Hertogenbosch","coverage":"http://dbpedia.org/resource/'s-Hertogenbosch"}
 {"series":"DDD:PPN:27156895X","title":"Steenbergsche Bus-courant","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Steenbergen","coverage":"http://dbpedia.org/resource/Steenbergen"}
 {"series":"DDD:PPN:271568984","title":"'t Stekeltje","lang":["nl"],"publisher":"W.H. Broere en P. Saaleman","placeOfPublication":"Utrecht","coverage":"http://dbpedia.org/resource/Utrecht"}
-{"series":"DDD:PPN:271569050","title":"De Stem : voor God, Koningin en Vaderland","lang":["nl"],"publisher":"F.J.C. van Bilsen e.a.","placeOfPublication":"Tilburg ; Bergen op Zoom","coverage":""}
+{"series":"DDD:PPN:271569050","title":"De Stem : voor God, Koningin en Vaderland","lang":["nl"],"publisher":"F.J.C. van Bilsen e.a.","placeOfPublication":"Tilburg ; Bergen op Zoom"}
 {"series":"DDD:PPN:271569115","title":"De Stem : dagelĳks nieuwsblad voor 's-Gravenhage en omstreken","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
 {"series":"DDD:PPN:271569158","title":"De Stem der vrĳheid","lang":["nl"],"publisher":"J.G. Heitink","placeOfPublication":"Apeldoorn","coverage":"http://dbpedia.org/resource/Apeldoorn"}
 {"series":"DDD:PPN:271569212","title":"De Stem van Londen","lang":["nl"],"publisher":"G. Tulp","placeOfPublication":"Zwolle","coverage":"http://dbpedia.org/resource/Zwolle"}
@@ -701,7 +701,7 @@
 {"series":"DDD:PPN:271577274","title":"De Stem van strĳdend Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Enkhuizen","coverage":"http://dbpedia.org/resource/Enkhuizen"}
 {"series":"DDD:PPN:271577363","title":"De Stem van strĳdend Nederland : dagelĳks nieuwsblad voor 's-Gravenhage en omstreken","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
 {"series":"DDD:PPN:271577606","title":"De Stem van strĳdend Nederland spreekt door ...","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
-{"series":"DDD:PPN:271577746","title":"De Stem van vrĳ Nederland : voor God, Koningin en Vaderland","lang":["nl","fy"],"publisher":"F.J.C. van Bilsen e.a.","placeOfPublication":"Tilburg ; Bergen op Zoom","coverage":""}
+{"series":"DDD:PPN:271577746","title":"De Stem van vrĳ Nederland : voor God, Koningin en Vaderland","lang":["nl","fy"],"publisher":"F.J.C. van Bilsen e.a.","placeOfPublication":"Tilburg ; Bergen op Zoom"}
 {"series":"DDD:PPN:271577908","title":"De Stem der vrĳheid","lang":["nl","fy"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:271578076","title":"Stemmen uit Londen","lang":["nl","fy"],"publisher":"J.H. Kreyenbroek, E. der Kinderen, E. van Lennep en S.A.C. Dudok van Heel","placeOfPublication":"Bussum","coverage":"http://dbpedia.org/resource/Bussum"}
 {"series":"DDD:PPN:271579927","title":"De pionier : [blad van de jongerengroep van het Comité van Revolutionnaire Marxisten (CRM)]","lang":["nl","de","en"],"publisher":"[CRM]","placeOfPublication":"Rotterdam","coverage":"http://dbpedia.org/resource/Rotterdam"}
@@ -731,26 +731,26 @@
 {"series":"DDD:PPN:271622571","title":"Tribune der jeugd : socialistisch orgaan voor jongeren","lang":["nl"],"publisher":"Marx-Lenin-Luxemburg-Front (M.L.L.-Front)","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:271622709","title":"Triomfklanken","lang":["nl"],"publisher":"Werknemers van de Coöperatieve Boerenleenbank te Amstelveen","placeOfPublication":"Nieuwer-Amstel (Amstelveen)","coverage":"http://dbpedia.org/resource/Amstelveen"}
 {"series":"DDD:PPN:271626550","title":"Trouw-bulletin","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Zuidbroek","coverage":"http://dbpedia.org/resource/Zuidbroek"}
-{"series":"DDD:PPN:271627107","title":"Trouw : [voor] Alkmaar en omstreken","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Alkmaar - Heerhugowaard","coverage":""}
+{"series":"DDD:PPN:271627107","title":"Trouw : [voor] Alkmaar en omstreken","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Alkmaar - Heerhugowaard"}
 {"series":"DDD:PPN:271627425","title":"Trouw : speciale uitgave voor Amersfoort en omstreken","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amersfoort","coverage":"http://dbpedia.org/resource/Amersfoort"}
 {"series":"DDD:PPN:271627654","title":"Trouw : dagelĳkse nieuwsuitgave voor Amsterdam en omstreken; Haarlemmermeer","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:271627832","title":"Trouw-nieuws","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:271628200","title":"Trouw : dagelĳksch nieuws-bulletin","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Badhoevedorp","coverage":"http://dbpedia.org/resource/Badhoevedorp"}
 {"series":"DDD:PPN:271628790","title":"Trouw : Veluwe-uitgave","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Elburg","coverage":"http://dbpedia.org/resource/Elburg"}
 {"series":"DDD:PPN:27163197X","title":"Trouw : speciale uitgave voor de Veluwe","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Elburg","coverage":"http://dbpedia.org/resource/Elburg"}
-{"series":"DDD:PPN:271632135","title":"Trouw : speciale uitgave voor Overĳssel","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Hengelo ; Kampen ; Zwolle ; Almelo ; Sipkelo","coverage":""}
+{"series":"DDD:PPN:271632135","title":"Trouw : speciale uitgave voor Overĳssel","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Hengelo ; Kampen ; Zwolle ; Almelo ; Sipkelo"}
 {"series":"DDD:PPN:271632224","title":"Trouw","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Enschede","coverage":"http://dbpedia.org/resource/Enschede"}
 {"series":"DDD:PPN:271634790","title":"Trouw : speciale uitgave voor de Alblasserwaard","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Gouda","coverage":"http://dbpedia.org/resource/Gouda%2C_South_Holland"}
 {"series":"DDD:PPN:271635061","title":"Trouw","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Groningen","coverage":"http://dbpedia.org/resource/Groningen"}
-{"series":"DDD:PPN:271635134","title":"Trouw : speciale wekelĳksche nieuwsuitgave","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Groningen ; Uithuizen ; Buitenpost ; Westpolder (U","coverage":""}
+{"series":"DDD:PPN:271635134","title":"Trouw : speciale wekelĳksche nieuwsuitgave","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Groningen ; Uithuizen ; Buitenpost ; Westpolder (U"}
 {"series":"DDD:PPN:271635452","title":"Trouw-bulletin : Oranje Boven !! : dagelĳksche mededeelingen voor Haarlem en omgeving","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Haarlem","coverage":"http://dbpedia.org/resource/Haarlem"}
 {"series":"DDD:PPN:271635509","title":"Trouw : speciale uitgave Haarlem en omstreken","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Haarlem","coverage":"http://dbpedia.org/resource/Haarlem"}
 {"series":"DDD:PPN:271638265","title":"Trouw : Overĳssel en Twente : speciale uitgave voor Twente","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:271638699","title":"Trouw","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Hillegom","coverage":"http://dbpedia.org/resource/Hillegom"}
 {"series":"DDD:PPN:272557048","title":"Trouw-bulletin : Oranje Boven","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Hilversum","coverage":"http://dbpedia.org/resource/Hilversum"}
 {"series":"DDD:PPN:272557315","title":"Trouw : speciale uitgave voor het Gooi","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Hilversum","coverage":"http://dbpedia.org/resource/Hilversum"}
-{"series":"DDD:PPN:272557439","title":"Trouw : speciale Utrechtsche uitgave te Eem en Maarsseveen","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Hilversum of Utrecht","coverage":""}
-{"series":"DDD:PPN:27255765X","title":"Trouw : \"wat het getĳ ook doet, houdt goeden moed\" : speciale uitgave voor West-Friesland [I]","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Hoorn-Enkhuizen","coverage":""}
+{"series":"DDD:PPN:272557439","title":"Trouw : speciale Utrechtsche uitgave te Eem en Maarsseveen","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Hilversum of Utrecht"}
+{"series":"DDD:PPN:27255765X","title":"Trouw : \"wat het getĳ ook doet, houdt goeden moed\" : speciale uitgave voor West-Friesland [I]","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Hoorn-Enkhuizen"}
 {"series":"DDD:PPN:272557935","title":"Trouw","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Leeuwarden","coverage":"http://dbpedia.org/resource/Leeuwarden"}
 {"series":"DDD:PPN:272558036","title":"Trouw : uitgave voor de Wieringermeer","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Middenmeer","coverage":"http://dbpedia.org/resource/Middenmeer"}
 {"series":"DDD:PPN:272558281","title":"Trouw : nieuwsbulletin : bĳlage bĳ speciale uitgave","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Nieuwer-Amstel (Amstelveen)","coverage":"http://dbpedia.org/resource/Amstelveen"}
@@ -772,15 +772,15 @@
 {"series":"DDD:PPN:272573426","title":"De Typhoon","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:272575208","title":"De Uilenspiegel der Utrechtsche studenten","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Utrecht","coverage":"http://dbpedia.org/resource/Utrecht"}
 {"series":"DDD:PPN:272575275","title":"Uit Londen","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
-{"series":"DDD:PPN:272575445","title":"Uit de woestĳn","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam ; 's-Gravenhage ; Groningen","coverage":""}
+{"series":"DDD:PPN:272575445","title":"Uit de woestĳn","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam ; 's-Gravenhage ; Groningen"}
 {"series":"DDD:PPN:272575585","title":"De Uitkĳk : weekblad van illegale strĳders","lang":["nl"],"publisher":"J.Th. van den Bogaart","placeOfPublication":"Haarlem","coverage":"http://dbpedia.org/resource/Haarlem"}
 {"series":"DDD:PPN:272576174","title":"Vaart : halfmaandelĳks orgaan van de socialistische jongeren","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Zaandam","coverage":"http://dbpedia.org/resource/Zaandam"}
 {"series":"DDD:PPN:272576379","title":"Het Vaderland : blad voor de Nederlands(ch)e arbeiders in Duitsland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
 {"series":"DDD:PPN:272576824","title":"Het Vaderland getrouwe : strĳdblad voor de strĳders der Nieuwe Gemeenschap","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
-{"series":"DDD:PPN:272578487","title":"Den Vaderlandt ghetrouwe","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Zaandam ; Krommenie","coverage":""}
+{"series":"DDD:PPN:272578487","title":"Den Vaderlandt ghetrouwe","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Zaandam ; Krommenie"}
 {"series":"DDD:PPN:272578576","title":"Den Vaderlant ghetrouwe","lang":["nl"],"publisher":"J.F. Roth en A. van Dĳk","placeOfPublication":"Hilversum","coverage":"http://dbpedia.org/resource/Hilversum"}
 {"series":"DDD:PPN:272578657","title":"Den Vaderlant ghetrouwe","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Schiedam","coverage":"http://dbpedia.org/resource/Schiedam"}
-{"series":"DDD:PPN:272578835","title":"De Vakbeweging : orgaan voor vrĳe moderne vakbeweging in Nederland","lang":["nl"],"publisher":"L.J. van Looi","placeOfPublication":"Epe ; Kampen","coverage":""}
+{"series":"DDD:PPN:272578835","title":"De Vakbeweging : orgaan voor vrĳe moderne vakbeweging in Nederland","lang":["nl"],"publisher":"L.J. van Looi","placeOfPublication":"Epe ; Kampen"}
 {"series":"DDD:PPN:272579068","title":"Van dag tot dag","lang":["nl"],"publisher":"A. Rodrigues Brent","placeOfPublication":"Gorssel","coverage":"http://dbpedia.org/resource/Gorssel"}
 {"series":"DDD:PPN:272579696","title":"Van hand tot hand","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Laren","coverage":"http://dbpedia.org/resource/Laren%2C_North_Holland"}
 {"series":"DDD:PPN:272579815","title":"Van den harden grond : een blad van Vrĳ Nederland voor den Nederlandschen arbeider","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
@@ -792,7 +792,7 @@
 {"series":"DDD:PPN:272581216","title":"Vernieuwing : tĳdschrift voor politiek en cultuur","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amersfoort (?)","coverage":"http://dbpedia.org/resource/Amersfoort"}
 {"series":"DDD:PPN:272581658","title":"De Verslaggever van \"ons vrĳe Nederland\"","lang":["nl"],"publisher":"F. Snoek en zonen","placeOfPublication":"St. Nicolaasga","coverage":"http://dbpedia.org/resource/Sint_Nicolaasga"}
 {"series":"DDD:PPN:27258178X","title":"De Vertegenwoordigers van alle universiteiten en hogescholen aan de studenten","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Groningen","coverage":"http://dbpedia.org/resource/Groningen"}
-{"series":"DDD:PPN:272581984","title":"Verzet","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Eefde, gemeente Gorssel","coverage":""}
+{"series":"DDD:PPN:272581984","title":"Verzet","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Eefde, gemeente Gorssel"}
 {"series":"DDD:PPN:272582646","title":"Victorie","lang":["nl"],"publisher":"M. Heĳns e.a.","placeOfPublication":"Ter Aar","coverage":"http://dbpedia.org/resource/Ter_Aar"}
 {"series":"DDD:PPN:272582964","title":"Het Vloeitje","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Apeldoorn","coverage":"http://dbpedia.org/resource/Apeldoorn"}
 {"series":"DDD:PPN:272583049","title":"De Vluchteling in zĳn schuilplaats","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Varsseveld","coverage":"http://dbpedia.org/resource/Varsseveld"}
@@ -824,15 +824,15 @@
 {"series":"DDD:PPN:272629138","title":"Vrede-vrĳheid","lang":["de","en","fr","nl"],"publisher":"[s.n.]","placeOfPublication":"Tilburg","coverage":"http://dbpedia.org/resource/Tilburg"}
 {"series":"DDD:PPN:272629308","title":"Vrĳ Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:272629383","title":"Vrĳ Nederland : speciaal nieuwsbulletin","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
-{"series":"DDD:PPN:272629685","title":"Vrĳ Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Bergum ; Koudum ; Leeuwarden","coverage":""}
+{"series":"DDD:PPN:272629685","title":"Vrĳ Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Bergum ; Koudum ; Leeuwarden"}
 {"series":"DDD:PPN:272629863","title":"Vrĳ Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Gouda","coverage":"http://dbpedia.org/resource/Gouda%2C_South_Holland"}
 {"series":"DDD:PPN:272630144","title":"Vrĳ Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Groningen","coverage":"http://dbpedia.org/resource/Groningen"}
 {"series":"DDD:PPN:272630217","title":"Vrĳ Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Den Helder","coverage":"http://dbpedia.org/resource/Den_Helder"}
-{"series":"DDD:PPN:272630411","title":"Vrĳ Nederland : uitgave in het moederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Laren ; Blaricum ; Eemnes","coverage":""}
+{"series":"DDD:PPN:272630411","title":"Vrĳ Nederland : uitgave in het moederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Laren ; Blaricum ; Eemnes"}
 {"series":"DDD:PPN:272630500","title":"Vrĳ Nederland","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Alphen a/d Rĳn","coverage":"http://dbpedia.org/resource/Alphen_aan_den_Rijn"}
 {"series":"DDD:PPN:272630527","title":"Vrĳ Nederland","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Dordrecht","coverage":"http://dbpedia.org/resource/Dordrecht"}
 {"series":"DDD:PPN:272630632","title":"Vrĳ Nederland : orgaan ten behoeve van de zuiver Nederlandsche gedachte; van vreemde smetten vrĳ","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Rotterdam","coverage":"http://dbpedia.org/resource/Rotterdam"}
-{"series":"DDD:PPN:27263087X","title":"Vrĳ Nederland : nieuwsbulletin","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Spanbroek-Zuidermeer","coverage":""}
+{"series":"DDD:PPN:27263087X","title":"Vrĳ Nederland : nieuwsbulletin","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Spanbroek-Zuidermeer"}
 {"series":"DDD:PPN:274432110","title":"Vrĳ onverveerd","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:274432153","title":"Vrĳ onverveerd","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Apeldoorn","coverage":"http://dbpedia.org/resource/Apeldoorn"}
 {"series":"DDD:PPN:27443251X","title":"Vrĳ en onverveerd","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Overveen","coverage":"http://dbpedia.org/resource/Overveen"}
@@ -847,7 +847,7 @@
 {"series":"DDD:PPN:274436108","title":"Vrĳbuiters","lang":["nl","en","de"],"publisher":"[s.n.]","placeOfPublication":"Almelo","coverage":"http://dbpedia.org/resource/Almelo"}
 {"series":"DDD:PPN:274437007","title":"Vrĳe gedachten : sociaal-democratisch orgaan voor Rotterdam en omstreken","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Rotterdam","coverage":"http://dbpedia.org/resource/Rotterdam"}
 {"series":"DDD:PPN:274442035","title":"De Vrĳe katheder","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
-{"series":"DDD:PPN:274454351","title":"De vrĳe bazuin","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Nieuwheten, gemeente Raalte","coverage":""}
+{"series":"DDD:PPN:274454351","title":"De vrĳe bazuin","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Nieuwheten, gemeente Raalte"}
 {"series":"DDD:PPN:274454939","title":"De vrĳe Bussumer : blad voor Bussum, Naarden en omstreken","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Bussum","coverage":"http://dbpedia.org/resource/Bussum"}
 {"series":"DDD:PPN:274455455","title":"De vrĳe cronyck : onafhankelĳk dagblad","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Noordwĳk","coverage":"http://dbpedia.org/resource/Noordwijk"}
 {"series":"DDD:PPN:274547449","title":"De vrĳe Harlinger","lang":["nl","de"],"publisher":"H.H. en F. Drost","placeOfPublication":"Harlingen","coverage":"http://dbpedia.org/resource/Harlingen"}
@@ -891,7 +891,7 @@
 {"series":"DDD:PPN:274781182","title":"De vĳfde colonne","lang":["nl","de","en"],"publisher":"C. Streef, P. Stenstra, A. Groeneweg en H.L. Ofman","placeOfPublication":"Rotterdam","coverage":"http://dbpedia.org/resource/Rotterdam"}
 {"series":"DDD:PPN:274781190","title":"Waakt","lang":["nl","de","en"],"publisher":"[s.n.]","placeOfPublication":"Vlaardingen","coverage":"http://dbpedia.org/resource/Vlaardingen"}
 {"series":"DDD:PPN:275156443","title":"De waarheid","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
-{"series":"DDD:PPN:275156990","title":"De Waarheid","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Arnhem ; Veenendaal","coverage":""}
+{"series":"DDD:PPN:275156990","title":"De Waarheid","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Arnhem ; Veenendaal"}
 {"series":"DDD:PPN:275157091","title":"De Waarheid","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Eindhoven (?)","coverage":"http://dbpedia.org/resource/Eindhoven"}
 {"series":"DDD:PPN:275157350","title":"De Waarheid","lang":["nl"],"publisher":"J.M.G. Saers","placeOfPublication":"Somelsdĳk","coverage":"http://dbpedia.org/resource/Sommelsdijk"}
 {"series":"DDD:PPN:27515744X","title":"De Waarheid","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Zutphen","coverage":"http://dbpedia.org/resource/Zutphen"}
@@ -904,7 +904,7 @@
 {"series":"DDD:PPN:275898024","title":"Zuiveringszout","lang":["nl","en"],"publisher":"dra. M.G. Schenk en J.B.Th. Spaan","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:275898075","title":"De Zutphense courant","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Zutphen","coverage":"http://dbpedia.org/resource/Zutphen"}
 {"series":"DDD:PPN:275898199","title":"De Zweepslag","lang":["nl","en"],"publisher":"C. Peet en A.J. Marx","placeOfPublication":"Hilversum","coverage":"http://dbpedia.org/resource/Hilversum"}
-{"series":"DDD:PPN:275898350","title":"De Zwerver","lang":["nl","en"],"publisher":"C. Otten en H. Alders","placeOfPublication":"Oudesluis-Breezand","coverage":""}
+{"series":"DDD:PPN:275898350","title":"De Zwerver","lang":["nl","en"],"publisher":"C. Otten en H. Alders","placeOfPublication":"Oudesluis-Breezand"}
 {"series":"DDD:PPN:275898423","title":"Zĳ van den omroep!","lang":["nl","en"],"publisher":"A.J. Lievense en J. Kooy","placeOfPublication":"Hilversum","coverage":"http://dbpedia.org/resource/Hilversum"}
 {"series":"DDD:PPN:275898563","title":"De Waarnemer","lang":["nl"],"publisher":"J. van Riemsdĳk en J. Groesbeek","placeOfPublication":"Apeldoorn","coverage":"http://dbpedia.org/resource/Apeldoorn"}
 {"series":"DDD:PPN:275898717","title":"De Wachter","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Oudega","coverage":"http://dbpedia.org/resource/Oudega"}
@@ -941,7 +941,7 @@
 {"series":"DDD:PPN:303439858","title":"Memoires qui doivent servir à la composition de la Gazette d'Amsterdam","lang":["fr"],"publisher":"s.n.","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:303440112","title":"Gazette ordinaire d'Amsterdam","lang":["fr"],"publisher":"s.n.","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:303441259","title":"Traduction libre des gazettes flamandes et autres","lang":["fr"],"publisher":"J. van Gelder","placeOfPublication":"Leiden","coverage":"http://dbpedia.org/resource/Leiden"}
-{"series":"DDD:PPN:303989483","title":"De Sheboygan Nieuwsbode","lang":["nl","en"],"publisher":"Grand Rapids, MI: Grand Rapids Public Library","placeOfPublication":"Grand Rapids","coverage":""}
+{"series":"DDD:PPN:303989483","title":"De Sheboygan Nieuwsbode","lang":["nl","en"],"publisher":"Grand Rapids, MI: Grand Rapids Public Library","placeOfPublication":"Grand Rapids"}
 {"series":"DDD:PPN:308358139","title":"De bezem : de waarheid, de leugen","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Utrecht","coverage":"http://dbpedia.org/resource/Utrecht"}
 {"series":"DDD:PPN:308380762","title":"De Laatste loodjes","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:317581872","title":"[Zonder titel]","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Aerdenhout","coverage":"http://dbpedia.org/resource/Aerdenhout"}
@@ -1014,7 +1014,7 @@
 {"series":"DDD:PPN:319008274","title":"Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:319008401","title":"L.B.D.","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:319008495","title":"\"De Kievit\" : voor Nĳkerk en omstr.","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Nĳkerk","coverage":"http://dbpedia.org/resource/Nijkerk"}
-{"series":"DDD:PPN:319008665","title":"In het houten paard v. Troje","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"St. Pancras","coverage":""}
+{"series":"DDD:PPN:319008665","title":"In het houten paard v. Troje","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"St. Pancras"}
 {"series":"DDD:PPN:319008770","title":"De Eendracht : in samenwerking met Christofoor","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Leeuwarden?","coverage":"http://dbpedia.org/resource/Leeuwarden"}
 {"series":"DDD:PPN:319013111","title":"Beter te voorkomen, dan te genezen : raadgeving no. ...","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:319013189","title":"Berichtenblad \"De Laatste Ronde\"","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
@@ -1046,7 +1046,7 @@
 {"series":"DDD:PPN:830613439","title":"De constitutioneel : nieuwe 's-Gravenhaagsche courant","lang":["nl"],"publisher":"C.H. Susan jr","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
 {"series":"DDD:PPN:830620397","title":"Courante uyt Italien, Duytslandt, &c.","lang":["nl"],"publisher":"Caspar van Hilten","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:83063827X","title":"De Curaçaosche courant","lang":["en","nl"],"publisher":"William Lee","placeOfPublication":"[Willemstad]","coverage":"http://dbpedia.org/resource/Willemstad"}
-{"series":"DDD:PPN:830770232","title":"Geldersche historische courant","lang":["nl"],"publisher":"Johannes Olivier","placeOfPublication":"Zalt-Boemel","coverage":""}
+{"series":"DDD:PPN:830770232","title":"Geldersche historische courant","lang":["nl"],"publisher":"Johannes Olivier","placeOfPublication":"Zalt-Boemel"}
 {"series":"DDD:PPN:830780084","title":"De grondwet","lang":["nl"],"publisher":"Joh. Noman en Zoon","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
 {"series":"DDD:PPN:830788166","title":"Historisch dagblad van Zeeland / onder red. van S. Dassevael","lang":["nl"],"publisher":"Isaac de Winter","placeOfPublication":"Middelburg","coverage":"http://dbpedia.org/resource/Middelburg"}
 {"series":"DDD:PPN:830850090","title":"Nederlandsche staatscourant","lang":["nl"],"publisher":"Bureau der Nederlandsche Staats-courant","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
@@ -1311,7 +1311,7 @@
 {"series":"DDD:PPN:851959695","title":"Accu : B(etrouwbare) B(erichten) C(entrale)","lang":["nl"],"publisher":"C. Plas en F. Beumer, met medew. van W. Stemmer sr. en jr., J. Stellmeyer en M. Tulp","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:851965725","title":"Accu-vonken : uitgave van De accu artikelen van algemeen belang","lang":["nl"],"publisher":"C. Plas en F. Beumer","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:851987206","title":"Zaans groen","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Zaandĳk]","coverage":"http://dbpedia.org/resource/Zaandijk"}
-{"series":"DDD:PPN:851987265","title":"Parade der profeten : litterair tĳdschrift","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam [i.e. Utrecht","coverage":""}
+{"series":"DDD:PPN:851987265","title":"Parade der profeten : litterair tĳdschrift","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam [i.e. Utrecht"}
 {"series":"DDD:PPN:851995985","title":"Aetherflitsen","lang":["nl"],"publisher":"De waarheid","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:852041640","title":"De vrĳe kunstenaar : waarin opgenomen de 'Brandarisbrief' : religieus en politiek onafhankelĳk orgaan voor de Nederlandsche kunstenaar","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:852090811","title":"De Amsterdammer : dagblad voor Nederland","lang":["nl"],"publisher":"Dagblad vereeniging Holtz & Co","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
@@ -1363,7 +1363,7 @@
 {"series":"DDD:PPN:853222509","title":"NVS (Neerland's vrĳheidsstrĳd)","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Bussum","coverage":"http://dbpedia.org/resource/Bussum"}
 {"series":"DDD:PPN:853225311","title":"De baanbreker : sociaal-democratisch orgaan","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"s'-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
 {"series":"DDD:PPN:853225427","title":"De baanbreker : sociaal-democratisch orgaan","lang":["nl"],"publisher":"H. van Laar, E. Vermeer en C. Buurman","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
-{"series":"DDD:PPN:853235171","title":"De vrĳe pers : orgaan ter voorlichting van het Nederlandsche volk","lang":["nl"],"publisher":"Comité voor vrĳ Nederland","placeOfPublication":"Amsterdam ; Velsen","coverage":""}
+{"series":"DDD:PPN:853235171","title":"De vrĳe pers : orgaan ter voorlichting van het Nederlandsche volk","lang":["nl"],"publisher":"Comité voor vrĳ Nederland","placeOfPublication":"Amsterdam ; Velsen"}
 {"series":"DDD:PPN:853240825","title":"Oranje-bulletin / uitgeg. door De Geus, Je Maintiendrai, Ons Volk, Op Wacht, Trouw, Het Parool, De Ploeg, Vrij Nederland, De Waarheid en de nieuwsorganen","lang":["nl","en","fr"],"publisher":"[s.n.]","placeOfPublication":"s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
 {"series":"DDD:PPN:853322465","title":"Paraat : weekblad voor de vakbeweging voor Delft en omstreken","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Delft","coverage":"http://dbpedia.org/resource/Delft"}
 {"series":"DDD:PPN:853322562","title":"Paraat : weekblad voor de vakbeweging voor 's-Gravenhage en omstreken","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
@@ -1394,7 +1394,7 @@
 {"series":"DDD:PPN:861294130","title":"Stĳl : maandschrift der officieuze sociëteit gewĳd aan kunst en wetenschap / red.: Peter de Raedt ... [et al.]","lang":["nl"],"publisher":"in eigen beheer]","placeOfPublication":"Voorburg","coverage":"http://dbpedia.org/resource/Voorburg"}
 {"series":"DDD:PPN:861294173","title":"En passant : tĳdelĳk verschĳnend tĳdsverschĳnsel met literair karakter / onder red. van Willem Karel van Loon","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Voorburg","coverage":"http://dbpedia.org/resource/Voorburg"}
 {"series":"DDD:PPN:861431189","title":"De nieuwsbode : orgaan van de vrĳe pers","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Utrecht","coverage":"http://dbpedia.org/resource/Utrecht"}
-{"series":"DDD:PPN:861534492","title":"Jeugd : uitgave van \"De waarheid\"","lang":["nl"],"publisher":"\"De Waarheid\"]","placeOfPublication":"[Div. pl.]","coverage":""}
+{"series":"DDD:PPN:861534492","title":"Jeugd : uitgave van \"De waarheid\"","lang":["nl"],"publisher":"\"De Waarheid\"]","placeOfPublication":"[Div. pl.]"}
 {"series":"DDD:PPN:862003830","title":"Trouw : speciale uitgave voor Rotterdam en omstreken","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Rotterdam","coverage":"http://dbpedia.org/resource/Rotterdam"}
 {"series":"DDD:PPN:862007240","title":"Trouw : speciale uitgave voor Rotterdam en omstreken","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Rotterdam","coverage":"http://dbpedia.org/resource/Rotterdam"}
 {"series":"DDD:PPN:862007704","title":"Trouw","lang":["nl"],"publisher":"R. de Boer","placeOfPublication":"Utrecht","coverage":"http://dbpedia.org/resource/Utrecht"}
@@ -1405,7 +1405,7 @@
 {"series":"DDD:PPN:862040892","title":"Trouw : speciale uitgave voor Midden Noord-Holland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Zaandam","coverage":"http://dbpedia.org/resource/Zaandam"}
 {"series":"DDD:PPN:862182611","title":"De waarheid","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
 {"series":"DDD:PPN:862185688","title":"De waarheid","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Brunssum","coverage":"http://dbpedia.org/resource/Brunssum"}
-{"series":"DDD:PPN:862185971","title":"De waarheid : volksdagblad voor Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Rotterdam ; Dordrecht","coverage":""}
+{"series":"DDD:PPN:862185971","title":"De waarheid : volksdagblad voor Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Rotterdam ; Dordrecht"}
 {"series":"DDD:PPN:862186188","title":"De waarheid : volksdagblad voor Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Leiden","coverage":"http://dbpedia.org/resource/Leiden"}
 {"series":"DDD:PPN:862186307","title":"De waarheid","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Utrecht","coverage":"http://dbpedia.org/resource/Utrecht"}
 {"series":"DDD:PPN:862257417","title":"Signaal","lang":["nl"],"publisher":"Deutscher Verlag","placeOfPublication":"Berlin","coverage":"http://dbpedia.org/resource/Berlin"}
@@ -1439,4 +1439,4 @@
 {"series":"DDD:PPN:865286353","title":"Friesche courant","lang":["de","fy"],"publisher":"[s.n.]","placeOfPublication":"Leeuwarden","coverage":"http://dbpedia.org/resource/Leeuwarden"}
 {"series":"DDD:PPN:865693579","title":"Semaphore : international review for literature and art = revue internationale de littérature et d'art = Internationaal tĳdschrift voor letteren en kunst","lang":["en","nl","de"],"publisher":"[s.n.]","placeOfPublication":"Noordeloos","coverage":"http://dbpedia.org/resource/Noordeloos"}
 {"series":"DDD:PPN:865833079","title":"De koerier : berichtenblad van Je maintiendrai","lang":["en"],"publisher":"Je Maintiendrai","placeOfPublication":"Leeuwarden","coverage":"http://dbpedia.org/resource/Leeuwarden"}
-{"series":"DDD:PPN:865870004","title":"De waarheid","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Leeuwarden ; Groningen","coverage":""}
+{"series":"DDD:PPN:865870004","title":"De waarheid","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Leeuwarden ; Groningen"}
