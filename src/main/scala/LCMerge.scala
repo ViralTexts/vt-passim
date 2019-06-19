@@ -1,6 +1,7 @@
 package vtpassim
 
 import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.functions.{coalesce, lit}
 
 import com.databricks.spark.xml.XmlInputFormat
 
@@ -21,6 +22,9 @@ object LCMerge {
 
     val meta = spark.sparkContext.wholeTextFiles(args(0))
     val dpiInfo = spark.read.json(args(1))
+    val defaultCoverage = spark.read.json(args(2))
+      .select('placeOfPublication, 'coverage as "defcover").filter('defcover =!= "")
+    val dbpediaCanon = spark.read.json(args(3)).select('url as "coverage", 'canonical)
     meta.map(_._2).map(x => {
       def bareName(s: String): String = { s.replaceFirst("#title$", "") }
       def nameId(s: String): Long = { s.replaceFirst("^[a-z/]+", "").toLong }
@@ -51,7 +55,13 @@ object LCMerge {
     }).toDF("sid", "series", "title", "lang", "placeOfPublication", "coverage", "publisher", "links")
       .drop("links")
       .join(dpiInfo, Seq("series"), "left_outer")
-      .write.json(args(2))
+      .join(defaultCoverage, Seq("placeOfPublication"), "left_outer")
+      .withColumn("coverage", coalesce('coverage, 'defcover))
+      .drop("defcover")
+      .join(dbpediaCanon, Seq("coverage"), "left_outer")
+      .withColumn("coverage", coalesce('canonical, 'coverage))
+      .drop("canonical")
+      .write.json(args(4))
     spark.stop()
   }
 }
