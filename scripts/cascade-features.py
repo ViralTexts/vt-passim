@@ -3,8 +3,8 @@ from __future__ import print_function
 import argparse, re
 import numpy as np
 
-from pyspark import SparkContext
-from pyspark.sql import SQLContext, Row
+from pyspark import SparkSession
+from pyspark.sql import Row
 from pyspark.sql.functions import col, datediff, lit, sum as gsum
 from pyspark.ml.feature import CountVectorizer, VectorAssembler
 
@@ -132,18 +132,17 @@ if __name__ == "__main__":
     argparser.add_argument('outdir', help='Output directory')
     args = argparser.parse_args()
 
-    sc = SparkContext(appName='Cascade Features')
-    sqlContext = SQLContext(sc)
+    spark = SparkSession.builder.appName('Cascade Features').getOrCreate()
     
     vocabFile = args.outdir + "/vocab.gz"
     featFile = args.outdir + "/feats.parquet"
 
     try:
-        full = sqlContext.read.load(featFile)
+        full = spark.read.load(featFile)
         vocab = np.loadtxt(vocabFile, 'string')
     except:
-        featurizeData(sqlContext.read.load(args.input), args.gap, vocabFile, featFile)
-        full = sqlContext.read.load(featFile)
+        featurizeData(spark.read.load(args.input), args.gap, vocabFile, featFile)
+        full = spark.read.load(featFile)
         vocab = np.loadtxt(vocabFile, 'string')
 
     if args.posteriors:
@@ -173,4 +172,4 @@ if __name__ == "__main__":
         w -= rate * update
         np.savetxt("%s/iter%03d.gz" % (args.outdir, i), w)
     
-    sc.stop()
+    spark.stop()
