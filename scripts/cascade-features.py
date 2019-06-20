@@ -3,8 +3,7 @@ from __future__ import print_function
 import argparse, re
 import numpy as np
 
-from pyspark import SparkSession
-from pyspark.sql import Row
+from pyspark.sql import SparkSession, Row
 from pyspark.sql.functions import col, datediff, lit, sum as gsum
 from pyspark.ml.feature import CountVectorizer, VectorAssembler
 
