@@ -20,10 +20,11 @@ object DTAPages {
       .filter(_._1.endsWith(".xml"))
       .flatMap( in => {
         val fname = new java.io.File(new java.net.URL(in._1).toURI)
-        val id = fname.getName.replaceAll(".xml$", "")
+        val id = fname.getName.replaceAll("(.TEI-P5)?.xml$", "")
         val buf = new StringBuilder
         var buffering = false
         var seq = -1
+        var pageID = ""
         val rendStack = new Stack[RenditionSpan]()
         val rendSpans = new ListBuffer[RenditionSpan]()
 
@@ -46,10 +47,11 @@ object DTAPages {
             }
             case EvElemStart(_, "pb", attr, _) => {
               val rec = if ( buffering ) {
-                Some((f"$id%s_$seq%04d", id, seq, buf.toString, rendSpans.toArray))
+                Some((pageID, id, seq, buf.toString, rendSpans.toArray))
               } else {
                 None
               }
+              pageID = id + attr("facs").text
               buffering = true
               seq += 1
               buf.clear
@@ -63,7 +65,7 @@ object DTAPages {
                 buffering = false
                 buf.clear
                 rendSpans.clear
-                Some((f"$id%s_$seq%04d", id, seq, text, rendSpans.toArray))
+                Some((pageID, id, seq, text, rendSpans.toArray))
               } else {
                 None
               }
