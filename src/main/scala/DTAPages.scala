@@ -2,13 +2,15 @@ package vtpassim
 
 import org.apache.spark.sql.SparkSession
 
-import scala.collection.mutable.StringBuilder
+import scala.collection.mutable.{ListBuffer, Stack, StringBuilder}
 import scala.util.Try
 import scala.xml.pull._
 
-object TEIPages {
+case class RenditionSpan(rendition: String, start: Int, length: Int)
+
+object DTAPages {
   def main(args: Array[String]) {
-    val spark = SparkSession.builder().appName("TEIPages Import").getOrCreate()
+    val spark = SparkSession.builder().appName("DTAPages Import").getOrCreate()
     import spark.implicits._
 
     spark.sparkContext.hadoopConfiguration
@@ -22,28 +24,46 @@ object TEIPages {
         val buf = new StringBuilder
         var buffering = false
         var seq = -1
+        val rendStack = new Stack[RenditionSpan]()
+        val rendSpans = new ListBuffer[RenditionSpan]()
 
         val pass = new XMLEventReader(scala.io.Source.fromURL(in._1))
         pass.flatMap { event =>
           event match {
+            case EvElemStart(_, "hi", attr, _) => {
+              if ( buffering )
+                rendStack.push(RenditionSpan(attr("rendition").text, buf.length, 0))
+              None
+            }
+            case EvElemEnd(_, "hi") => {
+              if ( buffering ) {
+                val start = rendStack.pop
+                rendSpans ++= start.rendition.split("\\s+")
+                  .map { r => RenditionSpan(r.stripPrefix("#"),
+                    start.start, buf.length - start.start) }
+              }
+              None
+            }
             case EvElemStart(_, "pb", attr, _) => {
               val rec = if ( buffering ) {
-                Some((f"$id%s_$seq%04d", id, seq, buf.toString.trim))
+                Some((f"$id%s_$seq%04d", id, seq, buf.toString, rendSpans.toArray))
               } else {
                 None
               }
               buffering = true
               seq += 1
               buf.clear
+              rendSpans.clear
               rec
             }
             case EvElemEnd(_, "text") => {
               if ( buffering ) {
                 seq += 1
-                val text = buf.toString.trim
+                val text = buf.toString
                 buffering = false
                 buf.clear
-                Some((f"$id%s_$seq%04d", id, seq, text))
+                rendSpans.clear
+                Some((f"$id%s_$seq%04d", id, seq, text, rendSpans.toArray))
               } else {
                 None
               }
@@ -60,7 +80,7 @@ object TEIPages {
           }
         }
       })
-      .toDF("id", "book", "seq", "text")
+      .toDF("id", "book", "seq", "text", "rendition")
       .write.save(args(1))
     spark.stop()
   }
