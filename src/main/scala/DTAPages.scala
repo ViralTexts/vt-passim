@@ -70,6 +70,14 @@ object DTAPages {
                 None
               }
             }
+            case EvElemStart(_, "note", attr, _) => {
+              buffering = false
+              None
+            }
+            case EvElemEnd(_, "note") => {
+              if ( !buf.isEmpty ) buffering = true
+              None
+            }
             case EvText(t) => { // remove leading whitespace only if we haven't added anything
               if ( buffering ) buf ++= (if (buf.isEmpty) t.replaceAll("^\\s+", "") else t)
               None
