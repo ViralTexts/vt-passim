@@ -33,13 +33,15 @@ object DTAPages {
           event match {
             case EvElemStart(_, "hi", attr, _) => {
               if ( buffering )
-                rendStack.push(RenditionSpan(attr("rendition").text, buf.length, 0))
+                rendStack.push(RenditionSpan(Try(attr("rendition").text).getOrElse(""),
+                  buf.length, 0))
               None
             }
             case EvElemEnd(_, "hi") => {
               if ( buffering ) {
                 val start = rendStack.pop
                 rendSpans ++= start.rendition.split("\\s+")
+                  .filter { _ != "" }
                   .map { r => RenditionSpan(r.stripPrefix("#"),
                     start.start, buf.length - start.start) }
               }
@@ -71,11 +73,9 @@ object DTAPages {
               }
             }
             case EvElemStart(_, "note", attr, _) => {
-              buffering = false
               None
             }
             case EvElemEnd(_, "note") => {
-              if ( !buf.isEmpty ) buffering = true
               None
             }
             case EvText(t) => { // remove leading whitespace only if we haven't added anything
