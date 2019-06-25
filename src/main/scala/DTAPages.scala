@@ -68,8 +68,8 @@ object DTAPages {
                 None
               }
             }
-            case EvText(t) => {
-              if ( buffering ) buf ++= t
+            case EvText(t) => { // remove leading whitespace only if we haven't added anything
+              if ( buffering ) buf ++= (if (buf.isEmpty) t.replaceAll("^\\s+", "") else t)
               None
             }
             case EvEntityRef(n) => {
