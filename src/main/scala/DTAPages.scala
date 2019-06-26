@@ -10,6 +10,9 @@ case class RenditionSpan(rendition: String, start: Int, length: Int)
 
 case class ZoneContent(place: String, data: StringBuilder, rend: ListBuffer[RenditionSpan])
 
+case class Rec(id: String, book: String, seq: Int, place: String, text:String,
+  rendition: Array[RenditionSpan])
+
 object DTAPages {
   def main(args: Array[String]) {
     val spark = SparkSession.builder().appName("DTAPages Import").getOrCreate()
@@ -35,7 +38,7 @@ object DTAPages {
               if ( !zoneStack.isEmpty )
                 rendStack.push(RenditionSpan(Try(attr("rendition").text).getOrElse(""),
                   zoneStack.top.data.length, 0))
-              None
+              Nil
             }
             case EvElemEnd(_, "hi") => {
               if ( !zoneStack.isEmpty ) {
@@ -45,27 +48,31 @@ object DTAPages {
                   .map { r => RenditionSpan(r.stripPrefix("#"),
                     start.start, zoneStack.top.data.length - start.start) }
               }
-              None
+              Nil
             }
             case EvElemStart(_, "pb", attr, _) => {
-              val rec = if ( !zoneStack.isEmpty ) {
+              val res = new ListBuffer[Rec]()
+              if ( !zoneStack.isEmpty ) {
                 val top = zoneStack.pop
-                Some((pageID, id, seq, top.place, top.data.toString, top.rend.toArray))
-              } else {
-                None
+                res += Rec(pageID, id, seq, top.place, top.data.toString, top.rend.toArray)
               }
+              // Output printed page number (n attribute not in brackets) here?
               pageID = id + attr("facs").text
               seq += 1
-              zoneStack.push(new ZoneContent("page", new StringBuilder, new ListBuffer[RenditionSpan]()))
-              rec
+              zoneStack.push(new ZoneContent("body", new StringBuilder, new ListBuffer[RenditionSpan]()))
+              val pno = Try(attr("n").text).getOrElse("").replaceAll("\\[[^\\]]+\\]", "")
+              if ( pno != "" ) {
+                res += Rec(pageID, id, seq, "page", pno, new Array[RenditionSpan](0))
+              }
+              res
             }
             case EvElemEnd(_, "text") => {
               if ( !zoneStack.isEmpty ) {
                 seq += 1
                 val top = zoneStack.pop
-                Some((pageID, id, seq, top.place, top.data.toString, top.rend.toArray))
+                Seq(Rec(pageID, id, seq, top.place, top.data.toString, top.rend.toArray))
               } else {
-                None
+                Nil
               }
             }
             case EvElemStart(_, "note", attr, _) => {
@@ -73,42 +80,42 @@ object DTAPages {
                 zoneStack.push(new ZoneContent(Try(attr("place").text).getOrElse("note"),
                   new StringBuilder, new ListBuffer[RenditionSpan]()))
               }
-              None
+              Nil
             }
             case EvElemEnd(_, "note") => {
               if ( !zoneStack.isEmpty ) {
                 val top = zoneStack.pop
-                Some((pageID, id, seq, top.place, top.data.toString, top.rend.toArray))
+                Seq(Rec(pageID, id, seq, top.place, top.data.toString, top.rend.toArray))
               } else
-                None
+                Nil
             }
             case EvElemStart(_, "fw", attr, _) => {
               if ( !zoneStack.isEmpty ) {
                 zoneStack.push(new ZoneContent(Try(attr("place").text).getOrElse("fw"),
                   new StringBuilder, new ListBuffer[RenditionSpan]()))
               }
-              None
+              Nil
             }
             case EvElemEnd(_, "fw") => {
               if ( !zoneStack.isEmpty ) {
                 val top = zoneStack.pop
-                Some((pageID, id, seq, top.place, top.data.toString, top.rend.toArray))
+                Seq(Rec(pageID, id, seq, top.place, top.data.toString, top.rend.toArray))
               } else
-                None
+                Nil
             }
             case EvText(t) => { // remove leading whitespace only if we haven't added anything
               if ( !zoneStack.isEmpty ) zoneStack.top.data ++= (if (zoneStack.top.data.isEmpty) t.replaceAll("^\\s+", "") else t)
-              None
+              Nil
             }
             case EvEntityRef(n) => {
               if ( !zoneStack.isEmpty ) zoneStack.top.data ++= "&" + n + ";"
-              None
+              Nil
             }
-            case _ => None
+            case _ => Nil
           }
         }
       })
-      .toDF("id", "book", "seq", "place", "text", "rendition")
+      .toDF
       .write.save(args(1))
     spark.stop()
   }
