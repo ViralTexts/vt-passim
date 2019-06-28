@@ -26,7 +26,7 @@ object HOCR {
         val regions = new ArrayBuffer[Region]
         var buffering = false
         var seq = -1
-        var pageID = ""
+        var page = new Page("", -1, 0, 0, 0, new Array[Region](0))
         var region = new Region(0, 0, Coords(0,0,0,0,0))
 
         val pass = new XMLEventReader(scala.io.Source.fromURL(in._1))
@@ -35,12 +35,18 @@ object HOCR {
             case EvElemStart(_, "div", attr, _) => {
               Try(attr("class").text).getOrElse("") match {
                 case "ocr_page" => {
-                  val res = if ( pageID != "" ) {
-                    Some((pageID, id, seq, buf.toString, regions.toArray))
+                  val res = if ( seq >= 0 ) {
+                    Some((page.id, id, seq, buf.toString, Array(page.copy(regions=regions.toArray))))
                   } else
                     None
                   seq += 1
-                  pageID = id + "#" + attr("id").text
+                  val pageID = id + "#" + attr("id").text
+                  page = Try(attr("title").text).getOrElse("") match {
+                    case bboxPat(l, t, r, b) =>
+                      new Page(pageID, seq, r.toInt, b.toInt, 0, new Array[Region](0))
+                    case _ =>
+                      new Page(pageID, seq, 0, 0, 0, new Array[Region](0))
+                  }
                   buf.clear
                   regions.clear
                   res
@@ -53,8 +59,8 @@ object HOCR {
               None
             }
             case EvElemEnd(_, "body") => {
-              if ( pageID != "" ) {
-                Some((pageID, id, seq, buf.toString, regions.toArray))
+              if ( seq >= 0 ) {
+                Some((page.id, id, seq, buf.toString, Array(page.copy(regions=regions.toArray))))
               } else {
                 None
               }
@@ -94,7 +100,16 @@ object HOCR {
               None
             }
             case EvEntityRef(n) => {
-              if ( buffering ) buf ++= "&" + n + ";"
+              if ( buffering ) {
+                buf ++= (n match {
+                  case "amp" => "&"
+                  case "lt" => "<"
+                  case "gt" => ">"
+                  case "apos" => "'"
+                  case "quot" => "\""
+                  case _ => ""
+                })
+              }
               None
             }
             case _ => None
