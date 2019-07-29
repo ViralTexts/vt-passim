@@ -108,7 +108,16 @@ object DTAPages {
               Nil
             }
             case EvEntityRef(n) => {
-              if ( !zoneStack.isEmpty ) zoneStack.top.data ++= "&" + n + ";"
+              if ( !zoneStack.isEmpty ) {
+                zoneStack.top.data ++= (n match {
+                  case "amp" => "&"
+                  case "lt" => "<"
+                  case "gt" => ">"
+                  case "apos" => "'"
+                  case "quot" => "\""
+                  case _ => ""
+                })
+              }
               Nil
             }
             case _ => Nil
