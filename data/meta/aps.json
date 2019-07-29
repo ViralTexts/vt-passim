@@ -532,7 +532,7 @@
 {"placeOfPublication":"Freetown","series":"aps/25015","title":"The Spiritual Magazine; or, Gospel Treasury (1813-1814)","coverage":"http://dbpedia.org/resource/Freetown%2C_Massachusetts"}
 {"placeOfPublication":"Georgetown","series":"aps/25253","title":"The American Museum, and Repository of Arts, and Sciences, as Connected with Domestic Manufactures and National Industry. Also, a List of All the Patents Granted by the United States Up to the End of the Year 1821. With a List of All the Books That Have Been Deposited in the Department of State, for Securing Their Copy Right According to Law (1822-1822)","coverage":"http://dbpedia.org/resource/Georgetown_(Washington%2C_D.C.)"}
 {"placeOfPublication":"Georgetown","series":"aps/42151","title":"The Agricultural Museum: Designed to be a Repository of Valuable Information to the Farmer and Manufacturer, and to the Mean of a Free Communication of Sentiment, and General Interchange of Ideas, on the Important Subjects of Their Occupations (1810-1812)","coverage":"http://dbpedia.org/resource/Georgetown_(Washington%2C_D.C.)"}
-{"placeOfPublication":"Germantown","series":"aps/24333","title":"Geistliches Magazien (1770-1772)","coverage":"http://dbpedia.org/page/Germantown%2C_Philadelphia"}
+{"placeOfPublication":"Germantown","series":"aps/24333","title":"Geistliches Magazien (1770-1772)","coverage":"http://dbpedia.org/resource/Germantown%2C_Philadelphia"}
 {"placeOfPublication":"Gilmanton","series":"aps/35428","title":"The New Hampshire Repository; Devoted to Education, Literature and Religion (1845-1847)","coverage":"http://dbpedia.org/resource/Gilmanton%2C_New_Hampshire"}
 {"placeOfPublication":"Greenwich Village","series":"aps/25272","title":"The Villager, a Literary Paper (1819-1819)","coverage":"http://dbpedia.org/resource/Greenwich_Village"}
 {"placeOfPublication":"Hallowell","series":"aps/41389","title":"The Christian Monitor (1814-1818)","coverage":"http://dbpedia.org/resource/Hallowell%2C_Maine"}
@@ -570,7 +570,7 @@
 {"placeOfPublication":"Indianapolis","series":"aps/34898","title":"The Indiana Farmer and Gardener (1845-1845)","coverage":"http://dbpedia.org/resource/Indianapolis"}
 {"placeOfPublication":"Indianapolis","series":"aps/35008","title":"Western Farmer and Gardener (1846-1848)","coverage":"http://dbpedia.org/resource/Indianapolis"}
 {"placeOfPublication":"Jonesborough","series":"aps/35214","title":"Tennessee Farmer (1834-1839)","coverage":"http://dbpedia.org/resource/Jonesborough%2C_Tennessee"}
-{"placeOfPublication":"Kennebunk","series":"aps/24546","title":"A Religious Magazine; Containing an Account of the United Churches of Christ, Commonly Called Free - Will Baptist (1811-1822)","coverage":"http://dbpedia.org/page/Kennebunk%2C_Maine"}
+{"placeOfPublication":"Kennebunk","series":"aps/24546","title":"A Religious Magazine; Containing an Account of the United Churches of Christ, Commonly Called Free - Will Baptist (1811-1822)","coverage":"http://dbpedia.org/resource/Kennebunk%2C_Maine"}
 {"placeOfPublication":"Knoxville","series":"aps/27348","title":"The Holston Conference Messenger (1826-1827)","coverage":"http://dbpedia.org/resource/Knoxville%2C_Tennessee"}
 {"placeOfPublication":"Knoxville","series":"aps/27349","title":"The Messenger for the Holston Conference (1827-1827)","coverage":"http://dbpedia.org/resource/Knoxville%2C_Tennessee"}
 {"placeOfPublication":"Lancaster","series":"aps/24342","title":"Hive (1810-1810)","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
@@ -1413,8 +1413,8 @@
 {"placeOfPublication":"Rochester","series":"aps/35500","title":"The Genesee Farmer (1845-1865)","coverage":"http://dbpedia.org/resource/Rochester%2C_New_York"}
 {"placeOfPublication":"Rochester","series":"aps/35779","title":"The Genesee Farmer and Gardener's Journal (1831-1839)","coverage":"http://dbpedia.org/resource/Rochester%2C_New_York"}
 {"placeOfPublication":"Rutland","series":"aps/24759","title":"The Rural Magazine and Literary Evening Fire - Side (1820-1820)","coverage":"http://dbpedia.org/resource/Rutland_(city)%2C_Vermont"}
-{"placeOfPublication":"Rutland","series":"aps/25270","title":"The Vermont Baptist Missionary Magazine (1811-1812)","coverage":"http://dbpedia.org/page/Rutland_(city)%2C_Vermont"}
-{"placeOfPublication":"Rutland","series":"aps/41789","title":"The Rural Magazine; or, Vermont Repository. Devoted to Literary, Moral, Historical, and Political Improvement (1795-1796)","coverage":"http://dbpedia.org/page/Rutland_(city)%2C_Vermont"}
+{"placeOfPublication":"Rutland","series":"aps/25270","title":"The Vermont Baptist Missionary Magazine (1811-1812)","coverage":"http://dbpedia.org/resource/Rutland_(city)%2C_Vermont"}
+{"placeOfPublication":"Rutland","series":"aps/41789","title":"The Rural Magazine; or, Vermont Repository. Devoted to Literary, Moral, Historical, and Political Improvement (1795-1796)","coverage":"http://dbpedia.org/resource/Rutland_(city)%2C_Vermont"}
 {"placeOfPublication":"Salem","series":"aps/40482","title":"The Barber's Shop (1807-1808)","coverage":"http://dbpedia.org/resource/Salem%2C_Massachusetts"}
 {"placeOfPublication":"Salem","series":"aps/40619","title":"The Fool (1807-1807)","coverage":"http://dbpedia.org/resource/Salem%2C_Massachusetts"}
 {"placeOfPublication":"Salem","series":"aps/41252","title":"The Weekly Visitant; Moral, Poetical, Humorous, &c. (1806-1806)","coverage":"http://dbpedia.org/resource/Salem%2C_Massachusetts"}
