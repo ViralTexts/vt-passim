@@ -32,8 +32,7 @@ if __name__ == "__main__":
     df = raw.select((split(col('docno'), '_')[0]).alias('moaseries'),
                     (split(col('docno'), '_')[1]).alias('id'),
                     convdate(col('date')).alias('date'),
-                    regexp_replace(regexp_replace(col('text'), '&', '&amp;'),
-                                   '<', '&lt;').alias('text'))\
+                    col('text')) \
             .withColumn('issue', col('id'))\
             .withColumn('url', mkurl(col('moaseries'), col('id')))
 

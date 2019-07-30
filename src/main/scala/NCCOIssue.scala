@@ -64,8 +64,7 @@ object NCCOIssue {
                   } else " "
                   lastX = c(0)
                   lastY = c(1)
-                  buf.append(sep + w.text.replaceAll("&", "&amp;").replaceAll("<", "&lt;")
-                    .replaceFirst("""(\S)-$""", "$1\u00ad"))
+                  buf.append(sep + w.text.replaceFirst("""(\S)-$""", "$1\u00ad"))
                   regions += Region(start, buf.size - start,
                     Coords(c(0), c(1), c(2) - c(0), c(3) - c(1), c(3) - c(1)))
                 }

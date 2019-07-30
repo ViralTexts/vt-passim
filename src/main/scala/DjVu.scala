@@ -50,7 +50,7 @@ object DjVu {
                     res.append(" ")
                   }
                   val start = res.size
-                  res.append(word.text.replaceAll("&", "&amp;").replaceAll("<", "&lt;"))
+                  res.append(word.text)
                   val c = (word \ "@coords").text.split(",").map(_.toInt)
                   regions += Region(start, res.size - start,
                     Coords(c(0), c(3), c(2) - c(0), c(1) - c(3),

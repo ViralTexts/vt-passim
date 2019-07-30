@@ -51,7 +51,7 @@ object ChronAm {
                 e.label match {
                   case "String" =>
                     val start = sb.size
-                    sb ++= (e \ "@CONTENT").text.replaceAll("&", "&amp;").replaceAll("<", "&lt;")
+                    sb ++= (e \ "@CONTENT").text
                     try {
                       regions += Region(start, sb.size - start,
                         Coords(cleanInt(e \\ "@HPOS" text), cleanInt(e \\ "@VPOS" text),

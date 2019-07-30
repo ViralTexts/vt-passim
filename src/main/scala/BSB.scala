@@ -41,7 +41,7 @@ object BSB {
                 text ++= " "
               } else {
                 // If I understood the coorindates, I'd do something here.
-                val res = seg.text.replaceAll("&", "&amp;").replaceAll("<", "&lt;")
+                val res = seg.text
                 text ++= res
               }
             }

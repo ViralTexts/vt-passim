@@ -29,8 +29,7 @@ object APS {
             val t = scala.xml.XML.load(zfile.getInputStream(f))
             val series = (t \ "Publication" \ "PublicationID").text
             val sdate = (t \ "NumericPubDate").text
-            val text = (t \ "FullText").text.replaceAll("&", "&amp;").replaceAll("<", "&lt;")
-              .replaceAll("([ ]{4,})", "\n$1")
+            val text = (t \ "FullText").text.replaceAll("([ ]{4,})", "\n$1")
 
             if ( text != "" && series != "" && sdate != "" ) {
               val date = Seq(sdate.substring(0, 4), sdate.substring(4, 6), sdate.substring(6, 8))

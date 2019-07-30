@@ -11,7 +11,7 @@ object MetsAlto {
         (line \ "_").foreach { e =>
           if ( e.label == "String" ) {
             val start = buf.size
-            buf.append((e \ "@CONTENT").text.replaceAll("&", "&amp;").replaceAll("<", "&lt;"))
+            buf.append((e \ "@CONTENT").text)
             try {
               regions += Region(start, buf.size - start,
                 Coords((e \ "@HPOS").text.toInt, (e \ "@VPOS").text.toInt,

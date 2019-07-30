@@ -30,7 +30,7 @@ object ONB {
             val seqstr = (page \ "number").text match { case "" => "0" case x => x }
             ONBRecord(s"$series/$date/$seqstr", s"$series/$date",
               series, seqstr.toInt, date,
-              (page \ "text").text.replaceAll("&", "&amp;").replaceAll("<", "&lt;"),
+              (page \ "text").text,
               (page \ "pagePath").text, book_access)
           }
       }

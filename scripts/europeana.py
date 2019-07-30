@@ -26,7 +26,7 @@ def getSeries(fname):
                         seq = seq + 1
                         yield Row(id=issue + '/' + str(seq), issue=issue, series=series, seq=seq,
                                   date=date, lang=lang,
-                                  text=page.replace('&', '&amp;').replace('<', '&lt;'))
+                                  text=page)
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
