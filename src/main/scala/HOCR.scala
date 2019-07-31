@@ -19,9 +19,10 @@ object HOCR {
     val bboxPat = """bbox\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)""".r.unanchored
 
     spark.sparkContext.binaryFiles(args(0), spark.sparkContext.defaultParallelism)
+      .filter(_._1.endsWith(".hocr"))
       .flatMap( in => {
         val fname = new java.io.File(new java.net.URL(in._1).toURI)
-        val id = fname.getName.replaceAll(".hocr$", "")
+        val id = in._1.replaceAll(".hocr$", "")
         val buf = new StringBuilder
         val regions = new ArrayBuffer[Region]
         var buffering = false
