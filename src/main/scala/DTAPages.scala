@@ -25,7 +25,7 @@ object DTAPages {
       .filter(_._1.endsWith(".xml"))
       .flatMap( in => {
         val fname = new java.io.File(new java.net.URL(in._1).toURI)
-        val id = fname.getName.replaceAll("(.TEI-P5)?.xml$", "")
+        val book = fname.getName.replaceAll("(.TEI-P5)?.xml$", "")
         var seq = -1
         var pageID = ""
         val zoneStack = new Stack[ZoneContent]()
@@ -53,16 +53,17 @@ object DTAPages {
             case EvElemStart(_, "pb", attr, _) => {
               val res = new ListBuffer[Rec]()
               if ( !zoneStack.isEmpty ) {
+                seq += 1
                 val top = zoneStack.pop
-                res += Rec(pageID, id, seq, top.place, top.data.toString, top.rend.toArray)
+                res += Rec(pageID + s"z$seq", book, seq, top.place, top.data.toString, top.rend.toArray)
               }
               // Output printed page number (n attribute not in brackets) here?
-              pageID = id + attr("facs").text
-              seq += 1
+              pageID = book + attr("facs").text
               zoneStack.push(new ZoneContent("body", new StringBuilder, new ListBuffer[RenditionSpan]()))
               val pno = Try(attr("n").text).getOrElse("").replaceAll("\\[[^\\]]+\\]", "")
               if ( pno != "" ) {
-                res += Rec(pageID, id, seq, "page", pno, new Array[RenditionSpan](0))
+                seq += 1
+                res += Rec(pageID + s"z$seq", book, seq, "page", pno, new Array[RenditionSpan](0))
               }
               res
             }
@@ -70,7 +71,7 @@ object DTAPages {
               if ( !zoneStack.isEmpty ) {
                 seq += 1
                 val top = zoneStack.pop
-                Seq(Rec(pageID, id, seq, top.place, top.data.toString, top.rend.toArray))
+                Seq(Rec(pageID + s"z$seq", book, seq, top.place, top.data.toString, top.rend.toArray))
               } else {
                 Nil
               }
@@ -85,7 +86,8 @@ object DTAPages {
             case EvElemEnd(_, "note") => {
               if ( !zoneStack.isEmpty ) {
                 val top = zoneStack.pop
-                Seq(Rec(pageID, id, seq, top.place, top.data.toString, top.rend.toArray))
+                seq += 1
+                Seq(Rec(pageID + s"z$seq", book, seq, top.place, top.data.toString, top.rend.toArray))
               } else
                 Nil
             }
@@ -99,7 +101,8 @@ object DTAPages {
             case EvElemEnd(_, "fw") => {
               if ( !zoneStack.isEmpty ) {
                 val top = zoneStack.pop
-                Seq(Rec(pageID, id, seq, top.place, top.data.toString, top.rend.toArray))
+                seq += 1
+                Seq(Rec(pageID + s"z$seq", book, seq, top.place, top.data.toString, top.rend.toArray))
               } else
                 Nil
             }
