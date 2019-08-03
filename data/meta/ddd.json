@@ -388,7 +388,7 @@
 {"series":"DDD:PPN:269714839","title":"De Kieuwelander","lang":["nl"],"publisher":"A. Mozer","placeOfPublication":"Poortugaal","coverage":"http://dbpedia.org/resource/Poortugaal"}
 {"series":"DDD:PPN:269714936","title":"De Klapekster : orgaan der V.N.V.","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Rotterdam (?)","coverage":"http://dbpedia.org/resource/Rotterdam"}
 {"series":"DDD:PPN:269715169","title":"Klaroen der bevrĳding","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Enkhuizen","coverage":"http://dbpedia.org/resource/Enkhuizen"}
-{"series":"DDD:PPN:269715657","title":"De Kleefse koerier : vanouds \"De Zwarte Omroep\"","lang":["nl"],"publisher":"H.W. Alferink en J. Koch","placeOfPublication":"Ede","coverage":"http://dbpedia.org/resource/Ede"}
+{"series":"DDD:PPN:269715657","title":"De Kleefse koerier : vanouds \"De Zwarte Omroep\"","lang":["nl"],"publisher":"H.W. Alferink en J. Koch","placeOfPublication":"Ede","coverage":"http://dbpedia.org/resource/Ede%2C_Netherlands"}
 {"series":"DDD:PPN:269715916","title":"Klein journaal","lang":["nl"],"publisher":"A. Rodrigues Brent","placeOfPublication":"Gorssel","coverage":"http://dbpedia.org/resource/Gorssel"}
 {"series":"DDD:PPN:269716068","title":"De Kleine kroniek","lang":["nl"],"publisher":"A. Rodrigues Brent","placeOfPublication":"Gorssel","coverage":"http://dbpedia.org/resource/Gorssel"}
 {"series":"DDD:PPN:26971619X","title":"Het Kleine ochtendblad","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
@@ -646,7 +646,7 @@
 {"series":"DDD:PPN:271544546","title":"De Politiek-militaire toestand","lang":["nl","de","en"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:271544953","title":"De Postduif","lang":["nl","de","en"],"publisher":"[s.n.]","placeOfPublication":"Zwanenburg","coverage":"http://dbpedia.org/resource/Zwanenburg"}
 {"series":"DDD:PPN:271545232","title":"Pravda","lang":["nl"],"publisher":"[De Vrĳe Pers]","placeOfPublication":"Haarlem","coverage":"http://dbpedia.org/resource/Haarlem"}
-{"series":"DDD:PPN:271546395","title":"Pro patria","lang":["nl"],"publisher":"J.M. Snoek en J.W. Hackett","placeOfPublication":"Ede","coverage":"http://dbpedia.org/resource/Ede"}
+{"series":"DDD:PPN:271546395","title":"Pro patria","lang":["nl"],"publisher":"J.M. Snoek en J.W. Hackett","placeOfPublication":"Ede","coverage":"http://dbpedia.org/resource/Ede%2C_Netherlands"}
 {"series":"DDD:PPN:271546468","title":"Pro patria","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Nieuwer-Amstel (Amstelveen)","coverage":"http://dbpedia.org/resource/Amstelveen"}
 {"series":"DDD:PPN:271547081","title":"Quo usque tandem : vrĳ blad tot weerlegging van de leugen","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:271547472","title":"Radio-courant","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
