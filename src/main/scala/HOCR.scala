@@ -21,100 +21,52 @@ object HOCR {
     spark.sparkContext.binaryFiles(args(0), spark.sparkContext.defaultParallelism)
       .filter(_._1.endsWith(".hocr"))
       .flatMap( in => {
-        val fname = new java.io.File(new java.net.URL(in._1).toURI)
-        val id = in._1.replaceAll(".hocr$", "")
-        val buf = new StringBuilder
-        val regions = new ArrayBuffer[Region]
-        var buffering = false
-        var seq = -1
-        var page = new Page("", -1, 0, 0, 0, new Array[Region](0))
-        var region = new Region(0, 0, Coords(0,0,0,0,0))
+        try {
+          val id = in._1.replaceAll(".hocr$", "")
+          val buf = new StringBuilder
+          val regions = new ArrayBuffer[Region]
+          var seq = -1
 
-        val pass = new XMLEventReader(scala.io.Source.fromURL(in._1))
-        pass.flatMap { event =>
-          event match {
-            case EvElemStart(_, "div", attr, _) => {
-              Try(attr("class").text).getOrElse("") match {
-                case "ocr_page" => {
-                  val res = if ( seq >= 0 ) {
-                    Some((page.id, id, seq, buf.toString, Array(page.copy(regions=regions.toArray))))
-                  } else
-                    None
-                  seq += 1
-                  val pageID = id + "#" + attr("id").text
-                  page = Try(attr("title").text).getOrElse("") match {
-                    case bboxPat(l, t, r, b) =>
-                      new Page(pageID, seq, r.toInt, b.toInt, 0, new Array[Region](0))
-                    case _ =>
-                      new Page(pageID, seq, 0, 0, 0, new Array[Region](0))
-                  }
-                  buf.clear
-                  regions.clear
-                  res
-                }
-                case _ => None
-              }
-            }
-            case EvElemEnd(_, "p") => {
-              if ( !buf.isEmpty ) buf ++= "\n"
-              None
-            }
-            case EvElemEnd(_, "body") => {
-              if ( seq >= 0 ) {
-                Some((page.id, id, seq, buf.toString, Array(page.copy(regions=regions.toArray))))
-              } else {
-                None
-              }
-            }
-            case EvElemStart(_, "span", attr, _) => {
-              Try(attr("class").text).getOrElse("") match {
-                case "ocr_line" => {
-                  if ( !buf.isEmpty ) buf ++= "\n"
-                }
-                case "ocrx_word" => {
+          val raw = scala.io.Source.fromURL(in._1).mkString
+
+          val tree = scala.xml.XML.loadString(raw.replaceAll("<!DOCTYPE[^>]*>\n?", ""))
+
+          (tree \\ "div")
+            .filter(node => node.attribute("class").exists(c => c.text == "ocr_page"))
+            .flatMap { page =>
+            (page \\ "p") foreach { p =>
+              (p \ "span") foreach { line =>
+                (line \ "span") foreach { w =>
                   if ( !buf.isEmpty && buf.last != '\n' ) buf ++= " "
-                  buffering = true
-                  Try(attr("title").text).getOrElse("") match {
+                  Try((w \ "@title").text).getOrElse("") match {
                     case bboxPat(l, t, r, b) => {
-                      region = Region(buf.size, 0,
+                      regions += Region(buf.size, w.text.length,
                         Coords(l.toInt, t.toInt,
                           r.toInt - l.toInt, b.toInt - t.toInt, b.toInt - t.toInt))
                     }
                     case _ =>
                   }
+                  buf ++= w.text
                 }
-                case _ =>
+                if ( !buf.isEmpty ) buf ++= "\n"
               }
-              None
+              if ( !buf.isEmpty ) buf ++= "\n"
             }
-            case EvElemEnd(_, "span") => {
-              if ( buffering ) {
-                if ( buf.size > region.start ) {
-                  regions += region.copy(length = (buf.size - region.start))
-                }
-                buffering = false
-              }
-              None
+            var width = 0
+            var height = 0
+            Try((page \ "@title").text).getOrElse("") match {
+              case bboxPat(l, t, r, b) =>
+                width = r.toInt
+                height = b.toInt
+              case _ =>
             }
-            case EvText(t) => { // remove leading whitespace only if we haven't added anything
-              if ( buffering ) buf ++= t.trim
-              None
-            }
-            case EvEntityRef(n) => {
-              if ( buffering ) {
-                buf ++= (n match {
-                  case "amp" => "&"
-                  case "lt" => "<"
-                  case "gt" => ">"
-                  case "apos" => "'"
-                  case "quot" => "\""
-                  case _ => ""
-                })
-              }
-              None
-            }
-            case _ => None
+            seq += 1
+            Some((id, id, seq, buf.toString, Array(Page(id, seq, width, height, 0, regions.toArray))))
           }
+        } catch {
+          case ex: Exception =>
+            Console.err.println("## " + in._1 + ": " + ex.toString)
+            None
         }
       })
       .toDF("id", "book", "seq", "text", "pages")
