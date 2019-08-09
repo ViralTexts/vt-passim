@@ -24,6 +24,12 @@ slurm_run = srun -p ${QUEUE} -N 1 -c 2 bash -c "$(1)";
 %/ref.parquet/_SUCCESS:	%/out.parquet/_SUCCESS
 	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.sql.shuffle.partitions=8000'; $(VT)/bin/pretty-cluster meta $(dir $<) $(patsubst %/,%,$(dir $@)) 'ref = 1')
 
+%/gtr.parquet/_SUCCESS:	%/out.parquet/_SUCCESS
+	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.sql.shuffle.partitions=8000'; $(VT)/bin/pretty-cluster meta $(dir $<) $(patsubst %/,%,$(dir $@)) \"corpus = 'gtr'\")
+
+%/vac.csv/_SUCCESS:	%/out.parquet/_SUCCESS
+	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.sql.shuffle.partitions=8000 --conf spark.driver.maxResultSize=12G'; $(VT)/bin/pretty-cluster meta $(dir $<) $(patsubst %/,%,$(dir $@)) \"corpus = 'vac'\")
+
 %/ref.csv/_SUCCESS:	%/out.parquet/_SUCCESS
 	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.sql.shuffle.partitions=8000 --conf spark.driver.maxResultSize=12G'; $(VT)/bin/pretty-cluster meta $(dir $<) $(patsubst %/,%,$(dir $@)) 'ref = 1')
 
@@ -91,11 +97,18 @@ eq := =
 comma := ,
 
 serial.done:	serial/open$(eq)true/corpus$(eq)ca/_SUCCESS \
+	serial/open=true/corpus=bsb/_SUCCESS \
 	serial/open=true/corpus=ddd/_SUCCESS \
+	serial/open=true/corpus=europeana/_SUCCESS \
 	serial/open=true/corpus=finnish/_SUCCESS \
+	serial/open=true/corpus=moa/_SUCCESS \
 	serial/open=true/corpus=onb/_SUCCESS \
+	serial/open=true/corpus=sbb/_SUCCESS \
+	serial/open$(eq)true/corpus$(eq)trove/_SUCCESS \
 	serial/open=false/corpus=aps/_SUCCESS \
-	serial/open=false/corpus=gale-us/_SUCCESS
+	serial/open=false/corpus=gale-uk/_SUCCESS \
+	serial/open=false/corpus=gale-us/_SUCCESS \
+	serial/open=false/corpus=tda/_SUCCESS
 	echo $<
 
 serial/open$(eq)true/corpus$(eq)ca/_SUCCESS:	$(RAW)/chroniclingamerica/raw
@@ -104,17 +117,35 @@ serial/open$(eq)true/corpus$(eq)ca/_SUCCESS:	$(RAW)/chroniclingamerica/raw
 serial/open$(eq)true/corpus$(eq)ddd/_SUCCESS:	$(RAW)/DDD/alto.json
 	$(call spark_run,$(VT)/bin/vtrun MetsAltoDDD $(RAW)/DDD/meta.json $(RAW)/DDD/alto.json $(dir $@))
 
+serial/open$(eq)true/corpus$(eq)europeana/_SUCCESS:	$(RAW)/europeana/newspapers-by-country
+	$(call spark_run,spark-submit $$SPARK_SUBMIT_ARGS $(VT)/scripts/europeana.py $< $(dir $@))
+
 serial/open$(eq)true/corpus$(eq)finnish/_SUCCESS:	$(RAW)/finnish/every
 	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=50 --conf spark.sql.shuffle.partitions=50'; $(VT)/bin/vtrun MetsAltoZipped $< $(dir $@))
+
+serial/open$(eq)true/corpus$(eq)moa/_SUCCESS:	$(RAW)/moa/magazines
+	$(call spark_run,spark-submit $$SPARK_SUBMIT_ARGS --conf spark.default.parallelism=50 --packages 'com.databricks:spark-xml_2.11:0.4.1' $(VT)/scripts/moa-load.py $< $(VT)/data/moa.json $(dir $@))
 
 serial/open$(eq)true/corpus$(eq)onb/_SUCCESS:	$(RAW)/onb/xml
 	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=20 --conf spark.sql.shuffle.partitions=20'; $(VT)/bin/vtrun ONB $</'{dea$(comma)kro}' $(dir $@))
 
+serial/open$(eq)true/corpus$(eq)sbb/_SUCCESS:	$(RAW)/SBB
+	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=50 --conf spark.sql.shuffle.partitions=50'; $(VT)/bin/vtrun MetsAltoZipped $< $(dir $@))
+
+serial/open$(eq)true/corpus$(eq)trove/_SUCCESS:	$(RAW)/trove/issue-458484.json.bz2 $(RAW)/trove/trove-reprinted.json
+	$(call spark_run,spark-submit $$SPARK_SUBMIT_ARGS --conf spark.default.parallelism=2000 --conf spark.sql.shuffle.partitions=2000 $(VT)/scripts/trove-load.py $^ $(dir $@))
+
 serial/open$(eq)false/corpus$(eq)aps/_SUCCESS:	$(RAW)/APS
 	$(call spark_run,$(VT)/bin/vtrun APS $< $(VT)/data/aps.json $(dir $@))
 
+serial/open$(eq)false/corpus$(eq)gale-uk/_SUCCESS:	$(RAW)/gale/uk/XML
+	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=200'; $(VT)/bin/vtrun NCNP $< $(VT)/data/gale.json $(dir $@))
+
 serial/open$(eq)false/corpus$(eq)gale-us/_SUCCESS:	$(RAW)/gale/us/XML
 	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=200'; $(VT)/bin/vtrun NCNP $< $(VT)/data/gale.json $(dir $@))
+
+serial/open$(eq)false/corpus$(eq)tda/_SUCCESS:	$(RAW)/bl/TimesDigitalArchive_XMLS/TDAO0001
+	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=800'; $(VT)/bin/vtrun NCCOIssue $< $(dir $@))
 
 STAMP=$(shell date +'%Y%m%d')
 
@@ -153,11 +184,15 @@ meta/lccn.json:	$(RAW)/chroniclingamerica/lccn
 # 	$(call spark_run,$(VT)/bin/vtrun APSMeta $< $(VT)/data/aps.json aps.json)
 # 	cat aps.json/part* > $@
 
-all-series.out/_SUCCESS:	
+all-series.out/_SUCCESS:	serial.done
 	$(call spark_run,spark-submit $$SPARK_SUBMIT_ARGS $(VT)/scripts/series-list.py serial $(dir $@))
 
 all-series.lis:	all-series.out/_SUCCESS
 	sort all-series.out/part* > $@
+
+lccn.done:	all-series.lis
+	grep '^/lccn/' $< | perl -pe 's/$$/.rdf/' | \
+	    wget -N -B https://chroniclingamerica.loc.gov -i - -P $(RAW)/chroniclingamerica/lccn
 
 tcp-pre1800/out.parquet/_SUCCESS:	tcp-pre1800/input
 	$(call spark_run,passim --docwise -w 4 -s book --fields 'gold' --filterpairs 'gid <> gid2 AND gold2 = 0' --input-format parquet --output-format parquet $< $(dir $(patsubst %/,%,$(dir $@))))
