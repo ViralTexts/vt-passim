@@ -11,14 +11,6 @@ if __name__ == "__main__":
         exit(-1)
     spark = SparkSession.builder.appName('Select c19').getOrCreate()
     raw = spark.read.option('mergeSchema','true').load(sys.argv[1])
-    df = raw.filter(col('date') < '1900')
-
-    spark.conf.set('spark.sql.shuffle.partitions', df.rdd.getNumPartitions() * 2)
-
-    issues = df.groupBy('series', 'date')\
-               .agg(max(struct('open', 'corpus'))['corpus'].alias('corpus'))
-    
-    df.join(issues, ['series', 'date', 'corpus'], 'inner')\
-      .write.save(sys.argv[2])
+    raw.filter(col('date') < '1900').write.save(sys.argv[2])
 
     spark.stop()
