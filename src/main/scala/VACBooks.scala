@@ -83,7 +83,7 @@ object VACBooks {
           buf.toString, locs.toArray))
       })
       .toDF
-      .write.json(args(1))
+      .write.save(args(1))
     spark.stop()
   }
 }
