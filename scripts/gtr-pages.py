@@ -1,5 +1,6 @@
 from __future__ import print_function
-import json, os, sys
+import json, os, sys, time
+import urllib.request
 
 if __name__ == '__main__':
     if len(sys.argv) < 3:
@@ -16,3 +17,10 @@ if __name__ == '__main__':
                 out = open(os.path.join(outdir, rec['name'] + '.html'), 'w')
                 print(rec['text'], file=out)
                 out.close()
+                if rec['images']:
+                    for img in rec['images']:
+                        try:
+                            urllib.request.urlretrieve(img['src'], os.path.join(outdir, img['id'] + '.jpg'))
+                        except:
+                            print('# Error downloading "%s"' % img['src'], file=sys.stderr)
+                        time.sleep(0.1)
