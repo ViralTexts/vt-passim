@@ -17,7 +17,7 @@ if __name__ == '__main__':
                 out = open(os.path.join(outdir, rec['name'] + '.html'), 'w')
                 print(rec['text'], file=out)
                 out.close()
-                if rec['images']:
+                if 'images' in rec:
                     for img in rec['images']:
                         try:
                             urllib.request.urlretrieve(img['src'], os.path.join(outdir, img['id'] + '.jpg'))
