@@ -111,8 +111,8 @@ serial.done:	serial/open$(eq)true/corpus$(eq)ca/_SUCCESS \
 	serial/open=false/corpus=tda/_SUCCESS
 	echo $<
 
-serial/open$(eq)true/corpus$(eq)ca/_SUCCESS:	$(RAW)/chroniclingamerica/raw
-	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=2000 --conf spark.sql.shuffle.partitions=32000'; $(VT)/bin/vtrun ChronAm $< $(dir $@))
+serial/open$(eq)true/corpus$(eq)ca/_SUCCESS:	$(RAW)/chroniclingamerica/raw ca-files.json/_SUCCESS
+	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=2000 --conf spark.sql.shuffle.partitions=32000'; $(VT)/bin/vtrun ChronAm $< ca-files.json $(dir $@))
 
 serial/open$(eq)true/corpus$(eq)ddd/_SUCCESS:	$(RAW)/DDD/alto.json
 	$(call spark_run,$(VT)/bin/vtrun MetsAltoDDD $(RAW)/DDD/meta.json $(RAW)/DDD/alto.json $(dir $@))
@@ -165,9 +165,9 @@ ref/corpus$(eq)gtr/_SUCCESS:	../Going-the-Rounds/transcriptions
 	$(RM) -r $(dir $@)
 	$(call slurm_run,spark-submit $(VT)/scripts/ed-load.py $< $(dir $@))
 
-ref/corpus$(eq)vac/_SUCCESS:	$(RAW)/wright.json
+ref/corpus$(eq)vac/_SUCCESS:	$(RAW)/vac/xml
 	$(RM) -r $(dir $@)
-	$(call slurm_run,spark-submit $(VT)/scripts/vac-load.py $< $(dir $@))
+	$(call spark_run,vtrun VACBooks $< $(dir $@))
 
 ref/corpus$(eq)bible/_SUCCESS:
 	$(call slurm_run,spark-submit $(VT)/scripts/cts-load.py ../../cts/bible $(dir $@))
@@ -194,9 +194,17 @@ lccn.done:	all-series.lis
 	grep '^/lccn/' $< | perl -pe 's/$$/.rdf/' | \
 	    wget -N -B https://chroniclingamerica.loc.gov -i - -P $(RAW)/chroniclingamerica/lccn
 
+ca-files.json/_SUCCESS:	$(RAW)/chroniclingamerica/batches
+	$(call spark_run,spark-submit $$SPARK_SUBMIT_ARGS $(VT)/scripts/ca-image-ids.py '$</*/manifest*.txt' $(dir $@))
+
 tcp-pre1800/out.parquet/_SUCCESS:	tcp-pre1800/input
 	$(call spark_run,passim --docwise -w 4 -s book --fields 'gold' --filterpairs 'gid <> gid2 AND gold2 = 0' --input-format parquet --output-format parquet $< $(dir $(patsubst %/,%,$(dir $@))))
 
 %/llspikes.csv/_SUCCESS:	%/out.parquet/_SUCCESS
 	$(call spark_run,spark-submit $$SPARK_SUBMIT_ARGS term-spikes.py $*/out.parquet $*/llspikes.csv)
 
+%/gtr.pages.json/_SUCCESS:	%/gtr.parquet/_SUCCESS
+	$(call spark_run,spark-submit $$SPARK_SUBMIT_ARGS $(VT)/scripts/gtr-cluster.py $(dir $<) $(dir $@))
+
+%/gtr.html:	%/gtr.pages.json/_SUCCESS
+	$(call slurm_run,python $(VT)/scripts/gtr-pages.py $(dir $<) $@)
