@@ -8,15 +8,23 @@ import collection.JavaConversions._
 import scala.collection.mutable.{ArrayBuffer, StringBuilder}
 import scala.util.Try
 
-import vtpassim.pageinfo._
+case class CToken(c: Array[Int], s: Int, l: Int)
 
-case class RawCARecord(id: String, caid: String,
-  issue: String, series: String, ed: String, seq: Int,
-  batch: String, date: String, text: String,
-  width: Int, height: Int, dpi: Int, regions: Array[Region])
+case class ImpressoToken(c: Array[Int], tx: String)
+case class ImpressoLine(c: Array[Int], t: Array[ImpressoToken])
+case class ImpressoParagraph(l: Array[ImpressoLine])
+case class ImpressoRegion(c: Array[Int], p: Array[ImpressoParagraph], pOf: String)
+
+case class RawImpresso(id: String, caid: String, issue: String, pid: String, seq: Int,
+  date: String, rb: Array[Int], lb: Array[Int], text: String,
+  ctokens: Array[CToken], r: Array[ImpressoRegion])
 
 object ImpressoChronAm {
   def cleanInt(s: String): Int = s.replaceFirst("\\.0*$", "").toInt
+  def getCoords(e: scala.xml.Node): Array[Int] = Try(Array[Int](cleanInt(e \ "@HPOS" text),
+    cleanInt(e \ "@VPOS" text),
+    cleanInt(e \ "@WIDTH" text),
+    cleanInt(e \ "@HEIGHT" text))).getOrElse(Array[Int](0,0,0,0))
   def main(args: Array[String]) {
     val spark = SparkSession.builder().appName("ChronAm Import").getOrCreate()
     import spark.implicits._
@@ -24,7 +32,9 @@ object ImpressoChronAm {
     spark.sparkContext.hadoopConfiguration
       .set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
-    val files = spark.read.json(args(1))
+    val edletters = "abcdefghijklmnopqrstuvwxyz"
+
+    // val files = spark.read.json(args(1))
 
     val records =
       spark.sparkContext.newAPIHadoopFile(args(0), classOf[TarballInputFormat],
@@ -37,49 +47,56 @@ object ImpressoChronAm {
           val contents = raw._2.toString
           val clean = if ( contents.startsWith("\ufeff") ) contents.substring(1) else contents
           val t = scala.xml.XML.loadString(clean)
-          val Array(sn, year, month, day, ed, seq, _*) = fname.split("/")
+          val Array(sn, year, month, day, caed, caseq, _*) = fname.split("/")
           val series = s"/lccn/$sn"
           val date = s"$year-$month-$day"
-          val issue = Seq("/ca", batch, sn, date, ed) mkString "/"
-          val caid = s"$issue/$seq"
+          val caissue = Seq("/ca", batch, sn, date, caed) mkString "/"
+          val caid = s"$caissue/$caseq"
+
+          val ed = caed.replace("ed-", "")
+          val seq = Try(caseq.replace("seq-", "").toInt).getOrElse(0)
+
+          val issue = s"$series-$date-" + edletters(Try(ed.toInt).getOrElse(1) - 1)
+          val id = f"$issue-i$seq%04d"
+          val pid = f"$issue-p$seq%04d"
 
           val sb = new StringBuilder
-          val regions = new ArrayBuffer[Region]
-
-          val width = Try((t \ "Layout" \ "Page" \ "@WIDTH").text.toInt).getOrElse(0)
-          val height = Try((t \ "Layout" \ "Page" \ "@HEIGHT").text.toInt).getOrElse(0)
-
-          val dpi = Try(1200 / "xdpi:([0-9]+)".r.findFirstMatchIn((t \ "Description" \\ "processingStepSettings").text).get.group(1).toInt).getOrElse(0)
+          val ctokens = new ArrayBuffer[CToken]
+          val rb = new ArrayBuffer[Int]
+          val lb = new ArrayBuffer[Int]
+          val regions = new ArrayBuffer[ImpressoRegion]
 
           (t \\ "TextBlock") foreach { block =>
+            val lines = new ArrayBuffer[ImpressoLine]
+            rb += sb.size
             (block \ "TextLine" ) foreach { line =>
+              val tokens = new ArrayBuffer[ImpressoToken]
+              lb += sb.size
               (line \ "_") foreach { e =>
                 e.label match {
                   case "String" =>
                     val start = sb.size
-                    sb ++= (e \ "@CONTENT").text
-                    try {
-                      regions += Region(start, sb.size - start,
-                        Coords(cleanInt(e \\ "@HPOS" text), cleanInt(e \\ "@VPOS" text),
-                          cleanInt(e \\ "@WIDTH" text), cleanInt(e \\ "@HEIGHT" text),
-                          cleanInt(e \\ "@HEIGHT" text)))
-                    } catch {
-                      case ex: Exception =>
-                    }
+                    val tx = (e \ "@CONTENT").text
+                    sb ++= tx
+                    val c = getCoords(e)
+                    ctokens += CToken(c, start, sb.size - start)
+                    tokens += ImpressoToken(c, tx)
                   case "SP" => sb ++= " "
                   case "HYP" => sb ++= "\u00ad"
                   case _ =>
                 }
               }
               sb ++= "\n"
+              lines += ImpressoLine(getCoords(line), tokens.toArray)
             }
             sb ++= "\n"
+            regions += ImpressoRegion(getCoords(block),
+              Array(ImpressoParagraph(lines.toArray)), pid)
           }
 
-        val nseq = Try(seq.replace("seq-", "").toInt).getOrElse(0)
-
-        Some(CARecord(caid, issue, series, ed.replace("ed-", ""), nseq,
-          batch, date, sb.toString, width, height, dpi, regions.toArray))
+          Some(RawImpresso(id, caid, issue, f"$issue-p$seq%04d", seq, date,
+            rb.toArray, lb.toArray,
+            sb.toString, ctokens.toArray, regions.toArray))
       } catch {
         case ex: Exception =>
           Console.err.println("## " + fname + ": " + ex.toString)
@@ -87,11 +104,12 @@ object ImpressoChronAm {
       }
     }
       .toDF
-      .dropDuplicates("id") // NB: id now includes batch
-      .join(files.select("id", "file"), "id")
-      .withColumn("pages", array(struct('file as "id", 'seq, 'width, 'height, 'dpi, 'regions)))
-      .drop("file", "width", "height", "dpi", "regions")
-      .write.save(args(2))
+      // .dropDuplicates("id") // NB: id now includes batch
+      // .join(files.select("id", "file"), "id")
+      // .withColumn("pages", array(struct('file as "id", 'seq, 'width, 'height, 'dpi, 'regions)))
+      // .drop("file", "width", "height", "dpi", "regions")
+
+    records.write.json(args(2))
     spark.stop()
   }
 }
