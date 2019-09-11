@@ -2,7 +2,7 @@ package vtpassim
 
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions.{array, struct, collect_list, max, sort_array, lit,
-  regexp_replace, from_unixtime, unix_timestamp}
+  regexp_replace, from_unixtime, unix_timestamp, concat}
 import org.apache.hadoop.io.Text
 
 import collection.JavaConversions._
@@ -122,8 +122,11 @@ object ImpressoChronAm {
       lit(true) as "cc", 'cdt, 'r)
       .write.json(args(2) + "/pages")
 
-    records.select('id, lit(false) as "olr", array('seq) as "pp", 'date as "d",
-      lit("ar") as "tp", 'text as "ft", 'lb, 'rb as "pb", 'rb,
+    records.select('id, lit("ar") as "tp", lit(true) as "cc", lit(false) as "olr",
+      array('seq) as "pp",
+      'date as "d",
+      concat(regexp_replace('cdt, " ", "T"), lit("Z")) as "ts",
+      'text as "ft", 'lb, 'rb as "pb", 'rb,
       array(struct('pid as "id", 'seq as "n", 'ctokens as "t")) as "ppreb")
       .write.json(args(2) + "/contentitems")
 
