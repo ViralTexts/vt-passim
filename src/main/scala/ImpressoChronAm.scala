@@ -1,7 +1,8 @@
 package vtpassim
 
 import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions.{array, struct}
+import org.apache.spark.sql.functions.{array, struct, collect_list, max, sort_array, lit,
+  regexp_replace, from_unixtime, unix_timestamp}
 import org.apache.hadoop.io.Text
 
 import collection.JavaConversions._
@@ -34,7 +35,7 @@ object ImpressoChronAm {
 
     val edletters = "abcdefghijklmnopqrstuvwxyz"
 
-    // val files = spark.read.json(args(1))
+    val files = spark.read.json(args(1))
 
     val records =
       spark.sparkContext.newAPIHadoopFile(args(0), classOf[TarballInputFormat],
@@ -94,22 +95,39 @@ object ImpressoChronAm {
               Array(ImpressoParagraph(lines.toArray)), pid)
           }
 
-          Some(RawImpresso(id, caid, issue, f"$issue-p$seq%04d", seq, date,
+          Some(RawImpresso(id, caid, issue, pid, seq, date,
             rb.toArray, lb.toArray,
             sb.toString, ctokens.toArray, regions.toArray))
-      } catch {
-        case ex: Exception =>
-          Console.err.println("## " + fname + ": " + ex.toString)
-          None
+        } catch {
+          case ex: Exception =>
+            Console.err.println("## " + fname + ": " + ex.toString)
+            None
+        }
       }
-    }
-      .toDF
-      // .dropDuplicates("id") // NB: id now includes batch
-      // .join(files.select("id", "file"), "id")
-      // .withColumn("pages", array(struct('file as "id", 'seq, 'width, 'height, 'dpi, 'regions)))
-      // .drop("file", "width", "height", "dpi", "regions")
+        .toDF
+        .dropDuplicates("caid")
+        .join(files.select($"id" as "caid", $"file"), "caid")
+        .dropDuplicates("id")
+        .withColumn("cdt", from_unixtime(unix_timestamp()))
 
-    records.write.json(args(2))
+    records.groupBy("issue")
+      .agg(max('cdt) as "cdt",
+        sort_array(collect_list(struct('id, array("seq") as "pp", lit("page") as "tp") as "m")) as "i",
+        sort_array(collect_list("pid")) as "pp")
+      .select('issue as "id", 'cdt, 'i, 'pp, lit("open_public") as "ar")
+      .write.json(args(2) + "/issues")
+
+    records.select('pid as "id",
+      regexp_replace('file, "/", "%2F") as "iiif",
+      lit(true) as "cc", 'cdt, 'r)
+      .write.json(args(2) + "/pages")
+
+    records.select('id, lit(false) as "olr", array('seq) as "pp", 'date as "d",
+      lit("ar") as "tp", 'text as "ft", 'lb, 'rb as "pb", 'rb,
+      array(struct('pid as "id", 'seq as "n", 'ctokens as "t")) as "ppreb")
+      .write.json(args(2) + "/contentitems")
+
+    //records.write.json(args(2))
     spark.stop()
   }
 }
