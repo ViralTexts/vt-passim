@@ -112,8 +112,8 @@ object ImpressoChronAm {
 
     records.groupBy("issue")
       .agg(max('cdt) as "cdt",
-        sort_array(collect_list(struct('id, array("seq") as "pp",
-          lit("page") as "tp") as "m")) as "i",
+        sort_array(collect_list(struct(struct('id, array("seq") as "pp",
+          lit("page") as "tp") as "m"))) as "i",
         sort_array(collect_list("pid")) as "pp")
       .select('issue as "id", 'cdt, 'i, 'pp, lit("open_public") as "ar")
       .write.json(args(2) + "/issues")
