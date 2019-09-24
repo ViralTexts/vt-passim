@@ -49,7 +49,7 @@ object ImpressoChronAm {
           val clean = if ( contents.startsWith("\ufeff") ) contents.substring(1) else contents
           val t = scala.xml.XML.loadString(clean)
           val Array(sn, year, month, day, caed, caseq, _*) = fname.split("/")
-          val series = s"/lccn/$sn"
+          val series = sn
           val date = s"$year-$month-$day"
           val caissue = Seq("/ca", batch, sn, date, caed) mkString "/"
           val caid = s"$caissue/$caseq"
