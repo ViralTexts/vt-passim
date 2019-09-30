@@ -2,7 +2,7 @@ package vtpassim
 
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions.{array, struct, collect_list, max, sort_array, lit,
-  regexp_replace, from_unixtime, unix_timestamp, concat}
+  regexp_replace, from_unixtime, unix_timestamp, concat, year}
 import org.apache.hadoop.io.Text
 
 import collection.JavaConversions._
@@ -17,7 +17,7 @@ case class ImpressoParagraph(l: Array[ImpressoLine])
 case class ImpressoRegion(c: Array[Int], p: Array[ImpressoParagraph], pOf: String)
 
 case class RawImpresso(id: String, caid: String, issue: String, pid: String, seq: Int,
-  date: String, rb: Array[Int], lb: Array[Int], text: String,
+  series: String, date: String, rb: Array[Int], lb: Array[Int], text: String,
   ctokens: Array[CToken], r: Array[ImpressoRegion])
 
 object ImpressoChronAm {
@@ -95,7 +95,7 @@ object ImpressoChronAm {
               Array(ImpressoParagraph(lines.toArray)), pid)
           }
 
-          Some(RawImpresso(id, caid, issue, pid, seq, date,
+          Some(RawImpresso(id, caid, issue, pid, seq, series, date,
             rb.toArray, lb.toArray,
             sb.toString, ctokens.toArray, regions.toArray))
         } catch {
@@ -109,28 +109,36 @@ object ImpressoChronAm {
         .join(files.select($"id" as "caid", $"file"), "caid")
         .dropDuplicates("id")
         .withColumn("cdt", from_unixtime(unix_timestamp()))
+        .withColumn("year", year('date))
+        .repartition('series, 'year)
 
-    records.groupBy("issue")
+    records.groupBy("issue", "series", "year")
       .agg(max('cdt) as "cdt",
         sort_array(collect_list(struct(struct('id, array("seq") as "pp",
           lit("page") as "tp") as "m"))) as "i",
         sort_array(collect_list("pid")) as "pp")
-      .select('issue as "id", 'cdt, 'i, 'pp, lit("open_public") as "ar")
-      .write.json(args(2) + "/issues")
+      .select('series, 'year, 'issue as "id", 'cdt, 'i, 'pp, lit("open_public") as "ar")
+      .write.partitionBy("series", "year")
+      .option("compression", "bzip2")
+      .json(args(2) + "/issues")
 
-    records.select('pid as "id",
+    records.select('series, 'year, 'pid as "id",
       concat(lit("https://chroniclingamerica.loc.gov/iiif/2/"),
         regexp_replace('file, "/", "%2F")) as "iiif",
       lit(true) as "cc", 'cdt, 'r)
-      .write.json(args(2) + "/pages")
+      .write.partitionBy("series", "year")
+      .option("compression", "bzip2")
+      .json(args(2) + "/pages")
 
-    records.select('id, lit("ar") as "tp", lit(true) as "cc", lit(false) as "olr",
+    records.select('series, 'year, 'id, lit("ar") as "tp", lit(true) as "cc", lit(false) as "olr",
       array('seq) as "pp",
       'date as "d",
       concat(regexp_replace('cdt, " ", "T"), lit("Z")) as "ts",
       'text as "ft", 'lb, 'rb as "pb", 'rb,
       array(struct('pid as "id", 'seq as "n", 'ctokens as "t")) as "ppreb")
-      .write.json(args(2) + "/contentitems")
+      .write.partitionBy("series", "year")
+      .option("compression", "bzip2")
+      .json(args(2) + "/contentitems")
 
     spark.stop()
   }
