@@ -2,7 +2,7 @@ from __future__ import print_function
 import sys
 from pyspark.sql import SparkSession
 from pyspark.ml.feature import Tokenizer, RegexTokenizer
-from pyspark.sql.functions import col, udf, substring, min, count, explode, lower, sum, desc, countDistinct
+from pyspark.sql.functions import col, udf, substring, min, count, explode, lower, sum, desc, countDistinct, coalesce, regexp_replace
 from pyspark.sql.types import DoubleType
 from math import log
 
@@ -27,6 +27,14 @@ if __name__ == '__main__':
         exit(-1)
     spark = SparkSession.builder.appName('Rank term spikes').getOrCreate()
 
+    corpus_lang = {'bsb': 'de', 'ca': 'en', 'ddd': 'nl', 'gale-uk': 'en',
+                   'gale-us': 'en', 'moa': 'en', 'onb': 'de',
+                   'sbb': 'de', 'tda': 'en', 'trove': 'en', 'vac': 'en'}
+
+    lang_norm = { 'English': 'en', 'eng': 'en', 'ger': 'de', 'German': 'de',
+                  'fre': 'fr', 'French': 'fr', 'Russian': 'ru',
+                  'Croatian': 'hr' }
+    
     ecorp = ['ca', 'moa', 'trove', 'aps', 'gale-us', 'gale-uk', 'tda']
 
     stops = ['january', 'february', 'march', 'april', 'may', 'june', 'july',
@@ -34,7 +42,13 @@ if __name__ == '__main__':
              'januar', 'februar', 'maart', 'junij', 'julij', 'oktober', 'dezember',
              'weihnachts', 'weihnachten']
 
-    clusters = spark.read.load(sys.argv[1])
+    clusters = spark.read.load(sys.argv[1]) \
+                         .withColumn('corpus_lang', col('corpus')) \
+                         .na.replace(corpus_lang.keys(), corpus_lang.values(), 'corpus_lang') \
+                            .replace('', None, 'lang') \
+                        .withColumn('lang', regexp_replace(coalesce('doc_lang', 'lang', 'corpus_lang'), ',.*$', '')) \
+                        .na.replace(lang_norm.keys(), lang_norm.values(), 'lang')
+
     months = clusters.filter(col('date').rlike('^\\d{4}-\\d\\d-'))\
                      .select(col('cluster'), substring('date', 0, 7).alias('month')) \
                      .groupBy('cluster').agg(min('month').alias('month'))
@@ -49,7 +63,7 @@ if __name__ == '__main__':
     words = \
         regexTokenizer \
         .transform(clusters) \
-        .select('cluster', 'corpus', explode('words').alias('word')) \
+        .select('cluster', 'corpus', 'lang', explode('words').alias('word')) \
         .withColumn('word', lower(col('word'))) \
         .filter(~col('word').isin(stops)) \
         .distinct() \
