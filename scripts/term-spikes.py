@@ -35,8 +35,6 @@ if __name__ == '__main__':
                   'fre': 'fr', 'French': 'fr', 'Russian': 'ru',
                   'Croatian': 'hr' }
     
-    ecorp = ['ca', 'moa', 'trove', 'aps', 'gale-us', 'gale-uk', 'tda']
-
     stops = ['january', 'february', 'march', 'april', 'may', 'june', 'july',
              'august', 'september', 'october', 'november', 'december', 'christmas',
              'januar', 'februar', 'maart', 'junij', 'julij', 'oktober', 'dezember',
@@ -44,10 +42,10 @@ if __name__ == '__main__':
 
     clusters = spark.read.load(sys.argv[1]) \
                          .withColumn('corpus_lang', col('corpus')) \
-                         .na.replace(corpus_lang.keys(), corpus_lang.values(), 'corpus_lang') \
+                         .na.replace(list(corpus_lang.keys()), list(corpus_lang.values()), 'corpus_lang') \
                             .replace('', None, 'lang') \
                         .withColumn('lang', regexp_replace(coalesce('doc_lang', 'lang', 'corpus_lang'), ',.*$', '')) \
-                        .na.replace(lang_norm.keys(), lang_norm.values(), 'lang')
+                        .na.replace(list(lang_norm.keys()), list(lang_norm.values()), 'lang')
 
     months = clusters.filter(col('date').rlike('^\\d{4}-\\d\\d-'))\
                      .select(col('cluster'), substring('date', 0, 7).alias('month')) \
@@ -67,14 +65,13 @@ if __name__ == '__main__':
         .withColumn('word', lower(col('word'))) \
         .filter(~col('word').isin(stops)) \
         .distinct() \
-        .withColumn('inen', col('corpus').isin(ecorp).cast('int')) \
-        .withColumn('innonen', (~col('corpus').isin(ecorp)).cast('int')) \
         .join(months, 'cluster') \
         .groupBy('month', 'word') \
         .agg(countDistinct('cluster').alias('freq'),
-             sum('inen').alias('ecount'), sum('innonen').alias('nonecount')) \
-        .filter( (col('ecount') > 1) & (col('nonecount') > 1) ) \
-
+             countDistinct('lang').alias('lang'),
+             countDistinct('corpus').alias('corpus')) \
+        .filter( (col('lang') >= 3) & (col('corpus') >= 3) )
+    
     totwords = words.groupBy('word').agg(sum('freq').alias('total'))
 
     gstat = udf(lambda a, n1, n2: dunningG(a, n1, n2, N), DoubleType())
