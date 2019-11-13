@@ -120,6 +120,7 @@ object ImpressoChronAm {
       .select('series, 'year, 'issue as "id", 'cdt, 'i, 'pp, lit("open_public") as "ar")
       .write.partitionBy("series", "year")
       .option("compression", "bzip2")
+      .mode("ignore")
       .json(args(2) + "/issues")
 
     records.select('series, 'year, 'pid as "id",
@@ -128,6 +129,7 @@ object ImpressoChronAm {
       lit(true) as "cc", 'cdt, 'r)
       .write.partitionBy("series", "year")
       .option("compression", "bzip2")
+      .mode("ignore")
       .json(args(2) + "/pages")
 
     records.select('series, 'year, 'id, lit("ar") as "tp", lit(true) as "cc", lit(false) as "olr",
@@ -138,6 +140,7 @@ object ImpressoChronAm {
       array(struct('pid as "id", 'seq as "n", 'ctokens as "t")) as "ppreb")
       .write.partitionBy("series", "year")
       .option("compression", "bzip2")
+      .mode("ignore")
       .json(args(2) + "/contentitems")
 
     spark.stop()
