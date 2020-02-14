@@ -22,9 +22,7 @@ object HOCR {
       .filter(_._1.endsWith(".hocr"))
       .flatMap( in => {
         try {
-          val id = in._1.replaceAll(".hocr$", "")
-          val buf = new StringBuilder
-          val regions = new ArrayBuffer[Region]
+          val book = in._1.replaceAll(".hocr$", "")
           var seq = -1
 
           val raw = scala.io.Source.fromURL(in._1).mkString
@@ -34,6 +32,9 @@ object HOCR {
           (tree \\ "div")
             .filter(node => node.attribute("class").exists(c => c.text == "ocr_page"))
             .flatMap { page =>
+            val id = book + Try("#" + (page \ "@id").text).getOrElse("")
+            val buf = new StringBuilder
+            val regions = new ArrayBuffer[Region]
             (page \\ "p") foreach { p =>
               (p \ "span") foreach { line =>
                 (line \ "span") foreach { w =>
@@ -61,7 +62,7 @@ object HOCR {
               case _ =>
             }
             seq += 1
-            Some((id, id, seq, buf.toString, Array(Page(id, seq, width, height, 0, regions.toArray))))
+            Some((id, book, seq, buf.toString, Array(Page(id, seq, width, height, 0, regions.toArray))))
           }
         } catch {
           case ex: Exception =>
