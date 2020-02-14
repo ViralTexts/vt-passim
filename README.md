@@ -32,7 +32,7 @@ $ vtrun HOCR <input> <output>
 
 By default, this will convert the data into records in the binary parquet format used by Apache Spark.  To request that Spark output data in the JSON format, append the following option to the `SPARK_SUBMIT_ARGS` environment variable:
 ```
-$ SPARK_SUBMIT_ARGS='--conf spark.sql.source.default=json' vtrun HOCR <input> <output>
+$ SPARK_SUBMIT_ARGS='--conf spark.sql.sources.default=json' vtrun HOCR <input> <output>
 ```
 
 Some useful format conversion classes are:
