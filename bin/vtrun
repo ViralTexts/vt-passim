@@ -7,7 +7,13 @@ SPARK_SUBMIT_ARGS="$SPARK_SUBMIT_ARGS"
 class=$1
 shift
 
-spark-submit --class vtpassim.$class \
-	     --packages 'com.github.scopt:scopt_2.11:3.5.0,com.databricks:spark-xml_2.11:0.4.1,edu.stanford.nlp:stanford-corenlp:3.6.0,edu.stanford.nlp:stanford-corenlp:3.6.0-models,com.google.protobuf:protobuf-java:2.6.1,org.kamranzafar:jtar:2.2' \
-	     $SPARK_SUBMIT_ARGS \
-	     "$VTPASSIM_HOME"/target/scala-2.11/vtpassim_2.11-0.1.0.jar "$@"
+if [[ "$class" == *.py ]]; then
+    spark-submit --packages 'com.databricks:spark-xml_2.11:0.4.1' \
+		 $SPARK_SUBMIT_ARGS \
+		 "$VTPASSIM_HOME"/scripts/"$class" "$@";
+else
+    spark-submit --class vtpassim.$class \
+		 --packages 'com.github.scopt:scopt_2.11:3.5.0,com.databricks:spark-xml_2.11:0.4.1,edu.stanford.nlp:stanford-corenlp:3.6.0,edu.stanford.nlp:stanford-corenlp:3.6.0-models,com.google.protobuf:protobuf-java:2.6.1,org.kamranzafar:jtar:2.2' \
+		 $SPARK_SUBMIT_ARGS \
+		 "$VTPASSIM_HOME"/target/scala-2.11/vtpassim_2.11-0.1.0.jar "$@";
+fi
