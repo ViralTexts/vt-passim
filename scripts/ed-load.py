@@ -16,7 +16,7 @@ def parseEd(f):
     res = dict()
     inMeta = False
     text = ''
-    for line in f[1].split('\n'):
+    for line in f[1].splitlines():
         if line == '---':
             if inMeta:
                 inMeta = False
