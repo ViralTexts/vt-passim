@@ -9,23 +9,23 @@ import collection.JavaConversions._
 import scala.collection.mutable.{ArrayBuffer, StringBuilder}
 import scala.util.Try
 
-case class CToken(c: Array[Int], s: Int, l: Int)
+case class CToken(c: Array[Float], s: Int, l: Int)
 
-case class ImpressoToken(c: Array[Int], tx: String)
-case class ImpressoLine(c: Array[Int], t: Array[ImpressoToken])
+case class ImpressoToken(c: Array[Float], tx: String)
+case class ImpressoLine(c: Array[Float], t: Array[ImpressoToken])
 case class ImpressoParagraph(l: Array[ImpressoLine])
-case class ImpressoRegion(c: Array[Int], p: Array[ImpressoParagraph], pOf: String)
+case class ImpressoRegion(c: Array[Float], p: Array[ImpressoParagraph], pOf: String)
 
 case class RawImpresso(id: String, caid: String, issue: String, pid: String, seq: Int,
   series: String, date: String, rb: Array[Int], lb: Array[Int], text: String,
   ctokens: Array[CToken], r: Array[ImpressoRegion])
 
 object ImpressoChronAm {
-  def cleanInt(s: String): Int = s.replaceFirst("\\.0*$", "").toInt
-  def getCoords(e: scala.xml.Node): Array[Int] = Try(Array[Int](cleanInt(e \ "@HPOS" text),
-    cleanInt(e \ "@VPOS" text),
-    cleanInt(e \ "@WIDTH" text),
-    cleanInt(e \ "@HEIGHT" text))).getOrElse(Array[Int](0,0,0,0))
+  def roundPct(f: Float): Float = (Math.round(100000.0 * f).toFloat / 1000)
+  def getCoords(e: scala.xml.Node, w: Int, h: Int): Array[Float] = Try(Array[Float](roundPct((e \ "@HPOS" text).toFloat / w),
+    roundPct((e \ "@VPOS" text).toFloat / h),
+    roundPct((e \ "@WIDTH" text).toFloat / w),
+    roundPct((e \ "@HEIGHT" text).toFloat / h))).getOrElse(Array[Float](0,0,0,0))
   def main(args: Array[String]) {
     val spark = SparkSession.builder().appName("ChronAm Import").getOrCreate()
     import spark.implicits._
@@ -67,6 +67,11 @@ object ImpressoChronAm {
           val lb = new ArrayBuffer[Int]
           val regions = new ArrayBuffer[ImpressoRegion]
 
+          val w = Try((t \ "Layout" \ "Page" \ "@WIDTH").text.toInt).getOrElse(1)
+          val h = Try((t \ "Layout" \ "Page" \ "@HEIGHT").text.toInt).getOrElse(1)
+
+          val coords = getCoords(_: scala.xml.Node, w, h)
+
           (t \\ "TextBlock") foreach { block =>
             val lines = new ArrayBuffer[ImpressoLine]
             rb += sb.size
@@ -79,19 +84,19 @@ object ImpressoChronAm {
                     val start = sb.size
                     val tx = (e \ "@CONTENT").text
                     sb ++= tx
-                    val c = getCoords(e)
+                    val c = coords(e)
                     ctokens += CToken(c, start, sb.size - start)
                     tokens += ImpressoToken(c, tx)
                   case "SP" => sb ++= " "
-                  case "HYP" => sb ++= "\u00ad"
+                  case "HYP" => sb ++= "-" // "\u00ad"
                   case _ =>
                 }
               }
-              sb ++= "\n"
-              lines += ImpressoLine(getCoords(line), tokens.toArray)
+              sb ++= " " //"\n"
+              lines += ImpressoLine(coords(line), tokens.toArray)
             }
-            sb ++= "\n"
-            regions += ImpressoRegion(getCoords(block),
+            sb ++= "" //"\n"
+            regions += ImpressoRegion(coords(block),
               Array(ImpressoParagraph(lines.toArray)), pid)
           }
 
