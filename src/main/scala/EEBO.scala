@@ -22,7 +22,8 @@ object EEBO {
       .filter(in => in._1.endsWith(".xml") && !in._1.contains("_manifest_"))
       .flatMap( in => {
         try {
-          val id = in._1.replaceAll(".xml", "")
+          // TODO: ECCO uses these page ID prefixes; check for EEBO?
+          val pref = if ( in._1.contains("drive2") ) "CB" else "CW"
           var seq = -1
 
           val raw = new String(in._2.toArray(), java.nio.charset.StandardCharsets.ISO_8859_1)
@@ -34,7 +35,7 @@ object EEBO {
 
           (tree \\ "text" \ "page")
             .flatMap { page =>
-            val id = (page \ "pageInfo" \ "recordID").text
+            val id = pref + (page \ "pageInfo" \ "recordID").text
             val imageLink = (page \ "pageInfo" \ "imageLink").text
             val buf = new StringBuilder
             val regions = new ArrayBuffer[Region]
