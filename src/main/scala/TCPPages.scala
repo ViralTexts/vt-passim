@@ -39,9 +39,8 @@ object TCPPages {
               buf.clear
               rec
             }
-            case EvElemEnd(_, "text") => {
+            case EvElemEnd(_, "TEI") => {
               if ( buffering ) {
-                seq += 1
                 val text = buf.toString.trim
                 buffering = false
                 buf.clear
@@ -68,7 +67,14 @@ object TCPPages {
               None
             }
             case EvEntityRef(n) => {
-              if ( buffering ) buf ++= "&" + n + ";"
+              if ( buffering ) buf ++= (n match {
+                case "amp" => "&"
+                case "lt" => "<"
+                case "gt" => ">"
+                case "apos" => "'"
+                case "quot" => "\""
+                case _ => ""
+                })
               None
             }
             case _ => None
