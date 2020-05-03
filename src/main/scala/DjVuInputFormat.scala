@@ -83,7 +83,10 @@ private class DjVuRecordReader extends RecordReader[DjVuEntry, Text] {
     val fs = path.getFileSystem(conf)
     val fsin = fs.open(fileSplit.getPath)
 
-    id = path.getParent.getName // Throws exception if file at root, but that'd be bad anyway.
+    val dir = path.getParent.getName // Exception if file at root, but that'd be bad anyway.
+    val base = path.getName.split("_djvu.xml")(0)
+    id = if (dir == base) dir else (dir + "/" + base)
+
     seq = 0
 
     val codec = new CompressionCodecFactory(conf).getCodec(path)
