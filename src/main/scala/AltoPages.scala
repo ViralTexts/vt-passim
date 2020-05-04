@@ -18,15 +18,22 @@ object AltoPages {
     spark.sparkContext.binaryFiles(args(0), spark.sparkContext.defaultParallelism)
       .filter(f => f._1.endsWith(".xml") || f._1.endsWith(".alto"))
       .flatMap( in => {
-        val t = scala.xml.XML.load(in._1)
+        try {
+          val book = in._1.replaceAll(".xml$", "").replaceAll(".alto$", "")
+          val t = scala.xml.XML.load(in._1)
           (t \\ "Page").map { page =>
-            val id = (page \ "@ID").text
+            val id = book + Try("#" + (page \ "@ID").text).getOrElse("")
             val seq = (page \ "@PHYSICAL_IMG_NR").text.toInt
             val (text, regions) = MetsAlto.altoText(page)
-            AltoPage(id, in._1, seq, text,
+            AltoPage(id, book, seq, text,
               Array(Page(id, seq,
                 (page \ "@WIDTH").text.toInt, (page \ "@HEIGHT").text.toInt, 0, regions)))
           }
+        } catch {
+          case ex: Exception =>
+            Console.err.println("## " + in._1 + ": " + ex.toString)
+            None
+        }
       })
       .toDF
       .write.save(args(1))
