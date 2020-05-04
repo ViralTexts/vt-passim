@@ -5,7 +5,7 @@ import collection.JavaConversions._
 import scala.util.Try
 import vtpassim.pageinfo._
 
-case class AltoPage(id: String, series: String, seq: Int, text: String, pages: Array[Page])
+case class AltoPage(id: String, book: String, seq: Int, text: String, pages: Array[Page])
 
 object AltoPages {
   def main(args: Array[String]) {
@@ -16,7 +16,7 @@ object AltoPages {
       .set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
     spark.sparkContext.binaryFiles(args(0), spark.sparkContext.defaultParallelism)
-      .filter(_._1.endsWith(".xml"))
+      .filter(f => f._1.endsWith(".xml") || f._1.endsWith(".alto"))
       .flatMap( in => {
         val t = scala.xml.XML.load(in._1)
           (t \\ "Page").map { page =>
