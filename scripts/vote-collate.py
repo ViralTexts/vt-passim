@@ -26,13 +26,7 @@ def majorityCollate(text, wits):
 
     res = ''
     for col in cols:
-        abest = ''
-        best = 0
-        for s, count in col.items():
-            if count > best:
-                best = count
-                abest = s
-        res += abest
+        res += max(col.items(), key=lambda i: i[1])[0]
     return res.strip().replace('\xad ', '') + '\n'
 
 if __name__ == "__main__":
