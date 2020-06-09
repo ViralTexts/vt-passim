@@ -1,89 +1,39 @@
 import json, os, sys
 from math import log
-import openfst_python as fst
 from pyspark.sql import SparkSession, Row
 from pyspark.sql.functions import col, explode, size, udf, to_json, from_json, struct, length
 from pyspark.sql.types import ArrayType, StringType
 
-def charset(strings):
-    chars = set()
-    for s in strings:
-        for c in s:
-            chars.add(c)
-    return chars
-
-def symbesc(s):
-    return s.replace(' ', '<space>').replace('\n', '<space>').replace('@', '<epsilon>')
-
-def symbolTable(charset):
-    stab = fst.SymbolTable()
-    stab.add_symbol('<epsilon>', 0)
-    idx = 0
-    for c in charset:
-        idx += 1
-        stab.add_symbol(symbesc(c), idx)
-    return stab
-
-def votingMachine(text, wits):
-    stable = symbolTable(charset([text] + [w['alg1'] for w in wits]))
-    compiler = fst.Compiler(acceptor=True, isymbols=stable, keep_isymbols=True, arc_type='log')
-    #compiler = sys.stderr
-    tweight = -log(1.01)
-    state = 0
-    for c in text:
-        cc = symbesc(c)
-        print('%d %d <epsilon>' % (state, state+1), file=compiler)
-        state += 1
-        print('%d %d %s %f' % (state, state+1, cc, tweight), file=compiler)
-        state += 1
-    print('%d %d <epsilon>' % (state, state+1), file=compiler)
-    state += 1
-    final = state
-    print('%d' % (final), file=compiler)
-    for wit in wits:
-        pos = 0
-        w = wit['alg1']
-        t = wit['alg2']
-        for i in range(0, len(t)):
-            if t[i] != '-':
-                c = w[i]
-                pos += 1
-                if i > 0 and t[i-1] == '-':
-                    j = i - 1
-                    istates = list()
-                    while j > 0:
-                        if t[j-1] != '-':
-                            break
-                        j -= 1
-                        state += 1
-                        istates.append(state)
-                    for s1, s2, sym in zip([(pos-1)*2] + istates, istates + [(pos*2)-1], w[j:i]):
-                        print('%d %d %s' % (s1, s2, symbesc(sym)), file=compiler)
-                out = symbesc(c).replace('-', '<epsilon>')
-                print('%d %d %s' % ((pos*2)-1, pos*2, out), file=compiler)
-    a = compiler.compile()
-    return a
-
-def pathStr(a):
-    res = ''
-    stab = a.input_symbols()
-    for state in a.states():
-        for arc in a.arcs(state):
-            c = stab.find(arc.ilabel)
-            if c == '<space>': c = ' '
-            if c == '<nl>': c = '\n'
-            res += c
-    return res
-
 def majorityCollate(text, wits):
-    # return text + str([{'alg1': w.alg1, 'alg2': w.alg2} for w in wits])
-    acc = votingMachine(text, [{'alg1': w.alg1.replace('\xad\n', '@@'), 'alg2': w.alg2} for w in wits[0:20]])
-    acc.rmepsilon()
-    z = fst.shortestpath(fst.arcmap(fst.determinize(acc).minimize(), map_type='to_standard'))
-    res = pathStr(z.topsort()).strip() + '\n'
-    del acc
-    del z
-    return res
+    cols = list()
+    for c in text:
+        cols.append({'': 1.01})
+        cols.append({c: 1.01})
+    # cols.append({'': 1.01})  # alg2 ends in \n by construction
+
+    for wit in wits:
+        idx = 0
+        insert = ''
+        for w, t in zip(wit.alg1, wit.alg2):
+            w = w.replace('\n', ' ').replace('-', '')
+            if t == '-':
+                insert += w
+            else:
+                cols[idx*2][insert] = cols[idx*2].get(insert, 0) + 1
+                insert = ''
+                cols[idx*2 + 1][w] = cols[idx*2 + 1].get(w, 0) + 1
+                idx += 1
+
+    res = ''
+    for col in cols:
+        abest = ''
+        best = 0
+        for s, count in col.items():
+            if count > best:
+                best = count
+                abest = s
+        res += abest
+    return res.strip().replace('\xad ', '') + '\n'
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
