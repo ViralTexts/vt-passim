@@ -17,7 +17,7 @@ def getSeries(fname):
         for f in names:
             if f.endswith('.fulltext.json'):
                 r = json.loads(zf.read(f))
-                if r.has_key('contentAsText') and r.has_key('identifier'):
+                if ('contentAsText' in r) and ('identifier' in r):
                     issue = 'europeana/' + sub('^.*/([^/]+)$', '\\1', r['identifier'][0])
                     date = r['date'][0]
                     lang = r['language'][0]
