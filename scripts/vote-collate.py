@@ -14,8 +14,8 @@ def majorityCollate(text, wits):
     for wit in wits:
         idx = 0
         insert = ''
-        for w, t in zip(wit.alg1, wit.alg2):
-            w = w.replace('\n', ' ').replace('-', '')
+        for w, t in zip(wit.alg1.replace('\xad\n', '--').replace('\n', ' '), wit.alg2):
+            w = w.replace('-', '')
             if t == '-':
                 insert += w
             else:
@@ -27,7 +27,7 @@ def majorityCollate(text, wits):
     res = ''
     for col in cols:
         res += max(col.items(), key=lambda i: i[1])[0]
-    return res.strip().replace('\xad ', '') + '\n'
+    return res.strip() + '\n'
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
