@@ -1,15 +1,21 @@
 package vtpassim
 
 import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions._
 import scala.collection.mutable.{ListBuffer, Stack, StringBuilder}
 import scala.util.Try
 import scala.xml.pull._
 
-case class RDArticle(id: String, date: String, page: String,
+case class RDArticle(id: String, series: String, issue: String, date: String,
+  page: String, column: String,
   seq: Int, types: Array[String], text: String)
 
 object Richmond {
+  def cleanText(s: String) = {
+    s.replaceAll("( [\\(])[ ]+", "$1")
+      .replaceAll(" [ ]+", " ")
+      .replaceAll("\n[ ]+", "\n")
+      .replaceAll("[ ]+\n", "\n")
+  }
   def main(args: Array[String]) {
     val spark = SparkSession.builder().appName("Richmond Dispatch Import").getOrCreate()
     import spark.implicits._
@@ -19,6 +25,7 @@ object Richmond {
 
     val divs = Seq("text", "div1", "div2", "div3", "div4", "div5")
     val breakers = Seq("lb", "head", "p", "row")
+    val series = "/lccn/sn84024738"
 
     spark.sparkContext.binaryFiles(args(0), spark.sparkContext.defaultParallelism)
       .filter(_._1.endsWith(".xml"))
@@ -35,12 +42,17 @@ object Richmond {
         var date = ""
         var id = ""
         var page = ""
+        var column = ""
         pass.flatMap { event =>
           event match {
             case EvElemStart(_, elem, attr, _) if divs.contains(elem) => {
+              if ( elem == "text" ) {
+                id = Try(attr.value.text).getOrElse(in._1)
+              }
               val res = if ( !buf.isEmpty ) {
                 seq += 1
-                Some(RDArticle(f"foo#$seq%04d", date, page, seq, divStack.toArray, buf.toString))
+                Some(RDArticle(f"$id#$seq%04d", series, id, date, page, column,
+                  seq, divStack.toArray, cleanText(buf.toString)))
               } else
                   None
               buf.clear
@@ -50,7 +62,8 @@ object Richmond {
             case EvElemEnd(_, elem) if divs.contains(elem) => {
               val res = if ( !buf.isEmpty ) {
                 seq += 1
-                Some(RDArticle(f"foo#$seq%04d", date, page, seq, divStack.toArray, buf.toString))
+                Some(RDArticle(f"$id#$seq%04d", series, id, date, page, column,
+                  seq, divStack.toArray, cleanText(buf.toString)))
               } else
                   None
               buf.clear
@@ -71,6 +84,12 @@ object Richmond {
             }
             case EvElemStart(_, "pb", attr, _) => {
               page = Try(attr("n").text).getOrElse("")
+              None
+            }
+            case EvElemStart(_, "milestone", attr, _) => {
+              if ( Try(attr("unit").text).getOrElse("") == "column" ) {
+                column = Try(attr("n").text).getOrElse("")
+              }
               None
             }
             case EvElemEnd(_, "unclear") if !buf.isEmpty => {
@@ -101,8 +120,7 @@ object Richmond {
         }
       })
       .toDF
-      .withColumn("text", regexp_replace(regexp_replace($"text", " [ ]+", " "), "\n[ ]+", "\n"))
-      .write.json(args(1))
+      .write.save(args(1))
       spark.stop()
     }
 }
