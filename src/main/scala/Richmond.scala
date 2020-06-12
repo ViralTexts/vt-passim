@@ -12,6 +12,7 @@ case class RDArticle(id: String, series: String, issue: String, date: String,
 object Richmond {
   def cleanText(s: String) = {
     s.replaceAll("( [\\(])[ ]+", "$1")
+      .replaceAll("\t+", " ")
       .replaceAll(" [ ]+", " ")
       .replaceAll("\n[ ]+", "\n")
       .replaceAll("[ ]+\n", "\n")
@@ -24,7 +25,7 @@ object Richmond {
       .set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
     val divs = Seq("text", "div1", "div2", "div3", "div4", "div5")
-    val breakers = Seq("lb", "head", "p", "row")
+    val breakers = Seq("l", "lb", "head", "p", "row")
     val series = "/lccn/sn84024738"
 
     spark.sparkContext.binaryFiles(args(0), spark.sparkContext.defaultParallelism)
