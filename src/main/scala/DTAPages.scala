@@ -10,7 +10,7 @@ case class RenditionSpan(rendition: String, start: Int, length: Int)
 
 case class ZoneContent(place: String, data: StringBuilder, rend: ListBuffer[RenditionSpan])
 
-case class Rec(id: String, book: String, seq: Int, place: String, text:String,
+case class Rec(id: String, book: String, seq: Int, page: String, place: String, text:String,
   rendition: Array[RenditionSpan])
 
 object DTAPages {
@@ -57,7 +57,7 @@ object DTAPages {
               while ( !zoneStack.isEmpty ) {
                 seq += 1
                 val top = zoneStack.pop
-                res += Rec(pageID + s"z$seq", book, seq, top.place, top.data.toString, top.rend.toArray)
+                res += Rec(pageID + s"z$seq", book, seq, pageID, top.place, top.data.toString, top.rend.toArray)
               }
               for ( place <- places ) {
                 zoneStack.push(new ZoneContent(place, new StringBuilder, new ListBuffer[RenditionSpan]()))
@@ -67,7 +67,7 @@ object DTAPages {
               val pno = Try(attr("n").text).getOrElse("").replaceAll("\\[[^\\]]+\\]", "")
               if ( pno != "" ) {
                 seq += 1
-                res += Rec(pageID + s"z$seq", book, seq, "page", pno, new Array[RenditionSpan](0))
+                res += Rec(pageID + s"z$seq", book, seq, pageID, "page", pno, new Array[RenditionSpan](0))
               }
               res
             }
@@ -76,7 +76,7 @@ object DTAPages {
               while ( !zoneStack.isEmpty ) {
                 seq += 1
                 val top = zoneStack.pop
-                res += Rec(pageID + s"z$seq", book, seq, top.place, top.data.toString, top.rend.toArray)
+                res += Rec(pageID + s"z$seq", book, seq, pageID, top.place, top.data.toString, top.rend.toArray)
               }
               res
             }
@@ -91,7 +91,7 @@ object DTAPages {
               if ( !zoneStack.isEmpty ) {
                 val top = zoneStack.pop
                 seq += 1
-                Seq(Rec(pageID + s"z$seq", book, seq, top.place, top.data.toString, top.rend.toArray))
+                Seq(Rec(pageID + s"z$seq", book, seq, pageID, top.place, top.data.toString, top.rend.toArray))
               } else
                 Nil
             }
@@ -106,7 +106,7 @@ object DTAPages {
               if ( !zoneStack.isEmpty ) {
                 val top = zoneStack.pop
                 seq += 1
-                Seq(Rec(pageID + s"z$seq", book, seq, top.place, top.data.toString, top.rend.toArray))
+                Seq(Rec(pageID + s"z$seq", book, seq, pageID, top.place, top.data.toString, top.rend.toArray))
               } else
                 Nil
             }
