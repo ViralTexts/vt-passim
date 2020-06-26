@@ -71,6 +71,28 @@ object DTAPages {
               }
               res
             }
+            case EvElemStart(_, "cb", attr, _) => {
+              val res = new ListBuffer[Rec]()
+              // Remember and output all open zones
+              val places = (if ( zoneStack.isEmpty ) Seq("body") else zoneStack.toSeq.map(_.place).reverse)
+              while ( !zoneStack.isEmpty ) {
+                val top = zoneStack.pop
+                if ( top.data.toString != "" ) {
+                  seq += 1
+                  res += Rec(pageID + s"z$seq", book, seq, pageID, top.place, top.data.toString, top.rend.toArray)
+                }
+              }
+              for ( place <- places ) {
+                zoneStack.push(new ZoneContent(place, new StringBuilder, new ListBuffer[RenditionSpan]()))
+              }
+              // Output printed column number (n attribute not in brackets) here?
+              val cno = Try(attr("n").text).getOrElse("").replaceAll("\\[[^\\]]+\\]", "")
+              if ( cno != "" ) {
+                seq += 1
+                res += Rec(pageID + s"z$seq", book, seq, pageID, "column", cno, new Array[RenditionSpan](0))
+              }
+              res
+            }
             case EvElemEnd(_, "text") => {
               val res = new ListBuffer[Rec]()
               while ( !zoneStack.isEmpty ) {
