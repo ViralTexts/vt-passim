@@ -34,10 +34,25 @@ object DTAPages {
         val pass = new XMLEventReader(scala.io.Source.fromURL(in._1))
         pass.flatMap { event =>
           event match {
+            case EvElemStart(_, "head", attr, _) => {
+              if ( !zoneStack.isEmpty )
+                rendStack.push(RenditionSpan("head", zoneStack.top.data.length, 0))
+              Nil
+            }
             case EvElemStart(_, "hi", attr, _) => {
               if ( !zoneStack.isEmpty )
                 rendStack.push(RenditionSpan(Try(attr("rendition").text).getOrElse(""),
                   zoneStack.top.data.length, 0))
+              Nil
+            }
+            case EvElemEnd(_, "head") => {
+              if ( !zoneStack.isEmpty ) {
+                val start = rendStack.pop
+                zoneStack.top.rend ++= start.rendition.split("\\s+")
+                  .filter { _ != "" }
+                  .map { r => RenditionSpan(r.stripPrefix("#"),
+                    start.start, zoneStack.top.data.length - start.start) }
+              }
               Nil
             }
             case EvElemEnd(_, "hi") => {
