@@ -23,6 +23,8 @@ object DTAPages {
     spark.sparkContext.hadoopConfiguration
       .set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
+    val lines = Seq("head", "figure", "table")
+
     spark.sparkContext.binaryFiles(args(0), spark.sparkContext.defaultParallelism)
       .filter(_._1.endsWith(".xml"))
       .flatMap( in => {
@@ -36,35 +38,29 @@ object DTAPages {
         val pass = new XMLEventReader(scala.io.Source.fromURL(in._1))
         pass.flatMap { event =>
           event match {
-            case EvElemStart(_, "head", attr, _) => {
-              if ( !zoneStack.isEmpty )
-                rendStack.push(RenditionSpan("head", zoneStack.top.data.length, 0))
+            case EvElemStart(_, elem, attr, _) if lines.contains(elem) && !zoneStack.isEmpty => {
+              rendStack.push(RenditionSpan(elem, zoneStack.top.data.length, 0))
               Nil
             }
-            case EvElemStart(_, "hi", attr, _) => {
-              if ( !zoneStack.isEmpty )
-                rendStack.push(RenditionSpan(Try(attr("rendition").text).getOrElse(""),
-                  zoneStack.top.data.length, 0))
+            case EvElemEnd(_, elem) if lines.contains(elem) && !zoneStack.isEmpty => {
+              val start = rendStack.pop
+              zoneStack.top.rend ++= start.rendition.split("\\s+")
+                .filter { _ != "" }
+                .map { r => RenditionSpan(r.stripPrefix("#"),
+                  start.start, zoneStack.top.data.length - start.start) }
               Nil
             }
-            case EvElemEnd(_, "head") => {
-              if ( !zoneStack.isEmpty ) {
-                val start = rendStack.pop
-                zoneStack.top.rend ++= start.rendition.split("\\s+")
-                  .filter { _ != "" }
-                  .map { r => RenditionSpan(r.stripPrefix("#"),
-                    start.start, zoneStack.top.data.length - start.start) }
-              }
+            case EvElemStart(_, "hi", attr, _) if !zoneStack.isEmpty => {
+              rendStack.push(RenditionSpan(Try(attr("rendition").text).getOrElse(""),
+                zoneStack.top.data.length, 0))
               Nil
             }
-            case EvElemEnd(_, "hi") => {
-              if ( !zoneStack.isEmpty ) {
-                val start = rendStack.pop
-                zoneStack.top.rend ++= start.rendition.split("\\s+")
-                  .filter { _ != "" }
-                  .map { r => RenditionSpan(r.stripPrefix("#"),
-                    start.start, zoneStack.top.data.length - start.start) }
-              }
+            case EvElemEnd(_, "hi") if !zoneStack.isEmpty => {
+              val start = rendStack.pop
+              zoneStack.top.rend ++= start.rendition.split("\\s+")
+                .filter { _ != "" }
+                .map { r => RenditionSpan(r.stripPrefix("#"),
+                  start.start, zoneStack.top.data.length - start.start) }
               Nil
             }
             case EvElemStart(_, "pb", attr, _) => {
