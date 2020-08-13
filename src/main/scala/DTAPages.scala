@@ -44,10 +44,8 @@ object DTAPages {
             }
             case EvElemEnd(_, elem) if lines.contains(elem) && !zoneStack.isEmpty => {
               val start = rendStack.pop
-              zoneStack.top.rend ++= start.rendition.split("\\s+")
-                .filter { _ != "" }
-                .map { r => RenditionSpan(r.stripPrefix("#"),
-                  start.start, zoneStack.top.data.length - start.start) }
+              zoneStack.top.rend += RenditionSpan(start.rendition, start.start,
+                zoneStack.top.data.length - start.start)
               Nil
             }
             case EvElemStart(_, "hi", attr, _) if !zoneStack.isEmpty => {
@@ -64,6 +62,12 @@ object DTAPages {
               Nil
             }
             case EvElemStart(_, "pb", attr, _) => {
+              // Record and restart all open rendition spans
+              for ( i <- 0 until rendStack.length ) {
+                zoneStack.top.rend += RenditionSpan(rendStack(i).rendition, rendStack(i).start,
+                  zoneStack.top.data.length - rendStack(i).start)
+                rendStack(i) = RenditionSpan(rendStack(i).rendition, 0, 0)
+              }
               val res = new ListBuffer[Rec]()
               // Remember and output all open zones
               val zones = (if ( zoneStack.isEmpty ) Seq(ZoneInfo("body", "body")) else zoneStack.toSeq.map(_.info).reverse)
@@ -85,6 +89,12 @@ object DTAPages {
               res
             }
             case EvElemStart(_, "cb", attr, _) => {
+              // Record and restart all open rendition spans
+              for ( i <- 0 until rendStack.length ) {
+                zoneStack.top.rend += RenditionSpan(rendStack(i).rendition, rendStack(i).start,
+                  zoneStack.top.data.length - rendStack(i).start)
+                rendStack(i) = RenditionSpan(rendStack(i).rendition, 0, 0)
+              }
               val res = new ListBuffer[Rec]()
               // Remember and output all open zones
               val zones = (if ( zoneStack.isEmpty ) Seq(ZoneInfo("body", "body")) else zoneStack.toSeq.map(_.info).reverse)
@@ -115,53 +125,46 @@ object DTAPages {
               }
               res
             }
-            case EvElemStart(_, "note", attr, _) => {
-              if ( !zoneStack.isEmpty ) {
-                zoneStack.push(new ZoneContent(ZoneInfo("note",
-                  Try(attr("place").text).getOrElse("note")),
-                  new StringBuilder, new ListBuffer[RenditionSpan]()))
-              }
+            case EvElemStart(_, "note", attr, _) if !zoneStack.isEmpty => {
+              zoneStack.push(new ZoneContent(ZoneInfo("note",
+                Try(attr("place").text).getOrElse("note")),
+                new StringBuilder, new ListBuffer[RenditionSpan]()))
               Nil
             }
-            case EvElemEnd(_, "note") => {
-              if ( !zoneStack.isEmpty ) {
-                val top = zoneStack.pop
-                seq += 1
-                Seq(Rec(pageID + s"z$seq", book, seq, pageID, top.info.ztype, top.info.place, top.data.toString, top.rend.toArray))
-              } else
-                Nil
+            case EvElemEnd(_, "note") if !zoneStack.isEmpty => {
+              val top = zoneStack.pop
+              seq += 1
+              Seq(Rec(pageID + s"z$seq", book, seq, pageID, top.info.ztype, top.info.place, top.data.toString, top.rend.toArray))
             }
-            case EvElemStart(_, "fw", attr, _) => {
-              if ( !zoneStack.isEmpty ) {
-                zoneStack.push(new ZoneContent(ZoneInfo(Try(attr("type").text).getOrElse("fw"),
-                  Try(attr("place").text).getOrElse("fw")),
-                  new StringBuilder, new ListBuffer[RenditionSpan]()))
-              }
+            case EvElemStart(_, "fw", attr, _) if !zoneStack.isEmpty => {
+              zoneStack.push(new ZoneContent(ZoneInfo(Try(attr("type").text).getOrElse("fw"),
+                Try(attr("place").text).getOrElse("fw")),
+                new StringBuilder, new ListBuffer[RenditionSpan]()))
               Nil
             }
-            case EvElemEnd(_, "fw") => {
-              if ( !zoneStack.isEmpty ) {
-                val top = zoneStack.pop
-                seq += 1
-                Seq(Rec(pageID + s"z$seq", book, seq, pageID, top.info.ztype, top.info.place, top.data.toString, top.rend.toArray))
-              } else
-                Nil
+            case EvElemEnd(_, "fw") if !zoneStack.isEmpty => {
+              val top = zoneStack.pop
+              seq += 1
+              Seq(Rec(pageID + s"z$seq", book, seq, pageID, top.info.ztype, top.info.place, top.data.toString, top.rend.toArray))
             }
-            case EvText(t) => { // remove leading whitespace only if we haven't added anything
-              if ( !zoneStack.isEmpty ) zoneStack.top.data ++= (if (zoneStack.top.data.isEmpty) t.replaceAll("^\\s+", "") else t)
+            case EvElemEnd(_, "cell") if !zoneStack.isEmpty => {
+              zoneStack.top.data ++= "\t"
               Nil
             }
-            case EvEntityRef(n) => {
-              if ( !zoneStack.isEmpty ) {
-                zoneStack.top.data ++= (n match {
-                  case "amp" => "&"
-                  case "lt" => "<"
-                  case "gt" => ">"
-                  case "apos" => "'"
-                  case "quot" => "\""
-                  case _ => ""
-                })
-              }
+            case EvText(t) if !zoneStack.isEmpty => {
+              // remove leading whitespace only if we haven't added anything
+              zoneStack.top.data ++= (if (zoneStack.top.data.isEmpty) t.replaceAll("^\\s+", "") else t)
+              Nil
+            }
+            case EvEntityRef(n) if !zoneStack.isEmpty => {
+              zoneStack.top.data ++= (n match {
+                case "amp" => "&"
+                case "lt" => "<"
+                case "gt" => ">"
+                case "apos" => "'"
+                case "quot" => "\""
+                case _ => ""
+              })
               Nil
             }
             case _ => Nil
