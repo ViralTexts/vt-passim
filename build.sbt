@@ -2,21 +2,15 @@ name := "vtpassim"
 
 version := "0.1.0"
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.12.10"
 
 resolvers += Resolver.mavenLocal
 
-libraryDependencies += "org.apache.spark" %% "spark-core" % "2.3.2"
-libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.3.2"
-libraryDependencies += "org.apache.spark" %% "spark-graphx" % "2.3.2"
+libraryDependencies += "org.apache.spark" %% "spark-core" % "3.0.0"
+libraryDependencies += "org.apache.spark" %% "spark-sql" % "3.0.0"
+libraryDependencies += "org.apache.spark" %% "spark-graphx" % "3.0.0"
 
-libraryDependencies += "com.databricks" %% "spark-xml" % "0.4.1"
-
-libraryDependencies += "com.github.scopt" %% "scopt" % "3.5.0"
-
-libraryDependencies += "com.google.protobuf" % "protobuf-java" % "2.6.1"
-libraryDependencies += "edu.stanford.nlp" % "stanford-corenlp" % "3.6.0"
-libraryDependencies += "edu.stanford.nlp" % "stanford-corenlp" % "3.6.0" classifier "models"
+libraryDependencies += "com.databricks" %% "spark-xml" % "0.9.0"
 
 libraryDependencies += "org.kamranzafar" % "jtar" % "2.2"
 

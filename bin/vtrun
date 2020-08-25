@@ -8,12 +8,12 @@ class=$1
 shift
 
 if [[ "$class" == *.py ]]; then
-    spark-submit --packages 'com.databricks:spark-xml_2.11:0.4.1' \
+    spark-submit --packages 'com.databricks:spark-xml_2.12:0.9.0' \
 		 $SPARK_SUBMIT_ARGS \
 		 "$VTPASSIM_HOME"/scripts/"$class" "$@";
 else
     spark-submit --class vtpassim.$class \
-		 --packages 'com.github.scopt:scopt_2.11:3.5.0,com.databricks:spark-xml_2.11:0.4.1,edu.stanford.nlp:stanford-corenlp:3.6.0,edu.stanford.nlp:stanford-corenlp:3.6.0-models,com.google.protobuf:protobuf-java:2.6.1,org.kamranzafar:jtar:2.2' \
+		 --packages 'com.databricks:spark-xml_2.12:0.9.0,org.kamranzafar:jtar:2.2' \
 		 $SPARK_SUBMIT_ARGS \
-		 "$VTPASSIM_HOME"/target/scala-2.11/vtpassim_2.11-0.1.0.jar "$@";
+		 "$VTPASSIM_HOME"/target/scala-2.12/vtpassim_2.12-0.1.0.jar "$@";
 fi
