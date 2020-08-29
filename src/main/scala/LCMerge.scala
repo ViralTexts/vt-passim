@@ -21,10 +21,9 @@ object LCMerge {
       .hadoopConfiguration.set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
     val meta = spark.sparkContext.wholeTextFiles(args(0))
-    val dpiInfo = spark.read.json(args(1))
-    val defaultCoverage = spark.read.json(args(2))
+    val defaultCoverage = spark.read.json(args(1))
       .select('placeOfPublication, 'coverage as "defcover").filter('defcover =!= "")
-    val dbpediaCanon = spark.read.json(args(3)).select('url as "coverage", 'canonical)
+    val dbpediaCanon = spark.read.json(args(2)).select('url as "coverage", 'canonical)
     meta.map(_._2).map(x => {
       def bareName(s: String): String = { s.replaceFirst("#title$", "") }
       def nameId(s: String): Long = { s.replaceFirst("^[a-z/]+", "").toLong }
@@ -53,15 +52,14 @@ object LCMerge {
         links
           .map { z => nameId(bareName(z)) })
     }).toDF("sid", "series", "title", "lang", "placeOfPublication", "coverage", "publisher", "links")
-      .drop("links")
-      .join(dpiInfo, Seq("series"), "left_outer")
+      .drop("sid", "links")
       .join(defaultCoverage, Seq("placeOfPublication"), "left_outer")
       .withColumn("coverage", coalesce('coverage, 'defcover))
       .drop("defcover")
       .join(dbpediaCanon, Seq("coverage"), "left_outer")
       .withColumn("coverage", coalesce('canonical, 'coverage))
       .drop("canonical")
-      .write.json(args(4))
+      .write.mode("overwrite").json(args(3))
     spark.stop()
   }
 }
