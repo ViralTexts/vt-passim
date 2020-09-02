@@ -1,7 +1,7 @@
 package vtpassim
 
 import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions.{coalesce, lit}
+import org.apache.spark.sql.functions.{array_min, arrays_zip, coalesce, expr, lit}
 
 import com.databricks.spark.xml.XmlInputFormat
 
@@ -47,12 +47,13 @@ object LCMerge {
         (t \ "Description" \ "placeOfPublication").text,
         Try((t \ "Description" \ "coverage")
           .map { n => (n \ s"@{$ns}resource").text }
-          .filter { _.startsWith("http://dbpedia.org") }.head).getOrElse(null),
+          .filter { _.startsWith("http://dbpedia.org") }).getOrElse(Seq[String]()),
         (t \ "Description" \ "publisher").text,
         links
           .map { z => nameId(bareName(z)) })
     }).toDF("sid", "series", "title", "lang", "placeOfPublication", "coverage", "publisher", "links")
       .drop("sid", "links")
+      .withColumn("coverage", array_min(arrays_zip(expr("transform(coverage, p -> levenshtein(p, placeOfPublication))"), 'coverage))("coverage"))
       .join(defaultCoverage, Seq("placeOfPublication"), "left_outer")
       .withColumn("coverage", coalesce('coverage, 'defcover))
       .drop("defcover")
