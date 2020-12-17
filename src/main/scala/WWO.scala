@@ -138,13 +138,17 @@ object WWO {
               Nil
             }
             case EvElemStart(_, "note", attr, _) if !zoneStack.isEmpty => {
+              val rend = Try(attr("rend").text).getOrElse("note")
               zoneStack.push(new ZoneContent(ZoneInfo("note",
-                Try(attr("rend").text).getOrElse("note")),
+                Try("""place\(([^)]+)\)""".r.findFirstMatchIn(rend).head.group(1))
+                  .getOrElse("note")),
                 new StringBuilder, new ListBuffer[RenditionSpan]()))
               val pid = Try(id2p(attr("target").text)).getOrElse("")
               if ( pid != "" ) {
                 pageID = pid
               }
+              zoneStack.top.data ++= Try("""pre\(([^)]+)\)""".r.findFirstMatchIn(rend)
+                .head.group(1)).getOrElse("")
               Nil
             }
             case EvElemEnd(_, "note") if !zoneStack.isEmpty => {
@@ -153,8 +157,11 @@ object WWO {
               Seq(Rec(pageID + s"z$seq", book, seq, pageID, top.info.ztype, top.info.place, top.data.toString, top.rend.toArray))
             }
             case EvElemStart(_, "mw", attr, _) if !zoneStack.isEmpty => {
-              zoneStack.push(new ZoneContent(ZoneInfo(Try(attr("type").text).getOrElse("fw"),
-                Try(attr("rend").text).getOrElse("fw")),
+              val mtype = Try(attr("type").text).getOrElse("fw")
+              val rend = Try(attr("rend").text).getOrElse("")
+              zoneStack.push(new ZoneContent(ZoneInfo(mtype,
+                Try("""align\(([^)]+)\)""".r.findFirstMatchIn(rend).head.group(1))
+                  .getOrElse(mtype)),
                 new StringBuilder, new ListBuffer[RenditionSpan]()))
               Nil
             }
@@ -167,9 +174,13 @@ object WWO {
               zoneStack.top.data ++= "\t"
               Nil
             }
+            case EvElemStart(_, "lb", attr, _) if !zoneStack.isEmpty => {
+              zoneStack.top.data ++= "\n"
+              Nil
+            }
             case EvText(t) if !zoneStack.isEmpty => {
               // remove leading whitespace only if we haven't added anything
-              zoneStack.top.data ++= (if (zoneStack.top.data.isEmpty) t.replaceAll("^\\s+", "") else t)
+              zoneStack.top.data ++= (if (zoneStack.top.data.isEmpty) t.replaceAll("^\\s+", "") else t).replaceAll("\\n+\\s*", "")
               Nil
             }
             case EvEntityRef(n) if !zoneStack.isEmpty => {
