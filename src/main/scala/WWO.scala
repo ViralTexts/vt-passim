@@ -15,6 +15,7 @@ object WWO {
       .set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
     val lines = Seq("head", "figure", "table")
+    val quash = Seq("corr", "figDesc")
 
     spark.sparkContext.binaryFiles(args(0), spark.sparkContext.defaultParallelism)
       .filter(_._1.endsWith(".xml"))
@@ -51,9 +52,19 @@ object WWO {
               Nil
             }
             case EvElemEnd(_, elem) if lines.contains(elem) && !zoneStack.isEmpty => {
+              zoneStack.top.data ++= "\n"
               val start = rendStack.pop
               zoneStack.top.rend += RenditionSpan(start.rendition, start.start,
                 zoneStack.top.data.length - start.start)
+              Nil
+            }
+            case EvElemStart(_, elem, attr, _) if quash.contains(elem) && !zoneStack.isEmpty => {
+              zoneStack.push(new ZoneContent(ZoneInfo("quash", "quash"),
+                new StringBuilder, new ListBuffer[RenditionSpan]()))
+              Nil
+            }
+            case EvElemEnd(_, elem) if quash.contains(elem) && !zoneStack.isEmpty => {
+              zoneStack.pop
               Nil
             }
             case EvElemStart(_, "hi", attr, _) if !zoneStack.isEmpty => {
@@ -175,6 +186,10 @@ object WWO {
               Nil
             }
             case EvElemStart(_, "lb", attr, _) if !zoneStack.isEmpty => {
+              zoneStack.top.data ++= "\n"
+              Nil
+            }
+            case EvElemEnd(_, "l") if !zoneStack.isEmpty => {
               zoneStack.top.data ++= "\n"
               Nil
             }
