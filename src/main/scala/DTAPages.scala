@@ -23,7 +23,8 @@ object DTAPages {
     spark.sparkContext.hadoopConfiguration
       .set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
-    val lines = Seq("head", "figure", "table")
+    val lines = Seq("head")
+    val floats = Seq("figure", "note", "table")
 
     spark.sparkContext.binaryFiles(args(0), spark.sparkContext.defaultParallelism)
       .filter(_._1.endsWith(".xml"))
@@ -125,13 +126,14 @@ object DTAPages {
               }
               res
             }
-            case EvElemStart(_, "note", attr, _) if !zoneStack.isEmpty => {
-              zoneStack.push(new ZoneContent(ZoneInfo("note",
-                Try(attr("place").text).getOrElse("note")),
+            case EvElemStart(_, elem, attr, _) if floats.contains(elem) && !zoneStack.isEmpty => {
+              zoneStack.top.rend += RenditionSpan(elem, zoneStack.top.data.length, 0)
+              zoneStack.push(new ZoneContent(ZoneInfo(elem,
+                Try(attr("place").text).getOrElse(elem)),
                 new StringBuilder, new ListBuffer[RenditionSpan]()))
               Nil
             }
-            case EvElemEnd(_, "note") if !zoneStack.isEmpty => {
+            case EvElemEnd(_, elem) if floats.contains(elem) && !zoneStack.isEmpty => {
               val top = zoneStack.pop
               seq += 1
               Seq(Rec(pageID + s"z$seq", book, seq, pageID, top.info.ztype, top.info.place, top.data.toString, top.rend.toArray))
