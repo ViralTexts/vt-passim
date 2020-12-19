@@ -23,6 +23,7 @@ object WWO {
         val fname = new java.io.File(new java.net.URL(in._1).toURI)
         val book = fname.getName.replaceAll("(.TEI-P5)?.xml$", "")
         var seq = -1
+        var pseq = 0
         var pageID = book
         val zoneStack = new Stack[ZoneContent]()
         val rendStack = new Stack[RenditionSpan]()
@@ -32,7 +33,8 @@ object WWO {
         stream.foreach { event =>
           event match {
             case EvElemStart(_, "pb", attr, _) => {
-              pageID = book + "#" + Try(attr.asAttrMap("xml:id")).getOrElse("")
+              pseq += 1
+              pageID = book + "#" + Try(attr.asAttrMap("xml:id")).getOrElse("p" + pseq)
             }
             case EvElemStart(_, "anchor", attr, _) => {
               val aid = Try(attr.asAttrMap("xml:id")).getOrElse("")
@@ -43,6 +45,8 @@ object WWO {
             case _ =>
           }
         }
+
+        pseq = 0
 
         val pass = new XMLEventReader(scala.io.Source.fromURL(in._1))
         pass.flatMap { event =>
@@ -98,9 +102,9 @@ object WWO {
               for ( zone <- zones ) {
                 zoneStack.push(new ZoneContent(zone, new StringBuilder, new ListBuffer[RenditionSpan]()))
               }
-              // Output printed page number (n attribute not in brackets) here?
-              val pno = Try(attr.asAttrMap("xml:id")).getOrElse("")
-              pageID = book + "#" + pno
+              pseq += 1
+              val pid = Try(attr.asAttrMap("xml:id")).getOrElse("p" + pseq)
+              pageID = book + "#" + pid
               res
             }
             case EvElemStart(_, "cb", attr, _) => {
