@@ -21,6 +21,7 @@
 {"placeOfPublication":"Chicago [Ill.]","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"Chicago","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"Chicago, Ill.","coverage":"http://dbpedia.org/resource/Chicago"}
+{"placeOfPublication":"Chicago, Illinois","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"Chicago, Illinois.","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"City of Washington [D.C.]","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Concord, N.H.","coverage":"http://dbpedia.org/resource/Concord%2C_New_Hampshire"}
@@ -49,6 +50,8 @@
 {"placeOfPublication":"Flat River, St. Francois County, Mo.","coverage":"http://dbpedia.org/resource/Park_Hills%2C_Missouri"}
 {"placeOfPublication":"Forest City, Potter County, D.T. [S.D.]","coverage":""}
 {"placeOfPublication":"Fort Hawkins, Ga.","coverage":"http://dbpedia.org/resource/Fort_Benjamin_Hawkins"}
+{"placeOfPublication":"Fort Huachuca, Ariz.","coverage":"http://dbpedia.org/resource/Fort_Huachuca"}
+{"placeOfPublication":"Fort Huachuca, Arizona","coverage":"http://dbpedia.org/resource/Fort_Huachuca"}
 {"placeOfPublication":"Fort Larned, Kan.","coverage":"http://dbpedia.org/resource/Fort_Larned_National_Historic_Site"}
 {"placeOfPublication":"Fort Pierce, St. Lucie County, Fla.","coverage":"http://dbpedia.org/resource/Fort_Pierce%2C_Florida"}
 {"placeOfPublication":"Gayoso, Mo.","coverage":""}
@@ -116,8 +119,8 @@
 {"placeOfPublication":"Ottawa, LaSalle County, Ill.","coverage":"http://dbpedia.org/resource/Ottawa%2C_Illinois"}
 {"placeOfPublication":"Ottumwa, Iowa","coverage":"http://dbpedia.org/resource/Ottumwa%2C_Iowa"}
 {"placeOfPublication":"Palatka, Fla.","coverage":"http://dbpedia.org/resource/Palatka%2C_Florida"}
-{"placeOfPublication":"Panola, Mi. [i.e. Miss.]","coverage":""}
-{"placeOfPublication":"Panola, Miss.","coverage":""}
+{"placeOfPublication":"Panola, Mi. [i.e. Miss.]","coverage":"http://dbpedia.org/resource/Batesville%2C_Mississippi"}
+{"placeOfPublication":"Panola, Miss.","coverage":"http://dbpedia.org/resource/Batesville%2C_Mississippi"}
 {"placeOfPublication":"Petroleum Center, Pa.","coverage":"http://dbpedia.org/resource/Petroleum_Center%2C_Pennsylvania"}
 {"placeOfPublication":"Philadelphia [Pa.","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"placeOfPublication":"Philadelphia [Pa.]","coverage":"http://dbpedia.org/resource/Philadelphia"}
@@ -127,8 +130,8 @@
 {"placeOfPublication":"Pinetop, Ariz.","coverage":""}
 {"placeOfPublication":"Pithole City, Pa.","coverage":"http://dbpedia.org/resource/Pithole%2C_Pennsylvania"}
 {"placeOfPublication":"Pointe-a-la-Hache, La.","coverage":"http://dbpedia.org/resource/Pointe_%C3%A0_la_Hache%2C_Louisiana"}
-{"placeOfPublication":"Ponola [sic] Panola, Miss.","coverage":""}
-{"placeOfPublication":"Ponola [sic], Miss.","coverage":""}
+{"placeOfPublication":"Ponola [sic] Panola, Miss.","coverage":"http://dbpedia.org/resource/Batesville%2C_Mississippi"}
+{"placeOfPublication":"Ponola [sic], Miss.","coverage":"http://dbpedia.org/resource/Batesville%2C_Mississippi"}
 {"placeOfPublication":"Port Tobacco, Md.","coverage":"http://dbpedia.org/resource/Port_Tobacco_Village%2C_Maryland"}
 {"placeOfPublication":"Prairie City, Kanzas","coverage":""}
 {"placeOfPublication":"Provo, Utah","coverage":"http://dbpedia.org/resource/Provo%2C_Utah"}
@@ -154,6 +157,7 @@
 {"placeOfPublication":"South Londonderry, Vt.","coverage":"http://dbpedia.org/resource/South_Londonderry_Village_Historic_District"}
 {"placeOfPublication":"South Royalton, Vt.","coverage":"http://dbpedia.org/resource/South_Royalton%2C_Vermont"}
 {"placeOfPublication":"Spout Spring[s], Ky.","coverage":""}
+{"placeOfPublication":"Springfield, Ill.","coverage":"http://dbpedia.org/resource/Springfield%2C_Illinois"}
 {"placeOfPublication":"St. Albans [Vt.]","coverage":"http://dbpedia.org/resource/St._Albans%2C_Vermont"}
 {"placeOfPublication":"St. Albans, Vt.","coverage":"http://dbpedia.org/resource/St._Albans%2C_Vermont"}
 {"placeOfPublication":"St. Anthony, Idaho","coverage":"http://dbpedia.org/resource/St._Anthony%2C_Idaho"}
@@ -190,7 +194,7 @@
 {"placeOfPublication":"Tiffin, Ohio","coverage":"http://dbpedia.org/resource/Tiffin%2C_Ohio"}
 {"placeOfPublication":"Utah.","coverage":""}
 {"placeOfPublication":"Volcano, W. Va.","coverage":"http://dbpedia.org/resource/Volcano%2C_West_Virginia"}
-{"placeOfPublication":"Voltaire, Kan.","coverage":""}
+{"placeOfPublication":"Voltaire, Kan.","coverage":"http://dbpedia.org/resource/Voltaire_Township%2C_Sherman_County%2C_Kansas"}
 {"placeOfPublication":"Washington City (D.C.)","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Washington City [D.C.","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Washington City [D.C.]","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
@@ -203,7 +207,7 @@
 {"placeOfPublication":"Washington [D.C.]","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Washington [i.e Washington, D.C.]","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Washington, D.C.","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
-{"placeOfPublication":"Wyandotte, Kan.","coverage":""}
+{"placeOfPublication":"Wyandotte, Kan.","coverage":"http://dbpedia.org/resource/Kansas_City%2C_Kansas"}
 {"placeOfPublication":"Yazoo, Miss.","coverage":"http://dbpedia.org/resource/Yazoo_City%2C_Mississippi"}
 {"placeOfPublication":"[Chicago, Ill.]","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"[Fremont, Ohio]","coverage":"http://dbpedia.org/resource/Fremont%2C_Ohio"}
@@ -211,8 +215,9 @@
 {"placeOfPublication":"[New York, N.Y.","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"[New York, N.Y.]","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"[New York]","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"placeOfPublication":"[Panola] Panola County, Miss.","coverage":""}
+{"placeOfPublication":"[Panola] Panola County, Miss.","coverage":"http://dbpedia.org/resource/Batesville%2C_Mississippi"}
 {"placeOfPublication":"[Philadelphia, Pa.]","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"placeOfPublication":"[Sacred Heart, Okla.]","coverage":"http://dbpedia.org/resource/Sacred_Heart%2C_Oklahoma"}
 {"placeOfPublication":"[St. Albans, Vt.","coverage":"http://dbpedia.org/resource/St._Albans%2C_Vermont"}
+{"placeOfPublication":"[Washington, D.C.","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"[Washington, D.C.]","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
