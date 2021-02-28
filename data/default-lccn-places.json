@@ -11,12 +11,16 @@
 {"placeOfPublication":"Bellevue, Bossier Parish, La.","coverage":"http://dbpedia.org/resource/Bellevue%2C_Bossier_Parish%2C_Louisiana"}
 {"placeOfPublication":"Borough of the Bronx [N.Y.]","coverage":"http://dbpedia.org/resource/The_Bronx"}
 {"placeOfPublication":"Boston [Mass.]","coverage":"http://dbpedia.org/resource/Boston"}
+{"placeOfPublication":"Bramwell, W. Va.","coverage":"http://dbpedia.org/resource/Bramwell%2C_West_Virginia"}
 {"placeOfPublication":"Bringier, Paroisse Saint-Jacques, Louisiane","coverage":"http://dbpedia.org/resource/St._James_Parish%2C_Louisiana"}
 {"placeOfPublication":"Cairo, Ill.","coverage":"http://dbpedia.org/resource/Cairo%2C_Illinois"}
+{"placeOfPublication":"Cary, Miss.","coverage":"http://dbpedia.org/resource/Cary%2C_Mississippi"}
 {"placeOfPublication":"Canon City, Colo.","coverage":"http://dbpedia.org/resource/Ca%C3%B1on_City%2C_Colorado"}
 {"placeOfPublication":"Cañon City, Colo.","coverage":"http://dbpedia.org/resource/Ca%C3%B1on_City%2C_Colorado"}
-{"placeOfPublication":"Centreville, Columbiana Co., Ohio","coverage":""}
+{"placeOfPublication":"Centreville, Columbiana Co., Ohio","coverage":"http://dbpedia.org/resource/Carrollton%2C_Ohio"}
 {"placeOfPublication":"Cerrillos, N.M.","coverage":"http://dbpedia.org/resource/Los_Cerrillos%2C_New_Mexico"}
+{"placeOfPublication":"Champaign, Ill.","coverage":"http://dbpedia.org/resource/Champaign%2C_Illinois"}
+{"placeOfPublication":"Chattanooga, Tenn.","coverage":"http://dbpedia.org/resource/Chattanooga%2C_Tennessee"}
 {"placeOfPublication":"Chicago [Ill.","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"Chicago [Ill.]","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"Chicago","coverage":"http://dbpedia.org/resource/Chicago"}
@@ -26,7 +30,7 @@
 {"placeOfPublication":"City of Washington [D.C.]","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Concord, N.H.","coverage":"http://dbpedia.org/resource/Concord%2C_New_Hampshire"}
 {"placeOfPublication":"Conroy [Lakemp], Beaver County, Okla.","coverage":"http://dbpedia.org/resource/Booker%2C_Texas"}
-{"placeOfPublication":"Crandall, Fla.","coverage":""}
+{"placeOfPublication":"Crandall, Fla.","coverage":"http://dbpedia.org/resource/Nassau_County%2C_Florida"}
 {"placeOfPublication":"Dalles, Or.","coverage":"http://dbpedia.org/resource/The_Dalles%2C_Oregon"}
 {"placeOfPublication":"Darlington, Indian Terr.","coverage":""}
 {"placeOfPublication":"Daytona, Fla.","coverage":"http://dbpedia.org/resource/Daytona_Beach%2C_Florida"}
@@ -40,7 +44,7 @@
 {"placeOfPublication":"Dupuyer, Mont.","coverage":"http://dbpedia.org/resource/Dupuyer%2C_Montana"}
 {"placeOfPublication":"Durant, Choctaw Nation, Indian Territory [Okla.]","coverage":"http://dbpedia.org/resource/Durant%2C_Oklahoma"}
 {"placeOfPublication":"Durant, Okla.","coverage":"http://dbpedia.org/resource/Durant%2C_Oklahoma"}
-{"placeOfPublication":"East Las Vegas, N.M.","coverage":""}
+{"placeOfPublication":"East Las Vegas, N.M.","coverage":"http://dbpedia.org/resource/Las_Vegas%2C_New_Mexico"}
 {"placeOfPublication":"Ecter, Beaver County, Okla.","coverage":""}
 {"placeOfPublication":"Fairmont, W. Va.","coverage":"http://dbpedia.org/resource/Fairmont%2C_West_Virginia"}
 {"placeOfPublication":"Fargo Springs, Kan.","coverage":""}
@@ -54,20 +58,22 @@
 {"placeOfPublication":"Fort Huachuca, Arizona","coverage":"http://dbpedia.org/resource/Fort_Huachuca"}
 {"placeOfPublication":"Fort Larned, Kan.","coverage":"http://dbpedia.org/resource/Fort_Larned_National_Historic_Site"}
 {"placeOfPublication":"Fort Pierce, St. Lucie County, Fla.","coverage":"http://dbpedia.org/resource/Fort_Pierce%2C_Florida"}
-{"placeOfPublication":"Gayoso, Mo.","coverage":""}
+{"placeOfPublication":"Gayoso, Mo.","coverage":"http://dbpedia.org/resource/Gayoso%2C_Missouri"}
 {"placeOfPublication":"Glentana, Mont.","coverage":"http://dbpedia.org/resource/Glentana%2C_Montana"}
 {"placeOfPublication":"Gloucester, Va.","coverage":"http://dbpedia.org/resource/Gloucester_Courthouse%2C_Virginia"}
 {"placeOfPublication":"Grand Gulf, Miss.","coverage":"http://dbpedia.org/resource/Grand_Gulf_Military_State_Park_(Mississippi)"}
 {"placeOfPublication":"Greencastle, Sullivan County, Mo.","coverage":"http://dbpedia.org/resource/Greencastle%2C_Missouri"}
-{"placeOfPublication":"Greensboro, Choctaw, Miss.","coverage":""}
+{"placeOfPublication":"Greensboro, Choctaw, Miss.","coverage":"http://dbpedia.org/resource/Webster_County%2C_Mississippi"}
 {"placeOfPublication":"Guthrie, Okla.","coverage":"http://dbpedia.org/resource/Guthrie%2C_Oklahoma"}
-{"placeOfPublication":"Hastings, Kan.","coverage":""}
-{"placeOfPublication":"Hinsdale, Mont.","coverage":""}
+{"placeOfPublication":"Hastings, Kan.","coverage":"http://dbpedia.org/resource/Thomas_County%2C_Kansas"}
+{"placeOfPublication":"Hinsdale, Mont.","coverage":"http://dbpedia.org/resource/Hinsdale%2C_Montana"}
 {"placeOfPublication":"Holly Oak, Del.","coverage":"http://dbpedia.org/resource/Holly_Oak%2C_Delaware"}
 {"placeOfPublication":"Hood River, Wasco County, Oregon","coverage":""}
-{"placeOfPublication":"Hutchinson, Kan.","coverage":""}
-{"placeOfPublication":"Ivanhoe, Beaver Co., Okla.","coverage":""}
-{"placeOfPublication":"Ivanhoe, Beaver County, Okla.","coverage":""}
+{"placeOfPublication":"Hutchinson, Kan.","coverage":"http://dbpedia.org/resource/Hutchinson%2C_Kansas"}
+{"placeOfPublication":"Hydaburg, Alaska","coverage":"http://dbpedia.org/resource/Hydaburg%2C_Alaska"}
+{"placeOfPublication":"Iditarod, Alaska","coverage":"http://dbpedia.org/resource/Iditarod%2C_Alaska"}
+{"placeOfPublication":"Ivanhoe, Beaver Co., Okla.","coverage":"http://dbpedia.org/resource/Beaver_County%2C_Oklahoma"}
+{"placeOfPublication":"Ivanhoe, Beaver County, Okla.","coverage":"http://dbpedia.org/resource/Beaver_County%2C_Oklahoma"}
 {"placeOfPublication":"Jacksonville, Fla.","coverage":"http://dbpedia.org/resource/Jacksonville%2C_Florida"}
 {"placeOfPublication":"Juliet [i.e., Joliet], Ill.","coverage":"http://dbpedia.org/resource/Joliet%2C_Illinois"}
 {"placeOfPublication":"Juliet [i.e., Joliet], Will Co., Ill.","coverage":"http://dbpedia.org/resource/Joliet%2C_Illinois"}
@@ -89,6 +95,7 @@
 {"placeOfPublication":"McLean, VA","coverage":"http://dbpedia.org/resource/McLean%2C_Virginia"}
 {"placeOfPublication":"Milwaukee, Wis.","coverage":"http://dbpedia.org/resource/Milwaukee"}
 {"placeOfPublication":"Mineral Park, A.T. [Ariz.]","coverage":"http://dbpedia.org/resource/Mineral_Park%2C_Arizona"}
+{"placeOfPublication":"Minneapolis, Minn.","coverage":"http://dbpedia.org/resource/Minneapolis"}
 {"placeOfPublication":"Moline, Ill.","coverage":"http://dbpedia.org/resource/Moline%2C_Illinois"}
 {"placeOfPublication":"Murray, Idaho","coverage":"http://dbpedia.org/resource/Murray%2C_Idaho"}
 {"placeOfPublication":"Nebraska City, Neb.","coverage":"http://dbpedia.org/resource/Nebraska_City%2C_Nebraska"}
@@ -111,7 +118,7 @@
 {"placeOfPublication":"New-York [N.Y.]","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"Ocala, Fla.","coverage":"http://dbpedia.org/resource/Ocala%2C_Florida"}
 {"placeOfPublication":"Oregon.","coverage":""}
-{"placeOfPublication":"Ormond-on-the-Halifax, Fla.","coverage":""}
+{"placeOfPublication":"Ormond-on-the-Halifax, Fla.","coverage":"http://dbpedia.org/resource/Ormond-by-the-Sea%2C_Florida"}
 {"placeOfPublication":"Osage Mission, Kan.","coverage":"http://dbpedia.org/resource/St._Paul%2C_Kansas"}
 {"placeOfPublication":"Ottawa, Ill.","coverage":"http://dbpedia.org/resource/Ottawa%2C_Illinois"}
 {"placeOfPublication":"Ottawa, La Salle Co., Ill.","coverage":"http://dbpedia.org/resource/Ottawa%2C_Illinois"}
@@ -207,6 +214,7 @@
 {"placeOfPublication":"Washington [D.C.]","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Washington [i.e Washington, D.C.]","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Washington, D.C.","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"placeOfPublication":"Wilmington, Del.","coverage":"http://dbpedia.org/resource/Wilmington%2C_Delaware"}
 {"placeOfPublication":"Wyandotte, Kan.","coverage":"http://dbpedia.org/resource/Kansas_City%2C_Kansas"}
 {"placeOfPublication":"Yazoo, Miss.","coverage":"http://dbpedia.org/resource/Yazoo_City%2C_Mississippi"}
 {"placeOfPublication":"[Chicago, Ill.]","coverage":"http://dbpedia.org/resource/Chicago"}
