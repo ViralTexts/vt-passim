@@ -11,6 +11,7 @@ if __name__ == "__main__":
         exit(-1)
     spark = SparkSession.builder.appName('Select c19').getOrCreate()
     raw = spark.read.option('mergeSchema','true').load(sys.argv[1])
-    raw.filter(col('date') < '1900').write.save(sys.argv[2])
+    raw.filter(col('date') < '1900'
+               ).write.partitionBy('open', 'corpus').save(sys.argv[2])
 
     spark.stop()
