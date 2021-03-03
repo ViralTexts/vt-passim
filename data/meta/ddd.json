@@ -9,7 +9,7 @@
 {"series":"DDD:PPN:037305247","title":"Beverwĳksche courant Kennemerland : dagblad voor de streek Kennemerland (Haarlem-Alkmaar)","lang":["nl"],"publisher":"Beverwĳks Uitgeversbedrĳf","placeOfPublication":"Beverwĳk","coverage":"http://dbpedia.org/resource/Beverwijk"}
 {"series":"DDD:PPN:037307290","title":"Dagblad voor Noord-Holland waarin opgenomen De Zaanlander en de Beverwĳksche courant Kennemerland","lang":["nl"],"publisher":"NV Dagblad voor Noord-Holland","placeOfPublication":"Koog a/d Zaan","coverage":"http://dbpedia.org/resource/Koog_aan_de_Zaan"}
 {"series":"DDD:PPN:037338145","title":"Het dagblad voor Ĳmuiden - Velsen - Beverwĳk - Driehuis - Santpoort","lang":["nl"],"publisher":"s.n.","placeOfPublication":"Ĳmuiden","coverage":"http://dbpedia.org/resource/IJmuiden"}
-{"series":"DDD:PPN:037643118","title":"Voor waarheid, vrĳheid en recht","lang":["de","en","fr","nl"],"publisher":"[s.n.]","placeOfPublication":"Barneveld","coverage":"http://dbpedia.org/resource/Barneveld"}
+{"series":"DDD:PPN:037643118","title":"Voor waarheid, vrĳheid en recht","lang":["de","en","fr","nl"],"publisher":"[s.n.]","placeOfPublication":"Barneveld","coverage":"http://dbpedia.org/resource/Barneveld_(town)"}
 {"series":"DDD:PPN:03810833X","title":"Fryslân oerein / verzorgd door de gezamelĳke illegale pers","lang":["de","fy"],"publisher":"[s.n.]","placeOfPublication":"Leeuwarden","coverage":"http://dbpedia.org/resource/Leeuwarden"}
 {"series":"DDD:PPN:038181606","title":"Algemeen protestantsch dagblad","lang":["nl"],"publisher":"s.n.","placeOfPublication":"Rotterdam","coverage":"http://dbpedia.org/resource/Rotterdam"}
 {"series":"DDD:PPN:038191954","title":"Affiches, annonces et avis divers de Rotterdam = Advertentien, aankondigingen en berigten van Rotterdam","lang":["fr","nl"],"publisher":"Benjamin Arrenberg","placeOfPublication":"Rotterdam","coverage":"http://dbpedia.org/resource/Rotterdam"}
@@ -442,7 +442,7 @@
 {"series":"DDD:PPN:270090894","title":"De Libertĳn","lang":["de"],"publisher":"[s.n.]","placeOfPublication":"Wormerveer","coverage":"http://dbpedia.org/resource/Wormerveer"}
 {"series":"DDD:PPN:270090916","title":"'t Libertĳntje","lang":["de"],"publisher":"[s.n.]","placeOfPublication":"Wormerveer","coverage":"http://dbpedia.org/resource/Wormerveer"}
 {"series":"DDD:PPN:270091238","title":"Lichtflits","lang":["de"],"publisher":"[s.n.]","placeOfPublication":"Haarlem","coverage":"http://dbpedia.org/resource/Haarlem"}
-{"series":"DDD:PPN:270096922","title":"De Lichtstraal","lang":["nl"],"publisher":"P. van der Laarse","placeOfPublication":"Monster","coverage":"http://dbpedia.org/resource/Monster"}
+{"series":"DDD:PPN:270096922","title":"De Lichtstraal","lang":["nl"],"publisher":"P. van der Laarse","placeOfPublication":"Monster","coverage":"http://dbpedia.org/resource/Monster%2C_South_Holland"}
 {"series":"DDD:PPN:270097201","title":"Lichtstralen","lang":["nl"],"publisher":"A.G. Scheepmaker","placeOfPublication":"Hillegom","coverage":"http://dbpedia.org/resource/Hillegom"}
 {"series":"DDD:PPN:27009914X","title":"De Lingebode","lang":["nl"],"publisher":"J. Vroegh, J.H. van Bezouwen en J.M. van Bezouwen-van der Singel","placeOfPublication":"Heukelum","coverage":"http://dbpedia.org/resource/Heukelum"}
 {"series":"DDD:PPN:270099387","title":"\"Het Logboek\"","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
@@ -810,7 +810,7 @@
 {"series":"DDD:PPN:272614408","title":"Vrĳ Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Meppel","coverage":"http://dbpedia.org/resource/Meppel"}
 {"series":"DDD:PPN:272626856","title":"Voor God en koning","lang":["nl"],"publisher":"J. Pars, F. Schrĳver en T. Forthövel","placeOfPublication":"Woerden","coverage":"http://dbpedia.org/resource/Woerden"}
 {"series":"DDD:PPN:272626929","title":"Voor God, koningin en vaderland : voor vrĳheid, waarheid en recht","lang":["nl"],"publisher":"C. Remmers","placeOfPublication":"Hintham","coverage":"http://dbpedia.org/resource/Hintham"}
-{"series":"DDD:PPN:27262697X","title":"Voor koningin en vaderland : voor vrĳheid, waarheid en recht","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Barneveld","coverage":"http://dbpedia.org/resource/Barneveld"}
+{"series":"DDD:PPN:27262697X","title":"Voor koningin en vaderland : voor vrĳheid, waarheid en recht","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Barneveld","coverage":"http://dbpedia.org/resource/Barneveld_(town)"}
 {"series":"DDD:PPN:272627194","title":"Voor koningin en vaderland : voor vrĳheid, waarheid en recht","lang":["de","en","fr","nl"],"publisher":"[s.n.]","placeOfPublication":"'s-Hertogenbosch","coverage":"http://dbpedia.org/resource/'s-Hertogenbosch"}
 {"series":"DDD:PPN:272627305","title":"Voor de vrĳheid","lang":["de","en","fr","nl"],"publisher":"H.G.H. de Mulder, J.H. Vissers, P.J.G.A. Spreeuwenberg en J.H. van Megen","placeOfPublication":"Wanssum","coverage":"http://dbpedia.org/resource/Wanssum"}
 {"series":"DDD:PPN:272627437","title":"Voor vrĳheid en recht","lang":["de","en","fr","nl"],"publisher":"[s.n.]","placeOfPublication":"Den Haag","coverage":"http://dbpedia.org/resource/The_Hague"}
