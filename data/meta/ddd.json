@@ -327,7 +327,7 @@
 {"series":"DDD:PPN:269427368","title":"Geïllustreerd Vrĳ Nederland","lang":["de","fy"],"publisher":"[s.n.]","placeOfPublication":"Ĳsselmonde ; Utrecht"}
 {"series":"DDD:PPN:269427481","title":"Het gele blaadje","lang":["de","fy"],"publisher":"L. Weening en J. Kuyper","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:269427546","title":"Het Getĳ : veertiendaags orgaan der socialistische jeugdbeweging","lang":["de","fy"],"publisher":"[s.n.]","placeOfPublication":"Rotterdam","coverage":"http://dbpedia.org/resource/Rotterdam"}
-{"series":"DDD:PPN:269427678","title":"De Geus","lang":["nl"],"publisher":"B. Witte en Van Loon","placeOfPublication":"Harlingen","coverage":"http://dbpedia.org/resource/Harlingen"}
+{"series":"DDD:PPN:269427678","title":"De Geus","lang":["nl"],"publisher":"B. Witte en Van Loon","placeOfPublication":"Harlingen","coverage":"http://dbpedia.org/resource/Harlingen%2C_Netherlands"}
 {"series":"DDD:PPN:269427775","title":"De Geus van 1940","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Haarlem ; Vlaardingen"}
 {"series":"DDD:PPN:269428119","title":"De Geuzenpost : nieuwsblad voor Haarlem en omstreken ; onder auspiciën der V.I.V.","lang":["nl"],"publisher":"V.I.V.: Verenigde Indië-Vrĳwilligers","placeOfPublication":"Haarlem","coverage":"http://dbpedia.org/resource/Haarlem"}
 {"series":"DDD:PPN:269428224","title":"De Gids","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Delft","coverage":"http://dbpedia.org/resource/Delft"}
@@ -850,7 +850,7 @@
 {"series":"DDD:PPN:274454351","title":"De vrĳe bazuin","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Nieuwheten, gemeente Raalte"}
 {"series":"DDD:PPN:274454939","title":"De vrĳe Bussumer : blad voor Bussum, Naarden en omstreken","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Bussum","coverage":"http://dbpedia.org/resource/Bussum"}
 {"series":"DDD:PPN:274455455","title":"De vrĳe cronyck : onafhankelĳk dagblad","lang":["nl","en"],"publisher":"[s.n.]","placeOfPublication":"Noordwĳk","coverage":"http://dbpedia.org/resource/Noordwijk"}
-{"series":"DDD:PPN:274547449","title":"De vrĳe Harlinger","lang":["nl","de"],"publisher":"H.H. en F. Drost","placeOfPublication":"Harlingen","coverage":"http://dbpedia.org/resource/Harlingen"}
+{"series":"DDD:PPN:274547449","title":"De vrĳe Harlinger","lang":["nl","de"],"publisher":"H.H. en F. Drost","placeOfPublication":"Harlingen","coverage":"http://dbpedia.org/resource/Harlingen%2C_Netherlands"}
 {"series":"DDD:PPN:274547740","title":"Het Vrĳe geluid : \"voorwaarts Vaderland, riemen om de kin, met God door bloed en tranen een schoner toekomst in\"","lang":["nl","de"],"publisher":"[s.n.]","placeOfPublication":"Zoetermeer","coverage":"http://dbpedia.org/resource/Zoetermeer"}
 {"series":"DDD:PPN:274547813","title":"Vrĳe jacht : orgaan voor voortrekkers, leiders en oud-padvinders","lang":["nl","de"],"publisher":"Ton Koot","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:27454850X","title":"De Vrĳe jeugd : uitgave van het Jeugdcomité","lang":["nl","de"],"publisher":"[s.n.]","placeOfPublication":"Amersfoort","coverage":"http://dbpedia.org/resource/Amersfoort"}
@@ -860,10 +860,10 @@
 {"series":"DDD:PPN:274549131","title":"De Vrĳe krant","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Heiloo","coverage":"http://dbpedia.org/resource/Heiloo"}
 {"series":"DDD:PPN:274549522","title":"De Vrĳe Nederlander","lang":["nl"],"publisher":"J. en A. van Oven","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
 {"series":"DDD:PPN:27454959X","title":"Vrĳe nieuws centrale","lang":["nl"],"publisher":"J. Heringa en A. Jansen","placeOfPublication":"Schoorl","coverage":"http://dbpedia.org/resource/Schoorl"}
-{"series":"DDD:PPN:274549743","title":"De Vrĳe pers","lang":["nl"],"publisher":"M.J. Hendriks, E. Heim en H. Struik, met medew. van K. van Zutphen","placeOfPublication":"Deurne","coverage":"http://dbpedia.org/resource/Deurne"}
+{"series":"DDD:PPN:274549743","title":"De Vrĳe pers","lang":["nl"],"publisher":"M.J. Hendriks, E. Heim en H. Struik, met medew. van K. van Zutphen","placeOfPublication":"Deurne","coverage":"http://dbpedia.org/resource/Deurne%2C_Netherlands"}
 {"series":"DDD:PPN:274550229","title":"De Vrĳe pers : uitgave onder auspiciën van Vrĳ Nederland en Het Parool","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Haarlem","coverage":"http://dbpedia.org/resource/Haarlem"}
 {"series":"DDD:PPN:274550741","title":"De Vrĳe pers : orgaan voor de \"verzetsgroep Meppel\"","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Meppel","coverage":"http://dbpedia.org/resource/Meppel"}
-{"series":"DDD:PPN:274550814","title":"De Vrĳe pers","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Ĳsselmonde","coverage":"http://dbpedia.org/resource/IJsselmonde"}
+{"series":"DDD:PPN:274550814","title":"De Vrĳe pers","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Ĳsselmonde","coverage":"http://dbpedia.org/resource/IJsselmonde_(village)"}
 {"series":"DDD:PPN:274551101","title":"De Vrĳe pers","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Zoetermeer","coverage":"http://dbpedia.org/resource/Zoetermeer"}
 {"series":"DDD:PPN:274551179","title":"De Vrĳe Schager","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Schagen","coverage":"http://dbpedia.org/resource/Schagen"}
 {"series":"DDD:PPN:274551438","title":"De Vrĳe Scheldestroom","lang":["en","nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
