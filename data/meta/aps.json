@@ -1076,7 +1076,7 @@
 {"placeOfPublication":"Newark","series":"aps/41149","title":"United States Magazine; or, General Repository of Useful Instruction and Rational Amusement (1794-1794)","coverage":"http://dbpedia.org/resource/Newark%2C_New_Jersey"}
 {"placeOfPublication":"Newark","series":"aps/41787","title":"The Rural Magazine ... (1798-1799)","coverage":"http://dbpedia.org/resource/Newark%2C_New_Jersey"}
 {"placeOfPublication":"Newbern","series":"aps/41020","title":"The North - Carolina Magazine; or, Universal Intelligencer (1764-1765)","coverage":"http://dbpedia.org/resource/New_Bern%2C_North_Carolina"}
-{"placeOfPublication":"Newburgh","series":"aps/35069","title":"The Evangelical Witness (1822-1826)","coverage":"http://dbpedia.org/resource/Newburgh_(city)%2C_New_York"}
+{"placeOfPublication":"Newburgh","series":"aps/35069","title":"The Evangelical Witness (1822-1826)","coverage":"http://dbpedia.org/resource/Newburgh%2C_New_York_(town)"}
 {"placeOfPublication":"Newburyport","series":"aps/25102","title":"The Churchman's Repository for the Eastern Diocese (1820-1820)","coverage":"http://dbpedia.org/resource/Newburyport%2C_Massachusetts"}
 {"placeOfPublication":"Newburyport","series":"aps/40623","title":"The Independent Republican; and Miscellaneous Magazine (1805-1805)","coverage":"http://dbpedia.org/resource/Newburyport%2C_Massachusetts"}
 {"placeOfPublication":"Newburyport","series":"aps/40754","title":"Merrimack Magazine and Ladies' Literary Cabinet (1805-1806)","coverage":"http://dbpedia.org/resource/Newburyport%2C_Massachusetts"}
@@ -1351,7 +1351,7 @@
 {"placeOfPublication":"Pittsburgh","series":"aps/35436","title":"The Pioneer, Consisting of Essays, Literary, Moral and Theological (1812-1812)","coverage":"http://dbpedia.org/resource/Pittsburgh"}
 {"placeOfPublication":"Pittsburgh","series":"aps/35573","title":"Literary Examiner and Western Monthly Review (1839-1839)","coverage":"http://dbpedia.org/resource/Pittsburgh"}
 {"placeOfPublication":"Pittsburgh","series":"aps/35574","title":"Examiner and Hesperian (1840-1840)","coverage":"http://dbpedia.org/resource/Pittsburgh"}
-{"placeOfPublication":"Pittsford","series":"aps/41383","title":"The Christian Messenger. Being a Miscellaneous Work; Directed to the Improvement of the Human Mind; in Prose and Verse (1815-1816)","coverage":"http://dbpedia.org/resource/Pittsford_(town)%2C_New_York"}
+{"placeOfPublication":"Pittsford","series":"aps/41383","title":"The Christian Messenger. Being a Miscellaneous Work; Directed to the Improvement of the Human Mind; in Prose and Verse (1815-1816)","coverage":"http://dbpedia.org/resource/Pittsford%2C_New_York"}
 {"placeOfPublication":"Portland","series":"aps/1148","title":"The Christian's Monitor, &c. (1799-1799)","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
 {"placeOfPublication":"Portland","series":"aps/24589","title":"The Bibelot, a Reprint of Poetry and Prose for Book Lovers, Chosen in Part From Scarce Editions and Sources Not Generally Known (1895-1925)","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
 {"placeOfPublication":"Portland","series":"aps/24858","title":"Christian Intelligencer (1821-1827)","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
@@ -1508,6 +1508,6 @@
 {"placeOfPublication":"Woodstock","series":"aps/35557","title":"Christian Repository (1820-1825)","coverage":"http://dbpedia.org/resource/Woodstock%2C_Vermont"}
 {"placeOfPublication":"Woodstock","series":"aps/35558","title":"Universalist Watchman, Repository and Chronicle (1831-1847)","coverage":"http://dbpedia.org/resource/Woodstock%2C_Vermont"}
 {"placeOfPublication":"Woodstock","series":"aps/35572","title":"Evangelical Monitor (1821-1824)","coverage":"http://dbpedia.org/resource/Woodstock%2C_Vermont"}
-{"placeOfPublication":"Worcester","series":"aps/24165","title":"The Literary Geminae, a Monthly Magazine in English and French (1839-1840)","coverage":"http://dbpedia.org/resource/Worcester%2C_Massachusetts"}
-{"placeOfPublication":"Worcester","series":"aps/24634","title":"The Worcester Magazine and Historical Journal (1825-1826)","coverage":"http://dbpedia.org/resource/Worcester%2C_Massachusetts"}
-{"placeOfPublication":"Worcester","series":"aps/41254","title":"Worcester Magazine ... Containing Politicks, Miscellanies, Poetry, and News (1786-1788)","coverage":"http://dbpedia.org/resource/Worcester%2C_Massachusetts"}
+{"placeOfPublication":"Worcester","series":"aps/24165","title":"The Literary Geminae, a Monthly Magazine in English and French (1839-1840)","coverage":"http://dbpedia.org/resource/Worcester_County%2C_Massachusetts"}
+{"placeOfPublication":"Worcester","series":"aps/24634","title":"The Worcester Magazine and Historical Journal (1825-1826)","coverage":"http://dbpedia.org/resource/Worcester_County%2C_Massachusetts"}
+{"placeOfPublication":"Worcester","series":"aps/41254","title":"Worcester Magazine ... Containing Politicks, Miscellanies, Poetry, and News (1786-1788)","coverage":"http://dbpedia.org/resource/Worcester_County%2C_Massachusetts"}
