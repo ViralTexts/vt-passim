@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+## Start spark cluster, run command, stop cluster.
+
+VTPASSIM_HOME="$(cd "`dirname "$0"`"/..; pwd)"
+
+SPARK_SUBMIT_ARGS="$SPARK_SUBMIT_ARGS"
+
+REF=ref
+QUEUE=short
+WORKERS=40
+CORES=5
+CMEM=8
+
+cmd=$@
+quoted_args="$(printf " %q" "${@}")"
+
+WORKERS=$WORKERS CORES=$CORES CMEM=$CMEM QUEUE=$QUEUE source run-saspark.sh
+# --time 1-0
+srun -x c0178 -p $QUEUE -N 1 -c 2 --mem=40G -d "after:$SPARK_MASTER_JOBID" bash -c "$quoted_args"
+scancel $SPARK_WORKER_JOBID $SPARK_MASTER_JOBID
