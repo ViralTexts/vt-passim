@@ -1,11 +1,5 @@
 import argparse
-import json, os, sys
-from math import ceil, log, inf
 from pyspark.sql import SparkSession, Row
-from pyspark.sql.functions import (col, desc, explode, size, udf, struct, length,
-                                   collect_list, collect_set, sort_array, when,
-                                   expr, map_from_entries, flatten, xxhash64, lit,
-                                   array, arrays_zip)
 import pyspark.sql.functions as f
 
 def main(config):
@@ -14,7 +8,7 @@ def main(config):
     raw = spark.read.load(config.inputPath)
 
     pop = raw.filter(config.filter).groupBy('cluster').agg(
-        f.min(struct('date', 'uid'))['uid'].alias('uid'))
+        f.min(f.struct('date', 'uid'))['uid'].alias('uid'))
 
     total = pop.count()
 
