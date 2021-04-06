@@ -708,7 +708,7 @@
 {"series":"DDD:PPN:271582103","title":"De Ster","lang":["nl","fy"],"publisher":"W.N. Freni","placeOfPublication":"Hilversum","coverage":"http://dbpedia.org/resource/Hilversum"}
 {"series":"DDD:PPN:271582219","title":"De Stille waarheid","lang":["nl","fy"],"publisher":"[s.n.]","placeOfPublication":"Breukelen","coverage":"http://dbpedia.org/resource/Breukelen"}
 {"series":"DDD:PPN:271582324","title":"Stormklok","lang":["nl","fy"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
-{"series":"DDD:PPN:27158243X","title":"Stormvogel","lang":["nl","fy"],"publisher":"[s.n.]","placeOfPublication":"Makkum","coverage":"https://dbpedia.org/resource/Makkum%2C_S%C3%BAdwest-Frysl%C3%A2n"}
+{"series":"DDD:PPN:27158243X","title":"Stormvogel","lang":["nl","fy"],"publisher":"[s.n.]","placeOfPublication":"Makkum","coverage":"http://dbpedia.org/resource/Makkum%2C_S%C3%BAdwest-Frysl%C3%A2n"}
 {"series":"DDD:PPN:271582596","title":"De Stormwind","lang":["nl","fy"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:271582677","title":"De Stroomloze","lang":["nl","fy"],"publisher":"H. Gerritse","placeOfPublication":"Woerden","coverage":"http://dbpedia.org/resource/Woerden"}
 {"series":"DDD:PPN:271587210","title":"The sunday times","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Utrecht (?)","coverage":"http://dbpedia.org/resource/Utrecht"}
@@ -907,7 +907,7 @@
 {"series":"DDD:PPN:275898350","title":"De Zwerver","lang":["nl","en"],"publisher":"C. Otten en H. Alders","placeOfPublication":"Oudesluis-Breezand"}
 {"series":"DDD:PPN:275898423","title":"Zĳ van den omroep!","lang":["nl","en"],"publisher":"A.J. Lievense en J. Kooy","placeOfPublication":"Hilversum","coverage":"http://dbpedia.org/resource/Hilversum"}
 {"series":"DDD:PPN:275898563","title":"De Waarnemer","lang":["nl"],"publisher":"J. van Riemsdĳk en J. Groesbeek","placeOfPublication":"Apeldoorn","coverage":"http://dbpedia.org/resource/Apeldoorn"}
-{"series":"DDD:PPN:275898717","title":"De Wachter","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Oudega","coverage":"https://dbpedia.org/resource/Oudega%2C_S%C3%BAdwest-Frysl%C3%A2n"}
+{"series":"DDD:PPN:275898717","title":"De Wachter","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Oudega","coverage":"http://dbpedia.org/resource/Oudega%2C_S%C3%BAdwest-Frysl%C3%A2n"}
 {"series":"DDD:PPN:275898970","title":"Het Ware nieuws : voor waarheid en recht","lang":["nl"],"publisher":"K. Rouw","placeOfPublication":"Hattem","coverage":"http://dbpedia.org/resource/Hattem"}
 {"series":"DDD:PPN:275899128","title":"Weekblad \"Nederland\"","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Almelo","coverage":"http://dbpedia.org/resource/Almelo"}
 {"series":"DDD:PPN:275899233","title":"Weekoverzicht : zeven dagen politiek en militair wereldgebeuren","lang":["nl"],"publisher":"J. Boerwinkel, A.J. van Dam e.a.","placeOfPublication":"Amersfoort","coverage":"http://dbpedia.org/resource/Amersfoort"}
