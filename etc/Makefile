@@ -134,7 +134,7 @@ serial/open$(eq)true/corpus$(eq)finnish/_SUCCESS:	$(RAW)/finnish/every
 	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=50 --conf spark.sql.shuffle.partitions=50'; $(VT)/bin/vtrun MetsAltoZipped $< $(dir $@))
 
 serial/open$(eq)true/corpus$(eq)moa/_SUCCESS:	$(RAW)/moa/magazines
-	$(call spark_run,spark-submit $$SPARK_SUBMIT_ARGS --conf spark.default.parallelism=50 --packages 'com.databricks:spark-xml_2.11:0.4.1' $(VT)/scripts/moa-load.py $< $(VT)/data/moa.json $(dir $@))
+	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=50'; $(VT)/bin/vtrun moa-load.py $< $(VT)/data/moa.json $(dir $@))
 
 serial/open$(eq)true/corpus$(eq)onb/_SUCCESS:	$(RAW)/onb/xml
 	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=20 --conf spark.sql.shuffle.partitions=20'; $(VT)/bin/vtrun ONB $</'{dea$(comma)kro}' $(dir $@))
@@ -143,7 +143,7 @@ serial/open$(eq)true/corpus$(eq)sbb/_SUCCESS:	$(RAW)/SBB
 	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=50 --conf spark.sql.shuffle.partitions=50'; $(VT)/bin/vtrun MetsAltoZipped $< $(dir $@))
 
 serial/open$(eq)true/corpus$(eq)trove/_SUCCESS:	$(RAW)/trove/issue-458484.json.bz2 $(RAW)/trove/trove-reprinted.json
-	$(call spark_run,spark-submit $$SPARK_SUBMIT_ARGS --conf spark.default.parallelism=2000 --conf spark.sql.shuffle.partitions=2000 $(VT)/scripts/trove-load.py $^ $(dir $@))
+	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.sql.shuffle.partitions=2000'; $(VT)/bin/vtrun trove-load.py $^ $(dir $@))
 
 serial/open$(eq)false/corpus$(eq)aps/_SUCCESS:	$(RAW)/APS
 	$(call spark_run,$(VT)/bin/vtrun APS $< $(VT)/data/aps.json $(dir $@))
@@ -167,13 +167,14 @@ c19-${STAMP}.parquet/_SUCCESS:
 jstor.parquet/_SUCCESS:	jstor.ids
 	$(call spark_run,spark-submit $$SPARK_SUBMIT_ARGS $(VT)/scripts/ia-filter.py $< raw $(dir $@))
 
-ref.parquet/_SUCCESS:	ref/corpus$(eq)gtr/_SUCCESS ref/corpus=vac/_SUCCESS ref/corpus=afam/_SUCCESS
+# ref.parquet/_SUCCESS:	ref/corpus=afam/_SUCCESS
+ref.parquet/_SUCCESS:	ref/corpus$(eq)gtr/_SUCCESS ref/corpus=vac/_SUCCESS ref/corpus=gut/_SUCCESS
 	$(RM) -r $(dir $@)
-	$(call spark_run,spark-submit $$SPARK_SUBMIT_ARGS $(VT)/scripts/merge-df.py ref $(dir $@))
+	$(call spark_run,vtrun merge-df.py ref $(dir $@))
 
 ref/corpus$(eq)gtr/_SUCCESS:	../Going-the-Rounds/transcriptions
 	$(RM) -r $(dir $@)
-	$(call slurm_run,spark-submit $(VT)/scripts/ed-load.py $< $(dir $@))
+	$(call slurm_run,vtrun ed-load.py $< $(dir $@))
 
 ref/corpus$(eq)vac/_SUCCESS:	$(RAW)/vac/xml
 	$(RM) -r $(dir $@)
@@ -244,6 +245,9 @@ srcgut.out/slim.parquet/_SUCCESS:	srcgut.out/full-extents.parquet/_SUCCESS
 
 %-dw.out/out.json/_SUCCESS:	%.parquet
 	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --fields 'date(date) as day' 'xxhash64(series) as gid' 'coalesce(int(ed),0) as ed' --filterpairs '(uid <> uid2) AND ((gid <> gid2 AND day < day2 AND datediff(day2, day) < 180) OR (gid = gid2 AND ((day < day2 AND datediff(day2,day) < 32) OR (day = day2 AND ed < ed2))))' --input-format parquet $< $(dir $(patsubst %/,%,$(dir $@))))
+
+%-net.out/out.parquet/_SUCCESS:	%.parquet
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --fields 'date(date) as day' 'xxhash64(series) as gid' 'coalesce(int(ed),0) as ed' --filterpairs '(uid <> uid2) AND ((gid <> gid2 AND day < day2 AND datediff(day2, day) < 180) OR (gid = gid2 AND ((day < day2 AND datediff(day2,day) < 32) OR (day = day2 AND ed < ed2))))' --input-format parquet --output-format parquet $< $(dir $(patsubst %/,%,$(dir $@))))
 
 %-dref.out/out.parquet/_SUCCESS:	%.parquet
 	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --fields ref 'date(date) as day' 'xxhash64(series) as gid' 'coalesce(int(ed),0) as ed' --filterpairs '(ref = 0) AND ((ref2 = 1) OR ((uid <> uid2) AND ((gid <> gid2 AND day < day2 AND datediff(day2, day) < 180) OR (gid = gid2 AND ((day < day2 AND datediff(day2,day) < 32) OR (day = day2 AND ed < ed2))))))' -n 25 --input-format parquet --output-format parquet $< $(dir $(patsubst %/,%,$(dir $@))))
