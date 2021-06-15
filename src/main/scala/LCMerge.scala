@@ -12,6 +12,10 @@ import scala.collection.mutable.ArrayBuffer
 import scala.util.Try
 import scala.xml.XML
 
+case class LCPub(sid: Long, series: String, title: String, lang: Seq[String],
+  placeOfPublication: String, coverage: Seq[String], publisher: String, dateRange: String,
+  links: Seq[Long])
+
 object LCMerge {
   def main(args: Array[String]) {
     val spark = SparkSession.builder().appName("Merge LC metadata").getOrCreate()
@@ -39,7 +43,7 @@ object LCMerge {
       val pred = nodes.filter(_.label == "successorOf").map { z => ((z \ s"@{$ns}resource").text) }
       if ( pred.size == 1 ) links ++= pred
 
-      (nameId(lccn),
+      LCPub(nameId(lccn),
         lccn,
         (t \ "Description" \ "title").text,
         (t \ "Description" \ "language")
@@ -49,9 +53,10 @@ object LCMerge {
           .map { n => (n \ s"@{$ns}resource").text }
           .filter { _.startsWith("http://dbpedia.org") }).getOrElse(Seq[String]()),
         (t \ "Description" \ "publisher").text,
+        Try((t \ "Description" \ "date").text).getOrElse(""),
         links
           .map { z => nameId(bareName(z)) })
-    }).toDF("sid", "series", "title", "lang", "placeOfPublication", "coverage", "publisher", "links")
+    }).toDF()
       .drop("sid", "links")
       .withColumn("coverage", array_min(arrays_zip(expr("transform(coverage, p -> levenshtein(p, placeOfPublication))"), 'coverage))("coverage"))
       .join(defaultCoverage, Seq("placeOfPublication"), "left_outer")
