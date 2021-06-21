@@ -60,7 +60,6 @@ if __name__ == "__main__":
         .drop("pages")\
         .drop("regions")\
         .withColumn('page_access', col('url')) \
-        .withColumn('text', regexp_replace(col('text'), '</?[A-Za-z][^>]*>', ''))\
         .rdd \
         .map(formatPassage)\
         .groupBy(lambda r: r.cluster) \
