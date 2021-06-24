@@ -9,14 +9,25 @@
 {"placeOfPublication":"Bay Saint Louis, Miss.","coverage":"http://dbpedia.org/resource/Bay_St._Louis%2C_Mississippi"}
 {"placeOfPublication":"Bayou Sara [La.]","coverage":"http://dbpedia.org/resource/St._Francisville%2C_Louisiana"}
 {"placeOfPublication":"Bellevue, Bossier Parish, La.","coverage":"http://dbpedia.org/resource/Bellevue%2C_Bossier_Parish%2C_Louisiana"}
+{"placeOfPublication":"Borough of Brooklyn [N.Y.]","coverage":"http://dbpedia.org/resource/Brooklyn"}
 {"placeOfPublication":"Borough of the Bronx [N.Y.]","coverage":"http://dbpedia.org/resource/The_Bronx"}
 {"placeOfPublication":"Boston [Mass.]","coverage":"http://dbpedia.org/resource/Boston"}
+{"placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"placeOfPublication":"Boston, MA","coverage":"http://dbpedia.org/resource/Boston"}
+{"placeOfPublication":"Boston, Mass.","coverage":"http://dbpedia.org/resource/Boston"}
+{"placeOfPublication":"Boston, [Mass.","coverage":"http://dbpedia.org/resource/Boston"}
+{"placeOfPublication":"Boston, [Mass.]","coverage":"http://dbpedia.org/resource/Boston"}
 {"placeOfPublication":"Bramwell, W. Va.","coverage":"http://dbpedia.org/resource/Bramwell%2C_West_Virginia"}
 {"placeOfPublication":"Bringier, Paroisse Saint-Jacques, Louisiane","coverage":"http://dbpedia.org/resource/St._James_Parish%2C_Louisiana"}
+{"placeOfPublication":"Brooklyn [N.Y.]","coverage":"http://dbpedia.org/resource/Brooklyn"}
+{"placeOfPublication":"Brooklyn","coverage":"http://dbpedia.org/resource/Brooklyn"}
+{"placeOfPublication":"Brooklyn, N.Y.","coverage":"http://dbpedia.org/resource/Brooklyn"}
+{"placeOfPublication":"Brooklyn, NY","coverage":"http://dbpedia.org/resource/Brooklyn"}
+{"placeOfPublication":"Brooklyn, Nueva York","coverage":"http://dbpedia.org/resource/Brooklyn"}
 {"placeOfPublication":"Cairo, Ill.","coverage":"http://dbpedia.org/resource/Cairo%2C_Illinois"}
-{"placeOfPublication":"Cary, Miss.","coverage":"http://dbpedia.org/resource/Cary%2C_Mississippi"}
 {"placeOfPublication":"Canon City, Colo.","coverage":"http://dbpedia.org/resource/Ca%C3%B1on_City%2C_Colorado"}
 {"placeOfPublication":"Cañon City, Colo.","coverage":"http://dbpedia.org/resource/Ca%C3%B1on_City%2C_Colorado"}
+{"placeOfPublication":"Cary, Miss.","coverage":"http://dbpedia.org/resource/Cary%2C_Mississippi"}
 {"placeOfPublication":"Centreville, Columbiana Co., Ohio","coverage":"http://dbpedia.org/resource/Carrollton%2C_Ohio"}
 {"placeOfPublication":"Cerrillos, N.M.","coverage":"http://dbpedia.org/resource/Los_Cerrillos%2C_New_Mexico"}
 {"placeOfPublication":"Champaign, Ill.","coverage":"http://dbpedia.org/resource/Champaign%2C_Illinois"}
@@ -24,6 +35,7 @@
 {"placeOfPublication":"Chicago [Ill.","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"Chicago [Ill.]","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"Chicago","coverage":"http://dbpedia.org/resource/Chicago"}
+{"placeOfPublication":"Chicago, IL","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"Chicago, Ill.","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"Chicago, Illinois","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"Chicago, Illinois.","coverage":"http://dbpedia.org/resource/Chicago"}
@@ -121,10 +133,12 @@
 {"placeOfPublication":"New York [New York]","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"New York, N.Y.","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"placeOfPublication":"New York, NY","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"New York, [N.Y.","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"New York, [N.Y.]","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"New-York [N.Y.","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"New-York [N.Y.]","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"placeOfPublication":"New-York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"Ocala, Fla.","coverage":"http://dbpedia.org/resource/Ocala%2C_Florida"}
 {"placeOfPublication":"Oregon.","coverage":""}
 {"placeOfPublication":"Ormond-on-the-Halifax, Fla.","coverage":"http://dbpedia.org/resource/Ormond-by-the-Sea%2C_Florida"}
@@ -198,8 +212,8 @@
 {"placeOfPublication":"St. Louis [Mo.","coverage":"http://dbpedia.org/resource/St._Louis%2C_Missouri"}
 {"placeOfPublication":"St. Louis [Mo.]","coverage":"http://dbpedia.org/resource/St._Louis%2C_Missouri"}
 {"placeOfPublication":"St. Louis, Mo.","coverage":"http://dbpedia.org/resource/St._Louis%2C_Missouri"}
-{"placeOfPublication":"St. Martinsville [i.e. Martinville] La.","coverage":"http://dbpedia.org/resource/St._Martinville%2C_Louisiana"}
 {"placeOfPublication":"St. Maries, Idaho","coverage":"http://dbpedia.org/resource/St._Maries%2C_Idaho"}
+{"placeOfPublication":"St. Martinsville [i.e. Martinville] La.","coverage":"http://dbpedia.org/resource/St._Martinville%2C_Louisiana"}
 {"placeOfPublication":"St. Marys, Mo.","coverage":"http://dbpedia.org/resource/St._Mary%2C_Missouri"}
 {"placeOfPublication":"Stafford Springs, Conn.","coverage":"http://dbpedia.org/resource/Stafford%2C_Connecticut"}
 {"placeOfPublication":"Ste. Genevieve [Mo.]","coverage":"http://dbpedia.org/resource/Ste._Genevieve%2C_Missouri"}
@@ -230,6 +244,11 @@
 {"placeOfPublication":"Wyandotte, Kan.","coverage":"http://dbpedia.org/resource/Kansas_City%2C_Kansas"}
 {"placeOfPublication":"Yazoo, Miss.","coverage":"http://dbpedia.org/resource/Yazoo_City%2C_Mississippi"}
 {"placeOfPublication":"Zion City [i.e. Zion], Ill.","coverage":"http://dbpedia.org/resource/Zion%2C_Illinois"}
+{"placeOfPublication":"[Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"placeOfPublication":"[Boston, Mass.]","coverage":"http://dbpedia.org/resource/Boston"}
+{"placeOfPublication":"[Boston]","coverage":"http://dbpedia.org/resource/Boston"}
+{"placeOfPublication":"[Brooklyn, N.Y.]","coverage":"http://dbpedia.org/resource/Brooklyn"}
+{"placeOfPublication":"[Brooklyn, NY]","coverage":"http://dbpedia.org/resource/Brooklyn"}
 {"placeOfPublication":"[Chicago, Ill.]","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"[Fremont, Ohio]","coverage":"http://dbpedia.org/resource/Fremont%2C_Ohio"}
 {"placeOfPublication":"[New York","coverage":"http://dbpedia.org/resource/New_York_City"}
