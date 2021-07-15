@@ -12,7 +12,7 @@ VT=/home/dasmith/src/vt-passim
 # scancel $$SPARK_WORKER_JOBID $$SPARK_MASTER_JOBID
 
 spark_run = WORKERS=${WORKERS} CORES=${CORES} CMEM=${CMEM} QUEUE=${QUEUE} source run-saspark.sh; \
-srun -x c0178 --time 1-0 -p ${QUEUE} -N 1 -c 2 --mem=40G -d "after:$$SPARK_MASTER_JOBID" bash -c "$(1)"; \
+srun -x c0178,c3085 --time 1-0 -p ${QUEUE} -N 1 -c 2 --mem=40G -d "after:$$SPARK_MASTER_JOBID" bash -c "$(1)"; \
 scancel $$SPARK_WORKER_JOBID $$SPARK_MASTER_JOBID
 
 slurm_run = srun -p ${QUEUE} -N 1 -c 2 bash -c "$(1)";
@@ -195,10 +195,10 @@ meta/lccn.json:	$(RAW)/chroniclingamerica/lccn
 # 	cat aps.json/part* > $@
 
 all-series.out/_SUCCESS:	serial.done
-	$(call spark_run,spark-submit $$SPARK_SUBMIT_ARGS $(VT)/scripts/series-list.py serial $(dir $@))
+	$(call spark_run,$(VT)/bin/vtrun series-list.py serial $(dir $@))
 
 all-series.lis:	all-series.out/_SUCCESS
-	sort all-series.out/part* > $@
+	jq -r -c '.series' all-series.out/part* | sort -u > $@
 
 lccn.done:	all-series.lis
 	grep '^/lccn/' $< | perl -pe 's/$$/.rdf/' | \
@@ -217,7 +217,16 @@ tcp-pre1800/out.parquet/_SUCCESS:	tcp-pre1800/input
 	$(call spark_run,spark-submit $$SPARK_SUBMIT_ARGS $(VT)/scripts/langid.py $*/pretty.parquet $*/prettylang.parquet)
 
 %/gtr.pages.json/_SUCCESS:	%/gtr.parquet/_SUCCESS
-	$(call spark_run,spark-submit $$SPARK_SUBMIT_ARGS $(VT)/scripts/gtr-cluster.py $(dir $<) $(dir $@))
+	$(call spark_run,vtrun gtr-cluster.py $(dir $<) $(dir $@))
+
+%/pretty.pages.json/_SUCCESS:	%/pretty.parquet/_SUCCESS
+	$(call spark_run,vtrun gtr-cluster.py --suffix $(dir $<) $(dir $@))
+
+#%.split:	%.json
+#	python $(VT)/scripts/gtr-split.py $(dir $(patsubst %/,%,$(dir $@)))/pages.html < $< && touch $@
+
+#%/pages.html/_SUCCESS:	%/pretty.pages.json/_SUCCESS
+#	ls -1 $(dir $<) | xargs -L 1 -P python $(VT)/scripts/gtr-split.py
 
 %/gtr.html:	%/gtr.pages.json/_SUCCESS
 	$(call slurm_run,python $(VT)/scripts/gtr-pages.py $(dir $<) $@)
@@ -250,7 +259,9 @@ srcgut.out/slim.parquet/_SUCCESS:	srcgut.out/full-extents.parquet/_SUCCESS
 	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --fields 'date(date) as day' 'xxhash64(series) as gid' 'coalesce(int(ed),0) as ed' --filterpairs '(uid <> uid2) AND ((gid <> gid2 AND day < day2 AND datediff(day2, day) < 180) OR (gid = gid2 AND ((day < day2 AND datediff(day2,day) < 32) OR (day = day2 AND ed < ed2))))' --input-format parquet --output-format parquet $< $(dir $(patsubst %/,%,$(dir $@))))
 
 %-dref.out/out.parquet/_SUCCESS:	%.parquet
-	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --fields ref 'date(date) as day' 'xxhash64(series) as gid' 'coalesce(int(ed),0) as ed' --filterpairs '(ref = 0) AND ((ref2 = 1) OR ((uid <> uid2) AND ((gid <> gid2 AND day < day2 AND datediff(day2, day) < 180) OR (gid = gid2 AND ((day < day2 AND datediff(day2,day) < 32) OR (day = day2 AND ed < ed2))))))' -n 25 --input-format parquet --output-format parquet $< $(dir $(patsubst %/,%,$(dir $@))))
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --fields ref 'date(date) as day' 'xxhash64(series) as gid' 'coalesce(int(ed),0) as ed' --filterpairs '(ref = 0) AND ((ref2 = 1) OR ((uid <> uid2) AND ((gid <> gid2 AND day < day2 AND datediff(day2, day) < 180) OR (gid = gid2 AND ((day < day2 AND datediff(day2,day) < 32) OR (day = day2 AND ed < ed2))))))' --input-format parquet --output-format parquet $< $(dir $(patsubst %/,%,$(dir $@))))
+
+#$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --fields ref 'date(date) as day' 'xxhash64(series) as gid' 'coalesce(int(ed),0) as ed' --filterpairs '(ref = 0) AND ((ref2 = 1) OR ((uid <> uid2) AND ((gid <> gid2 AND day < day2 AND datediff(day2, day) < 180) OR (gid = gid2 AND ((day < day2 AND datediff(day2,day) < 32) OR (day = day2 AND ed < ed2))))))' -n 25 --input-format parquet --output-format parquet $< $(dir $(patsubst %/,%,$(dir $@))))
 
 %-mag.out/out.json/_SUCCESS:	%.parquet
 	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --fields \"(corpus = 'aps' OR corpus = 'moa') as mag\" --filterpairs 'mag AND NOT mag2' --input-format parquet $< $(dir $(patsubst %/,%,$(dir $@))))
@@ -263,3 +274,9 @@ srcgut.out/slim.parquet/_SUCCESS:	srcgut.out/full-extents.parquet/_SUCCESS
 
 %-age.out/out.parquet/_SUCCESS:	%.parquet
 	$(call spark_run,/home/dasmith/src/dev/passim/bin/passim --docwise --min-lines 4 --gap 500 -n 5 --openGap 4 --fields 'date(date) as day' --filterpairs 'day < day2' --metaFields 'date;series' --input-format parquet --output-format parquet $< $*-age.out)
+
+aps-ia/out.parquet/_SUCCESS:	aps-ia/input
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --docwise --fields ref 'date(date) as day' --filterpairs 'ref = 1 AND ref2 = 0 AND day = day2' --input-format parquet --output-format parquet $< aps-ia)
+
+moa-ia/out.json/_SUCCESS:	moa-ia/input
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --docwise --linewise --fields ref 'date(date) as day' --filterpairs 'ref = 1 AND ref2 = 0 AND day = day2' --input-format parquet $< moa-ia)
