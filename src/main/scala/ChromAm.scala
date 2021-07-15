@@ -85,7 +85,7 @@ object ChronAm {
       }
     }
       .toDF
-      .dropDuplicates("id") // NB: id now includes batch
+      .dropDuplicates("series", "date", "ed", "seq")
       .join(files.select("id", "file"), "id")
       .withColumn("pages", array(struct('file as "id", 'seq, 'width, 'height, 'dpi, 'regions)))
       .drop("file", "width", "height", "dpi", "regions")
@@ -93,4 +93,3 @@ object ChronAm {
     spark.stop()
   }
 }
-
