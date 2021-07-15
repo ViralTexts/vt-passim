@@ -16,6 +16,5 @@ cmd=$@
 quoted_args="$(printf " %q" "${@}")"
 
 WORKERS=$WORKERS CORES=$CORES CMEM=$CMEM QUEUE=$QUEUE source run-saspark.sh
-# --time 1-0
-srun -x c0178 -p $QUEUE -N 1 -c 2 --mem=40G -d "after:$SPARK_MASTER_JOBID" bash -c "$quoted_args"
+srun -x c0178 --time 1-0 -p $QUEUE -N 1 -c 2 --mem=40G -d "after:$SPARK_MASTER_JOBID" bash -c "$quoted_args"
 scancel $SPARK_WORKER_JOBID $SPARK_MASTER_JOBID
