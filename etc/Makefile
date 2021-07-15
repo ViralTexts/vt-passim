@@ -217,10 +217,10 @@ tcp-pre1800/out.parquet/_SUCCESS:	tcp-pre1800/input
 	$(call spark_run,spark-submit $$SPARK_SUBMIT_ARGS $(VT)/scripts/langid.py $*/pretty.parquet $*/prettylang.parquet)
 
 %/gtr.pages.json/_SUCCESS:	%/gtr.parquet/_SUCCESS
-	$(call spark_run,vtrun gtr-cluster.py $(dir $<) $(dir $@))
+	$(call slurm_run,vtrun gtr-cluster.py --filter \"ref = 0 OR corpus = 'gtr'\" $(dir $<) $(dir $@))
 
 %/pretty.pages.json/_SUCCESS:	%/pretty.parquet/_SUCCESS
-	$(call spark_run,vtrun gtr-cluster.py --suffix $(dir $<) $(dir $@))
+	$(call spark_run,vtrun gtr-cluster.py $(dir $@))
 
 #%.split:	%.json
 #	python $(VT)/scripts/gtr-split.py $(dir $(patsubst %/,%,$(dir $@)))/pages.html < $< && touch $@
