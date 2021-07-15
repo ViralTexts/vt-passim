@@ -23,8 +23,9 @@ object WWO {
       .flatMap( in => {
         val fname = new java.io.File(new java.net.URL(in._1).toURI)
         val book = fname.getName.replaceAll("(.TEI-P5)?.xml$", "")
+        var hyperDiv = 0
         var seq = -1
-        var pseq = 0
+        var pseq = -1
         var pageID = book
         val zoneStack = new Stack[ZoneContent]()
         val rendStack = new Stack[RenditionSpan]()
@@ -33,11 +34,21 @@ object WWO {
         val stream = new XMLEventReader(scala.io.Source.fromURL(in._1))
         stream.foreach { event =>
           event match {
-            case EvElemStart(_, "pb", attr, _) => {
-              pseq += 1
-              pageID = book + "#" + Try(attr.asAttrMap("xml:id")).getOrElse("p" + pseq)
+            case EvElemStart(_, "hyperDiv", attr, _) => {
+              hyperDiv += 1
             }
-            case EvElemStart(_, "anchor", attr, _) => {
+            case EvElemEnd(_, "hyperDiv") => {
+              hyperDiv -= 1
+            }
+            case EvElemStart(_, "pb", attr, _) if hyperDiv == 0 => {
+              pseq += 1
+              pageID = f"$book#p$pseq%04d"
+              val aid = Try(attr.asAttrMap("xml:id")).getOrElse("")
+              if ( aid != "" ) {
+                id2p("#" + aid) = pageID
+              }
+            }
+            case EvElemStart(_, _, attr, _) => {
               val aid = Try(attr.asAttrMap("xml:id")).getOrElse("")
               if ( aid != "" ) {
                 id2p("#" + aid) = pageID
@@ -46,12 +57,20 @@ object WWO {
             case _ =>
           }
         }
-
-        pseq = 0
+        hyperDiv = 0
+        pseq = -1
 
         val pass = new XMLEventReader(scala.io.Source.fromURL(in._1))
         pass.flatMap { event =>
           event match {
+            case EvElemStart(_, "hyperDiv", attr, _) => {
+              hyperDiv += 1
+              Nil
+            }
+            case EvElemEnd(_, "hyperDiv") => {
+              hyperDiv -= 1
+              Nil
+            }
             case EvElemStart(_, elem, attr, _) if lines.contains(elem) && !zoneStack.isEmpty => {
               rendStack.push(RenditionSpan(elem, zoneStack.top.data.length, 0))
               Nil
@@ -103,9 +122,12 @@ object WWO {
               for ( zone <- zones ) {
                 zoneStack.push(new ZoneContent(zone, new StringBuilder, new ListBuffer[RenditionSpan]()))
               }
-              pseq += 1
-              val pid = Try(attr.asAttrMap("xml:id")).getOrElse("p" + pseq)
-              pageID = book + "#" + pid
+              if ( hyperDiv > 0 ) {
+                pageID = Try(id2p(attr("corresp").text)).getOrElse(book + "#BADPAGE")
+              } else {
+                pseq += 1
+                pageID = f"$book#p$pseq%04d"
+              }
               res
             }
             case EvElemStart(_, "cb", attr, _) => {
@@ -231,6 +253,7 @@ object WWO {
         }
       })
       .toDF
+      .filter($"ztype" =!= "notes")
       .write.save(args(1))
     spark.stop()
   }
