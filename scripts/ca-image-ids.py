@@ -12,7 +12,11 @@ def idPrefix(batch, path):
     if len(issue) < 9:
         return ''
     series = ([s for s in dirs[1:] if s.startswith('sn')] or [dirs[2]])[0]
-    date = '-'.join([issue[0:4], issue[4:6], issue[6:8]])
+    year = issue[0:4]
+    month = issue[4:6]
+    if int(year) < 1600 or int(year) > 2020 or int(month) < 1 or int(month) > 12:
+        return ''
+    date = '-'.join([year, month, issue[6:8]])
     ed = 'ed-' + issue[8:10].lstrip('0')
     return '/'.join(['', 'ca', batch, series, date, ed])
 
