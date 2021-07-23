@@ -5,7 +5,7 @@ from re import sub
 import urllib.parse
 
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, udf, array_contains, explode, desc, concat_ws, coalesce
+from pyspark.sql.functions import col, udf, array_contains, explode, desc, concat_ws, coalesce, lit
 
 def guessFormat(path, default="json"):
     if path.endswith(".json"):
@@ -63,29 +63,37 @@ if __name__ == "__main__":
     image_link = udf(lambda corpus, p1id, p1x, p1y, p1w, p1h, p1width, p1height: imageLink(corpus, p1id, p1x, p1y, p1w, p1h, p1width, p1height))
     thumb_link = udf(lambda image: image.replace('/full/', '/!80,100/') if image != None else None)
 
-    df = spark.read.load(sys.argv[2]) \
-            .withColumn('title', coalesce('heading', 'title')) \
-            .withColumnRenamed('lang', 'doc_lang')\
-            .withColumn('p1x', col('pages')[0]['regions'][0]['coords']['x']) \
-            .withColumn('p1y', col('pages')[0]['regions'][0]['coords']['y']) \
-            .withColumn('p1w', col('pages')[0]['regions'][0]['coords']['w']) \
-            .withColumn('p1h', col('pages')[0]['regions'][0]['coords']['h']) \
-            .withColumn('p1seq', col('pages')[0]['seq']) \
-            .withColumn('p1width', col('pages')[0]['width']) \
-            .withColumn('p1height', col('pages')[0]['height']) \
-            .withColumn('p1dpi', col('pages')[0]['dpi']) \
-            .withColumn('p1id', col('pages')[0]['id']) \
-            .drop('locs').drop('pages').drop('regions')\
-            .join(meta, 'series', 'left_outer') \
-            .withColumn('source', coalesce('source', 'series_title')) \
-            .withColumn('publisher', coalesce('publisher', 'series_publisher')) \
-            .withColumn('placeOfPublication',
-                        coalesce('placeOfPublication', 'series_placeOfPublication')) \
-            .drop('series_title', 'series_publisher', 'series_placeOfPublication') \
-            .withColumn('url', constructURL('page_access', 'corpus', 'id')) \
-            .withColumn('page_image', image_link('corpus', 'p1id', 'p1x', 'p1y', 'p1w', 'p1h',
-                                                 'p1width', 'p1height')) \
-            .withColumn('page_thumb', thumb_link('page_image'))
+    raw = spark.read.load(sys.argv[2])
+    cols = set(raw.columns)
+    for f in ['source', 'publisher', 'placeOfPublication', 'heading', 'page_access', 'title']:
+        if f not in cols:
+            raw = raw.withColumn(f, lit(None))
+
+    df = raw.withColumn('title', coalesce('heading', 'title')
+           ).withColumnRenamed('lang', 'doc_lang'
+           ).withColumn('sbegin', col('src')[0]['begin']
+           ).withColumn('send', col('src')[0]['end']
+           ).withColumn('src', col('src')[0]['uid']
+           ).withColumn('p1x', col('pages')[0]['regions'][0]['coords']['x']
+           ).withColumn('p1y', col('pages')[0]['regions'][0]['coords']['y']
+           ).withColumn('p1w', col('pages')[0]['regions'][0]['coords']['w']
+           ).withColumn('p1h', col('pages')[0]['regions'][0]['coords']['h']
+           ).withColumn('p1seq', col('pages')[0]['seq']
+           ).withColumn('p1width', col('pages')[0]['width']
+           ).withColumn('p1height', col('pages')[0]['height']
+           ).withColumn('p1dpi', col('pages')[0]['dpi']
+           ).withColumn('p1id', col('pages')[0]['id']
+           ).drop('locs').drop('pages').drop('regions'
+           ).join(meta, 'series', 'left_outer'
+           ).withColumn('source', coalesce('source', 'series_title')
+           ).withColumn('publisher', coalesce('publisher', 'series_publisher')
+           ).withColumn('placeOfPublication',
+                        coalesce('placeOfPublication', 'series_placeOfPublication')
+           ).drop('series_title', 'series_publisher', 'series_placeOfPublication'
+           ).withColumn('url', constructURL('page_access', 'corpus', 'id')
+           ).withColumn('page_image', image_link('corpus', 'p1id', 'p1x', 'p1y', 'p1w', 'p1h',
+                                                 'p1width', 'p1height')
+           ).withColumn('page_thumb', thumb_link('page_image'))
 
     filtered = df.join(df.filter(sys.argv[4]).select('cluster').distinct(), 'cluster') \
                if len(sys.argv) >= 5 else df
