@@ -19,14 +19,12 @@
 {"apsseries": "aps/25159", "series": "/lccn/02016165", "title": "Putnam's magazine of literature, science, art, and national interests"}
 {"apsseries": "aps/41364", "series": "/lccn/04017574", "title": "Scientific American"}
 {"apsseries": "aps/24806", "series": "/lccn/02025593", "title": "Scribners monthly"}
-{"apsseries": "aps/35168", "series": "/lccn/sn84031524", "title": "The liberator"}
+{"apsseries": "aps/35168", "series": "/lccn/sn84031524", "title": "Liberator (1831-1865)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries": "aps/35792", "series": "/lccn/sn99047371", "title": "The United States magazine and Democratic review"}
 {"apsseries": "aps/35793", "series": "/lccn/2001210208", "title": "Democratic review"}
 {"apsseries": "aps/35794", "series": "/lccn/2001210209", "title": "The United States review"}
 {"apsseries": "aps/35795", "series": "/lccn/05003430", "title": "The United States democratic review"}
-{"apsseries": "aps/35775", "series": "/lccn/sn96076978", "title": "The family favorite"}
-{"apsseries": "aps/35009", "series": "/lccn/sn82014150", "title": "The western luminary"}
-{"apsseries":"aps/1147","series":null,"title":"The Christian History, Containing Accounts of the Revival and Propagation of Religion in Great Britain & America (1743-1745)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"apsseries":"aps/1147","series":"/lccn/19016945","title":"The Christian History, Containing Accounts of the Revival and Propagation of Religion in Great Britain & America (1743-1745)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/1148","series":null,"title":"The Christian's Monitor, &c. (1799-1799)","placeOfPublication":"Portland","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
 {"apsseries":"aps/1149","series":null,"title":"The Columbian Museum; or, Universal Asylum (1793-1793)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/1150","series":"/lccn/sn83020979","title":"Courier de Boston; Affiches, Annonces, et Avis (1789-1789)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
@@ -43,7 +41,7 @@
 {"apsseries":"aps/16496","series":null,"title":"The Christian's, Scholar's, and Farmer's Magazine : Calculated in an Eminent Degree, to Promote Religion; to Disseminate Useful Knowledge; to Afford Literary Pleasures and Amusement, and to Advance the Interest of Agriculture (1789-1791)","placeOfPublication":"Elizabeth-town","coverage":"http://dbpedia.org/resource/Elizabeth%2C_New_Jersey"}
 {"apsseries":"aps/1683","series":null,"title":"The Analyst; or Mathematical Museum (1808-1814)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/1684","series":null,"title":"Annales Philosophiques, Politiques et Litteraires (1807-1807)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
-{"apsseries":"aps/1871","series":null,"title":"The Philadelphia Minerva, Containing a Variety of Fugitive Pieces in Prose, and Poetry, Original and Selected (1795-1798)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"apsseries":"aps/1871","series":"/lccn/ca10000050","title":"The Philadelphia Minerva, Containing a Variety of Fugitive Pieces in Prose, and Poetry, Original and Selected (1795-1798)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/2127","series":null,"title":"The Universal Asylum and Columbian Magazine (1790-1792)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/2152","series":"/lccn/2010204507","title":"The American Apollo (1792-1792)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/2153","series":null,"title":"The American Magazine and Historical Chronicle (1743-1746)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
@@ -62,8 +60,8 @@
 {"apsseries":"aps/2167","series":null,"title":"The Boston Magazine, Containing, a Collection of Instructive and Entertaining Essays, in the Various Branches of Useful, and Polite Literature. Together With, Foreign and Domestick Occurrences, Anecdotes, Observations on the Weather, & c., & c. (1783-1786)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/24079","series":null,"title":"Cohen's Gazette and Lottery Register (1825-1830)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
 {"apsseries":"aps/24080","series":null,"title":"Valley Farmer (1849-1864)","placeOfPublication":"St. Louis","coverage":"http://dbpedia.org/resource/St._Louis"}
-{"apsseries":"aps/24082","series":null,"title":"Colman's Rural World (1865-1916)","placeOfPublication":"St. Louis","coverage":"http://dbpedia.org/resource/St._Louis"}
-{"apsseries":"aps/24083","series":null,"title":"The Columbian Star (1822-1829)","placeOfPublication":"Washington","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"apsseries":"aps/24082","series":"/lccn/sn93060093","title":"Colman's Rural World (1865-1916)","placeOfPublication":"St. Louis","coverage":"http://dbpedia.org/resource/St._Louis"}
+{"apsseries":"aps/24083","series":"/lccn/sn90065044","title":"The Columbian Star (1822-1829)","placeOfPublication":"Washington","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"apsseries":"aps/24084","series":null,"title":"The Common School Journal (1838-1852)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/24085","series":null,"title":"Holdens Dollar Magazine of Criticisms, Biographies, Sketches, Essays, Tales, Reviews, Poetry, etc., etc. (1848-1850)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24086","series":null,"title":"The Dollar Magazine (1851-1851)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
@@ -93,7 +91,7 @@
 {"apsseries":"aps/24153","series":null,"title":"Mechanics' Magazine, and Journal of the Mechanics' Institute (1833-1837)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24154","series":null,"title":"Current Literature (1888-1912)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24163","series":null,"title":"Youth's Repository of Christian Knowledge (1813-1813)","placeOfPublication":"New Haven","coverage":"http://dbpedia.org/resource/New_Haven%2C_Connecticut"}
-{"apsseries":"aps/24164","series":null,"title":"The ____________. By Nonius Nondescript (1826-1826)","placeOfPublication":"Washington","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"apsseries":"aps/24164","series":"/lccn/sf88091849","title":"The ____________. By Nonius Nondescript (1826-1826)","placeOfPublication":"Washington","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"apsseries":"aps/24165","series":null,"title":"The Literary Geminae, a Monthly Magazine in English and French (1839-1840)","placeOfPublication":"Worcester","coverage":"http://dbpedia.org/resource/Worcester%2C_Massachusetts"}
 {"apsseries":"aps/24166","series":null,"title":"Wreath; Devoted to Polite Literature (1834-1835)","placeOfPublication":"Schenectady","coverage":"http://dbpedia.org/resource/Schenectady%2C_New_York"}
 {"apsseries":"aps/24167","series":null,"title":"Literary Journal; a Repository of Polite Literature and Fine Arts (1835-1835)","placeOfPublication":"Schenectady","coverage":"http://dbpedia.org/resource/Schenectady%2C_New_York"}
@@ -679,7 +677,7 @@
 {"apsseries":"aps/25185","series":null,"title":"Cohen's Gazette & Lottery Register (1814-1814)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
 {"apsseries":"aps/25186","series":null,"title":"New England Journal of Dentistry and Allied Sciences (1882-1884)","placeOfPublication":"Springfield","coverage":"http://dbpedia.org/resource/Springfield%2C_Massachusetts"}
 {"apsseries":"aps/25187","series":null,"title":"Cohen's Lottery Gazette and Register (1814-1825)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
-{"apsseries":"aps/25189","series":null,"title":"The Abolitionist: or Record of the New England Anti - Slavery Society (1833-1833)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"apsseries":"aps/25189","series":"/lccn/2010219087","title":"The Abolitionist: or Record of the New England Anti - Slavery Society (1833-1833)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/25190","series":null,"title":"The Advocate of Science (1833-1834)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/25191","series":null,"title":"The Advocate of Science, and Annals of Natural History (1834-1835)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/25192","series":null,"title":"The Amaranth; or Masonic Garland (1828-1829)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
@@ -922,7 +920,7 @@
 {"apsseries":"aps/35004","series":null,"title":"United States Catholic Sentinel (1831-1832)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/35005","series":"/lccn/57051065","title":"The Jesuit; or, Catholic Sentinel (1833-1834)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/35008","series":null,"title":"Western Farmer and Gardener (1846-1848)","placeOfPublication":"Indianapolis","coverage":"http://dbpedia.org/resource/Indianapolis"}
-{"apsseries":"aps/35009","series":null,"title":"Western Luminary (1824-1834)","placeOfPublication":"Lexington","coverage":"http://dbpedia.org/resource/Lexington%2C_Kentucky"}
+{"apsseries":"aps/35009","series":"/lccn/sn82014150","title":"Western Luminary (1824-1834)","placeOfPublication":"Lexington","coverage":"http://dbpedia.org/resource/Lexington%2C_Kentucky"}
 {"apsseries":"aps/35010","series":"/lccn/sf89090770","title":"Western Recorder (1824-1833)","placeOfPublication":"Utica","coverage":"http://dbpedia.org/resource/Utica%2C_New_York"}
 {"apsseries":"aps/35014","series":null,"title":"The Yankee and Boston Literary Gazette (1828-1829)","placeOfPublication":"Portland","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
 {"apsseries":"aps/35015","series":null,"title":"Yankee Doodle (1846-1847)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
@@ -1192,7 +1190,7 @@
 {"apsseries":"aps/35772","series":null,"title":"Connecticut Evangelical Magazine (1800-1807)","placeOfPublication":"Hartford","coverage":"http://dbpedia.org/resource/Hartford%2C_Connecticut"}
 {"apsseries":"aps/35773","series":null,"title":"Connecticut Evangelical Magazine and Religious Intelligencer (1808-1815)","placeOfPublication":"Hartford","coverage":"http://dbpedia.org/resource/Hartford%2C_Connecticut"}
 {"apsseries":"aps/35774","series":null,"title":"The Expositor and Universalist Review (1833-1840)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
-{"apsseries":"aps/35775","series":null,"title":"Family Favorite and Temperance Journal (1849-1850)","placeOfPublication":"Adrian","coverage":"http://dbpedia.org/resource/Adrian%2C_Michigan"}
+{"apsseries":"aps/35775","series":"/lccn/sn96076978","title":"Family Favorite and Temperance Journal (1849-1850)","placeOfPublication":"Adrian","coverage":"http://dbpedia.org/resource/Adrian%2C_Michigan"}
 {"apsseries":"aps/35776","series":null,"title":"The Family Magazine; or, Monthly Abstract of General Knowledge (1833-1841)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/35777","series":null,"title":"The Farmers Cabinet and American Herd Book, Devoted to Agriculture, Horticulture, and Rural and Domestic Affairs (1836-1848)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/35778","series":null,"title":"Friends' Review; a Religious, Literary and Miscellaneous Journal (1847-1894)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
@@ -1353,7 +1351,7 @@
 {"apsseries":"aps/41374","series":null,"title":"The Bankers' Magazine and State Financial Register (1846-1849)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
 {"apsseries":"aps/41375","series":null,"title":"The Bankers' Magazine and Statistical Register (1849-1894)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/41376","series":null,"title":"The Bankers' Magazine (1894-1895)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"apsseries":"aps/41377","series":null,"title":"The Cabinet; a Repository of Polite Literature (1811-1811)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"apsseries":"aps/41377","series":"/lccn/11008634","title":"The Cabinet; a Repository of Polite Literature (1811-1811)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/41378","series":null,"title":"The Carolina Law Repository (1813-1816)","placeOfPublication":"Raleigh","coverage":"http://dbpedia.org/resource/Raleigh%2C_North_Carolina"}
 {"apsseries":"aps/41379","series":null,"title":"The Casket (1811-1812)","placeOfPublication":"Hudson","coverage":"http://dbpedia.org/resource/Hudson%2C_New_York"}
 {"apsseries":"aps/41380","series":null,"title":"Christian Chronicle (1818-1818)","placeOfPublication":"Bennington","coverage":"http://dbpedia.org/resource/Bennington%2C_Vermont"}
