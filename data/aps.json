@@ -24,7 +24,7 @@
 {"apsseries": "aps/35793", "series": "/lccn/2001210208", "title": "Democratic review"}
 {"apsseries": "aps/35794", "series": "/lccn/2001210209", "title": "The United States review"}
 {"apsseries": "aps/35795", "series": "/lccn/05003430", "title": "The United States democratic review"}
-{"apsseries":"aps/1147","series":"/lccn/19016945","title":"The Christian History, Containing Accounts of the Revival and Propagation of Religion in Great Britain & America (1743-1745)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"apsseries":"aps/1147","series":"/lccn/sf89092236","title":"The Christian History, Containing Accounts of the Revival and Propagation of Religion in Great Britain & America (1743-1745)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/1148","series":null,"title":"The Christian's Monitor, &c. (1799-1799)","placeOfPublication":"Portland","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
 {"apsseries":"aps/1149","series":null,"title":"The Columbian Museum; or, Universal Asylum (1793-1793)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/1150","series":"/lccn/sn83020979","title":"Courier de Boston; Affiches, Annonces, et Avis (1789-1789)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
@@ -486,7 +486,7 @@
 {"apsseries":"aps/24766","series":null,"title":"The Saturday Magazine: Being in Great Part a Compilation From the British Reviews, Magazines, and Scientific Journals (1821-1822)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/24767","series":null,"title":"Select Reviews, and Spirit of the Foreign Magazines (1809-1811)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/24775","series":null,"title":"The Lady's Miscellany: or, Weekly Visitor, and Entertaining Companion for the Use and Amusement of Both Sexes (1810-1813)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"apsseries":"aps/24776","series":null,"title":"The Lancaster Hive; Devoted to Morality, Literature, Biography, History, Poetry, Agriculture, &c. &c. (1803-1805)","placeOfPublication":"Lancaster","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
+{"apsseries":"aps/24776","series":"/lccn/sn83032314","title":"The Lancaster Hive; Devoted to Morality, Literature, Biography, History, Poetry, Agriculture, &c. &c. (1803-1805)","placeOfPublication":"Lancaster","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
 {"apsseries":"aps/24777","series":null,"title":"Literary Cabinet (1806-1807)","placeOfPublication":"New Haven","coverage":"http://dbpedia.org/resource/New_Haven%2C_Connecticut"}
 {"apsseries":"aps/24778","series":null,"title":"The Boston Literary Magazine (1832-1833)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/24779","series":null,"title":"The Boston Lyceum (1827-1827)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
