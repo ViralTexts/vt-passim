@@ -22,7 +22,8 @@
 {"apsseries": "aps/35168", "series": "/lccn/sn84031524", "title": "Liberator (1831-1865)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries": "aps/35792", "series": "/lccn/sn99047371", "title": "The United States magazine and Democratic review"}
 {"apsseries": "aps/35793", "series": "/lccn/2001210208", "title": "Democratic review"}
-{"apsseries": "aps/35794", "series": "/lccn/2001210209", "title": "The United States review"}
+{"apsseries": "aps/35794", "series": "/lccn/2001210209", "title": "The United States review", "startdate": "1853-01-01", "enddate": "1855-12-31"}
+{"apsseries": "aps/35794", "series": "/lccn/05003430", "title": "The United States review", "startdate": "1856-01-01", "enddate": "1856-01-31"}
 {"apsseries": "aps/35795", "series": "/lccn/05003430", "title": "The United States democratic review"}
 {"apsseries":"aps/1147","series":"/lccn/sf89092236","title":"The Christian History, Containing Accounts of the Revival and Propagation of Religion in Great Britain & America (1743-1745)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/1148","series":null,"title":"The Christian's Monitor, &c. (1799-1799)","placeOfPublication":"Portland","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
