@@ -29,7 +29,7 @@
 {"apsseries":"aps/1148","series":null,"title":"The Christian's Monitor, &c. (1799-1799)","placeOfPublication":"Portland","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
 {"apsseries":"aps/1149","series":null,"title":"The Columbian Museum; or, Universal Asylum (1793-1793)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/1150","series":"/lccn/sn83020979","title":"Courier de Boston; Affiches, Annonces, et Avis (1789-1789)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
-{"apsseries":"aps/1151","series":null,"title":"The Dessert to the True American (1798-1799)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"apsseries":"aps/1151","series": "/lccn/sn86081070","title":"The Dessert to the True American (1798-1799)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/1152","series":null,"title":"The Experienced Christian's Magazine: Consisting Chiefly of Original Narrations, Showing the Increase of Christ's Kingdom in America (1796-1797)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/1158","series":null,"title":"John Englishman, in Defence of the English Constitution (1755-1755)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/1159","series":"/lccn/sn90057220","title":"The Key (1798-1798)","placeOfPublication":"Frederick Town","coverage":"http://dbpedia.org/resource/Frederick%2C_Maryland"}
@@ -323,7 +323,7 @@
 {"apsseries":"aps/24487","series":"/lccn/sf88091546","title":"The Observer (1810-1811)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24488","series":null,"title":"The Odd Fellows' Magazine (1825-1826)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
 {"apsseries":"aps/24489","series":null,"title":"The Columbian Lady's and Gentleman's Magazine, Embracing Literature in Every Department: Embellished with the Finest Steel and Mezzotint Engravings, Music, and Colored Fashions (1844-1849)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"apsseries":"aps/24490","series":null,"title":"Colvin's Weekly Register (1808-1808)","placeOfPublication":"Washington","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"apsseries":"aps/24490","series":"/lccn/2008266735","title":"Colvin's Weekly Register (1808-1808)","placeOfPublication":"Washington","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"apsseries":"aps/24491","series":null,"title":"Common School Advocate (1837-1841)","placeOfPublication":"Madison","coverage":"http://dbpedia.org/resource/Madison%2C_Indiana"}
 {"apsseries":"aps/24492","series":null,"title":"The Correspondent (1827-1829)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24493","series":"/lccn/2008266710","title":"The Corsair. A Gazette of Literature, Art, Dramatic Criticism, Fashion, and Novelty (1839-1840)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
@@ -726,9 +726,9 @@
 {"apsseries":"aps/25280","series":null,"title":"Western Literary Cabinet (1853-1854)","placeOfPublication":"Detroit","coverage":"http://dbpedia.org/resource/Detroit"}
 {"apsseries":"aps/25281","series":null,"title":"Wellman's Miscellany (1870-1873)","placeOfPublication":"Detroit","coverage":"http://dbpedia.org/resource/Detroit"}
 {"apsseries":"aps/25282","series":null,"title":"The Wesleyan Repository (1821-1824)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
-{"apsseries":"aps/25297","series":null,"title":"German Reformed Messenger (1851-1867)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
-{"apsseries":"aps/25298","series":null,"title":"Reformed Church Messenger (1867-1874)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
-{"apsseries":"aps/25300","series":null,"title":"Messenger (1876-1878)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"apsseries":"aps/25297","series":"/lccn/sn87090458","title":"German Reformed Messenger (1851-1867)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"apsseries":"aps/25298","series":"/lccn/sn97016137","title":"Reformed Church Messenger (1867-1874)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"apsseries":"aps/25300","series":"/lccn/sn97016139","title":"Messenger (1876-1878)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/25444","series":null,"title":"Christian Watchman (1819-1848)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/25445","series":"/lccn/sn86077248","title":"Christian Reflector and Christian Watchman (1848-1848)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/25446","series":"/lccn/sn86077249","title":"Christian Watchman and Christian Reflector (1848-1850)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
@@ -817,7 +817,7 @@
 {"apsseries":"aps/27499","series":null,"title":"Christian Advocate and Journal (1827-1828)","placeOfPublication":"Chicago","coverage":"http://dbpedia.org/resource/Chicago"}
 {"apsseries":"aps/27500","series":null,"title":"Christian Advocate and Journal and Zion's Herald (1828-1833)","placeOfPublication":"Chicago","coverage":"http://dbpedia.org/resource/Chicago"}
 {"apsseries":"aps/27501","series":null,"title":"Christian Advocate and Journal (1833-1865)","placeOfPublication":"Chicago","coverage":"http://dbpedia.org/resource/Chicago"}
-{"apsseries":"aps/27504","series":null,"title":"Weekly Messenger (1841-1844)","placeOfPublication":"Chambersburg","coverage":"http://dbpedia.org/resource/Chambersburg%2C_Pennsylvania"}
+{"apsseries":"aps/27504","series":"/lccn/sn86053548","title":"Weekly Messenger (1841-1844)","placeOfPublication":"Chambersburg","coverage":"http://dbpedia.org/resource/Chambersburg%2C_Pennsylvania"}
 {"apsseries":"aps/27849","series":null,"title":"American Geographical Society of New York. Bulletin of the American Geographical and Statistical Society (1852-1857)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/3150","series":null,"title":"The Free Universal Magazine (1793-1793)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/3158","series":null,"title":"Genius of Universal Emancipation and Baltimore Courier (1825-1825)","placeOfPublication":"Mount Pleasant","coverage":"http://dbpedia.org/resource/Mount_Pleasant%2C_Ohio"}
@@ -1153,7 +1153,7 @@
 {"apsseries":"aps/35682","series":null,"title":"The Missionary Herald, Containing the Proceedings of the American Board of Commissioners for Foreign Missions (1821-1906)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/35683","series":null,"title":"Boston Cultivator (1839-1850)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/35684","series":null,"title":"The American Monthly Magazine (1829-1831)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
-{"apsseries":"aps/35685","series":null,"title":"Geographical and Military Museum (1814-1814)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"apsseries":"aps/35685","series": "/lccn/sn83030802","title":"Geographical and Military Museum (1814-1814)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/35687","series":null,"title":"National Repository, Devoted to General and Religious Literature, Criticism, and Art (1877-1880)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/35688","series":null,"title":"The Messenger of Peace, Devoted to Doctrine, Religion, and Morality (1824-1825)","placeOfPublication":"Hudson","coverage":"http://dbpedia.org/resource/Hudson%2C_New_York"}
 {"apsseries":"aps/35689","series":null,"title":"The Microscope (1820-1820)","placeOfPublication":"New Haven","coverage":"http://dbpedia.org/resource/New_Haven%2C_Connecticut"}
