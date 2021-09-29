@@ -751,8 +751,8 @@
 {"apsseries":"aps/25953","series":"/lccn/sn85017450","title":"Recorder and Telegraph (1825-1825)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/25971","series":null,"title":"The Massachusetts Magazine: or, Monthly Museum of Knowledge and Rational Entertainment. Containing, Poetry, Musick, Biography, History, Physick, Geography, Morality, Criticism (1789-1789)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/25974","series":null,"title":"The Boston Weekly Magazine, Devoted to Morality, Literature, Biography, History, the Fine Arts, Agriculture, &c. &c.(1802-1805)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
-{"apsseries":"aps/25976","series":null,"title":"Balance and Columbian Repository (1802-1807)","placeOfPublication":"Albany","coverage":"http://dbpedia.org/resource/Albany%2C_New_York"}
-{"apsseries":"aps/25977","series":null,"title":"Balance (1808-1808)","placeOfPublication":"Albany","coverage":"http://dbpedia.org/resource/Albany%2C_New_York"}
+{"apsseries":"aps/25976","series":"/lccn/sn83025564","title":"Balance and Columbian Repository (1802-1807)","placeOfPublication":"Albany","coverage":"http://dbpedia.org/resource/Albany%2C_New_York"}
+{"apsseries":"aps/25977","series":"/lccn/sn83025565","title":"Balance (1808-1808)","placeOfPublication":"Albany","coverage":"http://dbpedia.org/resource/Albany%2C_New_York"}
 {"apsseries":"aps/26058","series":null,"title":"Boston Recorder and Religious Telegraph (1826-1830)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/26059","series":"/lccn/sn86077095","title":"Boston Recorder (1830-1849)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/26060","series":null,"title":"Puritan Recorder (1849-1850)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
