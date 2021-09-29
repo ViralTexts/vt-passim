@@ -215,8 +215,8 @@
 {"apsseries":"aps/24338","series":null,"title":"The Gentleman and Lady's Town and Country Magazine; or, Repository of Instruction and Entertainment (1784-1785)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/24339","series":null,"title":"The Gospel Advocate; Conducted by a Society of Gentlemen (1821-1825)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/24340","series":null,"title":"Gospel Advocate and Impartial Investigator (1823-1829)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
-{"apsseries":"aps/24341","series":null,"title":"Herald of Gospel Liberty (1808-1930)","placeOfPublication":"Portsmouth","coverage":"http://dbpedia.org/resource/Portsmouth%2C_New_Hampshire"}
-{"apsseries":"aps/24342","series":null,"title":"Hive (1810-1810)","placeOfPublication":"Lancaster","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
+{"apsseries":"aps/24341","series":"/lccn/sn83025573","title":"Herald of Gospel Liberty (1808-1930)","placeOfPublication":"Portsmouth","coverage":"http://dbpedia.org/resource/Portsmouth%2C_New_Hampshire"}
+{"apsseries":"aps/24342","series":"/lccn/sf88090231","title":"Hive (1810-1810)","placeOfPublication":"Lancaster","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
 {"apsseries":"aps/24346","series":null,"title":"Anglo - American Magazine (1843-1843)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/24360","series":null,"title":"Home Magazine (1852-1856)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/24361","series":null,"title":"Lady's Home Magazine (1857-1860)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
@@ -246,7 +246,8 @@
 {"apsseries":"aps/24397","series":null,"title":"The American Critic and General Review (1820-1820)","placeOfPublication":"Washington","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"apsseries":"aps/24398","series":null,"title":"American Eagle Magazine: A Journal, Dedicated to Science, Art, and Literature (1847-1847)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24399","series":"/lccn/sn83016645","title":"The American Farmer, Containing Original Essays and Selections on Rural Economy and Internal Improvements, with Illustrative Engravings and Prices Current of County Produce (1819-1834)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
-{"apsseries":"aps/24400","series":null,"title":"The Farmer & Gardener, and Live - Stock Breeder and Manager (1834-1839)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
+{"apsseries":"aps/24400","series":"/lccn/sn89060419","title":"The Farmer & Gardener, and Live - Stock Breeder and Manager (1834-1839)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore", "startdate": "1834-05-09", "enddate": "1835-04-28"}
+{"apsseries":"aps/24400","series":"/lccn/sn89060420","title":"The Farmer & Gardener, and Live - Stock Breeder and Manager (1834-1839)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore", "startdate": "1835-05-05", "enddate": "1839-05-22"}
 {"apsseries":"aps/24401","series":null,"title":"The American Farmer, and Spirit of the Agricultural Journals of the Day (1839-1850)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
 {"apsseries":"aps/24402","series":null,"title":"The American Farmer, a Monthly Magazine of Agriculture and Horticulture (1850-1870)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
 {"apsseries":"aps/24403","series":"/lccn/sn90057016","title":"The American Farmer and Rural Register (1872-1873)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
@@ -324,7 +325,7 @@
 {"apsseries":"aps/24490","series":null,"title":"Colvin's Weekly Register (1808-1808)","placeOfPublication":"Washington","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"apsseries":"aps/24491","series":null,"title":"Common School Advocate (1837-1841)","placeOfPublication":"Madison","coverage":"http://dbpedia.org/resource/Madison%2C_Indiana"}
 {"apsseries":"aps/24492","series":null,"title":"The Correspondent (1827-1829)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"apsseries":"aps/24493","series":null,"title":"The Corsair. A Gazette of Literature, Art, Dramatic Criticism, Fashion, and Novelty (1839-1840)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"apsseries":"aps/24493","series":"/lccn/2008266710","title":"The Corsair. A Gazette of Literature, Art, Dramatic Criticism, Fashion, and Novelty (1839-1840)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24494","series":null,"title":"The Critic. A Weekly Review of Literature, Fine Arts, and the Drama (1828-1829)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24495","series":null,"title":"The Crisis. Devoted to the Support of the Democratic Principles (1840-1840)","placeOfPublication":"Richmond","coverage":"http://dbpedia.org/resource/Richmond%2C_Virginia"}
 {"apsseries":"aps/24496","series":null,"title":"Reformer and Christian (1832-1835)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
@@ -759,7 +760,7 @@
 {"apsseries":"aps/26200","series":null,"title":"The Social Economist (1891-1895)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/26201","series":null,"title":"Gunton's Magazine of American Economics and Political Science (1896-1898)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/26203","series":null,"title":"Salmagundi; or, the Whim - Whams and Opinions of Launcelot Langstaff, Esq., and Others (1807-1808)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"apsseries":"aps/26206","series":null,"title":"Congregationalist (1891-1901)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"apsseries":"aps/26206","series":"/lccn/sn95072055","title":"Congregationalist (1891-1901)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/26207","series":null,"title":"Congregationalist and Christian World (1901-1906)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/26209","series":"/lccn/sn85047621","title":"New - England Galaxy and Masonic Magazine (1817-1820)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/26210","series":null,"title":"Graham's American Monthly Magazine of Literature, Art, and Fashion (1844-1858)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
@@ -852,7 +853,7 @@
 {"apsseries":"aps/34553","series":null,"title":"Journal des Dames; ou, Les Souvenirs d'un Viellard. Dedie aux Dames des Etats Unis, Redige et Imprime au Benefice d'un Etablissement Public, par un Hermite des Rives du Pasaic (1810-1810)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/34554","series":null,"title":"The Monthly Journal of Agriculture, Containing the Best Current Productions in Promotion of Agricultural Improvement, Including the Choicest Prize Essays Issued in Europe and America. With Original Contributions from Eminent Farmers and Statesmen (1845-1848)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/34589","series":null,"title":"Utahnian (1896-1897)","placeOfPublication":"Salt Lake City","coverage":"http://dbpedia.org/resource/Salt_Lake_City"}
-{"apsseries":"aps/34597","series":null,"title":"Flag of Our Union (1854-1870)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"apsseries":"aps/34597","series":"/lccn/sn85036056","title":"Flag of Our Union (1854-1870)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/34598","series":null,"title":"Forest and Stream; A Journal of Outdoor Life, Travel, Nature Study, Shooting, Fishing, Yachting (1873-1930)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/34599","series":"/lccn/sn86059055","title":"The Free Enquirer (1828-1835)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/34639","series":null,"title":"Journal of Belles - Lettres (1819-1820)","placeOfPublication":"Lexington","coverage":"http://dbpedia.org/resource/Lexington%2C_Kentucky"}
@@ -1247,7 +1248,7 @@
 {"apsseries":"aps/40492","series":null,"title":"The Companion and Weekly Miscellany (1804-1806)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
 {"apsseries":"aps/40493","series":null,"title":"The Connecticut Magazine; or, Gentleman's and Lady's Monthly Museum of Knowledge & Rational Entertainment (1801-1801)","placeOfPublication":"Bridgeport","coverage":"http://dbpedia.org/resource/Bridgeport%2C_Connecticut"}
 {"apsseries":"aps/40494","series":null,"title":"Connecticut Republican Magazine (1802-[1803])","placeOfPublication":"Suffield","coverage":"http://dbpedia.org/resource/Suffield%2C_Connecticut"}
-{"apsseries":"aps/40612","series":"/lccn/sf88091952","title":"The Corrector (1804-1804)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"apsseries":"aps/40612","series":"/lccn/sn86053281","title":"The Corrector (1804-1804)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/40613","series":null,"title":"The Emerald, or, Miscellany of Literature, Containing Sketches of the Manners, Principles and Amusements of the Age (1806-1808)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/40614","series":null,"title":"General Assembly's Missionary Magazine (1805-1807)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/40615","series":null,"title":"The Evangelical Intelligencer (1807-1809)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
