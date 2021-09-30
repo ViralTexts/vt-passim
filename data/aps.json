@@ -412,7 +412,7 @@
 {"apsseries":"aps/24638","series":null,"title":"Friends' Intelligencer (1853-1910)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/24639","series":null,"title":"Reformer (1820-1831)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/24646","series":null,"title":"The Connecticut Common School Journal and Annals of Education, Published Monthly Under the Direction of the Conn. State Teachers' Association (1851-1866)","placeOfPublication":"Hartford","coverage":"http://dbpedia.org/resource/Hartford%2C_Connecticut"}
-{"apsseries":"aps/24647","series":null,"title":"The Escritoir; or, Masonic and Miscellaneous Album. Being a Periodical Journal, Devoted to Masonry, Science and Arts, Popular Tales, Miscellany Current News &c., &c (1826-1827)","placeOfPublication":"Albany","coverage":"http://dbpedia.org/resource/Albany%2C_New_York"}
+{"apsseries":"aps/24647","series":"/lccn/18005565","title":"The Escritoir; or, Masonic and Miscellaneous Album. Being a Periodical Journal, Devoted to Masonry, Science and Arts, Popular Tales, Miscellany Current News &c., &c (1826-1827)","placeOfPublication":"Albany","coverage":"http://dbpedia.org/resource/Albany%2C_New_York"}
 {"apsseries":"aps/24649","series":null,"title":"Foederal American Monthly (1865-1865)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24650","series":null,"title":"The Western Medical and Physical Journal (1827-1828)","placeOfPublication":"Cincinnati","coverage":"http://dbpedia.org/resource/Cincinnati"}
 {"apsseries":"aps/24651","series":null,"title":"The Western Journal of the Medical and Physical Sciences (1828-1838)","placeOfPublication":"Cincinnati","coverage":"http://dbpedia.org/resource/Cincinnati"}
@@ -542,7 +542,7 @@
 {"apsseries":"aps/24838","series":null,"title":"The Tickler (1807-1809)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/24839","series":"/lccn/sn88074043","title":"Christian Register (1821-1835)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/24840","series":"/lccn/sn87029155","title":"Christian Register and Boston Observer (1835-1843)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
-{"apsseries":"aps/24841","series":null,"title":"Christian Register (1843-1850)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"apsseries":"aps/24841","series":"/lccn/sn93062852","title":"Christian Register (1843-1850)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/24849","series":null,"title":"Boston Masonic Mirror (1830-1834)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/24850","series":null,"title":"The City Record, and Boston News - Letter (1825-1825)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/24851","series":null,"title":"Bowen's Boston News - Letter, and City Record (1825-1827)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
@@ -552,7 +552,8 @@
 {"apsseries":"aps/24856","series":null,"title":"Christian Herald (1816-1821)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24857","series":null,"title":"The Christian Herald and Seaman's Magazine (1821-1824)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24858","series":null,"title":"Christian Intelligencer (1821-1827)","placeOfPublication":"Portland","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
-{"apsseries":"aps/24859","series":null,"title":"The Christian Intelligencer and Eastern Chronicle (1827-1836)","placeOfPublication":"Portland","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
+{"apsseries":"aps/24859","series":"/lccn/sn84026947","title":"The Christian Intelligencer and Eastern Chronicle (1827-1836)","placeOfPublication":"Portland","coverage":"http://dbpedia.org/resource/Portland%2C_Maine", "startdate": "1827-01-01", "enddate": "1834-12-31"}
+{"apsseries":"aps/24859","series":"/lccn/sn84026948","title":"The Christian Intelligencer and Eastern Chronicle (1827-1836)","placeOfPublication":"Portland","coverage":"http://dbpedia.org/resource/Portland%2C_Maine", "startdate": "1835-01-01", "enddate": "1836-12-31"}
 {"apsseries":"aps/24860","series":null,"title":"Christian Monitor (1815-1817)","placeOfPublication":"Richmond","coverage":"http://dbpedia.org/resource/Richmond%2C_Virginia"}
 {"apsseries":"aps/24861","series":null,"title":"The Christian Monitor, and Religious Intelligencer (1812-1813)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24862","series":null,"title":"Evangelical Magazine and Gospel Advocate (1830-1848)","placeOfPublication":"Utica","coverage":"http://dbpedia.org/resource/Utica%2C_New_York"}
@@ -588,7 +589,7 @@
 {"apsseries":"aps/24906","series":null,"title":"American Quarterly Church Review (1870-1871)","placeOfPublication":"New Haven","coverage":"http://dbpedia.org/resource/New_Haven%2C_Connecticut"}
 {"apsseries":"aps/24907","series":null,"title":"American Church Review (1872-1885)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24908","series":null,"title":"Church Review (1885-1891)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"apsseries":"aps/24909","series":null,"title":"Philanthropist (1836-1843)","placeOfPublication":"Cincinnati","coverage":"http://dbpedia.org/resource/Cincinnati"}
+{"apsseries":"aps/24909","series":"/lccn/sn83035430","title":"Philanthropist (1836-1843)","placeOfPublication":"Cincinnati","coverage":"http://dbpedia.org/resource/Cincinnati"}
 {"apsseries":"aps/24910","series":"/lccn/sn83035432","title":"The Cincinnati Weekly Herald and Philanthropist (1843-1846)","placeOfPublication":"Cincinnati","coverage":"http://dbpedia.org/resource/Cincinnati"}
 {"apsseries":"aps/24911","series":null,"title":"The Musical Cabinet; A Monthly Collection of Vocal and Instrumental Music, and Musical Literature (1841-1842)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/24912","series":null,"title":"American Sunday - School Teachers' Magazine and Journal of Education (1823-1824)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
@@ -598,7 +599,7 @@
 {"apsseries":"aps/24926","series":null,"title":"American Educational Monthly, and New York Teacher (1867-1867)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24927","series":null,"title":"The New York Teacher and American Educational Monthly (1868-1869)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24928","series":null,"title":"Christian Observer, Conducted By Members of the Established Church (1802-1842)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
-{"apsseries":"aps/24929","series":null,"title":"Christian Secretary (1822-1889)","placeOfPublication":"Hartford","coverage":"http://dbpedia.org/resource/Hartford%2C_Connecticut"}
+{"apsseries":"aps/24929","series":"/lccn/sn92051442","title":"Christian Secretary (1822-1889)","placeOfPublication":"Hartford","coverage":"http://dbpedia.org/resource/Hartford%2C_Connecticut"}
 {"apsseries":"aps/24938","series":null,"title":"Select Reviews of Literature and Spirit of Foreign Magazines (1811-1812)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/24975","series":null,"title":"Niles' National Register (1837-1849)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
 {"apsseries":"aps/24976","series":"/lccn/sn86035112","title":"Workingman's Advocate (1829-1830)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
@@ -647,7 +648,8 @@
 {"apsseries":"aps/25067","series":null,"title":"The Literary World; a Monthly Review of Current Literature (1870-1904)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/25068","series":null,"title":"The Christian Observatory: A Religious and Literary Magazine (1847-1850)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/25076","series":null,"title":"Investigator and Expositor (1839-1840)","placeOfPublication":"Troy","coverage":"http://dbpedia.org/resource/Troy%2C_Ohio"}
-{"apsseries":"aps/25097","series":null,"title":"The Christian Telescope and Universalist Miscellany (1824-1828)","placeOfPublication":"Providence","coverage":"http://dbpedia.org/resource/Providence%2C_Rhode_Island"}
+{"apsseries":"aps/25097","series":"/lccn/11015016","title":"The Christian Telescope and Universalist Miscellany (1824-1828)","placeOfPublication":"Providence","coverage":"http://dbpedia.org/resource/Providence%2C_Rhode_Island", "startdate":"1824-08-01", "enddate":"1826-07-31"}
+{"apsseries":"aps/25097","series":"/lccn/sn91070527","title":"The Christian Telescope and Universalist Miscellany (1824-1828)","placeOfPublication":"Providence","coverage":"http://dbpedia.org/resource/Providence%2C_Rhode_Island", "startdate":"1826-08-01", "enddate":"1828-10-04"}
 {"apsseries":"aps/25098","series":null,"title":"The Christian's Weekly Monitor; or, Sabbath Morning Repast (1814-1818)","placeOfPublication":"Sangerfield","coverage":"http://dbpedia.org/resource/Sangerfield%2C_New_York"}
 {"apsseries":"aps/25099","series":null,"title":"Church Record (1822-1823)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/25100","series":null,"title":"The Churchman's Monthly Magazine (1804-1805)","placeOfPublication":"New Haven","coverage":"http://dbpedia.org/resource/New_Haven%2C_Connecticut"}
@@ -1344,7 +1346,7 @@
 {"apsseries":"aps/41255","series":null,"title":"The Atlantic Magazine (1824-1825)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/41256","series":null,"title":"The Balance and State Journal (1809-1811)","placeOfPublication":"Albany","coverage":"http://dbpedia.org/resource/Albany%2C_New_York"}
 {"apsseries":"aps/41257","series":null,"title":"The Boston Journal of Philosophy and the Arts, Intended to Exhibit a View of the Progress of Discovery in Natural Philosophy, Mechanics, Chemistry, Geology and Mineralogy, Natural History, Comparative Anatomy and Physiology, Geography, Statistics, and the Fine and Useful Arts (1823-1826)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
-{"apsseries":"aps/41258","series":null,"title":"The Boston Spectator; Devoted to Politicks and Belles - Lettres (1814-1815)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"apsseries":"aps/41258","series":"/lccn/sn84031151","title":"The Boston Spectator; Devoted to Politicks and Belles - Lettres (1814-1815)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/41259","series":null,"title":"The Boston Weekly Magazine, Devoted to Polite Literature, Useful Science, Biography, and Dramatic Criticism (1816-1824)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/41279","series":null,"title":"The Mathematical Monthly (1858-1861)","placeOfPublication":"Cambridge","coverage":"http://dbpedia.org/resource/Cambridge%2C_Massachusetts"}
 {"apsseries":"aps/41332","series":null,"title":"American Agriculturist (1842-1850)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
@@ -1380,7 +1382,7 @@
 {"apsseries":"aps/41418","series":null,"title":"The Ramblers' Magazine, and New - York Theatrical Register: For the Season of 1809-10 (1809-1810)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/41445","series":null,"title":"American Journal of Pharmacy (1835-1907)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/41488","series":null,"title":"The Christian's Magazine : Designed to Promote Knowledge and Influence of Evangelical Truth and Order (1806-1811)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"apsseries":"aps/41489","series":null,"title":"Christian Reflector (1838-1848)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"apsseries":"aps/41489","series": "/lccn/sn91063048","title":"Christian Reflector (1838-1848)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/41490","series":null,"title":"Common School Assistant; a Monthly Paper, for the Improvement of Common School Education (1836-1840)","placeOfPublication":"Albany","coverage":"http://dbpedia.org/resource/Albany%2C_New_York"}
 {"apsseries":"aps/41499","series":null,"title":"Rhodes' Journal of Banking and the Bankers' Magazine Consolidated (1895-1895)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/41500","series":null,"title":"Bankers' Magazine (1896-1943)","placeOfPublication":"Cambridge","coverage":"http://dbpedia.org/resource/Cambridge%2C_Massachusetts"}
