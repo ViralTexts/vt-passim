@@ -28,6 +28,7 @@ if __name__ == '__main__':
                         help='Maximum pages')
 
     parser.add_argument('inputPath', metavar='<path>', help='input path')
+    parser.add_argument('mapPath', metavar='<path>', help='map path')
     parser.add_argument('outputPath', metavar='<path>', help='output path')
 
     config = parser.parse_args()
@@ -36,26 +37,28 @@ if __name__ == '__main__':
 
     corpus = spark.read.load(config.inputPath).withColumnRenamed('book', 'issue')
 
+    smap = spark.read.json(config.mapPath).withColumnRenamed('identifier', 'issue')
+
     goods = corpus.groupBy('issue'
                 ).agg(f.count('id').alias('pp'), f.sum(f.length('text')).alias('tlen')
                 ).filter( (col('pp') <= config.max_pages)
                           & (col('tlen') <= config.max_chars)
                           & ~(col('issue').rlike('_(index|appendix|contents)'))
                           & ~(col('issue').rlike('\d{4}-\d{4}'))
-                ).select('issue')
+                ).select('issue'
+                ).join(smap, 'issue')
 
     cat_pages = udf(lambda pagea: catPages(pagea),
                     corpus.select('text', 'pages').schema.simpleString())
 
     spark.conf.set('spark.sql.shuffle.partitions', 5000)
 
-    corpus.join(goods, 'issue', 'left_semi'
-        ).groupBy('issue'
+    corpus.join(goods, 'issue'
+        ).groupBy('issue', 'series'
         ).agg(
             cat_pages(sort_array(collect_list(struct('seq', 'text',
                                                      col('pages')[0].alias('page'))))).alias('p')
-        ).select(col('issue').alias('id'), 'issue',
-                 f.concat(lit('pub_'), f.split('issue', '_')[1]).alias('series'),
+        ).select(col('issue').alias('id'), 'issue', 'series',
                  f.regexp_replace(f.split('issue', '_')[2], r'-\d{4}.*$', ''
                                   ).cast('date').cast('string').alias('date'),
                  col('p.text'), col('p.pages')
