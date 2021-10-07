@@ -26,7 +26,7 @@ if __name__ == "__main__":
         ).drop(series.series2   # duplication from non-equi-join
         ).withColumn('series', f.coalesce('series', 'series2')
         ).drop('series2', 'start', 'end'
-        ).write.save(config.outputPath)
+        ).write.save(config.outputPath, mode='overwrite')
 
     spark.stop()
     
