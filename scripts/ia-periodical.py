@@ -37,7 +37,7 @@ if __name__ == '__main__':
 
     corpus = spark.read.load(config.inputPath).withColumnRenamed('book', 'issue')
 
-    smap = spark.read.json(config.mapPath).withColumnRenamed('identifier', 'issue')
+    smap = spark.read.json(config.mapPath)
 
     goods = corpus.groupBy('issue'
                 ).agg(f.count('id').alias('pp'), f.sum(f.length('text')).alias('tlen')
@@ -54,13 +54,12 @@ if __name__ == '__main__':
     spark.conf.set('spark.sql.shuffle.partitions', 5000)
 
     corpus.join(goods, 'issue'
-        ).groupBy('issue', 'series'
+        ).groupBy('issue', 'series', 'date'
         ).agg(
             cat_pages(sort_array(collect_list(struct('seq', 'text',
                                                      col('pages')[0].alias('page'))))).alias('p')
         ).select(col('issue').alias('id'), 'issue', 'series',
-                 f.regexp_replace(f.split('issue', '_')[2], r'-\d{4}.*$', ''
-                                  ).cast('date').cast('string').alias('date'),
+                 col('date').cast('date').cast('string').alias('date'),
                  col('p.text'), col('p.pages')
         ).filter(col('date').isNotNull()
         ).write.save(config.outputPath)
