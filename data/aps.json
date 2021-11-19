@@ -950,7 +950,7 @@
 {"apsseries":"aps/35090","series":null,"title":"The Religious Magazine and Monthly Review (1870-1873)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/35091","series":null,"title":"The Monthly Religious Magazine and Theological Review (1874-1874)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/35098","series":null,"title":"The Investigator and Advocate of Independence. Science, Religion, Literature, etc. (1846-1846)","placeOfPublication":"Washington","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
-{"apsseries":"aps/35099","series":null,"title":"The Irish Shield. A Historical and Literary Weekly Paper (1829-1831)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"apsseries":"aps/35099","series":"/lccn/sn87052072","title":"The Irish Shield. A Historical and Literary Weekly Paper (1829-1831)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/35101","series":null,"title":"Journal of Social Science, Containing the Proceedings of the American Association (1869-1909)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/35102","series":null,"title":"The Southern and Western Monthly Magazine and Review (1845-1845)","placeOfPublication":"Charleston","coverage":"http://dbpedia.org/resource/Charleston%2C_South_Carolina"}
 {"apsseries":"aps/35103","series":null,"title":"Southern Cultivator (1843-1906)","placeOfPublication":"Atlanta","coverage":"http://dbpedia.org/resource/Atlanta"}
