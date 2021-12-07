@@ -3,6 +3,7 @@
 {"series2":"pub_douglass-monthly", "series":"/lccn/sn87070160"}
 {"series2":"pub_frederick-douglass-paper", "series":"/lccn/sn84026365", "start":"1847-12-03", "end":"1851-04-17"}
 {"series2":"pub_frederick-douglass-paper", "series":"/lccn/sn84026366", "start":"1851-04-18", "end":"1860"}
+{"series2":"pub_harpers-weekly", "series":"/lccn/sn88084069"}
 {"series2":"pub_leslies-weekly", "series":"/lccn/sn86090491", "start":"1855-12-15", "end":"1891-11-28"}
 {"series2":"pub_leslies-weekly", "series":"/lccn/sn98068089", "start":"1891-12-05", "end":"1894-06-21"}
 {"series2":"pub_leslies-weekly", "series":"/lccn/sn98068262", "start":"1894-07-05", "end":"1901-10-12"}
@@ -10,3 +11,4 @@
 {"series2":"pub_leslies-weekly", "series":"/lccn/sn98068240", "start":"1912-02-01", "end":"1914-02-19"}
 {"series2":"pub_leslies-weekly", "series":"/lccn/17019532", "start":"1914-02-26", "end":"1920-10-02"}
 {"series2":"pub_leslies-weekly", "series":"/lccn/sn98068238", "start":"1920-10-09", "end":"1921-10-22"}
+{"series2":"pub_new-national-era", "series":"/lccn/sn84026753"}
