@@ -27,7 +27,7 @@ def majorityCollate(text, wits):
     res = ''
     for col in cols:
         res += max(col.items(), key=lambda i: i[1])[0]
-    return res.strip() + '\n'
+    return res.strip() + ('\xad\n' if text.endswith('\xad\n') else '\n')
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
