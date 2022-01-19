@@ -8,7 +8,7 @@ import scala.xml.pull._
 
 object TCPPages {
   def main(args: Array[String]) {
-    val spark = SparkSession.builder().appName("TEIPages Import").getOrCreate()
+    val spark = SparkSession.builder().appName("TCPPages Import").getOrCreate()
     import spark.implicits._
 
     spark.sparkContext.hadoopConfiguration
@@ -23,13 +23,36 @@ object TCPPages {
         var buffering = false
         var seq = -1
         var pageid = ""
+        var idType = ""
+        var estcid: String = null
+        var eeboid: String = null
 
         val pass = new XMLEventReader(scala.io.Source.fromURL(in._1))
         pass.flatMap { event =>
           event match {
+            case EvElemStart(_, "idno", attr, _) => {
+              idType = attr.get("type").map(_.text).headOption.getOrElse("")
+              buffering = true
+              buf.clear
+              None
+            }
+            case EvElemEnd(_, "idno") => {
+              if ( idType == "EEBO-CITATION" ) {
+                eeboid = buf.toString.trim
+              } else if ( idType == "IMAGESETID" ) {
+                eeboid = buf.toString.trim
+              } else if ( idType == "ESTC" ) {
+                estcid = buf.toString.trim
+              } else if ( idType == "STC" && buf.startsWith("ESTC") ) {
+                estcid = buf.toString.replace("ESTC", "").trim
+              }
+              buffering = false
+              buf.clear
+              None
+            }
             case EvElemStart(_, "pb", attr, _) => {
               val rec = if ( buffering ) {
-                Some((f"$id%s_$seq%04d", id, pageid, seq, buf.toString.trim))
+                Some((f"$id%s_$seq%04d", id, estcid, eeboid, pageid, seq, buf.toString.trim))
               } else {
                 None
               }
@@ -44,7 +67,7 @@ object TCPPages {
                 val text = buf.toString.trim
                 buffering = false
                 buf.clear
-                Some((f"$id%s_$seq%04d", id, pageid, seq, text))
+                Some((f"$id%s_$seq%04d", id, estcid, eeboid, pageid, seq, text))
               } else {
                 None
               }
@@ -81,7 +104,7 @@ object TCPPages {
           }
         }
       })
-      .toDF("id", "book", "pageid", "seq", "text")
+      .toDF("id", "book", "estcid", "eeboid", "pageid", "seq", "text")
       .write.save(args(1))
     spark.stop()
   }
