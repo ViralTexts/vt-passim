@@ -12,7 +12,7 @@ object APS {
     spark.sparkContext.hadoopConfiguration
       .set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
-    val seriesMap = spark.read.json(args(1))
+    val seriesMap = spark.read.json(args(1)).select('apsseries, 'series, 'startdate, 'enddate)
 
     spark.sparkContext.binaryFiles(args(0), spark.sparkContext.defaultParallelism)
       .filter(_._1.endsWith(".zip"))
@@ -27,7 +27,7 @@ object APS {
             .filter { _.getName.endsWith(".xml") }
             .flatMap { f =>
             val t = scala.xml.XML.load(zfile.getInputStream(f))
-            val series = (t \ "Publication" \ "PublicationID").text
+            val series = "aps/" + (t \ "Publication" \ "PublicationID").text
             val sdate = (t \ "NumericPubDate").text
             val text = (t \ "FullText").text.replaceAll("([ ]{4,})", "\n$1")
 
@@ -35,7 +35,7 @@ object APS {
               val date = Seq(sdate.substring(0, 4), sdate.substring(4, 6), sdate.substring(6, 8))
                 .mkString("-")
               Some(("aps/" + (t \ "RecordID").text,
-                "aps/" + series + "/" + date,
+                series + "/" + date,
                 series, date, text,
                 (t \ "RecordTitle").text,
                 (t \ "ObjectType").text,
@@ -55,8 +55,8 @@ object APS {
         "heading", "category", "url", "lang", "contributor")
       .join(seriesMap, Seq("apsseries"), "left_outer")
       .filter { ('startdate.isNull || 'startdate <= 'date) && ('enddate.isNull || 'enddate >= 'date) }
-      .withColumn("series", coalesce('series, concat(lit("aps/"), 'apsseries)))
-      .drop("apsseries", "startdate", "enddate", "title")
+      .withColumn("series", coalesce('series, 'apsseries))
+      .drop("apsseries", "startdate", "enddate")
       .write.save(args(2))
 
     spark.stop()
