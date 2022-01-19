@@ -225,9 +225,9 @@
 {"apsseries":"aps/24363","series":null,"title":"Arthur's Lady's Home Magazine (1871-1872)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/24364","series":null,"title":"Arthur's Illustrated Home Magazine (1873-1879)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/24365","series":null,"title":"Arthur's Home Magazine (1880-1897)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
-{"apsseries":"aps/24366","series":null,"title":"Maine Farmer and Journal of the Useful Arts (1833-1842)","placeOfPublication":"Augusta","coverage":"http://dbpedia.org/resource/Augusta%2C_Maine"}
-{"apsseries":"aps/24367","series":null,"title":"Maine Farmer and Mechanics Advocate (1842-1843)","placeOfPublication":"Augusta","coverage":"http://dbpedia.org/resource/Augusta%2C_Maine"}
-{"apsseries":"aps/24368","series":null,"title":"Maine Farmer (1844-1900)","placeOfPublication":"Augusta","coverage":"http://dbpedia.org/resource/Augusta%2C_Maine"}
+{"apsseries":"aps/24366","series":"/lccn/sn84027242","title":"Maine Farmer and Journal of the Useful Arts (1833-1842)","placeOfPublication":"Augusta","coverage":"http://dbpedia.org/resource/Augusta%2C_Maine"}
+{"apsseries":"aps/24367","series":"/lccn/sn84027245","title":"Maine Farmer and Mechanics Advocate (1842-1843)","placeOfPublication":"Augusta","coverage":"http://dbpedia.org/resource/Augusta%2C_Maine"}
+{"apsseries":"aps/24368","series":"/lccn/sn89071076","title":"Maine Farmer (1844-1900)","placeOfPublication":"Augusta","coverage":"http://dbpedia.org/resource/Augusta%2C_Maine"}
 {"apsseries":"aps/24369","series":null,"title":"The Masonic Casket, Designed for the Benefit of Free and Accepted Masons, and for the Information of Such as Wish to Know the Order and Proceedings of the Fraternity (1824-1825)","placeOfPublication":"Enfield","coverage":"http://dbpedia.org/resource/Enfield%2C_New_Hampshire"}
 {"apsseries":"aps/24370","series":null,"title":"Mutual Rights and Methodist Protestant (1824-1825)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
 {"apsseries":"aps/24371","series":null,"title":"Michigan Farmer (1843-1908)","placeOfPublication":"Lansing","coverage":"http://dbpedia.org/resource/Lansing%2C_Michigan"}
@@ -249,8 +249,8 @@
 {"apsseries":"aps/24399","series":"/lccn/sn83016645","title":"The American Farmer, Containing Original Essays and Selections on Rural Economy and Internal Improvements, with Illustrative Engravings and Prices Current of County Produce (1819-1834)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
 {"apsseries":"aps/24400","series":"/lccn/sn89060419","title":"The Farmer & Gardener, and Live - Stock Breeder and Manager (1834-1839)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore", "startdate": "1834-05-09", "enddate": "1835-04-28"}
 {"apsseries":"aps/24400","series":"/lccn/sn89060420","title":"The Farmer & Gardener, and Live - Stock Breeder and Manager (1834-1839)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore", "startdate": "1835-05-05", "enddate": "1839-05-22"}
-{"apsseries":"aps/24401","series":null,"title":"The American Farmer, and Spirit of the Agricultural Journals of the Day (1839-1850)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
-{"apsseries":"aps/24402","series":null,"title":"The American Farmer, a Monthly Magazine of Agriculture and Horticulture (1850-1870)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
+{"apsseries":"aps/24401","series":"/lccn/sn89060421","title":"The American Farmer, and Spirit of the Agricultural Journals of the Day (1839-1850)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
+{"apsseries":"aps/24402","series":"/lccn/sn89060422","title":"The American Farmer, a Monthly Magazine of Agriculture and Horticulture (1850-1870)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
 {"apsseries":"aps/24403","series":"/lccn/sn90057016","title":"The American Farmer and Rural Register (1872-1873)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
 {"apsseries":"aps/24404","series":null,"title":"The Anti - Slavery Examiner (1836-1845)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24405","series":null,"title":"The Anti - Slavery Record (1835-1837)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
@@ -449,7 +449,7 @@
 {"apsseries":"aps/24691","series":null,"title":"Archives of Useful Knowledge, a Work Devoted to Commerce, Manufactures, Rural and Domestic Economy, Agriculture, and the Useful Arts (1810-1813)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/24692","series":null,"title":"The Atheneum; or, Spirit of the English Magazines (1817-1833)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/24693","series":null,"title":"Berean; or Scripture - Searcher (1802-1810)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
-{"apsseries":"aps/24694","series":null,"title":"Masonic Mirror: and Mechanics' Intelligencer (1824-1827)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"apsseries":"aps/24694","series":"/lccn/sn94051023","title":"Masonic Mirror: and Mechanics' Intelligencer (1824-1827)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/24695","series":null,"title":"Masonic Mirror: Science, Literature and Miscellany (1829-1830)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/24696","series":null,"title":"Our Young Folks. An Illustrated Magazine for Boys and Girls (1865-1873)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/24697","series":null,"title":"Puck (1877-1918)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
