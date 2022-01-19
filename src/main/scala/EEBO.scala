@@ -16,7 +16,7 @@ object EEBO {
     spark.sparkContext.hadoopConfiguration
       .set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
-    val bboxPat = """(\d+),(\d+),(\d+),(\d+)""".r.unanchored
+    val bboxPat = """(\-?\d+),(\-?\d+),(\-?\d+),(\-?\d+)""".r.unanchored
 
     spark.sparkContext.binaryFiles(args(0), spark.sparkContext.defaultParallelism)
       .filter(in => in._1.endsWith(".xml") && !in._1.contains("_manifest_"))
@@ -30,13 +30,13 @@ object EEBO {
 
           val tree = scala.xml.XML.loadString(raw.replaceAll("<!DOCTYPE[^>]*>\n?", ""))
 
-          val book = (tree \\ "book" \ "bookInfo" \ "documentID").text
-          val estcid = (tree \\ "book" \ "bookInfo" \ "ESTCID").text
+          val book = Try((tree \\ "book" \ "bookInfo" \ "documentID").text).getOrElse("")
+          val estcid = Try((tree \\ "book" \ "bookInfo" \ "ESTCID").text).getOrElse("")
 
           (tree \\ "text" \ "page")
             .flatMap { page =>
-            val id = pref + (page \ "pageInfo" \ "recordID").text
-            val imageLink = (page \ "pageInfo" \ "imageLink").text
+            val id = pref + Try((page \ "pageInfo" \ "recordID").text).getOrElse("noid")
+            val imageLink = Try((page \ "pageInfo" \ "imageLink").text).getOrElse("noim")
             val buf = new StringBuilder
             val regions = new ArrayBuffer[Region]
             (page \ "pageContent" \\ "wd") foreach { w =>
@@ -45,10 +45,10 @@ object EEBO {
                   Coords(l.toInt, t.toInt,
                     r.toInt - l.toInt, b.toInt - t.toInt, b.toInt - t.toInt)
                 }
-                case _ => Coords(-1, -1, -1, -1, -1)
+                case _ => Coords(-99, -99, 0, 0, 0)
               }
               if ( !buf.isEmpty ) {
-                if ( c.x == -1 ) {
+                if ( c.x == -99 ) {
                   buf ++= " "
                 } else {
                   val prev = regions.last.coords
@@ -60,7 +60,7 @@ object EEBO {
                   }
                 }
               }
-              if ( c.x > -1 ) {
+              if ( c.x > -99 ) {
                 regions += Region(buf.size, w.text.length, c)
               }
               buf ++= w.text
