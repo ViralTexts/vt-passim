@@ -38,8 +38,8 @@ object ChronAm {
         val Array(sn, year, month, day, ed, seq, _*) = fname.split("/")
         val series = s"/lccn/$sn"
         val date = s"$year-$month-$day"
-        val issue = Seq("/ca", batch, sn, date, ed) mkString "/"
-        val id = s"$issue/$seq"
+        val issue = Seq(series, date, ed) mkString "/"
+        val id = Seq("/ca", batch, sn, date, ed, seq) mkString "/"
 
         val sb = new StringBuilder
         val regions = new ArrayBuffer[Region]
