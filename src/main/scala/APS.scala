@@ -57,7 +57,7 @@ object APS {
       .filter { ('startdate.isNull || 'startdate <= 'date) && ('enddate.isNull || 'enddate >= 'date) }
       .withColumn("series", coalesce('series, 'apsseries))
       .drop("apsseries", "startdate", "enddate")
-      .write.save(args(2))
+      .write.mode("overwrite").save(args(2))
 
     spark.stop()
   }
