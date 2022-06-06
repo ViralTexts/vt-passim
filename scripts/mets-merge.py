@@ -13,9 +13,9 @@ if __name__ == "__main__":
 
     spark = SparkSession.builder.appName('METS merge').getOrCreate()
 
-    raw = spark.read.json(config.inputPath, recursiveFileLookup='true', pathGlobFilter='*.json.gz')
-
-    raw.filter(col('series').isNotNull()).dropDuplicates(['file']).write.json(config.outputPath)
+    spark.read.json(config.inputPath, recursiveFileLookup='true', pathGlobFilter='*.json.gz'
+        ).filter(col('series').isNotNull()
+        ).dropDuplicates(['file']).write.json(config.outputPath, mode='overwrite')
 
     spark.stop()
     
