@@ -1032,7 +1032,7 @@
 {"apsseries":"aps/35397","series":null,"title":"Life (1883-1936)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/35398","series":null,"title":"The Literary Emporium; a Compendium of Religious, Literary, and Philosophical Knowledge (1845-1847)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/35426","series":null,"title":"Musical Reporter (1841-1841)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
-{"apsseries":"aps/35427","series":null,"title":"New - England Magazine (1831-1835)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
+{"apsseries":"aps/35427","series":"/lccn/05014338","title":"New - England Magazine (1831-1835)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/35428","series":null,"title":"The New Hampshire Repository; Devoted to Education, Literature and Religion (1845-1847)","placeOfPublication":"Gilmanton","coverage":"http://dbpedia.org/resource/Gilmanton%2C_New_Hampshire"}
 {"apsseries":"aps/35429","series":null,"title":"New York Illustrated Magazine of Literature and Art (1845-1847)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/35430","series":null,"title":"The New York Review (1837-1842)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
