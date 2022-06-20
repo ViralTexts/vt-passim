@@ -18,9 +18,11 @@ def guessFormat(path, default="json"):
         return (default, {})
 
 ## Map article/page records and coordinate information to links
-def formatURL(baseurl, corpus, id):
+def formatURL(baseurl, corpus, id, p1id):
     if corpus == 'ca':
         return 'https://chroniclingamerica.loc.gov' + sub('^/ca/[^/]+', '/lccn', id)
+    elif corpus == 'ia' and p1id != None:
+        return 'https://iiif.archivelab.org/iiif/' + sub('_0*(\d+)$', r'?page=\1', p1id)
     elif corpus == 'trove':
         return "http://trove.nla.gov.au/ndp/del/article/%s" % sub("^trove/", "", id)
     elif corpus == 'europeana':
@@ -37,6 +39,10 @@ def imageLink(corpus, p1id, p1x, p1y, p1w, p1h, p1width, p1height):
         else:
             return 'https://chroniclingamerica.loc.gov/iiif/2/%s/%d,%d,%d,%d/full/0/default.jpg'\
                 % (urllib.parse.quote(p1id, safe=''), p1x, p1y, p1w, p1h)
+    elif corpus == 'ia' and p1id != None:
+        return 'https://iiif.archivelab.org/iiif/%s/pct:%f,%f,%f,%f/full/0/default.jpg' \
+            % (sub('_0*(\d+)$', r'$\1', p1id),
+               100 * p1x/p1width, 100*p1y/p1height, 100*p1w/p1width, 100*p1h/p1height)
     else:
         return None
     
@@ -46,7 +52,8 @@ if __name__ == "__main__":
         print("Usage: pretty-cluster.py <metadata> <input> <output> [<query>]", file=sys.stderr)
         exit(-1)
     spark = SparkSession.builder.appName('Prettyprint Clusters').getOrCreate()
-
+    spark.conf.set('spark.sql.adaptive.enabled', 'true')
+    
     outpath = sys.argv[3]
     (outputFormat, outputOptions) = guessFormat(outpath, "json")
 
@@ -58,7 +65,7 @@ if __name__ == "__main__":
             .withColumnRenamed('title', 'series_title')
 
     
-    constructURL = udf(lambda url, corpus, id: formatURL(url, corpus, id))
+    constructURL = udf(lambda url, corpus, id, p1id: formatURL(url, corpus, id, p1id))
 
     image_link = udf(lambda corpus, p1id, p1x, p1y, p1w, p1h, p1width, p1height: imageLink(corpus, p1id, p1x, p1y, p1w, p1h, p1width, p1height))
     thumb_link = udf(lambda image: image.replace('/full/', '/!80,100/') if image != None else None)
@@ -90,7 +97,7 @@ if __name__ == "__main__":
            ).withColumn('placeOfPublication',
                         coalesce('placeOfPublication', 'series_placeOfPublication')
            ).drop('series_title', 'series_publisher', 'series_placeOfPublication'
-           ).withColumn('url', constructURL('page_access', 'corpus', 'id')
+           ).withColumn('url', constructURL('page_access', 'corpus', 'id', 'p1id')
            ).withColumn('page_image', image_link('corpus', 'p1id', 'p1x', 'p1y', 'p1w', 'p1h',
                                                  'p1width', 'p1height')
            ).withColumn('page_thumb', thumb_link('page_image'))
