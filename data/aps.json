@@ -605,13 +605,13 @@
 {"apsseries":"aps/24976","series":"/lccn/sn86035112","title":"Workingman's Advocate (1829-1830)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24977","series":"/lccn/sf89091896","title":"New York Sentinel and Working Man's Advocate (1830-1830)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24978","series":null,"title":"Workingman's Advocate (1830-1836)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"apsseries":"aps/24979","series":null,"title":"Radical, in Continuation of Working Man's Advocate (1841-1843)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"apsseries":"aps/24979","series":"/lccn/sn93062958","title":"Radical, in Continuation of Working Man's Advocate (1841-1843)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24980","series":null,"title":"Workingman's Advocate  (1844-1844)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24981","series":null,"title":"Workingman's Advocate (1844-1844)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24982","series":null,"title":"People's Rights (1844-1844)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24983","series":"/lccn/sn83030393","title":"Subterranean, United with the Workingman's Advocate (1844-1844)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24984","series":"/lccn/sn83030395","title":"Workingman's Advocate (1844-1845)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"apsseries":"aps/24985","series":null,"title":"Young America (1845-1848)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"apsseries":"aps/24985","series":"/lccn/sn83030402","title":"Young America (1845-1848)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24986","series":null,"title":"American Academy of Arts and Sciences, Boston. Proceedings (1846-1906)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/24990","series":null,"title":"The American Educational Monthly (1870-1875)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24991","series":null,"title":"Schermerhorn's Monthly (1876-1876)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
@@ -1301,7 +1301,7 @@
 {"apsseries":"aps/40897","series":null,"title":"The New Hampshire & Vermont Magazine, and General Repository (1797-1797)","placeOfPublication":"Haverhill","coverage":"http://dbpedia.org/resource/Haverhill%2C_New_Hampshire"}
 {"apsseries":"aps/40898","series":null,"title":"The NewHampshire Magazine; The Monthly Repository of Useful Information (1793-1793)","placeOfPublication":"Concord","coverage":"http://dbpedia.org/resource/Concord%2C_New_Hampshire"}
 {"apsseries":"aps/40899","series":null,"title":"The New Hampshire New Jerusalem Magazine and Primitive Religious Intelligencer (1805-1805)","placeOfPublication":"Portsmouth","coverage":"http://dbpedia.org/resource/Portsmouth%2C_New_Hampshire"}
-{"apsseries":"aps/40968","series":null,"title":"Prairie Farmer (1843-1877)","placeOfPublication":"Chicago","coverage":"http://dbpedia.org/resource/Chicago"}
+{"apsseries":"aps/40968","series":"/lccn/2012219008","title":"Prairie Farmer (1843-1877)","placeOfPublication":"Chicago","coverage":"http://dbpedia.org/resource/Chicago"}
 {"apsseries":"aps/41009","series":null,"title":"The New - Jersey Magazine and Monthly Advertiser (1786-1787)","placeOfPublication":"New Brunswick","coverage":"http://dbpedia.org/resource/New_Brunswick%2C_New_Jersey"}
 {"apsseries":"aps/41014","series":"/lccn/sn94053066","title":"The New Star (1796-1796)","placeOfPublication":"Hartford","coverage":"http://dbpedia.org/resource/Hartford%2C_Connecticut"}
 {"apsseries":"aps/41015","series":null,"title":"The New York Magazine, or Literary Repository (1790-1797)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
