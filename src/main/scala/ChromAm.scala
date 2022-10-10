@@ -23,8 +23,6 @@ object ChronAm {
     spark.sparkContext.hadoopConfiguration
       .set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
-    val files = spark.read.json(args(1))
-
     spark.sparkContext.newAPIHadoopFile(args(0), classOf[TarballInputFormat],
       classOf[TarballEntry], classOf[Text])
       .filter { _._1.getEntry.endsWith(".xml") }
@@ -38,8 +36,8 @@ object ChronAm {
         val Array(sn, year, month, day, ed, seq, _*) = fname.split("/")
         val series = s"/lccn/$sn"
         val date = s"$year-$month-$day"
-        val issue = Seq("/ca", batch, sn, date, ed) mkString "/"
-        val id = s"$issue/$seq"
+        val issue = Seq(series, date, ed) mkString "/"
+        val id = Seq("/ca", batch, sn, date, ed, seq) mkString "/"
 
         val sb = new StringBuilder
         val regions = new ArrayBuffer[Region]
@@ -85,11 +83,7 @@ object ChronAm {
       }
     }
       .toDF
-      .dropDuplicates("series", "date", "ed", "seq")
-      .join(files.select("id", "file"), "id")
-      .withColumn("pages", array(struct('file as "id", 'seq, 'width, 'height, 'dpi, 'regions)))
-      .drop("file", "width", "height", "dpi", "regions")
-      .write.save(args(2))
+      .write.save(args(1))
     spark.stop()
   }
 }
