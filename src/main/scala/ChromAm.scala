@@ -11,8 +11,8 @@ import scala.util.Try
 import vtpassim.pageinfo._
 
 case class CARecord(id: String, issue: String, series: String, ed: String, seq: Int,
-  batch: String, date: String, text: String,
-  width: Int, height: Int, dpi: Int, regions: Array[Region])
+  date: String, text: String,
+  sourceFile: String, width: Int, height: Int, dpi: Int, regions: Array[Region])
 
 object ChronAm {
   def cleanInt(s: String): Int = s.replaceFirst("\\.0*$", "").toInt
@@ -42,6 +42,7 @@ object ChronAm {
         val sb = new StringBuilder
         val regions = new ArrayBuffer[Region]
 
+        val sourceFile = Try((t \ "Description" \ "sourceImageInformation" \ "fileName").text.trim).getOrElse("")
         val width = Try((t \ "Layout" \ "Page" \ "@WIDTH").text.toInt).getOrElse(0)
         val height = Try((t \ "Layout" \ "Page" \ "@HEIGHT").text.toInt).getOrElse(0)
 
@@ -75,7 +76,7 @@ object ChronAm {
         val nseq = Try(seq.replace("seq-", "").toInt).getOrElse(0)
 
         Some(CARecord(id, issue, series, ed.replace("ed-", ""), nseq,
-          batch, date, sb.toString, width, height, dpi, regions.toArray))
+          date, sb.toString, sourceFile, width, height, dpi, regions.toArray))
       } catch {
         case ex: Exception =>
           Console.err.println("## " + fname + ": " + ex.toString)
