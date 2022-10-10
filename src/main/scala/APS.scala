@@ -37,6 +37,7 @@ object APS {
               Some(("aps/" + (t \ "RecordID").text,
                 series + "/" + date,
                 series, date, text,
+                (t \ "StartPage").text,
                 (t \ "RecordTitle").text,
                 (t \ "ObjectType").text,
                 (t \ "URLFullText").text,
@@ -51,7 +52,7 @@ object APS {
             None
         }
       }
-      .toDF("id", "issue", "apsseries", "date", "text",
+      .toDF("id", "issue", "apsseries", "date", "text", "pageno",
         "heading", "category", "url", "lang", "contributor")
       .join(seriesMap, Seq("apsseries"), "left_outer")
       .filter { ('startdate.isNull || 'startdate <= 'date) && ('enddate.isNull || 'enddate >= 'date) }
