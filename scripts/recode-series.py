@@ -18,12 +18,10 @@ if __name__ == "__main__":
                 ).groupBy('series2', 'series'
                 ).agg(f.min('start').alias('start'), f.max('end').alias('end'))
 
-    input = spark.read.load(config.inputPath).withColumnRenamed('series', 'series2')
-
-    input.join(series, [input.series2 == series.series2,
-                        col('date') >= col('start'), col('date') <= col('end')],
-               'left_outer'
-        ).drop(series.series2   # duplication from non-equi-join
+    spark.read.load(config.inputPath).withColumnRenamed('series', 'series2'
+        ).join(series, ['series2'], 'left_outer'
+        ).filter( (col('start').isNull() | (col('start') <= col('date'))) &
+                  (col('end').isNull() | (col('date') <= col('end')))
         ).withColumn('series', f.coalesce('series', 'series2')
         ).drop('series2', 'start', 'end'
         ).write.save(config.outputPath, mode='overwrite')
