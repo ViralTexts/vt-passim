@@ -23,7 +23,7 @@ def isubfield1(data, tag, ind1, code):
     return res
 
 def field1(data, tag):
-    fields = [d.subfield for d in data if d._tag == tag]
+    fields = [d.subfield for d in data if (d._tag == tag and d.subfield != None)]
     res = None
     if fields and len(fields) > 0:
         res = ' '.join([s._VALUE for s in fields[0]])
@@ -66,6 +66,7 @@ if __name__ == '__main__':
                              f.translate(get_subfield1('datafield', lit(10), lit('a')),
                                          ' ', '')).alias('series'),
                       get_field1('datafield', lit(245)).alias('title'),
+                      get_field1('datafield', lit(246)).alias('alttitle'),
                       get_subfield1('datafield', lit(250), lit('a')).alias('edition'),
                       get_subfield1('datafield', lit(264), lit('a')).alias('placeOfPublication'),
                       get_subfield1('datafield', lit(264), lit('b')).alias('publisher'),
