@@ -37,7 +37,7 @@ object ONB {
     }
       .toDF
       .dropDuplicates("id")
-      .write.save(args(1))
+      .write.mode("overwrite").save(args(1))
     spark.stop()
   }
 }

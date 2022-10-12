@@ -24,7 +24,7 @@ if __name__ == "__main__":
                     .replace('&apos;', "'"))
 
     raw = spark.read.json(sys.argv[1])
-    api = spark.read.json(sys.argv[2])
+    # api = spark.read.json(sys.argv[2])
     
     df = raw.na.drop(subset=['id', 'fulltext']).dropDuplicates(['id']) \
             .select(concat(lit('trove/'), col('id')).alias('id'),
@@ -35,15 +35,17 @@ if __name__ == "__main__":
                     col('heading').alias('title'), col('category'),
                     text_fill(col('fulltext')).alias('text'))
 
-    apitext = api.select(concat(lit('trove/'), col('article.id')).alias('id'),
-                         xunesc(regexp_replace(regexp_replace(regexp_replace(
-                             col('article.articleText'), r'<(span|p)>[ ]*', ''),
-                                                              r'</(span|p)>[ ]*', '\n'),
-                                               r' [ ]*', ' ')).alias('articleText'))
+    # apitext = api.select(concat(lit('trove/'), col('article.id')).alias('id'),
+    #                      xunesc(regexp_replace(regexp_replace(regexp_replace(
+    #                          col('article.articleText'), r'<(span|p)>[ ]*', ''),
+    #                                                           r'</(span|p)>[ ]*', '\n'),
+    #                                            r' [ ]*', ' ')).alias('articleText'))
 
-    df.join(apitext, ['id'], 'left_outer') \
-      .withColumn('text', coalesce('articleText', 'text')) \
-      .drop('articleText') \
-      .write.save(sys.argv[3])
+    # df.join(apitext, ['id'], 'left_outer') \
+    #   .withColumn('text', coalesce('articleText', 'text')) \
+    #   .drop('articleText') \
+    #   .write.save(sys.argv[3])
+
+    df.write.save(sys.argv[3], mode='overwrite')
 
     spark.stop()

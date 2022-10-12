@@ -39,7 +39,7 @@ if __name__ == "__main__":
       .flatMap(getSeries).toDF()\
       .withColumn('seq', col('seq').cast('int'))\
       .repartition(100)\
-      .write.save(sys.argv[2])
+      .write.save(sys.argv[2], mode='overwrite')
       # pyspark type inference makes int into long, so cast to int
 
     spark.stop()

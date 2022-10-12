@@ -64,7 +64,7 @@ object MetsAltoDDD {
       .withColumn("seq", $"pages.seq"(0))
       .join(meta, "issue")
       .dropDuplicates("id")
-      .write.save(args(2))
+      .write.mode("overwrite").save(args(2))
     spark.stop()
   }
 }

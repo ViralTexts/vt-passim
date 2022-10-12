@@ -115,7 +115,7 @@ object NCNP {
     println("# duplicate issues: " + dupIssues.count)
 
     raw.join(broadcast(dupIssues), Seq("issue"), "left_anti")
-      .write.save(args(2))
+      .write.mode("overwrite").save(args(2))
     spark.stop()
   }
 }

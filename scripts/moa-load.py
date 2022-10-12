@@ -39,6 +39,6 @@ if __name__ == "__main__":
     df.join(series, (df.moaseries == series.moaseries) \
             & (df.date >= series.startdate) & (df.date <= series.enddate), 'left_outer')\
         .drop('moaseries').drop('startdate').drop('enddate')\
-        .write.save(sys.argv[3])
+        .write.save(sys.argv[3], mode='overwrite')
 
     sc.stop()
