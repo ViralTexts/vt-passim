@@ -64,12 +64,17 @@ if __name__ == '__main__':
                     ).groupBy('uid', 'begin'
                     ).agg(f.max('lag').alias('age'), f.max('self').alias('self')
                     ).groupBy('uid', 'self'
-                    ).agg(f.sum('age').alias('tage'), f.count('age').alias('rlines')
+                    ).agg(f.sum('age').alias('tage'),
+                          f.sum(f.log1p('age')).alias('lage'),
+                          f.count('age').alias('rlines')
                     ).groupBy('uid'
                     ).agg(map_from_entries(collect_set(struct('self', 'tage'))).alias('tage'),
+                          map_from_entries(collect_set(struct('self', 'lage'))).alias('lage'),
                           map_from_entries(collect_set(struct('self', 'rlines'))).alias('rlines')
                     ).select('uid', col('tage')[0].alias('other_tage'),
                              col('tage')[1].alias('self_tage'),
+                             col('lage')[0].alias('other_lage'),
+                             col('lage')[1].alias('self_lage'),
                              col('rlines')[0].alias('other_rlines'),
                              col('rlines')[1].alias('self_rlines')
                     ).na.fill(0)
@@ -92,8 +97,10 @@ if __name__ == '__main__':
          ).agg(f.countDistinct('issue').alias('issues'),
                f.sum('lines').alias('lines'),
                f.sum('other_tage').alias('other_tage'),
+               f.sum('other_lage').alias('other_lage'),
                f.sum('other_rlines').alias('other_rlines'),
                f.sum('self_tage').alias('self_tage'),
+               f.sum('self_lage').alias('self_lage'),
                f.sum('self_rlines').alias('self_rlines')
          ).sort('series', 'year', 'pp', 'pnum'
          ).coalesce(1
