@@ -39,6 +39,7 @@
 {"placeOfPublication":"Chicago, Ill.","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"Chicago, Illinois","coverage":"http://dbpedia.org/resource/Chicago"}
 {"placeOfPublication":"Chicago, Illinois.","coverage":"http://dbpedia.org/resource/Chicago"}
+{"placeOfPublication":"Christiansted, St. Croix [V.I.]","coverage":"http://dbpedia.org/resource/Christiansted%2C_U.S._Virgin_Islands"}
 {"placeOfPublication":"City of Washington [D.C.]","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Clinton, Ill.","coverage":"http://dbpedia.org/resource/Clinton%2C_Illinois"}
 {"placeOfPublication":"Cody, Wyo.","coverage":"http://dbpedia.org/resource/Cody%2C_Wyoming"}
@@ -49,6 +50,7 @@
 {"placeOfPublication":"Darlington, Indian Terr.","coverage":"http://dbpedia.org/resource/Darlington_Agency"}
 {"placeOfPublication":"Daytona, Fla.","coverage":"http://dbpedia.org/resource/Daytona_Beach%2C_Florida"}
 {"placeOfPublication":"Daytona, Volusia County, Fla.","coverage":"http://dbpedia.org/resource/Daytona_Beach%2C_Florida"}
+{"placeOfPublication":"De Queen, Ark.","coverage":"http://dbpedia.org/resource/De_Queen%2C_Arkansas"}
 {"placeOfPublication":"DeKalb, Miss.","coverage":"http://dbpedia.org/resource/De_Kalb%2C_Mississippi"}
 {"placeOfPublication":"DeLamar, Idaho","coverage":"http://dbpedia.org/resource/De_Lamar%2C_Idaho"}
 {"placeOfPublication":"DeLand, Fla.","coverage":"http://dbpedia.org/resource/DeLand%2C_Florida"}
@@ -59,10 +61,12 @@
 {"placeOfPublication":"Dupuyer, Mont.","coverage":"http://dbpedia.org/resource/Dupuyer%2C_Montana"}
 {"placeOfPublication":"Durant, Choctaw Nation, Indian Territory [Okla.]","coverage":"http://dbpedia.org/resource/Durant%2C_Oklahoma"}
 {"placeOfPublication":"Durant, Okla.","coverage":"http://dbpedia.org/resource/Durant%2C_Oklahoma"}
+{"placeOfPublication":"Eagle City, Alaska","coverage":"http://dbpedia.org/resource/Eagle%2C_Alaska"}
 {"placeOfPublication":"East Ely, Nev.","coverage":"http://dbpedia.org/resource/Ely%2C_Nevada"}
 {"placeOfPublication":"East Las Vegas, N.M.","coverage":"http://dbpedia.org/resource/Las_Vegas%2C_New_Mexico"}
 {"placeOfPublication":"Ecter, Beaver County, Okla.","coverage":"http://dbpedia.org/resource/Beaver_County%2C_Oklahoma"}
 {"placeOfPublication":"Elk City, Idaho","coverage":"http://dbpedia.org/resource/Elk_City%2C_Idaho"}
+{"placeOfPublication":"Elkhorn, W. Va.","coverage":"http://dbpedia.org/resource/Elkhorn%2C_West_Virginia"}
 {"placeOfPublication":"Fairmont, W. Va.","coverage":"http://dbpedia.org/resource/Fairmont%2C_West_Virginia"}
 {"placeOfPublication":"Fargo Springs, Kan.","coverage":"http://dbpedia.org/resource/Seward_County%2C_Kansas"}
 {"placeOfPublication":"Faulkland, Del.","coverage":"http://dbpedia.org/resource/Faulkland%2C_Delaware"}
@@ -76,6 +80,8 @@
 {"placeOfPublication":"Fort Huachuca, Arizona","coverage":"http://dbpedia.org/resource/Fort_Huachuca"}
 {"placeOfPublication":"Fort Larned, Kan.","coverage":"http://dbpedia.org/resource/Fort_Larned_National_Historic_Site"}
 {"placeOfPublication":"Fort Pierce, St. Lucie County, Fla.","coverage":"http://dbpedia.org/resource/Fort_Pierce%2C_Florida"}
+{"placeOfPublication":"Fort Wrangel, Alaska","coverage":"http://dbpedia.org/resource/Wrangell%2C_Alaska"}
+{"placeOfPublication":"Freehold, N.J.","coverage":"http://dbpedia.org/resource/Freehold_Township%2C_New_Jersey"}
 {"placeOfPublication":"Gayoso, Mo.","coverage":"http://dbpedia.org/resource/Gayoso%2C_Missouri"}
 {"placeOfPublication":"Glentana, Mont.","coverage":"http://dbpedia.org/resource/Glentana%2C_Montana"}
 {"placeOfPublication":"Gloucester, Va.","coverage":"http://dbpedia.org/resource/Gloucester_Courthouse%2C_Virginia"}
@@ -118,6 +124,7 @@
 {"placeOfPublication":"Mineral Park, A.T. [Ariz.]","coverage":"http://dbpedia.org/resource/Mineral_Park%2C_Arizona"}
 {"placeOfPublication":"Minneapolis, Minn.","coverage":"http://dbpedia.org/resource/Minneapolis"}
 {"placeOfPublication":"Moline, Ill.","coverage":"http://dbpedia.org/resource/Moline%2C_Illinois"}
+{"placeOfPublication":"Mount Holly, Burlington Co., N.J.","coverage":"http://dbpedia.org/resource/Mount_Holly%2C_New_Jersey"}
 {"placeOfPublication":"Murray, Idaho","coverage":"http://dbpedia.org/resource/Murray%2C_Idaho"}
 {"placeOfPublication":"Nebraska City, Neb.","coverage":"http://dbpedia.org/resource/Nebraska_City%2C_Nebraska"}
 {"placeOfPublication":"New Bloomfield, Pa.","coverage":"http://dbpedia.org/resource/New_Bloomfield%2C_Pennsylvania"}
@@ -139,6 +146,7 @@
 {"placeOfPublication":"New-York [N.Y.","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"New-York [N.Y.]","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"placeOfPublication":"New-York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"placeOfPublication":"North Topeka, Kan.","coverage":"http://dbpedia.org/resource/North_Topeka%2C_Kansas"}
 {"placeOfPublication":"Ocala, Fla.","coverage":"http://dbpedia.org/resource/Ocala%2C_Florida"}
 {"placeOfPublication":"Oregon.","coverage":""}
 {"placeOfPublication":"Ormond-on-the-Halifax, Fla.","coverage":"http://dbpedia.org/resource/Ormond-by-the-Sea%2C_Florida"}
@@ -151,6 +159,7 @@
 {"placeOfPublication":"Palatka, Fla.","coverage":"http://dbpedia.org/resource/Palatka%2C_Florida"}
 {"placeOfPublication":"Panola, Mi. [i.e. Miss.]","coverage":"http://dbpedia.org/resource/Batesville%2C_Mississippi"}
 {"placeOfPublication":"Panola, Miss.","coverage":"http://dbpedia.org/resource/Batesville%2C_Mississippi"}
+{"placeOfPublication":"Passaic City, N.J.","coverage":"http://dbpedia.org/resource/Passaic%2C_New_Jersey"}
 {"placeOfPublication":"Petroleum Center, Pa.","coverage":"http://dbpedia.org/resource/Petroleum_Center%2C_Pennsylvania"}
 {"placeOfPublication":"Philadelphia [Pa.","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"placeOfPublication":"Philadelphia [Pa.]","coverage":"http://dbpedia.org/resource/Philadelphia"}
@@ -159,6 +168,7 @@
 {"placeOfPublication":"Pine Ridge, S.D.","coverage":"http://dbpedia.org/resource/Pine_Ridge%2C_South_Dakota"}
 {"placeOfPublication":"Pinetop, Ariz.","coverage":"http://dbpedia.org/resource/Pinetop-Lakeside%2C_Arizona"}
 {"placeOfPublication":"Pithole City, Pa.","coverage":"http://dbpedia.org/resource/Pithole%2C_Pennsylvania"}
+{"placeOfPublication":"Point Lookout, Md.","coverage":"http://dbpedia.org/resource/Point_Lookout_State_Park"}
 {"placeOfPublication":"Pointe-a-la-Hache, La.","coverage":"http://dbpedia.org/resource/Pointe_%C3%A0_la_Hache%2C_Louisiana"}
 {"placeOfPublication":"Ponola [sic] Panola, Miss.","coverage":"http://dbpedia.org/resource/Batesville%2C_Mississippi"}
 {"placeOfPublication":"Ponola [sic], Miss.","coverage":"http://dbpedia.org/resource/Batesville%2C_Mississippi"}
@@ -214,6 +224,7 @@
 {"placeOfPublication":"St. Louis, Mo.","coverage":"http://dbpedia.org/resource/St._Louis%2C_Missouri"}
 {"placeOfPublication":"St. Maries, Idaho","coverage":"http://dbpedia.org/resource/St._Maries%2C_Idaho"}
 {"placeOfPublication":"St. Martinsville [i.e. Martinville] La.","coverage":"http://dbpedia.org/resource/St._Martinville%2C_Louisiana"}
+{"placeOfPublication":"St. Martinsville [i.e. St. Martinville] La.","coverage":"http://dbpedia.org/resource/St._Martinville%2C_Louisiana"}
 {"placeOfPublication":"St. Marys, Mo.","coverage":"http://dbpedia.org/resource/St._Mary%2C_Missouri"}
 {"placeOfPublication":"Stafford Springs, Conn.","coverage":"http://dbpedia.org/resource/Stafford%2C_Connecticut"}
 {"placeOfPublication":"Ste. Genevieve [Mo.]","coverage":"http://dbpedia.org/resource/Ste._Genevieve%2C_Missouri"}
@@ -227,6 +238,7 @@
 {"placeOfPublication":"Utah.","coverage":""}
 {"placeOfPublication":"Volcano, W. Va.","coverage":"http://dbpedia.org/resource/Volcano%2C_West_Virginia"}
 {"placeOfPublication":"Voltaire, Kan.","coverage":"http://dbpedia.org/resource/Voltaire_Township%2C_Sherman_County%2C_Kansas"}
+{"placeOfPublication":"Washington City","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Washington City (D.C.)","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Washington City [D.C.","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Washington City [D.C.]","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
