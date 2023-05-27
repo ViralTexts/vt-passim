@@ -32,9 +32,9 @@ if __name__ == '__main__':
     max_gap = udf(lambda s: maxGap(s), 'int')
 
     spark.read.json(config.inputPath
-        ).select('id', col('pages')[0].alias('page'), explode('lines').alias('line')
+        ).select('id', 'lineIDs', col('pages')[0].alias('page'), explode('lines').alias('line')
         ).filter(col('line.wits').isNotNull()
-        ).select('id', col('page.id').alias('img'), col('page.regions'),
+        ).select(col('page.id').alias('img'), 'id', 'lineIDs', col('page.regions'),
                  col('line.begin'), length('line.text').alias('length'),
                  col('line.text').alias('dstText'),
                  f.translate(col('line.wits')[0]['text'], '\n', ' ').alias('srcText'),
@@ -46,6 +46,11 @@ if __name__ == '__main__':
         ).withColumn('matchRate',
                      col('matches') / f.greatest(length('dstText'), length('srcText'))
         ).withColumn('maxGap', f.greatest(max_gap('srcAlg'), max_gap('dstAlg'))
+        ).withColumn('leadGap', length(f.regexp_extract('dstAlg', r'^\s*(\-+)', 1))
+        ).withColumn('tailGap', length(f.regexp_extract('dstAlg', r'(\-+)\s*$', 1))
+        ).withColumn('lineID',
+                     f.filter('lineIDs', lambda r: (r['start'] >= col('begin')) &
+                              (r['start'] + r['length'] <= col('begin') + col('length')))[0]['id']
         ).withColumn('regions',
                      f.filter('regions', lambda r: (r['start'] >= col('begin')) &
                               (r['start'] + r['length'] <= col('begin') + col('length')))
@@ -57,8 +62,8 @@ if __name__ == '__main__':
         ).withColumn('h',
                      f.array_max(f.transform('regions.coords',
                                              lambda r: r['y'] + r['h'])) - col('y')
-        ).drop('regions'
+        ).drop('regions', 'lineIDs'
         ).sort(f.desc('matchRate')
-        ).write.json(config.outputPath)
+        ).write.json(config.outputPath, mode='overwrite')
 
     spark.stop()
