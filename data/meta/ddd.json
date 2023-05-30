@@ -26,7 +26,7 @@
 {"series":"DDD:PPN:043427480","title":"Friesche courant : gelykheid, vryheid en broederschap","lang":["nl"],"publisher":"M. Koon","placeOfPublication":"Leeuwarden","coverage":"http://dbpedia.org/resource/Leeuwarden"}
 {"series":"DDD:PPN:043516505","title":"Gazette de Frise = Vriesche courant","lang":["nl","fr"],"publisher":"J. Seydel; M. Koon","placeOfPublication":"Leeuwarden","coverage":"http://dbpedia.org/resource/Leeuwarden"}
 {"series":"DDD:PPN:043578659","title":"De nieuwe wĳnzak : leidraad tot verdieping van het staatsburgerlĳk denken - door en voor werkers en verzetters","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
-{"series":"DDD:PPN:043941850","title":"Gazette de Middelbourg = Middelburgsche courant","lang":["nl"],"publisher":"Wed. J. Abrahams en Zonen","placeOfPublication":"Middelburg","coverage":"http://dbpedia.org/resource/Middelburg"}
+{"series":"DDD:PPN:043941850","title":"Gazette de Middelbourg = Middelburgsche courant","lang":["nl"],"publisher":"Wed. J. Abrahams en Zonen","placeOfPublication":"Middelburg","coverage":"http://dbpedia.org/resource/Middelburg%2C_Zeeland"}
 {"series":"DDD:PPN:044085575","title":"Mededeling","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Goes","coverage":"http://dbpedia.org/resource/Goes"}
 {"series":"DDD:PPN:04408627X","title":"Vrĳ Goes : mededeling van ...","lang":["de","en","fr","nl"],"publisher":"[s.n.]","placeOfPublication":"Goes","coverage":"http://dbpedia.org/resource/Goes"}
 {"series":"DDD:PPN:044103751","title":"Houdt stand : dagblad voor Zuid-Holland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Delft","coverage":"http://dbpedia.org/resource/Delft"}
@@ -407,7 +407,7 @@
 {"series":"DDD:PPN:269906673","title":"Kroniek van de week ; \"vriheyt en is om gheen gelt te coop\" met medewerking van Het Parool","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Baarn","coverage":"http://dbpedia.org/resource/Baarn"}
 {"series":"DDD:PPN:269906738","title":"Kroniek van de week ; vriheyt en is om gheen gelt te coop","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Bergschenhoek","coverage":"http://dbpedia.org/resource/Bergschenhoek"}
 {"series":"DDD:PPN:269907122","title":"Kroniek van de week ; in samenwerking met \"De Bevrĳding\"","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Lisse","coverage":"http://dbpedia.org/resource/Lisse"}
-{"series":"DDD:PPN:269907394","title":"Kroniek van de week ; vriheyt en is om gheen gelt te coop","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Middelburg","coverage":"http://dbpedia.org/resource/Middelburg"}
+{"series":"DDD:PPN:269907394","title":"Kroniek van de week ; vriheyt en is om gheen gelt te coop","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Middelburg","coverage":"http://dbpedia.org/resource/Middelburg%2C_Zeeland"}
 {"series":"DDD:PPN:269907475","title":"Kroniek van de week ; vriheyt en is om gheen gelt te coop","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Nĳmegen","coverage":"http://dbpedia.org/resource/Nijmegen"}
 {"series":"DDD:PPN:269907610","title":"Kroniek van de week ; vriheyt en is om gheen gelt te coop","lang":["en"],"publisher":"[s.n.]","placeOfPublication":"Rĳnsburg","coverage":"http://dbpedia.org/resource/Rijnsburg"}
 {"series":"DDD:PPN:269907734","title":"Kroniek van de week ; vriheyt en is om gheen gelt te coop","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Voorschoten-Zoeterwoude"}
@@ -966,7 +966,7 @@
 {"series":"DDD:PPN:31759110X","title":"[Zonder titel]","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Hollandsche Rading","coverage":"http://dbpedia.org/resource/Hollandsche_Rading"}
 {"series":"DDD:PPN:317591169","title":"[Zonder titel]","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Lage Vuursche","coverage":"http://dbpedia.org/resource/Lage_Vuursche"}
 {"series":"DDD:PPN:317591215","title":"[Zonder titel]","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Loenen aan de Vecht","coverage":"http://dbpedia.org/resource/Loenen_aan_de_Vecht"}
-{"series":"DDD:PPN:317591282","title":"[Zonder titel]","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Middelburg","coverage":"http://dbpedia.org/resource/Middelburg"}
+{"series":"DDD:PPN:317591282","title":"[Zonder titel]","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Middelburg","coverage":"http://dbpedia.org/resource/Middelburg%2C_Zeeland"}
 {"series":"DDD:PPN:317591320","title":"[Zonder titel]","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Nieuwlande","coverage":"http://dbpedia.org/resource/Nieuwlande"}
 {"series":"DDD:PPN:317591398","title":"[Zonder titel]","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Nĳmegen","coverage":"http://dbpedia.org/resource/Nijmegen"}
 {"series":"DDD:PPN:317591460","title":"[Zonder titel]","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Rotterdam","coverage":"http://dbpedia.org/resource/Rotterdam"}
@@ -1002,7 +1002,7 @@
 {"series":"DDD:PPN:319006840","title":"Wien Neerlandsch bloed : orgaan in dienst van de nationale en geestelĳke wederopbouw van het Nederlandsche volk, uitgegeven in bezet Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:319007014","title":"Het wekkersein : propagandablad voor de Eenheidsvakbewegingsgedachte onder het spoorwegpersoneel","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:319007073","title":"\"De Stille\"","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
-{"series":"DDD:PPN:319007235","title":"De Vrĳheid : periodiek voor Zeeland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Middelburg","coverage":"http://dbpedia.org/resource/Middelburg"}
+{"series":"DDD:PPN:319007235","title":"De Vrĳheid : periodiek voor Zeeland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Middelburg","coverage":"http://dbpedia.org/resource/Middelburg%2C_Zeeland"}
 {"series":"DDD:PPN:319007308","title":"Vaaleebee","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
 {"series":"DDD:PPN:319007510","title":"Strĳd : uitgave van de Socialistische jeugdbeweging","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Leiden","coverage":"http://dbpedia.org/resource/Leiden"}
 {"series":"DDD:PPN:319007650","title":"'t Sal waerachtig wel gaen : nieuwsblad uit de Gelderse vallei","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"[S.l.]"}
@@ -1048,7 +1048,7 @@
 {"series":"DDD:PPN:83063827X","title":"De Curaçaosche courant","lang":["en","nl"],"publisher":"William Lee","placeOfPublication":"[Willemstad]","coverage":"http://dbpedia.org/resource/Willemstad"}
 {"series":"DDD:PPN:830770232","title":"Geldersche historische courant","lang":["nl"],"publisher":"Johannes Olivier","placeOfPublication":"Zalt-Boemel"}
 {"series":"DDD:PPN:830780084","title":"De grondwet","lang":["nl"],"publisher":"Joh. Noman en Zoon","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
-{"series":"DDD:PPN:830788166","title":"Historisch dagblad van Zeeland / onder red. van S. Dassevael","lang":["nl"],"publisher":"Isaac de Winter","placeOfPublication":"Middelburg","coverage":"http://dbpedia.org/resource/Middelburg"}
+{"series":"DDD:PPN:830788166","title":"Historisch dagblad van Zeeland / onder red. van S. Dassevael","lang":["nl"],"publisher":"Isaac de Winter","placeOfPublication":"Middelburg","coverage":"http://dbpedia.org/resource/Middelburg%2C_Zeeland"}
 {"series":"DDD:PPN:830850090","title":"Nederlandsche staatscourant","lang":["nl"],"publisher":"Bureau der Nederlandsche Staats-courant","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
 {"series":"DDD:PPN:831074272","title":"Strĳdend Nederland : men rekent de uitslag niet, doch telt het doel alleen","lang":["nl"],"publisher":"Strĳdend Nederland","placeOfPublication":"Leiden","coverage":"http://dbpedia.org/resource/Leiden"}
 {"series":"DDD:PPN:831074663","title":"De koerier","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
@@ -1197,7 +1197,7 @@
 {"series":"DDD:PPN:832988693","title":"Koninglyke staats-courant","lang":["nl"],"publisher":"Bureau der Koninglyke Staats-courant","placeOfPublication":"Den Haag","coverage":"http://dbpedia.org/resource/The_Hague"}
 {"series":"DDD:PPN:832988790","title":"Koninklĳke courant","lang":["fr","nl"],"publisher":"Bureau der Koninklĳke Courant","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
 {"series":"DDD:PPN:832989185","title":"Leeuwarder courant","lang":["nl"],"publisher":"A. Ferwerda","placeOfPublication":"Leeuwarden","coverage":"http://dbpedia.org/resource/Leeuwarden"}
-{"series":"DDD:PPN:832996645","title":"Middelburgsche courant","lang":["nl"],"publisher":"Callenfels, Mandelgreen en Taillefert","placeOfPublication":"Middelburg","coverage":"http://dbpedia.org/resource/Middelburg"}
+{"series":"DDD:PPN:832996645","title":"Middelburgsche courant","lang":["nl"],"publisher":"Callenfels, Mandelgreen en Taillefert","placeOfPublication":"Middelburg","coverage":"http://dbpedia.org/resource/Middelburg%2C_Zeeland"}
 {"series":"DDD:PPN:833004263","title":"Nieuwe Brabantsche courant","lang":["nl"],"publisher":"s.n.","placeOfPublication":"'s-Hertogenbosch","coverage":"http://dbpedia.org/resource/'s-Hertogenbosch"}
 {"series":"DDD:PPN:833005049","title":"Nieuwe provinciale Groninger courant","lang":["nl"],"publisher":"Haan & Co","placeOfPublication":"Delfzĳl","coverage":"http://dbpedia.org/resource/Delfzijl"}
 {"series":"DDD:PPN:833005707","title":"Nieuws- en advertentie-blad voor de provincie Drenthe","lang":["nl"],"publisher":"Assen : van Gorcum","placeOfPublication":"Assen","coverage":"http://dbpedia.org/resource/Assen"}
@@ -1272,7 +1272,7 @@
 {"series":"DDD:PPN:84329244X","title":"Nieuwsbulletin","lang":["nl"],"publisher":"Horneer, G de Bruĳn & Zn","placeOfPublication":"Gorinchem","coverage":"http://dbpedia.org/resource/Gorinchem"}
 {"series":"DDD:PPN:843355972","title":"Algemeen Indisch dagblad : de Preangerbode","lang":["nl"],"publisher":"Preangerbode","placeOfPublication":"Bandoeng","coverage":"http://dbpedia.org/resource/Bandung"}
 {"series":"DDD:PPN:843375256","title":"Nĳmeegsch dagblad","lang":["nl"],"publisher":"Geldersch dagblad","placeOfPublication":"Nĳmegen","coverage":"http://dbpedia.org/resource/Nijmegen"}
-{"series":"DDD:PPN:843375981","title":"Journal du département des bouches de l'Escaut = Dagblad van het departement van de Schelde","lang":["fr"],"publisher":"Wed. J. Abrahams en Zonen","placeOfPublication":"Middelburg","coverage":"http://dbpedia.org/resource/Middelburg"}
+{"series":"DDD:PPN:843375981","title":"Journal du département des bouches de l'Escaut = Dagblad van het departement van de Schelde","lang":["fr"],"publisher":"Wed. J. Abrahams en Zonen","placeOfPublication":"Middelburg","coverage":"http://dbpedia.org/resource/Middelburg%2C_Zeeland"}
 {"series":"DDD:PPN:843381000","title":"Leeuwarder koerier","lang":["nl"],"publisher":"K. Westerling","placeOfPublication":"Leeuwarden","coverage":"http://dbpedia.org/resource/Leeuwarden"}
 {"series":"DDD:PPN:84338431X","title":"Kleine krant van ons volk : -den vaderlant ghetrouwe-","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"'s-Gravenhage","coverage":"http://dbpedia.org/resource/The_Hague"}
 {"series":"DDD:PPN:843430826","title":"De vrĳe pers : dagblad voor Dordrecht en omstreken : verzorgd door Ons vrĳe Nederland, Parool, Trouw, Vrĳ Nederland","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Dordrecht","coverage":"http://dbpedia.org/resource/Dordrecht"}
@@ -1319,7 +1319,7 @@
 {"series":"DDD:PPN:852112874","title":"Haarlemsche courant : dit nummer verschĳnt buiten verantwoordelĳkheid van Mees, Peereboom en Derks","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Hillegom","coverage":"http://dbpedia.org/resource/Hillegom"}
 {"series":"DDD:PPN:852113595","title":"Gazette de Leuwarde = Leeuwarder courant","lang":["nl"],"publisher":"Erven A. Ferwerda","placeOfPublication":"Leeuwarden","coverage":"http://dbpedia.org/resource/Leeuwarden"}
 {"series":"DDD:PPN:852115210","title":"Leeuwarder courant","lang":["nl"],"publisher":"D.R. Smeding en M. Koon","placeOfPublication":"Leeuwarden","coverage":"http://dbpedia.org/resource/Leeuwarden"}
-{"series":"DDD:PPN:852121741","title":"Middelburgsche courant","lang":["nl"],"publisher":"Wed. J. Abrahams & Zoon","placeOfPublication":"Middelburg","coverage":"http://dbpedia.org/resource/Middelburg"}
+{"series":"DDD:PPN:852121741","title":"Middelburgsche courant","lang":["nl"],"publisher":"Wed. J. Abrahams & Zoon","placeOfPublication":"Middelburg","coverage":"http://dbpedia.org/resource/Middelburg%2C_Zeeland"}
 {"series":"DDD:PPN:852136897","title":"Nieuwsbrief van Pieter 't Hoen","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:85216792X","title":"Delftsche courant : nieuwsblad voor Delft en Delfland","lang":["nl"],"publisher":"J.H. Molenbroek","placeOfPublication":"Delft","coverage":"http://dbpedia.org/resource/Delft"}
 {"series":"DDD:PPN:852172966","title":"Dordrechtsche courant","lang":["nl"],"publisher":"Blussé en Comp.","placeOfPublication":"Dordrecht","coverage":"http://dbpedia.org/resource/Dordrecht"}
