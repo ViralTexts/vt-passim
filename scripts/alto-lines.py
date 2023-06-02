@@ -61,6 +61,6 @@ if __name__ == '__main__':
         ).withColumn('info', text_lines('value')
         # ).select(f.input_file_name().alias('id'), text_lines('value').alias('lines')
         ).select('id', 'info.*'
-        ).write.json(config.outputPath)
+        ).write.json(config.outputPath, mode='overwrite')
 
     spark.stop()
