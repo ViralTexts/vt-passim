@@ -1,4 +1,4 @@
-import argparse
+import argparse, os
 from pyspark.sql import SparkSession, Row
 from pyspark.sql.functions import col, collect_list, explode, sort_array, struct, udf
 import pyspark.sql.functions as f
@@ -47,6 +47,9 @@ if __name__ == '__main__':
 
     config = parser.parse_args()
 
+    wd = os.getcwd()
+    wd = wd if wd.startswith('file://') else 'file://' + wd
+
     spark = SparkSession.builder.appName('Alto lines').getOrCreate()
     spark.sparkContext._jsc.hadoopConfiguration(
         ).set('mapreduce.input.fileinputformat.input.dir.recursive', 'true')
@@ -60,7 +63,7 @@ if __name__ == '__main__':
         ).toDF(
         ).withColumn('info', text_lines('value')
         # ).select(f.input_file_name().alias('id'), text_lines('value').alias('lines')
-        ).select('id', 'info.*'
+        ).select(f.regexp_replace('id', '^' + wd + '/', '').alias('id'), 'info.*'
         ).write.json(config.outputPath, mode='overwrite')
 
     spark.stop()
