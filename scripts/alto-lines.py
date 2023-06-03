@@ -48,7 +48,7 @@ if __name__ == '__main__':
     config = parser.parse_args()
 
     wd = os.getcwd()
-    wd = wd if wd.startswith('file://') else 'file://' + wd
+    wd = wd if wd.startswith('file:') else 'file:' + wd
 
     spark = SparkSession.builder.appName('Alto lines').getOrCreate()
     spark.sparkContext._jsc.hadoopConfiguration(
@@ -58,11 +58,13 @@ if __name__ == '__main__':
                      'struct<text: string, lineIDs: array<struct<start: int, length: int, id: string>>, pages: array<struct<id: string, seq: int, width: int, height: int, regions: array<struct<start: int, length: int, coords: struct<x: int, y: int, w: int, h: int, b: int>>>>>>').asNondeterministic()
 
     # spark.read.text(config.inputPath, wholetext='true', recursiveFileLookup='true'
+    #     ).withColumn('info', text_lines('value')
+    #     ).select(f.regexp_replace(f.input_file_name(), '^' + wd + '/', '').alias('id'), 'info.*'
+    #     ).write.json(config.outputPath, mode='overwrite')
     spark.sparkContext.wholeTextFiles(config.inputPath
         ).map(lambda f: Row(id=f[0], value=f[1])
         ).toDF(
         ).withColumn('info', text_lines('value')
-        # ).select(f.input_file_name().alias('id'), text_lines('value').alias('lines')
         ).select(f.regexp_replace('id', '^' + wd + '/', '').alias('id'), 'info.*'
         ).write.json(config.outputPath, mode='overwrite')
 
