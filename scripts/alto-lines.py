@@ -12,7 +12,7 @@ def textLines(s):
     lines = []
     pages = []
     if s != None and s != '':
-        tree = etree.parse(BytesIO(s.encode()))
+        tree = etree.parse(BytesIO(s))
         img = tree.findtext('//alto:sourceImageInformation/alto:fileName', namespaces=ns).strip()
         seq = 0
         for p in tree.findall('//alto:Page', namespaces=ns):
@@ -51,21 +51,13 @@ if __name__ == '__main__':
     wd = wd if wd.startswith('file:') else 'file:' + wd
 
     spark = SparkSession.builder.appName('Alto lines').getOrCreate()
-    spark.sparkContext._jsc.hadoopConfiguration(
-        ).set('mapreduce.input.fileinputformat.input.dir.recursive', 'true')
 
     text_lines = udf(lambda s: textLines(s),
                      'struct<text: string, lineIDs: array<struct<start: int, length: int, id: string>>, pages: array<struct<id: string, seq: int, width: int, height: int, regions: array<struct<start: int, length: int, coords: struct<x: int, y: int, w: int, h: int, b: int>>>>>>').asNondeterministic()
 
-    # spark.read.text(config.inputPath, wholetext='true', recursiveFileLookup='true'
-    #     ).withColumn('info', text_lines('value')
-    #     ).select(f.regexp_replace(f.input_file_name(), '^' + wd + '/', '').alias('id'), 'info.*'
-    #     ).write.json(config.outputPath, mode='overwrite')
-    spark.sparkContext.wholeTextFiles(config.inputPath
-        ).map(lambda f: Row(id=f[0], value=f[1])
-        ).toDF(
-        ).withColumn('info', text_lines('value')
-        ).select(f.regexp_replace('id', '^' + wd + '/', '').alias('id'), 'info.*'
+    spark.read.load(config.inputPath, format='binaryFile', recursiveFileLookup='true'
+        ).withColumn('info', text_lines('content')
+        ).select(f.regexp_replace('path', '^' + wd + '/', '').alias('id'), 'info.*'
         ).write.json(config.outputPath, mode='overwrite')
 
     spark.stop()

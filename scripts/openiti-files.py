@@ -1,6 +1,6 @@
 import argparse, os
 from pyspark.sql import SparkSession, Row
-from pyspark.sql.functions import col, input_file_name, regexp_replace, translate
+from pyspark.sql.functions import col, regexp_replace, translate
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Import OpenITI',
@@ -12,15 +12,16 @@ if __name__ == '__main__':
     spark = SparkSession.builder.appName('Import OpenITI').getOrCreate()
 
     wd = os.getcwd()
-    wd = wd if wd.startswith('file://') else 'file://' + wd
+    wd = wd if wd.startswith('file:') else 'file:' + wd
 
-    spark.read.text(config.inputPath, wholetext=True
-        ).select(regexp_replace(input_file_name(), '^' + wd + '/', '').alias('id'),
+    spark.read.load(config.inputPath, format='binaryFile', recursiveFileLookup='true'
+        ).select(regexp_replace('path', '^' + wd + '/', '').alias('id'),
                  regexp_replace(
                      regexp_replace(
                          regexp_replace(
                              regexp_replace(
-                                 regexp_replace(translate('value', '#~%|', ''),
+                                 regexp_replace(translate(col('content').cast('string'),
+                                                          '#~%|', ''),
                                                 r'PageV\S+|ms\d+|\p{M}', ''),
                                  r'\p{P}', ' '),
                              r' [ ]+', ' '),
