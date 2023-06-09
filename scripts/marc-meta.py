@@ -54,6 +54,10 @@ def getRelations(data):
         res = fields
     return res
 
+def getPlace(subfield):
+    r = {s._code: s._VALUE.strip(':;,. ') for s in subfield}
+    return (r.get('a'), r.get('b'), r.get('c'), r.get('d'))
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Extract MARC fields',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -123,6 +127,19 @@ if __name__ == '__main__':
                        explode(get_relations('datafield')).alias('link')
                 ).select('series', 'link.*'
                 ).filter(col('link').isNotNull())
+
+    get_place = udf(lambda d: getPlace(d),
+                     'struct<country: string, div1: string, div2: string, city: string>')
+
+    raw.select(concat(lit('/lccn/'),
+                      f.translate(get_subfield1('datafield', lit(10), lit('a')),
+                                  ' ', '')).alias('series'),
+               explode(f.filter('datafield', lambda c: c['_tag'] == 752)).alias('place')
+        ).select('series', get_place(col('place')['subfield']).alias('place')
+        ).select('series', 'place.*'
+        ).sort('series', 'country', 'div1', 'city'
+        ).coalesce(1
+        ).write.csv(config.outputPath + '/places', header=True, escape='"', mode='overwrite')
 
     # flat.write.json(config.outputPath)
     flat.sort('series').coalesce(1).write.csv(config.outputPath + '/meta',
