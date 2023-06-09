@@ -50,17 +50,37 @@ if __name__ == '__main__':
 
     cc = g.connectedComponents()
 
-    cc.join(g.inDegrees, ['id'], 'left_outer'
+    groups = cc.join(g.inDegrees, ['id'], 'left_outer'
         ).join(g.outDegrees, ['id'], 'left_outer'
         ).na.fill(0, subset=['inDegree', 'outDegree']
         ).groupBy('component'
         ).agg(f.min(struct('inDegree', 'id'))['id'].alias('group'),
               collect_set('id').alias('series')
         ).select('group', explode('series').alias('series')
-        ).filter(col('group') != col('series')
-        ).sort('group', 'series'
+        ).filter(col('group') != col('series'))
+    groups.cache()
+
+    groups.sort('group', 'series'
         ).coalesce(1).write.csv(config.outputPath + '/groups',
                                 header=True, escape='"', mode='overwrite')
+    g.unpersist()
+
+    fgraph = GraphFrame(meta.select(col('series').alias('id')),
+                        link.filter(col('type') == '775'
+                            ).select(col('link').alias('src'), col('series').alias('dst')
+                            ).union(groups.select(col('series').alias('src'),
+                                                  col('group').alias('dst'))
+                            ).distinct())
+    fgraph.cache()
+
+    fgraph.connectedComponents(
+         ).groupBy('component'
+         ).agg(f.min('id').alias('family'), collect_set('id').alias('series')
+         ).select('family', explode('series').alias('series')
+         ).filter(col('family') != col('series')
+         ).sort('family', 'series'
+         ).coalesce(1).write.csv(config.outputPath + '/families',
+                                  header=True, escape='"', mode='overwrite')
 
     # nodes.coalesce(1).write.json(config.outputPath + '/v')
     # edges.coalesce(1).write.json(config.outputPath + '/e')
