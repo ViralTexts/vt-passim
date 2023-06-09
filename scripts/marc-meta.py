@@ -1,6 +1,6 @@
 import argparse
 from pyspark.sql import SparkSession, Row, Window
-from pyspark.sql.functions import (col, concat, explode, lit, size, udf, struct, length, substring)
+from pyspark.sql.functions import (coalesce, col, concat, explode, lit, size, udf, struct, length, substring)
 from pyspark.sql.functions import regexp_replace as rr
 import pyspark.sql.functions as f
 
@@ -15,6 +15,15 @@ def subfield1(data, tag, code):
 
 def isubfield1(data, tag, ind1, code):
     fields = [d.subfield for d in data if d._tag == tag and d._ind1 == ind1]
+    res = None
+    if fields and len(fields) > 0:
+        subs = [s._VALUE for s in fields[0] if s._code == code]
+        if subs:
+            res = subs[0].strip(':;, ')
+    return res
+
+def i2subfield1(data, tag, ind2, code):
+    fields = [d.subfield for d in data if d._tag == tag and d._ind2 == ind2]
     res = None
     if fields and len(fields) > 0:
         subs = [s._VALUE for s in fields[0] if s._code == code]
@@ -38,7 +47,8 @@ def getLink(subfield):
     return res
 
 def getRelations(data):
-    fields = [(d._tag,int(d['_ind2']), getLink(d.subfield)) for d in data if d._tag in [780, 785]]
+    fields = [(d._tag, d['_ind2'], getLink(d.subfield)) for d in data
+              if d._tag in [775, 780, 785]]
     res = None
     if fields and len(fields) > 0:
         res = fields
@@ -59,8 +69,12 @@ if __name__ == '__main__':
 
     get_subfield1 = udf(lambda d, tag, code: subfield1(d, tag, code))
     get_isubfield1 = udf(lambda d, tag, ind1, code: isubfield1(d, tag, ind1, code))
+    get_i2subfield1 = udf(lambda d, tag, ind2, code: i2subfield1(d, tag, ind2, code))
     get_field1 = udf(lambda d, tag: field1(d, tag))
     norm_link = udf(lambda u: u.replace('http://chroniclingamerica.loc.gov/', 'http://www.loc.gov/chroniclingamerica/').replace('http://loc.gov/', 'http://www.loc.gov/').rstrip('/ ') if u else None)
+
+    ## Could be useful to get extra provenance information from:
+    ## get_i2subfield1('datafield', lit(651), lit('7'), lit('a'))),
 
     flat = raw.select(concat(lit('/lccn/'),
                              f.translate(get_subfield1('datafield', lit(10), lit('a')),
@@ -68,8 +82,12 @@ if __name__ == '__main__':
                       get_field1('datafield', lit(245)).alias('title'),
                       get_field1('datafield', lit(246)).alias('alttitle'),
                       get_subfield1('datafield', lit(250), lit('a')).alias('edition'),
-                      get_subfield1('datafield', lit(264), lit('a')).alias('placeOfPublication'),
-                      get_subfield1('datafield', lit(264), lit('b')).alias('publisher'),
+                      coalesce(get_subfield1('datafield', lit(264), lit('a')),
+                               get_subfield1('datafield', lit(260), lit('a'))
+                               ).alias('placeOfPublication'),
+                      coalesce(get_subfield1('datafield', lit(264), lit('b')),
+                               get_subfield1('datafield', lit(260), lit('b'))
+                               ).alias('publisher'),
                       # get_field1('datafield', lit(310)).alias('frequencyStmt'),
                       # get_field1('datafield', lit(321)).alias('formerFrequency'),
                       get_subfield1('datafield', lit(338), lit('a')).alias('carrier'),
@@ -97,7 +115,7 @@ if __name__ == '__main__':
                     )
 
     get_relations = udf(lambda d: getRelations(d),
-                        'array<struct<type: int, subtype: int, link: string>>')
+                        'array<struct<type: int, subtype: string, link: string>>')
 
     links = raw.select(concat(lit('/lccn/'),
                               f.translate(get_subfield1('datafield', lit(10), lit('a')),
