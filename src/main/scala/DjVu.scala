@@ -71,7 +71,7 @@ object DjVu {
       }}
       .toDF
       .coalesce(spark.sparkContext.getConf.getInt("spark.sql.shuffle.partitions", 200))
-      .write.save(args(1))
+      .write.mode("overwrite").save(args(1))
     spark.stop()
   }
 }
