@@ -17,8 +17,12 @@ def main(config):
 
     samples = pop.sample(fraction=sample_fraction).limit(config.samples)
     samples.cache()
+
+    jfields = ['cluster', 'uid']
+    if config.all:
+        jfields = ['cluster']
     
-    raw.join(samples, ['cluster', 'uid'], 'left_semi'
+    raw.join(samples, jfields, 'left_semi'
             ).repartition(1).sort('date', 'begin'
             ).coalesce(1).write.csv(config.outputPath,
                                     escape='"',
@@ -29,6 +33,7 @@ def main(config):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Sample Clusters',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument('-a', '--all', action='store_true', help='Output all reprints')
     parser.add_argument('-f', '--filter', type=str, default='size >= 10 AND pboiler < 0.2',
                         help='SQL query for reprints')
     parser.add_argument('-s', '--samples', type=int, default=1000,
