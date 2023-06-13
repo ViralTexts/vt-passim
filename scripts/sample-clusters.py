@@ -9,10 +9,14 @@ def main(config):
 
     pop = raw.filter(config.filter).groupBy('cluster').agg(
         f.min(f.struct('date', 'uid'))['uid'].alias('uid'))
+    pop.cache()
 
     total = pop.count()
 
-    samples = pop.sample(fraction=(config.samples / total)).limit(config.samples)
+    sample_fraction = max(min(config.samples / total, 1.0), 0.0)
+
+    samples = pop.sample(fraction=sample_fraction).limit(config.samples)
+    samples.cache()
     
     raw.join(samples, ['cluster', 'uid'], 'left_semi'
             ).repartition(1).sort('date', 'begin'
