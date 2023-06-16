@@ -90,7 +90,7 @@ if __name__ == "__main__":
            ).withColumn('p1height', col('pages')[0]['height']
            ).withColumn('p1dpi', col('pages')[0]['dpi']
            ).withColumn('p1id', col('pages')[0]['id']
-           ).drop('locs').drop('pages').drop('regions'
+           ).drop('locs', 'pages', 'regions', 'sections'
            ).join(meta, 'series', 'left_outer'
            ).withColumn('source', coalesce('source', 'series_title')
            ).withColumn('publisher', coalesce('publisher', 'series_publisher')
