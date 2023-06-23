@@ -83,8 +83,40 @@ class BookStream(object):
                     self.res.append(Row(id=f'{self.pageID}z{self.seq}', book=self.book,
                                         seq=self.seq, page=self.pageID,
                                         ztype='pageNum', place='pageNum', text=pno, rendition=[]))
+            case 'cb':
+                # Record and restart all open rendition spans
+                for i in range(len(self.rends)):
+                    r = self.rends[i]
+                    self.zones[-1].rend.append(RenditionSpan(r.rendition, r.start,
+                                                             len(self.zones[-1].data) - r.start))
+                    self.rends[i] = RenditionSpan(r.rendition, 0, 0)
+                # Remember and output all open zones
+                if len(self.zones) > 0:
+                    zinfo = [r.info for r in reversed(self.zones)]
+                    while len(self.zones) > 0:
+                        top = self.zones.pop()
+                        if len(top.data) > 0:
+                            self.seq += 1
+                            self.res.append(Row(id=f'{self.pageID}z{self.seq}', book=self.book,
+                                                seq=self.seq, page=self.pageID,
+                                                ztype=top.info.ztype, place=top.info.place,
+                                                text=top.data, rendition=top.rend))
+                else:
+                    zinfo = [ZoneInfo('body', 'body')]
+                for z in zinfo:
+                    self.zones.append(ZoneContent(z, '', []))
+                # Output printed column number (n attribute not in brackets) here
+                cno = re.sub(r'\[[^\]]+\]', '', attrib.get('n', ''))
+                if cno != '':
+                    self.seq += 1
+                    self.res.append(Row(id=f'{self.pageID}z{self.seq}', book=self.book,
+                                        seq=self.seq, page=self.pageID,
+                                        ztype='colNum', place='colNum', text=cno, rendition=[]))
             case tag if tag in self.lines and len(self.zones) > 0:
                 self.rends.append(RenditionSpan(tag, len(self.zones[-1].data), 0))
+            case tag if tag in self.floats and len(self.zones) > 0:
+                self.zones[-1].rend.append(RenditionSpan(tag, len(self.zones[-1].data), 0))
+                self.zones.append(ZoneContent(ZoneInfo(tag, attrib.get('place', tag)), '', []))
             
     def end(self, elem):
         match etree.QName(elem).localname:
@@ -114,11 +146,14 @@ class BookStream(object):
                 start = self.rends.pop()
                 self.zones[-1].rend.append(RenditionSpan(start.rendition, start.start,
                                                          len(self.zones[-1].data) - start.start))
-            # case 'head' | 'p':
-            #     print(self.buf.strip(), '\n')
-            #     self.buf = ''
-            # case 'note':
-            #     self.buf += '\n'
+            case tag if tag in self.floats and len(self.zones) > 0:
+                top = self.zones.pop()
+                self.seq += 1
+                self.res.append(Row(id=f'{self.pageID}z{self.seq}', book=self.book,
+                                    seq=self.seq, page=self.pageID,
+                                    ztype=top.info.ztype, place=top.info.place,
+                                    text=top.data, rendition=top.rend))
+
     def data(self, data):
         if len(self.zones) > 0:
             # remove leading whitespace only if we haven't added anything
