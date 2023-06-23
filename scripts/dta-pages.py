@@ -1,0 +1,133 @@
+import argparse, os, re
+from pyspark.sql import SparkSession, Row
+from pyspark.sql.functions import col, collect_list, explode, sort_array, struct, udf
+import pyspark.sql.functions as f
+from io import StringIO, BytesIO
+from lxml import etree
+from dataclasses import dataclass
+
+ns = {None: 'http://www.tei-c.org/ns/1.0'}
+
+@dataclass
+class RenditionSpan:
+    rendition: str
+    start: int
+    length: int
+
+@dataclass
+class ZoneInfo:
+    ztype: str
+    place: str
+
+@dataclass
+class ZoneContent:
+    info: ZoneInfo
+    data: str
+    rend: list
+
+@dataclass
+class Rec:
+    id: str
+    book: str
+    seq: int
+    page: str
+    ztype: str
+    place: str
+    text: str
+    rendition: list
+
+class BookStream(object):
+    lines = set(['head'])
+    floats = set(['figure', 'note', 'table'])
+    def __init__(self, book):
+        self.book = book
+        self.seq = -1
+        self.pageID = ''
+        self.zones = []
+        self.rends = []
+        self.res = []
+    def start(self, elem, attrib):
+        match etree.QName(elem).localname:
+            case 'hi' if len(self.zones) > 0:
+                self.rends.append(RenditionSpan(attrib.get('rendition', ''),
+                                                len(self.zones[-1].data), 0))
+            case 'pb':
+                # Record and restart all open rendition spans
+                for i in range(len(self.rends)):
+                    r = self.rends[i]
+                    self.zones[-1].rend.append(RenditionSpan(r.rendition, r.start,
+                                                             len(self.zones[-1].data) - r.start))
+                    self.rends[i] = RenditionSpan(r.rendition, 0, 0)
+                
+    def end(self, elem):
+        match etree.QName(elem).localname:
+            case 'hi' if len(self.zones) > 0:
+                start = self.rends.pop()
+                self.zones[-1].rend += [RenditionSpan(r.lstrip('#'), start.start,
+                                                      len(self.zones[-1].data) - start.start)
+                                      for r in re.split(r'\s+', start.rendition) if r != '']
+                if len(self.zones) > 0:
+                    zinfo = [r.info for r in reversed(self.zones)]
+                    while len(self.zones) > 0:
+                        seq += 1
+                        top = self.zones.pop()
+                        self.res.append(Row(id=f'{pageID}z{seq}', book=book, seq=seq, page=pageID,
+                                            ztype=top.info.ztype, place=top.info.place,
+                                            text=top.data, rendition=top.rend))
+                else:
+                    zinfo = [ZoneInfo('body', 'body')]
+                for z in zinfo:
+                    self.append(ZoneContent(z, '', []))
+                pageID = self.book + atrrib.get('facs', '')
+                pno = re.sub(r'\[[^\]]+\]', '', attrib.get('n', ''))
+                if pno != '':
+                    seq += 1
+                    self.res.append(Row(id=f'{pageID}z{seq}', book=book, seq=seq, page=pageID,
+                                        ztype='pageNum', place='pageNum', text=pno, rendition=[]))
+            case 'head' | 'p':
+                print(self.buf.strip(), '\n')
+                self.buf = ''
+            case 'note':
+                self.buf += '\n'
+    def data(self, data):
+        if len(self.zones) > 0:
+            if len(self.zones[-1].data) == 0:
+                data = re.sub(r'^\s+', '', data)
+            self.zones[-1].data += data
+    def comment(self, text):
+        pass
+    def close(self):
+        res = self.res
+        self.seq = -1
+        self.pageID = ''
+        self.zones = []
+        self.rends = []
+        self.res = []
+        return res
+
+def parseFile(path, content):
+    book = re.sub(r'(.TEI-P5)?.xml$', '', os.path.basename(path))
+
+    parser = etree.XMLParser(target = BookStream(book))
+    result = etree.parse(BytesIO(content), parser)
+    return result
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='DTA Pages',
+                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument('inputPath', metavar='<input path>', help='input path')
+    parser.add_argument('outputPath', metavar='<output path>', help='output path')
+
+    config = parser.parse_args()
+
+    spark = SparkSession.builder.appName('DTA Pages').getOrCreate()
+
+    spark.read.load(config.inputPath, format='binaryFile', recursiveFileLookup='true',
+                    pathGlobFilter='*.xml'
+        ).rdd.flatMap(lambda r: parseFile(r.path, r.content)
+        ).toDF(
+        ).write.json(config.outputPath)
+
+    spark.stop()
+
+                    
