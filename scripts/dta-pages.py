@@ -51,6 +51,9 @@ class BookStream(object):
             case 'hi' if len(self.zones) > 0:
                 self.rends.append(RenditionSpan(attrib.get('rendition', ''),
                                                 len(self.zones[-1].data), 0))
+            case 'fw' if len(self.zones) > 0:
+                self.zones.append(ZoneContent(ZoneInfo(attrib.get('type', 'fw'),
+                                                       attrib.get('place', 'fw')), '', []))
             case 'pb':
                 # Record and restart all open rendition spans
                 for i in range(len(self.rends)):
@@ -58,7 +61,31 @@ class BookStream(object):
                     self.zones[-1].rend.append(RenditionSpan(r.rendition, r.start,
                                                              len(self.zones[-1].data) - r.start))
                     self.rends[i] = RenditionSpan(r.rendition, 0, 0)
-                
+                # Remember and output all open zones
+                if len(self.zones) > 0:
+                    zinfo = [r.info for r in reversed(self.zones)]
+                    while len(self.zones) > 0:
+                        self.seq += 1
+                        top = self.zones.pop()
+                        self.res.append(Row(id=f'{self.pageID}z{self.seq}', book=self.book,
+                                            seq=self.seq, page=self.pageID,
+                                            ztype=top.info.ztype, place=top.info.place,
+                                            text=top.data, rendition=top.rend))
+                else:
+                    zinfo = [ZoneInfo('body', 'body')]
+                for z in zinfo:
+                    self.zones.append(ZoneContent(z, '', []))
+                # Output printed page number (n attribute not in brackets) here
+                self.pageID = self.book + attrib.get('facs', '')
+                pno = re.sub(r'\[[^\]]+\]', '', attrib.get('n', ''))
+                if pno != '':
+                    self.seq += 1
+                    self.res.append(Row(id=f'{self.pageID}z{self.seq}', book=self.book,
+                                        seq=self.seq, page=self.pageID,
+                                        ztype='pageNum', place='pageNum', text=pno, rendition=[]))
+            case tag if tag in self.lines and len(self.zones) > 0:
+                self.rends.append(RenditionSpan(tag, len(self.zones[-1].data), 0))
+            
     def end(self, elem):
         match etree.QName(elem).localname:
             case 'hi' if len(self.zones) > 0:
@@ -66,31 +93,35 @@ class BookStream(object):
                 self.zones[-1].rend += [RenditionSpan(r.lstrip('#'), start.start,
                                                       len(self.zones[-1].data) - start.start)
                                       for r in re.split(r'\s+', start.rendition) if r != '']
-                if len(self.zones) > 0:
-                    zinfo = [r.info for r in reversed(self.zones)]
-                    while len(self.zones) > 0:
-                        seq += 1
-                        top = self.zones.pop()
-                        self.res.append(Row(id=f'{pageID}z{seq}', book=book, seq=seq, page=pageID,
-                                            ztype=top.info.ztype, place=top.info.place,
-                                            text=top.data, rendition=top.rend))
-                else:
-                    zinfo = [ZoneInfo('body', 'body')]
-                for z in zinfo:
-                    self.append(ZoneContent(z, '', []))
-                pageID = self.book + atrrib.get('facs', '')
-                pno = re.sub(r'\[[^\]]+\]', '', attrib.get('n', ''))
-                if pno != '':
-                    seq += 1
-                    self.res.append(Row(id=f'{pageID}z{seq}', book=book, seq=seq, page=pageID,
-                                        ztype='pageNum', place='pageNum', text=pno, rendition=[]))
-            case 'head' | 'p':
-                print(self.buf.strip(), '\n')
-                self.buf = ''
-            case 'note':
-                self.buf += '\n'
+            case 'fw' if len(self.zones) > 0:
+                top = self.zones.pop()
+                self.seq += 1
+                self.res.append(Row(id=f'{self.pageID}z{self.seq}', book=self.book,
+                                    seq=self.seq, page=self.pageID,
+                                    ztype=top.info.ztype, place=top.info.place,
+                                    text=top.data, rendition=top.rend))
+            case 'cell' if len(self.zones) > 0:
+                self.zones[-1].data += '\t'
+            case 'text':
+                while len(self.zones) > 0:
+                    self.seq += 1
+                    top = self.zones.pop()
+                    self.res.append(Row(id=f'{self.pageID}z{self.seq}', book=self.book,
+                                        seq=self.seq, page=self.pageID,
+                                        ztype=top.info.ztype, place=top.info.place,
+                                        text=top.data, rendition=top.rend))
+            case tag if tag in self.lines and len(self.zones) > 0:
+                start = self.rends.pop()
+                self.zones[-1].rend.append(RenditionSpan(start.rendition, start.start,
+                                                         len(self.zones[-1].data) - start.start))
+            # case 'head' | 'p':
+            #     print(self.buf.strip(), '\n')
+            #     self.buf = ''
+            # case 'note':
+            #     self.buf += '\n'
     def data(self, data):
         if len(self.zones) > 0:
+            # remove leading whitespace only if we haven't added anything
             if len(self.zones[-1].data) == 0:
                 data = re.sub(r'^\s+', '', data)
             self.zones[-1].data += data
@@ -126,7 +157,7 @@ if __name__ == '__main__':
                     pathGlobFilter='*.xml'
         ).rdd.flatMap(lambda r: parseFile(r.path, r.content)
         ).toDF(
-        ).write.json(config.outputPath)
+        ).write.json(config.outputPath, mode='overwrite')
 
     spark.stop()
 
