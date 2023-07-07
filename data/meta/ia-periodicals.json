@@ -1,5 +1,4 @@
 {"series":"pub_a-deaf-american-monograph","title":"A Deaf American Monograph 1888-1998","coverage":"http://dbpedia.org/resource/Trenton%2C_New_Jersey"}
-{"series":"pub_abendpost-sonntagpost","title":"Abendpost & Sonntagpost 1889-1979"}
 {"series":"pub_academie-des-inscriptions-et-belles-lettres-paris","title":"Academie Des Inscriptions et Belles Lettres, Paris. Recueil Des Historiens Des Gaules et de la France 1840-1904","coverage":"http://dbpedia.org/resource/Paris"}
 {"series":"pub_academy-and-literature","title":"The Academy and Literature 1869-1916","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_academy-architecture-and-architectural-review","title":"Academy Architecture and Architectural Review 1889-1931","coverage":"http://dbpedia.org/resource/London"}
@@ -131,365 +130,363 @@
 {"series":"pub_art-dans-les-deux-mondes","title":"Art Dans Les Deux Mondes 1890-1891","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_art-journal-us","title":"The Art Journal 1839-1912","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_artist-and-amateurs-magazine","title":"Artist and Amateur's Magazine 1843-1844","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_arts-education-policy-review","title":"Arts Education Policy Review 1899-2015"}
-{"series":"pub_ashrae-transactions","title":"ASHRAE Transactions 1895-2014"}
-{"series":"pub_assistant-librarian","title":"The Assistant Librarian 1898-1997"}
-{"series":"pub_astronautics","title":"Astronautics 1957-1963"}
-{"series":"pub_astronomy-and-astro-physics","title":"Astronomy and Astro-Physics 1882-1894"}
-{"series":"pub_astrophysical-journal","title":"The Astrophysical Journal 1895-2009"}
-{"series":"pub_athenaeum-magazine","title":"Athenaeum, a Magazine of Literary and Miscellaneous Information 1807-1809"}
+{"series":"pub_arts-education-policy-review","title":"Arts Education Policy Review 1899-2015","coverage":"http://dbpedia.org/resource/Syracuse%2C_New_York"}
+{"series":"pub_ashrae-transactions","title":"ASHRAE Transactions 1895-2014","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_assistant-librarian","title":"The Assistant Librarian 1898-1997","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_astronomy-and-astro-physics","title":"Astronomy and Astro-Physics 1882-1894","coverage":"http://dbpedia.org/resource/Northfield%2C_Minnesota"}
+{"series":"pub_astrophysical-journal","title":"The Astrophysical Journal 1895-2009","coverage":"http://dbpedia.org/resource/Chicago"}
+{"series":"pub_athenaeum-magazine","title":"Athenaeum, a Magazine of Literary and Miscellaneous Information 1807-1809","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_athenaeum-uk","title":"The Athenaeum 1828-1920","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_athenian-gazette-or-casuistical-mercury","title":"The Athenian Mercury 1691-1697"}
-{"series":"pub_athenian-news-or-duntons-oracle","title":"Athenian News; Or, Dunton's Oracle 1710"}
-{"series":"pub_athenian-oracle","title":"The Athenian Oracle 1728"}
-{"series":"pub_augustan-review-a-monthly-production","title":"Augustan Review; A Monthly Production 1815-1816"}
-{"series":"pub_auk","title":"Auk 1884-2013"}
-{"series":"pub_author-a-monthly-magazine-for-literary-workers","title":"Author: A Monthly Magazine for Literary Workers 1889-1892"}
-{"series":"pub_automobile-magazine","title":"Automobile Magazine 1899-1907"}
-{"series":"pub_automotive-industries","title":"Automotive Industries 1899-2015"}
-{"series":"pub_avicultural-magazine","title":"The Avicultural Magazine 1949-1996"}
-{"series":"pub_bachelor-of-arts-a-monthly-magazine","title":"Bachelor of Arts; A Monthly Magazine Devoted to University Interests and General Literature 1895-1898"}
-{"series":"pub_baltimore-magazine-for-july-1807-a-literary-magazine","title":"Baltimore Magazine for July 1807; A Literary Magazine 1807"}
-{"series":"pub_baltimore-medical-and-physical-recorder","title":"Baltimore Medical and Physical Recorder 1808-1809"}
-{"series":"pub_baltimore-medical-and-surgical-journal-and-review","title":"Baltimore Medical and Surgical Journal and Review 1833-1834"}
-{"series":"pub_bankers-insurance-managers-and-agents-magazine","title":"Bankers', Insurance Managers', and Agents' Magazine 1890-1952"}
-{"series":"pub_bankers-monthly","title":"Bankers Monthly 1898-1993"}
-{"series":"pub_bankers-weekly-circular-and-statistical-record","title":"Bankers' Weekly Circular and Statistical Record 1845-1846"}
-{"series":"pub_banking-law-journal","title":"The Banking Law Journal 1889-2013"}
-{"series":"pub_beau-monde-and-monthly-register","title":"Beau Monde and Monthly Register 1809-1810"}
-{"series":"pub_beau-monde-or-literary-and-fashionable-magazine","title":"Beau Monde; Or, Literary and Fashionable Magazine 1806-1809"}
-{"series":"pub_bee","title":"Bee 1759"}
-{"series":"pub_bee-or-literary-weekly-intelligencer","title":"The Bee, or Literary Weekly Intelligencer 1790-1794"}
-{"series":"pub_bee-revived-or-the-universal-weekly-pamphlet","title":"The Bee Revived, Or, the Universal Weekly Pamphlet 1733-1735"}
-{"series":"pub_beitraege-zur-palaeontologie-und-geologie-oesterreich","title":"Beitraege Zur Palaeontologie und Geologie Oesterreich-Ungarns und Des Orients 1882-1915"}
-{"series":"pub_belfast-monthly-magazine","title":"Belfast Monthly Magazine 1808-1814"}
-{"series":"pub_belgravia","title":"Belgravia 1866-1899"}
-{"series":"pub_bells-literary-intelligencer-and-new-national-omnibus","title":"Bell's Literary Intelligencer and New National Omnibus 1834"}
-{"series":"pub_bentleys-miscellany","title":"Bentley's Miscellany 1837-1868"}
-{"series":"pub_bentleys-quarterly-review","title":"Bentley's Quarterly Review 1859-1860"}
-{"series":"pub_berean-or-scripture-searcher","title":"Berean; Or, Scripture-Searcher 1802-1810"}
-{"series":"pub_bergmaennisches-journal","title":"Bergmaennisches Journal 1788-1793"}
-{"series":"pub_biblia","title":"Biblia 1889-1905"}
-{"series":"pub_biblical-review","title":"The Biblical Review 1846-1850"}
-{"series":"pub_bibliographer-a-journal-of-book-lore","title":"Bibliographer. A Journal of Book-Lore 1881-1884"}
-{"series":"pub_bibliotheca-mathematica","title":"Bibliotheca Mathematica 1887-1913"}
-{"series":"pub_bibliotheca-sacra","title":"Bibliotheca Sacra 1843"}
-{"series":"pub_billboard","title":"Billboard 1894-2016"}
-{"series":"pub_biological-bulletin","title":"The Biological Bulletin 1899-2012"}
-{"series":"pub_biological-chemistry","title":"Biological Chemistry 1877-2005"}
-{"series":"pub_bird-lore","title":"Bird-Lore 1899-1940"}
-{"series":"pub_black-cat-a-monthly-magazine-of-original-short-stories","title":"The Black Cat; A Monthly Magazine of Original Short Stories 1895-1922"}
-{"series":"pub_black-dwarf","title":"The Black Dwarf 1817-1824"}
-{"series":"pub_blackwoods-magazine","title":"Blackwood's Magazine 1817-1980"}
-{"series":"pub_board-trade-journal-tariff-trade-notices-misc-comm-info","title":"Board of Trade Journal of tariff and trade notices and miscellaneous commercial information 1886-1899"}
-{"series":"pub_book-lore-a-magazine-devoted-to-old-time-literature","title":"Book Lore: A Magazine Devoted to Old Time Literature 1884-1887"}
-{"series":"pub_book-news-monthly","title":"Book News Monthly 1882-1918"}
-{"series":"pub_book-review-a-monthly-journal","title":"Book Review: A Monthly Journal Devoted to New and Current Publications 1893-1901"}
-{"series":"pub_bookman","title":"Bookman 1891-1934"}
-{"series":"pub_bookworm-an-illustrated-treasury-of-old-time-literature","title":"The Bookworm: An Illustrated Treasury of Old-Time Literature 1888-1894"}
-{"series":"pub_boston-journal-of-philosophy-and-the-arts","title":"Boston Journal of Philosophy and the Arts 1823-1826"}
-{"series":"pub_bow-bells-a-magazine-of-general-literature-and-art","title":"Bow Bells; A Magazine of General Literature and Art, for Family Reading 1864-1865"}
-{"series":"pub_bradshaws-journal","title":"Bradshaw's Journal 1841-1843"}
-{"series":"pub_brain","title":"Brain 1878-2013"}
-{"series":"pub_bristol-and-bath-magazine","title":"Bristol and Bath Magazine; Or Instructive and Entertaining Miscellany 1782-1783"}
-{"series":"pub_british-almanac-companion","title":"British Almanac Companion 1828-1888"}
-{"series":"pub_british-and-foreign-evangelical-review","title":"British and Foreign Evangelical Review 1852-1888"}
-{"series":"pub_british-and-foreign-review-or-european-quarterly-journal","title":"British and Foreign Review; Or European Quarterly Journal 1835-1844"}
-{"series":"pub_british-apollo-or-curious-amusements-for-the-ingenious","title":"British Apollo, Or, Curious Amusements for the Ingenious 1708-1711"}
-{"series":"pub_british-critic-and-quarterly-theological-review","title":"British Critic, and Quarterly Theological Review 1793-1843"}
-{"series":"pub_british-librarian","title":"British Librarian 1737"}
-{"series":"pub_british-magazine","title":"British Magazine 1746-1751"}
-{"series":"pub_british-magazine-and-register-of-religious","title":"British Magazine and Register of Religious and Ecclesiastical Information 1832-1849"}
-{"series":"pub_british-magazine-or-monthly-repository","title":"British Magazine; Or Monthly Repository for Gentlemen and Ladies 1760-1767"}
-{"series":"pub_british-medical-journal","title":"British Medical Journal 1857-2015"}
-{"series":"pub_british-minstrel-and-musical-and-literary-miscellany","title":"British Minstrel, and Musical and Literary Miscellany 1843-1845"}
-{"series":"pub_british-quarterly-review","title":"British Quarterly Review 1845-1886"}
-{"series":"pub_british-review-and-london-critical-journal","title":"British Review and London Critical Journal 1811-1825"}
-{"series":"pub_british-stage-and-literary-cabinet","title":"British Stage and Literary Cabinet 1817-1822"}
-{"series":"pub_briton","title":"Briton 1762-1763"}
-{"series":"pub_broadway","title":"Broadway 1867-1873"}
-{"series":"pub_brush-and-pencil-an-illustrated-magazine-of-arts","title":"Brush and Pencil; An Illustrated Magazine of Arts of Today 1897-1907"}
-{"series":"pub_building-uk","title":"Building 1842-2005"}
-{"series":"pub_bulletin-de-i-academie-nationale-de-medecine","title":"Bulletin de l'Academie Nationale de Medecine 1837-9999"}
-{"series":"pub_bulletin-of-bibliography","title":"Bulletin of Bibliography 1897-2002"}
-{"series":"pub_bulletin-of-the-pan-american-union","title":"Bulletin of the Pan American Union 1893-1948"}
-{"series":"pub_business-month","title":"Business Month 1893-1990"}
-{"series":"pub_busy-body","title":"Busy Body 1759"}
-{"series":"pub_butterfly","title":"Butterfly 1899-1900"}
-{"series":"pub_butterfly-a-humorous-and-artistic-magazine","title":"Butterfly; A Humorous and Artistic Magazine 1893-1894"}
-{"series":"pub_cabinet-or-monthly-report-of-polite-literature","title":"Cabinet: Or, Monthly Report of Polite Literature 1807-1809"}
-{"series":"pub_calcutta-journal-political-commercial-literary-gazette","title":"Calcutta Journal, or Political, Commercial and Literary Gazette 1819-1823"}
-{"series":"pub_calcutta-review","title":"Calcutta Review 1844-1902"}
-{"series":"pub_caledonian-mercury","title":"Caledonian Mercury 1722-1799"}
-{"series":"pub_california-illustrated-magazine","title":"California Illustrated Magazine"}
-{"series":"pub_california-university-chronicle","title":"California University Chronicle 1898-1906"}
-{"series":"pub_cambridge-and-dublin-mathematical-journal","title":"The Cambridge and Dublin Mathematical Journal 1837-1854"}
-{"series":"pub_cambridge-university-magazine","title":"Cambridge University Magazine 1840-1843"}
-{"series":"pub_canadian-entomologist","title":"Canadian Entomologist 1868-2007"}
-{"series":"pub_canadian-journal-of-science-literature-and-history","title":"The Canadian Journal of Science, Literature and History 1852-1878"}
-{"series":"pub_canadian-magazine","title":"Canadian Magazine 1925-1937"}
-{"series":"pub_canadian-monthly-and-national-review","title":"Canadian Monthly and National Review 1872-1878"}
-{"series":"pub_case-and-comment","title":"Case and Comment 1894-1990"}
-{"series":"pub_catholic-presbyterian","title":"Catholic Presbyterian 1879-1979"}
-{"series":"pub_catholic-university-bulletin","title":"Catholic University Bulletin 1895-1908"}
-{"series":"pub_celtic-magazine-a-monthly-periodical","title":"Celtic Magazine, a Monthly Periodical Devoted to the Literature, History, Antiquities, Folklore, Traditions and the Social and Material Interests of the Celt at Home and Abroad 1875-1888"}
-{"series":"pub_chambers-edinburgh-journal","title":"Chambers' Edinburgh Journal 1832-1853"}
-{"series":"pub_chambers-journal","title":"Chambers's Journal 1897-1956"}
-{"series":"pub_chambers-journal-of-popular-literature-science-and-arts","title":"Chambers's Journal of Popular Literature, Science and Arts 1854-1897"}
-{"series":"pub_charities-review","title":"The Charities Review 1891-1901"}
-{"series":"pub_cheap-repository","title":"Cheap Repository 1800"}
-{"series":"pub_chicago-medical-journal-and-examiner","title":"The Chicago Medical Journal and Examiner 1844-1889"}
-{"series":"pub_chicago-teacher","title":"Chicago Teacher 1874-1875"}
-{"series":"pub_chiltons-iron-age","title":"Chilton's Iron Age 1873-1983"}
-{"series":"pub_chinese-recorder-and-missionary-journal","title":"Chinese Recorder and Missionary Journal 1867-1906"}
-{"series":"pub_chord-a-quarterly-devoted-to-music","title":"Chord; A Quarterly Devoted to Music 1899-1900"}
-{"series":"pub_christian-examiner","title":"The Christian Examiner 1824-1869"}
-{"series":"pub_christian-heritage","title":"Christian Heritage 1883-1978"}
+{"series":"pub_athenian-gazette-or-casuistical-mercury","title":"The Athenian Mercury 1691-1697","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_athenian-news-or-duntons-oracle","title":"Athenian News; Or, Dunton's Oracle 1710","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_athenian-oracle","title":"The Athenian Oracle 1728","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_augustan-review-a-monthly-production","title":"Augustan Review; A Monthly Production 1815-1816","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_auk","title":"Auk 1884-2013","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
+{"series":"pub_author-a-monthly-magazine-for-literary-workers","title":"Author: A Monthly Magazine for Literary Workers 1889-1892","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"pub_automobile-magazine","title":"Automobile Magazine 1899-1907","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_automotive-industries","title":"Automotive Industries 1899-2015","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_avicultural-magazine","title":"The Avicultural Magazine 1949-1996","coverage":"http://dbpedia.org/resource/Winchester"}
+{"series":"pub_bachelor-of-arts-a-monthly-magazine","title":"Bachelor of Arts; A Monthly Magazine Devoted to University Interests and General Literature 1895-1898","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_baltimore-magazine-for-july-1807-a-literary-magazine","title":"Baltimore Magazine for July 1807; A Literary Magazine 1807","coverage":"http://dbpedia.org/resource/Baltimore"}
+{"series":"pub_baltimore-medical-and-physical-recorder","title":"Baltimore Medical and Physical Recorder 1808-1809","coverage":"http://dbpedia.org/resource/Baltimore"}
+{"series":"pub_baltimore-medical-and-surgical-journal-and-review","title":"Baltimore Medical and Surgical Journal and Review 1833-1834","coverage":"http://dbpedia.org/resource/Baltimore"}
+{"series":"pub_bankers-insurance-managers-and-agents-magazine","title":"Bankers', Insurance Managers', and Agents' Magazine 1890-1952","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_bankers-monthly","title":"Bankers Monthly 1898-1993","coverage":"http://dbpedia.org/resource/Chicago"}
+{"series":"pub_bankers-weekly-circular-and-statistical-record","title":"Bankers' Weekly Circular and Statistical Record 1845-1846","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_banking-law-journal","title":"The Banking Law Journal 1889-2013","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_beau-monde-and-monthly-register","title":"Beau Monde and Monthly Register 1809-1810","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_beau-monde-or-literary-and-fashionable-magazine","title":"Beau Monde; Or, Literary and Fashionable Magazine 1806-1809","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_bee","title":"Bee 1759","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_bee-or-literary-weekly-intelligencer","title":"The Bee, or Literary Weekly Intelligencer 1790-1794","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_bee-revived-or-the-universal-weekly-pamphlet","title":"The Bee Revived, Or, the Universal Weekly Pamphlet 1733-1735","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_beitraege-zur-palaeontologie-und-geologie-oesterreich","title":"Beitraege Zur Palaeontologie und Geologie Oesterreich-Ungarns und Des Orients 1882-1915","coverage":"http://dbpedia.org/resource/Vienna"}
+{"series":"pub_belfast-monthly-magazine","title":"Belfast Monthly Magazine 1808-1814","coverage":"http://dbpedia.org/resource/Belfast"}
+{"series":"pub_belgravia","title":"Belgravia 1866-1899","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_bells-literary-intelligencer-and-new-national-omnibus","title":"Bell's Literary Intelligencer and New National Omnibus 1834","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_bentleys-miscellany","title":"Bentley's Miscellany 1837-1868","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_bentleys-quarterly-review","title":"Bentley's Quarterly Review 1859-1860","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_berean-or-scripture-searcher","title":"Berean; Or, Scripture-Searcher 1802-1810","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"pub_bergmaennisches-journal","title":"Bergmaennisches Journal 1788-1793","coverage":"http://dbpedia.org/resource/Freiberg"}
+{"series":"pub_biblia","title":"Biblia 1889-1905","coverage":"http://dbpedia.org/resource/Meriden%2C_Connecticut"}
+{"series":"pub_biblical-review","title":"The Biblical Review 1846-1850","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_bibliographer-a-journal-of-book-lore","title":"Bibliographer. A Journal of Book-Lore 1881-1884","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_bibliotheca-mathematica","title":"Bibliotheca Mathematica 1887-1913","coverage":"http://dbpedia.org/resource/Stockholm"}
+{"series":"pub_bibliotheca-sacra","title":"Bibliotheca Sacra 1843","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_billboard","title":"Billboard 1894-2016","coverage":"http://dbpedia.org/resource/Cincinnati"}
+{"series":"pub_biological-bulletin","title":"The Biological Bulletin 1899-2012","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
+{"series":"pub_biological-chemistry","title":"Biological Chemistry 1877-2005","coverage":"http://dbpedia.org/resource/Strasbourg"}
+{"series":"pub_bird-lore","title":"Bird-Lore 1899-1940","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_black-cat-a-monthly-magazine-of-original-short-stories","title":"The Black Cat; A Monthly Magazine of Original Short Stories 1895-1922","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"pub_black-dwarf","title":"The Black Dwarf 1817-1824","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_blackwoods-magazine","title":"Blackwood's Magazine 1817-1980","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_board-trade-journal-tariff-trade-notices-misc-comm-info","title":"Board of Trade Journal of tariff and trade notices and miscellaneous commercial information 1886-1899","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_book-lore-a-magazine-devoted-to-old-time-literature","title":"Book Lore: A Magazine Devoted to Old Time Literature 1884-1887","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_book-news-monthly","title":"Book News Monthly 1882-1918","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"series":"pub_book-review-a-monthly-journal","title":"Book Review: A Monthly Journal Devoted to New and Current Publications 1893-1901","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_bookman","title":"Bookman 1891-1934","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_bookworm-an-illustrated-treasury-of-old-time-literature","title":"The Bookworm: An Illustrated Treasury of Old-Time Literature 1888-1894","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_boston-journal-of-philosophy-and-the-arts","title":"Boston Journal of Philosophy and the Arts 1823-1826","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"pub_bow-bells-a-magazine-of-general-literature-and-art","title":"Bow Bells; A Magazine of General Literature and Art, for Family Reading 1864-1865","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_bradshaws-journal","title":"Bradshaw's Journal 1841-1843","coverage":"http://dbpedia.org/resource/Manchester"}
+{"series":"pub_brain","title":"Brain 1878-2013","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_bristol-and-bath-magazine","title":"Bristol and Bath Magazine; Or Instructive and Entertaining Miscellany 1782-1783","coverage":"http://dbpedia.org/resource/Bristol"}
+{"series":"pub_british-almanac-companion","title":"British Almanac Companion 1828-1888","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_british-and-foreign-evangelical-review","title":"British and Foreign Evangelical Review 1852-1888","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_british-and-foreign-review-or-european-quarterly-journal","title":"British and Foreign Review; Or European Quarterly Journal 1835-1844","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_british-apollo-or-curious-amusements-for-the-ingenious","title":"British Apollo, Or, Curious Amusements for the Ingenious 1708-1711","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_british-critic-and-quarterly-theological-review","title":"British Critic, and Quarterly Theological Review 1793-1843","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_british-librarian","title":"British Librarian 1737","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_british-magazine","title":"British Magazine 1746-1751","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_british-magazine-and-register-of-religious","title":"British Magazine and Register of Religious and Ecclesiastical Information 1832-1849","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_british-magazine-or-monthly-repository","title":"British Magazine; Or Monthly Repository for Gentlemen and Ladies 1760-1767","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_british-medical-journal","title":"British Medical Journal 1857-2015","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_british-minstrel-and-musical-and-literary-miscellany","title":"British Minstrel, and Musical and Literary Miscellany 1843-1845","coverage":"http://dbpedia.org/resource/Glasgow"}
+{"series":"pub_british-quarterly-review","title":"British Quarterly Review 1845-1886","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_british-review-and-london-critical-journal","title":"British Review and London Critical Journal 1811-1825","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_british-stage-and-literary-cabinet","title":"British Stage and Literary Cabinet 1817-1822","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_briton","title":"Briton 1762-1763","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_broadway","title":"Broadway 1867-1873","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_brush-and-pencil-an-illustrated-magazine-of-arts","title":"Brush and Pencil; An Illustrated Magazine of Arts of Today 1897-1907","coverage":"http://dbpedia.org/resource/Chicago"}
+{"series":"pub_building-uk","title":"Building 1842-2005","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_bulletin-de-i-academie-nationale-de-medecine","title":"Bulletin de l'Academie Nationale de Medecine 1837-9999","coverage":"http://dbpedia.org/resource/Paris"}
+{"series":"pub_bulletin-of-bibliography","title":"Bulletin of Bibliography 1897-2002","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"pub_bulletin-of-the-pan-american-union","title":"Bulletin of the Pan American Union 1893-1948","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"series":"pub_business-month","title":"Business Month 1893-1990","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_busy-body","title":"Busy Body 1759","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_butterfly","title":"Butterfly 1899-1900","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_butterfly-a-humorous-and-artistic-magazine","title":"Butterfly; A Humorous and Artistic Magazine 1893-1894","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_cabinet-or-monthly-report-of-polite-literature","title":"Cabinet: Or, Monthly Report of Polite Literature 1807-1809","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_calcutta-journal-political-commercial-literary-gazette","title":"Calcutta Journal, or Political, Commercial and Literary Gazette 1819-1823","coverage":"http://dbpedia.org/resource/Kolkata"}
+{"series":"pub_calcutta-review","title":"Calcutta Review 1844-1902","coverage":"http://dbpedia.org/resource/Kolkata"}
+{"series":"pub_caledonian-mercury","title":"Caledonian Mercury 1722-1799","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_california-illustrated-magazine","title":"California Illustrated Magazine","coverage":"http://dbpedia.org/resource/San_Francisco"}
+{"series":"pub_california-university-chronicle","title":"California University Chronicle 1898-1906","coverage":"http://dbpedia.org/resource/Berkeley%2C_California"}
+{"series":"pub_cambridge-and-dublin-mathematical-journal","title":"The Cambridge and Dublin Mathematical Journal 1837-1854","coverage":"http://dbpedia.org/resource/Cambridge"}
+{"series":"pub_cambridge-university-magazine","title":"Cambridge University Magazine 1840-1843","coverage":"http://dbpedia.org/resource/Cambridge"}
+{"series":"pub_canadian-entomologist","title":"Canadian Entomologist 1868-2007","coverage":"http://dbpedia.org/resource/Toronto"}
+{"series":"pub_canadian-journal-of-science-literature-and-history","title":"The Canadian Journal of Science, Literature and History 1852-1878","coverage":"http://dbpedia.org/resource/Toronto"}
+{"series":"pub_canadian-magazine","title":"Canadian Magazine 1925-1937","coverage":"http://dbpedia.org/resource/Toronto"}
+{"series":"pub_canadian-monthly-and-national-review","title":"Canadian Monthly and National Review 1872-1878","coverage":"http://dbpedia.org/resource/Toronto"}
+{"series":"pub_case-and-comment","title":"Case and Comment 1894-1990","coverage":"http://dbpedia.org/resource/Rochester%2C_New_York"}
+{"series":"pub_catholic-presbyterian","title":"Catholic Presbyterian 1879-1979","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_catholic-university-bulletin","title":"Catholic University Bulletin 1895-1908","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"series":"pub_celtic-magazine-a-monthly-periodical","title":"Celtic Magazine, a Monthly Periodical Devoted to the Literature, History, Antiquities, Folklore, Traditions and the Social and Material Interests of the Celt at Home and Abroad 1875-1888","coverage":"http://dbpedia.org/resource/Inverness"}
+{"series":"pub_chambers-edinburgh-journal","title":"Chambers' Edinburgh Journal 1832-1853","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_chambers-journal","title":"Chambers's Journal 1897-1956","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_chambers-journal-of-popular-literature-science-and-arts","title":"Chambers's Journal of Popular Literature, Science and Arts 1854-1897","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_charities-review","title":"The Charities Review 1891-1901","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_cheap-repository","title":"Cheap Repository 1800","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"series":"pub_chicago-medical-journal-and-examiner","title":"The Chicago Medical Journal and Examiner 1844-1889","coverage":"http://dbpedia.org/resource/Chicago"}
+{"series":"pub_chicago-teacher","title":"Chicago Teacher 1874-1875","coverage":"http://dbpedia.org/resource/Chicago"}
+{"series":"pub_chiltons-iron-age","title":"Chilton's Iron Age 1873-1983","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_chinese-recorder-and-missionary-journal","title":"Chinese Recorder and Missionary Journal 1867-1906","coverage":"http://dbpedia.org/resource/Fuzhou"}
+{"series":"pub_chord-a-quarterly-devoted-to-music","title":"Chord; A Quarterly Devoted to Music 1899-1900","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_christian-examiner","title":"The Christian Examiner 1824-1869","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"pub_christian-heritage","title":"Christian Heritage 1883-1978","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_christian-intelligencer","title":"Christian Intelligencer 1821-1836","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
-{"series":"pub_christian-literature","title":"Christian Literature 1889-1897"}
-{"series":"pub_christian-monitor","title":"Christian Monitor 1814-1818"}
-{"series":"pub_christian-quarterly","title":"Christian Quarterly 1869-1876"}
-{"series":"pub_christian-quarterly-review","title":"Christian Quarterly Review 1982-1989"}
-{"series":"pub_christian-remembrancer-a-quarterly-review","title":"Christian Remembrancer. A Quarterly Review 1819-1868"}
-{"series":"pub_church-quarterly-review","title":"The Church Quarterly Review 1875-1907"}
-{"series":"pub_citizen-american-society-extension-university-teaching","title":"Citizen: American Society for Extension of University Teaching 1895-1898"}
-{"series":"pub_city-jackdaw","title":"City Jackdaw 1875-1880"}
-{"series":"pub_classical-museum-a-journal-of-philology","title":"Classical Museum, a Journal of Philology, and of Ancient History and Literature 1844-1850"}
-{"series":"pub_classical-review","title":"The Classical Review 1887-2015"}
-{"series":"pub_clinical-medicine","title":"Clinical Medicine 1895-1978"}
-{"series":"pub_cobbetts-magazine-a-monthly-review","title":"Cobbett's Magazine, a Monthly Review of Politics, History, Science, Domestic Pursuits 1833-1834"}
-{"series":"pub_cobbetts-weekly-political-register","title":"Cobbett's Weekly Political Register 1802-1835"}
-{"series":"pub_college-and-university","title":"College and University 1925-2016"}
-{"series":"pub_colliers-the-national-weekly","title":"Collier's: The National Weekly 1891-1915"}
-{"series":"pub_columbia-university-quarterly","title":"Columbia University Quarterly 1898-1907"}
-{"series":"pub_columbian-observer","title":"Columbian Observer 1822-1825"}
-{"series":"pub_commercial-and-financial-chronicle","title":"The Commercial and Financial Chronicle 1865-1987"}
-{"series":"pub_commons-for-industrial-justice","title":"Commons, for Industrial Justice, Efficient Philanthropy, Educational Freedom and the People's Control of Public Utilities 1896-1905"}
-{"series":"pub_companion","title":"Companion 1828"}
-{"series":"pub_compleat-library-or-news-for-the-ingenious","title":"Compleat Library; Or, News for the Ingenious 1692-1694"}
-{"series":"pub_compleat-linguist","title":"Compleat Linguist 1719-1722"}
-{"series":"pub_compressed-air","title":"Compressed Air 1896-2000"}
-{"series":"pub_condor","title":"The Condor 1899-2013"}
-{"series":"pub_congregational-magazine","title":"The Congregational Magazine 1818-1845"}
-{"series":"pub_congregational-quarterly","title":"Congregational Quarterly 1859-1878"}
-{"series":"pub_congregational-review","title":"Congregational Review 1887-1891"}
-{"series":"pub_congregational-review-1861","title":"Congregational Review 1861-1871"}
-{"series":"pub_connecticut-republican-magazine","title":"Connecticut Republican Magazine 1802-1803"}
-{"series":"pub_connecticut-school-journal","title":"The Connecticut School Journal 1871-1874"}
-{"series":"pub_connoisseur-a-journal-of-music-and-the-fine-arts","title":"Connoisseur, a Journal of Music and the Fine Arts 1845-1846"}
-{"series":"pub_connoisseur-by-mr-town-critic-and-censor-general","title":"Connoisseur. By Mr. Town, Critic and Censor General 1754-1756"}
-{"series":"pub_conservative-review-1899","title":"Conservative Review 1899-1901"}
-{"series":"pub_constellation","title":"Constellation 1830-1833"}
-{"series":"pub_convention-of-american-instructors-of-the-deaf-report","title":"Convention of American Instructors of the Deaf. Report of the Proceedings of the ... Meeting of the Convention of American Instructors of the Deaf 1850-1971"}
-{"series":"pub_cornhill-magazine","title":"The Cornhill Magazine 1860-1975"}
-{"series":"pub_corrector","title":"Corrector 1804"}
-{"series":"pub_country-journal-or-the-craftsman","title":"The Country Journal, or the Craftsman 1726-1733"}
-{"series":"pub_country-life","title":"Country Life 1897-1996"}
-{"series":"pub_country-spectator","title":"Country Spectator 1792-1793"}
-{"series":"pub_court-magazine-or-royal-chronicle-of-news","title":"Court Magazine, or Royal Chronicle of News, Politics and Literature for Town and Country 1761-1765"}
-{"series":"pub_critic-a-weekly-review-of-literature-fine-arts-drama","title":"Critic. A Weekly Review of Literature, Fine Arts, and the Drama 1828-1829"}
-{"series":"pub_critical-review-of-theological-and-philosophical","title":"Critical Review of Theological and Philosophical Literature 1891-1904"}
-{"series":"pub_critical-review-or-annals-of-literature","title":"Critical Review; Or, Annals of Literature 1756-1817"}
-{"series":"pub_critiks-being-papers-upon-the-times","title":"Critiks; Being Papers Upon the Times 1718"}
-{"series":"pub_daily-chronicle","title":"Daily Chronicle"}
-{"series":"pub_daily-courant","title":"Daily Courant 1702-1735"}
-{"series":"pub_daily-gazetteer","title":"Daily Gazetteer 1735-1745"}
-{"series":"pub_darbys-monthly-geographical-historical-and-statistical","title":"Darby's Monthly, Geographical, Historical and Statistical Repository 1824"}
-{"series":"pub_dark-blue","title":"Dark Blue 1871-1873"}
-{"series":"pub_delphick-oracle","title":"Delphick Oracle, Set Forth Through Correspondence Held With the Most Learned Scholars in the Most Famous Universities of Europe 1719-1720"}
-{"series":"pub_denison-university-journal-of-the-scientific-labs","title":"Journal of the Scientific Laboratories, Denison University 1885-1980"}
-{"series":"pub_dental-digest","title":"Dental Digest 1895-1972"}
-{"series":"pub_development-genes-and-evolution","title":"Development Genes and Evolution 1889-1997"}
-{"series":"pub_die-mennonitische-rundschau","title":"Die Mennonitische Rundschau 1880-1993"}
-{"series":"pub_director-a-weekly-literary-journal","title":"Director; A Weekly Literary Journal 1807"}
-{"series":"pub_diverting-post","title":"Diverting Post 1704-1706"}
-{"series":"pub_dome-an-illustrated-magazine-and-review","title":"Dome; An Illustrated Magazine and Review of Literature, Music, Architecture and the Graphic Arts 1897-1900"}
-{"series":"pub_drama-or-theatrical-pocket-magazine","title":"Drama; Or, Theatrical Pocket Magazine 1821-1826"}
-{"series":"pub_dramatic-censor-or-weekly-theatrical-report","title":"Dramatic Censor, Or, Weekly Theatrical Report 1800-1801"}
-{"series":"pub_dramatic-magazine-embellished-with-numerous-engravings","title":"Dramatic Magazine, Embellished With Numerous Engravings of the Principal Performers 1829-1831"}
-{"series":"pub_dramatic-notes","title":"Dramatic Notes 1879-1892"}
-{"series":"pub_dublin-and-london-magazine","title":"The Dublin and London Magazine 1825-1828"}
-{"series":"pub_dublin-review","title":"The Dublin Review 1836-1969"}
-{"series":"pub_duffys-hibernian-magazine-a-monthly-journal","title":"Duffy's Hibernian Magazine; A Monthly Journal of Legends, Tales, and Stories, Irish Antiquities, Biography, Science and Art 1860-1864"}
-{"series":"pub_dwights-journal-of-music-a-paper-of-art-and-literature","title":"Dwight's Journal of Music, a Paper of Art and Literature 1852-1881"}
+{"series":"pub_christian-literature","title":"Christian Literature 1889-1897","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_christian-monitor","title":"Christian Monitor 1814-1818","coverage":"http://dbpedia.org/resource/Richmond%2C_Virginia"}
+{"series":"pub_christian-quarterly","title":"Christian Quarterly 1869-1876","coverage":"http://dbpedia.org/resource/Cincinnati"}
+{"series":"pub_christian-quarterly-review","title":"Christian Quarterly Review 1982-1989","coverage":"http://dbpedia.org/resource/Columbia%2C_Missouri"}
+{"series":"pub_christian-remembrancer-a-quarterly-review","title":"Christian Remembrancer. A Quarterly Review 1819-1868","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_church-quarterly-review","title":"The Church Quarterly Review 1875-1907","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_citizen-american-society-extension-university-teaching","title":"Citizen: American Society for Extension of University Teaching 1895-1898","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"series":"pub_city-jackdaw","title":"City Jackdaw 1875-1880","coverage":"http://dbpedia.org/resource/Manchester"}
+{"series":"pub_classical-museum-a-journal-of-philology","title":"Classical Museum, a Journal of Philology, and of Ancient History and Literature 1844-1850","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_classical-review","title":"The Classical Review 1887-2015","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_clinical-medicine","title":"Clinical Medicine 1895-1978","coverage":"http://dbpedia.org/resource/Chicago"}
+{"series":"pub_cobbetts-magazine-a-monthly-review","title":"Cobbett's Magazine, a Monthly Review of Politics, History, Science, Domestic Pursuits 1833-1834","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_cobbetts-weekly-political-register","title":"Cobbett's Weekly Political Register 1802-1835","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_college-and-university","title":"College and University 1925-2016","coverage":"http://dbpedia.org/resource/Menasha%2C_Wisconsin"}
+{"series":"pub_colliers-the-national-weekly","title":"Collier's: The National Weekly 1891-1915","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_columbia-university-quarterly","title":"Columbia University Quarterly 1898-1907","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_columbian-observer","title":"Columbian Observer 1822-1825","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"series":"pub_commercial-and-financial-chronicle","title":"The Commercial and Financial Chronicle 1865-1987","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_commons-for-industrial-justice","title":"Commons, for Industrial Justice, Efficient Philanthropy, Educational Freedom and the People's Control of Public Utilities 1896-1905","coverage":"http://dbpedia.org/resource/Chicago"}
+{"series":"pub_companion","title":"Companion 1828","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_compleat-library-or-news-for-the-ingenious","title":"Compleat Library; Or, News for the Ingenious 1692-1694","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_compleat-linguist","title":"Compleat Linguist 1719-1722","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_compressed-air","title":"Compressed Air 1896-2000","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_condor","title":"The Condor 1899-2013","coverage":"http://dbpedia.org/resource/Los_Angeles"}
+{"series":"pub_congregational-magazine","title":"The Congregational Magazine 1818-1845","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_congregational-quarterly","title":"Congregational Quarterly 1859-1878","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"pub_congregational-review","title":"Congregational Review 1887-1891","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_congregational-review-1861","title":"Congregational Review 1861-1871","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"pub_connecticut-republican-magazine","title":"Connecticut Republican Magazine 1802-1803","coverage":"http://dbpedia.org/resource/Suffield%2C_Connecticut"}
+{"series":"pub_connecticut-school-journal","title":"The Connecticut School Journal 1871-1874","coverage":"http://dbpedia.org/resource/New_Haven%2C_Connecticut"}
+{"series":"pub_connoisseur-a-journal-of-music-and-the-fine-arts","title":"Connoisseur, a Journal of Music and the Fine Arts 1845-1846","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_connoisseur-by-mr-town-critic-and-censor-general","title":"Connoisseur. By Mr. Town, Critic and Censor General 1754-1756","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_conservative-review-1899","title":"Conservative Review 1899-1901","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"series":"pub_constellation","title":"Constellation 1830-1833","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_convention-of-american-instructors-of-the-deaf-report","title":"Convention of American Instructors of the Deaf. Report of the Proceedings of the ... Meeting of the Convention of American Instructors of the Deaf 1850-1971","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"series":"pub_cornhill-magazine","title":"The Cornhill Magazine 1860-1975","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_corrector","title":"Corrector 1804","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_country-journal-or-the-craftsman","title":"The Country Journal, or the Craftsman 1726-1733","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_country-life","title":"Country Life 1897-1996","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_country-spectator","title":"Country Spectator 1792-1793","coverage":"http://dbpedia.org/resource/Gainsborough%2C_Lincolnshire"}
+{"series":"pub_court-magazine-or-royal-chronicle-of-news","title":"Court Magazine, or Royal Chronicle of News, Politics and Literature for Town and Country 1761-1765","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_critic-a-weekly-review-of-literature-fine-arts-drama","title":"Critic. A Weekly Review of Literature, Fine Arts, and the Drama 1828-1829","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_critical-review-of-theological-and-philosophical","title":"Critical Review of Theological and Philosophical Literature 1891-1904","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_critical-review-or-annals-of-literature","title":"Critical Review; Or, Annals of Literature 1756-1817","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_critiks-being-papers-upon-the-times","title":"Critiks; Being Papers Upon the Times 1718","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_daily-chronicle","title":"Daily Chronicle","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"series":"pub_daily-courant","title":"Daily Courant 1702-1735","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_daily-gazetteer","title":"Daily Gazetteer 1735-1745","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_darbys-monthly-geographical-historical-and-statistical","title":"Darby's Monthly, Geographical, Historical and Statistical Repository 1824","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"series":"pub_dark-blue","title":"Dark Blue 1871-1873","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_delphick-oracle","title":"Delphick Oracle, Set Forth Through Correspondence Held With the Most Learned Scholars in the Most Famous Universities of Europe 1719-1720","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_denison-university-journal-of-the-scientific-labs","title":"Journal of the Scientific Laboratories, Denison University 1885-1980","coverage":"http://dbpedia.org/resource/Granville%2C_Ohio"}
+{"series":"pub_dental-digest","title":"Dental Digest 1895-1972","coverage":"http://dbpedia.org/resource/Chicago"}
+{"series":"pub_development-genes-and-evolution","title":"Development Genes and Evolution 1889-1997","coverage":"http://dbpedia.org/resource/Bonn"}
+{"series":"pub_die-mennonitische-rundschau","title":"Die Mennonitische Rundschau 1880-1993","coverage":"http://dbpedia.org/resource/Elkhart%2C_Indiana"}
+{"series":"pub_director-a-weekly-literary-journal","title":"Director; A Weekly Literary Journal 1807","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_diverting-post","title":"Diverting Post 1704-1706","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_dome-an-illustrated-magazine-and-review","title":"Dome; An Illustrated Magazine and Review of Literature, Music, Architecture and the Graphic Arts 1897-1900","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_drama-or-theatrical-pocket-magazine","title":"Drama; Or, Theatrical Pocket Magazine 1821-1826","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_dramatic-censor-or-weekly-theatrical-report","title":"Dramatic Censor, Or, Weekly Theatrical Report 1800-1801","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_dramatic-magazine-embellished-with-numerous-engravings","title":"Dramatic Magazine, Embellished With Numerous Engravings of the Principal Performers 1829-1831","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_dramatic-notes","title":"Dramatic Notes 1879-1892","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_dublin-and-london-magazine","title":"The Dublin and London Magazine 1825-1828","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_dublin-review","title":"The Dublin Review 1836-1969","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_duffys-hibernian-magazine-a-monthly-journal","title":"Duffy's Hibernian Magazine; A Monthly Journal of Legends, Tales, and Stories, Irish Antiquities, Biography, Science and Art 1860-1864","coverage":"http://dbpedia.org/resource/Dublin"}
+{"series":"pub_dwights-journal-of-music-a-paper-of-art-and-literature","title":"Dwight's Journal of Music, a Paper of Art and Literature 1852-1881","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_eclectic-review","title":"The Eclectic Review 1805-1868","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_economic-journal","title":"The Economic Journal 1891-2090"}
-{"series":"pub_economic-review","title":"Economic Review 1891-1914"}
-{"series":"pub_economic-studies","title":"Economic Studies 1896-1899"}
+{"series":"pub_economic-journal","title":"The Economic Journal 1891-2090","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_economic-review","title":"Economic Review 1891-1914","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_economic-studies","title":"Economic Studies 1896-1899","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_economist","title":"The Economist 1843-2016","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_edinburgh-annual-register","title":"Edinburgh Annual Register 1808-1826"}
+{"series":"pub_edinburgh-annual-register","title":"Edinburgh Annual Register 1808-1826","coverage":"http://dbpedia.org/resource/Edinburgh"}
 {"series":"pub_edinburgh-literary-journal-or-weekly-register","title":"Edinburgh Literary Journal; Or Weekly Register of Criticism and Belles Lettres 1828-1832"}
-{"series":"pub_edinburgh-magazine","title":"Edinburgh Magazine 1758-1762"}
+{"series":"pub_edinburgh-magazine","title":"Edinburgh Magazine 1758-1762","coverage":"http://dbpedia.org/resource/Edinburgh"}
 {"series":"pub_edinburgh-magazine-and-literary-miscellany","title":"The Edinburgh Magazine and Literary Miscellany 1739-1826","coverage":"http://dbpedia.org/resource/Edinburgh"}
-{"series":"pub_edinburgh-magazine-and-review","title":"Edinburgh Magazine and Review 1773-1776"}
-{"series":"pub_edinburgh-magazine-or-literary-miscellany","title":"The Edinburgh Magazine, or Literary Miscellany 1785-1803"}
-{"series":"pub_edinburgh-monthly-review","title":"Edinburgh Monthly Review 1819-1821"}
-{"series":"pub_edinburgh-philosophical-journal","title":"The Edinburgh Philosophical Journal 1819-1826"}
-{"series":"pub_edinburgh-review","title":"Edinburgh Review 1755-1756"}
-{"series":"pub_edinburgh-review-critical-journal","title":"The Edinburgh Review, or Critical Journal 1802-1910"}
-{"series":"pub_edinburgh-weekly-magazine","title":"The Edinburgh Weekly Magazine 1768-1784"}
-{"series":"pub_education-us","title":"Education 1880-2016"}
-{"series":"pub_educational-review-us","title":"Educational Review 1891-1928"}
-{"series":"pub_educationist","title":"Educationist 1873-1875"}
-{"series":"pub_educator","title":"Educator 1838-1839"}
-{"series":"pub_electrical-review","title":"The Electrical Review 1872-1989"}
-{"series":"pub_electrical-west","title":"Electrical West 1895-1970"}
-{"series":"pub_electrical-world","title":"Electrical World 1883-2002"}
-{"series":"pub_emancipator","title":"Emancipator 1820"}
-{"series":"pub_engineer","title":"Engineer"}
-{"series":"pub_engineering","title":"Engineering"}
-{"series":"pub_engineering-and-boiler-house-review","title":"Engineering and Boiler House Review 1899-1968"}
-{"series":"pub_engineering-and-mining-journal","title":"Engineering and Mining Journal 1866-2014"}
-{"series":"pub_english-historical-review","title":"The English Historical Review 1886-2014"}
-{"series":"pub_english-illustrated-magazine","title":"The English Illustrated Magazine 1883-1913"}
-{"series":"pub_english-lucian-or-weekly-discoveries-of-the-witty","title":"English Lucian; Or Weekly Discoveries of the Witty Intrigues, Comical Passages and Remarkable Transactions in Town and Country: With Reflections on the Vices and Vanities of the Times 1698"}
-{"series":"pub_english-review-of-literature-science-discoveries","title":"English Review of Literature, Science, Discoveries, Inventions and Practical Controversies and Contests 1783-1796"}
-{"series":"pub_english-review-us","title":"English Review 1844-1853"}
-{"series":"pub_englishman-being-the-sequel-of-the-guardian","title":"The Englishman: Being the Sequel of the Guardian 1713-1715"}
-{"series":"pub_englishmans-magazine","title":"Englishman's Magazine 1842-1843"}
-{"series":"pub_englishwomans-domestic-magazine","title":"Englishwoman's Domestic Magazine 1852-1879"}
-{"series":"pub_enr","title":"ENR (Engineering News-Record) 1874-2015"}
-{"series":"pub_entomological-news","title":"Entomological News 1890-2007"}
-{"series":"pub_era-almanack-and-annual-the-dramatic-and-musical","title":"Era Almanack and Annual; The Dramatic and Musical 1868-1919"}
-{"series":"pub_etcher","title":"Etcher 1879-1883"}
-{"series":"pub_ethical-record-us","title":"The Ethical Record 1888-1890"}
-{"series":"pub_ethics","title":"Ethics 1890-2014"}
+{"series":"pub_edinburgh-magazine-and-review","title":"Edinburgh Magazine and Review 1773-1776","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_edinburgh-magazine-or-literary-miscellany","title":"The Edinburgh Magazine, or Literary Miscellany 1785-1803","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_edinburgh-monthly-review","title":"Edinburgh Monthly Review 1819-1821","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_edinburgh-philosophical-journal","title":"The Edinburgh Philosophical Journal 1819-1826","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_edinburgh-review","title":"Edinburgh Review 1755-1756","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_edinburgh-review-critical-journal","title":"The Edinburgh Review, or Critical Journal 1802-1910","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_edinburgh-weekly-magazine","title":"The Edinburgh Weekly Magazine 1768-1784","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_education-us","title":"Education 1880-2016","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"pub_educational-review-us","title":"Educational Review 1891-1928","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_educationist","title":"Educationist 1873-1875","coverage":"http://dbpedia.org/resource/Indianapolis"}
+{"series":"pub_educator","title":"Educator 1838-1839","coverage":"http://dbpedia.org/resource/Easton%2C_Pennsylvania"}
+{"series":"pub_electrical-review","title":"The Electrical Review 1872-1989","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_electrical-west","title":"Electrical West 1895-1970","coverage":"http://dbpedia.org/resource/San_Francisco"}
+{"series":"pub_electrical-world","title":"Electrical World 1883-2002","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_emancipator","title":"Emancipator 1820","coverage":"http://dbpedia.org/resource/Nashville%2C_Tennessee"}
+{"series":"pub_engineer","title":"Engineer","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_engineering","title":"Engineering","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_engineering-and-boiler-house-review","title":"Engineering and Boiler House Review 1899-1968","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_engineering-and-mining-journal","title":"Engineering and Mining Journal 1866-2014","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_english-historical-review","title":"The English Historical Review 1886-2014","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_english-illustrated-magazine","title":"The English Illustrated Magazine 1883-1913","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_english-lucian-or-weekly-discoveries-of-the-witty","title":"English Lucian; Or Weekly Discoveries of the Witty Intrigues, Comical Passages and Remarkable Transactions in Town and Country: With Reflections on the Vices and Vanities of the Times 1698","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_english-review-of-literature-science-discoveries","title":"English Review of Literature, Science, Discoveries, Inventions and Practical Controversies and Contests 1783-1796","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_english-review-us","title":"English Review 1844-1853","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_englishman-being-the-sequel-of-the-guardian","title":"The Englishman: Being the Sequel of the Guardian 1713-1715","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_englishmans-magazine","title":"Englishman's Magazine 1842-1843","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_englishwomans-domestic-magazine","title":"Englishwoman's Domestic Magazine 1852-1879","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_enr","title":"ENR (Engineering News-Record) 1874-2015","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_entomological-news","title":"Entomological News 1890-2007","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"series":"pub_era-almanack-and-annual-the-dramatic-and-musical","title":"Era Almanack and Annual; The Dramatic and Musical 1868-1919","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_etcher","title":"Etcher 1879-1883","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_ethical-record-us","title":"The Ethical Record 1888-1890","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"series":"pub_ethics","title":"Ethics 1890-2014","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"series":"pub_european-magazine-and-london-review","title":"European Magazine and London Review 1782-1826","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_everybodys-magazine","title":"Everybody's Magazine 1899-1929"}
-{"series":"pub_examiner","title":"The Examiner 1710-1714"}
+{"series":"pub_everybodys-magazine","title":"Everybody's Magazine 1899-1929","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_examiner","title":"The Examiner 1710-1714","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_examiner-a-weekly-paper-on-politics-literature-music","title":"Examiner, a Weekly Paper on Politics, Literature, Music, and the Fine Arts 1808-1881","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_exeter-hall-lectures-to-young-men","title":"Exeter Hall Lectures to Young Men 1845-1865"}
-{"series":"pub_factory","title":"Factory 1959-1968"}
-{"series":"pub_factory-and-industrial-management","title":"Factory and Industrial Management 1928-1933"}
+{"series":"pub_exeter-hall-lectures-to-young-men","title":"Exeter Hall Lectures to Young Men 1845-1865","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_factory","title":"Factory 1959-1968","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_factory-and-industrial-management","title":"Factory and Industrial Management 1928-1933","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_farm-journal","title":"Farm Journal 1877-2015","coverage":"http://dbpedia.org/resource/Philadelphia"}
-{"series":"pub_farmers-and-planters-friend","title":"Farmers' and Planters' Friend 1821"}
-{"series":"pub_farmers-bulletin","title":"Farmer's Bulletin 1889-1930"}
-{"series":"pub_farmers-magazine","title":"Farmer's Magazine 1800-1825"}
-{"series":"pub_female-spectator","title":"The Female Spectator 1775"}
-{"series":"pub_female-tatler","title":"The Female Tatler 1709-1710"}
-{"series":"pub_fenland-notes-and-queries","title":"Fenland Notes and Queries 1889-1909"}
-{"series":"pub_field-naturalist","title":"Field Naturalist 1833-1834"}
-{"series":"pub_field-naturalist-and-scientific-student","title":"Field Naturalist, and Scientific Student 1883"}
-{"series":"pub_field-stream","title":"Field & Stream 1896-2004"}
-{"series":"pub_figaro-in-london","title":"Figaro in London 1831-1839"}
-{"series":"pub_fine-arts-journal","title":"Fine Arts Journal 1846-1847"}
-{"series":"pub_fine-arts-quarterly-review","title":"Fine Arts Quarterly Review 1863-1867"}
-{"series":"pub_florida-state-horticultural-society-proceedings","title":"Florida State Horticultural Society. Proceedings 1892-1974"}
-{"series":"pub_florida-supreme-court-reports","title":"Florida Supreme Court: Reports 1846-1886"}
-{"series":"pub_folk-lore-journal","title":"The Folk-Lore Journal 1883-1889"}
-{"series":"pub_folk-lore-record","title":"The Folk-Lore Record 1878-1882"}
-{"series":"pub_folk-song-society-journal","title":"Journal of the Folk-Song Society 1899-1931"}
-{"series":"pub_fool-by-thomas-brainless-jester-to-his-majesty-the-public","title":"Fool; By Thomas Brainless, Jester to His Majesty the Public 1807"}
-{"series":"pub_foreign-quarterly-and-westminster-review","title":"Foreign Quarterly and Westminster Review 1827-1847"}
-{"series":"pub_fortnightly","title":"The Fortnightly 1865-1934"}
-{"series":"pub_fosters-monthly-reference-list","title":"Foster's Monthly Reference List 1881-1884"}
-{"series":"pub_foundry-management-technology","title":"Foundry Management & Technology 1892-2013"}
-{"series":"pub_frasers-magazine","title":"Fraser's Magazine 1830-1882"}
-{"series":"pub_freed-man-a-monthly-magazine","title":"Freed-Man: A Monthly Magazine Devoted to the Interests of the Freed Coloured People 1865-1868"}
-{"series":"pub_freedmens-record","title":"Freedmen's Record 1865-1874"}
-{"series":"pub_freeholder-or-political-essays","title":"Freeholder; Or Political Essays 1715-1716"}
-{"series":"pub_friend-of-man","title":"Friend of Man 1836-1842"}
-{"series":"pub_fun","title":"Fun 1861-1901"}
-{"series":"pub_garden-and-forest-a-journal-of-horticulture-landscape","title":"Garden and Forest; A Journal of Horticulture, Landscape Art and Forestry 1888-1897"}
-{"series":"pub_garland-or-new-general-repository-of-fugitive-poetry","title":"Garland, or New General Repository of Fugitive Poetry 1825"}
-{"series":"pub_gas-journal","title":"Gas Journal 1849-1972"}
-{"series":"pub_geistliches-magazien","title":"Geistliches Magazien 1764-1771"}
-{"series":"pub_general-history-discoveries-improvements-in-useful-art","title":"General History of the Principal Discoveries and Improvements in Useful Art 1726-1727"}
-{"series":"pub_general-magazine-and-impartial-review","title":"General Magazine and Impartial Review 1787-1792"}
-{"series":"pub_general-review-of-british-and-foreign-literature","title":"General Review of British and Foreign Literature 1806"}
-{"series":"pub_genius-of-universal-emancipation","title":"Genius of Universal Emancipation 1821-1839"}
-{"series":"pub_gentlemans-journal-for-the-war","title":"Gentleman's Journal for the War; Being an Historical Account and Geographical Description of Several Strong Cities, Towns and Ports of Europe 1693-1694"}
-{"series":"pub_gentlemans-journal-or-the-monthly-miscellany","title":"Gentleman's Journal; Or, the Monthly Miscellany 1692-1694"}
-{"series":"pub_gentlemans-magazine","title":"The Gentleman's Magazine 1731-1907"}
-{"series":"pub_gentlemans-vade-mecum-or-the-sporting-and-dramatic","title":"Gentleman's Vade-Mecum; Or the Sporting and Dramatic Companion 1836"}
-{"series":"pub_gentlemen-and-ladies-town-and-country-magazine","title":"Gentlemen and Ladies' Town and Country Magazine 1789-1790"}
-{"series":"pub_geographical-journal","title":"The Geographical Journal 1893-2015"}
-{"series":"pub_geographical-magazine","title":"Geographical Magazine 1874-1878"}
-{"series":"pub_geological-society-of-america-bulletin","title":"Geological Society of America Bulletin 1890-2010"}
-{"series":"pub_georgia-supreme-court-reports-of-cases-in-law","title":"Georgia. Supreme Court. Reports of Cases in Law and Equity Argued and Determined in the Supreme Court of Georgia 1805-1887"}
-{"series":"pub_ghost","title":"Ghost 1796"}
-{"series":"pub_gleanings-in-bee-culture","title":"Gleanings in Bee Culture 1873-1992"}
+{"series":"pub_farmers-and-planters-friend","title":"Farmers' and Planters' Friend 1821","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"series":"pub_farmers-bulletin","title":"Farmer's Bulletin 1889-1930","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"series":"pub_farmers-magazine","title":"Farmer's Magazine 1800-1825","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_female-spectator","title":"The Female Spectator 1775","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_female-tatler","title":"The Female Tatler 1709-1710","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_fenland-notes-and-queries","title":"Fenland Notes and Queries 1889-1909","coverage":"http://dbpedia.org/resource/Peterborough"}
+{"series":"pub_field-naturalist","title":"Field Naturalist 1833-1834","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_field-naturalist-and-scientific-student","title":"Field Naturalist, and Scientific Student 1883","coverage":"http://dbpedia.org/resource/Manchester"}
+{"series":"pub_field-stream","title":"Field & Stream 1896-2004","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_figaro-in-london","title":"Figaro in London 1831-1839","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_fine-arts-journal","title":"Fine Arts Journal 1846-1847","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_fine-arts-quarterly-review","title":"Fine Arts Quarterly Review 1863-1867","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_florida-state-horticultural-society-proceedings","title":"Florida State Horticultural Society. Proceedings 1892-1974","coverage":"http://dbpedia.org/resource/DeLand%2C_Florida"}
+{"series":"pub_florida-supreme-court-reports","title":"Florida Supreme Court: Reports 1846-1886","coverage":"http://dbpedia.org/resource/Tallahassee%2C_Florida"}
+{"series":"pub_folk-lore-journal","title":"The Folk-Lore Journal 1883-1889","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_folk-lore-record","title":"The Folk-Lore Record 1878-1882","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_folk-song-society-journal","title":"Journal of the Folk-Song Society 1899-1931","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_fool-by-thomas-brainless-jester-to-his-majesty-the-public","title":"Fool; By Thomas Brainless, Jester to His Majesty the Public 1807","coverage":"http://dbpedia.org/resource/Salem%2C_Massachusetts"}
+{"series":"pub_foreign-quarterly-and-westminster-review","title":"Foreign Quarterly and Westminster Review 1827-1847","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_fortnightly","title":"The Fortnightly 1865-1934","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_fosters-monthly-reference-list","title":"Foster's Monthly Reference List 1881-1884","coverage":"http://dbpedia.org/resource/Providence%2C_Rhode_Island"}
+{"series":"pub_foundry-management-technology","title":"Foundry Management & Technology 1892-2013","coverage":"http://dbpedia.org/resource/Detroit"}
+{"series":"pub_frasers-magazine","title":"Fraser's Magazine 1830-1882","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_freed-man-a-monthly-magazine","title":"Freed-Man: A Monthly Magazine Devoted to the Interests of the Freed Coloured People 1865-1868","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_freedmens-record","title":"Freedmen's Record 1865-1874","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"pub_freeholder-or-political-essays","title":"Freeholder; Or Political Essays 1715-1716","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_friend-of-man","title":"Friend of Man 1836-1842","coverage":"http://dbpedia.org/resource/Utica%2C_New_York"}
+{"series":"pub_fun","title":"Fun 1861-1901","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_garden-and-forest-a-journal-of-horticulture-landscape","title":"Garden and Forest; A Journal of Horticulture, Landscape Art and Forestry 1888-1897","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_garland-or-new-general-repository-of-fugitive-poetry","title":"Garland, or New General Repository of Fugitive Poetry 1825","coverage":"http://dbpedia.org/resource/Auburn%2C_New_York"}
+{"series":"pub_gas-journal","title":"Gas Journal 1849-1972","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_geistliches-magazien","title":"Geistliches Magazien 1764-1771","coverage":"http://dbpedia.org/resource/Germantown%2C_Philadelphia"}
+{"series":"pub_general-history-discoveries-improvements-in-useful-art","title":"General History of the Principal Discoveries and Improvements in Useful Art 1726-1727","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_general-magazine-and-impartial-review","title":"General Magazine and Impartial Review 1787-1792","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_general-review-of-british-and-foreign-literature","title":"General Review of British and Foreign Literature 1806","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_genius-of-universal-emancipation","title":"Genius of Universal Emancipation 1821-1839","coverage":"http://dbpedia.org/resource/Greeneville%2C_Tennessee"}
+{"series":"pub_gentlemans-journal-for-the-war","title":"Gentleman's Journal for the War; Being an Historical Account and Geographical Description of Several Strong Cities, Towns and Ports of Europe 1693-1694","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_gentlemans-journal-or-the-monthly-miscellany","title":"Gentleman's Journal; Or, the Monthly Miscellany 1692-1694","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_gentlemans-magazine","title":"The Gentleman's Magazine 1731-1907","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_gentlemans-vade-mecum-or-the-sporting-and-dramatic","title":"Gentleman's Vade-Mecum; Or the Sporting and Dramatic Companion 1836","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"series":"pub_gentlemen-and-ladies-town-and-country-magazine","title":"Gentlemen and Ladies' Town and Country Magazine 1789-1790","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"pub_geographical-journal","title":"The Geographical Journal 1893-2015","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_geographical-magazine","title":"Geographical Magazine 1874-1878","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_geological-society-of-america-bulletin","title":"Geological Society of America Bulletin 1890-2010","coverage":"http://dbpedia.org/resource/Rochester%2C_New_York"}
+{"series":"pub_georgia-supreme-court-reports-of-cases-in-law","title":"Georgia. Supreme Court. Reports of Cases in Law and Equity Argued and Determined in the Supreme Court of Georgia 1805-1887","coverage":"http://dbpedia.org/resource/Athens%2C_Georgia"}
+{"series":"pub_ghost","title":"Ghost 1796","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_gleanings-in-bee-culture","title":"Gleanings in Bee Culture 1873-1992","coverage":"http://dbpedia.org/resource/Medina%2C_Ohio"}
 {"series":"pub_golden-hours-a-magazine-for-sunday-reading","title":"Golden Hours. a Magazine for Sunday Reading 1866-1884","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_good-government","title":"Good Government 1881-1906"}
+{"series":"pub_good-government","title":"Good Government 1881-1906","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_good-housekeeping","title":"Good Housekeeping 1885-2015","coverage":"http://dbpedia.org/resource/Springfield%2C_Massachusetts"}
-{"series":"pub_good-words-and-sunday-magazine","title":"Good Words and Sunday Magazine 1906-1911"}
+{"series":"pub_good-words-and-sunday-magazine","title":"Good Words and Sunday Magazine 1906-1911","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_granite-state-monthly","title":"The Granite State Monthly 1877-1930","coverage":"http://dbpedia.org/resource/Concord%2C_New_Hampshire"}
-{"series":"pub_grays-inn-journal","title":"Gray's Inn Journal 1753-1754"}
-{"series":"pub_great-britain-parliament-parliamentary-debates","title":"Great Britain. Parliament. Parliamentary Debates 1803-1908"}
-{"series":"pub_great-britain-public-record-america-and-the-west-indies","title":"Calendar of State Papers, Colonial Series, America and the West Indies 1574-1733"}
-{"series":"pub_great-britain-public-record-papers-domestic-charles-ii","title":"Great Britain. Public Record Office. Calendar of State Papers. Domestic- Charles II 1660-1685"}
-{"series":"pub_great-britain-public-record-papers-domestic-commonwealth","title":"Calendar of State Papers, Domestic Series [of the Commonwealth] 1649-1660"}
-{"series":"pub_green-bag-an-entertaining-magazine-of-the-law","title":"Green Bag; An Entertaining Magazine of the Law 1889-1914"}
-{"series":"pub_grub-street-journal","title":"Grub-Street Journal 1730-1737"}
-{"series":"pub_grumbler","title":"The Grumbler 1715"}
-{"series":"pub_guardian-addison-steele-and-others","title":"The Guardian 1713"}
-{"series":"pub_hardware-age-home-improvement-market","title":"Hardware Age Home Improvement Market 1894-1998"}
-{"series":"pub_harlequin-a-journal-of-the-drama","title":"Harlequin. A Journal of the Drama 1829"}
-{"series":"pub_hartford-seminary","title":"Hartford Seminary Record; Issued Under the Auspices of the Faculty of Hartford Theological Seminary 1890-1913"}
-{"series":"pub_harvard-graduates-magazine","title":"Harvard Graduates' Magazine 1892-1934"}
-{"series":"pub_harvard-law-review","title":"Harvard Law Review 1887-2015"}
-{"series":"pub_heraclitus-ridens-a-discourse-between-jest-and-earnest","title":"Heraclitus Ridens; A Discourse Between Jest and Earnest, Concerning the Times 1717-1718"}
-{"series":"pub_heraclitus-ridens-at-a-dialogue-between-jest-and","title":"Heraclitus Ridens: At a Dialogue Between Jest and Earnest, Concerning the Times 1681-1682"}
-{"series":"pub_heraclitus-ridens-in-a-dialogue-between-jest-and","title":"Heraclitus Ridens in a Dialogue Between Jest and Earnest Concerning the Time 1703-1704"}
+{"series":"pub_grays-inn-journal","title":"Gray's Inn Journal 1753-1754","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_great-britain-parliament-parliamentary-debates","title":"Great Britain. Parliament. Parliamentary Debates 1803-1908","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_great-britain-public-record-america-and-the-west-indies","title":"Calendar of State Papers, Colonial Series, America and the West Indies 1574-1733","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_great-britain-public-record-papers-domestic-charles-ii","title":"Great Britain. Public Record Office. Calendar of State Papers. Domestic- Charles II 1660-1685","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_great-britain-public-record-papers-domestic-commonwealth","title":"Calendar of State Papers, Domestic Series [of the Commonwealth] 1649-1660","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_green-bag-an-entertaining-magazine-of-the-law","title":"Green Bag; An Entertaining Magazine of the Law 1889-1914","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"pub_grub-street-journal","title":"Grub-Street Journal 1730-1737","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_grumbler","title":"The Grumbler 1715","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_guardian-addison-steele-and-others","title":"The Guardian 1713","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_hardware-age-home-improvement-market","title":"Hardware Age Home Improvement Market 1894-1998","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_harlequin-a-journal-of-the-drama","title":"Harlequin. A Journal of the Drama 1829","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_hartford-seminary","title":"Hartford Seminary Record; Issued Under the Auspices of the Faculty of Hartford Theological Seminary 1890-1913","coverage":"http://dbpedia.org/resource/Hartford%2C_Connecticut"}
+{"series":"pub_harvard-graduates-magazine","title":"Harvard Graduates' Magazine 1892-1934","coverage":"http://dbpedia.org/resource/Cambridge%2C_Massachusetts"}
+{"series":"pub_harvard-law-review","title":"Harvard Law Review 1887-2015","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"pub_heraclitus-ridens-a-discourse-between-jest-and-earnest","title":"Heraclitus Ridens; A Discourse Between Jest and Earnest, Concerning the Times 1717-1718","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_heraclitus-ridens-at-a-dialogue-between-jest-and","title":"Heraclitus Ridens: At a Dialogue Between Jest and Earnest, Concerning the Times 1681-1682","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_heraclitus-ridens-in-a-dialogue-between-jest-and","title":"Heraclitus Ridens in a Dialogue Between Jest and Earnest Concerning the Time 1703-1704","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_herald-of-freedom","title":"Herald of Freedom 1835-1846","coverage":"http://dbpedia.org/resource/Concord%2C_New_Hampshire"}
-{"series":"pub_hermathena","title":"Hermathena 1873-2008"}
-{"series":"pub_hibernia-magazine-and-dublin-monthly-panorama","title":"Hibernia Magazine and Dublin Monthly Panorama 1810-1811"}
-{"series":"pub_hispania","title":"Hispania 1918-2015"}
-{"series":"pub_historia-litteraria-books-the-several-parts-of-europe","title":"Historia Litteraria; Or, an Exact and Early Account of the Most Valuable Books Published in the Several Parts of Europe 1730-1734"}
-{"series":"pub_historical-register-transactions-foreign-and-domestic","title":"Historical Register, Containing an Impartial Relation of All Transactions, Foreign and Domestic 1714-1738"}
-{"series":"pub_historische-zeitschrift","title":"Historische Zeitschrift 1859-1973"}
-{"series":"pub_history-of-the-works-of-the-learned","title":"History of the Works of the Learned.. 1737-1743"}
-{"series":"pub_hobby-horse","title":"The Hobby Horse 1886-1894"}
-{"series":"pub_home-and-country","title":"Home and Country 1893-1897"}
-{"series":"pub_home-and-foreign-review","title":"Home and Foreign Review 1862-1864"}
-{"series":"pub_home-friend","title":"Home Friend 1852-1856"}
-{"series":"pub_home-improvement-center","title":"Home Improvement Center 1899-1993"}
-{"series":"pub_hoods-magazine","title":"Hood's Magazine 1844-1849"}
-{"series":"pub_house-beautiful","title":"House Beautiful 1896-2016"}
+{"series":"pub_hermathena","title":"Hermathena 1873-2008","coverage":"http://dbpedia.org/resource/Dublin"}
+{"series":"pub_hibernia-magazine-and-dublin-monthly-panorama","title":"Hibernia Magazine and Dublin Monthly Panorama 1810-1811","coverage":"http://dbpedia.org/resource/Dublin"}
+{"series":"pub_hispania","title":"Hispania 1918-2015","coverage":"http://dbpedia.org/resource/Stanford%2C_California"}
+{"series":"pub_historia-litteraria-books-the-several-parts-of-europe","title":"Historia Litteraria; Or, an Exact and Early Account of the Most Valuable Books Published in the Several Parts of Europe 1730-1734","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_historical-register-transactions-foreign-and-domestic","title":"Historical Register, Containing an Impartial Relation of All Transactions, Foreign and Domestic 1714-1738","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_historische-zeitschrift","title":"Historische Zeitschrift 1859-1973","coverage":"http://dbpedia.org/resource/Munich"}
+{"series":"pub_history-of-the-works-of-the-learned","title":"History of the Works of the Learned.. 1737-1743","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_hobby-horse","title":"The Hobby Horse 1886-1894","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_home-and-country","title":"Home and Country 1893-1897","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_home-and-foreign-review","title":"Home and Foreign Review 1862-1864","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_home-friend","title":"Home Friend 1852-1856","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_home-improvement-center","title":"Home Improvement Center 1899-1993","coverage":"http://dbpedia.org/resource/Chicago"}
+{"series":"pub_hoods-magazine","title":"Hood's Magazine 1844-1849","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_house-beautiful","title":"House Beautiful 1896-2016","coverage":"http://dbpedia.org/resource/Chicago"}
 {"series":"pub_household-words-a-weekly-journal-by-charles-dickens","title":"Household Words. a Weekly Journal. Conducted by Charles Dickens 1850-1859","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_howitts-journal-of-literature-and-popular-progress","title":"Howitt's Journal of Literature and Popular Progress 1847-1848"}
-{"series":"pub_humming-bird-or-herald-of-taste","title":"Humming Bird; Or, Herald of Taste 1798"}
-{"series":"pub_hunts-london-journal","title":"Hunt's London Journal 1844"}
-{"series":"pub_huntsville-gazette","title":"Huntsville Gazette 1881-1894"}
-{"series":"pub_icis-chemical-business","title":"ICIS Chemical Business 1876-2015"}
-{"series":"pub_idler","title":"Idler 1758-1760"}
-{"series":"pub_idler-an-illustrated-monthly-magazine","title":"The Idler; An Illustrated Monthly Magazine 1892-1911"}
-{"series":"pub_illinois-common-school-advocate","title":"Illinois Common School Advocate 1841"}
-{"series":"pub_illinois-medical-journal","title":"Illinois Medical Journal 1899-1988"}
-{"series":"pub_illustrated-archaeologist","title":"Illustrated Archaeologist 1893-1894"}
-{"series":"pub_illustrated-london-news","title":"Illustrated London News 1842-2003"}
-{"series":"pub_illustrated-review-a-fortnightly-journal-of-literature","title":"Illustrated Review, a Fortnightly Journal of Literature, Science, and Art 1870-1874"}
-{"series":"pub_imperial-asiatic-quarterly-oriental-colonial-record","title":"Imperial and Asiatic Quarterly Review and Oriental and Colonial Record 1886-1900"}
-{"series":"pub_imperial-magazine","title":"Imperial Magazine 1819-1834"}
-{"series":"pub_industry-week","title":"Industry Week 1880-2016"}
-{"series":"pub_inland-architect-and-news-record","title":"The Inland Architect and News Record 1883-1908"}
-{"series":"pub_inspector-and-national-magazine","title":"The Inspector and National Magazine 1826-1827"}
-{"series":"pub_instructor","title":"Instructor 1996-1998"}
-{"series":"pub_instrument-society-of-america-isa-transactions","title":"Instrument Society of America. ISA Transactions 1962-9999"}
-{"series":"pub_insurance-eastern-underwriter","title":"The Eastern Underwriter 1907-1962"}
-{"series":"pub_insurance-law-journal","title":"The Insurance Law Journal 1871-1980"}
-{"series":"pub_intellectual-observer-review-of-natural-history","title":"Intellectual Observer; Review of Natural History, Microscopic Research and Recreative Science 1862-1868"}
-{"series":"pub_intelligencer","title":"Intelligencer 1728-1729"}
-{"series":"pub_intercollegian","title":"The Intercollegian 1878-1967"}
-{"series":"pub_international-journal-of-plant-sciences","title":"International Journal of Plant Sciences 1875-2015"}
-{"series":"pub_investigator-and-general-intelligencer","title":"Investigator and General Intelligencer 1828"}
-{"series":"pub_irish-quarterly-review","title":"Irish Quarterly Review 1851-1859"}
-{"series":"pub_jacobites-journal","title":"Jacobite's Journal 1747-1748"}
-{"series":"pub_jama","title":"JAMA: The Journal of the American Medical Association 1883-2014"}
-{"series":"pub_jama-ophthalmology","title":"JAMA Ophthalmology 1869-2014"}
-{"series":"pub_jck","title":"JCK (Jewelers' Circular-Keystone) 1892-2011"}
-{"series":"pub_jegp-journal-of-english-and-germanic-philology","title":"JEGP (Journal of English and Germanic Philology) 1897-2014"}
-{"series":"pub_jewish-quarterly-review","title":"Jewish Quarterly Review 1888-1908"}
-{"series":"pub_johns-hopkins-medical-journal","title":"The Johns Hopkins Medical Journal 1889-1982"}
-{"series":"pub_johns-hopkins-university-historical-political-science","title":"Johns Hopkins University Studies in Historical and Political Science 1882-1995"}
-{"series":"pub_journal-elisha-mitchell-scientific-society","title":"Journal of the Elisha Mitchell Scientific Society 1883-2001"}
-{"series":"pub_journal-fuer-die-reine-und-angewandte-mathematik","title":"Journal Fuer die Reine und Angewandte Mathematik 1826-2000"}
-{"series":"pub_journal-fuer-praktische-chemie-1834","title":"Journal fuer Praktische Chemie 1834-1943"}
-{"series":"pub_journal-of-american-folklore","title":"Journal of American Folklore 1888-2016"}
-{"series":"pub_journal-of-anthropology","title":"Journal of Anthropology 1870-1871"}
-{"series":"pub_journal-of-biblical-literature","title":"Journal of Biblical Literature 1881-2013"}
-{"series":"pub_journal-of-christian-philosophy","title":"The Journal of Christian Philosophy 1881-1884"}
-{"series":"pub_journal-of-classical-and-sacred-philology","title":"Journal of Classical and Sacred Philology 1854-1859"}
+{"series":"pub_howitts-journal-of-literature-and-popular-progress","title":"Howitt's Journal of Literature and Popular Progress 1847-1848","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_humming-bird-or-herald-of-taste","title":"Humming Bird; Or, Herald of Taste 1798","coverage":"http://dbpedia.org/resource/Stamford%2C_Connecticut"}
+{"series":"pub_hunts-london-journal","title":"Hunt's London Journal 1844","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_huntsville-gazette","title":"Huntsville Gazette 1881-1894","coverage":"http://dbpedia.org/resource/Huntsville%2C_Alabama"}
+{"series":"pub_icis-chemical-business","title":"ICIS Chemical Business 1876-2015","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_idler","title":"Idler 1758-1760","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"series":"pub_idler-an-illustrated-monthly-magazine","title":"The Idler; An Illustrated Monthly Magazine 1892-1911","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_illinois-common-school-advocate","title":"Illinois Common School Advocate 1841","coverage":"http://dbpedia.org/resource/Springfield%2C_Illinois"}
+{"series":"pub_illinois-medical-journal","title":"Illinois Medical Journal 1899-1988","coverage":"http://dbpedia.org/resource/Springfield%2C_Illinois"}
+{"series":"pub_illustrated-archaeologist","title":"Illustrated Archaeologist 1893-1894","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_illustrated-london-news","title":"Illustrated London News 1842-2003","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_illustrated-review-a-fortnightly-journal-of-literature","title":"Illustrated Review, a Fortnightly Journal of Literature, Science, and Art 1870-1874","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_imperial-asiatic-quarterly-oriental-colonial-record","title":"Imperial and Asiatic Quarterly Review and Oriental and Colonial Record 1886-1900","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_imperial-magazine","title":"Imperial Magazine 1819-1834","coverage":"http://dbpedia.org/resource/Liverpool"}
+{"series":"pub_industry-week","title":"Industry Week 1880-2016","coverage":"http://dbpedia.org/resource/Cleveland"}
+{"series":"pub_inland-architect-and-news-record","title":"The Inland Architect and News Record 1883-1908","coverage":"http://dbpedia.org/resource/Chicago"}
+{"series":"pub_inspector-and-national-magazine","title":"The Inspector and National Magazine 1826-1827","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_instructor","title":"Instructor 1996-1998","coverage":"http://dbpedia.org/resource/Dansville%2C_New_York"}
+{"series":"pub_insurance-eastern-underwriter","title":"The Eastern Underwriter 1907-1962","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"pub_insurance-law-journal","title":"The Insurance Law Journal 1871-1980","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_intellectual-observer-review-of-natural-history","title":"Intellectual Observer; Review of Natural History, Microscopic Research and Recreative Science 1862-1868","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_intelligencer","title":"Intelligencer 1728-1729","coverage":"http://dbpedia.org/resource/Dublin"}
+{"series":"pub_intercollegian","title":"The Intercollegian 1878-1967","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_international-journal-of-plant-sciences","title":"International Journal of Plant Sciences 1875-2015","coverage":"http://dbpedia.org/resource/Crawfordsville%2C_Indiana"}
+{"series":"pub_investigator-and-general-intelligencer","title":"Investigator and General Intelligencer 1828","coverage":"http://dbpedia.org/resource/Providence%2C_Rhode_Island"}
+{"series":"pub_irish-quarterly-review","title":"Irish Quarterly Review 1851-1859","coverage":"http://dbpedia.org/resource/Dublin"}
+{"series":"pub_jacobites-journal","title":"Jacobite's Journal 1747-1748","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_jama","title":"JAMA: The Journal of the American Medical Association 1883-2014","coverage":"http://dbpedia.org/resource/Chicago"}
+{"series":"pub_jama-ophthalmology","title":"JAMA Ophthalmology 1869-2014","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_jck","title":"JCK (Jewelers' Circular-Keystone) 1892-2011","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_jegp-journal-of-english-and-germanic-philology","title":"JEGP (Journal of English and Germanic Philology) 1897-2014","coverage":"http://dbpedia.org/resource/Urbana%2C_Illinois"}
+{"series":"pub_jewish-quarterly-review","title":"Jewish Quarterly Review 1888-1908","coverage":"http://dbpedia.org/resource/Oxford"}
+{"series":"pub_johns-hopkins-medical-journal","title":"The Johns Hopkins Medical Journal 1889-1982","coverage":"http://dbpedia.org/resource/Baltimore"}
+{"series":"pub_johns-hopkins-university-historical-political-science","title":"Johns Hopkins University Studies in Historical and Political Science 1882-1995","coverage":"http://dbpedia.org/resource/Baltimore"}
+{"series":"pub_journal-elisha-mitchell-scientific-society","title":"Journal of the Elisha Mitchell Scientific Society 1883-2001","coverage":"http://dbpedia.org/resource/Chapel_Hill%2C_North_Carolina"}
+{"series":"pub_journal-fuer-die-reine-und-angewandte-mathematik","title":"Journal Fuer die Reine und Angewandte Mathematik 1826-2000","coverage":"http://dbpedia.org/resource/Berlin"}
+{"series":"pub_journal-fuer-praktische-chemie-1834","title":"Journal fuer Praktische Chemie 1834-1943","coverage":"http://dbpedia.org/resource/Leipzig"}
+{"series":"pub_journal-of-american-folklore","title":"Journal of American Folklore 1888-2016","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_journal-of-anthropology","title":"Journal of Anthropology 1870-1871","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_journal-of-biblical-literature","title":"Journal of Biblical Literature 1881-2013","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"series":"pub_journal-of-christian-philosophy","title":"The Journal of Christian Philosophy 1881-1884","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_journal-of-classical-and-sacred-philology","title":"Journal of Classical and Sacred Philology 1854-1859","coverage":"http://dbpedia.org/resource/Cambridge"}
 {"series":"pub_journal-of-education","title":"Journal of Education 1875-2015","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_journal-of-education-1875","title":"Journal of Education 1875-1876","coverage":"http://dbpedia.org/resource/Brooklyn"}
 {"series":"pub_journal-of-education-for-business","title":"Journal of Education for Business 1928-2015"}
@@ -820,7 +817,7 @@
 {"series":"pub_radical-abolitionist","title":"Radical Abolitionist 1855-1858"}
 {"series":"pub_radical-review","title":"Radical Review 1877-1878"}
 {"series":"pub_railroad-history","title":"Railroad History 1921-2013"}
-{"series":"pub_railway-age","title":"Railway Age 1870-2016"}
+{"series":"pub_railway-age","title":"Railway Age 1870-2016","coverage":"http://dbpedia.org/resource/Chicago"}
 {"series":"pub_railway-locomotives-and-cars","title":"Railway Locomotives and Cars 1832-1974"}
 {"series":"pub_rambler","title":"Rambler 1750-1752"}
 {"series":"pub_rambler-a-catholic-journal-and-review","title":"Rambler; A Catholic Journal and Review of Home and Foreign Literature 1848-1862"}
