@@ -9,14 +9,15 @@ ns = {'alto': 'http://www.loc.gov/standards/alto/ns-v4#'}
 nspref = f'{{{ns["alto"]}}}'
 
 def patchAlto(fname, outPath, recs):
-    print('# file: ', fname)
     patch = {}
     for r in recs:
         patch[r.lineID] = r.srcText
 
-    print(patch)
-    
     tree = etree.parse(fname)
+
+    imfile = tree.find('//alto:sourceImageInformation/alto:fileName' ,namespaces=ns)
+    oldpath = imfile.text
+    imfile.text = os.path.abspath(oldpath)
 
     counter = 0
     for line in tree.findall('//alto:TextLine', namespaces=ns):
@@ -26,7 +27,6 @@ def patchAlto(fname, outPath, recs):
             if nspref + 'String' == t or nspref + 'SP' == t:
                 line.remove(c)
         id = line.get('ID')
-        print(id)
         if id in patch:
             s = etree.SubElement(line, nspref + 'String', CONTENT=patch[id].strip())
             attr = s.attrib
@@ -38,7 +38,6 @@ def patchAlto(fname, outPath, recs):
                 attr['WIDTH'] = line.get('WIDTH')
             if line.get('HEIGHT') != None:
                 attr['HEIGHT'] = line.get('HEIGHT')
-    print('# raw lines: ', counter)
 
     path = outPath + '/' + fname
     os.makedirs(os.path.dirname(path), exist_ok=True)
