@@ -18,6 +18,8 @@ object DjVu {
     spark.sparkContext.hadoopConfiguration
       .set("mapreduce.input.fileinputformat.input.dir.recursive", "true")
 
+    val seqpat = ".*_0*([0-9]+)\\.djvu$".r
+
     val pages = spark.sparkContext.newAPIHadoopFile(args(0),
       classOf[DjVuInputFormat],
       classOf[DjVuEntry],
@@ -36,7 +38,8 @@ object DjVu {
 
           val pageFile = (t \ "PARAM").filter(x => (x \ "@name").text == "PAGE").map(x => (x \ "@value").text).head
           val pageId = x._1.toString
-          val seq = x._1.getSeq
+          val seqpat(strseq) = pageFile
+          val seq = strseq.toInt
 
           val dpi = (t \ "PARAM").filter(x => (x \ "@name").text == "DPI").map(x => (x \ "@value").text).head.toInt
 
