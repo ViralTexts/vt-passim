@@ -604,10 +604,10 @@
 {"apsseries":"aps/24938","series":null,"title":"Select Reviews of Literature and Spirit of Foreign Magazines (1811-1812)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"apsseries":"aps/24975","series":null,"title":"Niles' National Register (1837-1849)","placeOfPublication":"Baltimore","coverage":"http://dbpedia.org/resource/Baltimore"}
 {"apsseries":"aps/24976","series":"/lccn/sn86035112","title":"Workingman's Advocate (1829-1830)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"apsseries":"aps/24977","series":"/lccn/sf89091896","title":"New York Sentinel and Working Man's Advocate (1830-1830)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"apsseries":"aps/24978","series":null,"title":"Workingman's Advocate (1830-1836)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"apsseries":"aps/24977","series":"/lccn/sn83030391","title":"New York Sentinel and Working Man's Advocate (1830-1830)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"apsseries":"aps/24978","series":"/lccn/sn83030392","title":"Workingman's Advocate (1830-1836)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24979","series":"/lccn/sn93062958","title":"Radical, in Continuation of Working Man's Advocate (1841-1843)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"apsseries":"aps/24980","series":null,"title":"Workingman's Advocate  (1844-1844)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"apsseries":"aps/24980","series":"/lccn/sn89071042","title":"Workingman's Advocate  (1844-1844)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24981","series":null,"title":"Workingman's Advocate (1844-1844)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24982","series":null,"title":"People's Rights (1844-1844)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/24983","series":"/lccn/sn83030393","title":"Subterranean, United with the Workingman's Advocate (1844-1844)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
@@ -927,7 +927,7 @@
 {"apsseries":"aps/35005","series":"/lccn/57051065","title":"The Jesuit; or, Catholic Sentinel (1833-1834)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/35008","series":null,"title":"Western Farmer and Gardener (1846-1848)","placeOfPublication":"Indianapolis","coverage":"http://dbpedia.org/resource/Indianapolis"}
 {"apsseries":"aps/35009","series":"/lccn/sn82014150","title":"Western Luminary (1824-1834)","placeOfPublication":"Lexington","coverage":"http://dbpedia.org/resource/Lexington%2C_Kentucky"}
-{"apsseries":"aps/35010","series":"/lccn/sf89090770","title":"Western Recorder (1824-1833)","placeOfPublication":"Utica","coverage":"http://dbpedia.org/resource/Utica%2C_New_York"}
+{"apsseries":"aps/35010","series":"/lccn/sn83031876","title":"Western Recorder (1824-1833)","placeOfPublication":"Utica","coverage":"http://dbpedia.org/resource/Utica%2C_New_York"}
 {"apsseries":"aps/35014","series":null,"title":"The Yankee and Boston Literary Gazette (1828-1829)","placeOfPublication":"Portland","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
 {"apsseries":"aps/35015","series":null,"title":"Yankee Doodle (1846-1847)","placeOfPublication":"New York","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"apsseries":"aps/35016","series":null,"title":"The Investigator (1845-1845)","placeOfPublication":"Washington","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
