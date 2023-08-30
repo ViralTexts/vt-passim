@@ -1,7 +1,8 @@
 package vtpassim
 
 import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions.{coalesce, concat, lit}
+import org.apache.spark.sql.functions.{coalesce, collect_set, concat, filter,
+  lit, min, posexplode, size, sort_array, struct, when}
 import collection.JavaConversions._
 
 object APS {
@@ -14,7 +15,7 @@ object APS {
 
     val seriesMap = spark.read.json(args(1)).select('apsseries, 'series, 'startdate, 'enddate)
 
-    spark.sparkContext.binaryFiles(args(0), spark.sparkContext.defaultParallelism)
+    val raw = spark.sparkContext.binaryFiles(args(0), spark.sparkContext.defaultParallelism)
       .filter(_._1.endsWith(".zip"))
       .flatMap { x =>
         try {
@@ -58,6 +59,18 @@ object APS {
       .filter { ('startdate.isNull || 'startdate <= 'date) && ('enddate.isNull || 'enddate >= 'date) }
       .withColumn("series", coalesce('series, 'apsseries))
       .drop("apsseries", "startdate", "enddate")
+
+    // Since APS only gives the starting page for articles, use a
+    // combination of numbered and unnumbered pages to estimate the
+    // full sequence.
+    val pnum = raw.select('issue, 'pageno.cast("int") as "ip", 'pageno)
+      .groupBy('issue)
+      .agg(min('ip) as "minint", sort_array(collect_set(struct('ip, 'pageno))) as "pp")
+      .select('issue, 'minint, size(filter('pp, x => x("ip").isNull)) as "noint", posexplode('pp))
+      .select('issue, 'col("pageno") as "pageno",
+        when('col("ip").isNull, 'pos + 1).otherwise('noint + 'col("ip") - 'minint + 1) as "seq")
+
+    raw.join(pnum, Seq("issue", "pageno"))
       .write.mode("overwrite").save(args(2))
 
     spark.stop()
