@@ -8,16 +8,20 @@ from urllib.request import urlopen
 import json
 
 def main():
+    # sys.stdin.reconfigure(encoding='utf-8')
     for line in sys.stdin.readlines():
         line = line.strip()
+        rec = json.loads(line)
         try:
-            resp = urlopen(line)
+            resp = urlopen(rec['coverage'])
             if resp.code == 200:
                 canon = resp.geturl().replace('/page/', '/resource/').replace(',', '%2C')
-                if line != canon:
-                    print(json.dumps({'url': line, 'canonical': canon}))
+                rec['canon'] = canon
+                print(json.dumps(rec, ensure_ascii=False))
+                # if line != canon:
+                #     print(json.dumps({'url': line, 'canonical': canon}))
         except:
-            print(json.dumps({'url': line, 'canonical': ''}))
+            print(line)
             False
 
 if __name__ == "__main__":
