@@ -696,57 +696,56 @@
 {"series":"pub_new-england-journal-of-medicine","title":"The New England Journal of Medicine 1828-2014","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_new-england-magazine-of-knowledge-and-pleasure","title":"The New England Magazine of Knowledge and Pleasure 1758-1759","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_new-england-water-works-association-journal","title":"New England Water Works Association. Journal of the New England Water Works Association 1883-2012","coverage":"http://dbpedia.org/resource/Boston"}
-{"series":"pub_new-era-a-monthly-periodical-judaism-jewish-literature","title":"New Era: A Monthly Periodical, Devoted to the Interests of Religion and Humanity and to the Diffusion of Knowledge on Judaism and Jewish Literature 1870-1876"}
-{"series":"pub_new-hampshire-and-vermont-magazine","title":"New Hampshire and Vermont Magazine 1797"}
-{"series":"pub_new-hampshire-magazine","title":"New Hampshire Magazine 1793"}
-{"series":"pub_new-hampshire-new-jerusalem-magazine","title":"New Hampshire New Jerusalem Magazine and Primitive Religious Intelligencer 1805"}
-{"series":"pub_new-jersey-law-journal","title":"The New Jersey Law Journal 1878-1990"}
-{"series":"pub_new-library-world","title":"New Library World 1898-1995"}
-{"series":"pub_new-london-magazine","title":"New London Magazine; Being a Universal and Complete Monthly Repository of Knowledge, Instruction, and Entertainment 1785-1793"}
-{"series":"pub_new-memoirs-of-literature","title":"New Memoirs of Literature 1725-1727"}
-{"series":"pub_new-monthly-magazine-and-literary-journal","title":"New Monthly Magazine and Literary Journal 1821-1834"}
-{"series":"pub_new-quarterly-magazine","title":"The New Quarterly Magazine 1873-1880"}
-{"series":"pub_new-quarterly-musical-review","title":"New Quarterly Musical Review 1893-1896"}
-{"series":"pub_new-quarterly-review-and-digest-of-current-literature","title":"New Quarterly Review, and Digest of Current Literature, British, American, French and German 1852-1861"}
-{"series":"pub_new-quarterly-review-or-home-foreign-and-colonial","title":"New Quarterly Review: Or Home, Foreign, and Colonial Journal 1843-1847"}
-{"series":"pub_new-review-1889","title":"New Review 1889-1897"}
-{"series":"pub_new-review-or-monthly-analysis-of-general-literature","title":"New Review; Or, Monthly Analysis of General Literature 1813"}
-{"series":"pub_new-science-review-a-miscellany-of-modern-thought","title":"New Science Review. A Miscellany of Modern Thought and Discovery 1894-1896"}
-{"series":"pub_new-star-a-republican-miscellaneous-literary-paper","title":"New Star; A Republican Miscellaneous, Literary Paper 1797"}
-{"series":"pub_new-universal-magazine-or-miscellany","title":"The New Universal Magazine, or Miscellany of Historical, Philosophical, Political and Polite Literature 1747-1815"}
-{"series":"pub_new-york-academy-of-sciences-transactions","title":"New York Academy of Sciences. Transactions of the New York Academy of Sciences 1881-1983"}
-{"series":"pub_new-york-colonization-journal","title":"New York Colonization Journal 1850-1863"}
-{"series":"pub_new-york-quarterly-devoted-to-science-philosophy","title":"New York Quarterly. Devoted to Science, Philosophy, and Literature 1852-1855"}
-{"series":"pub_newcastle-general-magazine","title":"Newcastle General Magazine 1747-1760"}
-{"series":"pub_north-british-review","title":"North British Review 1844-1871"}
-{"series":"pub_north-briton","title":"North Briton 1762-1763"}
-{"series":"pub_north-carolina-common-school-journal","title":"North Carolina Common School Journal 1856"}
-{"series":"pub_north-carolina-supreme-court-reports","title":"North Carolina Supreme Court: Reports 1778-1886"}
-{"series":"pub_north-of-england-magazine-and-bradshaws-journal","title":"North of England Magazine, and Bradshaw's Journal of Politics, Literature, Science and Art 1842-1843"}
-{"series":"pub_northampton-miscellany","title":"Northampton Miscellany 1721"}
-{"series":"pub_northern-indiana-teacher-an-educational-monthly","title":"Northern Indiana Teacher; An Educational Monthly 1874-1876"}
-{"series":"pub_northwestern-miller","title":"The Northwestern Miller 1879-1973"}
-{"series":"pub_nortons-literary-letter","title":"Norton's Literary Letter: Comprising American Papers of Interest, and a Catalogue of Rare and Valuable Books Relative to America 1857-1860"}
-{"series":"pub_norwich-theatrical-observer-and-ranelagh-spectator","title":"Norwich Theatrical Observer and Ranelagh Spectator 1827"}
+{"series":"pub_new-era-a-monthly-periodical-judaism-jewish-literature","title":"New Era: A Monthly Periodical, Devoted to the Interests of Religion and Humanity and to the Diffusion of Knowledge on Judaism and Jewish Literature 1870-1876","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_new-hampshire-and-vermont-magazine","title":"New Hampshire and Vermont Magazine 1797","coverage":"http://dbpedia.org/resource/Haverhill%2C_New_Hampshire"}
+{"series":"pub_new-hampshire-magazine","title":"New Hampshire Magazine 1793","coverage":"http://dbpedia.org/resource/Concord%2C_New_Hampshire"}
+{"series":"pub_new-hampshire-new-jerusalem-magazine","title":"New Hampshire New Jerusalem Magazine and Primitive Religious Intelligencer 1805","coverage":"http://dbpedia.org/resource/Portsmouth%2C_New_Hampshire"}
+{"series":"pub_new-jersey-law-journal","title":"The New Jersey Law Journal 1878-1990","coverage":"http://dbpedia.org/resource/Somerville%2C_New_Jersey"}
+{"series":"pub_new-library-world","title":"New Library World 1898-1995","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_new-london-magazine","title":"New London Magazine; Being a Universal and Complete Monthly Repository of Knowledge, Instruction, and Entertainment 1785-1793","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_new-memoirs-of-literature","title":"New Memoirs of Literature 1725-1727","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_new-monthly-magazine-and-literary-journal","title":"New Monthly Magazine and Literary Journal 1821-1834","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"pub_new-quarterly-magazine","title":"The New Quarterly Magazine 1873-1880","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_new-quarterly-musical-review","title":"New Quarterly Musical Review 1893-1896","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_new-quarterly-review-and-digest-of-current-literature","title":"New Quarterly Review, and Digest of Current Literature, British, American, French and German 1852-1861","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_new-quarterly-review-or-home-foreign-and-colonial","title":"New Quarterly Review: Or Home, Foreign, and Colonial Journal 1843-1847","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_new-review-1889","title":"New Review 1889-1897","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_new-review-or-monthly-analysis-of-general-literature","title":"New Review; Or, Monthly Analysis of General Literature 1813","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_new-science-review-a-miscellany-of-modern-thought","title":"New Science Review. A Miscellany of Modern Thought and Discovery 1894-1896","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_new-star-a-republican-miscellaneous-literary-paper","title":"New Star; A Republican Miscellaneous, Literary Paper 1797","coverage":"http://dbpedia.org/resource/Concord%2C_New_Hampshire"}
+{"series":"pub_new-universal-magazine-or-miscellany","title":"The New Universal Magazine, or Miscellany of Historical, Philosophical, Political and Polite Literature 1747-1815","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_new-york-academy-of-sciences-transactions","title":"New York Academy of Sciences. Transactions of the New York Academy of Sciences 1881-1983","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_new-york-colonization-journal","title":"New York Colonization Journal 1850-1863","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_new-york-quarterly-devoted-to-science-philosophy","title":"New York Quarterly. Devoted to Science, Philosophy, and Literature 1852-1855","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_newcastle-general-magazine","title":"Newcastle General Magazine 1747-1760","coverage":"http://dbpedia.org/resource/Newcastle_upon_Tyne"}
+{"series":"pub_north-british-review","title":"North British Review 1844-1871","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_north-briton","title":"North Briton 1762-1763","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_north-carolina-common-school-journal","title":"North Carolina Common School Journal 1856","coverage":"http://dbpedia.org/resource/Greensboro%2C_North_Carolina"}
+{"series":"pub_north-carolina-supreme-court-reports","title":"North Carolina Supreme Court: Reports 1778-1886","coverage":"http://dbpedia.org/resource/Raleigh%2C_North_Carolina"}
+{"series":"pub_north-of-england-magazine-and-bradshaws-journal","title":"North of England Magazine, and Bradshaw's Journal of Politics, Literature, Science and Art 1842-1843","coverage":"http://dbpedia.org/resource/Manchester"}
+{"series":"pub_northampton-miscellany","title":"Northampton Miscellany 1721","coverage":"http://dbpedia.org/resource/Northampton"}
+{"series":"pub_northern-indiana-teacher-an-educational-monthly","title":"Northern Indiana Teacher; An Educational Monthly 1874-1876","coverage":"http://dbpedia.org/resource/South_Bend%2C_Indiana"}
+{"series":"pub_northwestern-miller","title":"The Northwestern Miller 1879-1973","coverage":"http://dbpedia.org/resource/La_Crosse%2C_Wisconsin"}
+{"series":"pub_nortons-literary-letter","title":"Norton's Literary Letter: Comprising American Papers of Interest, and a Catalogue of Rare and Valuable Books Relative to America 1857-1860","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_norwich-theatrical-observer-and-ranelagh-spectator","title":"Norwich Theatrical Observer and Ranelagh Spectator 1827","coverage":"http://dbpedia.org/resource/Norwich"}
 {"series":"pub_notes-and-queries","title":"Notes and Queries 1849-2014","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_novel-review","title":"Novel Review 1867-1892"}
-{"series":"pub_nuova-antologia-revista-di-lettere-scienze-ed-arti","title":"Nuova Antologia, Revista Di Lettere, Scienze Ed Arti 1866-1993"}
-{"series":"pub_observator","title":"Observator 1702-1712"}
-{"series":"pub_ohio-common-school-director","title":"Ohio Common School Director 1838"}
-{"series":"pub_ohio-history","title":"Ohio History 1887-2002"}
-{"series":"pub_old-england-or-the-constitutional-journal","title":"Old England; Or the Constitutional Journal 1743-1751"}
-{"series":"pub_old-guard-1850","title":"Old Guard 1850"}
-{"series":"pub_orchestra-musical-review","title":"The Orchestra Musical Review 1863-1887"}
-{"series":"pub_oriental-herald-and-journal-of-general-literature","title":"The Oriental Herald and Journal of General Literature 1824-1829"}
+{"series":"pub_novel-review","title":"Novel Review 1867-1892","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_nuova-antologia-revista-di-lettere-scienze-ed-arti","title":"Nuova Antologia, Revista Di Lettere, Scienze Ed Arti 1866-1993","coverage":"http://dbpedia.org/resource/Florence"}
+{"series":"pub_observator","title":"Observator 1702-1712","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_ohio-common-school-director","title":"Ohio Common School Director 1838","coverage":"http://dbpedia.org/resource/Columbus%2C_Ohio"}
+{"series":"pub_ohio-history","title":"Ohio History 1887-2002","coverage":"http://dbpedia.org/resource/Columbus%2C_Ohio"}
+{"series":"pub_old-england-or-the-constitutional-journal","title":"Old England; Or the Constitutional Journal 1743-1751","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_old-guard-1850","title":"Old Guard 1850","coverage":"http://dbpedia.org/resource/Frankfort%2C_Kentucky"}
+{"series":"pub_orchestra-musical-review","title":"The Orchestra Musical Review 1863-1887","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_oriental-herald-and-journal-of-general-literature","title":"The Oriental Herald and Journal of General Literature 1824-1829","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_our-corner","title":"Our Corner 1883-1888","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_our-day","title":"Our Day 1896-1908","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_out-west-magazine","title":"Out West Magazine 1894-1916","coverage":"http://dbpedia.org/resource/Los_Angeles"}
 {"series":"pub_outdoor-life","title":"Outdoor Life 1898-2010","coverage":"http://dbpedia.org/resource/Denver"}
-{"series":"pub_outlook","title":"Outlook 1882-2015"}
 {"series":"pub_oxberrys-dramatic-biography-and-histrionic-anecdotes","title":"Oxberry's Dramatic Biography and Histrionic Anecdotes 1826-1827","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_oxford-and-cambridge-magazine","title":"The Oxford and Cambridge Magazine 1856"}
-{"series":"pub_oxford-magazine-or-universal-museum","title":"Oxford Magazine; Or Universal Museum 1768-1776"}
-{"series":"pub_pall-mall-magazine","title":"The Pall Mall Magazine 1893-1914"}
+{"series":"pub_oxford-and-cambridge-magazine","title":"The Oxford and Cambridge Magazine 1856","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_oxford-magazine-or-universal-museum","title":"Oxford Magazine; Or Universal Museum 1768-1776","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_pall-mall-magazine","title":"The Pall Mall Magazine 1893-1914","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_palladium-a-monthly-journal","title":"Palladium: A Monthly Journal of Literature, Politics, Science and Art 1850-1851"}
 {"series":"pub_pamphleteer-dedicated-to-both-houses-of-parliament","title":"Pamphleteer: Dedicated to Both Houses of Parliament 1813-1828"}
 {"series":"pub_paper-trade-journal","title":"Paper Trade Journal 1872-1986"}
