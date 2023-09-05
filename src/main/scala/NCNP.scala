@@ -97,8 +97,9 @@ object NCNP {
     }
       .toDF
       .join(seriesMap, Seq("series"), "left_outer")
+      .filter { ('startdate.isNull || 'startdate <= 'date) && ('enddate.isNull || 'enddate >= 'date) }
       .withColumn("series", coalesce('correct_series, 'series))
-      .drop("correct_series")
+      .drop("correct_series", "startdate", "enddate")
       .withColumn("issue", concat_ws("/", 'series, 'issue))
       .withColumn("id", concat_ws("/", 'series, 'id))
       .dropDuplicates("id")

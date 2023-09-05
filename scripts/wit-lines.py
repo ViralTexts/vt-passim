@@ -46,8 +46,11 @@ if __name__ == '__main__':
         ).withColumn('matchRate',
                      col('matches') / f.greatest(length('dstText'), length('srcText'))
         ).withColumn('maxGap', f.greatest(max_gap('srcAlg'), max_gap('dstAlg'))
-        ).withColumn('leadGap', length(f.regexp_extract('dstAlg', r'^\s*(\-+)', 1))
-        ).withColumn('tailGap', length(f.regexp_extract('dstAlg', r'(\-+)\s*$', 1))
+        ).withColumn('leadGap', f.greatest(length(f.regexp_extract('dstAlg', r'^\s*(\-+)', 1)),
+                                           length(f.regexp_extract('srcAlg', r'^\s*(\-+)', 1)))
+        ).withColumn('tailGap', f.greatest(length(f.regexp_extract('dstAlg', r'(\-+)\s*$', 1)),
+                                           length(f.regexp_extract('srcAlg', r'(\-+)\s*$', 1)))
+        ).withColumn('nlines', f.size('lineIDs')
         ).withColumn('lineID',
                      f.filter('lineIDs', lambda r: (r['start'] >= col('begin')) &
                               (r['start'] + r['length'] <= col('begin') + col('length')))[0]['id']
