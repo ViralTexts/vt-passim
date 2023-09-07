@@ -1,6 +1,6 @@
 import argparse
 from pyspark.sql import SparkSession, Row
-from pyspark.sql.functions import col, collect_list, explode, length, sort_array, struct, udf
+from pyspark.sql.functions import col, collect_list, explode, length, lit, struct, udf
 import pyspark.sql.functions as f
 
 # length of the maximum alignment gap
@@ -31,10 +31,15 @@ if __name__ == '__main__':
 
     max_gap = udf(lambda s: maxGap(s), 'int')
 
-    spark.read.json(config.inputPath
-        ).select('id', 'lineIDs', col('pages')[0].alias('page'), explode('lines').alias('line')
+    raw = spark.read.json(config.inputPath)
+    if 'lineIDs' not in raw.columns:
+        r = Row(start=0, length=0, id='')
+        raw = raw.withColumn('lineIDs', f.array(struct(lit(0).alias('start'), lit(0).alias('length'), lit('').alias('id'))))
+    
+    raw.select('id', 'lineIDs', col('pages')[0].alias('page'), explode('lines').alias('line')
         ).filter(col('line.wits').isNotNull()
         ).select(col('page.id').alias('img'), 'id', 'lineIDs', col('page.regions'),
+                 col('page.width'), col('page.height'),
                  col('line.begin'), length('line.text').alias('length'),
                  col('line.text').alias('dstText'),
                  f.translate(col('line.wits')[0]['text'], '\n', ' ').alias('srcText'),
