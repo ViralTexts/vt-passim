@@ -1,6 +1,6 @@
 import argparse
 from pyspark.sql import SparkSession, Row
-from pyspark.sql.functions import col, collect_list, explode, length, lit, struct, udf
+from pyspark.sql.functions import col, collect_list, explode, length, lit, struct, translate, udf
 import pyspark.sql.functions as f
 
 # length of the maximum alignment gap
@@ -18,6 +18,11 @@ def maxGap(s):
         res = cur
     return res
 
+def fixHyphen(src, dst):
+    if len(src) >= 3 and len(dst) >= 3 and dst.endswith('\u2010\n') and dst[-3] != '-' and src[-3] != '-' and src.endswith('--'):
+        src = src[0:(len(src)-2)] + '\u2010\n'
+    return src
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Witness lines',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -30,6 +35,7 @@ if __name__ == '__main__':
     spark = SparkSession.builder.appName('Witness lines').getOrCreate()
 
     max_gap = udf(lambda s: maxGap(s), 'int')
+    fix_hyphen = udf(lambda src, dst: fixHyphen(src, dst))
 
     raw = spark.read.json(config.inputPath)
     if 'lineIDs' not in raw.columns:
@@ -42,12 +48,13 @@ if __name__ == '__main__':
                  col('page.width'), col('page.height'),
                  col('line.begin'), length('line.text').alias('length'),
                  col('line.text').alias('dstText'),
-                 f.translate(col('line.wits')[0]['text'], '\n', ' ').alias('srcText'),
                  col('line.wits')[0]['id'].alias('src'),
                  col('line.wits')[0]['matches'].alias('matches'),
-                 f.translate(col('line.wits')[0]['alg'], '\n', ' ').alias('srcAlg'),
+                 translate(col('line.wits')[0]['alg'], '\n', ' ').alias('srcAlg'),
                  col('line.wits')[0]['alg2'].alias('dstAlg')
         ).filter(col('length') >= config.min_line
+        ).withColumn('srcAlg', fix_hyphen('srcAlg', 'dstAlg')
+        ).withColumn('srcText', translate('srcAlg', '\n\u2010-', ' -')                     
         ).withColumn('matchRate',
                      col('matches') / f.greatest(length('dstText'), length('srcText'))
         ).withColumn('maxGap', f.greatest(max_gap('srcAlg'), max_gap('dstAlg'))
