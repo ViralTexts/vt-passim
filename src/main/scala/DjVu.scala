@@ -64,7 +64,7 @@ object DjVu {
             res.append("\n")
           }
           Some(DjVuPage(pageId, bookId, seq, res.toString,
-            Array(Page(pageId, seq, width, height, dpi, regions.toArray))))
+            Array(Page(pageFile.replace(".djvu", ""), seq, width, height, dpi, regions.toArray))))
         } catch {
           case e: Exception => {
             Console.err.println(x._1 + ": " + e.toString)

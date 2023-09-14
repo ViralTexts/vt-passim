@@ -87,7 +87,7 @@ private class DjVuRecordReader extends RecordReader[DjVuEntry, Text] {
     val base = path.getName.split("_djvu.xml")(0)
     id = if (dir == base) dir else (dir + "/" + base)
 
-    seq = 0
+    seq = 1
 
     val codec = new CompressionCodecFactory(conf).getCodec(path)
     if (null != codec) {
