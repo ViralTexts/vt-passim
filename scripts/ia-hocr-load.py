@@ -17,7 +17,7 @@ def parseHOCR(path, content):
         else:
             book = file
         tree = etree.parse(BytesIO(content))
-        seq = 0
+        uid = 0
         for page in tree.findall("//div[@class='ocr_page']", namespaces=ns):
             text = ''
             regions = []
@@ -40,9 +40,11 @@ def parseHOCR(path, content):
                                            coords=Row(x=x1, y=y1, w=x2-x1, h=y2-y1, b=y2-y1)))
                     text += '\n'
                 text += '\n'
-            res.append(Row(id=page.attrib.get('id', 'qwe'), book=book, text=text,
-                           pages=[Row(id='qwe',
+            seq = int(re.sub(r'^.*_0*(\d+)', r'\1', page.attrib.get('id', '')))
+            res.append(Row(id=book + ('_%04d' % uid), book=book, seq=seq, text=text,
+                           pages=[Row(id=book + ('_%04d' % seq), seq=seq,
                                       width=width, height=height, dpi=dpi, regions=regions)]))
+            uid += 1
             
     return res
 
