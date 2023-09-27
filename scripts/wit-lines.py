@@ -1,4 +1,4 @@
-import argparse
+import argparse, re
 from pyspark.sql import SparkSession, Row
 from pyspark.sql.functions import col, collect_list, explode, length, lit, struct, translate, udf
 import pyspark.sql.functions as f
@@ -23,11 +23,38 @@ def fixHyphen(src, dst):
         src = src[0:(len(src)-2)] + '\u2010\n'
     return src
 
+def fixCase(src, dst):
+    res = list(src)
+    i = 0
+    while i < (len(res)-1):
+        if res[i] != dst[i] and res[i].lower() == dst[i].lower() and res[i+1] == dst[i+1] and (i == 0 or res[i-1] == dst[i-1]):
+            res[i] = dst[i]
+        i += 1
+    return ''.join(res)
+
+def digitMatch(src, dst):
+    "Intersection-over-union of digits"
+    union = 0
+    inter = 0
+    for i in range(len(src)):
+        if src[i].isdigit():
+            union += 1
+            if src[i] == dst[i]:
+                inter += 1
+        elif dst[i].isdigit():
+            union += 1
+    if union > 0:
+        return inter / union
+    else:
+        return 1.0
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Witness lines',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('--min-line', type=int, default=5,
                          help='Minimum length of line', metavar='N')
+    parser.add_argument('--fix-case', action='store_true',
+                        help='Match case in destination.')
     parser.add_argument('inputPath', metavar='<input path>', help='input path')
     parser.add_argument('outputPath', metavar='<output path>', help='output path')
 
@@ -36,6 +63,8 @@ if __name__ == '__main__':
 
     max_gap = udf(lambda s: maxGap(s), 'int')
     fix_hyphen = udf(lambda src, dst: fixHyphen(src, dst))
+    fix_case = udf(lambda src, dst: fixCase(src, dst) if config.fix_case else src)
+    digit_match = udf(lambda src, dst: digitMatch(src, dst), 'double')
 
     raw = spark.read.json(config.inputPath)
     if 'lineIDs' not in raw.columns:
@@ -54,6 +83,8 @@ if __name__ == '__main__':
                  col('line.wits')[0]['alg2'].alias('dstAlg')
         ).filter(col('length') >= config.min_line
         ).withColumn('srcAlg', fix_hyphen('srcAlg', 'dstAlg')
+        ).withColumn('srcOrig', col('srcAlg')
+        ).withColumn('srcAlg', fix_case('srcAlg', 'dstAlg')
         ).withColumn('srcText', translate('srcAlg', '\n\u2010-', ' -')                     
         ).withColumn('matchRate',
                      col('matches') / f.greatest(length('dstText'), length('srcText'))
@@ -62,6 +93,7 @@ if __name__ == '__main__':
                                            length(f.regexp_extract('srcAlg', r'^\s*(\-+)', 1)))
         ).withColumn('tailGap', f.greatest(length(f.regexp_extract('dstAlg', r'(\-+)\s*$', 1)),
                                            length(f.regexp_extract('srcAlg', r'(\-+)\s*$', 1)))
+        ).withColumn('digitMatch', digit_match('srcAlg', 'dstAlg')
         ).withColumn('nlines', f.size('lineIDs')
         ).withColumn('lineID',
                      f.filter('lineIDs', lambda r: (r['start'] >= col('begin')) &
