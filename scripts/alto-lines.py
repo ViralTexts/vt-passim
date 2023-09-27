@@ -55,7 +55,8 @@ if __name__ == '__main__':
     text_lines = udf(lambda s: textLines(s),
                      'struct<text: string, lineIDs: array<struct<start: int, length: int, id: string>>, pages: array<struct<id: string, seq: int, width: int, height: int, regions: array<struct<start: int, length: int, coords: struct<x: int, y: int, w: int, h: int, b: int>>>>>>').asNondeterministic()
 
-    spark.read.load(config.inputPath, format='binaryFile', recursiveFileLookup='true'
+    spark.read.load(config.inputPath, format='binaryFile', pathGlobFilter='*.xml',
+                    recursiveFileLookup='true'
         ).withColumn('info', text_lines('content')
         ).select(f.regexp_replace('path', '^' + wd + '/', '').alias('id'), 'info.*'
         ).write.json(config.outputPath, mode='overwrite')
