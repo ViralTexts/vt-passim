@@ -138,6 +138,6 @@ if __name__ == '__main__':
         ).withColumn('text', col('p.text')
         ).withColumn('pages', col('p.pages')
         ).drop('p'
-        ).write.json(config.outputPath, mode='overwrite')
+        ).write.save(config.outputPath, mode='overwrite')
 
     spark.stop()
