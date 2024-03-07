@@ -1,6 +1,6 @@
-import argparse, os, re, math
+import argparse, os, re, math, requests
 from pyspark.sql import SparkSession, Row
-from pyspark.sql.functions import array, col, collect_list, slice, sort_array, struct, udf
+from pyspark.sql.functions import array, col, collect_list, slice, sort_array, struct, udf, when
 import pyspark.sql.functions as f
 from PIL import Image
 from kraken.lib import models
@@ -8,22 +8,28 @@ from kraken.rpred import rpred
 
 def ocrLines(bcmodel, text, page, base):
     if text == None:
-        return None
+        return []
     regions = page.regions
     # book = re.sub(r'_\d+$', '', imfile)
     # imfile = '/work/nulab/corpora/rowell/' + os.path.join('raw', book, book + '_jp2', imfile + '.jp2')
-    impath = os.path.join(base, page.id)
     try:
+        impath = os.path.join(base, page.id)
+        if impath.startswith('https://'):
+            impath = requests.get(impath, stream=True).raw
         im = Image.open(impath)
         iw, ih = im.size
         S = 1 / round(page.width / iw)
-    except:
-        return None
+    except Exception as e:
+        print('# open error: ' + page.id)
+        print(e)
+        im = None
+        S = 1
 
     i = 0
     spans = []
     boxes = []
     blines = []
+    res = []
     buf = ''
     x1, y1, x2, y2 = math.inf, math.inf, 0, 0
     while i < len(regions):
@@ -41,6 +47,11 @@ def ocrLines(bcmodel, text, page, base):
         if suff.find('\n') > -1:
             spans.append((buf, suff))
             boxes.append([x1, y1, x2, y2])
+            # Quantization bug?
+            if x2 == x1:
+                x2 += 1
+            if y2 == y1:
+                y2 += 1
             x1, y1, x2, y2 = x1*S, y1*S, x2*S, y2*S
             blines.append({'baseline': [(x1, y2), (x2, y2)],
                            'tags': {'type': 'default'}, 'split': None,
@@ -56,20 +67,23 @@ def ocrLines(bcmodel, text, page, base):
     baseline_seg = {'text_direction': 'horizontal-lr', 'type': 'baselines',
                     'script_detection': False,
                     'lines': blines, 'base_dir': None, 'tags': False}
-    res = []
-    pred = rpred(bcmodel.value, im, baseline_seg)
-    ocr = list(pred)
+    try:
+        pred = rpred(bcmodel.value, im, baseline_seg)
+        ocr = [p.prediction for p in pred]
+    except Exception as e:
+        print('# ocr error: ' + page.id)
+        print(e)
+        ocr = [span[0] for span in spans]
 
     # print('# recs: spans=', len(spans), '; boxes=', len(boxes), '; ocr=', len(ocr), '; ',
     #       len([x for x in spans if x[0] != '']))
-
     i = 0
     off = 0
     while i < len(spans):
         span = spans[i]
         start = off
         box = boxes[i]
-        trans = ocr[i].prediction
+        trans = ocr[i]
         off += len(trans) + len(span[1])
         # print('# pred: ', ocr[j].prediction)
         res.append((trans + span[1], span[0] + span[1], start, len(trans),
@@ -119,7 +133,7 @@ if __name__ == '__main__':
     fields = [f for f in raw.columns if (f != 'text' and f != 'pages')]
 
     raw.withColumn('pages', f.explode('pages')
-        ).repartition(500
+        ).repartition(1000
         ).withColumn('lines', ocr_lines('text', 'pages')
         ).withColumn('text', f.array_join('lines.text', '')
         ).withColumn('pages',
@@ -133,8 +147,9 @@ if __name__ == '__main__':
                                                          struct(r.x, r.y, r.w, r.h,
                                                                 r.h.alias('b')
                                                             ).alias('coords'))).alias('regions'))
-        ).groupBy(*fields,
-        ).agg(cat_pages(sort_array(collect_list(struct('pages.seq','text','pages')))).alias('p')
+        ).groupBy(*fields
+        ).agg(cat_pages(sort_array(collect_list(struct('pages.seq','text','pages')))).alias('p'),
+              sort_array(collect_list(struct('pages.seq', 'lines'))).alias('lines')
         ).withColumn('text', col('p.text')
         ).withColumn('pages', col('p.pages')
         ).drop('p'
