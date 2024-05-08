@@ -3,24 +3,26 @@ from pyspark.sql import SparkSession, Row
 from pyspark.sql.functions import array, col, collect_list, slice, sort_array, struct, udf, when
 import pyspark.sql.functions as f
 from PIL import Image
-from kraken.lib import models
+from kraken.lib import models, segmentation
 from kraken.rpred import rpred
 
-def ocrLines(bcmodel, text, page, base):
+def ocrLines(bcmodel, text, page, base, suffix):
     if text == None:
         return []
     regions = page.regions
     # book = re.sub(r'_\d+$', '', imfile)
     # imfile = '/work/nulab/corpora/rowell/' + os.path.join('raw', book, book + '_jp2', imfile + '.jp2')
+    impath = os.path.join(base, page.id + suffix)
     try:
-        impath = os.path.join(base, page.id)
         if impath.startswith('https://'):
-            impath = requests.get(impath, stream=True).raw
-        im = Image.open(impath)
+            im = Image.open(requests.get(impath, stream=True).raw)
+        else:
+            im = Image.open(impath)
         iw, ih = im.size
-        S = 1 / round(page.width / iw)
+        # S = 1 / round(page.width / iw)
+        S = iw / page.width
     except Exception as e:
-        print('# open error: ' + page.id)
+        print('# open error: ' + impath)
         print(e)
         im = None
         S = 1
@@ -52,7 +54,7 @@ def ocrLines(bcmodel, text, page, base):
                 x2 += 1
             if y2 == y1:
                 y2 += 1
-            x1, y1, x2, y2 = x1*S, y1*S, x2*S, y2*S
+            x1, y1, x2, y2 = round(x1*S), round(y1*S), round(x2*S), round(y2*S)
             blines.append({'baseline': [(x1, y2), (x2, y2)],
                            'tags': {'type': 'default'}, 'split': None,
                            'boundary': [(x1, y1), (x1, y2), (x2, y2), (x2, y1)]})
@@ -68,10 +70,12 @@ def ocrLines(bcmodel, text, page, base):
                     'script_detection': False,
                     'lines': blines, 'base_dir': None, 'tags': False}
     try:
+        # for idx, (sim, box) in enumerate(segmentation.extract_polygons(im, baseline_seg)):
+        #     sim.save('qwe/{}.jpg'.format(idx))
         pred = rpred(bcmodel.value, im, baseline_seg)
         ocr = [p.prediction for p in pred]
     except Exception as e:
-        print('# ocr error: ' + page.id)
+        print('# ocr error: ' + impath)
         print(e)
         ocr = [span[0] for span in spans]
 
@@ -111,6 +115,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Re-OCR pre-segmented lines',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('-b', '--base', type=str, default='', help='Base path for images')
+    parser.add_argument('-s', '--suffix', type=str, default='', help='Suffix for images')
     parser.add_argument('inputPath', metavar='<input path>', help='input path')
     parser.add_argument('modelPath', metavar='<model path>', help='model path')
     parser.add_argument('outputPath', metavar='<output path>', help='output path')
@@ -122,7 +127,7 @@ if __name__ == '__main__':
 
     bcmodel = spark.sparkContext.broadcast(model)
 
-    ocr_lines = udf(lambda text, page: ocrLines(bcmodel, text, page, config.base),
+    ocr_lines = udf(lambda text, page: ocrLines(bcmodel, text, page, config.base, config.suffix),
                     'array<struct<text: string, orig: string, start: int, length: int, x: int, y: int, w: int, h: int>>').asNondeterministic()
 
     raw = spark.read.load(config.inputPath)
