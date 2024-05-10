@@ -5,6 +5,7 @@ import pyspark.sql.functions as f
 from PIL import Image
 from kraken.lib import models, segmentation
 from kraken.rpred import rpred
+from kraken.containers import Segmentation, BaselineLine
 
 def ocrLines(bcmodel, text, page, base, suffix):
     if text == None:
@@ -55,9 +56,9 @@ def ocrLines(bcmodel, text, page, base, suffix):
             if y2 == y1:
                 y2 += 1
             x1, y1, x2, y2 = round(x1*S), round(y1*S), round(x2*S), round(y2*S)
-            blines.append({'baseline': [(x1, y2), (x2, y2)],
-                           'tags': {'type': 'default'}, 'split': None,
-                           'boundary': [(x1, y1), (x1, y2), (x2, y2), (x2, y1)]})
+            blines.append(BaselineLine(id=impath+'#'+str(r.start),
+                                       baseline=[(x1, y2), (x2, y2)],
+                                       boundary=[(x1, y1), (x1, y2), (x2, y2), (x2, y1)]))
             buf = ''
             x1, y1, x2, y2 = math.inf, math.inf, 0, 0
         else:
@@ -65,10 +66,9 @@ def ocrLines(bcmodel, text, page, base, suffix):
 
         i += 1
 
-    # seg = {'text_direction': 'horizontal-lr', 'type': 'boxes', 'script_detection': False, 'boxes': boxes}
-    baseline_seg = {'text_direction': 'horizontal-lr', 'type': 'baselines',
-                    'script_detection': False,
-                    'lines': blines, 'base_dir': None, 'tags': False}
+    baseline_seg = Segmentation(type='baselines', text_direction='horizontal-lr',
+                                script_detection=False, imagename=impath,
+                                lines=blines)
     try:
         # for idx, (sim, box) in enumerate(segmentation.extract_polygons(im, baseline_seg)):
         #     sim.save('qwe/{}.jpg'.format(idx))
