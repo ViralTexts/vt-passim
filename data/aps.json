@@ -217,7 +217,8 @@
 {"apsseries":"aps/24338","series":null,"title":"The Gentleman and Lady's Town and Country Magazine; or, Repository of Instruction and Entertainment (1784-1785)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/24339","series":null,"title":"The Gospel Advocate; Conducted by a Society of Gentlemen (1821-1825)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/24340","series":null,"title":"Gospel Advocate and Impartial Investigator (1823-1829)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
-{"apsseries":"aps/24341","series":"/lccn/sn83025573","title":"Herald of Gospel Liberty (1808-1930)","placeOfPublication":"Portsmouth","coverage":"http://dbpedia.org/resource/Portsmouth%2C_New_Hampshire"}
+{"apsseries":"aps/24341","series":"/lccn/sn83025573","title":"Herald of Gospel Liberty (1808-1930)","placeOfPublication":"Portsmouth","coverage":"http://dbpedia.org/resource/Portsmouth%2C_New_Hampshire", "startdate":"1808-09-01","enddate":"1815-12-31"}
+{"apsseries":"aps/24341","series":"/lccn/2011204488","title":"Herald of Gospel Liberty (1808-1930)","placeOfPublication":"Portsmouth","coverage":"http://dbpedia.org/resource/Dayton%2C_Ohio", "startdate":"1883-01-04","enddate":"1931"}
 {"apsseries":"aps/24342","series":"/lccn/sf88090231","title":"Hive (1810-1810)","placeOfPublication":"Lancaster","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
 {"apsseries":"aps/24346","series":null,"title":"Anglo - American Magazine (1843-1843)","placeOfPublication":"Boston","coverage":"http://dbpedia.org/resource/Boston"}
 {"apsseries":"aps/24360","series":null,"title":"Home Magazine (1852-1856)","placeOfPublication":"Philadelphia","coverage":"http://dbpedia.org/resource/Philadelphia"}
