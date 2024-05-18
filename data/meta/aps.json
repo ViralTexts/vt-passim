@@ -1362,7 +1362,8 @@
 {"placeOfPublication":"Portland","series":"aps/35666","title":"The Portland Magazine; Devoted to Literature (1834-1836)","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
 {"placeOfPublication":"Portland","series":"aps/41416","title":"Portland Magazine (1805-1805)","coverage":"http://dbpedia.org/resource/Portland%2C_Maine"}
 {"placeOfPublication":"Portsmouth","series":"aps/24299","title":"The Literary Mirror (1808-1809)","coverage":"http://dbpedia.org/resource/Portsmouth%2C_New_Hampshire"}
-{"placeOfPublication":"Portsmouth","series":"aps/24341","title":"Herald of Gospel Liberty (1808-1930)","coverage":"http://dbpedia.org/resource/Portsmouth%2C_New_Hampshire"}
+{"placeOfPublication":"Portsmouth","series":"/lccn/sn83025573","title":"Herald of Gospel Liberty (1808-1930)","coverage":"http://dbpedia.org/resource/Portsmouth%2C_New_Hampshire"}
+{"placeOfPublication":"Portsmouth","series":"/lccn/2011204488","title":"Herald of Gospel Liberty (1808-1930)","coverage":"http://dbpedia.org/resource/Dayton%2C_Ohio"}
 {"placeOfPublication":"Portsmouth","series":"aps/24667","title":"The Portsmouth Weekly Magazine; a Repository of Miscellaneous Literary Matters in Prose and Verse (1824-1825)","coverage":"http://dbpedia.org/resource/Portsmouth%2C_New_Hampshire"}
 {"placeOfPublication":"Portsmouth","series":"aps/24854","title":"The Christian Herald (1818-1825)","coverage":"http://dbpedia.org/resource/Portsmouth%2C_New_Hampshire"}
 {"placeOfPublication":"Portsmouth","series":"aps/40490","title":"The Christian's Magazine, Reviewer, and Religious Intelligencer (1805-1808)","coverage":"http://dbpedia.org/resource/Portsmouth%2C_New_Hampshire"}
