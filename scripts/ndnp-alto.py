@@ -23,14 +23,9 @@ class Region:
     coords: Coords
 
 @dataclass
-class Rec:
-    id: str
-    issue: str
-    series: str
-    ed: str
-    seq: int
-    date: str
+class AltoRec:
     batch: str
+    alto: str
     text: str
     sourceFile: str
     width: int
@@ -42,20 +37,6 @@ def parseAlto(batchfile, fname, content):
     batch = sub(r'^.*/batch_', '', sub(r'\.warc\.gz$', '', batchfile))
     # if content.startswith('\ufeff'):
     #     content = content[1:]
-    if fname.startswith('http'):
-        m = re.search(r'([^/]+)/(\d{4}-\d\d-\d\d)/([^/]+)/([^/]+)', fname)
-        if m:
-            (sn, date, ed, seq) = m.groups()
-        else:
-            return None
-
-    series = '/lccn/' + sn
-    issue = '/'.join([series, date, ed])
-    id = '/'.join(['/ca', batch, sn, date, ed, seq])
-    try:
-        seq = int(sub(r'^seq-', '', seq))
-    except:
-        seq = 0
 
     tree = etree.parse(BytesIO(content))
     root = tree.find('.')
@@ -96,8 +77,7 @@ def parseAlto(batchfile, fname, content):
                     text += '\u00ad'
             text += '\n'
         text += '\n'
-    return Rec(id, issue, series, sub(r'^ed-', '', ed), seq, date, batch,
-               text, sourceFile, width, height, dpi, regions)
+    return AltoRec(batch, fname, text, sourceFile, width, height, dpi, regions)
 
 def warcFiles(path):
     with open(path, 'rb') as stream:
@@ -127,6 +107,6 @@ if __name__ == '__main__':
         ).flatMap(lambda fname: warcFiles(fname)
         ).map(lambda r: parseAlto(*r)
         ).toDF(
-        ).write.json(config.outputPath, mode='overwrite')
+        ).write.save(config.outputPath, mode='overwrite')
 
     spark.stop()
