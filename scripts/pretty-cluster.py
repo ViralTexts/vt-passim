@@ -1,11 +1,10 @@
-from __future__ import print_function
-
-import sys
+import argparse
 from re import sub
 import urllib.parse
 
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, udf, array_contains, explode, desc, concat_ws, coalesce, lit
+from pyspark.sql.functions import (col, udf, array_contains, explode, desc,
+                                   concat_ws, coalesce, lit)
 
 def guessFormat(path, default="json"):
     if path.endswith(".json"):
@@ -22,7 +21,7 @@ def formatURL(baseurl, corpus, id, p1id, series, date, ed, seq):
     if corpus == 'ca':
         return 'https://chroniclingamerica.loc.gov%s/%s/ed-%s/seq-%d' % (series, date, ed, seq)
     elif corpus == 'ia' and p1id != None:
-        return 'https://iiif.archivelab.org/iiif/' + sub('_0*(\d+)$', r'?page=\1', p1id)
+        return 'https://archive.org/details/' + sub('_0*(\d+)$', r'/page/n\1/mode/1up?view=theater', p1id)
     elif corpus == 'trove':
         return "http://trove.nla.gov.au/ndp/del/article/%s" % sub("^trove/", "", id)
     elif corpus == 'europeana':
@@ -40,37 +39,45 @@ def imageLink(corpus, p1id, p1x, p1y, p1w, p1h, p1width, p1height):
             return 'https://chroniclingamerica.loc.gov/iiif/2/%s/%d,%d,%d,%d/full/0/default.jpg'\
                 % (urllib.parse.quote(p1id, safe=''), p1x, p1y, p1w, p1h)
     elif corpus == 'ia' and p1id != None:
-        return 'https://iiif.archivelab.org/iiif/%s/pct:%f,%f,%f,%f/full/0/default.jpg' \
+        return 'https://iiif.archive.org/iiif/%s/pct:%f,%f,%f,%f/full/0/default.jpg' \
             % (sub('_0*(\d+)$', r'$\1', p1id),
                100 * p1x/p1width, 100*p1y/p1height, 100*p1w/p1width, 100*p1h/p1height)
     else:
         return None
     
 
-if __name__ == "__main__":
-    if len(sys.argv) < 4:
-        print("Usage: pretty-cluster.py <metadata> <input> <output> [<query>]", file=sys.stderr)
-        exit(-1)
+if __name__ == '__main__':
+    argparser = argparse.ArgumentParser(description='Prettyprint clusters')
+    argparser.add_argument('-p', '--places', help='place data')
+    argparser.add_argument('metaPath', help='Metadata path')
+    argparser.add_argument('inputPath', help='Input path')
+    argparser.add_argument('outputPath', help='Output path')
+    argparser.add_argument('filter', nargs='?', default=None, help='Filter reprints')
+    config = argparser.parse_args()
+
     spark = SparkSession.builder.appName('Prettyprint Clusters').getOrCreate()
     spark.conf.set('spark.sql.adaptive.enabled', 'true')
     
-    outpath = sys.argv[3]
-    (outputFormat, outputOptions) = guessFormat(outpath, "json")
+    (outputFormat, outputOptions) = guessFormat(config.outputPath, 'json')
 
     ## Should do more field renaming in meta to avoid clashing with fields in raw.
-    meta = spark.read.json(sys.argv[1])\
-            .dropDuplicates(['series'])\
-            .withColumnRenamed('publisher', 'series_publisher') \
-            .withColumnRenamed('placeOfPublication', 'series_placeOfPublication') \
-            .withColumnRenamed('title', 'series_title')
+    meta = spark.read.json(config.metaPath
+                ).dropDuplicates(['series']
+                ).withColumnRenamed('publisher', 'series_publisher'
+                ).withColumnRenamed('placeOfPublication', 'series_placeOfPublication'
+                ).withColumnRenamed('title', 'series_title')
 
+    if config.places:
+        meta = meta.join(
+            spark.read.csv(config.places, header=True).withColumnRenamed('label', 'city'),
+            ['coverage'], 'left_outer')
     
     constructURL = udf(lambda url, corpus, id, p1id, series, date, ed, seq: formatURL(url, corpus, id, p1id, series, date, ed, seq))
 
     image_link = udf(lambda corpus, p1id, p1x, p1y, p1w, p1h, p1width, p1height: imageLink(corpus, p1id, p1x, p1y, p1w, p1h, p1width, p1height))
     thumb_link = udf(lambda image: image.replace('/full/', '/!80,100/') if image != None else None)
 
-    raw = spark.read.load(sys.argv[2])
+    raw = spark.read.load(config.inputPath)
     cols = set(raw.columns)
     for f in ['source', 'publisher', 'placeOfPublication', 'heading', 'page_access', 'title']:
         if f not in cols:
@@ -103,15 +110,16 @@ if __name__ == "__main__":
                                                  'p1width', 'p1height')
            ).withColumn('page_thumb', thumb_link('page_image'))
 
-    filtered = df.join(df.filter(sys.argv[4]).select('cluster').distinct(), 'cluster') \
-               if len(sys.argv) >= 5 else df
+    filtered = df.join(df.filter(config.filter).select('cluster').distinct(), 'cluster') \
+               if config.filter else df
 
     res = filtered.withColumn('lang', concat_ws(',', col('lang')))
 
     out = res.orderBy(desc('size'), 'cluster', 'date', 'id', 'begin') \
           if outputFormat != 'parquet' else res
 
-    out.write.format(outputFormat).options(**outputOptions).save(outpath)
+    out.write.format(outputFormat).options(**outputOptions
+        ).save(config.outputPath, mode='overwrite')
 
     spark.stop()
     
