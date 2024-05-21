@@ -12,6 +12,14 @@ def normNA(s):
     else:
         return s
 
+def normDate(s):
+    res = None
+    try:
+        res = parser.parse(s, default=datetime(1800,1,1), fuzzy=True).date().isoformat()
+    except:
+        res = None
+    return res
+
 def parseEd(f):
     res = dict()
     inMeta = False
@@ -25,14 +33,13 @@ def parseEd(f):
         elif inMeta:
             (k, s, v) = line.partition(':')
             if k != '':
-                res[k.lower()] = v.strip()
+                res[k.lower().strip()] = v.strip()
         else:
             text += sub('</?[A-Za-z][^>]*>', '', sub('^\-*\s*(\{[^\}]*\})?\s*', '', line))
             text += '\n'
     res['text'] = sub('\n{3,}', '\n\n', sub('\s*<br>\s*$', '', text)).strip() + '\n'
     res['id'] = (splitext(basename(f[0])))[0]
-    date = parser.parse(res['date'], default=datetime(1800,1,1), fuzzy=True).date().isoformat()
-    return Row(id=res['id'], series=res['id'], text=res['text'], date=date,
+    return Row(id=res['id'], series=res['id'], text=res['text'], date=normDate(res['date']),
                title=normNA(res['title']), creator=normNA(res['author']),
                source=normNA(res.get('newspaper')), page_access=(res.get('page url')))
 
