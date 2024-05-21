@@ -34,6 +34,15 @@
 {"series": "/lccn/sn83045185", "correct_series": "/lccn/sn84024214", "startdate": "1835-04-22", "enddate": "1854-03-28"}
 {"series": "/lccn/sn83045228", "correct_series": "/lccn/sn83045228", "startdate": "1833-01-15", "enddate": "1865-04"}
 {"series": "/lccn/sn83045228", "correct_series": "/lccn/sn91068142", "startdate": "1887-02-10", "enddate": "1920"}
+{"series": "/lccn/sn85025387", "correct_series": "/lccn/sn84023200", "startdate": "1836-12-06", "enddate": "1883-06-06"}
+{"series": "/lccn/sn85025387", "correct_series": "/lccn/sn85025387", "startdate": "1822", "enddate": "1827"}
+{"series": "/lccn/sn85038635", "correct_series": "/lccn/sn84024647", "startdate": "1873", "enddate": "1874"}
+{"series": "/lccn/sn85038635", "correct_series": "/lccn/sn84024649", "startdate": "1829-01-29", "enddate": "1855-09"}
+{"series": "/lccn/sn85038635", "correct_series": "/lccn/sn85038635", "startdate": "1863", "enddate": "1872"}
+{"series": "/lccn/sn86086600", "correct_series": "/lccn/sn86086600", "startdate": "1837-06-27", "enddate": "1841-06-29"}
+{"series": "/lccn/sn86086600", "correct_series": "/lccn/sn86086608", "startdate": "1880", "enddate": "1881"}
+{"series": "/lccn/sn87062078", "correct_series": "/lccn/sn82016482", "startdate": "1819-11-20", "enddate": "1836-10-04"}
+{"series": "/lccn/sn87062078", "correct_series": "/lccn/sn82016487", "startdate": "1866-08-30", "enddate": "1889-02-02"}
 {"series": "/lccn/sn87065583", "correct_series": "/lccn/sn87065583", "startdate": "1845-06-21", "enddate": "1850"}
 {"series": "/lccn/sn87065583", "correct_series": "/lccn/sn87065584", "startdate": "1882", "enddate": "1905"}
 {"series": "/lccn/sn87092542", "correct_series": "/lccn/sn84031524"}
