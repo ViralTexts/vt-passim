@@ -1,4 +1,4 @@
-import argparse, os, re
+import argparse, os, re, sys
 from re import sub
 from pyspark.sql import SparkSession, Row
 from pyspark.sql.functions import col, collect_list, explode, sort_array, struct, udf
@@ -126,7 +126,7 @@ class BookStream(object):
             
     def end(self, elem):
         tag = etree.QName(elem).localname
-        if tag == 'hi' and len(self.zones) > 0:
+        if tag == 'hi' and len(self.zones) > 0 and len(self.rends) > 0:
             start = self.rends.pop()
             self.zones[-1].rend += [RenditionSpan(r.lstrip('#'), start.start,
                                                   len(self.zones[-1].data) - start.start)
@@ -152,7 +152,7 @@ class BookStream(object):
                                     seq=self.seq, page=self.pageID,
                                     ztype=top.info.ztype, place=top.info.place,
                                     text=top.data, rendition=top.rend))
-        elif tag in self.lines and len(self.zones) > 0:
+        elif tag in self.lines and len(self.zones) > 0 and len(self.rends) > 0:
             start = self.rends.pop()
             self.zones[-1].rend.append(RenditionSpan(start.rendition, start.start,
                                                      len(self.zones[-1].data) - start.start))
@@ -184,8 +184,12 @@ class BookStream(object):
 def parseFile(path, content):
     book = re.sub(r'(.TEI-P5)?.xml$', '', os.path.basename(path))
 
-    parser = etree.XMLParser(target = BookStream(book))
-    result = etree.parse(BytesIO(content), parser)
+    try:
+        parser = etree.XMLParser(target = BookStream(book))
+        result = etree.parse(BytesIO(content), parser)
+    except:
+        print('# Error parsing ' + path, file=sys.stderr)
+        result = []
     return result
 
 if __name__ == '__main__':
@@ -196,14 +200,16 @@ if __name__ == '__main__':
 
     config = parser.parse_args()
 
+    format = 'json'
+    if config.outputPath.rstrip('/').endswith('.parquet'):
+        format = 'parquet'
+
     spark = SparkSession.builder.appName('DTA Pages').getOrCreate()
 
     spark.read.load(config.inputPath, format='binaryFile', recursiveFileLookup='true',
                     pathGlobFilter='*.xml'
         ).rdd.flatMap(lambda r: parseFile(r.path, r.content)
-        ).toDF(
-        ).write.json(config.outputPath, mode='overwrite')
+        ).toDF('struct<id: string, book: string, seq: int, page: string, ztype: string, place: string, text: string, rendition: array<struct<rendition: string, start: int, length: int>>>'
+        ).write.save(config.outputPath, format=format, mode='overwrite')
 
     spark.stop()
-
-                    
