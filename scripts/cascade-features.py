@@ -7,44 +7,8 @@ import pyspark.sql.functions as f
 from pyspark.ml import Pipeline
 from pyspark.ml.feature import CountVectorizer, VectorAssembler, RFormula, SQLTransformer
 
-def pairFeatures(sseries, dseries, sday, dday):
-    lag = abs(dday - sday)      # throw away the sign to allow learning
-    lagBin = str(int(np.log(lag))) if lag > 0 else '-inf'
-    return ["src:" + sseries, "dst:" + dseries, "pair:" + sseries + ":" + dseries,
-            "lag:" + lagBin]
-
 def normalizeText(s):
     return re.sub("[^\w\s]", "", re.sub("\s+", " ", s.strip().lower()))
-
-def clusterFeatures(c, gap):
-    ## Sorting by string date needs to be consistent with numerical date
-    wits = c[1]
-    fields = ['cluster', 'src', 'dst', 'label', 'day', 'day2']
-    info_keys = list(wits[0].info.asDict().keys())
-    fields += info_keys
-    fields += [(k + '2') for k in info_keys]
-    Record = Row(*fields)
-    n = len(wits)
-    res = []
-    curday = wits[0].day - gap
-    prevday = curday
-    for d in range(n):
-        dst = wits[d]
-        if dst.day > curday:
-            prevday = curday
-            curday = dst.day
-        allowRoot = 1 if ( curday - prevday >= gap ) else 0
-        dinfo = [dst[k] for k in info_keys]
-        sinfo = [None for k in info_keys]
-        res.append(Row(long(c[0]), 0, d+1, allowRoot, 0, dst.day, *sinfo, *dinfo))
-        for s in range(n):
-            src = wits[s]
-            if (s != d) and (abs(dst.day - src.day) < gap):
-                sinfo = [src[k] for k in info_keys]
-                res.append(Row(long(c[0]), s+1, d+1,
-                               (1 if dst.day > src.day else 0),
-                               src.day, dst.day, *sinfo, *dinfo))
-    return res
 
 # Pad upper left row/col with zeros.
 def padUpLeft(m):
@@ -128,6 +92,9 @@ def featurizeData(raw, vocabFile, featFile, args):
                 ).na.drop(subset=['day']
                 ).dropDuplicates(['cluster', 'issue', 'day'])
 
+    if args.filter != None:
+        reprints = reprints.filter(args.filter)
+
     day_gaps = udf(lambda wits: dayGaps(wits, args.gap), 'array<int>')
    
     wits = SQLTransformer(statement= f'SELECT cluster, struct(day, series, struct({args.witness_fields}) AS info) AS wit FROM __THIS__'
@@ -177,33 +144,16 @@ def featurizeData(raw, vocabFile, featFile, args):
     full.withMetadata('features', {'ml_attr': {}}).write.save(featFile)
     pairs.unpersist()
 
-    # dropDuplicates(['cluster', 'issue', 'date'])\
-    #         .withColumn('day', datediff(col('date'), lit('1970-01-01')))\
-    #         .na.drop(subset=['day'])\
-    #         .rdd.groupBy(lambda r: r.cluster)\
-    #         .flatMap(lambda c: clusterFeatures(c, gap))\
-    #         .toDF()
-
-    # feats.cache()
-    # cv = CountVectorizer(inputCol='raw', outputCol='features', minDF=4.0)
-    # interner = cv.fit(feats)      # alternate possibility: grab features only from label==1 edges
-    # full = interner.transform(feats)
-    # # combiner = VectorAssembler(inputCols=realCols + ['categorial'], outputCol='features')
-    # # # I don't think a Pipeline will work here since we need to get the interner.vocabulary
-    # # full = combiner.transform(interner.transform(feats)).drop('categorial')
-
-    # full.write.parquet(featFile)
-    # np.savetxt(vocabFile, np.array(interner.vocabulary), fmt='%s')
-    # feats.unpersist()
-
 if __name__ == "__main__":
     argparser = argparse.ArgumentParser(description='Cascade features')
     argparser.add_argument('-f', '--input', help='Input data')
+    argparser.add_argument('-c', '--cluster-stats', help='Cluster statistics')
     argparser.add_argument('-g', '--gap', type=int, default=730)
     argparser.add_argument('-i', '--iterations', type=int, default=20)
     argparser.add_argument('-r', '--rate', type=float, default=1.0)
     argparser.add_argument('-v', '--variance', type=float, default=1.0)
     argparser.add_argument('-p', '--posteriors', metavar='params')
+    argparser.add_argument('--filter', type=str, default=None)
     argparser.add_argument('--witness-fields', type=str, default='series')
     argparser.add_argument('--pair-fields', type=str, default=None)
     argparser.add_argument('--root', type=str, default='ROOT')
@@ -219,7 +169,10 @@ if __name__ == "__main__":
 
     if not os.path.exists(featFile):
         os.makedirs(args.outdir, exist_ok=True)
-        featurizeData(spark.read.load(args.input), vocabFile, featFile, args)
+        raw = spark.read.load(args.input)
+        if args.cluster_stats != None:
+            raw = raw.join(spark.read.load(args.cluster_stats), 'cluster')
+        featurizeData(raw, vocabFile, featFile, args)
 
     full = spark.read.load(featFile)
     vocab = np.loadtxt(vocabFile, 'str')
