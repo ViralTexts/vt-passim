@@ -146,8 +146,9 @@ def featurizeData(raw, vocabFile, featFile, args):
 
 if __name__ == "__main__":
     argparser = argparse.ArgumentParser(description='Cascade features')
-    argparser.add_argument('-f', '--input', help='Input data')
+    argparser.add_argument('-d', '--input', help='Input data')
     argparser.add_argument('-c', '--cluster-stats', help='Cluster statistics')
+    argparser.add_argument('--series-stats', help='Series statistics')
     argparser.add_argument('-g', '--gap', type=int, default=730)
     argparser.add_argument('-i', '--iterations', type=int, default=20)
     argparser.add_argument('-r', '--rate', type=float, default=1.0)
@@ -157,7 +158,7 @@ if __name__ == "__main__":
     argparser.add_argument('--witness-fields', type=str, default='series')
     argparser.add_argument('--pair-fields', type=str, default=None)
     argparser.add_argument('--root', type=str, default='ROOT')
-    argparser.add_argument('-s', '--formula', type=str, default='series * series2')
+    argparser.add_argument('-f', '--formula', type=str, default='series * series2')
 
     argparser.add_argument('outdir', help='Output directory')
     args = argparser.parse_args()
@@ -170,6 +171,8 @@ if __name__ == "__main__":
     if not os.path.exists(featFile):
         os.makedirs(args.outdir, exist_ok=True)
         raw = spark.read.load(args.input)
+        if args.series_stats != None:
+            raw = raw.join(spark.read.json(args.series_stats), 'series')
         if args.cluster_stats != None:
             raw = raw.join(spark.read.load(args.cluster_stats), 'cluster')
         featurizeData(raw, vocabFile, featFile, args)
