@@ -76,11 +76,9 @@ if __name__ == '__main__':
 
     spark = SparkSession.builder.appName('IA hOCR import').getOrCreate()
 
-    spark.sparkContext._jsc.hadoopConfiguration().set(
-        'mapreduce.input.fileinputformat.input.dir.recursive', 'true')
-    spark.sparkContext.wholeTextFiles(config.inputPath,
-                                      minPartitions=200
-        ).flatMap(lambda f: parseHOCR(f[0], f[1])
+    spark.read.load(config.inputPath, format='text', wholetext='true', recursiveFileLookup='true',
+        ).withColumn('path', f.input_file_name()
+        ).rdd.flatMap(lambda r: parseHOCR(r.path, r.value)
         ).toDF('struct<id: string, book: string, seq: int, text: string, pages: array<struct<id: string, seq: int, width: int, height: int, dpi: int, regions: array<struct<start: int, length: int, coords: struct<x: int, y: int, w: int, h: int, b: int>>>>>>'
         ).write.save(config.outputPath, mode='overwrite')
 
