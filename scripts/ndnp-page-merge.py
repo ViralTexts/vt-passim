@@ -43,6 +43,9 @@ if __name__ == '__main__':
                 ).withColumn('alto', make_alto('ocrFile', 'page_access')
                 ).drop('ocrFile')
 
+    if ('sections' in mets.columns) and (mets.filter(size('sections') > 0).count() == 0):
+        mets = mets.drop('sections')
+
     mets.join(alto, ['batch', 'alto'], 'left_outer'
         ).withColumn('id', f.concat('issue', lit('#pageModsBib'), (col('pos') + 1))
         ).withColumn('pages', f.array(struct(col('file').alias('id'),
