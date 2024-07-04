@@ -1,5 +1,5 @@
-import argparse
-from urllib.parse import urlparse
+import argparse, re
+from urllib.parse import quote, urlparse
 from os.path import basename, splitext
 from pyspark.sql import SparkSession, Row, Window
 from pyspark.sql.functions import (broadcast, col, collect_list, explode, lit, size, udf, struct,
@@ -9,6 +9,13 @@ import pyspark.sql.functions as f
 def makeURL(issue, series, date, ed, seq):
     res = urlparse(issue)
     return f'{res.scheme}://{res.netloc}{series}/{date}/ed-{ed}/seq-{seq}/'
+
+def makeIIIF(fname):
+    if fname == None or fname == '':
+        return None
+    domain, file = re.split(r'/data/batches/', fname)
+    mid = '/images/iiif/' if domain.find('panewsarchive') == -1 else '/iiif/'
+    return domain + mid + quote(file, safe='')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Merge METS and Alto',
@@ -25,6 +32,8 @@ if __name__ == '__main__':
     make_url = udf(lambda issue, series, date, ed, seq: makeURL(issue, series, date, ed, seq))
 
     make_alto = udf(lambda ocrFile, page_access: (page_access + 'ocr.xml') if config.urlocr else ocrFile)
+
+    make_iiif = udf(lambda fname: makeIIIF(fname))
 
     alto = spark.read.load(config.inputPath
             ).withColumnRenamed('width', 'altoWidth'
@@ -48,12 +57,19 @@ if __name__ == '__main__':
 
     mets.join(alto, ['batch', 'alto'], 'left_outer'
         ).withColumn('id', f.concat('issue', lit('#pageModsBib'), (col('pos') + 1))
+        ).withColumn('scale', f.coalesce((col('altoWidth')/col('width')).cast('int'), lit(1))
         ).withColumn('pages', f.array(struct(col('file').alias('id'),
-                                             'seq',
-                                             col('altoWidth').alias('width'),
-                                             col('altoHeight').alias('height'),
-                                             'dpi', 'regions'))
-        ).drop('alto', 'altoWidth', 'altoHeight', 'dpi', 'file', 'regions'
+                                             make_iiif('file').alias('iiif'),
+                                             'seq', 'width', 'height', 'dpi',
+                                f.transform('regions',
+                                            lambda r: r.withField('coords', struct(
+                                                (r.coords.x/col('scale')).cast('int').alias('x'),
+                                                (r.coords.y/col('scale')).cast('int').alias('y'),
+                                                (r.coords.w/col('scale')).cast('int').alias('w'),
+                                                (r.coords.h/col('scale')).cast('int').alias('h'),
+                                                (r.coords.b/col('scale')).cast('int').alias('b'))
+                                                                            )).alias('regions')))
+        ).drop('alto', 'altoWidth', 'altoHeight', 'dpi', 'file', 'regions', 'scale'
         ).write.save(config.outputPath, mode='overwrite')
 
     spark.stop()
