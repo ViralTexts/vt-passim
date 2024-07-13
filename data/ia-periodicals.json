@@ -3,6 +3,12 @@
 {"series2":"pub_abendpost-sonntagpost", "series":"/lccn/sn83045771"}
 {"series2":"pub_aeronaut-a-periodical-paper", "series":"aps/42149"}
 {"series2":"pub_anti-slavery-bugle", "series":"/lccn/sn83035487"}
+{"series2":"pub_atlanta-constitution", "series":"/lccn/sn85035943", "start":"1868-06-16", "end":"1869-09-30"}
+{"series2":"pub_atlanta-constitution", "series":"/lccn/sn83016858", "start":"1869-10-01", "end":"1875-08-19"}
+{"series2":"pub_atlanta-constitution", "series":"/lccn/sn83016859", "start":"1875-08-20", "end":"1875-09-03"}
+{"series2":"pub_atlanta-constitution", "series":"/lccn/sn83016860", "start":"1875-09-04", "end":"1876-10-19"}
+{"series2":"pub_atlanta-constitution", "series":"/lccn/sn83016861", "start":"1876-10-20", "end":"1881-09-14"}
+{"series2":"pub_atlanta-constitution", "series":"/lccn/sn82015857", "start":"1881-09-15", "end":"2001-11-04"}
 {"series2":"pub_boston-commonwealth", "series":"/lccn/sn84023128", "start":"1862-09-06", "end":"1880-08-28"}
 {"series2":"pub_boston-commonwealth", "series":"/lccn/sn84023128", "start":"1880-09-04", "end":"1896-05-30"}
 {"series2":"pub_chicago-daily-tribune", "series":"/lccn/sn82014273", "start":"1848", "end":"1858-06-30"}
@@ -27,4 +33,7 @@
 {"series2":"pub_los-angeles-times", "series":"/lccn/sn81004356", "start":"1886-10-23", "end":"2023"}
 {"series2":"pub_nebraska-ansiedler", "series":"/lccn/sn95063987"}
 {"series2":"pub_new-national-era", "series":"/lccn/sn84026753"}
+{"series2":"pub_occident", "series":"/lccn/sn95062433"}
 {"series2":"pub_punchinello", "series":"/lccn/10005788"}
+{"series2":"pub_st-louis-post-dispatch", "series":"/lccn/sn83045501"}
+{"series2":"pub_the-pacific", "series":"/lccn/sn82014882"}
