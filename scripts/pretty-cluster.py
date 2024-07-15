@@ -1,4 +1,4 @@
-import argparse
+import argparse, re
 from re import sub
 import urllib.parse
 
@@ -18,8 +18,9 @@ def guessFormat(path, default="json"):
 
 ## Map article/page records and coordinate information to links
 def formatURL(baseurl, corpus, id, p1id, series, date, ed, seq):
-    if corpus == 'ca':
-        return 'https://chroniclingamerica.loc.gov%s/%s/ed-%s/seq-%d' % (series, date, ed, seq)
+    if corpus == 'ca' or corpus == 'acdc': # TODO: Fix since acdc might redo other OCR
+        return 'https://www.loc.gov/resource/%s/%s/ed-%s/?sp=%d' % (series.replace('/lccn/', ''),
+                                                                    date, ed, seq)
     elif corpus == 'ia' and p1id != None:
         return 'https://archive.org/details/' + sub('_0*(\d+)$', r'/page/n\1/mode/1up?view=theater', p1id)
     elif corpus == 'trove':
@@ -30,10 +31,10 @@ def formatURL(baseurl, corpus, id, p1id, series, date, ed, seq):
         return baseurl
 
 def imageLink(corpus, p1id, p1x, p1y, p1w, p1h, p1width, p1height):
-    if corpus == 'ca' and p1id != None:
+    if (corpus == 'ca' or corpus == 'acdc') and p1id != None: # TODO fix!
         if p1width > 0 and p1height > 0:
-            return 'https://chroniclingamerica.loc.gov/iiif/2/%s/pct:%f,%f,%f,%f/full/0/default.jpg'\
-                % (urllib.parse.quote(p1id, safe=''),
+            return 'https://tile.loc.gov/image-services/iiif/%s/pct:%f,%f,%f,%f/full/0/default.jpg'\
+                % (sub(r'\.jp2$', '', p1id).replace('/', ':'),
                    100 * p1x/p1width, 100*p1y/p1height, 100*p1w/p1width, 100*p1h/p1height)
         else:
             return 'https://chroniclingamerica.loc.gov/iiif/2/%s/%d,%d,%d,%d/full/0/default.jpg'\
@@ -41,6 +42,12 @@ def imageLink(corpus, p1id, p1x, p1y, p1w, p1h, p1width, p1height):
     elif corpus == 'ia' and p1id != None:
         return 'https://iiif.archive.org/iiif/%s/pct:%f,%f,%f,%f/full/0/default.jpg' \
             % (sub('_0*(\d+)$', r'$\1', p1id),
+               100 * p1x/p1width, 100*p1y/p1height, 100*p1w/p1width, 100*p1h/p1height)
+    elif p1id != None and re.search(r'/data/batches/', p1id):
+        domain, file = re.split(r'/data/batches/', p1id) 
+        mid = '/images/iiif/' if corpus != 'panewsarchive' else '/iiif/'
+        return '%s%s%s/pct:%f,%f,%f,%f/full/0/default.jpg' \
+            % (domain, mid, urllib.parse.quote(file, safe=''),
                100 * p1x/p1width, 100*p1y/p1height, 100*p1w/p1width, 100*p1h/p1height)
     else:
         return None
