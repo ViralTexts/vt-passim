@@ -47,6 +47,9 @@ if __name__ == '__main__':
                 ).drop('pages', 'col', 'image'
                 ).withColumn('series', f.trim(f.lower('series'))
                 ).withColumn('seq', col('seq').cast('int')
+                ).withColumn('pp', col('pp').cast('int')
+                ).withColumn('width', col('width').cast('int')
+                ).withColumn('height', col('height').cast('int')
                 ).withColumn('page_access', make_url('issue', 'series', 'date', 'ed', 'seq')
                 ).withColumn('ocrFile', f.regexp_replace('file', r'\.[^/\.]+$', '.xml')
                 ).withColumn('alto', make_alto('ocrFile', 'page_access')
@@ -69,7 +72,8 @@ if __name__ == '__main__':
                                                 (r.coords.h/col('scale')).cast('int').alias('h'),
                                                 (r.coords.b/col('scale')).cast('int').alias('b'))
                                                                             )).alias('regions')))
-        ).drop('alto', 'altoWidth', 'altoHeight', 'dpi', 'file', 'regions', 'scale'
+        ).drop('alto', 'altoWidth', 'altoHeight', 'dpi', 'file', 'regions', 'scale',
+               'width', 'height'
         ).write.save(config.outputPath, mode='overwrite')
 
     spark.stop()
