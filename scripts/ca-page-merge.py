@@ -1,9 +1,15 @@
 import argparse
+from re import sub
 from os.path import basename, splitext
 from pyspark.sql import SparkSession, Row, Window
 from pyspark.sql.functions import (broadcast, col, collect_list, explode, lit, size, udf, struct,
                                    sort_array, translate, when)
 import pyspark.sql.functions as f
+
+def makeIIIF(fname):
+    if fname == None or fname == '':
+        return None
+    return 'https://tile.loc.gov/image-services/iiif/' + sub(r'\.jp2$','',fname).replace('/',':')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Merge METS and Alto',
@@ -17,6 +23,8 @@ if __name__ == '__main__':
     spark = SparkSession.builder.appName('Merge METS and Alto').getOrCreate()
 
     file_stem = udf(lambda path: splitext(basename(path))[0] if path != None else None)
+    make_url = udf(lambda series, date, ed, seq: f'https://www.loc.gov/resource/{series.replace("/lccn/","")}/{date}/ed-{ed}/?sp={seq}')
+    make_iiif = udf(lambda fname: makeIIIF(fname))
 
     alto = spark.read.load(config.inputPath
             ).withColumn('sourceFrame', file_stem(translate('sourceFile', '\\_', '//'))
@@ -34,7 +42,11 @@ if __name__ == '__main__':
                 ).drop('pages', 'col', 'image'
                 ).withColumn('frame', file_stem('file')
                 ).withColumn('series', f.trim(f.lower('series'))
-                ).withColumn('seq', col('seq').cast('int'))
+                ).withColumn('seq', col('seq').cast('int')
+                ).withColumn('pp', col('pp').cast('int')
+                ).withColumn('width', col('width').cast('int')
+                ).withColumn('height', col('height').cast('int')
+                ).withColumn('page_access', make_url('series', 'date', 'ed', 'seq'))
 
     mets.cache()
 
@@ -68,12 +80,20 @@ if __name__ == '__main__':
     linked.join(broadcast(dedup), ['series', 'date', 'ed', 'issue'], 'left_semi'
         ).join(alto, ['batch', 'series', 'date', 'ed', 'seq', 'sourceFrame'], 'left_outer'
         ).withColumn('id', f.concat('issue', lit('#pageModsBib'), (col('pos') + 1))
-        ).withColumn('pages', f.array(struct(col('file').alias('id'),
-                                             'seq',
-                                             col('altoWidth').alias('width'),
-                                             col('altoHeight').alias('height'),
-                                             'dpi', 'regions')) # add regions
-        ).drop('altoWidth', 'altoHeight', 'dpi', 'file', 'regions'
+        ).withColumn('scale', f.coalesce((col('altoWidth')/col('width')).cast('int'), lit(1))
+        ).withColumn('pages', f.array(struct(f.concat(lit('https://tile.loc.gov/storage-services/'), 'file').alias('id'),
+                                             make_iiif('file').alias('iiif'),
+                                             'seq', 'width', 'height', 'dpi',
+                                f.transform('regions',
+                                            lambda r: r.withField('coords', struct(
+                                                (r.coords.x/col('scale')).cast('int').alias('x'),
+                                                (r.coords.y/col('scale')).cast('int').alias('y'),
+                                                (r.coords.w/col('scale')).cast('int').alias('w'),
+                                                (r.coords.h/col('scale')).cast('int').alias('h'),
+                                                (r.coords.b/col('scale')).cast('int').alias('b'))
+                                                                            )).alias('regions')))
+        ).drop('altoWidth', 'altoHeight', 'dpi', 'file', 'regions', 'scale',
+               'width', 'height'
         ).write.save(config.outputPath, mode='overwrite')
 
     spark.stop()
