@@ -58,14 +58,16 @@ def clusterGradients(c, w):
     except:
         print('## num cluster=', c[0], '; size=', n)
         print(numL)
-        exit(0)
+        return []
+        # exit(0)
         
     try:
         denLgrad = laplaceGradient(denL)
     except:
         print('## den cluster=', c[0], '; size=', n)
         print(denL)
-        exit(0)
+        return []
+        # exit(0)
 
     fgrad = []
     for r in c[1]:
@@ -75,6 +77,34 @@ def clusterGradients(c, w):
         fgrad += [(int(f), float(grad * v)) for f, v in zip(r.features.indices, r.features.values)]
 
     return fgrad
+
+def clusterLoss(c, w):
+    n = max(map(lambda r: r.dst, c[1])) + 1
+
+    numL = np.zeros((n, n))
+    denL = np.zeros((n, n))
+    for r in c[1]:
+        score = -np.exp(w[np.array(r.features.indices)].dot(r.features.values))
+        numL[r.src, r.dst] = score if r.label == 1 else 0
+        denL[r.src, r.dst] = score
+    numL += np.diag(-numL.sum(axis=0))
+    denL += np.diag(-denL.sum(axis=0))
+
+    try:
+        sign, numLsum = np.linalg.slogdet(numL[1:, 1:])
+    except:
+        print('## det num cluster=', c[0], '; size=', n)
+        print(numL)
+        return 0
+        
+    try:
+        sign, denLsum = np.linalg.slogdet(denL[1:, 1:])
+    except:
+        print('## det den cluster=', c[0], '; size=', n)
+        print(denL)
+        return 0
+
+    return denLsum - numLsum
 
 def dayGaps(wits, gap):
     res = []
@@ -139,10 +169,20 @@ def featurizeData(raw, vocabFile, featFile, args):
     for k, v in full.schema['features'].metadata['ml_attr']['attrs'].items():
         for feat in v:
             names[feat['idx']] = feat['name']
-    np.savetxt(vocabFile, names, fmt='%s')    
+    np.savetxt(vocabFile, names, fmt='%s')
 
     full.withMetadata('features', {'ml_attr': {}}).write.save(featFile)
     pairs.unpersist()
+
+def logLoss(dev, train, w, i, logf):
+    if dev:
+        devLoss = dev.map(lambda c: clusterLoss(c, w)).sum() / dev.count()
+        print(f'## iter {i} dev loss={devLoss}')
+        print(','.join(map(str, [args.seed, i, 'dev', dev.count(), devLoss])), file=logf)
+    if test:
+        testLoss = test.map(lambda c: clusterLoss(c, w)).sum() / test.count()
+        print(f'## iter {i} test loss={testLoss}')
+        print(','.join(map(str, [args.seed, i, 'test', test.count(), testLoss])), file=logf)
 
 if __name__ == "__main__":
     argparser = argparse.ArgumentParser(description='Cascade features')
@@ -159,6 +199,7 @@ if __name__ == "__main__":
     argparser.add_argument('--pair-fields', type=str, default=None)
     argparser.add_argument('--root', type=str, default='ROOT')
     argparser.add_argument('-f', '--formula', type=str, default='series * series2')
+    argparser.add_argument('-s', '--seed', type=int, default=None, help='Seed for train/test split')
 
     argparser.add_argument('outdir', help='Output directory')
     args = argparser.parse_args()
@@ -172,7 +213,7 @@ if __name__ == "__main__":
         os.makedirs(args.outdir, exist_ok=True)
         raw = spark.read.load(args.input)
         if args.series_stats != None:
-            raw = raw.join(spark.read.json(args.series_stats), 'series')
+            raw = raw.join(spark.read.json(args.series_stats), ['series'], 'left_outer')
         if args.cluster_stats != None:
             raw = raw.join(spark.read.load(args.cluster_stats), 'cluster')
         featurizeData(raw, vocabFile, featFile, args)
@@ -189,15 +230,32 @@ if __name__ == "__main__":
 
     fcount = len(vocab)
     w = np.zeros(fcount)
-    
+
     fdata = full.select('cluster', 'src', 'dst', 'label', 'features')\
                 .rdd.groupBy(lambda r: r.cluster)
-    fdata.cache()
+    if args.seed:
+        train, dev, test = fdata.randomSplit([8, 1, 1], args.seed)
+        dev.cache()
+        test.cache()
+        logf = open('%s/s%d.csv' % (args.outdir, args.seed), 'a')
+        logLoss(dev, test, w, 0, logf)
+    else:
+        train, dev, test = fdata, None, None
+        logf = None
+    train.cache()
 
-    rate = args.rate / fdata.count()            # scale with training size
+    rate = args.rate / train.count()            # scale with training size
 
-    for i in range(args.iterations):
-        grad = fdata.flatMap(lambda c: clusterGradients(c, w)).toDF(['feat', 'grad'])\
+    for i in range(1, args.iterations+1):
+        if args.seed:
+            pfile = '%s/s%d-iter%03d.gz' % (args.outdir, args.seed, i)
+        else:
+            pfile = '%s/iter%03d.gz' % (args.outdir, i)
+        if os.path.exists(pfile):
+            w = np.loadtxt(pfile)
+            continue
+            
+        grad = train.flatMap(lambda c: clusterGradients(c, w)).toDF(['feat', 'grad'])\
                     .groupBy('feat').agg(gsum('grad').alias('grad'))\
                     .collect()
         update = np.zeros(fcount)
@@ -206,6 +264,9 @@ if __name__ == "__main__":
         if args.variance > 0:
             update += w / args.variance
         w -= rate * update
-        np.savetxt("%s/iter%03d.gz" % (args.outdir, i), w)
-    
+        np.savetxt(pfile, w)
+        logLoss(dev, test, w, i, logf)
+
+    if logf:
+        logf.close()
     spark.stop()
