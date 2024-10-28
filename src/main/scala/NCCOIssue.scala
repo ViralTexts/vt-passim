@@ -8,7 +8,7 @@ import scala.collection.mutable.{ArrayBuffer, StringBuilder}
 import vtpassim.pageinfo._
 
 case class NCCOIssueRecord(id: String, issue: String, series: String, seq: Int, date: String,
-  title: String, altSource: String, category: String, text: String, pages: Array[Page])
+  title: String, altSource: String, category: String, text: String, pages: Array[IIIFPage])
 
 object NCCOIssue {
   def main(args: Array[String]) {
@@ -41,7 +41,7 @@ object NCCOIssue {
             .map { pid => ((pid \ "@pgref").text.toInt, pid.text) }
             .toMap
           val buf = new StringBuilder
-          val pages = new ArrayBuffer[Page]
+          val pages = new ArrayBuffer[IIIFPage]
           val regions = new ArrayBuffer[Region]
           var lastX = -1
           var lastY = -20
@@ -50,7 +50,7 @@ object NCCOIssue {
               val pn = (clip \ "pg" \ "@pgref").text.toInt
               if ( pn != cur ) {
                 if ( cur != -1 )
-                  pages += Page(pid(cur), cur, pdim(pid(cur))._1, pdim(pid(cur))._2, 0, regions.toArray)
+                  pages += IIIFPage(pid(cur), null, cur, pdim(pid(cur))._1, pdim(pid(cur))._2, 0, regions.toArray)
                 regions.clear
                 cur = pn
               }
@@ -70,7 +70,7 @@ object NCCOIssue {
                 }
             }
           if ( cur != -1 )
-            pages += Page(pid(cur), cur, pdim(pid(cur))._1, pdim(pid(cur))._2, 0, regions.toArray)
+            pages += IIIFPage(pid(cur), null, cur, pdim(pid(cur))._1, pdim(pid(cur))._2, 0, regions.toArray)
           NCCOIssueRecord((article \ "id").text, issue, series, seq, date,
             (article \ "ti").text, (article \ "altSource").text, (article \ "ct").text,
             buf.toString, pages.toArray)

@@ -6,7 +6,7 @@ import collection.JavaConversions._
 import scala.util.Try
 import vtpassim.pageinfo._
 
-case class AltoInfo(text: String, pages: Array[Page])
+case class AltoInfo(text: String, pages: Array[IIIFPage])
 
 case class MetaInfo(issue: String, series: String, date: String)
 
@@ -19,11 +19,11 @@ object MetsAltoDDD {
       val width = Try((page \ "@WIDTH").text.toInt).getOrElse(0)
       val height = Try((page \ "@HEIGHT").text.toInt).getOrElse(0)
       val (text, regions) = MetsAlto.altoText(t)
-      AltoInfo(text, Array(Page(id, seq, width, height, 0, regions)))
+      AltoInfo(text, Array(IIIFPage(id, null, seq, width, height, 0, regions)))
     } catch {
       case e: Exception => {
         println(e.toString)
-        AltoInfo(null, Array[Page]())
+        AltoInfo(null, Array[IIIFPage]())
       }
     }
   }

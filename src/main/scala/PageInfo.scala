@@ -7,3 +7,5 @@ case class Region(start: Int, length: Int, coords: Coords)
 case class Locus(start: Int, length: Int, loc: String)
 
 case class Page(id: String, seq: Int, width: Int, height: Int, dpi: Int, regions: Array[Region])
+
+case class IIIFPage(id: String, iiif: String, seq: Int, width: Int, height: Int, dpi: Int, regions: Array[Region])

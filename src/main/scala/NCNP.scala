@@ -9,7 +9,7 @@ import vtpassim.pageinfo._
 
 case class NCNPRecord(id: String, issue: String, series: String, seq: Int,
   title: String, date: String,
-  altSource: String, category: String, text: String, pages: Array[Page])
+  altSource: String, category: String, text: String, pages: Array[IIIFPage])
 
 object NCNP {
   def main(args: Array[String]) {
@@ -55,7 +55,7 @@ object NCNP {
 
         (t \ "article").zipWithIndex.map { case (article, seq) =>
           val buf = new StringBuilder
-          val pages = new ArrayBuffer[Page]
+          val pages = new ArrayBuffer[IIIFPage]
           val regions = new ArrayBuffer[Region]
           var lastX = -1
           var lastY = -20
@@ -64,7 +64,7 @@ object NCNP {
               val pn = (clip \ "pg" \ "@pgref").text.toInt
               if ( pn != cur ) {
                 if ( cur != -1 )
-                  pages += Page(pid(cur), cur, pdim(cur)._1, pdim(cur)._2, 0, regions.toArray)
+                  pages += IIIFPage(pid(cur), null, cur, pdim(cur)._1, pdim(cur)._2, 0, regions.toArray)
                 regions.clear
                 cur = pn
               }
@@ -84,7 +84,7 @@ object NCNP {
                 }
             }
           if ( cur != -1 )
-            pages += Page(pid(cur), cur, pdim(cur)._1, pdim(cur)._2, 0, regions.toArray)
+            pages += IIIFPage(pid(cur), null, cur, pdim(cur)._1, pdim(cur)._2, 0, regions.toArray)
           NCNPRecord((article \ "id").text, issue, series, seq, (article \ "ti").text, date,
             (article \ "altSource").text, (article \ "ct").text,
             buf.toString, pages.toArray)

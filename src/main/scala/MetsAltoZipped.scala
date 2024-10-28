@@ -6,7 +6,7 @@ import scala.util.Try
 import vtpassim.pageinfo._
 
 case class Record(id: String, issue: String, series: String, seq: Int,
-  date: String, lang: String, text: String, pages: Array[Page])
+  date: String, lang: String, text: String, pages: Array[IIIFPage])
 
 object MetsAltoZipped {
   def main(args: Array[String]) {
@@ -45,7 +45,7 @@ object MetsAltoZipped {
             val (text, regions) = MetsAlto.altoText(t)
             Record(issue + "/" + f.getName.replaceAll(".xml$", ""), issue, series, seq,
               date, lang, text,
-              Array(Page((page \ "@ID").text, seq, width, height, dpi, regions)))
+              Array(IIIFPage((page \ "@ID").text, null, seq, width, height, dpi, regions)))
           }
         } catch {
           case e: Exception => {
