@@ -126,20 +126,25 @@ def featurizeData(raw, vocabFile, featFile, args):
         reprints = reprints.filter(args.filter)
 
     day_gaps = udf(lambda wits: dayGaps(wits, args.gap), 'array<int>')
-   
-    wits = SQLTransformer(statement= f'SELECT cluster, struct(day, series, struct({args.witness_fields}) AS info) AS wit FROM __THIS__'
+
+    cfeats = ['cluster']
+    if args.partition:
+        cfeats.append(args.partition)
+    cset = set(cfeats)
+    
+    wits = SQLTransformer(statement= f'SELECT {", ".join(cfeats)}, struct(day, series, struct({args.witness_fields}) AS info) AS wit FROM __THIS__'
                 ).transform(reprints
-                ).groupBy('cluster'
+                ).groupBy(*cfeats
                 ).agg(f.sort_array(f.collect_list('wit')).alias('wits')
                 ).withColumn('wits', f.arrays_zip('wits', day_gaps('wits').alias('gap'))
-                ).select('cluster', f.posexplode('wits')
-                ).select('cluster', (col('pos')+1).alias('pos'),
+                ).select(*cfeats, f.posexplode('wits')
+                ).select(*cfeats, (col('pos')+1).alias('pos'),
                          'col.wits.day', 'col.gap', 'col.wits.info.*')
 
     f1 = wits.columns
-    f2 = [f + ('2' if f != 'cluster' else '') for f in f1]
+    f2 = [f + ('2' if (f not in cset) else '') for f in f1]
 
-    pairs = wits.join(wits.toDF(*f2), 'cluster'
+    pairs = wits.join(wits.toDF(*f2), cfeats
                 ).withColumn('lag', col('day2') - col('day')
                 ).filter(f.abs('lag') < args.gap
                 ).withColumnRenamed('pos', 'src'
@@ -152,7 +157,7 @@ def featurizeData(raw, vocabFile, featFile, args):
                                   1).otherwise(0))
 
     for field in f1:
-        if field != 'cluster' and field != 'pos':
+        if (field not in cset) and field != 'pos':
             pairs = pairs.withColumn(field, when(col('src') == 0,args.root).otherwise(col(field)))
 
     stages = []
@@ -171,7 +176,12 @@ def featurizeData(raw, vocabFile, featFile, args):
             names[feat['idx']] = feat['name']
     np.savetxt(vocabFile, names, fmt='%s')
 
-    full.withMetadata('features', {'ml_attr': {}}).write.save(featFile)
+    result = full.withMetadata('features', {'ml_attr': {}})
+
+    if args.partition:
+        result.write.partitionBy(args.partition).save(featFile)
+    else:
+        result.write.save(featFile)
     pairs.unpersist()
 
 def logLoss(dev, train, w, i, logf):
@@ -193,6 +203,7 @@ if __name__ == "__main__":
     argparser.add_argument('-i', '--iterations', type=int, default=20)
     argparser.add_argument('-r', '--rate', type=float, default=1.0)
     argparser.add_argument('-v', '--variance', type=float, default=1.0)
+    argparser.add_argument('-P', '--partition', type=str, default=None)
     argparser.add_argument('-p', '--posteriors', metavar='params')
     argparser.add_argument('--filter', type=str, default=None)
     argparser.add_argument('--witness-fields', type=str, default='series')
@@ -219,7 +230,7 @@ if __name__ == "__main__":
         featurizeData(raw, vocabFile, featFile, args)
 
     full = spark.read.load(featFile)
-    vocab = np.loadtxt(vocabFile, 'str')
+    vocab = np.loadtxt(vocabFile, 'str', delimiter='\t')
 
     if args.posteriors:
         w = np.loadtxt(args.posteriors)
