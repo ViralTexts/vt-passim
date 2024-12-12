@@ -37,6 +37,7 @@
 {"series2":"pub_philadelphia-album-and-ladies-literary-port-folio", "series":"/lccn/sn91063205"}
 {"series2":"pub_punchinello", "series":"/lccn/10005788"}
 {"series2":"pub_st-louis-post-dispatch", "series":"/lccn/sn83045501"}
+{"series2":"pub_the-memphis-daily-appeal", "series":"/lccn/sn83045160"}
 {"series2":"pub_the-pacific", "series":"/lccn/sn82014882"}
 {"series2":"newspaperarchive-ada-evening-news","series":"/lccn/sn97070416"}
 {"series2":"newspaperarchive-adams-sentinel","series":"/lccn/sn83032079"}
@@ -85,10 +86,11 @@
 {"series2":"newspaperarchive-coshocton-tribune","series":"/lccn/sn88078226","start":"1911-02-12","end":"1917-10-31"}
 {"series2":"newspaperarchive-coshocton-tribune","series":"/lccn/sn88078227","start":"1917-11-01","end":"1929-12-31"}
 {"series2":"newspaperarchive-covina-argus","series":"/lccn/sn98061066"}
-{"series2":"newspaperarchive-daily-free-democrat","series":"","start":"1850-09-16","end":"1856-11-12"}
-{"series2":"newspaperarchive-daily-nevada-state-journal","series":"","start":"1875-01-01","end":"1907-09-30"}
-{"series2":"newspaperarchive-danville-bee","series":"","start":"1922-01-05","end":"1924-12-31"}
-{"series2":"newspaperarchive-daytona-beach-daily-news","series":"","start":"1905-01-02","end":"1922-02-27"}
+{"series2":"newspaperarchive-daily-free-democrat","series":"/lccn/sn87082436"}
+{"series2":"newspaperarchive-daily-nevada-state-journal","series":"/lccn/sn84020369","start":"1874-04-02","end":"1907-09-24"}
+{"series2":"newspaperarchive-daily-nevada-state-journal","series":"/lccn/sn84020370","start":"1907-09-25","end":"1983-09-30"}
+{"series2":"newspaperarchive-danville-bee","series":"/lccn/sn86071569"}
+{"series2":"newspaperarchive-daytona-beach-daily-news","series":"/lccnsn93063916"}
 {"series2":"newspaperarchive-decatur-daily-republican","series":"","start":"1870-09-26","end":"1899-12-08"}
 {"series2":"newspaperarchive-decatur-herald","series":"","start":"1885-07-11","end":"1924-07-17"}
 {"series2":"newspaperarchive-decatur-morning-review","series":"","start":"1881-11-01","end":"1891-11-15"}
