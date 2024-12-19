@@ -13,7 +13,8 @@ def ocrLines(bcmodel, text, page, base, suffix):
     regions = page.regions
     # book = re.sub(r'_\d+$', '', imfile)
     # imfile = '/work/nulab/corpora/rowell/' + os.path.join('raw', book, book + '_jp2', imfile + '.jp2')
-    impath = os.path.join(base, page.id + suffix)
+    # impath = os.path.join(base, page.id + suffix)
+    impath = base + page.id + suffix
     try:
         if impath.startswith('https://'):
             im = Image.open(requests.get(impath, stream=True).raw)
