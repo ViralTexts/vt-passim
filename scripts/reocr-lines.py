@@ -142,17 +142,12 @@ if __name__ == '__main__':
         ).repartition(1000
         ).withColumn('lines', ocr_lines('text', 'pages')
         ).withColumn('text', f.array_join('lines.text', '')
-        ).withColumn('pages',
-                     struct(col('pages.id'),
-                            col('pages.seq'),
-                            col('pages.width'),
-                            col('pages.height'),
-                            col('pages.dpi'),
+        ).withColumn('pages', col('pages').withField('regions',
                             f.transform(f.filter('lines', lambda r: r.length > 0),
                                         lambda r: struct(r.start, r.length,
                                                          struct(r.x, r.y, r.w, r.h,
                                                                 r.h.alias('b')
-                                                            ).alias('coords'))).alias('regions'))
+                                                                ).alias('coords'))))
         ).groupBy(*fields
         ).agg(cat_pages(sort_array(collect_list(struct('pages.seq','text','pages')))).alias('p'),
               sort_array(collect_list(struct('pages.seq', 'lines'))).alias('lines')
