@@ -115,7 +115,7 @@
 {"placeOfPublication":"Boston","series":"/lccn/2001210207","title":"Littell's Living Age (1844-1896)","coverage":"http://dbpedia.org/resource/Boston"}
 {"placeOfPublication":"Boston","series":"/lccn/86655211","title":"The North American Review and Miscellaneous Journal (1815-1821)","coverage":"http://dbpedia.org/resource/Boston"}
 {"placeOfPublication":"Boston","series":"/lccn/sf87092542","title":"Liberator (1831-1865)","coverage":"http://dbpedia.org/resource/Boston"}
-{"placeOfPublication":"Boston","series":"aps/1147","title":"The Christian History, Containing Accounts of the Revival and Propagation of Religion in Great Britain & America (1743-1745)","coverage":"http://dbpedia.org/resource/Boston"}
+{"placeOfPublication":"Boston","series":"/lccn/sf89092236","title":"The Christian History, Containing Accounts of the Revival and Propagation of Religion in Great Britain & America (1743-1745)","coverage":"http://dbpedia.org/resource/Boston"}
 {"placeOfPublication":"Boston","series":"aps/1150","title":"Courier de Boston; Affiches, Annonces, et Avis (1789-1789)","coverage":"http://dbpedia.org/resource/Boston"}
 {"placeOfPublication":"Boston","series":"aps/2152","title":"The American Apollo (1792-1792)","coverage":"http://dbpedia.org/resource/Boston"}
 {"placeOfPublication":"Boston","series":"aps/2153","title":"The American Magazine and Historical Chronicle (1743-1746)","coverage":"http://dbpedia.org/resource/Boston"}
@@ -205,7 +205,7 @@
 {"placeOfPublication":"Boston","series":"aps/25068","title":"The Christian Observatory: A Religious and Literary Magazine (1847-1850)","coverage":"http://dbpedia.org/resource/Boston"}
 {"placeOfPublication":"Boston","series":"aps/25154","title":"Every Saturday: A Journal of Choice Reading (1866-1874)","coverage":"http://dbpedia.org/resource/Boston"}
 {"placeOfPublication":"Boston","series":"aps/25157","title":"The Quarterly Journal of Economics (1886-1906)","coverage":"http://dbpedia.org/resource/Boston"}
-{"placeOfPublication":"Boston","series":"aps/25189","title":"The Abolitionist: or Record of the New England Anti - Slavery Society (1833-1833)","coverage":"http://dbpedia.org/resource/Boston"}
+{"placeOfPublication":"Boston","series":"/lccn/2010219087","title":"The Abolitionist: or Record of the New England Anti - Slavery Society (1833-1833)","coverage":"http://dbpedia.org/resource/Boston"}
 {"placeOfPublication":"Boston","series":"aps/25192","title":"The Amaranth; or Masonic Garland (1828-1829)","coverage":"http://dbpedia.org/resource/Boston"}
 {"placeOfPublication":"Boston","series":"aps/25193","title":"American Academy of Arts and Sciences, Boston. Memoirs of the American Academy of Arts and Sciences (1785-1902)","coverage":"http://dbpedia.org/resource/Boston"}
 {"placeOfPublication":"Boston","series":"aps/25194","title":"American Journal of Education (1826-1830)","coverage":"http://dbpedia.org/resource/Boston"}
@@ -339,7 +339,7 @@
 {"placeOfPublication":"Boston","series":"aps/41257","title":"The Boston Journal of Philosophy and the Arts, Intended to Exhibit a View of the Progress of Discovery in Natural Philosophy, Mechanics, Chemistry, Geology and Mineralogy, Natural History, Comparative Anatomy and Physiology, Geography, Statistics, and the Fine and Useful Arts (1823-1826)","coverage":"http://dbpedia.org/resource/Boston"}
 {"placeOfPublication":"Boston","series":"aps/41258","title":"The Boston Spectator; Devoted to Politicks and Belles - Lettres (1814-1815)","coverage":"http://dbpedia.org/resource/Boston"}
 {"placeOfPublication":"Boston","series":"aps/41259","title":"The Boston Weekly Magazine, Devoted to Polite Literature, Useful Science, Biography, and Dramatic Criticism (1816-1824)","coverage":"http://dbpedia.org/resource/Boston"}
-{"placeOfPublication":"Boston","series":"aps/41377","title":"The Cabinet; a Repository of Polite Literature (1811-1811)","coverage":"http://dbpedia.org/resource/Boston"}
+{"placeOfPublication":"Boston","series":"/lccn/11008634","title":"The Cabinet; a Repository of Polite Literature (1811-1811)","coverage":"http://dbpedia.org/resource/Boston"}
 {"placeOfPublication":"Boston","series":"aps/41381","title":"Christian Disciple (1813-1818)","coverage":"http://dbpedia.org/resource/Boston"}
 {"placeOfPublication":"Boston","series":"aps/41382","title":"The Christian Disciple and Theological Review (1819-1823)","coverage":"http://dbpedia.org/resource/Boston"}
 {"placeOfPublication":"Boston","series":"aps/41489","title":"Christian Reflector (1838-1848)","coverage":"http://dbpedia.org/resource/Boston"}
@@ -573,7 +573,7 @@
 {"placeOfPublication":"Kennebunk","series":"aps/24546","title":"A Religious Magazine; Containing an Account of the United Churches of Christ, Commonly Called Free - Will Baptist (1811-1822)","coverage":"http://dbpedia.org/resource/Kennebunk%2C_Maine"}
 {"placeOfPublication":"Knoxville","series":"aps/27348","title":"The Holston Conference Messenger (1826-1827)","coverage":"http://dbpedia.org/resource/Knoxville%2C_Tennessee"}
 {"placeOfPublication":"Knoxville","series":"aps/27349","title":"The Messenger for the Holston Conference (1827-1827)","coverage":"http://dbpedia.org/resource/Knoxville%2C_Tennessee"}
-{"placeOfPublication":"Lancaster","series":"aps/24342","title":"Hive (1810-1810)","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
+{"placeOfPublication":"Lancaster","series":"/lccn/sf88090231","title":"Hive (1810-1810)","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
 {"placeOfPublication":"Lancaster","series":"aps/24776","title":"The Lancaster Hive; Devoted to Morality, Literature, Biography, History, Poetry, Agriculture, &c. &c. (1803-1805)","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
 {"placeOfPublication":"Lancaster","series":"aps/25254","title":"Mercersburg Review (1849-1852)","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
 {"placeOfPublication":"Lancaster","series":"aps/25255","title":"Mercersburg Quarterly Review (1853-1856)","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
@@ -1471,7 +1471,7 @@
 {"placeOfPublication":"Utica","series":"aps/35556","title":"The Universalist, Consisting of Essays, Lectures, Extracts and Miscellaneous Pieces; Tending to Explain and Defend the Doctrine of Modern Universalism (1825-1826)","coverage":"http://dbpedia.org/resource/Utica%2C_New_York"}
 {"placeOfPublication":"Warren","series":"aps/34540","title":"Gospel Palladium (1823-1824)","coverage":"http://dbpedia.org/resource/Warren%2C_Rhode_Island"}
 {"placeOfPublication":"Washington","series":"aps/24083","title":"The Columbian Star (1822-1829)","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
-{"placeOfPublication":"Washington","series":"aps/24164","title":"The ____________. By Nonius Nondescript (1826-1826)","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"placeOfPublication":"Washington","series":"/lccn/sf88091849","title":"The ____________. By Nonius Nondescript (1826-1826)","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Washington","series":"aps/24272","title":"The Military and Naval Magazine of the United States (1833-1836)","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Washington","series":"aps/24397","title":"The American Critic and General Review (1820-1820)","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"placeOfPublication":"Washington","series":"aps/24408","title":"Army and Navy Chronicle (1835-1842)","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
