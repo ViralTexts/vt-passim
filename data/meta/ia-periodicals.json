@@ -746,77 +746,76 @@
 {"series":"pub_oxford-and-cambridge-magazine","title":"The Oxford and Cambridge Magazine 1856","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_oxford-magazine-or-universal-museum","title":"Oxford Magazine; Or Universal Museum 1768-1776","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_pall-mall-magazine","title":"The Pall Mall Magazine 1893-1914","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_palladium-a-monthly-journal","title":"Palladium: A Monthly Journal of Literature, Politics, Science and Art 1850-1851"}
-{"series":"pub_pamphleteer-dedicated-to-both-houses-of-parliament","title":"Pamphleteer: Dedicated to Both Houses of Parliament 1813-1828"}
-{"series":"pub_paper-trade-journal","title":"Paper Trade Journal 1872-1986"}
-{"series":"pub_parliamentary-review-and-family-magazine","title":"Parliamentary Review and Family Magazine 1833-1834"}
-{"series":"pub_parterre","title":"Parterre 1816-1817"}
-{"series":"pub_parthenon-a-magazine-of-art-and-literature","title":"Parthenon: A Magazine of Art and Literature 1825-1826"}
-{"series":"pub_paul-pry","title":"Paul Pry 1831-1836"}
-{"series":"pub_peabody-essex-museum-collections","title":"Peabody Essex Museum Collections 1859-2002"}
-{"series":"pub_penn-monthly-devoted-to-literature-art-science","title":"Penn Monthly: Devoted to Literature, Art, Science and Politics 1870-1882"}
+{"series":"pub_palladium-a-monthly-journal","title":"Palladium: A Monthly Journal of Literature, Politics, Science and Art 1850-1851","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_pamphleteer-dedicated-to-both-houses-of-parliament","title":"Pamphleteer: Dedicated to Both Houses of Parliament 1813-1828","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_paper-trade-journal","title":"Paper Trade Journal 1872-1986","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_parliamentary-review-and-family-magazine","title":"Parliamentary Review and Family Magazine 1833-1834","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_parterre","title":"Parterre 1816-1817","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"series":"pub_parthenon-a-magazine-of-art-and-literature","title":"Parthenon: A Magazine of Art and Literature 1825-1826","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_paul-pry","title":"Paul Pry 1831-1836","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"series":"pub_peabody-essex-museum-collections","title":"Peabody Essex Museum Collections 1859-2002","coverage":"http://dbpedia.org/resource/Salem%2C_Massachusetts"}
+{"series":"pub_penn-monthly-devoted-to-literature-art-science","title":"Penn Monthly: Devoted to Literature, Art, Science and Politics 1870-1882","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"series":"pub_pennsylvania-school-journal","title":"Pennsylvania School Journal 1852-1980","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
-{"series":"pub_philadelphier-magazin-fuer-freunde-der-deutschen","title":"Philadelphier Magazin Fuer Freunde der Deutschen Literatur in Amerika 1824-1825"}
-{"series":"pub_philadelphisches-magazin-oder-unterhaltender","title":"Philadelphisches Magazin; Oder, Unterhaltender Gesellschafter Fuer die Deutschen in Amerika 1798"}
-{"series":"pub_philanthropist","title":"Philanthropist 1817"}
-{"series":"pub_philanthropist-or-philosophical-essays-on-politics","title":"Philanthropist; Or, Philosophical Essays on Politics, Government, Morals and Manners 1795-1796"}
-{"series":"pub_philosophical-review","title":"The Philosophical Review 1892-2016"}
-{"series":"pub_photo-era-magazine-the-american-journal-of-photography","title":"Photo-Era Magazine : The American Journal of Photography 1898-1932"}
-{"series":"pub_physical-review","title":"Physical Review 1893-1969"}
-{"series":"pub_physicians-monitor","title":"Physician's Monitor 1870-1885"}
-{"series":"pub_pic-nic","title":"Pic Nic 1803"}
-{"series":"pub_pictorial-review","title":"Pictorial Review 1899-1906"}
-{"series":"pub_pipeline-gas-journal","title":"Pipeline & Gas Journal 1859-2015"}
-{"series":"pub_plantation-a-southern-quarterly-journal","title":"Plantation; A Southern Quarterly Journal 1860"}
-{"series":"pub_platts-oilgram-news","title":"Platt's Oilgram News 1987-2006"}
-{"series":"pub_pmla-publications-modern-language-assoc-of-america","title":"PMLA. Publications of the Modern Language Association of America 1884-2000"}
-{"series":"pub_poet-lore","title":"Poet Lore 1889-2008"}
-{"series":"pub_poetical-courant","title":"Poetical Courant 1705-1706"}
-{"series":"pub_poetical-magazine","title":"Poetical Magazine 1809-1811"}
-{"series":"pub_poetical-register-and-repository-of-fugitive-poetry","title":"Poetical Register, and Repository of Fugitive Poetry 1801-1811"}
-{"series":"pub_popular-astronomy","title":"Popular Astronomy 1893-1951"}
-{"series":"pub_popular-science","title":"Popular Science 1872-2015"}
-{"series":"pub_popular-science-review","title":"Popular Science Review 1862-1881"}
-{"series":"pub_portfolio-an-artistic-periodical","title":"Portfolio, an Artistic Periodical 1870-1893"}
-{"series":"pub_portfolio-monographs-on-artistic-subjects","title":"Portfolio; Monographs on Artistic Subjects 1894-1907"}
-{"series":"pub_potters-examiner-and-emigrants-advocate","title":"Potter's Examiner and Emigrant's Advocate 1843-1850"}
-{"series":"pub_powder-magazine","title":"Powder Magazine 1868-1877"}
-{"series":"pub_practical-magazine","title":"Practical Magazine 1873-1877"}
+{"series":"pub_philadelphier-magazin-fuer-freunde-der-deutschen","title":"Philadelphier Magazin Fuer Freunde der Deutschen Literatur in Amerika 1824-1825","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"series":"pub_philadelphisches-magazin-oder-unterhaltender","title":"Philadelphisches Magazin; Oder, Unterhaltender Gesellschafter Fuer die Deutschen in Amerika 1798","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"series":"pub_philanthropist","title":"Philanthropist 1817","coverage":"http://dbpedia.org/resource/Mount_Pleasant%2C_Ohio"}
+{"series":"pub_philanthropist-or-philosophical-essays-on-politics","title":"Philanthropist; Or, Philosophical Essays on Politics, Government, Morals and Manners 1795-1796","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_philosophical-review","title":"The Philosophical Review 1892-2016","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"pub_photo-era-magazine-the-american-journal-of-photography","title":"Photo-Era Magazine : The American Journal of Photography 1898-1932","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"pub_physical-review","title":"Physical Review 1893-1969","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_physicians-monitor","title":"Physician's Monitor 1870-1885","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_pic-nic","title":"Pic Nic 1803","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_pictorial-review","title":"Pictorial Review 1899-1906","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_pipeline-gas-journal","title":"Pipeline & Gas Journal 1859-2015","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_plantation-a-southern-quarterly-journal","title":"Plantation; A Southern Quarterly Journal 1860","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_pmla-publications-modern-language-assoc-of-america","title":"PMLA. Publications of the Modern Language Association of America 1884-2000","coverage":"http://dbpedia.org/resource/Baltimore"}
+{"series":"pub_poet-lore","title":"Poet Lore 1889-2008","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"series":"pub_poetical-courant","title":"Poetical Courant 1705-1706","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_poetical-magazine","title":"Poetical Magazine 1809-1811","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_poetical-register-and-repository-of-fugitive-poetry","title":"Poetical Register, and Repository of Fugitive Poetry 1801-1811","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_popular-astronomy","title":"Popular Astronomy 1893-1951","coverage":"http://dbpedia.org/resource/Northfield%2C_Minnesota"}
+{"series":"pub_popular-science","title":"Popular Science 1872-2015","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_popular-science-review","title":"Popular Science Review 1862-1881","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_portfolio-an-artistic-periodical","title":"Portfolio, an Artistic Periodical 1870-1893","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_portfolio-monographs-on-artistic-subjects","title":"Portfolio; Monographs on Artistic Subjects 1894-1907","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_potters-examiner-and-emigrants-advocate","title":"Potter's Examiner and Emigrant's Advocate 1843-1850","coverage":"http://dbpedia.org/resource/Shelton%2C_Staffordshire"}
+{"series":"pub_powder-magazine","title":"Powder Magazine 1868-1877","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_practical-magazine","title":"Practical Magazine 1873-1877","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_practical-teacher-teachers-art-monthly","title":"Practical Teacher: With Which Is Incorporated the Practical Teacher's Art Monthly 1881-1911","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_prater","title":"Prater 1756"}
-{"series":"pub_presbyterian-and-reformed-review","title":"Presbyterian and Reformed Review 1890-1902"}
-{"series":"pub_presbyterian-quarterly-review","title":"Presbyterian Quarterly Review 1852-1862"}
-{"series":"pub_presbyterian-review","title":"Presbyterian Review 1880-1889"}
-{"series":"pub_present-state-of-the-republick-of-letters","title":"Present State of the Republick of Letters 1728-1736"}
-{"series":"pub_primary-education","title":"Primary Education 1893-1926"}
-{"series":"pub_princeton-magazine","title":"Princeton Magazine 1850-1851"}
+{"series":"pub_prater","title":"Prater 1756","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_presbyterian-and-reformed-review","title":"Presbyterian and Reformed Review 1890-1902","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_presbyterian-quarterly-review","title":"Presbyterian Quarterly Review 1852-1862","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"series":"pub_presbyterian-review","title":"Presbyterian Review 1880-1889","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_present-state-of-the-republick-of-letters","title":"Present State of the Republick of Letters 1728-1736","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_primary-education","title":"Primary Education 1893-1926","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"pub_princeton-magazine","title":"Princeton Magazine 1850-1851","coverage":"http://dbpedia.org/resource/Princeton%2C_New_Jersey"}
 {"series":"pub_printers-circular-and-stationers-and-publishers-gazette","title":"Printers' Circular and Stationers' and Publishers' Gazette 1866-1890","coverage":"http://dbpedia.org/resource/Philadelphia"}
-{"series":"pub_proceedings-of-the-american-philosophical-society","title":"Proceedings of the American Philosophical Society 1838-2015"}
+{"series":"pub_proceedings-of-the-american-philosophical-society","title":"Proceedings of the American Philosophical Society 1838-2015","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"series":"pub_progressive-farmer","title":"Progressive Farmer 1893-1983","coverage":"http://dbpedia.org/resource/Raleigh%2C_North_Carolina"}
-{"series":"pub_prompter","title":"Prompter 1734-1736"}
-{"series":"pub_proof-sheet","title":"Proof Sheet 1867-1880"}
-{"series":"pub_property-casualty-360","title":"Property Casualty 360 1897-2015"}
-{"series":"pub_prospective-review-a-quarterly-journal-of-theology","title":"Prospective Review; A Quarterly Journal of Theology and Literature 1845-1855"}
-{"series":"pub_psychical-review","title":"Psychical Review 1892-1894"}
-{"series":"pub_psychological-monographs","title":"Psychological Monographs 1895-1966"}
-{"series":"pub_psychological-review","title":"Psychological Review 1894-2015"}
-{"series":"pub_public-health-reports","title":"Public Health Reports 1878-2015"}
-{"series":"pub_public-works","title":"Public Works 1896-2015"}
-{"series":"pub_publishers-weekly","title":"Publishers Weekly 1872-2014"}
-{"series":"pub_pulpit-and-rostrum","title":"Pulpit and Rostrum 1858-1866"}
-{"series":"pub_punch","title":"Punch 1841-1992"}
-{"series":"pub_quarterly-journal-of-the-chemical-society-london","title":"The Quaterly Journal of the Chemical Society of London 1849-1861"}
-{"series":"pub_quarterly-musical-review","title":"Quarterly Musical Review 1885-1888"}
-{"series":"pub_quarterly-review-1809","title":"The Quarterly Review 1809-1967"}
-{"series":"pub_quaver","title":"Quaver 1876-1885"}
-{"series":"pub_quiver","title":"Quiver 1861-1926"}
-{"series":"pub_radical-abolitionist","title":"Radical Abolitionist 1855-1858"}
-{"series":"pub_radical-review","title":"Radical Review 1877-1878"}
-{"series":"pub_railroad-history","title":"Railroad History 1921-2013"}
+{"series":"pub_prompter","title":"Prompter 1734-1736","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_proof-sheet","title":"Proof Sheet 1867-1880","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"series":"pub_property-casualty-360","title":"Property Casualty 360 1897-2015","coverage":"http://dbpedia.org/resource/Cincinnati"}
+{"series":"pub_prospective-review-a-quarterly-journal-of-theology","title":"Prospective Review; A Quarterly Journal of Theology and Literature 1845-1855","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_psychical-review","title":"Psychical Review 1892-1894","coverage":"http://dbpedia.org/resource/Grafton%2C_Massachusetts"}
+{"series":"pub_psychological-monographs","title":"Psychological Monographs 1895-1966","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
+{"series":"pub_psychological-review","title":"Psychological Review 1894-2015","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"series":"pub_public-health-reports","title":"Public Health Reports 1878-2015","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"series":"pub_public-works","title":"Public Works 1896-2015","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_publishers-weekly","title":"Publishers Weekly 1872-2014","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_pulpit-and-rostrum","title":"Pulpit and Rostrum 1858-1866","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_punch","title":"Punch 1841-1992","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_quarterly-journal-of-the-chemical-society-london","title":"The Quaterly Journal of the Chemical Society of London 1849-1861","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_quarterly-musical-review","title":"Quarterly Musical Review 1885-1888","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_quarterly-review-1809","title":"The Quarterly Review 1809-1967","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_quaver","title":"Quaver 1876-1885","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_quiver","title":"Quiver 1861-1926","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_radical-abolitionist","title":"Radical Abolitionist 1855-1858","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_radical-review","title":"Radical Review 1877-1878","coverage":"http://dbpedia.org/resource/New_Bedford%2C_Massachusetts"}
+{"series":"pub_railroad-history","title":"Railroad History 1921-2013","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_railway-age","title":"Railway Age 1870-2016","coverage":"http://dbpedia.org/resource/Chicago"}
-{"series":"pub_railway-locomotives-and-cars","title":"Railway Locomotives and Cars 1832-1974"}
-{"series":"pub_rambler","title":"Rambler 1750-1752"}
-{"series":"pub_rambler-a-catholic-journal-and-review","title":"Rambler; A Catholic Journal and Review of Home and Foreign Literature 1848-1862"}
+{"series":"pub_railway-locomotives-and-cars","title":"Railway Locomotives and Cars 1832-1974","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_rambler","title":"Rambler 1750-1752","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_rambler-a-catholic-journal-and-review","title":"Rambler; A Catholic Journal and Review of Home and Foreign Literature 1848-1862","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_reader-a-review-of-literature-science-and-art","title":"Reader: a Review of Literature, Science, and Art 1863-1867"}
 {"series":"pub_recreative-science-record-of-intellectual-observation","title":"Recreative Science: A Record and Remembrancer of Intellectual Observation 1859-1862"}
 {"series":"pub_reedys-mirror","title":"Reedy's Mirror 1899-1920"}
@@ -856,26 +855,26 @@
 {"series":"pub_school-and-college-devoted-to-secondary-and-higher","title":"School and College, Devoted to Secondary and Higher Education 1892"}
 {"series":"pub_school-friend-and-ohio-school-journal","title":"School Friend and Ohio School Journal 1846-1851"}
 {"series":"pub_school-journal","title":"School Journal 1872-1914","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"series":"pub_science","title":"Science 1883-2016"}
-{"series":"pub_science-a-weekly-record-of-scientific-progress","title":"Science: A Weekly Record of Scientific Progress 1880-1881"}
+{"series":"pub_science","title":"Science 1883-2016","coverage":"http://dbpedia.org/resource/Cambridge%2C_Massachusetts"}
+{"series":"pub_science-a-weekly-record-of-scientific-progress","title":"Science: A Weekly Record of Scientific Progress 1880-1881","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_science-progress-a-quarterly-review-of-current-scientific-investigation","title":"Science Progress: A Quarterly Review of Current Scientific Investigation"}
 {"series":"pub_scientific-american-supplement","title":"Scientific American Supplement 1876-1919"}
 {"series":"pub_scientific-journal","title":"Scientific Journal 1818-1820"}
-{"series":"pub_scottish-review","title":"Scottish Review 1882-1920"}
+{"series":"pub_scottish-review","title":"Scottish Review 1882-1920","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_scourge","title":"Scourge"}
 {"series":"pub_scourge-and-satirist-or-literary-theatrical-and-miscellaneous-magazine","title":"Scourge and Satirist or Literary, Theatrical and Miscellaneous Magazine 1816"}
 {"series":"pub_seafaring","title":"Seafaring 1888-1892"}
 {"series":"pub_sewanee-review","title":"The Sewanee Review 1892-2010"}
 {"series":"pub_shaftesbury-magazine","title":"Shaftesbury Magazine"}
-{"series":"pub_sierra","title":"Sierra 1893-2016"}
+{"series":"pub_sierra","title":"Sierra 1893-2016","coverage":"http://dbpedia.org/resource/San_Francisco"}
 {"series":"pub_silent-world","title":"Silent World 1871-1876","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"series":"pub_site-selection","title":"Site Selection 1884-2014"}
 {"series":"pub_sixpenny-magazine","title":"Sixpenny Magazine 1861-1868","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_smalleys-magazine","title":"Smalley's Magazine 1883-1903","coverage":"http://dbpedia.org/resource/Saint_Paul%2C_Minnesota"}
 {"series":"pub_smokers-magazine","title":"Smokers Magazine 1889-1904"}
 {"series":"pub_solicitors-journal","title":"The Solicitors' Journal 1857-2012"}
-{"series":"pub_southern-magazine","title":"The Southern Magazine 1868-1875"}
-{"series":"pub_southern-medical-record","title":"Southern Medical Record 1871-1899"}
+{"series":"pub_southern-magazine","title":"The Southern Magazine 1868-1875","coverage":"http://dbpedia.org/resource/Baltimore"}
+{"series":"pub_southern-medical-record","title":"Southern Medical Record 1871-1899","coverage":"http://dbpedia.org/resource/Atlanta"}
 {"series":"pub_southern-teacher","title":"Southern Teacher 1859-1861"}
 {"series":"pub_southwestern-historical-quarterly","title":"Southwestern Historical Quarterly 1897-2016"}
 {"series":"pub_speaker-the-liberal-review","title":"The Speaker. The Liberal Review 1890-1907"}
@@ -887,7 +886,7 @@
 {"series":"pub_spectator-uk","title":"The Spectator 1828-2014","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_sphinx-a-journal-of-humour-and-criticism","title":"Sphinx. A Journal of Humour and Criticism 1868-1871"}
 {"series":"pub_sports-afield","title":"Sports Afield 1891-2010"}
-{"series":"pub_strand-magazine","title":"Strand Magazine 1891-1946"}
+{"series":"pub_strand-magazine","title":"Strand Magazine 1891-1946","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_structural-engineer","title":"Structural Engineer"}
 {"series":"pub_student-and-intellectual-observer-of-science-literature","title":"Student and Intellectual Observer of Science, Literature and Art 1868-1871"}
 {"series":"pub_student-or-the-oxford-and-cambridge-monthly-miscellany","title":"Student; Or, the Oxford and Cambridge Monthly Miscellany 1750-1751"}
