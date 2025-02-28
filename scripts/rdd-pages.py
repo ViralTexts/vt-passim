@@ -1,7 +1,7 @@
 import argparse, os
 from re import sub
 from pyspark.sql import SparkSession, Row
-from pyspark.sql.functions import col, collect_list, explode, sort_array, struct, udf
+from pyspark.sql.functions import col, collect_list, sort_array, struct, udf
 import pyspark.sql.functions as f
 from io import StringIO, BytesIO
 from lxml import etree
@@ -10,7 +10,7 @@ from dataclasses import dataclass
 ns = {None: 'http://www.tei-c.org/ns/1.0'}
 
 def cleanText(s):
-    return sub(r'\n[ ]+', '\n', sub(r'[ \t]+', ' ', s))
+    return sub(r'[ ]+\n', '\n', sub(r'\n[ ]+', '\n', sub(r' [ ]+', ' ', s.replace('\t', ' '))))
 
 class BookStream(object):
     lines = set(['head', 'p', 'row'])
@@ -25,16 +25,21 @@ class BookStream(object):
 
     def start(self, elem, attrib):
         tag = etree.QName(elem).localname
-        if not self.print and tag == 'date' and 'when' in attrib and len(attrib['when']) == 10:
-            self.date = attrib['when']
-        if tag == 'pb' and self.print:
-            if self.buf != '':
-                self.res.append(Row(id=self.book+'_'+str(self.seq), date=self.date,
-                                    seq=self.seq, text=cleanText(self.buf)))
-                self.seq += 1
-                self.buf = ''
-        elif tag == 'lb' and self.print:
-            self.buf += '\n'
+        if self.print:
+            if tag == 'pb':
+                if self.buf != '':
+                    self.res.append(Row(id=self.book+'_'+str(self.seq), date=self.date,
+                                        seq=self.seq, text=cleanText(self.buf)))
+                    self.seq += 1
+                    self.buf = ''
+            elif tag == 'lb':
+                self.buf += '\n'
+            elif tag == 'unclear':
+                self.buf += '[['
+        else:
+            if tag == 'date' and 'when' in attrib and len(attrib['when']) == 10:
+                self.date = attrib['when']
+            
             
     def end(self, elem):
         tag = etree.QName(elem).localname
@@ -44,6 +49,8 @@ class BookStream(object):
             self.buf += '\n'
         elif (tag in self.spacers) and self.print:
             self.buf += ' '
+        elif tag == 'unclear' and self.print:
+            self.buf += ']]'
 
     def data(self, data):
         if self.print:
@@ -79,14 +86,14 @@ if __name__ == '__main__':
 
     config = parser.parse_args()
 
-    spark = SparkSession.builder.appName('DTA Pages').getOrCreate()
+    spark = SparkSession.builder.appName(parser.description).getOrCreate()
 
     spark.read.load(config.inputPath, format='binaryFile', recursiveFileLookup='true',
                     pathGlobFilter='*.xml'
         ).rdd.flatMap(lambda r: parseFile(r.path, r.content)
         ).toDF(
         ).withColumn('seq', col('seq').cast('int')
-        ).write.parquet(config.outputPath, mode='overwrite')
+        ).write.save(config.outputPath, mode='overwrite')
 
     spark.stop()
 
