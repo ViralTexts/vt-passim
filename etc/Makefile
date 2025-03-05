@@ -7,6 +7,7 @@ RAW=/work/proj_cssh/nulab/corpora
 NRAW=/work/nulab/corpora
 SWORKERS=10
 SMEM=40
+QTIME= --time 1-0
 
 N=25
 M=5
@@ -17,11 +18,11 @@ VT=/home/dasmith/src/vt-passim
 # srun -x c0178 -p ${QUEUE} -N 1 -c 2 --mem=40G -d "after:$$SPARK_MASTER_JOBID" bash -c "$(1)"; \
 # scancel $$SPARK_WORKER_JOBID $$SPARK_MASTER_JOBID
 
-spark_run = WORKERS=${WORKERS} CORES=${CORES} CMEM=${CMEM} QUEUE=${QUEUE} source run-saspark.sh; \
-srun -x c0178,c3085 --time 1-0 -p ${QUEUE} -N 1 -c 2 --mem=40G -d "after:$$SPARK_MASTER_JOBID" bash -c "$(1)"; \
+spark_run = WORKERS=${WORKERS} CORES=${CORES} CMEM=${CMEM} QUEUE=${QUEUE} QTIME="${QTIME}" source run-saspark.sh; \
+srun -x c0159,c0166,c0178,c3085 ${QTIME} -p ${QUEUE} -N 1 -c 2 --mem=40G -d "after:$$SPARK_MASTER_JOBID" bash -c "$(1)"; \
 scancel $$SPARK_WORKER_JOBID $$SPARK_MASTER_JOBID
 
-slurm_run = srun --time 1-0 -p ${QUEUE} -N 1 -c $(SWORKERS) --mem=$(SMEM)G bash -c "SPARK_SUBMIT_ARGS='--driver-memory $(SMEM)G --executor-memory $(SMEM)G' $(1)";
+slurm_run = srun ${QTIME} -p ${QUEUE} -N 1 -c $(SWORKERS) --mem=$(SMEM)G bash -c "SPARK_SUBMIT_ARGS='--driver-memory $(SMEM)G --executor-memory $(SMEM)G' $(1)";
 
 .SECONDARY:
 
@@ -118,8 +119,10 @@ transcript.parquet/_SUCCESS:	../Going-the-Rounds/transcriptions
 eq := =
 comma := ,
 
+#	serial/open=true/corpus=bsb/_SUCCESS \
+#	serial/open=true/corpus=sbb/_SUCCESS \
+
 serial/_SUCCESS:	serial/open$(eq)true/corpus$(eq)ca/_SUCCESS \
-	serial/open=true/corpus=bsb/_SUCCESS \
 	serial/open=true/corpus=ddd/_SUCCESS \
 	serial/open=true/corpus=europeana/_SUCCESS \
 	serial/open=true/corpus=finnish/_SUCCESS \
@@ -129,7 +132,6 @@ serial/_SUCCESS:	serial/open$(eq)true/corpus$(eq)ca/_SUCCESS \
 	serial/open=true/corpus=panewsarchive/_SUCCESS \
 	serial/open=true/corpus=nebnewspapers/_SUCCESS \
 	serial/open=true/corpus=onb/_SUCCESS \
-	serial/open=true/corpus=sbb/_SUCCESS \
 	serial/open=true/corpus=trove/_SUCCESS \
 	serial/open=false/corpus=aps/_SUCCESS \
 	serial/open=false/corpus=gale-uk/_SUCCESS \
@@ -143,6 +145,9 @@ ca-raw/_SUCCESS:	$(patsubst %.tar.bz2,ca-raw/batch=%/_SUCCESS,$(notdir $(wildcar
 
 ca-raw/batch$(eq)%/_SUCCESS:	$(RAW)/chroniclingamerica/raw/%.tar.bz2
 	$(call slurm_run,export SPARK_SUBMIT_ARGS+=' --conf spark.sql.adaptive.enabled=true'; vtrun ChronAm $< $(dir $@))
+
+gale-us-text/_SUCCESS:	$(RAW)/gale/us/XML
+	$(call spark_run,vtrun ncnp-load.py $< $(dir $@))
 
 gale-us-raw/_SUCCESS:	$(RAW)/gale/us/XML
 	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=200'; vtrun NCNP $< $(VT)/data/gale.json $(dir $@))
@@ -162,7 +167,7 @@ serial/open$(eq)true/corpus$(eq)europeana/_SUCCESS:	$(RAW)/europeana/newspapers-
 serial/open$(eq)true/corpus$(eq)finnish/_SUCCESS:	$(RAW)/finnish/every
 	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=50 --conf spark.sql.shuffle.partitions=50'; vtrun MetsAltoZipped $< $(dir $@))
 
-serial/open$(eq)true/corpus$(eq)ia/_SUCCESS:	../ia/periodicals.parquet ../ia/kynp.parquet
+serial/open$(eq)true/corpus$(eq)ia/_SUCCESS:	../ia/periodicals.parquet ../ia/kynp.parquet ia-maps/aps-ia.json ia-maps/gale-ia.json ia-maps/moa-ia.json
 	$(call spark_run,vtrun recode-series.py ia-maps '../ia/{periodicals$(comma)kynp}.parquet' $(dir $@))
 
 serial/open$(eq)true/corpus$(eq)moa/_SUCCESS:	$(RAW)/moa/magazines
@@ -236,7 +241,7 @@ ddd.json/_SUCCESS:	$(RAW)/DDD/meta.json
 	$(call spark_run,$(VT)/bin/vtrun MetsMetaDDD $(RAW)/DDD/meta.json $(dir $@))
 
 meta/lccn.json:	$(RAW)/chroniclingamerica/lccn
-	$(call slurm_run,$(VT)/bin/vtrun LCMerge $< $(VT)/data/default-lccn-places.json $(VT)/data/dbpedia-canonical.json lccn.json)
+	$(call slurm_run,$(VT)/bin/vtrun LCMerge $< $(VT)/data/default-lccn-places.json $(VT)/data/dbpedia-canonical.json lccn.json &&  lccn.json/part* > $@)
 
 marc.parquet/_SUCCESS:	$(RAW)/chroniclingamerica/marc-raw.xml
 	$(call slurm_run,vtrun marc-parse-xml.py $< $(dir $@))
@@ -365,7 +370,10 @@ srcgut.out/slim.parquet/_SUCCESS:	srcgut.out/full-extents.parquet/_SUCCESS
 %.parquet/_SUCCESS:	%.txt
 	$(call spark_run,vtrun series-filter.py serial/open$(eq)true/corpus$(eq)ca/ $< $(dir $@))
 
-gut.txt/_SUCCESS:	../gutenberg/pg.parquet/_SUCCESS
+pg-8M.parquet/_SUCCESS:	../gutenberg/data/text ../gutenberg/metadata/metadata.csv
+	$(call spark_run,vtrun load-gutenberg.py $^ $(dir $@))
+
+gut.txt/_SUCCESS:	pg-8M.parquet/_SUCCESS
 	$(call spark_run,vtrun gut-words.py --min-count 40 $(dir $<) $(dir $@))
 
 ## Max 26-year (= 9497 day) lag
@@ -383,6 +391,9 @@ M=5
 
 %-raym.out/out.parquet/_SUCCESS:	%.parquet
 	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --log-level INFO --beam 20 -n 25 --fields ref 'date(date) as day' 'xxhash64(group) as gid' 'coalesce(int(ed),0) as ed' --filterpairs '(uid <> uid2) AND (ref2 = 0) AND ((ref = 1) OR ((gid <> gid2 AND day < day2 AND datediff(day2, day) < 367) OR (gid = gid2 AND ((day < day2 AND datediff(day2,day) < 32) OR (day = day2 AND ed < ed2)))))' --input-format parquet --output-format parquet $< $(dir $(patsubst %/,%,$(dir $@))))
+
+%-rfym.out/out.parquet/_SUCCESS:	%.parquet
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --log-level INFO --refpref --beam 20 -n 25 --fields ref 'date(date) as day' 'xxhash64(group) as gid' 'coalesce(int(ed),0) as ed' --filterpairs '(uid <> uid2) AND (ref2 = 0) AND ((ref = 1) OR ((gid <> gid2 AND day < day2 AND datediff(day2, day) < 367) OR (gid < gid2 AND day = day2) OR (gid = gid2 AND ((day < day2 AND datediff(day2,day) < 32) OR (day = day2 AND ed < ed2)))))' --input-format parquet --output-format parquet $< $(dir $(patsubst %/,%,$(dir $@))))
 
 # 3 years (to account for books)
 %-bp.out/out.parquet/_SUCCESS:	%.parquet
@@ -438,7 +449,7 @@ tcp-%/lines.json/_SUCCESS:	tcp-%/out.parquet/_SUCCESS
 	$(call spark_run,/home/dasmith/src/acdc_train/bin/acdc-run wit-lines.py --fields book -- $(dir $<) $(dir $@))
 
 %/lines.json/_SUCCESS:	%/out.parquet/_SUCCESS
-	$(call spark_run,/home/dasmith/src/acdc_train/bin/acdc-run wit-lines.py --fields series date -- $(dir $<) $(dir $@))
+	$(call spark_run,/home/dasmith/src/acdc_train/bin/acdc-run wit-lines.py --no-coords --fields series date -- $(dir $<) $(dir $@))
 
 # add corpus field to above
 
@@ -480,12 +491,14 @@ c1869-general.ocr/%:	c1869-redo.parquet/%
 	mkdir -p $(dir $@)
 	$(call spark_run,vtrun reocr-lines.py --base /work/proj_cssh/nulab/corpora/chroniclingamerica/data/batches $< models/ca50-sc_best.mlmodel $@)
 
-s08-general.ocr/_SUCCESS:	$(subst .parquet,-general.ocr,$(wildcard s08.parquet/year*/month*))
+s08-general.ocr/_SUCCESS:	$(subst .parquet,-general.ocr,$(wildcard s08.parquet/corpus*/year*/month*))
 	touch $@
 
 s08-general.ocr/%:	s08.parquet/%
 	mkdir -p $(dir $@)
-	$(call spark_run,vtrun reocr-lines.py --base https://chroniclingamerica.loc.gov/data/batches/ $< models/ca50-sc_best.mlmodel $@)
+	$(call spark_run,vtrun reocr-lines.py $< models/ca50-sc_best.mlmodel $@)
+
+#$(call spark_run,vtrun reocr-lines.py --base https://chroniclingamerica.loc.gov/data/batches/ $< models/ca50-sc_best.mlmodel $@)
 
 
 c1869-ca10k.ocr/_SUCCESS:	$(subst redo.parquet,ca10k.ocr,$(wildcard c1869-redo.parquet/series*))
@@ -495,17 +508,26 @@ c1869-ca10k.ocr/%:	c1869-redo.parquet/%
 	mkdir -p $(dir $@)
 	$(call spark_run,vtrun reocr-lines.py $< models/ca10k-$(word 3,$(subst 2F, ,$*))-sc_best.mlmodel $@)
 
+ia-maps/%.json:	%/series-map/_SUCCESS
+	cp $(dir $<)/part* $@
+
 %/series-map/_SUCCESS:	%/tmp/extents.parquet/_SUCCESS
 	$(call spark_run,vtrun issue-overlap.py $(dir $<) $*/input $(dir $@))
 
-aps-ia/tmp/extents.parquet/_SUCCESS:	aps-ia/input
-	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --to-extents --fields ref 'date(date) as day' --filterpairs 'ref = 1 AND ref2 = 0 AND day = day2' --input-format parquet --output-format parquet $< aps-ia)
+aps-ia/tmp/extents.parquet/_SUCCESS:	serial/open$(eq)false/corpus$(eq)aps/_SUCCESS aps-ia/input
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --to-extents --fields ref 'date(date) as day' --filterpairs 'ref = 1 AND ref2 = 0 AND day = day2' --input-format parquet --output-format parquet aps-ia/input aps-ia)
 
-gale-ia/tmp/extents.parquet/_SUCCESS:	gale-ia/input
-	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --to-extents --fields ref 'date(date) as day' --filterpairs 'ref = 1 AND ref2 = 0 AND day = day2' --input-format parquet --output-format parquet $< gale-ia)
+gale-ia/tmp/extents.parquet/_SUCCESS:	serial/open$(eq)false/corpus$(eq)gale-us/_SUCCESS gale-ia/input
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --to-extents --fields ref 'date(date) as day' --filterpairs 'ref = 1 AND ref2 = 0 AND day = day2' --input-format parquet --output-format parquet gale-ia/input gale-ia)
 
-moa-ia/tmp/extents.parquet/_SUCCESS:	moa-ia/input
-	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --to-extents --fields ref 'date(date) as day' --filterpairs 'ref = 1 AND ref2 = 0 AND day = day2' --input-format parquet --output-format parquet $< moa-ia)
+gale-npa/tmp/extents.parquet/_SUCCESS:	serial/open$(eq)false/corpus$(eq)gale-us/_SUCCESS gale-npa/input
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --to-extents --fields ref 'date(date) as day' --filterpairs 'ref = 1 AND ref2 = 0 AND day = day2' --input-format parquet --output-format parquet gale-npa/input gale-npa)
+
+all-npa/tmp/extents.parquet/_SUCCESS:	all-npa/input
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --log-level INFO --to-extents --fields ref 'date(date) as day' --filterpairs 'ref = 1 AND ref2 = 0 AND day = day2' --input-format parquet --output-format parquet all-npa/input all-npa)
+
+moa-ia/tmp/extents.parquet/_SUCCESS:	serial/open$(eq)true/corpus$(eq)moa/_SUCCESS moa-ia/input
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --to-extents --fields ref 'date(date) as day' --filterpairs 'ref = 1 AND ref2 = 0 AND day = day2' --input-format parquet --output-format parquet moa-ia/input moa-ia)
 
 usnd.json/_SUCCESS:
 	$(call spark_run,vtrun ca-dump.py serial $(dir $@))
@@ -521,6 +543,12 @@ gale-us.csv/_SUCCESS:	serial/open$(eq)false/corpus$(eq)gale-us/_SUCCESS
 
 %/cluster-period.parquet/_SUCCESS:	%/pretty.parquet/_SUCCESS
 	$(call spark_run,vtrun cluster-period.py --size 2 $(dir $<) $(dir $@))
+
+%/split-period.parquet/_SUCCESS:	%/split.parquet/_SUCCESS
+	$(call spark_run,vtrun cluster-period.py --size 2 $(dir $<) $(dir $@))
+
+%/split-predict.out/_SUCCESS:	%/split-period.parquet/_SUCCESS
+	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.driver.maxResultSize=4G'; vtrun cascade-predict.py $*/split.parquet $(dir $<) $(dir $@))
 
 %/cluster-spread.csv/_SUCCESS:	%/cluster-period.parquet/_SUCCESS
 	$(call slurm_run,vtrun cluster-spread.py $(dir $<) $(dir $@))
@@ -556,7 +584,7 @@ ITER=20
 	$(call spark_run,vtrun cascade-features.py --iterations 100 --seed $(SEED) --rate 10 --input $*/pretty.parquet --cluster-stats $*/cluster-period.parquet --filter 'groupR0 > 1 AND issues < 1000' --witness-fields 'coverage AS city$(comma) topdiv AS state$(comma) country$(comma) series$(comma) year(date) AS year$(comma) nreturn$(comma) issues$(comma) lag75p' --pair-fields '(series <=> series2) AS sameseries$(comma) (country <=> country2) AS samecountry$(comma) (state <=> state2) AS samestate$(comma) (city <=> city2) AS samecity$(comma) CAST(year2 AS string) AS ys$(comma) CAST(CAST(log1p(abs(lag)) AS int) AS string) AS lagbin' --formula 'series*series2 + city*city2 + sameseries + samecity + samestate + samecountry + lagbin + city:ys + city2:ys' $(dir $@))
 
 %/casc-2s-split.model/iter0$(ITER).gz:
-	$(call spark_run,vtrun cascade-features.py --iterations $(ITER) --rate 10 --input $*/split.parquet --filter 'size < 1000' --witness-fields \"coverage AS city$(comma) topdiv AS state$(comma) country$(comma) series$(comma) syear$(comma) daylag$(comma) (CASE WHEN daylag < 2 THEN 'daily' WHEN daylag < 8 THEN 'weekly' ELSE 'longer' END) AS freq\" --pair-fields '(series <=> series2) AS sameseries$(comma) (country <=> country2) AS samecountry$(comma) (state <=> state2) AS samestate$(comma) (city <=> city2) AS samecity$(comma) CAST(syear AS string) AS ys$(comma) CAST(CAST(log1p(abs(lag)) AS int) AS string) AS lagbin' --formula 'series + series2 + city*city2 + state*state2 + country*country2 + sameseries + samecity + samestate + samecountry + lagbin + city:ys + city2:ys' $(dir $@))
+	$(call spark_run,vtrun cascade-features.py --iterations $(ITER) --rate 10 --input $*/split.parquet --cluster-stats $*/split-period.parquet --filter 'size < 1000' --witness-fields \"coverage AS city$(comma) topdiv AS state$(comma) country$(comma) series$(comma) syear$(comma) daylag$(comma) (CASE WHEN daylag < 2 THEN 'daily' WHEN daylag < 8 THEN 'weekly' ELSE 'longer' END) AS freq$(comma) year(date) AS year$(comma) nreturn$(comma) issues$(comma) lag75p\" --pair-fields '(series <=> series2) AS sameseries$(comma) (country <=> country2) AS samecountry$(comma) (state <=> state2) AS samestate$(comma) (city <=> city2) AS samecity$(comma) CAST(syear AS string) AS ys$(comma) CAST(CAST(log1p(abs(lag)) AS int) AS string) AS lagbin' --formula 'series + series2 + city*city2 + state*state2 + country*country2 + sameseries + samecity + samestate + samecountry + lagbin + city:ys + city2:ys' $(dir $@))
 
 #$(call spark_run,vtrun cascade-features.py --iterations $(ITER) --rate 10 --input $*/pretty.parquet --cluster-stats $*/cluster-period.parquet --filter 'groupR0 > 1 AND issues < 1000' --witness-fields \"coverage AS city$(comma) topdiv AS state$(comma) country$(comma) series$(comma) year(date) AS year$(comma) nreturn$(comma) issues$(comma) lag75p$(comma) daylag$(comma) (CASE WHEN daylag < 2 THEN 'daily' WHEN daylag < 8 THEN 'weekly' ELSE 'longer' END) AS freq\" --pair-fields '(series <=> series2) AS sameseries$(comma) (country <=> country2) AS samecountry$(comma) (state <=> state2) AS samestate$(comma) (city <=> city2) AS samecity$(comma) CAST(year2 AS string) AS ys$(comma) CAST(CAST(log1p(abs(lag)) AS int) AS string) AS lagbin' --formula 'series*series2 + city*city2 + state*state2 + country*country2 + sameseries + samecity + samestate + samecountry + lagbin + city:ys + city2:ys' $(dir $@))
 #	$(call spark_run,vtrun cascade-features.py --iterations $(ITER) --rate 10 --input $*/pretty.parquet --cluster-stats $*/cluster-period.parquet --filter 'groupR0 > 1 AND issues < 1000' --witness-fields \"coverage AS city$(comma) topdiv AS state$(comma) country$(comma) series$(comma) year(date) AS year$(comma) nreturn$(comma) issues$(comma) lag75p$(comma) daylag$(comma) (CASE WHEN daylag < 2 THEN 'daily' WHEN daylag < 8 THEN 'weekly' ELSE 'longer' END) AS freq\" --pair-fields '(series <=> series2) AS sameseries$(comma) (country <=> country2) AS samecountry$(comma) (state <=> state2) AS samestate$(comma) (city <=> city2) AS samecity$(comma) CAST(CAST(log1p(abs(lag)) AS int) AS string) AS lagbin' --formula 'series*series2 + city*city2 + state*state2 + country*country2 + sameseries + samecity + samestate + samecountry + lagbin' $(dir $@))
@@ -596,5 +624,14 @@ YEARS=$(shell seq 1840 1899)
 rdd6065-n7m5.out/out.parquet/_SUCCESS:	rdd6065.parquet/_SUCCESS
 	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --docwise --log-level INFO --beam 100 -n 7 -m 5 --fields ref 'date(date) as day' --filterpairs '(ref = 1) AND (ref2 = 0) AND (day = day2)' --input-format parquet --output-format parquet $(dir $<) $(dir $(patsubst %/,%,$(dir $@))))
 
+rdd6065-n25m5.out/out.parquet/_SUCCESS:	rdd6065.parquet/_SUCCESS
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --docwise --log-level INFO --beam 100 -n 25 -m 5 --fields ref 'date(date) as day' --filterpairs '(ref = 1) AND (ref2 = 0) AND (day = day2)' --input-format parquet --output-format parquet $(dir $<) $(dir $(patsubst %/,%,$(dir $@))))
+
 rdd6065-ca-n7m5.out/out.parquet/_SUCCESS:	rdd6065-ca.parquet/_SUCCESS
 	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --docwise --log-level INFO --beam 100 -n 7 -m 5 --fields ref 'date(date) as day' --filterpairs '(ref = 1) AND (ref2 = 0) AND (day = day2)' --input-format parquet --output-format parquet $(dir $<) $(dir $(patsubst %/,%,$(dir $@))))
+
+rdd6065-open-n7m5.out/out.parquet/_SUCCESS:	rdd6065-open.parquet/_SUCCESS
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --all-pairs --docwise --log-level INFO --beam 100 -n 7 -m 5 --fields ref --filterpairs '(ref2 = 0) AND (uid <> uid2)' --input-format parquet --output-format parquet $(dir $<) $(dir $(patsubst %/,%,$(dir $@))))
+
+rdd6065-open-n25m5.out/out.parquet/_SUCCESS:	rdd6065-open.parquet/_SUCCESS
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --all-pairs --docwise --log-level INFO --beam 100 -n 25 -m 5 --fields ref --filterpairs '(ref2 = 0) AND (uid <> uid2)' --input-format parquet --output-format parquet $(dir $<) $(dir $(patsubst %/,%,$(dir $@))))
