@@ -1,21 +1,32 @@
-import argparse
+import argparse, sys
 from pyspark.sql import SparkSession, Row
 import pyspark.sql.functions as f
 
 def main(config):
     spark = SparkSession.builder.appName('Sample Clusters').getOrCreate()
 
-    raw = spark.read.load(config.inputPath)
+    raw = spark.read.load(config.inputPath).filter(config.filter)
 
-    pop = raw.filter(config.filter).groupBy('cluster').agg(
-        f.min(f.struct('date', 'uid'))['uid'].alias('uid'))
-    pop.cache()
+    if not config.group or config.group == '':
+        pop = raw.groupBy('cluster').agg(
+            f.min(f.struct('date', 'uid'))['uid'].alias('uid'))
+        pop.cache()
 
-    total = pop.count()
+        total = pop.count()
 
-    sample_fraction = max(min(config.samples / total, 1.0), 0.0)
+        sample_fraction = max(min(config.samples / total, 1.0), 0.0)
 
-    samples = pop.sample(fraction=sample_fraction).limit(config.samples)
+        samples = pop.sample(fraction=sample_fraction).limit(config.samples)
+    else:
+        pop = raw.groupBy('cluster'
+                ).agg(f.min(f.struct('date', 'uid', f.expr(config.group).alias('group'))).alias('info')
+                ).select('cluster', 'info.*')
+        pop.cache()
+
+        fractions = {r['group']:(config.samples / r['count'])
+                     for r in pop.groupBy('group').count().collect()}
+        samples = pop.sampleBy('group', fractions=fractions)
+
     samples.cache()
 
     jfields = ['cluster', 'uid']
@@ -36,6 +47,7 @@ if __name__ == '__main__':
     parser.add_argument('-a', '--all', action='store_true', help='Output all reprints')
     parser.add_argument('-f', '--filter', type=str, default='size >= 10 AND pboiler < 0.2',
                         help='SQL query for reprints')
+    parser.add_argument('-g', '--group', type=str, default='', help='Group for stratification')
     parser.add_argument('-s', '--samples', type=int, default=1000,
                         help='Number of samples')
     parser.add_argument('inputPath', metavar='<path>', help='input path')
