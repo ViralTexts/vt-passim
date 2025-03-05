@@ -99,13 +99,13 @@ if __name__ == "__main__":
         print(y)
         shard = feats.filter(col('syear') == y).withColumn('resp', f.log1p('lag75p'))
         shard.cache()
-        # lr = LogisticRegression(regParam=args.regParam,
-        #                         featuresCol='counts', standardization=False)
-        # model = lr.fit(shard)
-        # mfile = '%s/c%d' % (args.outdir, y)
-        # print(mfile)
-        # model.save(mfile)
-        # cparams.append(np.insert(model.coefficients.toArray(), 0, model.intercept))
+        lr = LogisticRegression(regParam=args.regParam,
+                                featuresCol='counts', standardization=False)
+        model = lr.fit(shard)
+        mfile = '%s/c%d' % (args.outdir, y)
+        print(mfile)
+        model.save(mfile)
+        cparams.append(np.insert(model.coefficients.toArray(), 0, model.intercept))
 
         lr = LinearRegression(regParam=args.regParam,
                               featuresCol='counts', labelCol='resp', standardization=False)
@@ -117,10 +117,10 @@ if __name__ == "__main__":
 
         shard.unpersist()
 
-    # df = pd.DataFrame(np.column_stack(cparams),
-    #                   columns=['s' + str(y) for y in syears],
-    #                   index=np.insert(vocab, 0, '(Intercept)'))
-    # df.to_csv(args.outdir + '/params.csv', float_format='%.6f')
+    df = pd.DataFrame(np.column_stack(cparams),
+                      columns=['s' + str(y) for y in syears],
+                      index=np.insert(vocab, 0, '(Intercept)'))
+    df.to_csv(args.outdir + '/params.csv', float_format='%.6f')
         
     df = pd.DataFrame(np.column_stack(rparams),
                       columns=['s' + str(y) for y in syears],
