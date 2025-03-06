@@ -57,9 +57,13 @@ def parseAlto(batchfile, fname, content):
     regions = []
     for block in tree.findall('//TextBlock', namespaces=ns):
         for line in block.findall('./TextLine', namespaces=ns):
+            tok = 0
             for e in line.iter():
                 tag = e.tag
                 if tag.endswith('}String'):
+                    if tok > 0:
+                        text += ' '
+                    tok += 1
                     start = len(text)
                     text += e.get('CONTENT')
                     try:
@@ -71,8 +75,6 @@ def parseAlto(batchfile, fname, content):
                                                      int(float(e.get('HEIGHT'))))))
                     except:
                         1
-                elif tag.endswith('}SP'):
-                    text += ' '
                 elif tag.endswith('}HYP'):
                     text += '\u00ad'
             text += '\n'
