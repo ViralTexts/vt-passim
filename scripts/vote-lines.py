@@ -32,6 +32,7 @@ def majorityCollate(text, wits):
         res += max(col.items(), key=lambda i: i[1])[0]
     return res.strip() + ('\xad\n' if text.endswith('\xad\n') else '\n')
 
+## This method suffers from spurious ambiguity due to mismatching alignments
 def oracleCollate(text, srcAlg, dstAlg, wits):
     if wits == None or len(wits) == 0:
         return text
