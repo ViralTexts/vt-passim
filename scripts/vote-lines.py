@@ -1,5 +1,5 @@
 import json, os, sys
-from math import log
+from math import inf, log
 from pyspark.sql import SparkSession, Row
 from pyspark.sql.functions import col, explode, size, lit, udf, struct, btrim, lower, length
 import pyspark.sql.functions as f
@@ -31,6 +31,34 @@ def majorityCollate(text, wits):
     for col in cols:
         res += max(col.items(), key=lambda i: i[1])[0]
     return res.strip() + ('\xad\n' if text.endswith('\xad\n') else '\n')
+
+def ngramFeatures(s, n):
+    s = ('#' * (n-1)) + s
+    return [s[(i-n):i] for i in range(n, len(s))]
+
+def lmVote(text, wits, n, bccounts):
+    if wits == None or len(wits) < 1:
+        return text
+    counts = bccounts.value
+
+    V = 256
+
+    cand = [text.strip()] + [w.srcAlg.replace('-', '').strip() for w in wits]
+
+    maxScore = -inf
+    argMaxScore = text.strip() + '\n'
+    for s in cand:
+        score = 0
+        for gram in ngramFeatures(s.lower(), n):
+            history = gram[0:(n-1)]
+            score += log((counts.get(gram, 0) + 1) / (counts.get(history, 0) + V))
+        score /= len(s)
+        if score > maxScore:
+            maxScore = score
+            argMaxScore = s + '\n'
+
+    return argMaxScore
+        
 
 ## This method suffers from spurious ambiguity due to mismatching alignments
 def oracleCollate(text, srcAlg, dstAlg, wits):
@@ -73,7 +101,6 @@ def oracleCollate(text, srcAlg, dstAlg, wits):
         
     return res.strip() + ('\xad\n' if text.endswith('\xad\n') else '\n')
 
-
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Usage: vote-collate.py <input> <output>", file=sys.stderr)
@@ -84,21 +111,54 @@ if __name__ == "__main__":
 
     oracle_collate = udf(lambda text, srcAlg, dstAlg, wits: oracleCollate(text, srcAlg, dstAlg, wits))
 
+    n = 4
+    ngrams = udf(lambda s: ngramFeatures(s, n), 'array<string>')
+    
     raw = spark.read.json(sys.argv[1])
 
+    grams = raw.select(explode(f.array_append(f.coalesce(col('wits.srcAlg'), f.array()),
+                                              col('dstAlg'))).alias('text')
+              ).select(f.lower(btrim(f.translate('text', '-', ''), lit(' \n'))).alias('text')
+              ).select(explode(ngrams('text')).alias('gram')
+              ).groupBy('gram'
+              ).count(
+              ).filter(col('count') >= 5)
+
+    counts = {}
+    for g in grams.collect():
+        (gram, count) = g
+        counts[gram] = count
+        history = gram[0:(n-1)]
+        counts[history] = counts.get(history, 0) + count
+
+    bccounts = spark.sparkContext.broadcast(counts)
+
+    lm_vote = udf(lambda text, wits: lmVote(text, wits, n, bccounts))
+    
+    # Should probably just do this part in memory
+    # grams.groupBy(f.substring('gram', 1, 3).alias('gram')
+    #     ).agg(f.sum('count').alias('count')
+    #     ).sort(f.desc('count'), 'gram'
+    #     ).write.json(sys.argv[2], mode='overwrite')
+
+
     raw.withColumn('maj', majority_collate('dstText', 'wits')
+        ).withColumn('lmvote', lm_vote('dstText', 'wits')
         ).withColumn('oracle', oracle_collate('dstText', 'srcAlg', 'dstAlg', 'wits')
         ).withColumn('srcClean', lower(btrim('srcText', lit(' \n')))
         ).withColumn('dstClean', lower(btrim('dstText', lit(' \n')))
         ).withColumn('majClean', lower(btrim('maj', lit(' \n')))
+        ).withColumn('lmClean', lower(btrim('lmvote', lit(' \n')))
         ).withColumn('oracleClean', lower(btrim('oracle', lit(' \n')))
         ).withColumn('dstCER', f.levenshtein('srcClean', 'dstClean')/
                      f.greatest(length('srcClean'), length('dstClean'))
+        ).withColumn('lmCER', f.levenshtein('srcClean', 'lmClean')/
+                     f.greatest(length('srcClean'), length('lmClean'))
         ).withColumn('majCER', f.levenshtein('srcClean', 'majClean')/
                      f.greatest(length('srcClean'), length('majClean'))
         ).withColumn('oraCER', f.levenshtein('srcClean', 'oracleClean')/
                      f.greatest(length('srcClean'), length('oracleClean'))
-        ).drop('srcClean', 'dstClean', 'majClean', 'oracleClean'
+        ).drop('srcClean', 'dstClean', 'majClean', 'lmClean', 'oracleClean'
         ).write.json(sys.argv[2], mode='overwrite')
 
     spark.stop()
