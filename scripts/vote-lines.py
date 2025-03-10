@@ -1,4 +1,4 @@
-import json, os, sys
+import argparse, json, os, sys
 from math import inf, log
 from pyspark.sql import SparkSession, Row
 from pyspark.sql.functions import col, explode, size, lit, udf, struct, btrim, lower, length
@@ -36,7 +36,7 @@ def ngramFeatures(s, n):
     s = ('#' * (n-1)) + s
     return [s[(i-n):i] for i in range(n, len(s))]
 
-def lmVote(text, wits, n, bccounts):
+def lmVote(text, wits, n, pcount, bccounts):
     if wits == None or len(wits) < 1:
         return text
     counts = bccounts.value
@@ -51,7 +51,7 @@ def lmVote(text, wits, n, bccounts):
         score = 0
         for gram in ngramFeatures(s.lower(), n):
             history = gram[0:(n-1)]
-            score += log((counts.get(gram, 0) + 1) / (counts.get(history, 0) + V))
+            score += log((counts.get(gram, 0) + pcount) / (counts.get(history, 0) + V))
         score /= len(s)
         if score > maxScore:
             maxScore = score
@@ -102,19 +102,27 @@ def oracleCollate(text, srcAlg, dstAlg, wits):
     return res.strip() + ('\xad\n' if text.endswith('\xad\n') else '\n')
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: vote-collate.py <input> <output>", file=sys.stderr)
-        exit(-1)
-    spark = SparkSession.builder.appName('Voting Collate').getOrCreate()
+    parser = argparse.ArgumentParser(description='Vote on aligned lines',
+                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+
+    parser.add_argument('-n', '--n', type=int, default=4, help='n-gram order', metavar='N')
+    parser.add_argument('-m', '--min-count', type=int, default=5,
+                        help='min n-gram count', metavar='N')
+    parser.add_argument('-p', '--pcount', type=float, default=1.0,
+                        help='Laplace smoothing', metavar='p')
+    parser.add_argument('inputPath', metavar='<input path>', help='input path')
+    parser.add_argument('outputPath', metavar='<output path>', help='output path')
+
+    config = parser.parse_args()
+    spark = SparkSession.builder.appName(parser.description).getOrCreate()
 
     majority_collate = udf(lambda text, wits: majorityCollate(text, wits))
 
     oracle_collate = udf(lambda text, srcAlg, dstAlg, wits: oracleCollate(text, srcAlg, dstAlg, wits))
 
-    n = 4
-    ngrams = udf(lambda s: ngramFeatures(s, n), 'array<string>')
+    ngrams = udf(lambda s: ngramFeatures(s, config.n), 'array<string>')
     
-    raw = spark.read.json(sys.argv[1])
+    raw = spark.read.json(config.inputPath)
 
     grams = raw.select(explode(f.array_append(f.coalesce(col('wits.srcAlg'), f.array()),
                                               col('dstAlg'))).alias('text')
@@ -122,26 +130,19 @@ if __name__ == "__main__":
               ).select(explode(ngrams('text')).alias('gram')
               ).groupBy('gram'
               ).count(
-              ).filter(col('count') >= 5)
+              ).filter(col('count') >= config.min_count)
 
     counts = {}
     for g in grams.collect():
         (gram, count) = g
         counts[gram] = count
-        history = gram[0:(n-1)]
+        history = gram[0:(config.n-1)]
         counts[history] = counts.get(history, 0) + count
 
     bccounts = spark.sparkContext.broadcast(counts)
 
-    lm_vote = udf(lambda text, wits: lmVote(text, wits, n, bccounts))
+    lm_vote = udf(lambda text, wits: lmVote(text, wits, config.n, config.pcount, bccounts))
     
-    # Should probably just do this part in memory
-    # grams.groupBy(f.substring('gram', 1, 3).alias('gram')
-    #     ).agg(f.sum('count').alias('count')
-    #     ).sort(f.desc('count'), 'gram'
-    #     ).write.json(sys.argv[2], mode='overwrite')
-
-
     raw.withColumn('maj', majority_collate('dstText', 'wits')
         ).withColumn('lmvote', lm_vote('dstText', 'wits')
         ).withColumn('oracle', oracle_collate('dstText', 'srcAlg', 'dstAlg', 'wits')
