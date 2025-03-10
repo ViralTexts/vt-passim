@@ -160,6 +160,6 @@ if __name__ == "__main__":
         ).withColumn('oraCER', f.levenshtein('srcClean', 'oracleClean')/
                      f.greatest(length('srcClean'), length('oracleClean'))
         ).drop('srcClean', 'dstClean', 'majClean', 'lmClean', 'oracleClean'
-        ).write.json(sys.argv[2], mode='overwrite')
+        ).write.json(config.outputPath, mode='overwrite')
 
     spark.stop()
