@@ -1101,10 +1101,10 @@
 {"series":"pub_studio-an-illustrated-magazine-of-fine-and-applied-art","title":"The Studio; An Illustrated Magazine of Fine and Applied Art 1893-1907","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_subjects-of-the-day-a-quarterly-review-of-current-topics","title":"Subjects of the Day: A Quarterly Review of Current Topics 1890-1891","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_success-magazine-the-national-post","title":"Success Magazine & the National Post 1897-1911","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"series":"pub_sun-and-shade-1888","title":"Sun & Shade : An artistic periodical"}
+{"series":"pub_sun-and-shade-1888","title":"Sun & Shade : An artistic periodical","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_sunday-magazine","title":"The Sunday Magazine 1864-1906","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_sunday-school-helper","title":"The Sunday School Helper"}
-{"series":"pub_sunday-school-teachers-manual","title":"The Sunday School Teacher's Manual"}
+{"series":"pub_sunday-school-helper","title":"The Sunday School Helper","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_sunday-school-teachers-manual","title":"The Sunday School Teacher's Manual","coverage":"http://dbpedia.org/resource/Manchester"}
 {"series":"pub_sunday-school-times","title":"The Sunday School Times 1859-1966","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"series":"pub_sunset-central-west-edition","title":"Sunset. Central West Edition","coverage":"http://dbpedia.org/resource/San_Francisco"}
 {"series":"pub_surrey-archaeological-collections","title":"Surrey Archaeological Collections 1858-1930","coverage":"http://dbpedia.org/resource/London"}
@@ -1112,7 +1112,7 @@
 {"series":"pub_tatler","title":"The Tatler 1709-1711","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_tatler-a-daily-journal-of-literature-and-the-stage","title":"Tatler. a Daily Journal of Literature and the Stage 1830-1832","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_tatler-revivd","title":"Tatler Reviv'd 1727-1728","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_teachers-guide","title":"The Teacher's Guide"}
+{"series":"pub_teachers-guide","title":"The Teacher's Guide","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_teachers-journal","title":"Teachers' Journal 1858-1859","coverage":"http://dbpedia.org/resource/Allentown%2C_Pennsylvania"}
 {"series":"pub_technology-quarterly-and-proceedings-society-of-arts","title":"Technology Quarterly and Proceedings of the Society of Arts 1887-1908","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_technology-review","title":"Technology Review 1899-2016","coverage":"http://dbpedia.org/resource/Boston"}
@@ -1126,11 +1126,11 @@
 {"series":"pub_the-edinburgh-new-philosophical-journal","title":"The Edinburgh New Philosophical Journal, Exhibiting a View of the Progressive Discoveries and Improvements in the Sciences and the Arts 1826-1864","coverage":"http://dbpedia.org/resource/Edinburgh"}
 {"series":"pub_the-french-protestant-archives","title":"The French Protestant Archives"}
 {"series":"pub_the-imperial-review-or-london-edinburgh-and-dublin","title":"The Imperial Review : Or, London, Edinburgh, and Dublin Literary Journal 1804-1805","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_the-irish-theosophist","title":"The Irish Theosophist"}
+{"series":"pub_the-irish-theosophist","title":"The Irish Theosophist","coverage":"http://dbpedia.org/resource/Dublin"}
 {"series":"pub_the-lancet","title":"The Lancet (US Edition) 1823-2014","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_the-maryland-synod-reports","title":"The Maryland Synod Reports"}
+{"series":"pub_the-maryland-synod-reports","title":"The Maryland Synod Reports","coverage":"http://dbpedia.org/resource/Baltimore"}
 {"series":"pub_the-microscope","title":"Microscope, Edited by a Fraternity of Gentle-Men 1820","coverage":"http://dbpedia.org/resource/New_Haven%2C_Connecticut"}
-{"series":"pub_the-monthly-journal-of-science","title":"The Monthly Journal of Science"}
+{"series":"pub_the-monthly-journal-of-science","title":"The Monthly Journal of Science","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_the-monthly-review","title":"The Monthly Review 1749-1844","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_the-national-observer-and-british-review-of-politics","title":"The National Observer, and British Review of Politics, Economics, Literature, Science, and Art 1888-1897","coverage":"http://dbpedia.org/resource/Edinburgh"}
 {"series":"pub_the-national-review-1883","title":"The National Review 1883-1950","coverage":"http://dbpedia.org/resource/London"}
