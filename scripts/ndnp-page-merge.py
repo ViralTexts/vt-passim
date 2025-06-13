@@ -60,12 +60,15 @@ if __name__ == '__main__':
 
     mets.join(alto, ['batch', 'alto'], 'left_outer'
         ).withColumn('id', f.concat('issue', lit('#pageModsBib'), (col('pos') + 1))
-        ).withColumn('scale', f.coalesce((col('altoWidth')/col('width')).cast('int'), lit(1))
+        ).withColumn('width', f.coalesce('width', 'altoWidth').cast('int')
+        ).withColumn('height', f.coalesce('height', 'altoHeight').cast('int')
+        ).withColumn('scale', f.coalesce((col('altoWidth')/col('width')), lit(1))
         ).withColumn('pages', f.array(struct(col('file').alias('id'),
                                              make_iiif('file').alias('iiif'),
-                                             'seq', 'width', 'height', 'dpi',
+                                             'seq', 'width', 'height',
+                                             col('dpi').cast('int').alias('dpi'),
                                 f.transform('regions',
-                                            lambda r: r.withField('coords', struct(
+                                            lambda r: r.withField('start', (r.start).cast('int')).withField('length', (r.length).cast('int')).withField('coords', struct(
                                                 (r.coords.x/col('scale')).cast('int').alias('x'),
                                                 (r.coords.y/col('scale')).cast('int').alias('y'),
                                                 (r.coords.w/col('scale')).cast('int').alias('w'),
