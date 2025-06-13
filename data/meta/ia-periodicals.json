@@ -1124,7 +1124,6 @@
 {"series":"pub_the-bibliotheca-sacra","title":"The Bibliotheca Sacra 1844-2014","coverage":"http://dbpedia.org/resource/Oberlin%2C_Ohio"}
 {"series":"pub_the-cambrian-and-caledonian-quarterly-magazine","title":"The Cambrian and Caledonian Quarterly Magazine and Celtic Repertory 1829-1833","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_the-edinburgh-new-philosophical-journal","title":"The Edinburgh New Philosophical Journal, Exhibiting a View of the Progressive Discoveries and Improvements in the Sciences and the Arts 1826-1864","coverage":"http://dbpedia.org/resource/Edinburgh"}
-{"series":"pub_the-french-protestant-archives","title":"The French Protestant Archives"}
 {"series":"pub_the-imperial-review-or-london-edinburgh-and-dublin","title":"The Imperial Review : Or, London, Edinburgh, and Dublin Literary Journal 1804-1805","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_the-irish-theosophist","title":"The Irish Theosophist","coverage":"http://dbpedia.org/resource/Dublin"}
 {"series":"pub_the-lancet","title":"The Lancet (US Edition) 1823-2014","coverage":"http://dbpedia.org/resource/London"}
@@ -1135,31 +1134,29 @@
 {"series":"pub_the-national-observer-and-british-review-of-politics","title":"The National Observer, and British Review of Politics, Economics, Literature, Science, and Art 1888-1897","coverage":"http://dbpedia.org/resource/Edinburgh"}
 {"series":"pub_the-national-review-1883","title":"The National Review 1883-1950","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_the-new-british-ladys-magazine-or-monthly-mirror","title":"The New British Lady's Magazine, Or, Monthly Mirror of Literature and Fashion 1815-1819","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_the-north-carolina-synod-reports","title":"The North Carolina Synod Reports"}
+{"series":"pub_the-north-carolina-synod-reports","title":"The North Carolina Synod Reports","coverage":"http://dbpedia.org/resource/Greensboro%2C_North_Carolina"}
 {"series":"pub_the-outlook","title":"The Outlook 1898-1901","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_the-pacific-pharmacist","title":"The Pacific Pharmacist"}
-{"series":"pub_the-phytologist","title":"The Phytologist"}
-{"series":"pub_the-quarterly-journal-of-science","title":"The Quarterly Journal of Science"}
-{"series":"pub_the-sailors-magazine-and-seamens-friend","title":"The Sailor's Magazine and Seamen's Friend"}
-{"series":"pub_the-scientific-and-literary-review","title":"The Scientific and Literary Review"}
-{"series":"pub_the-shaker-collection","title":"The Shaker Collection"}
-{"series":"pub_the-telegraphic-journal-and-electrical-review","title":"The Telegraphic Journal and Electrical Review"}
+{"series":"pub_the-pacific-pharmacist","title":"The Pacific Pharmacist","coverage":"http://dbpedia.org/resource/San_Francisco"}
+{"series":"pub_the-phytologist","title":"The Phytologist","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_the-quarterly-journal-of-science","title":"The Quarterly Journal of Science","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_the-sailors-magazine-and-seamens-friend","title":"The Sailor's Magazine and Seamen's Friend","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_the-scientific-and-literary-review","title":"The Scientific and Literary Review","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_the-telegraphic-journal-and-electrical-review","title":"The Telegraphic Journal and Electrical Review","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_the-womans-journal","title":"The Woman's Journal 1870-1916","coverage":"http://dbpedia.org/resource/Boston"}
-{"series":"pub_the-zoologist","title":"The Zoologist"}
+{"series":"pub_the-zoologist","title":"The Zoologist","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_theatre-a-monthly-review-and-magazine","title":"Theatre, a Monthly Review and Magazine 1877-1897","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_theatrical-inquisitor","title":"Theatrical Inquisitor 1812-1820","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_theatrical-journal","title":"Theatrical Journal 1839-1871","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_theatrical-observer-and-daily-bills-of-the-play","title":"Theatrical Observer; And Daily Bills of the Play 1821-1844","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_theatrical-recorder","title":"Theatrical Recorder 1805-1806","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_theodore-parker-papers","title":"Theodore Parker Papers"}
 {"series":"pub_theological-eclectic-a-repertory","title":"Theological Eclectic, a Repertory, Chiefly of Foreign Theological Literature 1863-1871","coverage":"http://dbpedia.org/resource/Cincinnati"}
-{"series":"pub_theological-quarterly","title":"Theological Quarterly"}
+{"series":"pub_theological-quarterly","title":"Theological Quarterly","coverage":"http://dbpedia.org/resource/St._Louis"}
 {"series":"pub_theological-review-a-quarterly-journal-of-religious","title":"Theological Review; A Quarterly Journal of Religious Thought and Life 1864-1879","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_theologisch-praktische-quartalschrift","title":"Theologisch-praktische Quartalschrift"}
-{"series":"pub_theologisch-tijdschrift","title":"Theologisch Tijdschrift"}
+{"series":"pub_theologisch-praktische-quartalschrift","title":"Theologisch-praktische Quartalschrift","coverage":"http://dbpedia.org/resource/Linz"}
+{"series":"pub_theologisch-tijdschrift","title":"Theologisch Tijdschrift","coverage":"http://dbpedia.org/resource/Leiden"}
 {"series":"pub_therapeutic-gazette","title":"Therapeutic Gazette 1877-1927","coverage":"http://dbpedia.org/resource/Detroit"}
 {"series":"pub_thistle-or-anglo-caledonian-journal","title":"Thistle; Or, Anglo-Caledonian Journal 1836","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_tilzes-keleivis","title":"Tilžės Keleivis"}
+{"series":"pub_tilzes-keleivis","title":"Tilžės Keleivis","coverage":"http://dbpedia.org/resource/Sovetsk%2C_Kaliningrad_Oblast"}
 {"series":"pub_time-a-monthly-magazine","title":"Time: A Monthly Magazine 1879-1891","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_token","title":"The Token 1828-1842","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_torrey-botanical-club-memoirs","title":"Memoirs of Torrey Botanical Society 1889-1970","coverage":"http://dbpedia.org/resource/New_York_City"}
@@ -1167,17 +1164,16 @@
 {"series":"pub_town-and-country-magazine-or-universal-repository","title":"Town and Country Magazine, or Universal Repository of Knowledge, Instruction, and Entertainment 1769-1795","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_tradesman-or-commercial-magazine","title":"Tradesman; Or, Commercial Magazine 1808-1812","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_train-a-first-class-magazine","title":"Train: a First Class Magazine 1856-1858","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_trans-asiatic-society-japan","title":"Transactions of the Asiatic Society of Japan"}
-{"series":"pub_transactions-geological-society-of-london","title":"Transactions Geological Society of London"}
+{"series":"pub_trans-asiatic-society-japan","title":"Transactions of the Asiatic Society of Japan","coverage":"http://dbpedia.org/resource/Yokohama"}
+{"series":"pub_transactions-geological-society-of-london","title":"Transactions Geological Society of London","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_transactions-of-the-american-philosophical-society","title":"Transactions of the American Philosophical Society 1769-2014","coverage":"http://dbpedia.org/resource/Philadelphia"}
-{"series":"pub_transactions-of-the-royal-society-of-edinburgh","title":"Transactions of the Royal Society of Edinburgh"}
-{"series":"pub_trierer-theologische-zeitschrift","title":"Trierer Theologische Zeitschrift 1965-2001"}
+{"series":"pub_transactions-of-the-royal-society-of-edinburgh","title":"Transactions of the Royal Society of Edinburgh","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_trierer-theologische-zeitschrift","title":"Trierer Theologische Zeitschrift 1965-2001","coverage":"http://dbpedia.org/resource/Trier"}
 {"series":"pub_twentieth-century","title":"Twentieth Century 1877-1972","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_twice-a-week-an-illustrated-london-journal","title":"Twice a Week. An Illustrated London Journal of Entertaining Literature and Useful Information 1862","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_unitarian-miscellany-and-christian-monitor","title":"Unitarian Miscellany and Christian Monitor 1821-1824","coverage":"http://dbpedia.org/resource/Baltimore"}
 {"series":"pub_united-states-catholic-historical-society","title":"United States Catholic Historical Society 1892-1969","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_united-states-catholic-historical-society-records","title":"United States Catholic Historical Society: Historical Records and Studies 1899-1964","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"series":"pub_united-states-congress-hearings-prints-and-reports","title":"United States. Congress. Hearings, Prints and Reports 1951-1960"}
 {"series":"pub_united-states-congress-index-to-the-documents","title":"United States. Congress. Index to the Documents and Reports 1897-1933","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"series":"pub_united-states-national-museum-annual-report","title":"Annual Report - The United States National Museum 1881-1964","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"series":"pub_united-states-national-museum-proceedings","title":"United States National Museum. Proceedings of the United States National Museum 1878-1968","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
@@ -1191,9 +1187,8 @@
 {"series":"pub_universal-spectator-and-weekly-journal","title":"Universal Spectator, and Weekly Journal 1741-1746","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_universal-visiter-and-memorialist","title":"Universal Visiter and Memorialist 1756","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_university-magazine","title":"The University Magazine 1833-1880","coverage":"http://dbpedia.org/resource/Dublin"}
-{"series":"pub_uoc-pharmacology-dissertations","title":"University of California Pharmacology Dissertations"}
 {"series":"pub_van-nostrands-engineering-magazine","title":"Van Nostrand's Engineering Magazine 1869-1886","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"series":"pub_verhandelingen-uitgegeeven-door-de-hollandse","title":"Verhandelingen Uitgegeeven Door de Hollandse Maatschappy der Weetenschappen te Haarlem"}
+{"series":"pub_verhandelingen-uitgegeeven-door-de-hollandse","title":"Verhandelingen Uitgegeeven Door de Hollandse Maatschappy der Weetenschappen te Haarlem","coverage":"http://dbpedia.org/resource/Haarlem"}
 {"series":"pub_veterinary-journal","title":"The Veterinary Journal 1997-2010","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_veterinary-record","title":"The Veterinary Record 1888-2010","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_violin-times","title":"Violin Times, a Monthly Journal for Professional and Amateur Violinists and Quartet Players 1893-1907","coverage":"http://dbpedia.org/resource/London"}
@@ -1213,35 +1208,31 @@
 {"series":"pub_weekly-museum","title":"Weekly Museum 1797","coverage":"http://dbpedia.org/resource/Baltimore"}
 {"series":"pub_weekly-register-or-universal-journal","title":"The Weekly Register, Or, Universal Journal 1730-1735","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_weekly-review-and-dramatic-critic","title":"Weekly Review and Dramatic Critic 1852-1853","coverage":"http://dbpedia.org/resource/Edinburgh"}
-{"series":"pub_west-indies-mission","title":"West Indies Mission"}
 {"series":"pub_west-of-england-medical-journal","title":"West of England Medical Journal 1883-1994","coverage":"http://dbpedia.org/resource/Bristol"}
 {"series":"pub_west-virginia-supreme-court-of-appeals","title":"Reports of cases determined by the Supreme Court of Appeals of West Virginia 1863-1875","coverage":"http://dbpedia.org/resource/Morgantown%2C_West_Virginia"}
 {"series":"pub_western-a-journal-of-literature-education-and-art","title":"Western; A Journal of Literature, Education and Art 1875-1881","coverage":"http://dbpedia.org/resource/St._Louis"}
 {"series":"pub_western-journal-of-medicine","title":"Western Journal of Medicine 1866-1869","coverage":"http://dbpedia.org/resource/Indianapolis"}
 {"series":"pub_western-journal-of-the-medical-and-physical-sciences","title":"The Western Journal of the Medical and Physical Sciences 1827-1838","coverage":"http://dbpedia.org/resource/Cincinnati"}
-{"series":"pub_western-monthly-magazine-and-literary-journal","title":"Western Monthly Magazine, and Literary Journal 1833-1837"}
-{"series":"pub_western-surgical-gynecological-trans","title":"Western Surgical and Gynecological Transactions"}
+{"series":"pub_western-monthly-magazine-and-literary-journal","title":"Western Monthly Magazine, and Literary Journal 1833-1837","coverage":"http://dbpedia.org/resource/Cincinnati"}
+{"series":"pub_western-surgical-gynecological-trans","title":"Western Surgical and Gynecological Transactions","coverage":"http://dbpedia.org/resource/Lincoln%2C_Nebraska"}
 {"series":"pub_westminster-magazine-or-the-pantheon-of-taste","title":"Westminster Magazine, Or, the Pantheon of Taste 1773-1785","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_westminster-review","title":"The Westminster Review 1824-1914","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_william-ellery-channing-papers","title":"William Ellery Channing Papers"}
 {"series":"pub_wilson-journal-of-ornithology","title":"The Wilson Journal of Ornithology 1889-2012","coverage":"http://dbpedia.org/resource/Oberlin%2C_Ohio"}
 {"series":"pub_windsor-magazine-an-illustraed-monthly-for-men-and-women","title":"Windsor Magazine: An Illustrated Monthly for Men and Women 1895-1900","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_wisconsin-educational-journal","title":"Wisconsin Educational Journal 1855","coverage":"http://dbpedia.org/resource/Janesville%2C_Wisconsin"}
 {"series":"pub_wisconsin-journal-of-education","title":"Wisconsin Journal of Education 1856-1975","coverage":"http://dbpedia.org/resource/Madison%2C_Wisconsin"}
-{"series":"pub_witchcraft-in-europe-and-america","title":"Witchcraft in Europe and America"}
-{"series":"pub_womans-column","title":"The Woman's Column"}
+{"series":"pub_womans-column","title":"The Woman's Column","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_woodhull-and-claflins-weekly","title":"Woodhull and Claflin's Weekly 1870-1876","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"series":"pub_works-of-hubert-howe-bancroft","title":"The Works of Hubert Howe Bancroft"}
 {"series":"pub_world-1753","title":"World 1753-1756","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_writer","title":"The Writer 1887-2016","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_yale-review","title":"The Yale Review 1892-2015","coverage":"http://dbpedia.org/resource/New_Haven%2C_Connecticut"}
 {"series":"pub_yellow-book-an-illustrated-monthly","title":"Yellow Book: An Illustrated Monthly 1894-1897","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_yorkshire-freeholder","title":"Yorkshire Freeholder 1780","coverage":"http://dbpedia.org/resource/York"}
 {"series":"pub_zeitschrift-fuer-anorganische-und-allgemeine-chemie","title":"Zeitschrift Fuer Anorganische und Allgemeine Chemie 1892-1944","coverage":"http://dbpedia.org/resource/Leipzig"}
-{"series":"pub_zeitschrift-fuer-kristallographie-crystalline-materials","title":"Zeitschrift fuer Kristallographie - Crystalline Materials"}
-{"series":"pub_zeitschrift-fuer-romanische-philologie","title":"Zeitschrift fuer Romanische Philologie"}
-{"series":"pub_zeitschrift-fur-speculative-physik","title":"Zeitschrift für speculative Physik"}
-{"series":"pub_zeitschrift_fuer_celtische_philologie","title":"Zeitschrift fuer Celtische Philologie"}
+{"series":"pub_zeitschrift-fuer-kristallographie-crystalline-materials","title":"Zeitschrift fuer Kristallographie - Crystalline Materials","coverage":"http://dbpedia.org/resource/Leipzig"}
+{"series":"pub_zeitschrift-fuer-romanische-philologie","title":"Zeitschrift fuer Romanische Philologie","coverage":"http://dbpedia.org/resource/T%C3%BCbingen"}
+{"series":"pub_zeitschrift-fur-speculative-physik","title":"Zeitschrift für speculative Physik","coverage":"http://dbpedia.org/resource/Jena"}
+{"series":"pub_zeitschrift_fuer_celtische_philologie","title":"Zeitschrift fuer Celtische Philologie","coverage":"http://dbpedia.org/resource/Halle_(Saale)"}
 {"series":"pub_zeitschrift_physikalische_chemie","title":"Zeitschrift fuer Physikalische Chemie, Stoechiometrie und Verwandtschaftslehre 1887-1928","coverage":"http://dbpedia.org/resource/Leipzig"}
 {"series":"pub_zoist-a-journal-of-cerebral-physiology-and-mesmerism","title":"Zoist; A Journal of Cerebral Physiology and Mesmerism and Their Applications to Human Welfare 1843-1856","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_zoological-journal-of-the-linnean-society","title":"Zoological Journal of the Linnean Society"}
+{"series":"pub_zoological-journal-of-the-linnean-society","title":"Zoological Journal of the Linnean Society","coverage":"http://dbpedia.org/resource/London"}
