@@ -1,13 +1,12 @@
 {"series":"/lccn/05039090","title":"Voice of masonry and tidings from the craft","coverage":"http://dbpedia.org/resource/Louisville%2C_Kentucky"}
 {"series":"pub_a-deaf-american-monograph","title":"A Deaf American Monograph 1888-1998","coverage":"http://dbpedia.org/resource/Trenton%2C_New_Jersey"}
-{"series":"pub_abhandlungen-der-koniglichen-gesellschaft-der-wissenschaften-zu-gottingen","title":"Abhandlungen der Koniglichen Gesellschaft der Wissenschaften zu Gottingen"}
-{"series":"pub_abstract-of-the-papers-communicated-to-the-royal-society-of-london","title":"Abstract of the Papers Communicated to the Royal Society of London"}
-{"series":"pub_abstracts-of-the-papers-printed-in-the-philosophical-transactions-of-the-royal-society-of-london","title":"Abstracts of the Papers Printed in the Philosophical Transactions of the Royal Society of London"}
+{"series":"pub_abhandlungen-der-koniglichen-gesellschaft-der-wissenschaften-zu-gottingen","title":"Abhandlungen der Koniglichen Gesellschaft der Wissenschaften zu Gottingen","coverage":"http://dbpedia.org/resource/G%C3%B6ttingen"}
+{"series":"pub_abstract-of-the-papers-communicated-to-the-royal-society-of-london","title":"Abstract of the Papers Communicated to the Royal Society of London","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_abstracts-of-the-papers-printed-in-the-philosophical-transactions-of-the-royal-society-of-london","title":"Abstracts of the Papers Printed in the Philosophical Transactions of the Royal Society of London","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_academie-des-inscriptions-et-belles-lettres-paris","title":"Academie Des Inscriptions et Belles Lettres, Paris. Recueil Des Historiens Des Gaules et de la France 1840-1904","coverage":"http://dbpedia.org/resource/Paris"}
-{"series":"pub_academie-des-sciences","title":"Academie des Sciences"}
+{"series":"pub_academie-des-sciences","title":"Academie des Sciences","coverage":"http://dbpedia.org/resource/Paris"}
 {"series":"pub_academy-and-literature","title":"The Academy and Literature 1869-1916","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_academy-architecture-and-architectural-review","title":"Academy Architecture and Architectural Review 1889-1931","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_acta-archaeologica-academiae-scientiarum-hungaricae","title":"Acta Archaeologica Academiae Scientiarum Hungaricae"}
 {"series":"pub_acta-sanctae-sedis-ephemerides-romanae","title":"Acta Sanctae Sedis 1865-1908","coverage":"http://dbpedia.org/resource/Rome"}
 {"series":"pub_aeronautical-journal","title":"The Aeronautical Journal 1897-2015","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_afl-cio-american-federationist","title":"The AFL-CIO American Federationist 1894-1982","coverage":"http://dbpedia.org/resource/New_York_City"}
@@ -26,16 +25,15 @@
 {"series":"pub_american-anthropologist","title":"American Anthropologist 1888-2014","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"series":"pub_american-antiquarian-society-proceedings","title":"Proceedings of the American Antiquarian Society 1880-2008","coverage":"http://dbpedia.org/resource/Worcester%2C_Massachusetts"}
 {"series":"pub_american-archaeologist","title":"The American Archaeologist 1897-1899","coverage":"http://dbpedia.org/resource/Columbus%2C_Ohio"}
-{"series":"pub_american-baptists-in-mission","title":"American Baptists in Mission 1910-2004"}
 {"series":"pub_american-bee-journal","title":"American Bee Journal 1861-2015","coverage":"http://dbpedia.org/resource/Philadelphia"}
-{"series":"pub_american-bible-society-record","title":"American Bible Society Record"}
+{"series":"pub_american-bible-society-record","title":"American Bible Society Record","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_american-bibliopolist","title":"American Bibliopolist 1869-1877","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_american-chemical-society-journal","title":"Journal of the American Chemical Society 1879-2010","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_american-church-monthly","title":"American Church Monthly 1857-1858","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_american-druggist","title":"American Druggist 1871-1999","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_american-ecclesiastical-review","title":"The American Ecclesiastical Review 1889-1975","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_american-educationist-and-western-school-journal","title":"American Educationist and Western School Journal 1852","coverage":"http://dbpedia.org/resource/Cleveland"}
-{"series":"pub_american-elevator-and-grain-trade","title":"The American Elevator and Grain Trade"}
+{"series":"pub_american-elevator-and-grain-trade","title":"The American Elevator and Grain Trade","coverage":"http://dbpedia.org/resource/Chicago"}
 {"series":"pub_american-expositor","title":"American Expositor 1850","coverage":"http://dbpedia.org/resource/Mount_Vernon%2C_Ohio"}
 {"series":"pub_american-federation-of-labor-proceedings","title":"American Federation of Labor. Proceedings 1881-1955","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_american-fisheries-society-transactions","title":"Transactions of the American Fisheries Society 1872-1945","coverage":"http://dbpedia.org/resource/New_York_City"}
@@ -47,7 +45,6 @@
 {"series":"pub_american-fruit-grower","title":"American Fruit Grower 1897-2014","coverage":"http://dbpedia.org/resource/Rochester%2C_New_York"}
 {"series":"pub_american-historical-association-annual-report","title":"American Historical Association: Annual Report 1884-2002","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"series":"pub_american-historical-review","title":"The American Historical Review 1895-2016","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"series":"pub_american-home-missionary-society-papers","title":"American Home Missionary Society Papers"}
 {"series":"pub_american-institute-of-instruction-annual-meeting","title":"American Institute of Instruction. Annual Meeting 1830-1908","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_american-journal-of-archaeology","title":"American Journal of Archaeology 1885-2015","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_american-journal-of-education-1847","title":"American Journal of Education 1847","coverage":"http://dbpedia.org/resource/New_York_City"}
@@ -55,7 +52,6 @@
 {"series":"pub_american-journal-of-education-1893","title":"American Journal of Education 1893-2014","coverage":"http://dbpedia.org/resource/Chicago"}
 {"series":"pub_american-journal-of-homeopathy","title":"American Journal of Homeopathy 1838-1839","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"series":"pub_american-journal-of-mathematics","title":"American Journal of Mathematics 1878-2013","coverage":"http://dbpedia.org/resource/Baltimore"}
-{"series":"pub_american-journal-of-medicine","title":"The American Journal of Medicine 1946-2014"}
 {"series":"pub_american-journal-of-music-and-musical-visitor","title":"American Journal of Music and Musical Visitor 1840-1846","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_american-journal-of-neurology-and-psychiatry","title":"American Journal of Neurology and Psychiatry 1882-1885","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_american-journal-of-numismatics","title":"American Journal of Numismatics 1866-1907","coverage":"http://dbpedia.org/resource/New_York_City"}
@@ -73,7 +69,6 @@
 {"series":"pub_american-journal-of-theology","title":"American Journal of Theology 1897-1920","coverage":"http://dbpedia.org/resource/Chicago"}
 {"series":"pub_american-jubilee","title":"American Jubilee 1854-1855","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_american-kennel-club-stud-book-register","title":"The American Kennel Club Stud Book Register 1878-2004","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"series":"pub_american-loyalists","title":"American Loyalists"}
 {"series":"pub_american-machinist","title":"American Machinist 1877-2009","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_american-magazine","title":"The American Magazine 1884-1888","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_american-mathematical-monthly","title":"The American Mathematical Monthly 1894-2015","coverage":"http://dbpedia.org/resource/Springfield%2C_Missouri"}
@@ -98,7 +93,7 @@
 {"series":"pub_analyst-a-quarterly-journal","title":"Analyst; A Quarterly Journal of Science, Literature, Natural History and the Fine Arts 1834-1840","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_analyst-or-mathematical-museum","title":"Analyst; Or, Mathematical Museum 1808-1814","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"series":"pub_analytical-review-or-history-of-literature-domestic","title":"Analytical Review; Or, History of Literature, Domestic and Foreign 1788-1799","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_anglia","title":"Anglia"}
+{"series":"pub_anglia","title":"Anglia","coverage":"http://dbpedia.org/resource/Halle_(Saale)"}
 {"series":"pub_anglo-saxon-review","title":"The Anglo-Saxon Review 1899-1901","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_animals","title":"Animals 1868-2003","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_annalen-der-physik","title":"Annalen der Physik 1799-1997","coverage":"http://dbpedia.org/resource/Halle_(Saale)"}
