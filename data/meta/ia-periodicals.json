@@ -99,21 +99,21 @@
 {"series":"pub_annalen-der-physik","title":"Annalen der Physik 1799-1997","coverage":"http://dbpedia.org/resource/Halle_(Saale)"}
 {"series":"pub_annales-de-demographie-internationale","title":"Annales de Demographie Internationale 1877-1881","coverage":"http://dbpedia.org/resource/Paris"}
 {"series":"pub_annales-de-dermatologie-et-de-venereologie","title":"Annales de Dermatologie et de Venereologie 1869-1980","coverage":"http://dbpedia.org/resource/Paris"}
-{"series":"pub_annales-de-linstitut-pasteur","title":"Annales de l'Institut Pasteur 1887-1972"}
+{"series":"pub_annales-de-linstitut-pasteur","title":"Annales de l'Institut Pasteur 1887-1972","coverage":"http://dbpedia.org/resource/Paris"}
 {"series":"pub_annales-doto-laryngologie-et-de-chirurgie-cervico","title":"Annales d'Oto-Laryngologie et de Chirurgie Cervico-Faciale 1968-1981","coverage":"http://dbpedia.org/resource/Paris"}
 {"series":"pub_annals-american-academy-political-social-science","title":"Annals of the American Academy of Political and Social Science 1890-2016","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"series":"pub_annals-of-beneficence","title":"Annals of Beneficence 1823","coverage":"http://dbpedia.org/resource/Philadelphia"}
-{"series":"pub_annals-of-iowa","title":"Annals of Iowa 1975-2009"}
+{"series":"pub_annals-of-iowa","title":"Annals of Iowa 1975-2009","coverage":"http://dbpedia.org/resource/Iowa_City%2C_Iowa"}
 {"series":"pub_annals-of-mathematics","title":"Annals of Mathematics 1884-2015","coverage":"http://dbpedia.org/resource/Charlottesville%2C_Virginia"}
 {"series":"pub_annals-of-otology-rhinology-laryngology","title":"The Annals of Otology, Rhinology & Laryngology 1892-2013","coverage":"http://dbpedia.org/resource/St._Louis"}
 {"series":"pub_annals-of-surgery","title":"Annals of Surgery 1885-2013","coverage":"http://dbpedia.org/resource/St._Louis"}
-{"series":"pub_annals-of-the-new-york-academy-of-sciences","title":"Annals of the New York Academy of Sciences 1975-1998"}
-{"series":"pub_annuaire-scientifique","title":"Annuaire Scientifique"}
-{"series":"pub_annuaire-statistique-de-la-france","title":"Annuaire Statistique de la France"}
+{"series":"pub_annals-of-the-new-york-academy-of-sciences","title":"Annals of the New York Academy of Sciences 1975-1998","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_annuaire-scientifique","title":"Annuaire Scientifique","coverage":"http://dbpedia.org/resource/Paris"}
+{"series":"pub_annuaire-statistique-de-la-france","title":"Annuaire Statistique de la France","coverage":"http://dbpedia.org/resource/Paris"}
 {"series":"pub_annual-law-register-of-the-united-states","title":"Annual Law Register of the United States 1821-1822","coverage":"http://dbpedia.org/resource/Burlington%2C_New_Jersey"}
-{"series":"pub_annual-report-board-of-missions-for-freedmen","title":"Annual Report of the Board of Missions for Freedmen of the Presbyterian Church in the United States of America"}
-{"series":"pub_annual-report-board-of-regents-smithsonian","title":"Annual Report of the Board of Regents of the Smithsonian Institution"}
-{"series":"pub_annual-report-nysm","title":"Annual Report - New York State Museum"}
+{"series":"pub_annual-report-board-of-missions-for-freedmen","title":"Annual Report of the Board of Missions for Freedmen of the Presbyterian Church in the United States of America","coverage":"http://dbpedia.org/resource/Pittsburgh"}
+{"series":"pub_annual-report-board-of-regents-smithsonian","title":"Annual Report of the Board of Regents of the Smithsonian Institution","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
+{"series":"pub_annual-report-nysm","title":"Annual Report - New York State Museum","coverage":"http://dbpedia.org/resource/Albany,_New_York"}
 {"series":"pub_anthropological-review","title":"Anthropological Review 1863-1870","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_anti-gallican-or-standard-of-british-loyalty","title":"Anti-Gallican, or Standard of British Loyalty, Religion and Liberty 1804","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_anti-jacobin-or-weekly-examiner","title":"Anti-Jacobin; Or Weekly Examiner 1797-1798","coverage":"http://dbpedia.org/resource/London"}
@@ -121,12 +121,12 @@
 {"series":"pub_anti-teapot-review","title":"Anti-Teapot Review 1864-1869","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_antiquary-a-magazine-devoted-to-the-study-of-the-past","title":"Antiquary, a Magazine Devoted to the Study of the Past 1880-1915","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_antiquary-a-medium-of-intercommunication","title":"Antiquary: A Medium of Intercommunication for Men of Letters, the Archaeologist, and the Reading Public 1871-1873","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_antologia","title":"Antologia"}
+{"series":"pub_antologia","title":"Antologia","coverage":"http://dbpedia.org/resource/Florence"}
 {"series":"pub_apprentices-companion","title":"Apprentice's Companion 1835","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_archaeologia-cambrensis","title":"Archaeologia Cambrensis 1846-1905","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_archaeologia-tracts-relating-to-antiquity","title":"Archaeologia, Or, Miscellaneous Tracts Relating to Antiquity 1770-1992","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_archaeological-review","title":"Archaeological Review 1888-1890","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_archaologische-zeitung","title":"Archäologische Zeitung"}
+{"series":"pub_archaologische-zeitung","title":"Archäologische Zeitung","coverage":"http://dbpedia.org/resource/Berlin"}
 {"series":"pub_architect-engineer-and-surveyor","title":"Architect, Engineer and Surveyor 1840-1843","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_architectural-forum","title":"The Architectural Forum 1892-1974","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_architectural-magazine-and-journal-of-improvement","title":"Architectural Magazine and Journal of Improvement in Architecture, Building, and Furnishing and in the Various Arts and Trades Connected Therewith 1834-1839","coverage":"http://dbpedia.org/resource/London"}
