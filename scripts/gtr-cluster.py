@@ -3,7 +3,7 @@ from re import sub
 import html
 
 from pyspark.sql import SparkSession, Row
-from pyspark.sql.functions import col, udf, regexp_replace
+from pyspark.sql.functions import col, udf, regexp_replace, struct
 import pyspark.sql.functions as f
 
 def formatPassage(r):
@@ -64,7 +64,7 @@ def formatCluster(x):
     for i in range(len(rows)):
         cur = rows[i].text
         text += f'{cur}\n---\n'
-    return Row(cluster=cluster, suffix=str(cluster)[-2:], name=name,
+    return Row(cluster=cluster, suffix=str(cluster)[-2:], name=name, size=len(rows),
                title=title, description=desc, text=text)
 
 if __name__ == "__main__":
@@ -88,7 +88,10 @@ if __name__ == "__main__":
         ).groupBy(lambda r: r.cluster
         ).map(formatCluster
         ).toDF(
-        ).sort('corpus', f.regexp_replace('title', r'^(The|An?)[ ]+', '').alias('stitle'), 'name'
+        ).groupBy('name'
+        ).agg(f.max(struct('size', 'cluster', 'suffix', 'title', 'description', 'text')).alias('f')
+        ).select('name', 'f.*'
+        ).sort(f.regexp_replace('title', r'^(The|An?)[ ]+', '').alias('stitle'), 'name'
         ).write.json(config.outputPath, compression='gzip', mode='overwrite')
     
     spark.stop()
