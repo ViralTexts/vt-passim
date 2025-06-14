@@ -133,8 +133,8 @@
 {"series":"pub_architectural-record","title":"Architectural Record 1891-2016","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_architectural-review","title":"The Architectural Review 1896-2014","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_architecture-a-monthly-magazine-of-architectural-art","title":"Architecture: A Monthly Magazine of Architectural Art 1896-1898","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_archiv-fuer-geschichte-der-philosophie","title":"Archiv fuer Geschichte der Philosophie"}
-{"series":"pub_archives-diplomatiques","title":"Archives Diplomatiques Recueil Mensuel De Diplomatie, D'Histoire et de Droit International"}
+{"series":"pub_archiv-fuer-geschichte-der-philosophie","title":"Archiv fuer Geschichte der Philosophie","coverage":"http://dbpedia.org/resource/Berlin"}
+{"series":"pub_archives-diplomatiques","title":"Archives Diplomatiques Recueil Mensuel De Diplomatie, D'Histoire et de Droit International","coverage":"http://dbpedia.org/resource/Paris"}
 {"series":"pub_archives-dophtalmologie","title":"Archives d'Ophtalmologie 1881-1977","coverage":"http://dbpedia.org/resource/Paris"}
 {"series":"pub_archives-of-otology","title":"Archives of Otology 1869-1908","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_argosy-1866","title":"Argosy 1866-1901","coverage":"http://dbpedia.org/resource/London"}
@@ -146,7 +146,7 @@
 {"series":"pub_art-and-poetry-being-thoughts-towards-nature","title":"Art and Poetry: Being Thoughts Towards Nature 1850","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_art-dans-les-deux-mondes","title":"Art Dans Les Deux Mondes 1890-1891","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_art-journal-us","title":"The Art Journal 1839-1912","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_artist-1880","title":"The Artist : an illustrated monthly record of arts, crafts and industries"}
+{"series":"pub_artist-1880","title":"The Artist : an illustrated monthly record of arts, crafts and industries","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_artist-and-amateurs-magazine","title":"The Artist and Amateur's Magazine 1843-1844","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_arts-education-policy-review","title":"Arts Education Policy Review 1899-2015","coverage":"http://dbpedia.org/resource/Syracuse%2C_New_York"}
 {"series":"pub_ashrae-transactions","title":"ASHRAE Transactions 1895-2014","coverage":"http://dbpedia.org/resource/New_York_City"}
@@ -165,16 +165,16 @@
 {"series":"pub_automotive-industries","title":"Automotive Industries 1899-2015","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_avicultural-magazine","title":"The Avicultural Magazine 1949-1996","coverage":"http://dbpedia.org/resource/Winchester"}
 {"series":"pub_bachelor-of-arts-a-monthly-magazine","title":"Bachelor of Arts; A Monthly Magazine Devoted to University Interests and General Literature 1895-1898","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"series":"pub_badminton-magazine-of-sports-and-pastimes","title":"The Badminton Magazine of Sports and Pastimes 1895-1923"}
+{"series":"pub_badminton-magazine-of-sports-and-pastimes","title":"The Badminton Magazine of Sports and Pastimes 1895-1923","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_baltimore-magazine-for-july-1807-a-literary-magazine","title":"Baltimore Magazine for July 1807; A Literary Magazine 1807","coverage":"http://dbpedia.org/resource/Baltimore"}
 {"series":"pub_baltimore-medical-and-physical-recorder","title":"Baltimore Medical and Physical Recorder 1808-1809","coverage":"http://dbpedia.org/resource/Baltimore"}
 {"series":"pub_baltimore-medical-and-surgical-journal-and-review","title":"Baltimore Medical and Surgical Journal and Review 1833-1834","coverage":"http://dbpedia.org/resource/Baltimore"}
-{"series":"pub_band-of-faith-messenger","title":"The Band of Faith Messenger"}
+{"series":"pub_band-of-faith-messenger","title":"The Band of Faith Messenger","coverage":"http://dbpedia.org/resource/Wakefield"}
 {"series":"pub_bankers-insurance-managers-and-agents-magazine","title":"The Bankers' Magazine 1844-1906","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_bankers-monthly","title":"Bankers Monthly 1898-1993","coverage":"http://dbpedia.org/resource/Chicago"}
 {"series":"pub_bankers-weekly-circular-and-statistical-record","title":"Bankers' Weekly Circular and Statistical Record 1845-1846","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_banking-law-journal","title":"The Banking Law Journal 1889-2013","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"series":"pub_baptist-magazine-1809","title":"The Baptist Magazine"}
+{"series":"pub_baptist-magazine-1809","title":"The Baptist Magazine","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_beau-monde-and-monthly-register","title":"Le Beau Monde and Monthly Register 1809-1810","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_beau-monde-or-literary-and-fashionable-magazine","title":"Le Beau Monde; Or, Literary and Fashionable Magazine 1806-1809","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_bee","title":"Bee 1759","coverage":"http://dbpedia.org/resource/London"}
@@ -184,14 +184,14 @@
 {"series":"pub_belfast-monthly-magazine","title":"Belfast Monthly Magazine 1808-1814","coverage":"http://dbpedia.org/resource/Belfast"}
 {"series":"pub_belgravia","title":"Belgravia 1866-1899","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_bells-literary-intelligencer-and-new-national-omnibus","title":"Bell's Literary Intelligencer and New National Omnibus 1834","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_beltaine","title":"Beltaine"}
+{"series":"pub_beltaine","title":"Beltaine","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_bentleys-miscellany","title":"Bentley's Miscellany 1837-1868","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_bentleys-quarterly-review","title":"Bentley's Quarterly Review 1859-1860","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_berean-or-scripture-searcher","title":"Berean; Or, Scripture-Searcher 1802-1810","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_bergmaennisches-journal","title":"Bergmaennisches Journal 1788-1793","coverage":"http://dbpedia.org/resource/Freiberg"}
-{"series":"pub_bible-examiner","title":"Bible Examiner"}
+{"series":"pub_bible-examiner","title":"Bible Examiner","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_biblia","title":"Biblia 1889-1905","coverage":"http://dbpedia.org/resource/Meriden%2C_Connecticut"}
-{"series":"pub_biblical-repertory-and-princeton-review","title":"The Biblical Repertory and Princeton Review"}
+{"series":"pub_biblical-repertory-and-princeton-review","title":"The Biblical Repertory and Princeton Review","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"series":"pub_biblical-review","title":"The Biblical Review 1846-1850","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_bibliographer-a-journal-of-book-lore","title":"Bibliographer. A Journal of Book-Lore 1881-1884","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_bibliotheca-mathematica","title":"Bibliotheca Mathematica 1887-1913","coverage":"http://dbpedia.org/resource/Stockholm"}
@@ -199,7 +199,7 @@
 {"series":"pub_billboard","title":"Billboard 1894-2016","coverage":"http://dbpedia.org/resource/Cincinnati"}
 {"series":"pub_biological-bulletin","title":"The Biological Bulletin 1899-2012","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
 {"series":"pub_biological-chemistry","title":"Biological Chemistry 1877-2005","coverage":"http://dbpedia.org/resource/Strasbourg"}
-{"series":"pub_biological-society-of-washington-proceedings","title":"Biological Society of Washington. Proceedings"}
+{"series":"pub_biological-society-of-washington-proceedings","title":"Biological Society of Washington. Proceedings","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"series":"pub_bird-lore","title":"Bird-Lore 1899-1940","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_black-cat-a-monthly-magazine-of-original-short-stories","title":"The Black Cat; A Monthly Magazine of Original Short Stories 1895-1922","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_black-dwarf","title":"The Black Dwarf 1817-1824","coverage":"http://dbpedia.org/resource/London"}
@@ -213,7 +213,6 @@
 {"series":"pub_bow-bells-a-magazine-of-general-literature-and-art","title":"Bow Bells; A Magazine of General Literature and Art, for Family Reading 1864-1865","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_bradshaws-journal","title":"Bradshaw's Journal 1841-1843","coverage":"http://dbpedia.org/resource/Manchester"}
 {"series":"pub_brain","title":"Brain 1878-2013","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_brasiliana","title":"Brasiliana"}
 {"series":"pub_bristol-and-bath-magazine","title":"Bristol and Bath Magazine; Or Instructive and Entertaining Miscellany 1782-1783","coverage":"http://dbpedia.org/resource/Bristol"}
 {"series":"pub_british-almanac-companion","title":"British Almanac Companion 1828-1888","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_british-and-foreign-evangelical-review","title":"British and Foreign Evangelical Review 1852-1888","coverage":"http://dbpedia.org/resource/Edinburgh"}
@@ -229,10 +228,10 @@
 {"series":"pub_british-quarterly-review","title":"British Quarterly Review 1845-1886","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_british-review-and-london-critical-journal","title":"British Review and London Critical Journal 1811-1825","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_british-stage-and-literary-cabinet","title":"British Stage and Literary Cabinet 1817-1822","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_british-weekly-pulpit","title":"The British Weekly Pulpit"}
+{"series":"pub_british-weekly-pulpit","title":"The British Weekly Pulpit","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_briton","title":"Briton 1762-1763","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_broadway","title":"Broadway 1867-1873","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_brochure-series-architectural-illustration","title":"The Brochure Series of Architectural Illustration"}
+{"series":"pub_brochure-series-architectural-illustration","title":"The Brochure Series of Architectural Illustration","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_brush-and-pencil-an-illustrated-magazine-of-arts","title":"Brush and Pencil; An Illustrated Magazine of Arts of Today 1897-1907","coverage":"http://dbpedia.org/resource/Chicago"}
 {"series":"pub_building-uk","title":"Building 1842-2005","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_bull-societe-geologique-de-france-lettre-semestrielle","title":"Bulletin de la Société géologique de France. Lettre semestrielle"}
