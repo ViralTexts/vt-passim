@@ -940,30 +940,29 @@
 {"series":"pub_practical-magazine","title":"Practical Magazine 1873-1877","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_practical-teacher-teachers-art-monthly","title":"Practical Teacher: With Which Is Incorporated the Practical Teacher's Art Monthly 1881-1911","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_prater","title":"Prater 1756","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_presbyterian","title":"Presbyterian 1973-1974"}
+{"series":"pub_presbyterian","title":"Presbyterian 1973-1974","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"series":"pub_presbyterian-and-reformed-review","title":"The Presbyterian and Reformed Review 1890-1902","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_presbyterian-quarterly-review","title":"Presbyterian Quarterly Review 1852-1862","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"series":"pub_presbyterian-review","title":"Presbyterian Review 1880-1889","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_present-state-of-the-republick-of-letters","title":"Present State of the Republick of Letters 1728-1736","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_presse-scientifique-and-industrielle-des-deux-mondes-pares","title":"Presse Scientifique & Industrielle Des Deux Mondes Pares"}
-{"series":"pub_presse-scientifique-des-deux-mondes-paris","title":"Presse Scientifique des Deux Mondes Paris"}
+{"series":"pub_presse-scientifique-and-industrielle-des-deux-mondes-pares","title":"Presse Scientifique & Industrielle Des Deux Mondes Pares","coverage":"http://dbpedia.org/resource/Paris"}
+{"series":"pub_presse-scientifique-des-deux-mondes-paris","title":"Presse Scientifique des Deux Mondes Paris","coverage":"http://dbpedia.org/resource/Paris"}
 {"series":"pub_primary-education","title":"Primary Education 1893-1926","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_princeton-magazine","title":"Princeton Magazine 1850-1851","coverage":"http://dbpedia.org/resource/Princeton%2C_New_Jersey"}
 {"series":"pub_printers-circular-and-stationers-and-publishers-gazette","title":"Printers' Circular and Stationers' and Publishers' Gazette 1866-1890","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"series":"pub_proceedings-of-the-american-philosophical-society","title":"Proceedings of the American Philosophical Society 1838-2015","coverage":"http://dbpedia.org/resource/Philadelphia"}
-{"series":"pub_proceedings-of-the-physical-society","title":"Proceedings of the Physical Society"}
-{"series":"pub_proceedings-of-the-quartop-centennial-conference","title":"Proceedings of the Quarto Centennial Conference"}
-{"series":"pub_proceedings-of-the-royal-society-of-edinburgh","title":"Proceedings of the Royal Society of Edinburgh"}
-{"series":"pub_proceedings-of-the-royal-society-of-london","title":"Proceedings of the Royal Society of London"}
-{"series":"pub_proceedings-of-the-scientific-meetings-of-the-zoological","title":"Proceedings of the Scientific Meetings of the Zoological Society of London"}
-{"series":"pub_proceedings-of-the-zoological-society-of-london","title":"Proceedings of the Zoological Society of London"}
-{"series":"pub_proceedings-scientific-business-zoological-society","title":"Proceedings of the General Meetings for Scientific Business of the Zoological Society of London"}
+{"series":"pub_proceedings-of-the-physical-society","title":"Proceedings of the Physical Society","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_proceedings-of-the-quartop-centennial-conference","title":"Proceedings of the Quarto Centennial Conference","coverage":"http://dbpedia.org/resource/Charleston%2C_South_Carolina"}
+{"series":"pub_proceedings-of-the-royal-society-of-edinburgh","title":"Proceedings of the Royal Society of Edinburgh","coverage":"http://dbpedia.org/resource/Edinburgh"}
+{"series":"pub_proceedings-of-the-royal-society-of-london","title":"Proceedings of the Royal Society of London","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_proceedings-of-the-scientific-meetings-of-the-zoological","title":"Proceedings of the Scientific Meetings of the Zoological Society of London","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_proceedings-of-the-zoological-society-of-london","title":"Proceedings of the Zoological Society of London","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_proceedings-scientific-business-zoological-society","title":"Proceedings of the General Meetings for Scientific Business of the Zoological Society of London","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_progressive-farmer","title":"Progressive Farmer 1893-1983","coverage":"http://dbpedia.org/resource/Raleigh%2C_North_Carolina"}
 {"series":"pub_prompter","title":"Prompter 1734-1736","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_proof-sheet","title":"Proof Sheet 1867-1880","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"series":"pub_property-casualty-360","title":"NU Property & Casualty 1897-2014","coverage":"http://dbpedia.org/resource/Cincinnati"}
 {"series":"pub_prospective-review-a-quarterly-journal-of-theology","title":"Prospective Review; A Quarterly Journal of Theology and Literature 1845-1855","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_przeglad-mechaniczny","title":"Przeglad Mechaniczny"}
 {"series":"pub_psychical-review","title":"The Psychical Review 1892-1894","coverage":"http://dbpedia.org/resource/Grafton%2C_Massachusetts"}
 {"series":"pub_psychological-monographs","title":"Psychological Monographs 1895-1966","coverage":"http://dbpedia.org/resource/Lancaster%2C_Pennsylvania"}
 {"series":"pub_psychological-review","title":"Psychological Review 1894-2015","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
@@ -972,12 +971,11 @@
 {"series":"pub_publishers-weekly","title":"Publishers Weekly 1872-2014","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_pulpit-and-rostrum","title":"Pulpit and Rostrum 1858-1866","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_punch","title":"Punch 1841-1992","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_quaker-womens-tracts","title":"Quaker Women's Tracts"}
-{"series":"pub_quarterly-journal-of-the-american-unitarian-association","title":"The Quarterly Journal of the American Unitarian Association"}
+{"series":"pub_quarterly-journal-of-the-american-unitarian-association","title":"The Quarterly Journal of the American Unitarian Association","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_quarterly-journal-of-the-chemical-society-london","title":"The Quaterly Journal of the Chemical Society of London 1849-1861","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_quarterly-musical-review","title":"Quarterly Musical Review 1885-1888","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_quarterly-review-1809","title":"The Quarterly Review 1809-1967","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_quarto-a-volume-artistic-literary-and-musical","title":"The Quarto 1896-1898"}
+{"series":"pub_quarto-a-volume-artistic-literary-and-musical","title":"The Quarto 1896-1898","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_quaver","title":"Quaver 1876-1885","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_quiver","title":"Quiver 1861-1926","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_radical-abolitionist","title":"Radical Abolitionist 1855-1858","coverage":"http://dbpedia.org/resource/New_York_City"}
@@ -994,30 +992,29 @@
 {"series":"pub_reedys-mirror","title":"Reedy's Mirror 1899-1920","coverage":"http://dbpedia.org/resource/St._Louis"}
 {"series":"pub_rehearsal","title":"The Rehearsal 1704-1709","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_reliquary-and-illustrated-archaeologist","title":"The Reliquary and Illustrated Archaeologist 1860-1909","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_repertorium-fur-kunstwissenschaft","title":"Repertorium für Kunstwissenschaft"}
-{"series":"pub_report-medical-missionary-society-china","title":"Report of the Medical Missionary Society in China"}
-{"series":"pub_report-of-progress-gsc","title":"Report of Progress - Geological Survey of Canada"}
+{"series":"pub_repertorium-fur-kunstwissenschaft","title":"Repertorium für Kunstwissenschaft","coverage":"http://dbpedia.org/resource/Stuttgart"}
+{"series":"pub_report-medical-missionary-society-china","title":"Report of the Medical Missionary Society in China","coverage":"http://dbpedia.org/resource/Hong_Kong"}
+{"series":"pub_report-of-progress-gsc","title":"Report of Progress - Geological Survey of Canada","coverage":"http://dbpedia.org/resource/Montreal"}
 {"series":"pub_republic-a-monthly-magazine","title":"Republic; A Monthly Magazine Devoted to the Dissemination of Political Information 1873-1877","coverage":"http://dbpedia.org/resource/Washington%2C_D.C."}
 {"series":"pub_republican","title":"Republican 1819-1826","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_retrospective-review-historical-and-antiquarian","title":"Retrospective Review, and Historical and Antiquarian Magazine 1820-1828","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_review-of-popular-astronomy","title":"Review of Popular Astronomy 1951-1969"}
 {"series":"pub_review-of-reviews-uk","title":"The Review of Reviews 1890-1906","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_review-of-reviews-us","title":"Review of Reviews (US Edition) 1890-1937","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_revista-de-mathematica","title":"Revista de Mathematica 1891-1906","coverage":"http://dbpedia.org/resource/Turin"}
 {"series":"pub_revolution","title":"Revolution 1868-1872","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"series":"pub_revue-anthropologie","title":"Revue Anthropologique"}
-{"series":"pub_revue-benedictine","title":"Revue Bénédictine"}
-{"series":"pub_revue-d-histoire-diplomatique","title":"Revue D'Histoire Diplomatique"}
-{"series":"pub_revue-de-art-chretien","title":"Revue de l'Art Chrétien"}
+{"series":"pub_revue-anthropologie","title":"Revue Anthropologique","coverage":"http://dbpedia.org/resource/Paris"}
+{"series":"pub_revue-benedictine","title":"Revue Bénédictine","coverage":"http://dbpedia.org/resource/Maredsous_(hamlet)"}
+{"series":"pub_revue-d-histoire-diplomatique","title":"Revue D'Histoire Diplomatique","coverage":"http://dbpedia.org/resource/Paris"}
+{"series":"pub_revue-de-art-chretien","title":"Revue de l'Art Chrétien","coverage":"http://dbpedia.org/resource/Arras"}
 {"series":"pub_revue-des-deux-mondes","title":"Revue Des Deux Mondes 1831-1999","coverage":"http://dbpedia.org/resource/Paris"}
-{"series":"pub_revue-des-etudes-anciennes","title":"Revue des Etudes Anciennes"}
+{"series":"pub_revue-des-etudes-anciennes","title":"Revue des Etudes Anciennes","coverage":"http://dbpedia.org/resource/Paris"}
 {"series":"pub_revue-historique","title":"Revue Historique 1876-2008","coverage":"http://dbpedia.org/resource/Paris"}
 {"series":"pub_revue-neurologique","title":"Revue Neurologique 1898-1980","coverage":"http://dbpedia.org/resource/Paris"}
-{"series":"pub_revue-philosophique-de-louvain","title":"Revue Philosophique de Louvain 1980-1986"}
+{"series":"pub_revue-philosophique-de-louvain","title":"Revue Philosophique de Louvain 1980-1986","coverage":"http://dbpedia.org/resource/Leuven"}
 {"series":"pub_revue-wagnerienne","title":"Revue Wagnerienne 1885-1888","coverage":"http://dbpedia.org/resource/Paris"}
 {"series":"pub_riba-journal","title":"RIBA [Royal Institute of British Architects] Journal 1893-2008","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_rivista-italiana-di-paleontologia-e-stratigrafia","title":"Rivista Italiana di Paleontologia e Stratigrafia"}
-{"series":"pub_romania","title":"Romania"}
+{"series":"pub_rivista-italiana-di-paleontologia-e-stratigrafia","title":"Rivista Italiana di Paleontologia e Stratigrafia","coverage":"http://dbpedia.org/resource/Bologna"}
+{"series":"pub_romania","title":"Romania","coverage":"http://dbpedia.org/resource/Paris"}
 {"series":"pub_rose-the-shamrock-and-the-thistle","title":"Rose, the Shamrock, and the Thistle 1862-1865","coverage":"http://dbpedia.org/resource/Edinburgh"}
 {"series":"pub_rosie","title":"Rosie 1894-2002","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_royal-anthropological-institute-of-great-britain-ireland","title":"The Journal of the Royal Anthropological Institute of Great Britain and Ireland 1871-1910","coverage":"http://dbpedia.org/resource/London"}
@@ -1025,19 +1022,19 @@
 {"series":"pub_rubber-world","title":"Rubber World 1889-2015","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_rusi-journal","title":"RUSI Journal 1857-2013","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_russian-laws","title":"Russian Laws 1649-1851","coverage":"http://dbpedia.org/resource/Saint_Petersburg"}
-{"series":"pub_russkaya-mysl-1880","title":"Русская мысль / Russkaya Mysl"}
-{"series":"pub_russkoe-bogatstvo","title":"Russkoe Bogatstvo"}
+{"series":"pub_russkaya-mysl-1880","title":"Русская мысль / Russkaya Mysl","coverage":"http://dbpedia.org/resource/Moscow"}
+{"series":"pub_russkoe-bogatstvo","title":"Russkoe Bogatstvo","coverage":"http://dbpedia.org/resource/Saint_Petersburg"}
 {"series":"pub_russkoe-istoricheskoe-obshchestvo-sbornik","title":"Sbornik Imperatorskovo Russkovo Istoricheskovo Obshchestva 1867-1916","coverage":"http://dbpedia.org/resource/Saint_Petersburg"}
-{"series":"pub_sabbath-at-home","title":"The Sabbath at Home"}
+{"series":"pub_sabbath-at-home","title":"The Sabbath at Home","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_sacred-music","title":"Sacred Music 1877-2013","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_saint-bartholomews-hospital-journal","title":"Saint Bartholomew's Hospital Journal 1893-1975","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_saint-jamess-magazine","title":"Saint James's Magazine 1861-1862","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_saint-pauls-magazine","title":"The Saint Pauls Magazine 1867-1874","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_salvation-1899","title":"Salvation"}
+{"series":"pub_salvation-1899","title":"Salvation","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_satirist-or-monthly-meteor","title":"The Satirist, Or, Monthly Meteor 1807-1814","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_saturday-analyst-and-leader","title":"The Saturday Analyst and Leader 1850-1860","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_saturday-night","title":"Saturday Night 1986-2005","coverage":"http://dbpedia.org/resource/Toronto"}
-{"series":"pub_saturday-review-uk","title":"The Saturday Review 1855-1938"}
+{"series":"pub_saturday-review-uk","title":"The Saturday Review 1855-1938","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_savoy","title":"Savoy 1896","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_sbornik-otdeleniya-russkogo-yazyka-i-slovesnosti","title":"Sbornik Otdeleniya Russkovo Yazyka i Slovesnosti"}
 {"series":"pub_scandinavia","title":"Scandinavia 1883-1886","coverage":"http://dbpedia.org/resource/Chicago"}
