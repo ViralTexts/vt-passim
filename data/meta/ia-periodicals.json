@@ -355,14 +355,13 @@
 {"series":"pub_deutsches-archaeologisches-institut-athenische-abteilung","title":"Mittheilungen des Deutschen Archaeologischen Instituts, Athenische Abtheilung"}
 {"series":"pub_deutsches-archaeologisches-institut-jahrbuch","title":"Jahrbuch des Deutschen Archäologischen Instituts"}
 {"series":"pub_development-genes-and-evolution","title":"Development Genes and Evolution 1889-1997","coverage":"http://dbpedia.org/resource/Bonn"}
-{"series":"pub_die-fackel-1899","title":"Die Fackel"}
-{"series":"pub_die-gesellschaft-1885","title":"Die Gesellschaft"}
+{"series":"pub_die-fackel-1899","title":"Die Fackel","coverage":"http://dbpedia.org/resource/Vienna"}
+{"series":"pub_die-gesellschaft-1885","title":"Die Gesellschaft","coverage":"http://dbpedia.org/resource/Munich"}
 {"series":"pub_die-mennonitische-rundschau","title":"Die Mennonitische Rundschau 1880-1993","coverage":"http://dbpedia.org/resource/Elkhart%2C_Indiana"}
-{"series":"pub_die-pietisten","title":"Pietisten"}
+{"series":"pub_die-pietisten","title":"Pietisten","coverage":"http://dbpedia.org/resource/Stockholm"}
 {"series":"pub_director-a-weekly-literary-journal","title":"Director; A Weekly Literary Journal 1807","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_disciple-1881","title":"The Disciple : a magazine for Unitarians and other Christian people"}
+{"series":"pub_disciple-1881","title":"The Disciple : a magazine for Unitarians and other Christian people","coverage":"http://dbpedia.org/resource/Belfast"}
 {"series":"pub_diverting-post","title":"Diverting Post 1704-1706","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_dnr","title":"DNR (Daily News Record) 1988-2008"}
 {"series":"pub_dome-an-illustrated-magazine-and-review","title":"Dome; An Illustrated Magazine and Review of Literature, Music, Architecture and the Graphic Arts 1897-1900","coverage":"http://dbpedia.org/resource/Edinburgh"}
 {"series":"pub_drama-or-theatrical-pocket-magazine","title":"Drama; Or, Theatrical Pocket Magazine 1821-1826","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_dramatic-censor-or-weekly-theatrical-report","title":"Dramatic Censor, Or, Weekly Theatrical Report 1800-1801","coverage":"http://dbpedia.org/resource/London"}
@@ -372,17 +371,15 @@
 {"series":"pub_dublin-review","title":"The Dublin Review 1836-1969","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_duffys-hibernian-magazine-a-monthly-journal","title":"Duffy's Hibernian Magazine; A Monthly Journal of Legends, Tales, and Stories, Irish Antiquities, Biography, Science and Art 1860-1864","coverage":"http://dbpedia.org/resource/Dublin"}
 {"series":"pub_dwights-journal-of-music-a-paper-of-art-and-literature","title":"Dwight's Journal of Music, a Paper of Art and Literature 1852-1881","coverage":"http://dbpedia.org/resource/Boston"}
-{"series":"pub_early-18th-century-archives","title":"Early 18th. Century Archives"}
-{"series":"pub_early-baptist","title":"Early Baptist"}
-{"series":"pub_east-sussex-west-kent-unitarian-magazine","title":"The East Sussex & West Kent Unitarian Magazine"}
+{"series":"pub_east-sussex-west-kent-unitarian-magazine","title":"The East Sussex & West Kent Unitarian Magazine","coverage":"http://dbpedia.org/resource/Hastings"}
 {"series":"pub_eclectic-review","title":"The Eclectic Review 1805-1868","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_ecole-normale-superieure-annales-scientifiques","title":"Annales scientifiques de l'École normale supérieure"}
+{"series":"pub_ecole-normale-superieure-annales-scientifiques","title":"Annales scientifiques de l'École normale supérieure","coverage":"http://dbpedia.org/resource/Paris"}
 {"series":"pub_economic-journal","title":"The Economic Journal 1891-2090","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_economic-review","title":"Economic Review 1891-1914","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_economic-studies","title":"Economic Studies 1896-1899","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_economist","title":"The Economist 1843-2016","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_edinburgh-annual-register","title":"Edinburgh Annual Register 1808-1826","coverage":"http://dbpedia.org/resource/Edinburgh"}
-{"series":"pub_edinburgh-literary-journal-or-weekly-register","title":"Edinburgh Literary Journal; Or Weekly Register of Criticism and Belles Lettres 1828-1832"}
+{"series":"pub_edinburgh-literary-journal-or-weekly-register","title":"Edinburgh Literary Journal; Or Weekly Register of Criticism and Belles Lettres 1828-1832","coverage":"http://dbpedia.org/resource/Edinburgh"}
 {"series":"pub_edinburgh-magazine","title":"Edinburgh Magazine 1758-1762","coverage":"http://dbpedia.org/resource/Edinburgh"}
 {"series":"pub_edinburgh-magazine-and-literary-miscellany","title":"The Edinburgh Magazine and Literary Miscellany 1739-1826","coverage":"http://dbpedia.org/resource/Edinburgh"}
 {"series":"pub_edinburgh-magazine-and-review","title":"Edinburgh Magazine and Review 1773-1776","coverage":"http://dbpedia.org/resource/Edinburgh"}
@@ -404,8 +401,8 @@
 {"series":"pub_engineering","title":"Engineering","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_engineering-and-boiler-house-review","title":"Engineering and Boiler House Review 1899-1968","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_engineering-and-mining-journal","title":"Engineering and Mining Journal 1866-2014","coverage":"http://dbpedia.org/resource/New_York_City"}
-{"series":"pub_englische-studien","title":"Englische Studien"}
-{"series":"pub_english-evangelical-lutheran-synod-of-the-northwest-minutes","title":"English Evangelical Lutheran Synod of the Northwest Minutes"}
+{"series":"pub_englische-studien","title":"Englische Studien","coverage":"http://dbpedia.org/resource/Leipzig"}
+{"series":"pub_english-evangelical-lutheran-synod-of-the-northwest-minutes","title":"English Evangelical Lutheran Synod of the Northwest Minutes","coverage":"http://dbpedia.org/resource/Saint_Paul%2C_Minnesota"}
 {"series":"pub_english-historical-review","title":"The English Historical Review 1886-2014","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_english-illustrated-magazine","title":"The English Illustrated Magazine 1883-1913","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_english-lucian-or-weekly-discoveries-of-the-witty","title":"English Lucian; Or Weekly Discoveries of the Witty Intrigues, Comical Passages and Remarkable Transactions in Town and Country: With Reflections on the Vices and Vanities of the Times 1698","coverage":"http://dbpedia.org/resource/London"}
@@ -416,22 +413,22 @@
 {"series":"pub_englishwomans-domestic-magazine","title":"The Englishwoman's Domestic Magazine 1852-1879","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_enr","title":"ENR (Engineering News-Record) 1874-2015","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_entomological-news","title":"Entomological News 1890-2007","coverage":"http://dbpedia.org/resource/Philadelphia"}
-{"series":"pub_episcopalian","title":"The Episcopalian"}
+{"series":"pub_episcopalian","title":"The Episcopalian","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_era-almanack-and-annual-the-dramatic-and-musical","title":"Era Almanack and Annual; The Dramatic and Musical 1868-1919","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_etcher","title":"Etcher 1879-1883","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_ethical-record-us","title":"The Ethical Record 1888-1890","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"series":"pub_ethics","title":"Ethics: An International Journal of Social, Political, and Legal Philosophy 1890-2016","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"series":"pub_european-magazine-and-london-review","title":"European Magazine and London Review 1782-1826","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_evangelical-christendom","title":"Evangelical Christendom"}
-{"series":"pub_evangelical-lutheran-intelligencer","title":"The Evangelical Lutheran Intelligencer"}
-{"series":"pub_evangelisches-magazin-unter-der-aufsicht-der-deutschen","title":"Evangelisches Magazin, Unter der Aufsicht der Deutschen Evangelisch Lutherischen Synode 1811-1817"}
-{"series":"pub_evangelist","title":"Evangelist 1824-1825"}
-{"series":"pub_every-other-sunday","title":"Every Other Sunday"}
+{"series":"pub_evangelical-christendom","title":"Evangelical Christendom","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_evangelical-lutheran-intelligencer","title":"The Evangelical Lutheran Intelligencer","coverage":"http://dbpedia.org/resource/Frederick%2C_Maryland"}
+{"series":"pub_evangelisches-magazin-unter-der-aufsicht-der-deutschen","title":"Evangelisches Magazin, Unter der Aufsicht der Deutschen Evangelisch Lutherischen Synode 1811-1817","coverage":"http://dbpedia.org/resource/Philadelphia"}
+{"series":"pub_evangelist","title":"Evangelist 1824-1825","coverage":"http://dbpedia.org/resource/Cincinnati"}
+{"series":"pub_every-other-sunday","title":"Every Other Sunday","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_everybodys-magazine","title":"Everybody's Magazine 1899-1929","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_examiner","title":"The Examiner 1710-1714","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_examiner-a-weekly-paper-on-politics-literature-music","title":"Examiner, a Weekly Paper on Politics, Literature, Music, and the Fine Arts 1808-1881","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_exeter-hall-lectures-to-young-men","title":"Exeter Hall Lectures to Young Men 1845-1865","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_expositor-1875","title":"The Expositor"}
+{"series":"pub_expositor-1875","title":"The Expositor","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_factory","title":"Factory 1882-1968","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_farm-journal","title":"Farm Journal 1877-2015","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"series":"pub_farmers-and-planters-friend","title":"Farmers' and Planters' Friend 1821","coverage":"http://dbpedia.org/resource/Philadelphia"}
@@ -454,22 +451,22 @@
 {"series":"pub_fool-by-thomas-brainless-jester-to-his-majesty-the-public","title":"Fool; By Thomas Brainless, Jester to His Majesty the Public 1807","coverage":"http://dbpedia.org/resource/Salem%2C_Massachusetts"}
 {"series":"pub_foreign-quarterly-and-westminster-review","title":"Foreign Quarterly and Westminster Review 1827-1847","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_fortnightly","title":"The Fortnightly 1865-1934","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_fortnightly-sermon","title":"Fortnightly Sermon"}
+{"series":"pub_fortnightly-sermon","title":"Fortnightly Sermon","coverage":"http://dbpedia.org/resource/Chicago"}
 {"series":"pub_fosters-monthly-reference-list","title":"Foster's Monthly Reference List 1881-1884","coverage":"http://dbpedia.org/resource/Providence%2C_Rhode_Island"}
 {"series":"pub_foundry-management-technology","title":"Foundry Management & Technology 1892-2013","coverage":"http://dbpedia.org/resource/Detroit"}
 {"series":"pub_frasers-magazine","title":"Fraser's Magazine 1830-1882","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_freed-man-a-monthly-magazine","title":"Freed-Man: A Monthly Magazine Devoted to the Interests of the Freed Coloured People 1865-1868","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_freedmens-record","title":"Freedmen's Record 1865-1874","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_freeholder-or-political-essays","title":"Freeholder; Or Political Essays 1715-1716","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_freethinking-christians-magazine","title":"The Freethinking Christians' Magazine"}
-{"series":"pub_friend","title":"The Friend 1978"}
+{"series":"pub_freethinking-christians-magazine","title":"The Freethinking Christians' Magazine","coverage":"http://dbpedia.org/resource/London"}
+{"series":"pub_friend","title":"The Friend 1978","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"series":"pub_friend-of-man","title":"Friend of Man 1836-1842","coverage":"http://dbpedia.org/resource/Utica%2C_New_York"}
-{"series":"pub_friend-of-progress","title":"The Friend of Progress"}
+{"series":"pub_friend-of-progress","title":"The Friend of Progress","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_fun","title":"Fun 1861-1901","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_garden-and-forest-a-journal-of-horticulture-landscape","title":"Garden and Forest; A Journal of Horticulture, Landscape Art and Forestry 1888-1897","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_garland-or-new-general-repository-of-fugitive-poetry","title":"Garland, or New General Repository of Fugitive Poetry 1825","coverage":"http://dbpedia.org/resource/Auburn%2C_New_York"}
 {"series":"pub_gas-journal","title":"Gas Journal 1849-1972","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_gazette-des-beaux-arts","title":"Gazette des Beaux Arts"}
+{"series":"pub_gazette-des-beaux-arts","title":"Gazette des Beaux Arts","coverage":"http://dbpedia.org/resource/Paris"}
 {"series":"pub_geistliches-magazien","title":"Geistliches Magazien 1764-1771","coverage":"http://dbpedia.org/resource/Germantown%2C_Philadelphia"}
 {"series":"pub_general-history-discoveries-improvements-in-useful-art","title":"General History of the Principal Discoveries and Improvements in Useful Art 1726-1727","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_general-review-of-british-and-foreign-literature","title":"General Review of British and Foreign Literature 1806","coverage":"http://dbpedia.org/resource/London"}
@@ -481,23 +478,22 @@
 {"series":"pub_gentlemen-and-ladies-town-and-country-magazine","title":"The Gentlemen and Ladies' Town and Country Magazine 1789-1790","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_geographical-journal","title":"The Geographical Journal 1893-2015","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_geographical-magazine","title":"The Geographical Magazine 1874-1878","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_geological-society-london-trans","title":"Transactions of the Geological Society"}
+{"series":"pub_geological-society-london-trans","title":"Transactions of the Geological Society","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_geological-society-of-america-bulletin","title":"Geological Society of America Bulletin 1890-2010","coverage":"http://dbpedia.org/resource/Rochester%2C_New_York"}
-{"series":"pub_geologie-und-palaeontologie-abhandlungen","title":"Neues Jahrbuch fuer Geologie und Palaeontologie. Abhandlungen"}
 {"series":"pub_georgia-supreme-court-reports-of-cases-in-law","title":"Georgia. Supreme Court. Reports of Cases in Law and Equity Argued and Determined in the Supreme Court of Georgia 1805-1887","coverage":"http://dbpedia.org/resource/Athens%2C_Georgia"}
-{"series":"pub_gff","title":"GFF"}
+{"series":"pub_gff","title":"GFF","coverage":"http://dbpedia.org/resource/Stockholm"}
 {"series":"pub_ghost","title":"Ghost 1796","coverage":"http://dbpedia.org/resource/Edinburgh"}
-{"series":"pub_giornale-de-letterati-roma","title":"Giornale de' Letterati Roma"}
-{"series":"pub_glad-tidings-magazine-agncn","title":"Glad Tidings Magazine"}
+{"series":"pub_giornale-de-letterati-roma","title":"Giornale de' Letterati Roma","coverage":"http://dbpedia.org/resource/Rome"}
+{"series":"pub_glad-tidings-magazine-agncn","title":"Glad Tidings Magazine","coverage":"http://dbpedia.org/resource/Pittsburgh"}
 {"series":"pub_gleanings-in-bee-culture","title":"Gleanings in Bee Culture 1873-1992","coverage":"http://dbpedia.org/resource/Medina%2C_Ohio"}
 {"series":"pub_golden-hours-a-magazine-for-sunday-reading","title":"Golden Hours. a Magazine for Sunday Reading 1866-1884","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_good-government","title":"Good Government 1881-1906","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_good-housekeeping","title":"Good Housekeeping 1885-2015","coverage":"http://dbpedia.org/resource/Springfield%2C_Massachusetts"}
 {"series":"pub_good-words-and-sunday-magazine","title":"Good Words 1860-1906","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_grain-feed-journals","title":"Grain & Feed Journals"}
+{"series":"pub_grain-feed-journals","title":"Grain & Feed Journals","coverage":"http://dbpedia.org/resource/Chicago"}
 {"series":"pub_granite-state-monthly","title":"The Granite State Monthly 1877-1930","coverage":"http://dbpedia.org/resource/Concord%2C_New_Hampshire"}
 {"series":"pub_grays-inn-journal","title":"Gray's Inn Journal 1753-1754","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_great-britain-board-of-trade-board-of-trade-journal","title":"Board of Trade Journal 1886-1970"}
+{"series":"pub_great-britain-board-of-trade-board-of-trade-journal","title":"Board of Trade Journal 1886-1970","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_great-britain-parliament-parliamentary-debates","title":"Great Britain. Parliament. Parliamentary Debates 1803-1908","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_great-britain-public-record-america-and-the-west-indies","title":"Calendar of State Papers, Colonial Series, America and the West Indies 1574-1733","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_great-britain-public-record-papers-domestic-charles-ii","title":"Great Britain. Public Record Office. Calendar of State Papers. Domestic- Charles II 1660-1685","coverage":"http://dbpedia.org/resource/London"}
@@ -506,8 +502,8 @@
 {"series":"pub_grub-street-journal","title":"Grub-Street Journal 1730-1737","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_grumbler","title":"The Grumbler 1715","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_guardian-addison-steele-and-others","title":"The Guardian 1713","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_guide-to-holiness","title":"The Guide to Holiness"}
-{"series":"pub_guidon-1891","title":"The Guidon"}
+{"series":"pub_guide-to-holiness","title":"The Guide to Holiness","coverage":"http://dbpedia.org/resource/Boston"}
+{"series":"pub_guidon-1891","title":"The Guidon","coverage":"http://dbpedia.org/resource/San_Francisco"}
 {"series":"pub_hardware-age-home-improvement-market","title":"Hardware Age Home Improvement Market 1894-1998","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_harlequin-a-journal-of-the-drama","title":"Harlequin. A Journal of the Drama 1829","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_hartford-seminary","title":"Hartford Seminary Record; Issued Under the Auspices of the Faculty of Hartford Theological Seminary 1890-1913","coverage":"http://dbpedia.org/resource/Hartford%2C_Connecticut"}
