@@ -32,11 +32,14 @@ if __name__ == '__main__':
             ).withColumnRenamed('height', 'altoHeight'
             ).drop('issue' #, 'text', 'regions'
             ).dropDuplicates(['batch', 'series', 'date', 'ed', 'seq', 'sourceFrame'])
+    batches = alto.select('batch').distinct()
+    batches.cache()
 
     # alto.coalesce(200).write.save(config.outputPath + '/alto', mode='ignore')
     # alto = spark.read.load(config.outputPath + '/alto')
 
     mets = spark.read.json(config.metsPath).withColumnRenamed('file', 'metsFile'
+                ).join(broadcast(batches), ['batch'], 'left_semi'
                 ).select('*', f.posexplode('pages')
                 ).select('*', 'col.*', 'col.image.*'
                 ).drop('pages', 'col', 'image'
@@ -80,7 +83,7 @@ if __name__ == '__main__':
     linked.join(broadcast(dedup), ['series', 'date', 'ed', 'issue'], 'left_semi'
         ).join(alto, ['batch', 'series', 'date', 'ed', 'seq', 'sourceFrame'], 'left_outer'
         ).withColumn('id', f.concat('issue', lit('#pageModsBib'), (col('pos') + 1))
-        ).withColumn('scale', f.coalesce((col('altoWidth')/col('width')).cast('int'), lit(1))
+        ).withColumn('scale', f.coalesce((col('altoWidth')/col('width')), lit(1))
         ).withColumn('pages', f.array(struct(f.concat(lit('https://tile.loc.gov/storage-services/'), 'file').alias('id'),
                                              make_iiif('file').alias('iiif'),
                                              'seq', 'width', 'height', 'dpi',
