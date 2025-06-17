@@ -1,13 +1,20 @@
-import argparse
+import argparse, re
 from pyspark.sql import SparkSession, Row
 from pyspark.sql.functions import (col, collect_list, lit, sort_array, struct, udf)
 import pyspark.sql.functions as f
+from urllib.parse import quote
 
 def catPages(pagea):
     text = ''
     pages = []
     for p in pagea:
         cur = p.page.asDict(True)
+        (file, pno) = re.match(r'^(.+)_(\d+)$', cur['id']).groups()
+        suff = f'{file}/{file}_jp2.zip/{file}_jp2%2F{file}_{pno}.jp2'
+        cur['id'] = 'https://archive.org/download/' + suff
+        cur['iiif'] = 'https://iiif.archive.org/image/iiif/2/' + quote(suff, safe='%')
+        cur['viewer'] = f'https://archive.org/details/{file}/page/n' + \
+            re.sub(r'^0+', '', pno) + '/mode/1up?view=theater'
         off = len(text)
         if 'regions' not in cur:
             cur['regions'] = []
@@ -44,12 +51,14 @@ if __name__ == '__main__':
                 ).filter( (col('pp') <= config.max_pages)
                           & (col('tlen') <= config.max_chars)
                           & ~(col('issue').rlike('_(index|appendix|contents)'))
-                          & ~(col('issue').rlike('\d{4}-\d{4}'))
+                          & ~(col('issue').rlike(r'\d{4}-\d{4}'))
                 ).select('issue'
                 ).join(smap, 'issue')
 
     cat_pages = udf(lambda pagea: catPages(pagea),
-                    corpus.select('text', 'pages').schema.simpleString())
+                    corpus.select('text', 'pages'
+                        ).schema.simpleString().replace('id:string,',
+                                                        'id:string,iiif:string,viewer:string,'))
 
     spark.conf.set('spark.sql.shuffle.partitions', 5000)
 
@@ -62,6 +71,6 @@ if __name__ == '__main__':
                  col('date').cast('date').cast('string').alias('date'),
                  col('p.text'), col('p.pages')
         ).filter(col('date').isNotNull()
-        ).write.save(config.outputPath)
+        ).write.save(config.outputPath, mode='overwrite')
 
     spark.stop()
