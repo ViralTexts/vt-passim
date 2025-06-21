@@ -54,7 +54,7 @@ object APS {
         }
       }
       .toDF("id", "issue", "apsseries", "date", "text", "pageno",
-        "heading", "category", "url", "lang", "contributor")
+        "title", "category", "viewer", "lang", "contributor")
       .join(seriesMap, Seq("apsseries"), "left_outer")
       .filter { ('startdate.isNull || 'startdate <= 'date) && ('enddate.isNull || 'enddate >= 'date) }
       .withColumn("series", coalesce('series, 'apsseries))
