@@ -284,28 +284,28 @@
 {"series":"pub_christian-pilot-and-gospel-moralist","title":"The Christian Pilot, and Gospel Moralist","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_christian-quarterly","title":"Christian Quarterly 1869-1876","coverage":"http://dbpedia.org/resource/Cincinnati"}
 {"series":"pub_christian-quarterly-review","title":"The Christian Quarterly Review 1882-1889","coverage":"http://dbpedia.org/resource/Columbia%2C_Missouri"}
-{"series":"pub_christian-reformer","title":"The Christian Reformer; or, Unitarian magazine and review"}
+{"series":"pub_christian-reformer","title":"The Christian Reformer; or, Unitarian magazine and review","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_christian-remembrancer-a-quarterly-review","title":"Christian Remembrancer. A Quarterly Review 1819-1868","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_christian-thought","title":"Christian Thought"}
-{"series":"pub_chronicle-and-index-of-the-unitarian-society-belfast","title":"The Chronicle and Index of the Unitarian Society, Belfast"}
-{"series":"pub_church-monthly-magazine","title":"The Church Monthly Magazine"}
+{"series":"pub_christian-thought","title":"Christian Thought","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_chronicle-and-index-of-the-unitarian-society-belfast","title":"The Chronicle and Index of the Unitarian Society, Belfast","coverage":"http://dbpedia.org/resource/Belfast"}
+{"series":"pub_church-monthly-magazine","title":"The Church Monthly Magazine","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_church-quarterly-review","title":"The Church Quarterly Review 1875-1907","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_citizen-american-society-extension-university-teaching","title":"Citizen: American Society for Extension of University Teaching 1895-1898","coverage":"http://dbpedia.org/resource/Philadelphia"}
 {"series":"pub_city-jackdaw","title":"City Jackdaw 1875-1880","coverage":"http://dbpedia.org/resource/Manchester"}
 {"series":"pub_classical-museum-a-journal-of-philology","title":"Classical Museum, a Journal of Philology, and of Ancient History and Literature 1844-1850","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_classical-review","title":"The Classical Review 1887-2015","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_clinical-medicine","title":"Clinical Medicine 1895-1978","coverage":"http://dbpedia.org/resource/Chicago"}
-{"series":"pub_club-woman","title":"The Club Woman"}
+{"series":"pub_club-woman","title":"The Club Woman","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_cobbetts-magazine-a-monthly-review","title":"Cobbett's Magazine, a Monthly Review of Politics, History, Science, Domestic Pursuits 1833-1834","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_cobbetts-weekly-political-register","title":"Cobbett's Weekly Political Register 1802-1835","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_collationes-brugenses","title":"Collationes Brugenses"}
-{"series":"pub_collection-des-memoires-relatifs-a-lhistoire-de-france","title":"Collection des mémoires relatifs à l'histoire de France"}
+{"series":"pub_collationes-brugenses","title":"Collationes Brugenses","coverage":"http://dbpedia.org/resource/Bruges"}
+{"series":"pub_collection-des-memoires-relatifs-a-lhistoire-de-france","title":"Collection des mémoires relatifs à l'histoire de France","coverage":"http://dbpedia.org/resource/Paris"}
 {"series":"pub_college-and-university","title":"College and University 1925-2016","coverage":"http://dbpedia.org/resource/Menasha%2C_Wisconsin"}
 {"series":"pub_colliers-the-national-weekly","title":"Collier's: The National Weekly 1891-1915","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_columbia-university-quarterly","title":"Columbia University Quarterly 1898-1907","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_columbian-observer","title":"Columbian Observer 1822-1825","coverage":"http://dbpedia.org/resource/Philadelphia"}
-{"series":"pub_coming-day","title":"The Coming Day"}
-{"series":"pub_commentarii-de-rebus-in-scientia-natvrali-et-medicina-gestis","title":"Commentarii de Rebus in Scientia Natvrali et Medicina Gestis"}
+{"series":"pub_coming-day","title":"The Coming Day","coverage":"http://dbpedia.org/resource/New_York_City"}
+{"series":"pub_commentarii-de-rebus-in-scientia-natvrali-et-medicina-gestis","title":"Commentarii de Rebus in Scientia Natvrali et Medicina Gestis","coverage":"http://dbpedia.org/resource/Leipzig"}
 {"series":"pub_commercial-and-financial-chronicle","title":"The Commercial and Financial Chronicle 1865-1987","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_commons-for-industrial-justice","title":"Commons, for Industrial Justice, Efficient Philanthropy, Educational Freedom and the People's Control of Public Utilities 1896-1905","coverage":"http://dbpedia.org/resource/Chicago"}
 {"series":"pub_companion","title":"Companion 1828","coverage":"http://dbpedia.org/resource/London"}
@@ -505,7 +505,7 @@
 {"series":"pub_hartford-seminary","title":"Hartford Seminary Record; Issued Under the Auspices of the Faculty of Hartford Theological Seminary 1890-1913","coverage":"http://dbpedia.org/resource/Hartford%2C_Connecticut"}
 {"series":"pub_harvard-graduates-magazine","title":"Harvard Graduates' Magazine 1892-1934","coverage":"http://dbpedia.org/resource/Cambridge%2C_Massachusetts"}
 {"series":"pub_harvard-law-review","title":"Harvard Law Review 1887-2015","coverage":"http://dbpedia.org/resource/Boston"}
-{"series":"pub_helper-sunday-school-association","title":"The Helper : a handbook for Sunday school teachers and parents"}
+{"series":"pub_helper-sunday-school-association","title":"The Helper : a handbook for Sunday school teachers and parents","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_heraclitus-ridens-a-discourse-between-jest-and-earnest","title":"Heraclitus Ridens; A Discourse Between Jest and Earnest, Concerning the Times 1717-1718","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_heraclitus-ridens-at-a-dialogue-between-jest-and","title":"Heraclitus Ridens: At a Dialogue Between Jest and Earnest, Concerning the Times 1681-1682","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_heraclitus-ridens-in-a-dialogue-between-jest-and","title":"Heraclitus Ridens in a Dialogue Between Jest and Earnest Concerning the Time 1703-1704","coverage":"http://dbpedia.org/resource/London"}
@@ -540,11 +540,11 @@
 {"series":"pub_illustrated-review-a-fortnightly-journal-of-literature","title":"Illustrated Review, a Fortnightly Journal of Literature, Science, and Art 1870-1874","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_imperial-asiatic-quarterly-oriental-colonial-record","title":"Imperial and Asiatic Quarterly Review and Oriental and Colonial Record 1886-1900","coverage":"http://dbpedia.org/resource/London"}
 {"series":"pub_imperial-magazine","title":"Imperial Magazine 1819-1834","coverage":"http://dbpedia.org/resource/Liverpool"}
-{"series":"pub_industrial-management-1916","title":"Industrial Management 1891-1911"}
+{"series":"pub_industrial-management-1916","title":"Industrial Management 1891-1911","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_industry-week","title":"Industry Week 1880-2016","coverage":"http://dbpedia.org/resource/Cleveland"}
 {"series":"pub_inland-architect-and-news-record","title":"The Inland Architect and News Record 1883-1908","coverage":"http://dbpedia.org/resource/Chicago"}
 {"series":"pub_inspector-and-national-magazine","title":"The Inspector and National Magazine 1826-1827","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_instituto-historico-e-geografico-brasileiro-revista","title":"Instituto Historico e Geografico Brasileiro. Revista"}
+{"series":"pub_instituto-historico-e-geografico-brasileiro-revista","title":"Instituto Historico e Geografico Brasileiro. Revista","coverage":"http://dbpedia.org/resource/Rio_de_Janeiro"}
 {"series":"pub_instructor","title":"Instructor 1996-1998","coverage":"http://dbpedia.org/resource/Dansville%2C_New_York"}
 {"series":"pub_insurance-eastern-underwriter","title":"Insurance Marketing 1899-1981","coverage":"http://dbpedia.org/resource/Boston"}
 {"series":"pub_insurance-law-journal","title":"The Insurance Law Journal 1871-1980","coverage":"http://dbpedia.org/resource/New_York_City"}
@@ -552,13 +552,12 @@
 {"series":"pub_intelligencer","title":"Intelligencer 1728-1729","coverage":"http://dbpedia.org/resource/Dublin"}
 {"series":"pub_intercollegian","title":"The Intercollegian 1878-1967","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_international-journal-of-plant-sciences","title":"International Journal of Plant Sciences 1875-2015","coverage":"http://dbpedia.org/resource/Crawfordsville%2C_Indiana"}
-{"series":"pub_introduction-aux-observations-sur-lhistoire-naturelle-et-sur-les-arts","title":"Introduction Aux Observations Sur L'Histoire Naturelle et sur les Arts"}
 {"series":"pub_investigator-and-general-intelligencer","title":"Investigator and General Intelligencer 1828","coverage":"http://dbpedia.org/resource/Providence%2C_Rhode_Island"}
 {"series":"pub_irish-quarterly-review","title":"Irish Quarterly Review 1851-1859","coverage":"http://dbpedia.org/resource/Dublin"}
 {"series":"pub_irish_times","title":"The Irish Times","coverage":"http://dbpedia.org/resource/Dublin"}
 {"series":"pub_jacobites-journal","title":"Jacobite's Journal 1747-1748","coverage":"http://dbpedia.org/resource/London"}
-{"series":"pub_jahrbuch-der-musikbibliothek-peters","title":"Jahrbuch der Musikbibliothek Peters"}
-{"series":"pub_jahrbuch-fuer-morphologie-und-mikroskopische-anatomie","title":"Jahrbuch fuer Morphologie und Mikroskopische Anatomie. Abteilung 1: Gegenbaurs Morphologisches Jahrbuch"}
+{"series":"pub_jahrbuch-der-musikbibliothek-peters","title":"Jahrbuch der Musikbibliothek Peters","coverage":"http://dbpedia.org/resource/Leipzig"}
+{"series":"pub_jahrbuch-fuer-morphologie-und-mikroskopische-anatomie","title":"Jahrbuch fuer Morphologie und Mikroskopische Anatomie. Abteilung 1: Gegenbaurs Morphologisches Jahrbuch","coverage":"http://dbpedia.org/resource/Leipzig"}
 {"series":"pub_jama","title":"JAMA: The Journal of the American Medical Association 1883-2014","coverage":"http://dbpedia.org/resource/Chicago"}
 {"series":"pub_jama-ophthalmology","title":"JAMA Ophthalmology 1869-2014","coverage":"http://dbpedia.org/resource/New_York_City"}
 {"series":"pub_jck","title":"JCK (Jewelers' Circular-Keystone) 1892-2011","coverage":"http://dbpedia.org/resource/New_York_City"}
