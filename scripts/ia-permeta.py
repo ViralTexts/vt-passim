@@ -41,6 +41,7 @@ def regularDate(raw, id):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='IA Periodical Metadata',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument('-x', '--exclude', help='series to exclude')
     parser.add_argument('idsPath', metavar='<path>', help='ids path')
     parser.add_argument('inputPath', metavar='<path>', help='input path')
     parser.add_argument('outputPath', metavar='<path>', help='output path')
@@ -54,15 +55,21 @@ if __name__ == '__main__':
 
     ids = spark.read.text(config.idsPath).toDF('issue')
 
-    spark.read.json(config.inputPath
-        ).na.drop(subset=['identifier', 'collection']
-        ).select(col('identifier').alias('issue'),
-                 (col('collection')[0]).alias('series'),
-                 col('date').alias('rawdate'),
-                 reg_date('date', 'identifier').alias('date')
-        ).filter(col('series').startswith('pub_') | col('series').startswith('newspaperarchive-')
-        ).distinct(
-        ).join(ids, ['issue'], 'left_semi'
-        ).write.json(config.outputPath, mode='overwrite')
+    res = spark.read.json(config.inputPath
+              ).na.drop(subset=['identifier', 'collection']
+              ).select(col('identifier').alias('issue'),
+                       (col('collection')[0]).alias('series'),
+                       col('date').alias('rawdate'),
+                       reg_date('date', 'identifier').alias('date')
+              ).filter(col('series').startswith('pub_')
+                       | col('series').startswith('newspaperarchive-')
+              ).distinct()
+
+    if config.exclude != None and config.exclude != '':
+        ex = spark.read.text(config.exclude).toDF('series')
+        res = res.join(ex, ['series'], 'left_anti')
+
+    res.join(ids, ['issue'], 'left_semi'
+      ).write.json(config.outputPath, mode='overwrite')
 
     spark.stop()
