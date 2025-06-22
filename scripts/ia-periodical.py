@@ -60,8 +60,6 @@ if __name__ == '__main__':
                         ).schema.simpleString().replace('id:string,',
                                                         'id:string,iiif:string,viewer:string,'))
 
-    spark.conf.set('spark.sql.shuffle.partitions', 5000)
-
     corpus.join(goods, 'issue'
         ).groupBy('issue', 'series', 'date'
         ).agg(
