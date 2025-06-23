@@ -6,6 +6,7 @@ import pyspark.sql.functions as f
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Recode series',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument('-x', '--exclude', help='series to exclude')
     parser.add_argument('seriesPath', metavar='<series path>', help='series path')
     parser.add_argument('inputPath', metavar='<input path>', help='input path')
     parser.add_argument('outputPath', metavar='<output path>', help='output path')
@@ -18,13 +19,18 @@ if __name__ == "__main__":
                 ).groupBy('series2', 'series'
                 ).agg(f.min('start').alias('start'), f.max('end').alias('end'))
 
-    spark.read.load(config.inputPath).withColumnRenamed('series', 'series2'
-        ).join(series, ['series2'], 'left_outer'
-        ).filter( (col('start').isNull() | (col('start') <= col('date'))) &
-                  (col('end').isNull() | (col('date') <= col('end')))
-        ).withColumn('series', f.coalesce('series', 'series2')
-        ).drop('series2', 'start', 'end'
-        ).write.save(config.outputPath, mode='overwrite')
+    res = spark.read.load(config.inputPath).withColumnRenamed('series', 'series2'
+              ).join(series, ['series2'], 'left_outer'
+              ).filter( (col('start').isNull() | (col('start') <= col('date'))) &
+                        (col('end').isNull() | (col('date') <= col('end')))
+              ).withColumn('series', f.coalesce('series', 'series2')
+              ).drop('series2', 'start', 'end')
+
+    if config.exclude != None and config.exclude != '':
+        ex = spark.read.text(config.exclude).toDF('series')
+        res = res.join(ex, ['series'], 'left_anti')
+    
+    res.write.save(config.outputPath, mode='overwrite')
 
     spark.stop()
     
