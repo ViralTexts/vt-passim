@@ -1139,7 +1139,7 @@
 {"series":"DDD:PPN:832495530","title":"Nieuwe Venlosche courant : voorheen Venloosch nieuwsblad - Venloosche courant","lang":["nl"],"publisher":"NV Nieuwe Venlosche courant","placeOfPublication":"Venlo","coverage":"http://dbpedia.org/resource/Venlo"}
 {"series":"DDD:PPN:83249562X","title":"Het nieuws van den dag : kleine courant","lang":["nl"],"publisher":"Steendrukkerĳ Roeloffzen en Hübner;NV De Kleine Courant","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:832495751","title":"Nieuwsblad van het Zuiden : dagblad met ochtend- en avond-editie","lang":["nl"],"publisher":"Nieuwsblad","placeOfPublication":"Tilburg","coverage":"http://dbpedia.org/resource/Tilburg"}
-{"series":"DDD:PPN:832496146","title":"Noordhollandsche courant","lang":["nl"],"publisher":"s.n.","placeOfPublication":"[S.l.]"}
+{"series":"DDD:PPN:832496146","title":"Noordhollandsche courant","lang":["nl"],"publisher":"s.n.","placeOfPublication":"[S.l.]","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:832501557","title":"Vrĳ Nederland","lang":["de","en","fr","nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:832502987","title":"Nouvelles extraordinaires de divers endroits","lang":["fr"],"publisher":"De La Font","placeOfPublication":"Leide","coverage":"http://dbpedia.org/resource/Leiden"}
 {"series":"DDD:PPN:832503118","title":"Nouvelles politiques, publiées à Leyde","lang":["fr"],"publisher":"Abraham Blussé, le Jeune","placeOfPublication":"Leyde","coverage":"http://dbpedia.org/resource/Leiden"}
@@ -1169,7 +1169,7 @@
 {"series":"DDD:PPN:832698679","title":"Voorwaarts : sociaal-democratisch dagblad","lang":["nl"],"publisher":"Sociaal-Democratische Arbeiderspartĳ (SDAP)","placeOfPublication":"Rotterdam","coverage":"http://dbpedia.org/resource/Rotterdam"}
 {"series":"DDD:PPN:832737143","title":"Het vrĳe volk : democratisch-socialistisch dagblad","lang":["nl"],"publisher":"De Arbeiderspers","placeOfPublication":"Rotterdam","coverage":"http://dbpedia.org/resource/Rotterdam"}
 {"series":"DDD:PPN:832737666","title":"De waarheid","lang":["nl"],"publisher":"[s.n.]","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
-{"series":"DDD:PPN:832737739","title":"Watergraafsmeer courant","lang":["nl"],"publisher":"s.n.","placeOfPublication":"[S.l.]"}
+{"series":"DDD:PPN:832737739","title":"Watergraafsmeer courant","lang":["nl"],"publisher":"s.n.","placeOfPublication":"[S.l.]","coverage":"http://dbpedia.org/resource/Amsterdam"}
 {"series":"DDD:PPN:83273781X","title":"VVeeckelycke courante van Europa","lang":["nl"],"publisher":"Abraham Casteleyn","placeOfPublication":"Gedruckt tot Haerlem,","coverage":"http://dbpedia.org/resource/Haarlem"}
 {"series":"DDD:PPN:832774014","title":"Agrarisch nieuwsblad : (waarin opgenomen het orgaan Landbouw en maatschappĳ)","lang":["nl"],"publisher":"De Agrarische Pers","placeOfPublication":"Meppel","coverage":"http://dbpedia.org/resource/Meppel"}
 {"series":"DDD:PPN:832797472","title":"Amsterdamse courant","lang":["nl"],"publisher":"Otto Barentsz Smient","placeOfPublication":"Amsterdam","coverage":"http://dbpedia.org/resource/Amsterdam"}
