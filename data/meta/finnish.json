@@ -52,7 +52,7 @@
 {"series":"1458-8609","title":"Tapio","lang":["fi"],"placeOfPublication":"Kuopio","coverage":"http://dbpedia.org/resource/Kuopio"}
 {"series":"1457-4845","title":"Wiborgs Annonce Blad","lang":["sv"],"placeOfPublication":"Wiborg","coverage":"http://dbpedia.org/resource/Vyborg"}
 {"series":"1457-4616","title":"Sanomia Turusta","lang":["fi"],"placeOfPublication":"Turku","coverage":"http://dbpedia.org/resource/Turku"}
-{"series":"fk00377","title":"Från Nära och Fjärran","lang":["sv"]}
+{"series":"fk00377","title":"Från Nära och Fjärran","lang":["sv"],"coverage":"http://dbpedia.org/resource/Helsinki"}
 {"series":"1458-6541","title":"Vikingen","lang":["sv"],"placeOfPublication":"Helsingfors","coverage":"http://dbpedia.org/resource/Helsinki"}
 {"series":"1458-2694","title":"Tampereen Sanomat","lang":["fi"],"placeOfPublication":"Tampere","coverage":"http://dbpedia.org/resource/Tampere"}
 {"series":"1457-4861","title":"Wiburgs Mancherley","lang":["de"],"placeOfPublication":"Wiburg","coverage":"http://dbpedia.org/resource/Vyborg"}
