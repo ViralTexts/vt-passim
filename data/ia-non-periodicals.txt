@@ -12,6 +12,14 @@ pub_geologie-und-palaeontologie-abhandlungen
 pub_introduction-aux-observations-sur-lhistoire-naturelle-et-sur-les-arts
 pub_journal-de-physique-1963
 pub_journal-of-education-for-business
+pub_medical-proceedings
+pub_milton-intelligencer
+pub_natural-history-of-new-york
+pub_neuropeptides
+pub_new-england-economic-indicators
+pub_new-york-ministerium-protocol
+pub_new-york-state-museum-bulletin
+pub_papers-of-the-american-board-of-commissioners-for-foreign-missions
 pub_platts-oilgram-news
 pub_przeglad-mechaniczny
 pub_quaker-womens-tracts
