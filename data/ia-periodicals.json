@@ -1,5 +1,7 @@
 {"series2":"/lccn/sn46035907", "series":"/lccn/46035907"}
 {"series2":"/lccn/sn96094960", "series":"/lccn/05039090"}
+{"series2":"/lccn/sn82015931", "series":"/lccn/sn82015931", "start":"1868-11-08", "end":"1869-03-06"}
+{"series2":"/lccn/sn82015931", "series":"/lccn/sn83045188", "start":"1869-03-07", "end":"2025"}
 {"series2":"pub_new-york-times", "series":"/lccn/sn83030746", "start":"1851-09-18", "end":"1857-09-12"}
 {"series2":"pub_new-york-times", "series":"/lccn/sn78004456", "start":"1857-09-14", "end":"2023"}
 {"series2":"pub_abendpost-sonntagpost", "series":"/lccn/sn83045771"}
@@ -20,6 +22,10 @@
 {"series2":"pub_chicago-daily-tribune", "series":"/lccn/sn82014064", "start":"1864-08-21", "end":"1872-10-08"}
 {"series2":"pub_chicago-daily-tribune", "series":"/lccn/sn84031492", "start":"1872-10-09", "end":"1963-02-16"}
 {"series2":"pub_chicago-daily-tribune", "series":"/lccn/sn83045111", "start":"1963-02-17", "end":"2023"}
+{"series2":"pub_courier_journal", "series":"/lccn/sn82015931", "start":"1868-11-08", "end":"1869-03-06"}
+{"series2":"pub_courier_journal", "series":"/lccn/sn83045188", "start":"1869-03-07", "end":"2025"}
+{"series2":"pub_daily-memphis-avalanche-tenn", "series":"/lccn/sn84024456"}
+{"series2":"pub_dnr", "series":"/lccn/sn84026559"}
 {"series2":"pub_douglass-monthly", "series":"/lccn/sn87070160"}
 {"series2":"pub_frederick-douglass-paper", "series":"/lccn/sn84026365", "start":"1847-12-03", "end":"1851-04-17"}
 {"series2":"pub_frederick-douglass-paper", "series":"/lccn/sn84026366", "start":"1851-04-18", "end":"1860"}
@@ -33,6 +39,7 @@
 {"series2":"pub_leslies-weekly", "series":"/lccn/sn98068238", "start":"1920-10-09", "end":"1921-10-22"}
 {"series2":"pub_los-angeles-times", "series":"/lccn/sn83045528", "start":"1881-12-04", "end":"1886-10-22"}
 {"series2":"pub_los-angeles-times", "series":"/lccn/sn81004356", "start":"1886-10-23", "end":"2023"}
+{"series2":"pub_milton-intelligencer", "series":"/lccn/sn85026811"}
 {"series2":"pub_nebraska-ansiedler", "series":"/lccn/sn95063987"}
 {"series2":"pub_new-national-era", "series":"/lccn/sn84026753"}
 {"series2":"pub_occident", "series":"/lccn/sn95062433"}
