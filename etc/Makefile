@@ -3,26 +3,34 @@ QUEUE=short
 WORKERS=40
 CORES=5
 CMEM=8
-RAW=/work/proj_cssh/nulab/corpora
-NRAW=/work/nulab/corpora
+RAW=/projects/proj_cssh/nulab/corpora
+NRAW=/projects/nulab/corpora
 SWORKERS=10
 SMEM=40
-QTIME= --time 1-0
+QTIME= --time 2-0
+JRUN=slurm
 
 N=25
 M=5
 
 VT=/home/dasmith/src/vt-passim
 
+ifeq (${JRUN},slurm)
+bads="-x d[0002-0005,0007,0010-0014,0016-0018,0020,0022,0023,0024,0026-0039,0050,0064,0076,0085,0097,0100,0105,0110,0113,0126,0135,0142,0143,0147,0149,0150,1004,1027,3037,3038,3040,3044,3046,3047,3089,3090,3091,3093,3146,3147,3149,3150,3163,3164,3165,3168,3170,3171,3194,3203,3204,3206,3208,3230,3231,3233,3239,4041-4044,4046-4051,4056,4100]"
+
 # spark_run = WORKERS=${WORKERS} CORES=${CORES} CMEM=${CMEM} QUEUE=${QUEUE} source run-saspark-express.sh; \
 # srun -x c0178 -p ${QUEUE} -N 1 -c 2 --mem=40G -d "after:$$SPARK_MASTER_JOBID" bash -c "$(1)"; \
 # scancel $$SPARK_WORKER_JOBID $$SPARK_MASTER_JOBID
 
 spark_run = WORKERS=${WORKERS} CORES=${CORES} CMEM=${CMEM} QUEUE=${QUEUE} QTIME="${QTIME}" source run-saspark.sh; \
-srun -x c0159,c0166,c0178,c3085 ${QTIME} -p ${QUEUE} -N 1 -c 2 --mem=40G -d "after:$$SPARK_MASTER_JOBID" bash -c "$(1)"; \
+srun ${bads} ${QTIME} -p ${QUEUE} -N 1 -c 2 --mem=40G -d "after:$$SPARK_MASTER_JOBID" bash -c "$(1)"; \
 scancel $$SPARK_WORKER_JOBID $$SPARK_MASTER_JOBID
 
 slurm_run = srun ${QTIME} -p ${QUEUE} -N 1 -c $(SWORKERS) --mem=$(SMEM)G bash -c "SPARK_SUBMIT_ARGS='--driver-memory $(SMEM)G --executor-memory $(SMEM)G' $(1)";
+else
+spark_run=bash -c "$(1)"
+slurm_run=bash -c "SPARK_SUBMIT_ARGS='--driver-memory $(SMEM)G --executor-memory $(SMEM)G' $(1)"
+endif
 
 .SECONDARY:
 
@@ -120,9 +128,9 @@ eq := =
 comma := ,
 
 #	serial/open=true/corpus=bsb/_SUCCESS \
-#	serial/open=true/corpus=sbb/_SUCCESS \
 
 serial/_SUCCESS:	serial/open$(eq)true/corpus$(eq)ca/_SUCCESS \
+	serial/open=true/corpus=ca-new/_SUCCESS \
 	serial/open=true/corpus=ddd/_SUCCESS \
 	serial/open=true/corpus=europeana/_SUCCESS \
 	serial/open=true/corpus=finnish/_SUCCESS \
@@ -132,7 +140,9 @@ serial/_SUCCESS:	serial/open$(eq)true/corpus$(eq)ca/_SUCCESS \
 	serial/open=true/corpus=panewsarchive/_SUCCESS \
 	serial/open=true/corpus=nebnewspapers/_SUCCESS \
 	serial/open=true/corpus=onb/_SUCCESS \
+	serial/open=true/corpus=sbb/_SUCCESS \
 	serial/open=true/corpus=trove/_SUCCESS \
+	serial/open=true/corpus=txdn/_SUCCESS \
 	serial/open=false/corpus=aps/_SUCCESS \
 	serial/open=false/corpus=gale-uk/_SUCCESS \
 	serial/open=false/corpus=gale-us/_SUCCESS \
@@ -146,6 +156,12 @@ ca-raw/_SUCCESS:	$(patsubst %.tar.bz2,ca-raw/batch=%/_SUCCESS,$(notdir $(wildcar
 ca-raw/batch$(eq)%/_SUCCESS:	$(RAW)/chroniclingamerica/raw/%.tar.bz2
 	$(call slurm_run,export SPARK_SUBMIT_ARGS+=' --conf spark.sql.adaptive.enabled=true'; vtrun ChronAm $< $(dir $@))
 
+ca-new/_SUCCESS:	$(patsubst %.warc.gz,ca-new/batch=%/_SUCCESS,$(notdir $(wildcard $(RAW)/chroniclingamerica/alto/*[0-9].warc.gz)))
+	touch $@
+
+ca-new/batch$(eq)%/_SUCCESS:	$(RAW)/chroniclingamerica/alto/%.warc.gz
+	$(call slurm_run,vtrun ndnp-alto.py \"$(RAW)/chroniclingamerica/alto/$**.warc.gz\" $(dir $@))
+
 gale-us-text/_SUCCESS:	$(RAW)/gale/us/XML
 	$(call spark_run,vtrun ncnp-load.py $< $(dir $@))
 
@@ -154,6 +170,12 @@ gale-us-raw/_SUCCESS:	$(RAW)/gale/us/XML
 
 serial/open$(eq)true/corpus$(eq)ca/_SUCCESS:	ca-raw/_SUCCESS ca-mets.json/_SUCCESS
 	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=2000 --conf spark.sql.shuffle.partitions=8000 --conf spark.sql.adaptive.enabled=true'; vtrun ca-page-merge.py ca-raw ca-mets.json $(dir $@))
+
+serial/open$(eq)true/corpus$(eq)ca-new/_SUCCESS:	ca-new/_SUCCESS ca-mets.json/_SUCCESS
+	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=2000 --conf spark.sql.shuffle.partitions=8000 --conf spark.sql.adaptive.enabled=true'; vtrun ca-new-merge.py ca-new ca-mets.json $(dir $@))
+
+serial/open$(eq)true/corpus$(eq)txdn/_SUCCESS:	$(NRAW)/texashistory/manifest
+	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=1000 --conf spark.sql.shuffle.partitions=3000 --conf spark.sql.adaptive.enabled=true'; vtrun txdnp-load.py $< \"$(NRAW)/texashistory/ocr/*.warc.gz\" $(dir $@))
 
 # serial/open$(eq)true/corpus$(eq)ca/_SUCCESS:	$(RAW)/chroniclingamerica/raw ca-files.json/_SUCCESS
 # 	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=2000 --conf spark.sql.shuffle.partitions=8000 --conf spark.sql.adaptive.enabled=true'; $(VT)/bin/vtrun ChronAm $< ca-files.json $(dir $@))
@@ -167,8 +189,8 @@ serial/open$(eq)true/corpus$(eq)europeana/_SUCCESS:	$(RAW)/europeana/newspapers-
 serial/open$(eq)true/corpus$(eq)finnish/_SUCCESS:	$(RAW)/finnish/every
 	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=50 --conf spark.sql.shuffle.partitions=50'; vtrun MetsAltoZipped $< $(dir $@))
 
-serial/open$(eq)true/corpus$(eq)ia/_SUCCESS:	../ia/periodicals.parquet ../ia/kynp.parquet ia-maps/aps-ia.json ia-maps/gale-ia.json ia-maps/moa-ia.json
-	$(call spark_run,vtrun recode-series.py ia-maps '../ia/{periodicals$(comma)kynp}.parquet' $(dir $@))
+serial/open$(eq)true/corpus$(eq)ia/_SUCCESS:	../ia/periodicals.parquet ../ia/kynp.parquet ia-maps/gale-ia.json ia-maps/moa-ia.json
+	$(call spark_run,vtrun recode-series.py --exclude $(VT)/data/ia-non-periodicals.txt ia-maps '../ia/{periodicals$(comma)kynp}.parquet' $(dir $@))
 
 serial/open$(eq)true/corpus$(eq)moa/_SUCCESS:	$(RAW)/moa/magazines
 	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=50'; vtrun moa-load.py $< $(VT)/data/moa.json $(dir $@))
@@ -182,8 +204,8 @@ serial/open$(eq)true/corpus$(eq)sbb/_SUCCESS:	$(RAW)/SBB
 serial/open$(eq)true/corpus$(eq)trove/_SUCCESS:	$(RAW)/trove/issue-458484.json.bz2 $(RAW)/trove/trove.json
 	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.sql.shuffle.partitions=2000'; vtrun trove-load.py $^ $(dir $@))
 
-serial/open$(eq)false/corpus$(eq)aps/_SUCCESS:	$(RAW)/APS $(VT)/data/aps.json
-	$(call spark_run,vtrun APS $< $(VT)/data/aps.json $(dir $@))
+serial/open$(eq)false/corpus$(eq)aps/_SUCCESS:	$(RAW)/APS $(VT)/data/tid.json
+	$(call spark_run,vtrun APS $< $(VT)/data/tid.json $(dir $@))
 
 serial/open$(eq)false/corpus$(eq)gale-uk/_SUCCESS:	$(RAW)/gale/uk/XML
 	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.default.parallelism=200'; vtrun NCNP $< $(VT)/data/gale.json $(dir $@))
@@ -241,7 +263,9 @@ ddd.json/_SUCCESS:	$(RAW)/DDD/meta.json
 	$(call spark_run,$(VT)/bin/vtrun MetsMetaDDD $(RAW)/DDD/meta.json $(dir $@))
 
 meta/lccn.json:	$(RAW)/chroniclingamerica/lccn
-	$(call slurm_run,$(VT)/bin/vtrun LCMerge $< $(VT)/data/default-lccn-places.json $(VT)/data/dbpedia-canonical.json lccn.json &&  lccn.json/part* > $@)
+	$(call slurm_run,$(VT)/bin/vtrun LCMerge $< $(VT)/data/default-lccn-places.json $(VT)/data/dbpedia-canonical.json lccn.json)
+
+#	$(call slurm_run,$(VT)/bin/vtrun LCMerge $< $(VT)/data/default-lccn-places.json $(VT)/data/dbpedia-canonical.json lccn.json && sort lccn.json/part* > $@)
 
 marc.parquet/_SUCCESS:	$(RAW)/chroniclingamerica/marc-raw.xml
 	$(call slurm_run,vtrun marc-parse-xml.py $< $(dir $@))
@@ -299,7 +323,7 @@ ca-files.json/_SUCCESS:	$(RAW)/chroniclingamerica/batches
 	$(call spark_run,spark-submit $$SPARK_SUBMIT_ARGS $(VT)/scripts/ca-image-ids.py '$</*/manifest*.txt' $(dir $@))
 
 ca-mets.json/_SUCCESS:	$(RAW)/chroniclingamerica/mets
-	$(call spark_run,vtrun mets-merge.py \"$(RAW)/chroniclingamerica/{mets$(comma)miss}\" $(dir $@))
+	$(call spark_run,vtrun mets-merge.py $(RAW)/chroniclingamerica/mets $(dir $@))
 
 ndnp-mets/%/_SUCCESS:	$(NRAW)/%/mets
 	$(call slurm_run,vtrun mets-merge.py $< $(dir $@))
@@ -366,6 +390,9 @@ srcgut.out/slim.parquet/_SUCCESS:	srcgut.out/full-extents.parquet/_SUCCESS
 
 %-tok.parquet/_SUCCESS:	%.parquet/_SUCCESS
 	$(call spark_run,vtrun doc-words.py $(dir $<) gut.txt $(dir $@))
+
+batch-coll/%-bdidx.out/tmp/dfpost.parquet/_SUCCESS:	%.parquet/_SUCCESS
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --log-level INFO --to-index --fields day 'xxhash64(batch) as bid' --input-format parquet --output-format parquet $(dir $<) $*-bdidx.out)
 
 %.parquet/_SUCCESS:	%.txt
 	$(call spark_run,vtrun series-filter.py serial/open$(eq)true/corpus$(eq)ca/ $< $(dir $@))
@@ -520,6 +547,9 @@ aps-ia/tmp/extents.parquet/_SUCCESS:	serial/open$(eq)false/corpus$(eq)aps/_SUCCE
 gale-ia/tmp/extents.parquet/_SUCCESS:	serial/open$(eq)false/corpus$(eq)gale-us/_SUCCESS gale-ia/input
 	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --to-extents --fields ref 'date(date) as day' --filterpairs 'ref = 1 AND ref2 = 0 AND day = day2' --input-format parquet --output-format parquet gale-ia/input gale-ia)
 
+gale-uk-ia/tmp/extents.parquet/_SUCCESS:	serial/open$(eq)false/corpus$(eq)gale-uk/_SUCCESS gale-uk-ia/input
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --log-level INFO --to-extents --fields ref 'date(date) as day' --filterpairs 'ref = 1 AND ref2 = 0 AND day = day2' --input-format parquet --output-format parquet gale-uk-ia/input gale-uk-ia)
+
 gale-npa/tmp/extents.parquet/_SUCCESS:	serial/open$(eq)false/corpus$(eq)gale-us/_SUCCESS gale-npa/input
 	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --to-extents --fields ref 'date(date) as day' --filterpairs 'ref = 1 AND ref2 = 0 AND day = day2' --input-format parquet --output-format parquet gale-npa/input gale-npa)
 
@@ -635,3 +665,26 @@ rdd6065-open-n7m5.out/out.parquet/_SUCCESS:	rdd6065-open.parquet/_SUCCESS
 
 rdd6065-open-n25m5.out/out.parquet/_SUCCESS:	rdd6065-open.parquet/_SUCCESS
 	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --all-pairs --docwise --log-level INFO --beam 100 -n 25 -m 5 --fields ref --filterpairs '(ref2 = 0) AND (uid <> uid2)' --input-format parquet --output-format parquet $(dir $<) $(dir $(patsubst %/,%,$(dir $@))))
+
+batch-coll/%/out.parquet/_SUCCESS:
+	mkdir -p batch-coll/$*/tmp
+	(cd batch-coll/$*/tmp; ln -sf ../../idx dfpost.parquet)
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --all-pairs --docwise --log-level INFO -n 25 -m 5 --fields day 'xxhash64(batch) as bid' --filterpairs \"(bid2 = xxhash64('$*')) AND (abs(datediff(day2, day)) <= 366) AND (uid <> uid2)\" --input-format parquet --output-format parquet $(patsubst %-bdidx.out,%.parquet,$(notdir $(lastword $(wildcard batch-coll/*-bdidx.out)))) batch-coll/$*)
+
+%/fix.parquet/_SUCCESS:	%/out.parquet/_SUCCESS %/gram7.mod
+	$(call spark_run,vtrun wit-collate.py -m $*/gram7.mod $(dir $<) $(dir $@))
+
+%/fix-sample.csv/_SUCCESS:	%/fix.parquet/_SUCCESS
+	$(call spark_run,vtrun sample-lines.py $(dir $<) $(dir $@))
+
+%/gram7.txt:	%/out.parquet/_SUCCESS
+	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.driver.maxResultSize=12G'; vtrun ngram-lines.py --n 7 $(dir $<) $*/gram7.sym $*/gram7.txt)
+
+%.mod:	%.cnt
+	$(call slurm_run,ngrammake --method=witten_bell $< $@)
+
+%.cnt:	%.txt
+	$(call slurm_run,ngramread --symbols=$*.sym $< $@)
+
+%.wits/out.parquet/_SUCCESS:	%.parquet/_SUCCESS
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --all-pairs --docwise --log-level INFO -n 25 -m 5 --id wid --fields ref cluster --filterpairs \"(cluster = cluster2) AND (uid <> uid2) AND (ref2 = 0)\" --input-format parquet --output-format parquet $(dir $<) $*.wits)
