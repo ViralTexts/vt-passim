@@ -17,12 +17,12 @@ def guessFormat(path, default="json"):
         return (default, {})
 
 ## Map article/page records and coordinate information to links
-def formatURL(baseurl, corpus, id, p1id, series, date, ed, seq):
-    if corpus == 'ca' or corpus == 'acdc': # TODO: Fix since acdc might redo other OCR
-        return 'https://www.loc.gov/resource/%s/%s/ed-%s/?sp=%d' % (series.replace('/lccn/', ''),
-                                                                    date, ed, seq)
-    elif corpus == 'ia' and p1id != None:
-        return 'https://archive.org/details/' + sub('_0*(\d+)$', r'/page/n\1/mode/1up?view=theater', p1id)
+def formatURL(baseurl, corpus, id, p1id):
+    if baseurl == None and corpus == 'ia' and p1id != None:
+        return 'https://archive.org/details/%s/page/n%s/mode/1up?view=theater' \
+            % (id, sub(r'^.*_0*(\d+).jp2$', r'\1', p1id))
+    elif corpus == 'ddd':
+        return sub(r':alto$', '', baseurl)
     elif corpus == 'trove':
         return "http://trove.nla.gov.au/ndp/del/article/%s" % sub("^trove/", "", id)
     elif corpus == 'europeana':
@@ -30,28 +30,12 @@ def formatURL(baseurl, corpus, id, p1id, series, date, ed, seq):
     else:
         return baseurl
 
-def imageLink(corpus, p1id, p1x, p1y, p1w, p1h, p1width, p1height):
-    if (corpus == 'ca' or corpus == 'acdc') and p1id != None: # TODO fix!
-        if p1width > 0 and p1height > 0:
-            return 'https://tile.loc.gov/image-services/iiif/%s/pct:%f,%f,%f,%f/full/0/default.jpg'\
-                % (sub(r'\.jp2$', '', p1id).replace('/', ':'),
-                   100 * p1x/p1width, 100*p1y/p1height, 100*p1w/p1width, 100*p1h/p1height)
-        else:
-            return 'https://chroniclingamerica.loc.gov/iiif/2/%s/%d,%d,%d,%d/full/0/default.jpg'\
-                % (urllib.parse.quote(p1id, safe=''), p1x, p1y, p1w, p1h)
-    elif corpus == 'ia' and p1id != None:
-        return 'https://iiif.archive.org/iiif/%s/pct:%f,%f,%f,%f/full/0/default.jpg' \
-            % (sub('_0*(\d+)$', r'$\1', p1id),
-               100 * p1x/p1width, 100*p1y/p1height, 100*p1w/p1width, 100*p1h/p1height)
-    elif p1id != None and re.search(r'/data/batches/', p1id):
-        domain, file = re.split(r'/data/batches/', p1id) 
-        mid = '/images/iiif/' if corpus != 'panewsarchive' else '/iiif/'
-        return '%s%s%s/pct:%f,%f,%f,%f/full/0/default.jpg' \
-            % (domain, mid, urllib.parse.quote(file, safe=''),
-               100 * p1x/p1width, 100*p1y/p1height, 100*p1w/p1width, 100*p1h/p1height)
+def imageLink(p1iiif, p1x, p1y, p1w, p1h, p1width, p1height):
+    if p1iiif != None and p1width != None and p1height != None and p1x != None:
+        return '%s/pct:%f,%f,%f,%f/full/0/default.jpg' \
+            % (p1iiif, 100 * p1x/p1width, 100*p1y/p1height, 100*p1w/p1width, 100*p1h/p1height)
     else:
         return None
-    
 
 if __name__ == '__main__':
     argparser = argparse.ArgumentParser(description='Prettyprint clusters')
@@ -79,9 +63,9 @@ if __name__ == '__main__':
             spark.read.csv(config.places, header=True).withColumnRenamed('label', 'city'),
             ['coverage'], 'left_outer')
     
-    constructURL = udf(lambda url, corpus, id, p1id, series, date, ed, seq: formatURL(url, corpus, id, p1id, series, date, ed, seq))
+    constructURL = udf(lambda url, corpus, id, p1id: formatURL(url, corpus, id, p1id))
 
-    image_link = udf(lambda corpus, p1id, p1x, p1y, p1w, p1h, p1width, p1height: imageLink(corpus, p1id, p1x, p1y, p1w, p1h, p1width, p1height))
+    image_link = udf(lambda p1iiif, p1x, p1y, p1w, p1h, p1width, p1height: imageLink(p1iiif, p1x, p1y, p1w, p1h, p1width, p1height))
     thumb_link = udf(lambda image: image.replace('/full/', '/!80,100/') if image != None else None)
 
     raw = spark.read.load(config.inputPath)
@@ -104,6 +88,7 @@ if __name__ == '__main__':
            ).withColumn('p1height', col('pages')[0]['height']
            ).withColumn('p1dpi', col('pages')[0]['dpi']
            ).withColumn('p1id', col('pages')[0]['id']
+           ).withColumn('p1iiif', col('pages')[0]['iiif']
            ).drop('locs', 'pages', 'regions', 'sections'
            ).join(meta, 'series', 'left_outer'
            ).withColumn('source', coalesce('source', 'series_title')
@@ -111,9 +96,8 @@ if __name__ == '__main__':
            ).withColumn('placeOfPublication',
                         coalesce('placeOfPublication', 'series_placeOfPublication')
            ).drop('series_title', 'series_publisher', 'series_placeOfPublication'
-           ).withColumn('url', constructURL('page_access', 'corpus', 'id', 'p1id',
-                                            'series', 'date', 'ed', 'seq')
-           ).withColumn('page_image', image_link('corpus', 'p1id', 'p1x', 'p1y', 'p1w', 'p1h',
+           ).withColumn('url', constructURL('page_access', 'corpus', 'id', 'p1id')
+           ).withColumn('page_image', image_link('p1iiif', 'p1x', 'p1y', 'p1w', 'p1h',
                                                  'p1width', 'p1height')
            ).withColumn('page_thumb', thumb_link('page_image'))
 
