@@ -1,4 +1,5 @@
 import argparse
+from unicodedata import normalize
 from pyspark.sql import SparkSession, Row
 from pyspark.sql.functions import col, collect_list, explode, length, sort_array, struct, udf
 import pyspark.sql.functions as f
@@ -20,11 +21,13 @@ if __name__ == '__main__':
     config = parser.parse_args()
     spark = SparkSession.builder.appName('Import CTS Records').getOrCreate()
 
+    nfd_norm = udf(lambda s: normalize('NFD', s))
     cat_locs = udf(lambda locs: catLocs(locs),
                    'struct<text: string, locs: array<struct<loc: string, start: int, length: int>>>')
 
     spark.read.json(config.inputPath
         ).filter(col('text').isNotNull()
+        ).withColumn('text', nfd_norm('text')
         ).groupBy(col('book').alias('id')
         ).agg(cat_locs(sort_array(collect_list(struct('seq', 'text', 'loc')))).alias('loc')
         ).select('id', 'loc.*'
