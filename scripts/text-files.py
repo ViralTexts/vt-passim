@@ -1,21 +1,25 @@
-from __future__ import print_function
-import sys
+import argparse, os
 from pyspark.sql import SparkSession, Row
-from pyspark.sql.functions import col
+from pyspark.sql.functions import col, concat_ws, regexp_replace
+import pyspark.sql.functions as f
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: text-files.py <input> <output>", file=sys.stderr)
-        exit(-1)
+    parser = argparse.ArgumentParser(description='One text record per file',
+                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument('inputPath', metavar='<input path>', help='input path')
+    parser.add_argument('outputPath', metavar='<output path>', help='output path')
+
+    config = parser.parse_args()
+    spark = SparkSession.builder.appName(parser.description).getOrCreate()
+
+    wd = os.getcwd()
+    wd = wd if wd.startswith('file:///') else 'file://' + wd
 
     groupField = 'book'
-    spark = SparkSession.builder.appName('Load Whole Text Files').getOrCreate()
-    spark.sparkContext.setLogLevel('WARN')
-    spark.sparkContext._jsc.hadoopConfiguration()\
-                           .set('mapreduce.input.fileinputformat.input.dir.recursive', 'true')
-    spark.sparkContext.wholeTextFiles(sys.argv[1])\
-        .map(lambda f: Row(id=f[0], text=f[1]))\
-        .toDF()\
-        .withColumn(groupField, col('id')) \
-        .write.save(sys.argv[2])
+
+    spark.read.text(config.inputPath, recursiveFileLookup=True, wholetext=True
+        ).withColumn(groupField, regexp_replace(f.input_file_name(), '^' + wd + '/', '')
+        ).select(col(groupField).alias('id'), groupField, col('value').alias('text')
+        ).write.save(config.outputPath)
+
     spark.stop()
