@@ -35,19 +35,45 @@ def getLCS(arr1, arr2):
             lcs.extend(arr1[match[1]:match[2]])
     return lcs
 
-def weightLCS(arr1, arr2, weights):
+def lbLCS(arr1, arr2, weights):
     matcher = difflib.SequenceMatcher(None, arr1, arr2)
     total = 0
     for match in matcher.get_opcodes():
         if match[0] == 'equal':
             total += sum(weights[match[1]:match[2]])
     return total
-    
+
+def weightLCS(arr1, arr2, thresh=0.9):
+    best = {}
+    for r in arr1:
+        best[r.loc] = max(best.get(r.loc, 0), r.length)
+    locs1 = []
+    weights = []
+    for r in arr1:
+        if r.length >= (best[r.loc] * thresh):
+            locs1.append(r.loc)
+            weights.append(r.length)
+    locs2 = [r.loc for r in arr2]
+    return lbLCS(locs1, locs2, weights)
+
+    # chart = dict()
+    # for i in range(len(arr1)+1):
+    #     chart[i] = dict()
+    #     chart[i][0] = 0.0
+    # for j in range(len(arr2)+1):
+    #     chart[0][j] = 0.0
+    # for i in range(len(arr1)):
+    #     for j in range(len(arr2)):
+    #         if arr1[i] == arr2[j]:
+    #             chart[i+1][j+1] = chart[i][j] + weights[i]
+    #         else:
+    #             chart[i+1][j+1] = max(chart[i+1][j], chart[i][j+1])
+    # return chart[len(arr1)][len(arr2)]
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='CTS work overlap',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('-o', '--overlap', type=float, default=0.05,
+    parser.add_argument('-o', '--overlap', type=float, default=0.01,
                         help='minimum overlap')
     parser.add_argument('docsPath', metavar='<docs path>', help='docs path')
     parser.add_argument('corpusPath', metavar='<corpus path>', help='corpus path')
@@ -60,7 +86,8 @@ if __name__ == "__main__":
     rmruns = udf(lambda arr: noRuns(arr), 'array<string>')
     sum_runs = udf(lambda arr: sumRuns(arr), 'array<struct<loc: string, length: double>>')
     lcs = udf(lambda arr1, arr2: getLCS(arr1, arr2), 'array<string>')
-    wlcs = udf(lambda arr1, arr2, weights: weightLCS(arr1, arr2, weights), 'double')
+    lblcs = udf(lambda arr1, arr2, weights: lbLCS(arr1, arr2, weights), 'double')
+    wlcs = udf(lambda arr1, arr2: weightLCS(arr1, arr2), 'double')
 
     corpus = spark.read.load(config.corpusPath, mergeSchema=True)
 
@@ -69,6 +96,7 @@ if __name__ == "__main__":
     spark.read.load(config.docsPath
         ).select('book', 'pos', explode('lines').alias('line')
         ).select('book', 'pos', col('line.begin'), explode('line.wits').alias('wit')
+        ).filter(col('wit.matches')/f.length('wit.text') >= 0.1
         # ).select('book', 'pos', 'begin', col('wit.id'), col('wit.locs')
         ).select('book', 'pos', 'begin', col('wit.id'),
                  f.transform('wit.locs',
@@ -82,18 +110,33 @@ if __name__ == "__main__":
         ).agg(sum_runs(flatten(sort_array(collect_list(struct('pos',
                                                               'locs')))['locs'])).alias('cites')
         ).filter(size('cites') > 1
-        ).join(corpus.select('id', 'locs', f.length('text').alias('tlen')
-                    ).filter(size('locs') >= 20), 'id'
+        ).join(corpus.select('id', 'locs', col('book').alias('edition'),
+                             f.length('text').alias('tlen')
+                            ).filter(f.size('locs') > 1), 'id'
         ).withColumn('nlocs', size('locs')
-        ).withColumn('cover', size(f.array_intersect('cites.loc', col('locs.loc'))) / col('nlocs')
+        ).withColumn('covered', size(f.array_intersect('cites.loc', col('locs.loc')))
+        ).withColumn('cover', col('covered') / col('nlocs')
         ).filter(col('cover') >= config.overlap
         ).withColumn('lcs', lcs(col('cites.loc'), col('locs.loc'))
         ).withColumn('lcslen', size('lcs')
         ).withColumn('overlap', col('lcslen') / col('nlocs')
-        ).withColumn('wlcs', wlcs('cites.loc', 'locs.loc', 'cites.length')
+        ).withColumn('lblcs', lblcs('cites.loc', 'locs.loc', 'cites.length')
+        ).withColumn('wlcs', wlcs('cites', 'locs')
+        ).drop('locs', 'cites', 'lcs'
+        ).groupBy('edition', 'book'
+        ).agg(f.sum('nlocs').alias('nlocs'),
+              f.sum('tlen').alias('tlen'),
+              f.sum('covered').alias('covered'),
+              f.sum('lcslen').alias('lcslen'),
+              f.sum('lblcs').alias('lblcs'),
+              f.sum('wlcs').alias('wlcs')
+        ).filter(col('nlocs') >= 20
+        ).withColumn('cover', col('covered') / col('nlocs')
+        ).withColumn('overlap', col('lcslen') / col('nlocs')
         ).withColumn('wover', col('wlcs') / col('tlen')
-        ).drop('locs'
-        ).filter(col('overlap') >= config.overlap
+        ).drop('covered'
+        ).filter(col('wover') >= config.overlap
+        ).repartition(1
         ).sort(f.desc('wover'), col('nlocs')
-        ).write.json(config.outputPath, mode='overwrite')
+        ).write.csv(config.outputPath, mode='overwrite', header=True, escape='"')
     spark.stop()
