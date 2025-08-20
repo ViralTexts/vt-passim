@@ -90,8 +90,10 @@ if __name__ == "__main__":
     wlcs = udf(lambda arr1, arr2: weightLCS(arr1, arr2), 'double')
 
     corpus = spark.read.load(config.corpusPath, mergeSchema=True)
-
-    ## We might need our own LCS that computes the maximum sum of the lengths of cited passages.
+    cinfo = corpus.groupBy(col('book').alias('edition')
+                 ).agg(f.sum(f.length('text')).alias('tlen'),
+                       f.sum(size('locs')).alias('nlocs')
+                 ).filter( (col('tlen') >= 1000) )
 
     spark.read.load(config.docsPath
         ).select('book', 'pos', explode('lines').alias('line')
@@ -110,28 +112,22 @@ if __name__ == "__main__":
         ).agg(sum_runs(flatten(sort_array(collect_list(struct('pos',
                                                               'locs')))['locs'])).alias('cites')
         ).filter(size('cites') > 1
-        ).join(corpus.select('id', 'locs', col('book').alias('edition'),
-                             f.length('text').alias('tlen')
+        ).join(corpus.select('id', 'locs', col('book').alias('edition')
                             ).filter(f.size('locs') > 1), 'id'
-        ).withColumn('nlocs', size('locs')
         ).withColumn('covered', size(f.array_intersect('cites.loc', col('locs.loc')))
-        ).withColumn('cover', col('covered') / col('nlocs')
-        ).filter(col('cover') >= config.overlap
         ).withColumn('lcs', lcs(col('cites.loc'), col('locs.loc'))
         ).withColumn('lcslen', size('lcs')
-        ).withColumn('overlap', col('lcslen') / col('nlocs')
         ).withColumn('lblcs', lblcs('cites.loc', 'locs.loc', 'cites.length')
         ).withColumn('wlcs', wlcs('cites', 'locs')
         ).drop('locs', 'cites', 'lcs'
         ).groupBy('edition', 'book'
-        ).agg(f.sum('nlocs').alias('nlocs'),
-              f.sum('tlen').alias('tlen'),
-              f.sum('covered').alias('covered'),
+        ).agg(f.sum('covered').alias('covered'),
               f.sum('lcslen').alias('lcslen'),
               f.sum('lblcs').alias('lblcs'),
               f.sum('wlcs').alias('wlcs')
-        ).filter(col('nlocs') >= 20
+        ).join(cinfo, 'edition'
         ).withColumn('cover', col('covered') / col('nlocs')
+        ).filter(col('cover') >= config.overlap
         ).withColumn('overlap', col('lcslen') / col('nlocs')
         ).withColumn('wover', col('wlcs') / col('tlen')
         ).drop('covered'
