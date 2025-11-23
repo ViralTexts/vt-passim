@@ -19,6 +19,7 @@ if __name__ == "__main__":
     config = parser.parse_args()
 
     spark = SparkSession.builder.appName('Select c19').getOrCreate()
+    spark.conf.set('spark.sql.parquet.datetimeRebaseModeInWrite', 'CORRECTED')
 
     groups = spark.read.csv(config.groupPath, header=True)
     raw = spark.read.load(config.inputPath, mergeSchema=True)
@@ -38,6 +39,7 @@ if __name__ == "__main__":
     df.join(broadcast(issues), ['series', 'day', 'corpus']
         ).join(broadcast(groups), 'series', 'left_outer'
         ).withColumn('group', coalesce('group', 'series')
-        ).write.partitionBy('open', 'corpus').save(config.outputPath)
+        ).write.save(config.outputPath)
+#        ).write.partitionBy('open', 'corpus').save(config.outputPath)
 
     spark.stop()
