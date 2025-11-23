@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     groups = spark.read.csv(config.groupPath, header=True)
     raw = spark.read.load(config.inputPath, mergeSchema=True)
-    df = raw.withColumn('day', col('date').cast('date')
+    df = raw.withColumn('day', col('date').try_cast('date')
             ).drop('group', 'daylag'
             ).filter( (f.year('day') >= config.min_year) & (f.year('day') < config.max_year) )
 
