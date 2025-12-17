@@ -31,7 +31,7 @@ if __name__ == '__main__':
 
     make_url = udf(lambda issue, series, date, ed, seq: makeURL(issue, series, date, ed, seq))
 
-    make_alto = udf(lambda ocrFile, page_access: (page_access + 'ocr.xml') if config.urlocr else ocrFile)
+    make_alto = udf(lambda ocrFile, viewer: (viewer + 'ocr.xml') if config.urlocr else ocrFile)
 
     make_iiif = udf(lambda fname: makeIIIF(fname))
 
@@ -50,9 +50,9 @@ if __name__ == '__main__':
                 ).withColumn('pp', col('pp').cast('int')
                 ).withColumn('width', col('width').cast('int')
                 ).withColumn('height', col('height').cast('int')
-                ).withColumn('page_access', make_url('issue', 'series', 'date', 'ed', 'seq')
+                ).withColumn('viewer', make_url('issue', 'series', 'date', 'ed', 'seq')
                 ).withColumn('ocrFile', f.regexp_replace('file', r'\.[^/\.]+$', '.xml')
-                ).withColumn('alto', make_alto('ocrFile', 'page_access')
+                ).withColumn('alto', make_alto('ocrFile', 'viewer')
                 ).drop('ocrFile')
 
     if ('sections' in mets.columns) and (mets.filter(size('sections') > 0).count() == 0):
@@ -65,7 +65,7 @@ if __name__ == '__main__':
         ).withColumn('scale', f.coalesce((col('altoWidth')/col('width')), lit(1))
         ).withColumn('pages', f.array(struct(col('file').alias('id'),
                                              make_iiif('file').alias('iiif'),
-                                             'seq', 'width', 'height',
+                                             'viewer', 'seq', 'width', 'height',
                                              col('dpi').cast('int').alias('dpi'),
                                 f.transform('regions',
                                             lambda r: r.withField('start', (r.start).cast('int')).withField('length', (r.length).cast('int')).withField('coords', struct(
@@ -76,7 +76,7 @@ if __name__ == '__main__':
                                                 (r.coords.b/col('scale')).cast('int').alias('b'))
                                                                             )).alias('regions')))
         ).drop('alto', 'altoWidth', 'altoHeight', 'dpi', 'file', 'regions', 'scale',
-               'width', 'height'
+               'width', 'height', 'viewer'
         ).write.save(config.outputPath, mode='overwrite')
 
     spark.stop()
