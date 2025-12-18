@@ -103,12 +103,14 @@ if __name__ == '__main__':
         ).withColumn('pp', col('pp').cast('int')
         ).withColumn('seq', col('seq').cast('int')
         ).withColumn('pages', array(struct(col('image').alias('id'),
-                                           col('iiif'), col('seq'),
+                                           col('iiif'),
+                                           col('page_access').alias('viewer'),
+                                           col('seq'),
                                            col('width').cast('int').alias('width'),
                                            col('height').cast('int').alias('height'),
                                            lit(0).cast('int').alias('dpi'),
                                            col('regions')))
-        ).drop('ocr', 'image', 'iiif', 'width', 'height', 'regions'
+        ).drop('ocr', 'image', 'iiif', 'width', 'height', 'regions', 'page_access'
         ).write.save(config.outputPath, mode='overwrite')
 
     spark.stop()
