@@ -55,5 +55,5 @@ if __name__ == "__main__":
         .filter(lambda f: f[0].endswith('.md'))\
         .map(lambda f: parseEd(f))\
         .toDF()\
-        .write.save(sys.argv[2])
+        .write.save(sys.argv[2], mode='overwrite')
     spark.stop()
