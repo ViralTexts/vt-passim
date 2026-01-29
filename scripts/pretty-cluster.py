@@ -3,8 +3,9 @@ from re import sub
 import urllib.parse
 
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import (col, udf, array_contains, explode, desc,
+from pyspark.sql.functions import (col, get, udf, array_contains, explode, desc,
                                    concat_ws, coalesce, lit)
+import pyspark.sql
 
 def guessFormat(path, default="json"):
     if path.endswith(".json"):
@@ -54,26 +55,27 @@ if __name__ == '__main__':
 
     raw = spark.read.load(config.inputPath)
     cols = set(raw.columns)
-    for f in ['source', 'publisher', 'placeOfPublication', 'viewer', 'title']:
+    for f in ['source', 'publisher', 'placeOfPublication', 'viewer', 'page_access', 'title']:
         if f not in cols:
             raw = raw.withColumn(f, lit(None))
 
     df = raw.withColumnRenamed('lang', 'doc_lang'
-           ).withColumn('sbegin', col('src')[0]['begin']
-           ).withColumn('send', col('src')[0]['end']
-           ).withColumn('src', col('src')[0]['uid']
-           ).withColumn('p1x', col('pages')[0]['regions'][0]['coords']['x']
-           ).withColumn('p1y', col('pages')[0]['regions'][0]['coords']['y']
-           ).withColumn('p1w', col('pages')[0]['regions'][0]['coords']['w']
-           ).withColumn('p1h', col('pages')[0]['regions'][0]['coords']['h']
-           ).withColumn('p1seq', col('pages')[0]['seq']
-           ).withColumn('p1width', col('pages')[0]['width']
-           ).withColumn('p1height', col('pages')[0]['height']
-           ).withColumn('p1dpi', col('pages')[0]['dpi']
-           ).withColumn('p1id', col('pages')[0]['id']
-           ).withColumn('p1iiif', col('pages')[0]['iiif']
-           ).withColumn('url', coalesce('viewer', col('pages')[0]['viewer'])
-           ).drop('locs', 'pages', 'regions', 'sections'
+           ).withColumn('src', get('src', 0)
+           ).withColumn('sbegin', col('src')['begin']
+           ).withColumn('send', col('src')['end']
+           ).withColumn('src', col('src')['uid']
+           ).withColumn('p1x', get('pages', 0)['regions'][0]['coords']['x']
+           ).withColumn('p1y', get('pages', 0)['regions'][0]['coords']['y']
+           ).withColumn('p1w', get('pages', 0)['regions'][0]['coords']['w']
+           ).withColumn('p1h', get('pages', 0)['regions'][0]['coords']['h']
+           ).withColumn('p1seq', get('pages',  0)['seq']
+           ).withColumn('p1width', get('pages', 0)['width']
+           ).withColumn('p1height', get('pages', 0)['height']
+           ).withColumn('p1dpi', get('pages', 0)['dpi']
+           ).withColumn('p1id', get('pages', 0)['id']
+           ).withColumn('p1iiif', get('pages', 0)['iiif']
+           ).withColumn('url', coalesce('viewer', get('pages', 0)['viewer'], 'page_access')
+           ).drop('locs', 'pages', 'regions', 'sections', 'page_access', 'viewer'
            ).join(meta, 'series', 'left_outer'
            ).withColumn('source', coalesce('source', 'series_title')
            ).withColumn('publisher', coalesce('publisher', 'series_publisher')
