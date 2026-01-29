@@ -92,25 +92,33 @@ if __name__ == '__main__':
     parse_annotations = udf(lambda v: parseAnnotations(v),
                             'struct<ocr: string, text: string, regions: array<struct<start: int, length: int, coords: struct<x: int, y: int, w: int, h: int, b: int>>>>')
 
-    spark.sparkContext.parallelize(paths, len(paths)
-        ).flatMap(lambda fname: warcFiles(fname)
-        ).groupByKey(len(paths) * 10
-        ).mapValues(lambda barr: (b''.join(barr)).decode()
-        ).toDF(
-        ).withColumn('info', parse_annotations('_2')
-        ).select('info.*'
-        ).join(mets, ['ocr'], 'right_outer'
-        ).withColumn('pp', col('pp').cast('int')
-        ).withColumn('seq', col('seq').cast('int')
-        ).withColumn('pages', array(struct(col('image').alias('id'),
-                                           col('iiif'),
-                                           col('page_access').alias('viewer'),
-                                           col('seq'),
-                                           col('width').cast('int').alias('width'),
-                                           col('height').cast('int').alias('height'),
-                                           lit(0).cast('int').alias('dpi'),
-                                           col('regions')))
-        ).drop('ocr', 'image', 'iiif', 'width', 'height', 'regions', 'page_access'
-        ).write.save(config.outputPath, mode='overwrite')
+    linked = spark.sparkContext.parallelize(paths, len(paths)
+                 ).flatMap(lambda fname: warcFiles(fname)
+                 ).groupByKey(len(paths) * 10
+                 ).mapValues(lambda barr: (b''.join(barr)).decode()
+                 ).toDF(
+                 ).withColumn('info', parse_annotations('_2')
+                 ).select('info.*'
+                 ).join(mets, ['ocr'], 'right_outer'
+                 ).withColumn('pp', col('pp').cast('int')
+                 ).withColumn('seq', col('seq').cast('int')
+                 ).withColumn('pages', array(struct(col('image').alias('id'),
+                                                    col('iiif'),
+                                                    col('page_access').alias('viewer'),
+                                                    col('seq'),
+                                                    col('width').cast('int').alias('width'),
+                                                    col('height').cast('int').alias('height'),
+                                                    lit(0).cast('int').alias('dpi'),
+                                                    col('regions')))
+                 ).drop('ocr', 'image', 'iiif', 'width', 'height', 'regions', 'page_access')
+
+    # Choose duplicate issue with more text
+    dedup = linked.groupBy('series', 'date', 'ed', 'issue'
+                 ).agg(f.sum(f.length('text')).alias('content')
+                 ).groupBy('series', 'date', 'ed'
+                 ).agg((f.max(struct('content', 'issue'))['issue']).alias('issue'))
+
+    linked.join(f.broadcast(dedup), ['issue'], 'left_semi'
+         ).write.save(config.outputPath, mode='overwrite')
 
     spark.stop()
