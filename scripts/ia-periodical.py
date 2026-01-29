@@ -14,7 +14,7 @@ def catPages(pagea):
         cur['id'] = 'https://archive.org/download/' + suff
         cur['iiif'] = 'https://iiif.archive.org/image/iiif/2/' + quote(suff, safe='%')
         cur['viewer'] = f'https://archive.org/details/{file}/page/n' + \
-            re.sub(r'^0+', '', pno) + '/mode/1up?view=theater'
+            re.sub(r'^0*(\d)', r'\1', pno) + '/mode/1up?view=theater'
         off = len(text)
         if 'regions' not in cur:
             cur['regions'] = []
