@@ -49,7 +49,7 @@ if __name__ == '__main__':
                 ).withColumn('pp', col('pp').cast('int')
                 ).withColumn('width', col('width').cast('int')
                 ).withColumn('height', col('height').cast('int')
-                ).withColumn('page_access', make_url('series', 'date', 'ed', 'seq'))
+                ).withColumn('viewer', make_url('series', 'date', 'ed', 'seq'))
 
     mets.cache()
 
@@ -84,9 +84,10 @@ if __name__ == '__main__':
         ).join(alto, ['batch', 'series', 'date', 'ed', 'seq', 'sourceFrame'], 'left_outer'
         ).withColumn('id', f.concat('issue', lit('#pageModsBib'), (col('pos') + 1))
         ).withColumn('scale', f.coalesce((col('altoWidth')/col('width')), lit(1))
+        ).withColumn('scale', when(col('scale') > 0, col('scale')).otherwise(lit(1))
         ).withColumn('pages', f.array(struct(f.concat(lit('https://tile.loc.gov/storage-services/'), 'file').alias('id'),
                                              make_iiif('file').alias('iiif'),
-                                             'seq', 'width', 'height', 'dpi',
+                                             'viewer', 'seq', 'width', 'height', 'dpi',
                                 f.transform('regions',
                                             lambda r: r.withField('coords', struct(
                                                 (r.coords.x/col('scale')).cast('int').alias('x'),
@@ -96,7 +97,7 @@ if __name__ == '__main__':
                                                 (r.coords.b/col('scale')).cast('int').alias('b'))
                                                                             )).alias('regions')))
         ).drop('altoWidth', 'altoHeight', 'dpi', 'file', 'regions', 'scale',
-               'width', 'height'
+               'width', 'height', 'viewer'
         ).write.save(config.outputPath, mode='overwrite')
 
     spark.stop()
