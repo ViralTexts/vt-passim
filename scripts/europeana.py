@@ -4,7 +4,7 @@ import sys, os, json, zipfile
 from re import sub
 
 from pyspark.sql import SparkSession, Row
-from pyspark.sql.functions import col
+from pyspark.sql.functions import col, concat, lit, regexp_replace
 
 def getSeries(fname):
     with zipfile.ZipFile(fname, 'r') as zf:
@@ -35,11 +35,15 @@ if __name__ == "__main__":
     spark = SparkSession.builder.appName('Europeana import').getOrCreate()
 
     x = [os.path.join(d[0], f) for d in os.walk(sys.argv[1]) for f in d[2] if f.endswith('zip')]
-    spark.sparkContext.parallelize(x, 200)\
-      .flatMap(getSeries).toDF()\
-      .withColumn('seq', col('seq').cast('int'))\
-      .repartition(100)\
-      .write.save(sys.argv[2], mode='overwrite')
+    spark.sparkContext.parallelize(x, 200
+        ).flatMap(getSeries).toDF(
+        ).withColumn('seq', col('seq').cast('int')
+        ## URLs need to be updated to europeana.eu IIIF server
+        # ).withColumn('viewer',
+        #              concat(lit('http://data.theeuropeanlibrary.org/BibliographicResource/'),
+        #                     regexp_replace('issue', r'^europeana/', ''))
+        ).repartition(100
+        ).write.save(sys.argv[2], mode='overwrite')
       # pyspark type inference makes int into long, so cast to int
 
     spark.stop()
