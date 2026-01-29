@@ -32,13 +32,13 @@ if __name__ == "__main__":
     df = raw.select((split(col('docno'), '_')[0]).alias('moaseries'),
                     (split(col('docno'), '_')[1]).alias('id'),
                     convdate(col('date')).alias('date'),
-                    col('text')) \
-            .withColumn('issue', col('id'))\
-            .withColumn('url', mkurl(col('moaseries'), col('id')))
+                    col('text')
+           ).withColumn('issue', col('id')
+           ).withColumn('viewer', mkurl(col('moaseries'), col('id')))
 
     df.join(series, (df.moaseries == series.moaseries) \
-            & (df.date >= series.startdate) & (df.date <= series.enddate), 'left_outer')\
-        .drop('moaseries').drop('startdate').drop('enddate')\
-        .write.save(sys.argv[3], mode='overwrite')
+            & (df.date >= series.startdate) & (df.date <= series.enddate), 'left_outer'
+     ).drop('moaseries', 'startdate', 'enddate'
+     ).write.save(sys.argv[3], mode='overwrite')
 
     sc.stop()
