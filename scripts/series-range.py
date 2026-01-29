@@ -14,7 +14,7 @@ if __name__ == '__main__':
     spark = SparkSession.builder.appName('Compute date ranges for series').getOrCreate()
 
     spark.read.load(config.inputPath, mergeSchema=True
-        ).withColumn('date', col('date').cast('date')
+        ).withColumn('date', col('date').try_cast('date')
         ).groupBy('series', 'corpus'
         ).agg(f.min('date').alias('startDig'),
               f.max('date').alias('endDig')
