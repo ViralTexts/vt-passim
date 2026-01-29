@@ -33,12 +33,16 @@ class AltoRec:
     dpi: int
     regions: list[Region]
 
-def parseAlto(batchfile, fname, content):
+def parseAlto(rid, content):
+    (batchfile, fname) = rid
     batch = sub(r'^.*/batch_', '', sub(r'\.warc\.gz$', '', batchfile))
     # if content.startswith('\ufeff'):
     #     content = content[1:]
 
-    tree = etree.parse(BytesIO(content))
+    try:
+        tree = etree.parse(BytesIO(content))
+    except:
+        return AltoRec(batch, fname, 'fubar', '', 0, 0, 0, [])
     root = tree.find('.')
     ns = root.nsmap
     try:
@@ -87,11 +91,12 @@ def warcFiles(path):
             if record.rec_type == 'response':
                 file = record.rec_headers.get_header('WARC-Target-URI')
                 # print(file)
-                if record.http_headers.get_statuscode() != '200':
+                code = record.http_headers.get_statuscode()
+                if code != '200' and code != '206':
                     continue
 
                 raw = record.content_stream().read()
-                yield (path, file, raw)  #.decode())
+                yield ((path, file), raw)  #.decode())
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='NDNP Alto Import',
@@ -107,8 +112,11 @@ if __name__ == '__main__':
 
     spark.sparkContext.parallelize(paths, len(paths)
         ).flatMap(lambda fname: warcFiles(fname)
+        ).groupByKey(len(paths) * 10
+        ).mapValues(lambda barr: b''.join(barr)
         ).map(lambda r: parseAlto(*r)
         ).toDF(
+        ).filter(col('text') != 'fubar'
         ).write.save(config.outputPath, mode='overwrite')
 
     spark.stop()
