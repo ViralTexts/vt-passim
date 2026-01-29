@@ -169,7 +169,7 @@ class BookStream(object):
             # remove leading whitespace only if we haven't added anything
             if len(self.zones[-1].data) == 0:
                 data = re.sub(r'^\s+', '', data)
-            self.zones[-1].data += re.sub(r'\n[ ]+', '\n', data)
+            self.zones[-1].data += re.sub(r'[ \t]+\n', '\n', re.sub(r'\n[ \t]+', '\n', data))
     def comment(self, text):
         pass
     def close(self):
