@@ -99,7 +99,6 @@ if __name__ == '__main__':
         ).drop('hier', 'hlabs'
         ).sort('coverage'
         ).coalesce(1
-#        ).write.json(config.outputPath, mode='overwrite')
         ).write.csv(config.outputPath, header=True, escape='"', mode='overwrite')
 
     spark.stop()
