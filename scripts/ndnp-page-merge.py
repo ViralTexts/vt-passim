@@ -53,30 +53,48 @@ if __name__ == '__main__':
                 ).withColumn('viewer', make_url('issue', 'series', 'date', 'ed', 'seq')
                 ).withColumn('ocrFile', f.regexp_replace('file', r'\.[^/\.]+$', '.xml')
                 ).withColumn('alto', make_alto('ocrFile', 'viewer')
+                             # accommodate loc.gov bug
+                ).withColumn('series', when(col('series') == '/lccn/sn97071090',
+                                            lit('/lccn/97071090')).otherwise(col('series'))
+                             # digitalnc bug
+                ).withColumn('series', when(((col('series') == '/lccn/sn83025838') &
+                                             (col('date') < '1769')),
+                                            lit('/lccn/sn83025837')).otherwise(col('series'))
+                ).withColumn('series', when(((col('series') == '/lccn/sn83025838') &
+                                             (col('date') < '1802')),
+                                            lit('/lccn/sn83025836')).otherwise(col('series'))
                 ).drop('ocrFile')
 
     if ('sections' in mets.columns) and (mets.filter(size('sections') > 0).count() == 0):
         mets = mets.drop('sections')
 
-    mets.join(alto, ['batch', 'alto'], 'left_outer'
-        ).withColumn('id', f.concat('issue', lit('#pageModsBib'), (col('pos') + 1))
-        ).withColumn('width', f.coalesce('width', 'altoWidth').cast('int')
-        ).withColumn('height', f.coalesce('height', 'altoHeight').cast('int')
-        ).withColumn('scale', f.coalesce((col('altoWidth')/col('width')), lit(1))
-        ).withColumn('pages', f.array(struct(col('file').alias('id'),
-                                             make_iiif('file').alias('iiif'),
-                                             'viewer', 'seq', 'width', 'height',
-                                             col('dpi').cast('int').alias('dpi'),
-                                f.transform('regions',
-                                            lambda r: r.withField('start', (r.start).cast('int')).withField('length', (r.length).cast('int')).withField('coords', struct(
-                                                (r.coords.x/col('scale')).cast('int').alias('x'),
-                                                (r.coords.y/col('scale')).cast('int').alias('y'),
-                                                (r.coords.w/col('scale')).cast('int').alias('w'),
-                                                (r.coords.h/col('scale')).cast('int').alias('h'),
-                                                (r.coords.b/col('scale')).cast('int').alias('b'))
-                                                                            )).alias('regions')))
-        ).drop('alto', 'altoWidth', 'altoHeight', 'dpi', 'file', 'regions', 'scale',
-               'width', 'height', 'viewer'
-        ).write.save(config.outputPath, mode='overwrite')
+    linked = mets.join(alto, ['batch', 'alto'], 'left_outer'
+                ).withColumn('id', f.concat('issue', lit('#pageModsBib'), (col('pos') + 1))
+                ).withColumn('width', f.coalesce('width', 'altoWidth').cast('int')
+                ).withColumn('height', f.coalesce('height', 'altoHeight').cast('int')
+                ).withColumn('scale', f.coalesce((col('altoWidth')/col('width')), lit(1))
+                ).withColumn('pages', f.array(struct(col('file').alias('id'),
+                                                     make_iiif('file').alias('iiif'),
+                                                     'viewer', 'seq', 'width', 'height',
+                                                     col('dpi').cast('int').alias('dpi'),
+                                                     f.transform('regions',
+                                                       lambda r: r.withField('start', (r.start).cast('int')).withField('length', (r.length).cast('int')).withField('coords', struct(
+                                                           (r.coords.x/col('scale')).cast('int').alias('x'),
+                                                           (r.coords.y/col('scale')).cast('int').alias('y'),
+                                                           (r.coords.w/col('scale')).cast('int').alias('w'),
+                                                           (r.coords.h/col('scale')).cast('int').alias('h'),
+                                                           (r.coords.b/col('scale')).cast('int').alias('b'))
+                                                                                                                                                                   )).alias('regions')))
+                ).drop('alto', 'altoWidth', 'altoHeight', 'dpi', 'file', 'regions', 'scale',
+                       'width', 'height', 'viewer')
+
+    # Choose duplicate issue with more text
+    dedup = linked.groupBy('series', 'date', 'ed', 'issue'
+                 ).agg(f.sum(f.length('text')).alias('content')
+                 ).groupBy('series', 'date', 'ed'
+                 ).agg((f.max(struct('content', 'issue'))['issue']).alias('issue'))
+
+    linked.join(f.broadcast(dedup), ['issue'], 'left_semi'
+         ).write.save(config.outputPath, mode='overwrite')
 
     spark.stop()
