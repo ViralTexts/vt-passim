@@ -90,7 +90,8 @@ if __name__ == "__main__":
     wlcs = udf(lambda arr1, arr2: weightLCS(arr1, arr2), 'double')
 
     corpus = spark.read.load(config.corpusPath, mergeSchema=True)
-    cinfo = corpus.groupBy(col('book').alias('edition')
+    cinfo = corpus.filter(col('ref') != 0
+                 ).groupBy(col('book').alias('edition')
                  ).agg(f.sum(f.length('text')).alias('tlen'),
                        f.sum(size('locs')).alias('nlocs')
                  ).filter( (col('tlen') >= 1000) )
@@ -111,9 +112,9 @@ if __name__ == "__main__":
         ).groupBy('book', 'id'
         ).agg(sum_runs(flatten(sort_array(collect_list(struct('pos',
                                                               'locs')))['locs'])).alias('cites')
-        ).filter(size('cites') > 1
+        ).filter(size('cites') > 0 # 1
         ).join(corpus.select('id', 'locs', col('book').alias('edition')
-                            ).filter(f.size('locs') > 1), 'id'
+                            ).filter(f.size('locs') > 0), 'id'
         ).withColumn('covered', size(f.array_intersect('cites.loc', col('locs.loc')))
         ).withColumn('lcs', lcs(col('cites.loc'), col('locs.loc'))
         ).withColumn('lcslen', size('lcs')
