@@ -66,7 +66,7 @@ if __name__ == "__main__":
                  nfd_norm('value').alias('text')
         ).join(meta, 'book'
         ).withColumn('info', text_locs('text', 'urn')
-        ).select('id', f.format_string('njp.%s', 'book').alias('book'), 'date',
+        ).select('id', col('id').alias('book'), 'date',
                  array_join(col('info')['text'], '').alias('text'),
                  make_locs('info').alias('locs')
         ).write.save(config.outputPath, mode='overwrite')
