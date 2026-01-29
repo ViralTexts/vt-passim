@@ -1,4 +1,5 @@
-import argparse, unicodedata
+import argparse
+from unicodedata import normalize
 from pyspark.sql import SparkSession, Row
 from pyspark.sql.functions import col, concat_ws, posexplode, sort_array, struct, udf
 import pyspark.sql.functions as f
@@ -13,6 +14,8 @@ if __name__ == "__main__":
 
     spark = SparkSession.builder.appName(parser.description).getOrCreate()
 
+    nfd_norm = udf(lambda s: normalize('NFD', s))
+
     spark.read.load(config.inputPath
         ).select(col('barcode_src').alias('book'),
                  col('title_src').alias('title'),
@@ -21,8 +24,10 @@ if __name__ == "__main__":
                  'language_src', 'language_gen',
                  'ocr_score_src', 'ocr_score_gen',
                  posexplode('text_by_page_src')
+        ).withColumn('pos', col('pos') + 1
         ).withColumn('id', concat_ws('_', 'book', col('pos').cast('string'))
-        ).withColumnRenamed('col', 'text'
+        ).withColumn('text', nfd_norm('col')
+        ).drop('col'
         ).write.save(config.outputPath)
 
     spark.stop()
