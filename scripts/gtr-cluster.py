@@ -51,7 +51,7 @@ def formatPassage(r):
         text += '[This text is not available under an open license.]\n'
     
     return Row(cluster=r.cluster, ref=ref, date=r.date, id=r.id, title=title, begin=r.begin, text=text)
-    
+
 def formatCluster(x):
     (cluster, riter) = x
     rows = list(riter)
