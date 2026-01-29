@@ -25,13 +25,14 @@ if __name__ == '__main__':
                                       f.array_max(col('pages')['seq']),
                                       col('seq')) + f.when(col('corpus') == 'ia', 1).otherwise(0)
         ).withColumn('chars', f.length('text')
+        ).withColumn('date', col('date').try_cast('date')
         ).groupBy('series', 'corpus', 'issue', 'date', year('date').alias('year')
         ).agg(coalesce(f.max('pnum'), f.countDistinct('pageno')).alias('pp'),
               f.sum('chars').alias('chars'),
               f.sum(col('chars').isNull().cast('int')).alias('empties'),
               f.first('collation').alias('collation')
         ).filter(col('year').isNotNull()
-        ).withColumn('sections', size(f.split('collation', '\+'))
+        ).withColumn('sections', size(f.split('collation', r'\+'))
         ).write.save(config.outputPath, mode='overwrite')
 
     spark.stop()
