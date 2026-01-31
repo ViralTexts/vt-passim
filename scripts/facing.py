@@ -1,5 +1,7 @@
+import argparse
 import json
 import re
+import sys
 from typing import List, Tuple, Dict, Optional
 import numpy as np
 from sentence_transformers import SentenceTransformer
@@ -27,14 +29,6 @@ class TranslationAligner:
         self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
         self.model = self.model.to(self.device)
         print(f"Model loaded on {self.device}")
-
-    def load_book_data(self, filepath: str) -> List[Dict]:
-        """Load JSONL file containing book pages."""
-        data = []
-        with open(filepath, 'r', encoding='utf-8') as f:
-            for line in f:
-                data.append(json.loads(line))
-        return sorted(data, key=lambda x: x['pos'])
 
     def detect_language(self, text: str) -> str:
         """Detect the primary language of a text."""
@@ -193,15 +187,13 @@ class TranslationAligner:
         """
         translation_pairs = []
 
-        print("Searching for translation pairs...")
         for i in range(len(book_data) - 1):
             page1 = book_data[i]
             page2 = book_data[i + 1]
 
             is_translation, score = self.is_translation_pair(page1['text'], page2['text'])
             if is_translation:
-                translation_pairs.append((page1['pos'], page2['pos'], score))
-                print(f"Found translation pair: pages {page1['pos']} → {page2['pos']} (score: {score:.3f})")
+                translation_pairs.append((i, i+1, score))
 
         return translation_pairs
 
@@ -211,13 +203,9 @@ class TranslationAligner:
         lang1 = self.detect_language(text1)
         lang2 = self.detect_language(text2)
 
-        print(f"Aligning texts: {lang1} → {lang2}")
-
         # Extract sentences
         sentences1 = self.extract_sentences(text1)
         sentences2 = self.extract_sentences(text2)
-
-        print(f"Extracted sentences: {len(sentences1)} → {len(sentences2)}")
 
         # Align sentences
         alignments = self.align_sentences_with_embeddings(sentences1, sentences2)
@@ -232,11 +220,8 @@ class TranslationAligner:
             'coverage2': len([a for a in alignments]) / len(sentences2) if sentences2 else 0
         }
 
-    def process_book(self, filepath: str) -> Dict:
+    def process_book(self, book_data: List[Dict]) -> Dict:
         """Process an entire book to find and align translations."""
-        # Load data
-        book_data = self.load_book_data(filepath)
-
         # Find translation pairs
         translation_pairs = self.find_translation_pairs(book_data)
 
@@ -250,8 +235,8 @@ class TranslationAligner:
 
         for pos1, pos2, pair_score in translation_pairs:
             # Get the actual text
-            text1 = next(p['text'] for p in book_data if p['pos'] == pos1)
-            text2 = next(p['text'] for p in book_data if p['pos'] == pos2)
+            text1 = book_data[pos1]['text']
+            text2 = book_data[pos2]['text']
 
             # Align the texts
             alignment = self.align_translation_pair(text1, text2)
@@ -303,20 +288,34 @@ def visualize_alignments(results: Dict, max_pairs: int = 3):
                 print(f"  Source: {src_sent}")
                 print(f"  Target: {tgt_sent}")
 
-def main():
+def load_book_data(filepath: str) -> List[Dict]:
+    """Load JSONL file containing book pages."""
+    data = []
+    with open(filepath, 'r', encoding='utf-8') as f:
+        for line in f:
+            data.append(json.loads(line))
+    return sorted(data, key=lambda x: x['pos'])
+
+def main(args):
+    parser = argparse.ArgumentParser(description='Facing page alignment',
+                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument('inputPath', metavar='<path>', help='input data')
+    parser.add_argument('outputPath', metavar='<path>', help='output')
+    config = parser.parse_args(args)
+
     # Initialize aligner with a multilingual model
     # LaBSE is particularly good for sentence alignment across many languages
     aligner = TranslationAligner(model_name='sentence-transformers/LaBSE')
 
     # Process the book
-    results = aligner.process_book('test.jsonl')
+    data = load_book_data(config.inputPath)
+    results = aligner.process_book(data)
 
     # Visualize results
     visualize_alignments(results)
 
     # Save results to file
-    output_file = 'translation_alignments.json'
-    with open(output_file, 'w', encoding='utf-8') as f:
+    with open(config.outputPath, 'w', encoding='utf-8') as f:
         # Convert results to a serializable format
         serializable_results = {
             'book_id': results['book_id'],
@@ -345,7 +344,7 @@ def main():
         }
         json.dump(serializable_results, f, ensure_ascii=False, indent=2)
 
-    print(f"\n\nResults saved to {output_file}")
+    print(f"\n\nResults saved to {config.outputPath}")
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1:])
