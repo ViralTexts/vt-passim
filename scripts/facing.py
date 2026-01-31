@@ -208,7 +208,11 @@ class TranslationAligner:
         sentences2 = self.extract_sentences(text2)
 
         # Align sentences
-        alignments = self.align_sentences_with_embeddings(sentences1, sentences2)
+        raw = self.align_sentences_with_embeddings(sentences1, sentences2)
+
+        alignments = [a for a in raw
+                      if (self.detect_language(sentences1[a[0]]) == lang1
+                          and self.detect_language(sentences2[a[1]]) == lang2)]
 
         return {
             'language1': lang1,
@@ -242,8 +246,9 @@ class TranslationAligner:
             alignment = self.align_translation_pair(text1, text2)
             alignment['pair_score'] = pair_score
 
-            results['translation_pairs'].append((pos1, pos2))
-            results['alignments'][f"{pos1}-{pos2}"] = alignment
+            if len(alignment['alignments']) > 0:
+                results['translation_pairs'].append((pos1, pos2))
+                results['alignments'][pos1] = alignment
 
         return results
 
@@ -261,7 +266,7 @@ def visualize_alignments(results: Dict, max_pairs: int = 3):
         print(f"\n{'-'*80}")
         print(f"Translation pair {i+1}: Page {pos1} → Page {pos2}")
 
-        alignment = results['alignments'][f"{pos1}-{pos2}"]
+        alignment = results['alignments'][pos1]
         print(f"Languages: {alignment['language1']} → {alignment['language2']}")
         print(f"Page-level similarity: {alignment['pair_score']:.3f}")
         print(f"Sentences: {len(alignment['sentences1'])} → {len(alignment['sentences2'])}")
