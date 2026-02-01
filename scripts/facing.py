@@ -255,6 +255,7 @@ class TranslationAligner:
             'alignments': []
         }
 
+        lang1 = {}
         for pos1, pos2, pair_score in translation_pairs:
             # Get the actual text
             text1 = book_data[pos1]['text']
@@ -267,6 +268,12 @@ class TranslationAligner:
 
             if len(alignment['alignments']) > 0:
                 results['alignments'].append(alignment)
+                L1 = alignment['language1']
+                lang1[L1] = lang1.get(L1, 0) + len(alignment['alignments'])
+
+        results['src_lang'] = max(lang1, key=lang1.get)
+        results['alignments'] = [r for r in results['alignments']
+                                 if r['language1'] == results['src_lang']]
 
         return results
 
@@ -343,6 +350,7 @@ def main(args):
         serializable_results = {
             'book_id': results['book_id'],
             'total_pages': results['total_pages'],
+            'src_lang': results['src_lang'],
             'alignments': [
                 {
                     'idx': v['idx'],
