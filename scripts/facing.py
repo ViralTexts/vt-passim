@@ -24,11 +24,9 @@ class TranslationAligner:
         - 'sentence-transformers/paraphrase-multilingual-mpnet-base-v2' (50+ languages)
         - 'sentence-transformers/distiluse-base-multilingual-cased-v2' (50+ languages)
         """
-        print(f"Loading multilingual embedding model: {model_name}")
         self.model = SentenceTransformer(model_name)
         self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
         self.model = self.model.to(self.device)
-        print(f"Model loaded on {self.device}")
 
     def detect_language(self, text: str) -> str:
         """Detect the primary language of a text."""
@@ -214,12 +212,33 @@ class TranslationAligner:
                       if (self.detect_language(sentences1[a[0]]) == lang1
                           and self.detect_language(sentences2[a[1]]) == lang2)]
 
+        amap = {src: trg for src, trg, score in alignments}
+        ascore = {src: float(score) for src, trg, score in alignments}
+        expanded = []
+        for src in range(len(sentences1)):
+            if src in amap:
+                trg = amap[src]
+            # include single-sentence gaps
+            elif ((src-1) in amap and (src+1) in amap
+                  and (amap.get(src+1, -1) - amap.get(src-1, -1)) == 2):
+                trg = amap[src-1] + 1
+            else:
+                trg = None
+            if trg != None:
+                expanded.append({
+                    'source_idx': src,
+                    'target_idx': trg,
+                    'score': ascore.get(src, 0),
+                    'source_text': sentences1[src],
+                    'target_text': sentences2[trg]
+                })
+
         return {
             'language1': lang1,
             'language2': lang2,
             'sentences1': sentences1,
             'sentences2': sentences2,
-            'alignments': alignments,
+            'alignments': expanded,
             'coverage1': len([a for a in alignments]) / len(sentences1) if sentences1 else 0,
             'coverage2': len([a for a in alignments]) / len(sentences2) if sentences2 else 0
         }
@@ -233,8 +252,7 @@ class TranslationAligner:
         results = {
             'book_id': book_data[0]['book'] if book_data else None,
             'total_pages': len(book_data),
-            'translation_pairs': [],
-            'alignments': {}
+            'alignments': []
         }
 
         for pos1, pos2, pair_score in translation_pairs:
@@ -245,10 +263,10 @@ class TranslationAligner:
             # Align the texts
             alignment = self.align_translation_pair(text1, text2)
             alignment['pair_score'] = pair_score
+            alignment['idx'] = pos1
 
             if len(alignment['alignments']) > 0:
-                results['translation_pairs'].append((pos1, pos2))
-                results['alignments'][pos1] = alignment
+                results['alignments'].append(alignment)
 
         return results
 
@@ -317,7 +335,7 @@ def main(args):
     results = aligner.process_book(data)
 
     # Visualize results
-    visualize_alignments(results)
+    # visualize_alignments(results)
 
     # Save results to file
     with open(config.outputPath, 'w', encoding='utf-8') as f:
@@ -325,31 +343,20 @@ def main(args):
         serializable_results = {
             'book_id': results['book_id'],
             'total_pages': results['total_pages'],
-            'translation_pairs': results['translation_pairs'],
-            'alignments': {
-                k: {
+            'alignments': [
+                {
+                    'idx': v['idx'],
                     'language1': v['language1'],
                     'language2': v['language2'],
                     'pair_score': v.get('pair_score', 0),
                     'num_sentences1': len(v['sentences1']),
                     'num_sentences2': len(v['sentences2']),
-                    'alignments': [
-                        {
-                            'source_idx': a[0],
-                            'target_idx': a[1],
-                            'score': float(a[2]),
-                            'source_text': v['sentences1'][a[0]],
-                            'target_text': v['sentences2'][a[1]]
-                        }
-                        for a in v['alignments']
-                    ]
+                    'alignments': v['alignments']
                 }
-                for k, v in results['alignments'].items()
-            }
+                for v in results['alignments']
+            ]
         }
         json.dump(serializable_results, f, ensure_ascii=False, indent=2)
-
-    print(f"\n\nResults saved to {config.outputPath}")
 
 if __name__ == "__main__":
     main(sys.argv[1:])
