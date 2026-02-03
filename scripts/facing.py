@@ -272,8 +272,9 @@ class TranslationAligner:
                 lang1[L1] = lang1.get(L1, 0) + len(alignment['alignments'])
 
         results['src_lang'] = max(lang1, key=lang1.get)
-        results['alignments'] = [r for r in results['alignments']
-                                 if r['language1'] == results['src_lang']]
+        # Remove alignments in non-max direction
+        # results['alignments'] = [r for r in results['alignments']
+        #                          if r['language1'] == results['src_lang']]
 
         return results
 
@@ -347,24 +348,20 @@ def main(args):
     # Save results to file
     with open(config.outputPath, 'w', encoding='utf-8') as f:
         # Convert results to a serializable format
-        serializable_results = {
-            'book_id': results['book_id'],
-            'total_pages': results['total_pages'],
-            'src_lang': results['src_lang'],
-            'alignments': [
-                {
-                    'idx': v['idx'],
-                    'language1': v['language1'],
-                    'language2': v['language2'],
-                    'pair_score': v.get('pair_score', 0),
-                    'num_sentences1': len(v['sentences1']),
-                    'num_sentences2': len(v['sentences2']),
-                    'alignments': v['alignments']
-                }
-                for v in results['alignments']
-            ]
-        }
-        json.dump(serializable_results, f, ensure_ascii=False, indent=2)
-
+        for v in results['alignments']:
+            serializable_results = {
+                'book_id': results['book_id'],
+                'total_pages': results['total_pages'],
+                'src_lang': results['src_lang'],
+                'idx': v['idx'],
+                'language1': v['language1'],
+                'language2': v['language2'],
+                'pair_score': v.get('pair_score', 0),
+                'num_sentences1': len(v['sentences1']),
+                'num_sentences2': len(v['sentences2']),
+                'alignments': v['alignments']
+            }
+            print(json.dumps(serializable_results, ensure_ascii=False), file=f)
+            
 if __name__ == "__main__":
     main(sys.argv[1:])
