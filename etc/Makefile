@@ -16,7 +16,7 @@ M=5
 VT=/home/dasmith/src/vt-passim
 
 ifeq (${JRUN},slurm)
-bads="-x d[0002-0005,0007,0010-0014,0016-0018,0020,0022,0023,0024,0026-0039,0050,0064,0076,0085,0097,0100,0105,0110,0113,0126,0135,0142,0143,0147,0149,0150,1004,1027,3037,3038,3040,3044,3046,3047,3089,3090,3091,3093,3146,3147,3149,3150,3163,3164,3165,3168,3170,3171,3194,3203,3204,3206,3208,3230,3231,3233,3239,4041-4044,4046-4051,4056,4100]"
+bads="-x c[0604,3104],d[0002-0005,0007,0010-0014,0016-0018,0020,0022,0023,0024,0026-0039,0050,0064,0076,0085,0097,0100,0105,0110,0113,0126,0135,0142-0144,0147,0149,0150,1004,1027,3037,3038,3040,3044-3049,3051-3052,3057,3070,3071,3089,3090,3091,3093,3146,3147,3149,3150,3163,3164,3165,3166,3168,3170,3171,3194,3203-3206,3208,3230,3231,3233,3239,4041-4044,4046-4051,4056,4100]"
 
 # spark_run = WORKERS=${WORKERS} CORES=${CORES} CMEM=${CMEM} QUEUE=${QUEUE} source run-saspark-express.sh; \
 # srun -x c0178 -p ${QUEUE} -N 1 -c 2 --mem=40G -d "after:$$SPARK_MASTER_JOBID" bash -c "$(1)"; \
@@ -26,7 +26,7 @@ spark_run = WORKERS=${WORKERS} CORES=${CORES} CMEM=${CMEM} QUEUE=${QUEUE} QTIME=
 srun ${bads} ${QTIME} -p ${QUEUE} -N 1 -c 2 --mem=40G -d "after:$$SPARK_MASTER_JOBID" bash -c "$(1)"; \
 scancel $$SPARK_WORKER_JOBID $$SPARK_MASTER_JOBID
 
-slurm_run = srun ${QTIME} -p ${QUEUE} -N 1 -c $(SWORKERS) --mem=$(SMEM)G bash -c "SPARK_SUBMIT_ARGS='--driver-memory $(SMEM)G --executor-memory $(SMEM)G' $(1)";
+slurm_run = srun ${bads} ${QTIME} -p ${QUEUE} -N 1 -c $(SWORKERS) --mem=$(SMEM)G bash -c "SPARK_SUBMIT_ARGS='--driver-memory $(SMEM)G --executor-memory $(SMEM)G' $(1)";
 else
 spark_run=bash -c "$(1)"
 slurm_run=bash -c "SPARK_SUBMIT_ARGS='--driver-memory $(SMEM)G --executor-memory $(SMEM)G' $(1)"
@@ -34,11 +34,17 @@ endif
 
 .SECONDARY:
 
-%/pretty.parquet/_SUCCESS:	%/out.parquet/_SUCCESS places.csv/_SUCCESS
-	$(call spark_run,vtrun pretty-cluster.py --places places.csv meta $(dir $<) $(patsubst %/,%,$(dir $@)))
+%/pretty.parquet/_SUCCESS:	%/out.parquet/_SUCCESS #places.csv/_SUCCESS
+	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.sql.shuffle.partitions=8000 --conf spark.driver.maxResultSize=12G'; vtrun pretty-cluster.py --places places.csv meta $(dir $<) $(patsubst %/,%,$(dir $@)))
 
 %/pretty.json/_SUCCESS:	%/out.parquet/_SUCCESS places.csv/_SUCCESS
 	$(call spark_run,vtrun pretty-cluster.py --places places.csv meta $(dir $<) $(patsubst %/,%,$(dir $@)))
+
+%/pretty10.json/_SUCCESS:	%/out.parquet/_SUCCESS #places.csv/_SUCCESS
+	$(call spark_run,vtrun pretty-cluster.py --places places.csv meta $(dir $<) $(patsubst %/,%,$(dir $@)) 'size >= 10')
+
+%/pretty10.parquet/_SUCCESS:	%/out.parquet/_SUCCESS #places.csv/_SUCCESS
+	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.sql.shuffle.partitions=8000 --conf spark.driver.maxResultSize=12G'; vtrun pretty-cluster.py --places places.csv meta $(dir $<) $(patsubst %/,%,$(dir $@)) 'size >= 10')
 
 %/pretty.csv/_SUCCESS:	%/out.parquet/_SUCCESS places.csv/_SUCCESS
 	$(call spark_run,export SPARK_SUBMIT_ARGS+=' --conf spark.sql.shuffle.partitions=8000 --conf spark.driver.maxResultSize=12G'; $(VT)/bin/pretty-cluster --places places.csv meta $(dir $<) $(patsubst %/,%,$(dir $@)))
@@ -46,7 +52,7 @@ endif
 %/ref.parquet/_SUCCESS:	%/out.parquet/_SUCCESS
 	$(call spark_run,$(VT)/bin/pretty-cluster --places places.csv meta $(dir $<) $(patsubst %/,%,$(dir $@)) 'ref = 1')
 
-%/gtr.parquet/_SUCCESS:	%/out.parquet/_SUCCESS places.csv/_SUCCESS
+%/gtr.parquet/_SUCCESS:	%/out.parquet/_SUCCESS #places.csv/_SUCCESS
 	$(call spark_run,$(VT)/bin/pretty-cluster --places places.csv meta $(dir $<) $(patsubst %/,%,$(dir $@)) \"corpus = 'gtr'\")
 
 %/gtr.json/_SUCCESS:	%/out.parquet/_SUCCESS places.csv/_SUCCESS
@@ -229,13 +235,34 @@ snapshot:	c19-${STAMP}.parquet/_SUCCESS
 c19-${STAMP}.parquet/_SUCCESS:
 	$(call spark_run,vtrun c19.py serial marc-meta/groups $(dir $@))
 
+years/%/_SUCCESS:
+	$(call spark_run,vtrun c19.py --min-year $* --max-year $$(($* + 1)) serial marc-meta/groups $(dir $@))
+
+b1922-snapshot:	b1922-${STAMP}.parquet/_SUCCESS
+
+b1922-${STAMP}.parquet/_SUCCESS:
+	$(call spark_run,vtrun c19.py --max-year 1922 serial marc-meta/groups $(dir $@))
+
+c20-snapshot:	c20-${STAMP}.parquet/_SUCCESS
+
+c20-${STAMP}.parquet/_SUCCESS:
+	$(call spark_run,vtrun c19.py --min-year 1900 --max-year 1922 serial marc-meta/groups $(dir $@))
+
 vrt-snapshot:	vrt-${STAMP}.parquet/_SUCCESS
+
+vrt2-snapshot:	vrt2-${STAMP}.parquet/_SUCCESS
 
 vrt-${STAMP}.parquet/_SUCCESS:
 	$(call spark_run,vtrun c19.py --min-year 1863 --max-year 1922 serial marc-meta/groups $(dir $@))
 
+vrt2-${STAMP}.parquet/_SUCCESS:
+	$(call spark_run,vtrun c19.py --min-year 1893 --max-year 1913 serial marc-meta/groups $(dir $@))
+
 c1869.parquet/_SUCCESS:
 	$(call spark_run,vtrun c19.py --min-year 1868 --max-year 1870 serial marc-meta/groups $(dir $@))
+
+c1850s.parquet/_SUCCESS:
+	$(call spark_run,vtrun c19.py --min-year 1850 --max-year 1860 serial marc-meta/groups $(dir $@))
 
 jstor.parquet/_SUCCESS:	jstor.ids
 	$(call spark_run,spark-submit $$SPARK_SUBMIT_ARGS $(VT)/scripts/ia-filter.py $< raw $(dir $@))
@@ -249,7 +276,6 @@ ref/_SUCCESS:	ref/open$(eq)true/corpus$(eq)gtr/_SUCCESS
 	touch $@
 
 ref/open$(eq)true/corpus$(eq)gtr/_SUCCESS:	../transcriptions
-	$(RM) -r $(dir $@)
 	$(call slurm_run,vtrun ed-load.py $< $(dir $@))
 
 ref/corpus$(eq)vac/_SUCCESS:	$(RAW)/vac/xml
@@ -420,7 +446,13 @@ M=5
 	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --log-level INFO --beam 20 -n 25 --fields ref 'date(date) as day' 'xxhash64(group) as gid' 'coalesce(int(ed),0) as ed' --filterpairs '(uid <> uid2) AND (ref2 = 0) AND ((ref = 1) OR ((gid <> gid2 AND day < day2 AND datediff(day2, day) < 367) OR (gid = gid2 AND ((day < day2 AND datediff(day2,day) < 32) OR (day = day2 AND ed < ed2)))))' --input-format parquet --output-format parquet $< $(dir $(patsubst %/,%,$(dir $@))))
 
 %-rfym.out/out.parquet/_SUCCESS:	%.parquet
-	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --log-level INFO --refpref --beam 20 -n 25 --fields ref 'date(date) as day' 'xxhash64(group) as gid' 'coalesce(int(ed),0) as ed' --filterpairs '(uid <> uid2) AND (ref2 = 0) AND ((ref = 1) OR ((gid <> gid2 AND day < day2 AND datediff(day2, day) < 367) OR (gid < gid2 AND day = day2) OR (gid = gid2 AND ((day < day2 AND datediff(day2,day) < 32) OR (day = day2 AND ed < ed2)))))' --input-format parquet --output-format parquet $< $(dir $(patsubst %/,%,$(dir $@))))
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --log-level INFO --refpref --beam 20 --shards 4 -n 25 --fields ref 'date(date) as day' 'xxhash64(group) as gid' 'coalesce(int(ed),0) as ed' --filterpairs '(uid <> uid2) AND (ref2 = 0) AND ((ref = 1) OR ((gid <> gid2 AND day < day2 AND datediff(day2, day) < 367) OR (gid < gid2 AND day = day2) OR (gid = gid2 AND ((day < day2 AND datediff(day2,day) < 32) OR (day = day2 AND ed < ed2)))))' --input-format parquet --output-format parquet $< $(dir $(patsubst %/,%,$(dir $@))))
+
+%-rfym.ext/tmp/extents.parquet/_SUCCESS:	%.in
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --log-level INFO --to-extents --refpref --beam 20 --shards 4 -n 25 --fields ref 'date(date) as day' 'xxhash64(group) as gid' 'coalesce(int(ed),0) as ed' --filterpairs '(uid <> uid2) AND (ref2 = 0) AND (year(day2) >= $(notdir $*)) AND ((ref = 1) OR ((gid <> gid2 AND day < day2 AND datediff(day2, day) < 367) OR (gid < gid2 AND day = day2) OR (gid = gid2 AND ((day < day2 AND datediff(day2,day) < 32) OR (day = day2 AND ed < ed2)))))' --input-format parquet --output-format parquet $< $*-rfym.ext && touch $@)
+
+proc-years/_SUCCESS:	$(patsubst %.in,%-rfym.ext/tmp/extents.parquet/_SUCCESS,$(wildcard proc-years/*.in))
+	touch $@
 
 # 3 years (to account for books)
 %-bp.out/out.parquet/_SUCCESS:	%.parquet
@@ -464,7 +496,7 @@ M=5
 	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --fields \"(corpus = 'aps' OR corpus = 'moa') as mag\" --filterpairs 'mag AND NOT mag2' --input-format parquet $< $(dir $(patsubst %/,%,$(dir $@))))
 
 %-ra.out/out.parquet/_SUCCESS:	%.parquet
-	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --log-level INFO --beam 20 --complete-lines --fields ref --filterpairs '(ref = 1) AND (ref2 < 1)' --src-overlap 0 --input-format parquet --output-format parquet $< $(dir $(patsubst %/,%,$(dir $@))))
+	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --log-level INFO --shards 4 --beam 20 --complete-lines --fields ref --filterpairs '(ref = 1) AND (ref2 < 1)' --src-overlap 0 --input-format parquet --output-format parquet $< $(dir $(patsubst %/,%,$(dir $@))))
 
 %-coll.out/out.parquet/_SUCCESS:	%.parquet
 	$(call spark_run,/home/dasmith/src/dev/passim/bin/seriatim --docwise --log-level INFO -n 25 -m 5 --complete-lines --fields ref --filterpairs 'ref = 1 AND ref2 = 0' --input-format parquet --output-format parquet $< $(dir $(patsubst %/,%,$(dir $@))))
