@@ -87,7 +87,8 @@ if __name__ == '__main__':
         ).withColumn('scale', when(col('scale') > 0, col('scale')).otherwise(lit(1))
         ).withColumn('pages', f.array(struct(f.concat(lit('https://tile.loc.gov/storage-services/'), 'file').alias('id'),
                                              make_iiif('file').alias('iiif'),
-                                             'viewer', 'seq', 'width', 'height', 'dpi',
+                                             'viewer', 'seq', 'width', 'height',
+                                             col('dpi').cast('int').alias('dpi'),
                                 f.transform('regions',
                                             lambda r: r.withField('coords', struct(
                                                 (r.coords.x/col('scale')).cast('int').alias('x'),
@@ -95,7 +96,9 @@ if __name__ == '__main__':
                                                 (r.coords.w/col('scale')).cast('int').alias('w'),
                                                 (r.coords.h/col('scale')).cast('int').alias('h'),
                                                 (r.coords.b/col('scale')).cast('int').alias('b'))
-                                                                            )).alias('regions')))
+                                                      ).withField('start', r.start.cast('int').alias('start')
+                                                      ).withField('length', r.length.cast('int').alias('length')
+                                                      )).alias('regions')))
         ).drop('altoWidth', 'altoHeight', 'dpi', 'file', 'regions', 'scale',
                'width', 'height', 'viewer'
         ).write.save(config.outputPath, mode='overwrite')
