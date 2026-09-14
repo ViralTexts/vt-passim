@@ -11,6 +11,26 @@ from lxml import etree
 
 ns = {'': 'http://www.tei-c.org/ns/1.0', 'xml': 'http://www.w3.org/XML/1998/namespace'}
 
+def HGVParse(fname, data):
+    res = []
+    try:
+        data = sub(r'xml:id="[^"]*"', ' ', data)
+        
+        tree = etree.parse(BytesIO(data.encode()))
+        id = tree.findtext("./teiHeader/fileDesc/publicationStmt/idno[@type='filename']",
+                           namespaces=ns)
+
+        raw = tree.findall("./text//graphic", namespaces=ns)
+        images = []
+        if raw != None:
+            images = [g.attrib.get('url', '') for g in raw]
+
+        res.append((id, fname, images))
+    except:
+        print(f'# Error parsing {fname}', file=sys.stderr)
+        res = []
+    return res
+
 class DocStream(object):
     def __init__(self, fname):
         self.fname = fname
@@ -61,19 +81,20 @@ class DocStream(object):
 def IDPParse(fname, data):
     res = []
     try:
-        data = sub(r'xml:id="_[^"]*"', ' ', data)
+        data = sub(r'xml:id="[^"]*"', ' ', data)
         
         tree = etree.parse(BytesIO(data.encode()))
         id = tree.findtext("./teiHeader/fileDesc/publicationStmt/idno[@type='filename']",
                            namespaces=ns).strip()
+
+        title = tree.findtext("./teiHeader/fileDesc/titleStmt/title", namespaces=ns).strip()
 
         ed = tree.find("./text//div[@type='edition']", namespaces=ns)
 
         lang = ed.attrib.get('{' + ns['xml'] + '}lang', None)
 
         parts = ed.findall(".//div[@type='textpart']", namespaces=ns)
-        nparts = len(parts) if parts != None else 1
-
+        nparts = len(parts) if parts != None else 0
 
         # # ## Do something with <hi rend="diaeresis"> ?
 
@@ -87,8 +108,17 @@ def IDPParse(fname, data):
         raw = raw.upper()
 
         raw = sub(r' [ ]+', ' ', sub(r'^\s+', '', sub(r'\s+$', '', raw)))
+        raw = sub(r'[ ]+\n', '\n', sub(r'\n[ ]+', '\n', raw))
 
-        res.append((id, fname, lang, nparts, raw))
+        breaks = sub(r'\n[\[\]\(\) ]+', '\n', sub(r'[\[\]\(\) ]+\n', '\n', raw))
+
+        lines = breaks.split('\n')
+        if lines == None or len(lines) == 0:
+            prop = 0.0
+        else:
+            prop = 1.0 * len([line for line in lines if re.search(r'.{5,}\[\].{5,}', line) != None]) / len(lines)
+
+        res.append((id, title, lang, nparts, prop, raw))
     except:
         print(f'# Error parsing {fname}', file=sys.stderr)
         res = []
@@ -98,18 +128,28 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='IDP Papyri import',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('inputPath', metavar='<input path>', help='input path')
+    parser.add_argument('metaPath', metavar='<meta path>', help='meta path')
     parser.add_argument('outputPath', metavar='<output path>', help='output path')
 
     config = parser.parse_args()
 
     spark = SparkSession.builder.appName(parser.description).getOrCreate()
 
+    hgv_parse = udf(lambda fname, data: HGVParse(fname, data),
+                    'array<struct<id: string, fname: string, images: array<string>>>')
+
+    gv = spark.read.load(config.metaPath, format='text', wholetext='true',
+                         recursiveFileLookup='true',
+             ).select(explode(hgv_parse(f.input_file_name(), 'value')).alias('info')
+             ).select('info.*')
+
     idp_parse = udf(lambda fname, data: IDPParse(fname, data),
-                    'array<struct<id: string, fname: string, lang: string, parts: int, text:string>>')
+                    'array<struct<id: string, title: string, lang: string, parts: int, splits: double, text:string>>')
     
     spark.read.load(config.inputPath, format='text', wholetext='true', recursiveFileLookup='true',
         ).select(explode(idp_parse(f.input_file_name(), 'value')).alias('info')
         ).select('info.*'
+        ).join(gv, ['id'], 'left_outer'
         ).write.json(config.outputPath, mode='overwrite')
 
     spark.stop()
