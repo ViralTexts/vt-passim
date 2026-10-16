@@ -109,7 +109,7 @@ if __name__ == '__main__':
     spark.read.load(config.inputPath, format='text', wholetext='true', recursiveFileLookup='true',
         ).select(explode(work_parse(f.input_file_name(), 'value')).alias('info')
         ).select('info.*'
-        ).write.json(config.outputPath, mode='overwrite')
+        ).write.save(config.outputPath, mode='overwrite')
 
     spark.stop()
 

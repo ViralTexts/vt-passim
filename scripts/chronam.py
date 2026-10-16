@@ -23,21 +23,6 @@ class Region:
     length: int
     coords: Coords
 
-@dataclass
-class AltoRec:
-    batch: str
-    alto: str
-    series: str
-    date: str
-    ed: str
-    seq: int
-    text: str
-    sourceFile: str
-    width: int
-    height: int
-    dpi: int
-    regions: list[Region]
-
 def parseAlto(rid, content):
     (batchfile, fname) = rid
     batch = sub(r'\.tar.bz2$', '', os.path.basename(batchfile))
@@ -52,7 +37,7 @@ def parseAlto(rid, content):
         ed = ed.replace('ed-', '')
         nseq = int(seq.replace('seq-', ''))
     except:
-        return AltoRec(batch, fname, '', '', '', 0, 'fubar', '', 0, 0, 0, [])
+        return (batch, fname, '', '', '', 0, 'fubar', '', 0, 0, 0, [])
     root = tree.find('.')
     ns = root.nsmap
     try:
@@ -93,8 +78,8 @@ def parseAlto(rid, content):
                     text += '\u00ad'
             text += '\n'
         text += '\n'
-    return AltoRec(batch, fname, series, date, ed, nseq,
-                   text, sourceFile, width, height, dpi, regions)
+    return (batch, fname, series, date, ed, nseq,
+            text, sourceFile, width, height, dpi, regions)
 
 def tarFiles(path):
     tar = tarfile.open(path, 'r')
@@ -115,12 +100,12 @@ if __name__ == '__main__':
 
     paths = glob.glob(config.inputPath)
 
-    spark.sparkContext.parallelize(paths, len(paths)
+    spark.createDataFrame(spark.sparkContext.parallelize(paths, len(paths)
         ).flatMap(lambda fname: tarFiles(fname)
         ).groupByKey(len(paths) * 10
         ).mapValues(lambda barr: b''.join(barr)
-        ).map(lambda r: parseAlto(*r)
-        ).toDF(
+        ).map(lambda r: parseAlto(*r)),
+            schema='batch string, alto string, series string, date string, ed string, seq int, text string, sourceFile string, width int, height int, dpi int, regions array<struct<start int, length int, coords struct<x int, y int, w int, h int, b int>>>'
         ).filter(col('text') != 'fubar'
         ).write.save(config.outputPath, mode='overwrite')
 

@@ -136,7 +136,6 @@ comma := ,
 #	serial/open=true/corpus=bsb/_SUCCESS \
 
 serial/_SUCCESS:	serial/open$(eq)true/corpus$(eq)ca/_SUCCESS \
-	serial/open=true/corpus=ca-new/_SUCCESS \
 	serial/open=true/corpus=ddd/_SUCCESS \
 	serial/open=true/corpus=europeana/_SUCCESS \
 	serial/open=true/corpus=finnish/_SUCCESS \
@@ -160,7 +159,7 @@ ca-raw/_SUCCESS:	$(patsubst %.tar.bz2,ca-raw/batch=%/_SUCCESS,$(notdir $(wildcar
 	touch $@
 
 ca-raw/batch$(eq)%/_SUCCESS:	$(RAW)/chroniclingamerica/raw/%.tar.bz2
-	$(call slurm_run,export SPARK_SUBMIT_ARGS+=' --conf spark.sql.adaptive.enabled=true'; vtrun ChronAm $< $(dir $@))
+	$(call slurm_run, vtrun chronam.py $< $(dir $@))
 
 ca-new/_SUCCESS:	$(patsubst %.warc.gz,ca-new/batch=%/_SUCCESS,$(notdir $(wildcard $(RAW)/chroniclingamerica/alto/*[0-9].warc.gz)))
 	touch $@
@@ -237,6 +236,14 @@ c19-${STAMP}.parquet/_SUCCESS:
 
 years/%/_SUCCESS:
 	$(call spark_run,vtrun c19.py --min-year $* --max-year $$(($* + 1)) serial marc-meta/groups $(dir $@))
+
+hf-%.parquet/_SUCCESS:	years-%/_SUCCESS
+	$(call spark_run,vtrun serial-hf.py $(dir $<) $(dir $@))
+
+syears:	years-${STAMP}/_SUCCESS
+
+years-${STAMP}/_SUCCESS:
+	$(call spark_run,vtrun serial-years.py --max-year 1922 serial marc-meta/groups $(dir $@))
 
 b1922-snapshot:	b1922-${STAMP}.parquet/_SUCCESS
 
