@@ -30,7 +30,12 @@ def textLocs(pref, levels, chunks):
     locs = []
 
     for e, cit in chunks:
-        c = sub(r'\s+$', '', sub(r'^\s+', '', ''.join(e.itertext())))
+        c = normalize('NFD', sub(r'\s+$', '', sub(r'^\s+', '', ''.join(e.itertext()))))
+        c = sub(r'\n[ ]+', '\n', c)
+        c = sub(r'[ ]+\n', '\n', c)
+        c = sub(r'\n\n+', '\n', c)
+        if c == '':
+            continue
         locs.append((pref + cit, len(raw), len(c)))
         raw += c
         raw += '\n'
@@ -44,6 +49,7 @@ def WorkParse(fname, data):
         return res
     try:
         tree = etree.parse(BytesIO(data.encode()))
+        etree.strip_elements(tree, '{http://www.tei-c.org/ns/1.0}label', with_tail=False)
 
         id = sub(r'\.xml$', '', os.path.basename(fname))
         creator = tree.findtext('./teiHeader/fileDesc/titleStmt/author', namespaces=ns).strip()
@@ -58,7 +64,7 @@ def WorkParse(fname, data):
     work = sub(r'\.[^\.]*$', '', id)
     if levels == None or len(levels) == 0:
         raw = ''.join(tree.find('./text/body', namespaces=ns).itertext())
-        return [(id, work, creator, title, raw, [(work, 0, len(raw))])]
+        return [(id, id, 0, work, creator, title, raw, [(work, 0, len(raw))])]
 
     lev = levels[0]
     q = sub(r'^/TEI/', './', lev.attrib.get('match', ''))
@@ -66,13 +72,24 @@ def WorkParse(fname, data):
     val = sub(r'^@', '', lev.attrib.get('use', ''))
     tops = [(e, unit + '=' + e.attrib.get(val, '')) for e in tree.findall(q, namespaces=ns)]
 
-    if unit == 'book':
+    if unit == 'book' or unit == 'volume':
+        pos = 0
+        seen = {}
         for book in tops:
             (raw, locs) = textLocs(work + ':', levels[1:], [book])
-            res.append((id + ':' + book[1], work, creator, title, raw, locs))
+            if raw == '':
+                continue
+            suff = ''
+            if book[1] in seen:
+               seen[book[1]] += 1
+               suff = '(' + str(seen[book[1]]) + ')'
+            else:
+                seen[book[1]] = 1
+            res.append((id + ':' + book[1] + suff, id, pos, work, creator, title, raw, locs))
+            pos += 1
     else:
         (raw, locs) = textLocs(work + ':', levels[1:], tops)
-        res.append((id, work, creator, title, raw, locs))
+        res.append((id, id, 0, work, creator, title, raw, locs))
     
     return res
 
@@ -87,7 +104,7 @@ if __name__ == '__main__':
     spark = SparkSession.builder.appName(parser.description).getOrCreate()
 
     work_parse = udf(lambda fname, data: WorkParse(fname, data),
-                    'array<struct<id: string, work: string, creator: string, title: string, text: string, locs: array<struct<loc: string, start: int, length: int>>>>')
+                    'array<struct<id: string, book: string, pos: int, work: string, creator: string, title: string, text: string, locs: array<struct<loc: string, start: int, length: int>>>>')
     
     spark.read.load(config.inputPath, format='text', wholetext='true', recursiveFileLookup='true',
         ).select(explode(work_parse(f.input_file_name(), 'value')).alias('info')
