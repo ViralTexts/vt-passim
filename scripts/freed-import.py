@@ -30,7 +30,7 @@ def textLocs(pref, levels, chunks):
     locs = []
 
     for e, cit in chunks:
-        c = sub(r'\s+$', '', sub(r'^\s+', '', ''.join(e.itertext())))
+        c = normalize('NFD', sub(r'\s+$', '', sub(r'^\s+', '', ''.join(e.itertext()))))
         locs.append((pref + cit, len(raw), len(c)))
         raw += c
         raw += '\n'
