@@ -55,7 +55,8 @@ def WorkParse(fname, data):
         creator = tree.findtext('./teiHeader/fileDesc/titleStmt/author', namespaces=ns).strip()
         title = tree.findtext('./teiHeader/fileDesc/titleStmt/title', namespaces=ns).strip()
 
-        levels = tree.findall('./teiHeader/encodingDesc/refsDecl//citeStructure', namespaces=ns)
+        refsDecl = tree.find('./teiHeader/encodingDesc/refsDecl', namespaces=ns)
+        levels = refsDecl.findall('.//citeStructure', namespaces=ns)
 
     except:
         print(f'# Error parsing {fname}', file=sys.stderr)
