@@ -36,18 +36,34 @@ class DocStream(object):
         self.fname = fname
         self.buf = ''
         self.rend = [False]
+        self.place = []
     def start(self, elem, attrib):
         tag = etree.QName(elem).localname
         if tag == 'ab':
             self.rend.append(True)
+        elif tag == 'add':
+            if self.rend[-1]:
+                self.place.append(attrib.get('place', ''))
+                if self.place[-1] == 'above':
+                    self.buf += '\\'
+                elif self.place[-1] == 'below':
+                    self.buf += '/'
+        elif tag == 'del':
+            if self.rend[-1]:
+                self.buf += '[['
         elif tag == 'ex':
             if self.rend[-1]:
                 self.buf += '('
-            self.rend.append(False)
-        elif tag == 'supplied' or tag == 'unclear':
+        elif tag == 'unclear':
             if self.rend[-1]:
-                self.buf += '['
-            self.rend.append(False)
+                self.buf += '{'
+        elif tag == 'supplied':
+            if attrib.get('reason', '') == 'lost':
+                self.rend.append(self.rend[-1])
+                if self.rend[-1]:
+                    self.buf += '['
+            else:
+                self.rend.append(False)
         elif tag == 'gap' and self.rend[-1]:
             self.buf += '[]'
         elif tag == 'space' and self.rend[-1]:
@@ -60,14 +76,26 @@ class DocStream(object):
         tag = etree.QName(elem).localname
         if tag == 'ab':
             self.rend.pop()
+        elif tag == 'add':
+            if self.rend[-1]:
+                if self.place[-1] == 'above':
+                    self.buf += '/'
+                elif self.place[-1] == 'below':
+                    self.buf += '\\'
+                self.place.pop()
+        elif tag == 'del':
+            if self.rend[-1]:
+                self.buf += ']]'
         elif tag == 'ex':
-            self.rend.pop()
             if self.rend[-1]:
                 self.buf += ')'
-        elif tag == 'supplied' or tag == 'unclear':
-            self.rend.pop()
+        elif tag == 'unclear':
+            if self.rend[-1]:
+                self.buf += '}'
+        elif tag == 'supplied':
             if self.rend[-1]:
                 self.buf += ']'
+            self.rend.pop()
         elif tag == 'desc' or tag == 'figDesc' or tag == 'note' or tag == 'rdg' or tag == 'reg':
             self.rend.pop()
     def data(self, data):
