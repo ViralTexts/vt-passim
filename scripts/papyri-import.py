@@ -41,6 +41,9 @@ class DocStream(object):
         tag = etree.QName(elem).localname
         if tag == 'ab':
             self.rend.append(True)
+        elif tag == 'div':
+            if attrib.get('type', '') == 'textpart' and attrib.get('n', '') != '':
+                self.buf += '\n# ' + attrib.get('n', '') + '\n\n'
         elif tag == 'add':
             if self.rend[-1]:
                 self.place.append(attrib.get('place', ''))
@@ -50,7 +53,7 @@ class DocStream(object):
                     self.buf += '/'
         elif tag == 'del':
             if self.rend[-1]:
-                self.buf += '[['
+                self.buf += '⟦'
         elif tag == 'ex':
             if self.rend[-1]:
                 self.buf += '('
@@ -85,7 +88,7 @@ class DocStream(object):
                 self.place.pop()
         elif tag == 'del':
             if self.rend[-1]:
-                self.buf += ']]'
+                self.buf += '⟧'
         elif tag == 'ex':
             if self.rend[-1]:
                 self.buf += ')'
@@ -100,6 +103,10 @@ class DocStream(object):
             self.rend.pop()
     def data(self, data):
         if self.rend[-1]:
+            data = normalize('NFD', data)
+            data = sub(r'[\.,\?!;:]', '', data)
+            data = ''.join(c for c in data if combining(c) == 0)
+            data = data.upper()
             self.buf += sub(r'\n+', '', data)
     def comment(self, text):
         pass
@@ -129,11 +136,11 @@ def IDPParse(fname, data):
         parser = etree.XMLParser(target = DocStream(fname))
         raw = etree.parse(BytesIO(data.encode()), parser)
 
-        raw = normalize('NFD', raw)
+        # raw = normalize('NFD', raw)
         raw = sub(r'\[\](\[\])+', '[]', raw)
-        raw = sub(r'[\.,\?!;:]', '', raw)
-        raw = ''.join(c for c in raw if combining(c) == 0)
-        raw = raw.upper()
+        # raw = sub(r'[\.,\?!;:]', '', raw)
+        # raw = ''.join(c for c in raw if combining(c) == 0)
+        # raw = raw.upper()
 
         raw = sub(r' [ ]+', ' ', sub(r'^\s+', '', sub(r'\s+$', '', raw)))
         raw = sub(r'[ ]+\n', '\n', sub(r'\n[ ]+', '\n', raw))
