@@ -11,6 +11,18 @@ from lxml import etree
 
 ns = {'': 'http://www.tei-c.org/ns/1.0', 'xml': 'http://www.w3.org/XML/1998/namespace'}
 
+def loadCharMap(fname):
+    res = {}
+    try:
+        tree = etree.parse(fname)
+        decl = tree.find('.//encodingDesc/charDecl', namespaces=ns)
+        for char in decl.findall('./glyph', namespaces=ns):
+            disp = char.findtext("./mapping[@type='standard']", namespaces=ns)
+            res[char.get('{' + ns['xml'] + '}id', '')] = disp
+    except:
+        print(f'# Error parsing {fname}', file=sys.stderr)
+    return res
+        
 def HGVParse(fname, data):
     res = []
     try:
@@ -32,8 +44,9 @@ def HGVParse(fname, data):
     return res
 
 class DocStream(object):
-    def __init__(self, fname):
+    def __init__(self, fname, charMap):
         self.fname = fname
+        self.charMap = charMap
         self.buf = ''
         self.rend = [False]
         self.place = []
@@ -41,6 +54,9 @@ class DocStream(object):
         tag = etree.QName(elem).localname
         if tag == 'ab':
             self.rend.append(True)
+        elif tag == 'g':
+            if self.rend[-1]:
+                self.buf += self.charMap.get(attrib.get('type', ''), '')
         elif tag == 'div':
             if attrib.get('type', '') == 'textpart' and attrib.get('n', '') != '':
                 self.buf += '\n# ' + attrib.get('n', '') + '\n\n'
@@ -104,7 +120,7 @@ class DocStream(object):
     def data(self, data):
         if self.rend[-1]:
             data = normalize('NFD', data)
-            data = sub(r'[\.,\?!;:]', '', data)
+            data = sub(r"[\.,\?!;:']", '', data)
             data = ''.join(c for c in data if combining(c) == 0)
             data = data.upper()
             self.buf += sub(r'\n+', '', data)
@@ -113,7 +129,7 @@ class DocStream(object):
     def close(self):
         return self.buf
 
-def IDPParse(fname, data):
+def IDPParse(fname, data, charMap):
     res = []
     try:
         data = sub(r'xml:id="[^"]*"', ' ', data)
@@ -133,7 +149,7 @@ def IDPParse(fname, data):
 
         # # ## Do something with <hi rend="diaeresis"> ?
 
-        parser = etree.XMLParser(target = DocStream(fname))
+        parser = etree.XMLParser(target = DocStream(fname, charMap))
         raw = etree.parse(BytesIO(data.encode()), parser)
 
         # raw = normalize('NFD', raw)
@@ -164,11 +180,14 @@ if __name__ == '__main__':
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('inputPath', metavar='<input path>', help='input path')
     parser.add_argument('metaPath', metavar='<meta path>', help='meta path')
+    parser.add_argument('charPath', metavar='<char path>', help='character data path')
     parser.add_argument('outputPath', metavar='<output path>', help='output path')
 
     config = parser.parse_args()
 
     spark = SparkSession.builder.appName(parser.description).getOrCreate()
+
+    charMap = loadCharMap(config.charPath)
 
     hgv_parse = udf(lambda fname, data: HGVParse(fname, data),
                     'array<struct<id: string, fname: string, images: array<string>>>')
@@ -178,7 +197,7 @@ if __name__ == '__main__':
              ).select(explode(hgv_parse(f.input_file_name(), 'value')).alias('info')
              ).select('info.*')
 
-    idp_parse = udf(lambda fname, data: IDPParse(fname, data),
+    idp_parse = udf(lambda fname, data: IDPParse(fname, data, charMap),
                     'array<struct<id: string, title: string, lang: string, parts: int, splits: double, text:string>>')
     
     spark.read.load(config.inputPath, format='text', wholetext='true', recursiveFileLookup='true',
