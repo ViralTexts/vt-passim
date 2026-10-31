@@ -120,10 +120,9 @@ class DocStream(object):
     def data(self, data):
         if self.rend[-1]:
             data = normalize('NFD', data)
-            data = sub(r"[\.,\?!;:']", '', data)
+            data = sub(r"[\.,\?!;:'’]", '', data)
             data = ''.join(c for c in data if combining(c) == 0)
-            data = data.upper()
-            self.buf += sub(r'\n+', '', data)
+            self.buf += sub(r'\n+', '', data.upper())
     def comment(self, text):
         pass
     def close(self):
@@ -161,6 +160,17 @@ def IDPParse(fname, data, charMap):
         raw = sub(r' [ ]+', ' ', sub(r'^\s+', '', sub(r'\s+$', '', raw)))
         raw = sub(r'[ ]+\n', '\n', sub(r'\n[ ]+', '\n', raw))
 
+        raw = sub(r'([\s\[])\((ΕΤΟΥ?Σ|ΕΤΩΝ|ΕΤΕΙ)\)', '\\1\U00010179', raw)
+        raw = sub(r'([\s\[])\(ΤΑΛΑΝΤ[^\)]*\)', '\\1\U0001017a', raw)
+        raw = sub(r'([\s\[])\(ΔΡΑΧΜ[^\)]*\)', '\\1\U0001017b', raw)
+        raw = sub(r'([\s\[])\(ΟΒΟΛ[^\)]*\)', '\\1\U0001017c', raw)
+        raw = sub(r'([\s\[])\(ΔΙΩΒΟΛ[^\)]*\)', '\\1\U0001017d', raw)
+        raw = sub(r'([\s\[])\(ΤΡΙΩΒΟΛ[^\)]*\)', '\\1\U0001017e', raw)
+        raw = sub(r'([\s\[])\(ΤΕΤΡΩΒΟΛ[^\)]*\)', '\\1\U0001017f', raw)
+        raw = sub(r'([\s\[])\(ΠΕΝΤΩΒΟΛ[^\)]*\)', '\\1\U00010180', raw)
+        raw = sub(r'([\s\[])\(ΑΡΤΑΒ[^\)]*\)', '\\1\U00010186', raw)
+        raw = sub(r'([\s\[])\(ΑΡΟΥΡ[^\)]*\)', '\\1\U00010187', raw)
+
         breaks = sub(r'\n[\[\]\(\) ]+', '\n', sub(r'[\[\]\(\) ]+\n', '\n', raw))
 
         lines = breaks.split('\n')
@@ -188,6 +198,7 @@ if __name__ == '__main__':
     spark = SparkSession.builder.appName(parser.description).getOrCreate()
 
     charMap = loadCharMap(config.charPath)
+    print(charMap)
 
     hgv_parse = udf(lambda fname, data: HGVParse(fname, data),
                     'array<struct<id: string, fname: string, images: array<string>>>')
